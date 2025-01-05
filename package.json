@@ -36,12 +36,12 @@
         "build": "vitepress build docs && cp -r ./docs/assets/* ./docs/.vitepress/dist/assets/",
         "build:package": "vite build",
         "build:types": "vue-tsc --declaration --emitDeclarationOnly && tsc-alias -p tsconfig.json",
-        "build:production": "npm run build:package && npm run build:types",
+        "build:production": "yarn build:package && yarn build:types",
         "lint": "eslint . --fix",
         "test": "vitest",
         "test-coverage": "vitest run --coverage",
         "type-check": "vue-tsc --noEmit -p tsconfig.json",
-        "publish": "npm publish --access public"
+        "publish": "yarn publish --access public"
     },
     "peerDependencies": {
         "tailwindcss": "^3",
