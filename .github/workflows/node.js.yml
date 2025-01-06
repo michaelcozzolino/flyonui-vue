@@ -26,4 +26,5 @@ jobs:
                     cache: 'npm'
             -   run: yarn install --frozen-lockfile
             -   run: yarn build:production
+            -   run: yarn build
             -   run: yarn test
