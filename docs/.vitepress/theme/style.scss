@@ -1,0 +1,54 @@
+:root {
+    --vp-c-brand-1: var(--fallback-p, oklch(var(--p)/var(--tw-text-opacity,1)));
+    --vp-c-text-1: var(--fallback-bc, oklch(var(--bc) / .9));
+    --vp-c-text-2: var(--fallback-bc, oklch(var(--bc) / .9));
+    --vp-font-family-base: inherit;
+    --vp-sidebar-bg-color: var(--fallback-b1, oklch(var(--b1) / 1));
+    --vp-nav-bg-color: var(--fallback-b1, oklch(var(--b1) / 1));
+    --vp-c-divider: var(--fallback-bc, oklch(var(--bc)/.1));
+    --vp-c-gutter: var(--fallback-bc, oklch(var(--bc) / .1));
+}
+
+body {
+    background-color: var(--fallback-b1, oklch(var(--b1) / 1));
+}
+
+[data-theme] .VPSidebar {
+    color: var(--fallback-bc, oklch(var(--bc) / 1)) !important;
+}
+
+.VPSidebarItem.level-1 .text {
+    font-weight: 700 !important;
+}
+
+.VPSidebarItem.level-2 .text,
+.VPSidebarItem.level-3 .text,
+.VPSidebarItem.level-4 .text,
+.VPSidebarItem.level-5 .text {
+    font-weight: 400 !important;
+}
+
+.VPSidebarItem.level-1 .text,
+.VPSidebarItem.level-2 .text,
+.VPSidebarItem.level-3 .text,
+.VPSidebarItem.level-4 .text,
+.VPSidebarItem.level-5 .text {
+    @apply text-sm py-1.5 #{!important};
+}
+
+.link {
+    text-decoration-line: none !important;
+}
+
+.VPLink {
+    @apply hover:border-base-content/60 hover:text-base-content/90 text-base-content/80 #{!important};
+}
+
+.VPMenu {
+    min-width: 268px !important;
+}
+
+.VPNavScreenAppearance {
+    justify-content: space-evenly !important;
+    padding: 12px 0 12px 0 !important;
+}
