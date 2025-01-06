@@ -8,7 +8,6 @@ import SelectDocs                               from '../../components/Select/Se
 import StatListDocs                             from '../../components/StatList/StatListDocs.vue';
 import './tailwind.css';
 import './style.scss';
-import 'flyonui/flyonui';
 
 export default {
     extends: DefaultTheme,
