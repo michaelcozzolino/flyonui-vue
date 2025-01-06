@@ -13,6 +13,14 @@ body {
     background-color: var(--fallback-b1, oklch(var(--b1) / 1));
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+    border: inherit;
+}
+
 [data-theme] .VPSidebar {
     color: var(--fallback-bc, oklch(var(--bc) / 1)) !important;
 }
