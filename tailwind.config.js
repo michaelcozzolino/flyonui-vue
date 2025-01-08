@@ -11,5 +11,4 @@ module.exports = {
     flyonui: {
         themes: true,
     },
-    darkMode: ['class', '[data-theme="dark"]'],
 };
