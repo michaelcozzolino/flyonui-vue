@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import FoSelectThemeController from '@/components/ThemeController/UI/FoSelectThemeController.vue';
+import FoSelectThemeController from '@/Components/ThemeController/UI/FoSelectThemeController.vue';
 </script>
