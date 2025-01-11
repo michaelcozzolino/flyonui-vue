@@ -1,7 +1,7 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 import DefaultTheme                             from 'vitepress/theme';
-import SelectThemeController                    from '../../../src/components/ThemeController/UI/SelectThemeController.vue';
+import FoSelectThemeController                  from '../../../src/components/ThemeController/UI/FoSelectThemeController.vue';
 import ButtonDocs                               from '../../Components/Button/ButtonDocs.vue';
 import MenuDocs                                 from '../../Components/Menu/MenuDocs.vue';
 import StatListDocs                             from '../../Components/StatList/StatListDocs.vue';
@@ -31,7 +31,7 @@ export default {
             },
             {
                 name:     'SelectThemeController',
-                instance: SelectThemeController,
+                instance: FoSelectThemeController,
             },
         ]);
     },

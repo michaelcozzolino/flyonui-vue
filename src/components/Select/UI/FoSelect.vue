@@ -7,11 +7,11 @@
                 class="select appearance-none"
                 :class="[
                     sizeClass,
-                    label.type !== undefined && useLabelType('select', () => label.type).value,
+                    useLabelType('select', () => label.type ?? 'text').value,
                 ]"
                 aria-label="select"
         >
-            <option v-if="label.type === undefined"
+            <option v-if="isTextLabel"
                     disabled
                     :value="null"
             >
@@ -42,14 +42,14 @@
 </template>
 
 <script setup lang="ts">
-import type { LabelType }       from '@/components/Label/Types/Label';
-import type { Size }            from '@/Shared/Types/Variants';
-import FoHorizontalActiveMarker from '@/components/HorizontalActiveMarker/UI/FoHorizontalActiveMarker.vue';
-import { useLabelType }         from '@/components/Label/Lib/UseLabelType';
-import FoLabel                  from '@/components/Label/UI/FoLabel.vue';
-import { useSize }              from '@/Shared/Lib/UseElementClass';
-import { v4 as uuid }           from 'uuid';
-import { watchEffect }          from 'vue';
+import type { LabelType }        from '@/components/Label/Types/Label';
+import type { Size }             from '@/Shared/Types/Variants';
+import FoHorizontalActiveMarker  from '@/components/HorizontalActiveMarker/UI/FoHorizontalActiveMarker.vue';
+import { useLabelType }          from '@/components/Label/Lib/UseLabelType';
+import FoLabel                   from '@/components/Label/UI/FoLabel.vue';
+import { useSize }               from '@/Shared/Lib/UseElementClass';
+import { v4 as uuid }            from 'uuid';
+import { computed, watchEffect } from 'vue';
 
 export interface Option {
     id:          number;
@@ -60,7 +60,7 @@ export interface Option {
 interface Props {
     label: {
         text:  string;
-        type?: LabelType; // When undefined the label will be a disabled option
+        type?: LabelType; // When undefined the label will be a text by default
     };
     options: Option[];
     size?:   Exclude<Size, 'extraLarge'>;
@@ -76,6 +76,10 @@ const selectedOption = defineModel<Option | null>({ required: true });
 
 const sizeClass = useSize('select', () => props.size);
 
+const isTextLabel = computed(() => {
+    return [undefined, 'text'].includes(props.label.type);
+});
+
 watchEffect(() => {
     if (props.options.length === 0) {
         throw new Error('No option given.');
@@ -84,7 +88,7 @@ watchEffect(() => {
     /**
      * when no option is selected and the label is not the disabled option, the selected one will be the first.
      */
-    if (selectedOption.value === null && props.label.type !== undefined) {
+    if (selectedOption.value === null && isTextLabel.value === false) {
         selectedOption.value = props.options[0];
     }
 });
