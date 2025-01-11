@@ -16,7 +16,7 @@ import { computed, onMounted, toValue }           from 'vue';
 const props = withDefaults(defineProps<UseColorModeOptions<FlyonUITheme>>(), {
     initialValue: 'dark',
     attribute:    'data-theme',
-    modes() {
+    modes(): Record<FlyonUITheme, FlyonUITheme> {
         return {
             light:   'light',
             dark:    'dark',
@@ -33,10 +33,15 @@ interface ThemeOption extends Option {
 
 const themeOptions = computed((): ThemeOption[] => {
     let id = 0;
+    const options: ThemeOption[] = [];
 
-    return Object.values(toValue(props.modes)).map((theme) => {
-        return { id: ++id, text: theme };
-    });
+    for (const theme of Object.values(props.modes)) {
+        if (theme !== undefined) {
+            options.push({ id: ++id, text: theme });
+        }
+    }
+
+    return options;
 });
 
 const theme = useColorMode<FlyonUITheme>(props);
