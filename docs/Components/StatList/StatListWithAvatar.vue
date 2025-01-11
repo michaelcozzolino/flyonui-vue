@@ -4,7 +4,9 @@
             <!--            todo: avatar component -->
             <div class="avatar">
                 <div class="size-12 rounded-full">
-                    <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png" alt="User Avatar">
+                    <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
+                         alt="User Avatar"
+                    >
                 </div>
             </div>
         </template>
