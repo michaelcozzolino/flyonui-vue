@@ -1,14 +1,14 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 import DefaultTheme                             from 'vitepress/theme';
-import SelectThemeController                    from '../../../src/components/ThemeController/UI/SelectThemeController.vue';
-import ButtonDocs                               from '../../components/Button/ButtonDocs.vue';
-import MenuDocs                                 from '../../components/Menu/MenuDocs.vue';
-import SelectDocs                               from '../../components/Select/SelectDocs.vue';
-import StatListDocs                             from '../../components/StatList/StatListDocs.vue';
+import FoSelectThemeController                  from '../../../src/components/ThemeController/UI/FoSelectThemeController.vue';
+import ButtonDocs                               from '../../Components/Button/ButtonDocs.vue';
+import MenuDocs                                 from '../../Components/Menu/MenuDocs.vue';
+import StatListDocs                             from '../../Components/StatList/StatListDocs.vue';
+import SelectDocs                               from '../../Forms/Select/SelectDocs.vue';
 import './tailwind.css';
 import './style.scss';
-
+// todo: imports could use aliases
 export default {
     extends: DefaultTheme,
     enhanceApp({ app }) {
@@ -31,7 +31,7 @@ export default {
             },
             {
                 name:     'SelectThemeController',
-                instance: SelectThemeController,
+                instance: FoSelectThemeController,
             },
         ]);
     },
