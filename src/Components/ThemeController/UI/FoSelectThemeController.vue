@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import type { FlyonUITheme }                      from '@/components/ThemeController/Lib/ThemeController';
-import FoSelect, { type Option }                  from '@/components/Select/UI/FoSelect.vue';
+import type { FlyonUITheme }                      from '@/Components/ThemeController/Lib/ThemeController';
+import FoSelect, { type Option }                  from '@/Components/Select/UI/FoSelect.vue';
 import { useColorMode, type UseColorModeOptions } from '@vueuse/core';
 import { computed, onMounted, toValue }           from 'vue';
 

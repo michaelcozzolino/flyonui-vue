@@ -42,13 +42,13 @@
 </template>
 
 <script setup lang="ts">
-import type { LabelType }        from '@/components/Label/Types/Label';
+import type { LabelType }        from '@/Components/Label/Types/Label';
 import type { Size }             from '@/Shared/Types/Variants';
-import FoHorizontalActiveMarker  from '@/components/HorizontalActiveMarker/UI/FoHorizontalActiveMarker.vue';
-import { useLabelType }          from '@/components/Label/Lib/UseLabelType';
-import FoLabel                   from '@/components/Label/UI/FoLabel.vue';
+import FoHorizontalActiveMarker  from '@/Components/HorizontalActiveMarker/UI/FoHorizontalActiveMarker.vue';
+import { useLabelType }          from '@/Components/Label/Lib/UseLabelType';
+import FoLabel                   from '@/Components/Label/UI/FoLabel.vue';
 import { useSize }               from '@/Shared/Lib/UseElementClass';
-import { v4 as uuid }            from 'uuid';
+import { nanoid }                from 'nanoid';
 import { computed, watchEffect } from 'vue';
 
 export interface Option {
@@ -70,7 +70,7 @@ const props = withDefaults(defineProps<Props>(), {
     size: 'default',
 });
 
-const id = uuid();
+const id = nanoid();
 
 const selectedOption = defineModel<Option | null>({ required: true });
 
