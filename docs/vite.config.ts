@@ -10,7 +10,7 @@ export default defineConfig({
             },
             {
                 find:        /^.*\/VPSwitchAppearance\.vue$/,
-                replacement: resolve(__dirname, '../src/components/ThemeController/UI/SelectThemeController.vue'),
+                replacement: resolve(__dirname, '.vitepress/theme/Components/ThemeSwitcher.vue'),
             },
         ],
     },
