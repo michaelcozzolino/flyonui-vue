@@ -109,6 +109,10 @@ export function useOrientation(
     return useElementClass<OrientableElementName, Orientation>(
         elementName,
         {
+            'menu': {
+                horizontal: 'menu-horizontal',
+                vertical:   '',
+            },
             'stat-list': {
                 horizontal: '',
                 vertical:   'stats-vertical',
