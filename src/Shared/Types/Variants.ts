@@ -3,6 +3,7 @@ export type Default = 'default';
 export type ElementName = 'btn' | 'badge' | 'checkbox' | 'input' | 'menu' | 'select' | 'stat-list';
 export type ColorableElementName = Extract<ElementName, 'btn' | 'badge' | 'checkbox'>;
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
+export type ShapeableElementName = Extract<ElementName, 'btn'>;
 export type SizableElementName = Extract<ElementName, 'btn' | 'menu' | 'select'>;
 export type OrientableElementName = Extract<ElementName, 'menu' | 'stat-list'>;
 export type BorderableElementName = Extract<ElementName, 'stat-list'>;
@@ -16,4 +17,8 @@ export type Orientation = 'horizontal' | 'vertical';
 
 export type State = Default | 'active' | 'disabled';
 export type Layout = Default | 'wide' | 'block';
-export type Shape = 'circle' | 'square';
+export type Shape = Default | 'circle' | 'pilled' | 'square';
+
+export interface HasGlass {
+    hasGlass?: boolean;
+}
