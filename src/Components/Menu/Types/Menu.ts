@@ -1,4 +1,4 @@
-import type { IconType }       from '@/Components/Button/Types/Button';
+import type { IconType }       from '@/Components/Icon/Types/Icon';
 import type { RouteRecordRaw } from 'vue-router';
 
 export interface MenuItem {
