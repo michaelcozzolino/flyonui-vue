@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import FoLoadingButton from '@/Components/Button/FoLoadingButton.vue';
+import FoLoadingButton from '@/Components/Button/UI/FoLoadingButton.vue';
 import { ref }         from 'vue';
 
 const isLoading = ref<boolean>(true);

@@ -1,5 +1,5 @@
 <template>
-    <StatList :stats="stats">
+    <FoStatList :stats="stats">
         <template #image-1>
             <!--            todo: avatar component -->
             <div class="avatar">
@@ -10,12 +10,12 @@
                 </div>
             </div>
         </template>
-    </StatList>
+    </FoStatList>
 </template>
 
 <script setup lang="ts">
 import type { Stat } from '@/Components/StatList/Types/StatList';
-import StatList      from '@/Components/StatList/UI/StatList.vue';
+import FoStatList    from '@/Components/StatList/UI/FoStatList.vue';
 import { ref }       from 'vue';
 
 const stats = ref<Stat[]>([

@@ -9,5 +9,5 @@
 </template>
 
 <script setup lang="ts">
-import FoButton from '@/Components/Button/FoButton.vue';
+import FoButton from '@/Components/Button/UI/FoButton.vue';
 </script>

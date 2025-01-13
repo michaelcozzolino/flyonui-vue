@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import type { ButtonIconProp, ButtonProps } from '@/Components/Button/Types/Button';
 import type { Preset }                      from '@/Shared/Types/Variants';
-import FoButton                             from '@/Components/Button/FoButton.vue';
+import FoButton                             from '@/Components/Button/UI/FoButton.vue';
 import { computed }                         from 'vue';
 
 type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';

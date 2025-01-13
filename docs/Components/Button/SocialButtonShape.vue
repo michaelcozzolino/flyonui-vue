@@ -57,5 +57,5 @@
 </template>
 
 <script setup lang="ts">
-import FoSocialButton from '@/Components/Button/FoSocialButton.vue';
+import FoSocialButton from '@/Components/Button/UI/FoSocialButton.vue';
 </script>

@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import type { ButtonIconProp, ButtonProps } from '@/Components/Button/Types/Button';
 import type { LoadingIconProps }            from '@/Shared/Types/Loading';
-import FoButton                             from '@/Components/Button/FoButton.vue';
+import FoButton                             from '@/Components/Button/UI/FoButton.vue';
 import FoLoadingIcon                        from '@/Components/Icon/UI/FoLoadingIcon.vue';
 import { computed, h }                      from 'vue';
 
