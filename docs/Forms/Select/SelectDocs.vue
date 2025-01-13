@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import type { Default }           from '@/Shared/Types/Variants';
-import CodeSnippet                from '../../Components/Button/CodeSnippet.vue';
+import CodeSnippet                from '../../.vitepress/theme/Components/CodeSnippet.vue';
 import DefaultSelect              from './DefaultSelect.vue';
 import DefaultSelectRaw           from './DefaultSelect.vue?raw';
 import DefaultSelectSize          from './DefaultSelectSize.vue';

@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import CodeSnippet        from '../../Components/Button/CodeSnippet.vue';
+import CodeSnippet        from '../../.vitepress/theme/Components/CodeSnippet.vue';
 import DefaultMenu        from './DefaultMenu.vue';
 import DefaultMenuRaw     from './DefaultMenu.vue?raw';
 import IconMenu           from './IconMenu.vue';
