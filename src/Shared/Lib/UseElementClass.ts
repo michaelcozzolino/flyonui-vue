@@ -1,5 +1,5 @@
-import type { Color, ColorableElementName, ElementName, OrientableElementName, Orientation, Preset, PresetElementName, SizableElementName, Size } from '@/Shared/Types/Variants';
-import { computed, type ComputedRef, type MaybeRefOrGetter, toValue }                                                                             from 'vue';
+import type { Color, ColorableElementName, ElementName, OrientableElementName, Orientation, Preset, PresetElementName, Shape, ShapeableElementName, SizableElementName, Size } from '@/Shared/Types/Variants';
+import { computed, type ComputedRef, type MaybeRefOrGetter, toValue }                                                                                                          from 'vue';
 
 export function useColor(
     elementName: MaybeRefOrGetter<ColorableElementName>,
@@ -66,6 +66,24 @@ export function usePreset(
             },
         },
         preset,
+    );
+}
+
+export function useShape(
+    elementName: MaybeRefOrGetter<ShapeableElementName>,
+    shape: MaybeRefOrGetter<Shape>,
+): ComputedRef<string> {
+    return useElementClass<ShapeableElementName, Shape>(
+        elementName,
+        {
+            btn: {
+                default: '',
+                circle:  'btn-circle',
+                pilled:  'rounded-full',
+                square:  'btn-square',
+            },
+        },
+        shape,
     );
 }
 

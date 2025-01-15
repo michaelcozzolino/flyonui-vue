@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-import CodeSnippet                  from '../Button/CodeSnippet.vue';
+import CodeSnippet                  from '../../.vitepress/theme/Components/CodeSnippet.vue';
 import BorderedStatList             from './BorderedStatList.vue';
 import BorderedStatListRaw          from './BorderedStatList.vue?raw';
 import CenteredItemStatList         from './CenteredItemStatList.vue';
