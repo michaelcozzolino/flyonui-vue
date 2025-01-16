@@ -1,5 +1,17 @@
-import type { Color, ColorableElementName, ElementName, OrientableElementName, Orientation, Preset, PresetElementName, Shape, ShapeableElementName, SizableElementName, Size } from '@/Shared/Types/Variants';
-import { computed, type ComputedRef, type MaybeRefOrGetter, toValue }                                                                                                          from 'vue';
+import type {
+    Color,
+    ColorableElementName,
+    ElementName,
+    OrientableElementName,
+    Orientation,
+    Preset,
+    PresetElementName,
+    Shape,
+    ShapeableElementName,
+    SizableElementName,
+    Size,
+} from '@/Shared/Types/Variants';
+import { computed, type ComputedRef, type MaybeRefOrGetter, toValue } from 'vue';
 
 export function useColor(
     elementName: MaybeRefOrGetter<ColorableElementName>,
