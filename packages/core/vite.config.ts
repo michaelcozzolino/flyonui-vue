@@ -18,12 +18,11 @@ export default defineConfig({
             name:  'flyonui-vue',
         },
         rollupOptions: {
-            // make sure to externalize deps that shouldn't be bundled
-            // into your library, todo: maybe something else should be added
-            external: ['vue'],
+            external: ['vue', 'vue-router'],
             output:   {
                 globals: {
-                    vue: 'Vue',
+                    'vue':        'Vue',
+                    'vue-router': 'VueRouter',
                 },
             },
         },

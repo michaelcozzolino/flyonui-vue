@@ -18,11 +18,12 @@ const props = withDefaults(defineProps<UseColorModeOptions<FlyonUITheme>>(), {
     attribute:    'data-theme',
     modes(): Record<FlyonUITheme, FlyonUITheme> {
         return {
-            light:   'light',
-            dark:    'dark',
-            gourmet: 'gourmet',
-            luxury:  'luxury',
-            soft:    'soft',
+            light:     'light',
+            dark:      'dark',
+            gourmet:   'gourmet',
+            corporate: 'corporate',
+            luxury:    'luxury',
+            soft:      'soft',
         };
     },
 });
