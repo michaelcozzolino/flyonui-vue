@@ -20,7 +20,7 @@ jobs:
                 with:
                     node-version: ${{ matrix.node-version }}
                     cache: 'npm'
-            -   run: yarn install --frozen-lockfile
+            -   run: yarn install
             -   run: yarn build:production
             -   run: yarn build
             -   run: yarn test
