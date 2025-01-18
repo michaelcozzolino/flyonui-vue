@@ -60,6 +60,7 @@
         "@vue/tsconfig": "0.5.1",
         "eslint": "8.57.0",
         "eslint-plugin-align-import": "^1.0.0",
+        "jsdom": "^26.0.0",
         "postcss": "8.4.38",
         "sass-embedded": "^1.83.0",
         "tsc-alias": "1.8.10",
