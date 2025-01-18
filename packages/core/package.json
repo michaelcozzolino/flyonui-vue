@@ -20,10 +20,6 @@
             "types": "./dist/index.d.ts",
             "import": "./dist/flyonui-vue.js",
             "require": "./dist/flyonui-vue.umd.cjs"
-        },
-        "./dist/style.css": {
-            "import": "./dist/style.css",
-            "require": "./dist/style.css"
         }
     },
     "scripts": {
