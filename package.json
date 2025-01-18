@@ -10,7 +10,7 @@
     },
     "scripts": {
         "build": "yarn workspaces foreach -Apt run build",
-        "build:docs": "yarn workspace packages/docs run build",
+        "build:docs": "yarn workspaces focus packages/docs run build",
         "test": "yarn workspaces foreach -Apt run test"
     }
 }
