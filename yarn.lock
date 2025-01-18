@@ -3389,7 +3389,7 @@ __metadata:
 
 "flyonui-vue@file:../core::locator=docs-ec05c0%40workspace%3Apackages%2Fdocs":
   version: 1.0.0-alpha.1
-  resolution: "flyonui-vue@file:../core#../core::hash=a0cf49&locator=docs-ec05c0%40workspace%3Apackages%2Fdocs"
+  resolution: "flyonui-vue@file:../core#../core::hash=bffabd&locator=docs-ec05c0%40workspace%3Apackages%2Fdocs"
   dependencies:
     "@vueuse/components": "npm:^12.3.0"
     "@vueuse/core": "npm:^12.3.0"
@@ -3400,7 +3400,7 @@ __metadata:
     tailwindcss: ^3
     vue: ^3
     vue-router: ^4
-  checksum: 10c0/fabad92b204529e085af26ecf0a41f1a69c0378200ab210ad576055ffac5f88042124f4bedc36764115fc43f55d5695ff0c54eb1226732878e115c3704a8697b
+  checksum: 10c0/45f7296d4af84ee003d8980055feb761e28dcc9109fcfbd8a361dfcf9fd41eaf1bddf429a9dcb3d0913ea603f4eda4ab44f03ae7a3508cb6ce10b42813278528
   languageName: node
   linkType: hard
 
