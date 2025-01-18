@@ -1,8 +1,8 @@
 {
     "private": true,
     "workspaces": [
-        "Packages/Core",
-        "Packages/docs"
+        "packages/core",
+        "packages/docs"
     ],
     "packageManager": "yarn@4.6.0"
 }
