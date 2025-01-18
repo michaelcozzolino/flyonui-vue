@@ -8,7 +8,7 @@
     },
     "scripts": {
         "dev": "vitepress",
-        "start": "vitepress serve",
+        "preview": "vitepress preview",
         "build": "vitepress build && cp -r assets/* ./.vitepress/dist/assets/",
         "lint": "eslint . --fix",
         "test": "vitest run",
