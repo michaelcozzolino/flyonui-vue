@@ -1,6 +1,6 @@
 {
     "name": "flyonui-vue",
-    "version": "1.0.0-alpha.4",
+    "version": "1.0.0-alpha.5",
     "author": "Michael Cozzolino",
     "license": "MIT",
     "repository": {
@@ -49,11 +49,11 @@
         "@eslint/compat": "^1.2.4",
         "@iconify/vue": "^4.2.0",
         "@types/node": "20.12.12",
-        "@vitejs/plugin-vue": "5.0.4",
+        "@vitejs/plugin-vue": "^5.2.1",
         "@vitest/coverage-v8": "1.6.0",
         "@vue/test-utils": "2.4.6",
         "@vue/tsconfig": "0.5.1",
-        "eslint": "8.57.0",
+        "eslint": "^9.18.0",
         "eslint-plugin-align-import": "^1.0.0",
         "jsdom": "^26.0.0",
         "postcss": "8.4.38",
