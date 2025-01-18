@@ -1658,13 +1658,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/devtools-api@npm:^6.6.4":
-  version: 6.6.4
-  resolution: "@vue/devtools-api@npm:6.6.4"
-  checksum: 10c0/0a993ae23618166e1bee5a7c14cebd8312752b93c143cbdd48fb2d0f7ade070d0e6baf757cd920d4681fef8f9acf29515162160f38cc7410f9a684d2df21b6de
-  languageName: node
-  linkType: hard
-
 "@vue/devtools-api@npm:^7.5.4":
   version: 7.7.0
   resolution: "@vue/devtools-api@npm:7.7.0"
@@ -2682,9 +2675,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docs-f7d258@workspace:Packages/docs":
+"docs-ec05c0@workspace:packages/docs":
   version: 0.0.0-use.local
-  resolution: "docs-f7d258@workspace:Packages/docs"
+  resolution: "docs-ec05c0@workspace:packages/docs"
   dependencies:
     "@antfu/eslint-config": "npm:^3.12.1"
     "@eslint/compat": "npm:^1.2.4"
@@ -2705,7 +2698,7 @@ __metadata:
     eslint-plugin-vue: "npm:9.26.0"
     eslint-plugin-vue-scoped-css: "npm:2.8.0"
     flyonui: "npm:^1.3.0"
-    flyonui-vue: ../Core
+    flyonui-vue: ../core
     highlight.js: "npm:^11.11.1"
     jsdom: "npm:24.1.0"
     nanoid: "npm:5.0.9"
@@ -3615,69 +3608,55 @@ __metadata:
   languageName: node
   linkType: hard
 
-"flyonui-vue@file:../Core::locator=docs-f7d258%40workspace%3APackages%2Fdocs":
+"flyonui-vue@file:../core::locator=docs-ec05c0%40workspace%3Apackages%2Fdocs":
   version: 1.0.0-alpha.1
-  resolution: "flyonui-vue@file:../Core#../Core::hash=6b668b&locator=docs-f7d258%40workspace%3APackages%2Fdocs"
+  resolution: "flyonui-vue@file:../core#../core::hash=ceccaa&locator=docs-ec05c0%40workspace%3Apackages%2Fdocs"
   dependencies:
     "@vueuse/components": "npm:^12.3.0"
     "@vueuse/core": "npm:^12.3.0"
     autoprefixer: "npm:^10.4.20"
-    classnames: "npm:2.5.1"
     flyonui: "npm:^1.3.0"
-    highlight.js: "npm:^11.11.1"
     nanoid: "npm:5.0.9"
-    tailwindcss: "npm:^3"
-    vue-code-highlighter: "npm:^1.1.2"
-    vue-router: "npm:^4.4.5"
   peerDependencies:
     tailwindcss: ^3
     vue: ^3
-  checksum: 10c0/f5c25dfe25ff83b1d19b810e36724681b27557e12a8419f5615c6405eee9b127b0cff2ab2a4fac61878f816fd3946dd63b36e4a3e1428b6142fe292ba9a2d2c3
+    vue-router: ^4.4.5
+  checksum: 10c0/de1536dfadc896dda070e425d5843db2b5da96ba1fc07460175505df0402c17a3b5d231796bb682affcff75d39b3329c53e3bceed2f5d0a5ca263c61fd62766e
   languageName: node
   linkType: hard
 
-"flyonui-vue@workspace:Packages/Core":
+"flyonui-vue@workspace:packages/core":
   version: 0.0.0-use.local
-  resolution: "flyonui-vue@workspace:Packages/Core"
+  resolution: "flyonui-vue@workspace:packages/core"
   dependencies:
     "@antfu/eslint-config": "npm:^3.12.1"
     "@eslint/compat": "npm:^1.2.4"
     "@iconify/vue": "npm:^4.2.0"
-    "@rushstack/eslint-patch": "npm:1.10.3"
     "@types/node": "npm:20.12.12"
     "@vitejs/plugin-vue": "npm:5.0.4"
     "@vitest/coverage-v8": "npm:1.6.0"
-    "@vitest/eslint-plugin": "npm:^1.1.7"
     "@vue/eslint-config-typescript": "npm:^14.1.3"
     "@vue/test-utils": "npm:2.4.6"
     "@vue/tsconfig": "npm:0.5.1"
     "@vueuse/components": "npm:^12.3.0"
     "@vueuse/core": "npm:^12.3.0"
     autoprefixer: "npm:^10.4.20"
-    classnames: "npm:2.5.1"
     eslint: "npm:8.57.0"
-    eslint-config-standard: "npm:17.1.0"
     eslint-plugin-align-import: "npm:^1.0.0"
-    eslint-plugin-vue: "npm:9.26.0"
-    eslint-plugin-vue-scoped-css: "npm:2.8.0"
     flyonui: "npm:^1.3.0"
-    highlight.js: "npm:^11.11.1"
-    jsdom: "npm:24.1.0"
     nanoid: "npm:5.0.9"
     postcss: "npm:8.4.38"
     sass-embedded: "npm:^1.83.0"
-    tailwindcss: "npm:^3"
     tsc-alias: "npm:1.8.10"
     typescript: "npm:5.4.5"
     vite: "npm:^5.4.10"
     vitepress: "npm:1.5.0"
     vitest: "npm:1.6.0"
-    vue-code-highlighter: "npm:^1.1.2"
-    vue-router: "npm:^4.4.5"
     vue-tsc: "npm:2.0.19"
   peerDependencies:
     tailwindcss: ^3
     vue: ^3
+    vue-router: ^4.4.5
   languageName: unknown
   linkType: soft
 
@@ -7645,17 +7624,6 @@ __metadata:
   peerDependencies:
     eslint: ">=6.0.0"
   checksum: 10c0/128be5988de025b5abd676a91c3e92af68288a5da1c20b2ff848fe90e040c04b2222a03b5d8048cf4a5e0b667a8addfb6f6e6565860d4afb5190c4cc42d05578
-  languageName: node
-  linkType: hard
-
-"vue-router@npm:^4.4.5":
-  version: 4.5.0
-  resolution: "vue-router@npm:4.5.0"
-  dependencies:
-    "@vue/devtools-api": "npm:^6.6.4"
-  peerDependencies:
-    vue: ^3.2.0
-  checksum: 10c0/5521c8d0ab7634ea75118824d4b4cae3748964725b3d3b4064eb3dbd44013381ea3163d4d856af61655936cd897b84f8eeebb312d0668532c3074d53814bd953
   languageName: node
   linkType: hard
 
