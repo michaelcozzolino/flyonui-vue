@@ -23,9 +23,6 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            -   name: Setup tmate session
-                uses: mxschmitt/action-tmate@v3
-
             -   name: Checkout
                 uses: actions/checkout@v4
                 with:
@@ -50,6 +47,9 @@ jobs:
 
             -   name: Build with VitePress
                 run: yarn build:docs
+
+            -   name: Setup tmate session
+                uses: mxschmitt/action-tmate@v3
 
             -   name: Upload artifact
                 uses: actions/upload-pages-artifact@v3
