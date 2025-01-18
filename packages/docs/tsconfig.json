@@ -2,19 +2,17 @@
     "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
         "baseUrl": ".",
-        "noEmit": false,
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ]
-        },
         "outDir": "dist"
     },
+    "vueCompilerOptions": {
+        "vitePressExtensions": [".md"],
+    },
     "include": [
-        "src/**/*.ts",
-        "src/**/*.d.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue"
+        "./.vitepress/**/*",
+        "./**/*.ts",
+        "./**/*.d.ts",
+        "./**/*.tsx",
+        "./**/*.vue"
     ],
     "exclude": [
         "node_modules",

@@ -7,9 +7,9 @@
         "url": "git+https://github.com/michaelcozzolino/flyonui-vue.git"
     },
     "scripts": {
-        "dev": "vitepress dev .",
-        "start": "vitepress serve .",
-        "build": "vitepress build . && cp -r ./assets/* ./.vitepress/dist/assets/",
+        "dev": "vitepress",
+        "start": "vitepress serve",
+        "build": "vitepress build && cp -r assets/* ./.vitepress/dist/assets/",
         "lint": "eslint . --fix",
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
