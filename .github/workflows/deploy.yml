@@ -23,30 +23,35 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0 # Not needed if lastUpdated is not enabled
+            -   name: Checkout
+                uses: actions/checkout@v4
+                with:
+                    fetch-depth: 0 # Not needed if lastUpdated is not enabled
 
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  cache: yarn
+            -   name: Install package manager (from package.json)
+                run: |
+                    corepack enable
+                    corepack install
 
-            - name: Setup GitHub Pages
-              uses: actions/configure-pages@v4
+            -   name: Setup Node
+                uses: actions/setup-node@v4
+                with:
+                    node-version: 20
+                    cache: yarn
 
-            - name: Install dependencies
-              run: yarn install
+            -   name: Setup GitHub Pages
+                uses: actions/configure-pages@v4
 
-            - name: Build with VitePress
-              run: yarn build:docs
+            -   name: Install dependencies
+                run: yarn install
 
-            - name: Upload artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: packages/docs/.vitepress/dist
+            -   name: Build with VitePress
+                run: yarn build:docs
+
+            -   name: Upload artifact
+                uses: actions/upload-pages-artifact@v3
+                with:
+                    path: packages/docs/.vitepress/dist
 
     deploy:
         environment:
@@ -56,6 +61,6 @@ jobs:
         runs-on: ubuntu-latest
         name: Deploy
         steps:
-            - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+            -   name: Deploy to GitHub Pages
+                id: deployment
+                uses: actions/deploy-pages@v4
