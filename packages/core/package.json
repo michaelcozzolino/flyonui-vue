@@ -1,6 +1,6 @@
 {
     "name": "flyonui-vue",
-    "version": "1.0.0-alpha.5",
+    "version": "1.0.0-alpha.6",
     "author": "Michael Cozzolino",
     "license": "MIT",
     "repository": {
@@ -9,8 +9,7 @@
     },
     "type": "module",
     "files": [
-        "dist",
-        "src"
+        "dist"
     ],
     "main": "./dist/flyonui-vue.umd.cjs",
     "module": "./dist/flyonui-vue.js",
