@@ -4,7 +4,6 @@ export default {
     content: [
         './.vitepress/**/*.{js,md,ts,vue}',
         './**/*.{js,md,ts,vue}',
-        '!./node_modules',
     ],
     plugins: [
         flyonui,
