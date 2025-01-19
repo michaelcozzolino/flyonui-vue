@@ -8,6 +8,7 @@ import SelectDocs                               from '../../Forms/Select/SelectD
 import MenuDocs                                 from '../../Navigations/Menu/MenuDocs.vue';
 import './tailwind.css';
 import './style.scss';
+import 'flyonui/dist/styled.css';
 // todo: imports could use aliases
 export default {
     extends: DefaultTheme,
