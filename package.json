@@ -10,7 +10,6 @@
     },
     "scripts": {
         "build": "yarn workspaces foreach -Apt run build",
-        "build:docs": "yarn workspace flyonui-vue-docs run build",
         "test": "yarn workspaces foreach -Apt run test"
     }
 }

@@ -8,7 +8,7 @@ import SelectDocs                               from '../../Forms/Select/SelectD
 import MenuDocs                                 from '../../Navigations/Menu/MenuDocs.vue';
 import './tailwind.css';
 import './style.scss';
-import 'flyonui/dist/styled.css';
+import 'flyonui/dist/styled.css'; // todo: the style should be automatically imported from the tailwind config but on github pages it does not works
 // todo: imports could use aliases
 export default {
     extends: DefaultTheme,
