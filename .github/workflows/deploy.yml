@@ -45,9 +45,6 @@ jobs:
             -   name: Install dependencies
                 run: yarn install
 
-            -   name: Setup tmate session
-                uses: mxschmitt/action-tmate@v3
-
             -   name: Build with VitePress
                 run: yarn build:docs
 
