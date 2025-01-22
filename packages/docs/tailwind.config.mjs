@@ -2,8 +2,8 @@ import flyonui from 'flyonui';
 
 export default {
     content: [
-        './.vitepress/**/*.{js,md,ts,vue}',
-        './**/*.{js,md,ts,vue}',
+        './.vitepress/**/*.{html,js,ts,vue}',
+        '../../node_modules/flyonui-vue/**/*.{html,js,ts,vue}',
     ],
     plugins: [
         flyonui,

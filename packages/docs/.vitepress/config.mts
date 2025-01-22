@@ -2,7 +2,6 @@ import type { DefaultTheme } from 'vitepress';
 import { defineConfig }      from 'vitepress';
 
 export default defineConfig({
-    base: '/flyonui-vue/',
     rewrites(id) {
         // PascalCase to kebab-case for route urls
         return id.replace(/([a-z0–9])([A-Z])/g, '$1-$2').toLowerCase();
@@ -81,6 +80,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                     base:  '/navigations/',
                     items: [
                         { text: 'Menu', link: 'menu' },
+                        { text: 'Navbar', link: 'navbar' },
                     ],
                 },
                 {
