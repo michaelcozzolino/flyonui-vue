@@ -1,6 +1,6 @@
 <template>
     <FoSelect v-model="selectedTheme"
-              :label="{ text: 'Theme', type: 'floating' }"
+              :label="{ text: 'Theme', type: 'filled' }"
               :options="themeOptions"
               size="large"
     />

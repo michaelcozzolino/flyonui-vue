@@ -16,6 +16,10 @@ export function useGlass(hasGlass: MaybeRefOrGetter<boolean>): ComputedRef<'glas
     return useClass(hasGlass, 'glass');
 }
 
+export function useRoundedBox(isRounded: MaybeRefOrGetter<boolean>): ComputedRef<'rounded-box' | ''> {
+    return useClass(isRounded, 'rounded-box');
+}
+
 export function useClass<T extends string>(
     test: MaybeRefOrGetter<boolean>,
     classToUse: MaybeRefOrGetter<T>,
