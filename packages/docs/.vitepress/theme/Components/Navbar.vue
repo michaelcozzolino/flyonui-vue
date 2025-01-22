@@ -23,6 +23,6 @@
 import { FoNavbar, FoNavbarBrand, FoSelectThemeController, FoSocialButton } from 'flyonui-vue';
 
 function goToGitHub(): void {
-    window.open('https://github.com/michaelcozzolino/flyonui-vue', '_blank');
+    window.open('https://github.com/michaelcozzolino/flyonui-vue', '_blank', 'noopener,noreferrer');
 }
 </script>
