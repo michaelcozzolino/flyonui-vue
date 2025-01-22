@@ -17,17 +17,22 @@
                 </div>
             </div>
 
-            <div id="logo-navbar-collapse"
-                 class="md:navbar-end collapse grow basis-full overflow-hidden max-md:w-full"
-                 :class="isCollapsed && 'hidden'"
+            <!--            todo: understand fade -->
+            <Transition enter-from-class="hidden"
+                        enter-active-class="transition duration-[10000ms] ease-in-out"
+                        enter-to-class="open"
+                        leave-from-class="open"
+                        leave-active-class="duration-300"
+                        leave-to-class="hidden"
             >
-                <slot name="end" />
+                <div v-if="!isCollapsed" id="logo-navbar-collapse"
+                     class="md:navbar-end collapse grow basis-full overflow-hidden max-md:w-full"
+                >
+                    <slot name="end" />
 
-                <FoNavbarMenu v-if="links.length"
-                              :is-collapsed="isCollapsed"
-                              :links="links"
-                />
-            </div>
+                    <FoNavbarLinkList :links="links" />
+                </div>
+            </Transition>
         </div>
     </nav>
 </template>
@@ -35,7 +40,7 @@
 <script setup lang="ts">
 import type { NavbarLink }          from '@/Components/Navbar/Types/Navbar';
 import FoNavbarHamburgerMenuToggler from '@/Components/Navbar/UI/FoNavbarHamburgerMenuToggler.vue';
-import FoNavbarMenu                 from '@/Components/Navbar/UI/FoNavbarMenu.vue';
+import FoNavbarLinkList             from '@/Components/Navbar/UI/FoNavbarLinkList.vue';
 import { useRoundedBox }            from '@/Shared/Lib/UseClass';
 import { ref }                      from 'vue';
 
@@ -49,5 +54,5 @@ const props = withDefaults(defineProps<Props>(), {
     isRounded: false,
 });
 
-const isCollapsed = ref<boolean>(true);
+const isCollapsed   = ref<boolean>(true);
 </script>
