@@ -6,9 +6,10 @@ import ButtonDocs                               from '../../Components/Button/Bu
 import StatListDocs                             from '../../Components/StatList/StatListDocs.vue';
 import SelectDocs                               from '../../Forms/Select/SelectDocs.vue';
 import MenuDocs                                 from '../../Navigations/Menu/MenuDocs.vue';
+import NavbarDocs                               from '../../Navigations/Navbar/NavbarDocs.vue';
 import './tailwind.css';
 import './style.scss';
-import 'flyonui/dist/styled.css'; // todo: the style should be automatically imported from the tailwind config but on github pages it does not works
+
 // todo: imports could use aliases
 export default {
     extends: DefaultTheme,
@@ -29,6 +30,10 @@ export default {
             {
                 name:     'SelectDocs',
                 instance: SelectDocs,
+            },
+            {
+                name:     'NavbarDocs',
+                instance: NavbarDocs,
             },
             {
                 name:     'SelectThemeController',

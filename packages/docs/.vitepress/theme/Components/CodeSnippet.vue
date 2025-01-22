@@ -1,13 +1,12 @@
 <template>
-    <div class="vp-raw editor grid gap-2">
-        <section class="border-neutral/10 rounded-box my-4 flex flex-col gap-4 border p-3">
+    <div class="vp-raw">
+        <section class="border-neutral/10 rounded-box my-4 flex flex-col gap-4 border p-3 sm:p-6 md:my-8">
             <div class="gap-3 bg-base-200/20 border-neutral/10 rounded-box not-prose flex w-full flex-[1_0_0] flex-wrap border p-3 sm:p-6"
                  :class="previewGridClass"
             >
                 <component :is="component" />
             </div>
 
-            <!--            todo: add overflow -->
             <VueCodeHighlighter title="Vue"
                                 lang="js"
                                 :code="code"

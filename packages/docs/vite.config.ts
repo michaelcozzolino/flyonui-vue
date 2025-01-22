@@ -8,6 +8,10 @@ export default defineConfig({
                 find:        /^.*\/VPSwitchAppearance\.vue$/,
                 replacement: resolve(__dirname, '.vitepress/theme/Components/ThemeSwitcher.vue'),
             },
+            {
+                find:        /^.*\/VPNavBar\.vue$/,
+                replacement: resolve(__dirname, '.vitepress/theme/Components/Navbar.vue'),
+            },
         ],
     },
     css: {
