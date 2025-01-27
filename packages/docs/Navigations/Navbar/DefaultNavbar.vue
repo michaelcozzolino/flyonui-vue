@@ -1,5 +1,7 @@
 <template>
-    <FoNavbar :links="links">
+    <FoNavbar :links="links"
+              link-type="js"
+    >
         <template #start>
             <FoNavbarBrand>
                 FlyonUI-vue
