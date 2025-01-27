@@ -13,6 +13,7 @@ export default defineConfig({
                 replacement: resolve(__dirname, '.vitepress/theme/Components/Navbar.vue'),
             },
         ],
+        dedupe: ['vue'],
     },
     css: {
         preprocessorOptions: {
