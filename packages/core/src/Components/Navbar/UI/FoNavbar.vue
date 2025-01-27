@@ -11,29 +11,29 @@
                                                   v-model="isCollapsed"
                     />
                 </div>
-
-                <div class="navbar-center">
-                    <slot name="center" />
-                </div>
             </div>
 
             <!--            todo: understand fade -->
-            <Transition enter-from-class="hidden"
-                        enter-active-class="transition duration-[10000ms] ease-in-out"
-                        enter-to-class="open"
-                        leave-from-class="open"
-                        leave-active-class="duration-300"
-                        leave-to-class="hidden"
-            >
-                <div v-if="!isCollapsed" id="logo-navbar-collapse"
-                     class="md:navbar-end collapse grow basis-full overflow-hidden max-md:w-full"
-                >
-                    <slot name="end" />
 
-                    <FoNavbarLinkList :links="links" />
-                </div>
-            </Transition>
+            <div id="logo-navbar-collapse"
+                 class="md:navbar-end collapse grow basis-full overflow-hidden transition-[height] duration-300 max-md:w-full"
+                 :class="isCollapsed ? 'hidden' : 'open'"
+            >
+                <Transition enter-from-class="hidden"
+                            enter-active-class="transition duration-[10000ms] ease-in-out"
+                            enter-to-class="open"
+                            leave-from-class="open"
+                            leave-active-class="duration-300"
+                            leave-to-class="hidden"
+                >
+                    <FoNavbarLinkList :links="links"
+                                      :link-type="linkType"
+                    />
+                </Transition>
+            </div>
         </div>
+
+        <slot name="end" />
     </nav>
 </template>
 
@@ -46,11 +46,13 @@ import { ref }                      from 'vue';
 
 interface Props {
     links?:     NavbarLink[];
+    linkType?:  'vue' | 'js';
     isRounded?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
     links:     () => [],
+    linkType:  'vue',
     isRounded: false,
 });
 
