@@ -1932,13 +1932,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/repl@npm:^4.4.3":
-  version: 4.4.3
-  resolution: "@vue/repl@npm:4.4.3"
-  checksum: 10c0/1429990e48c9642d2ee5dd0bd5f9e8445379e8bbde86e5f847ceb5c2171e0642b2661117505ee8b1a7668ecbdc2c4062f1078a4f7504e6e178c6d61fd8fa7ee2
-  languageName: node
-  linkType: hard
-
 "@vue/runtime-core@npm:3.5.13":
   version: 3.5.13
   resolution: "@vue/runtime-core@npm:3.5.13"
@@ -3808,7 +3801,6 @@ __metadata:
     "@types/node": "npm:20.12.12"
     "@vitejs/plugin-vue": "npm:^5.2.1"
     "@vitest/coverage-v8": "npm:1.6.0"
-    "@vue/repl": "npm:^4.4.3"
     "@vue/test-utils": "npm:2.4.6"
     "@vue/tsconfig": "npm:0.5.1"
     autoprefixer: "npm:^10.4.19"
@@ -3825,7 +3817,7 @@ __metadata:
     vite: "npm:^6.0.7"
     vitepress: "npm:1.5.0"
     vitest: "npm:1.6.0"
-    vue: "npm:3.5.13"
+    vue: "npm:^3.5.13"
     vue-code-highlighter: "npm:^1.1.2"
     vue-router: "npm:^4.5.0"
     vue-tsc: "npm:2.0.19"
@@ -3856,7 +3848,7 @@ __metadata:
     typescript: "npm:5.4.5"
     vite: "npm:^6.0.7"
     vitest: "npm:1.6.0"
-    vue: "npm:3.5.13"
+    vue: "npm:^3.5.13"
     vue-router: "npm:^4.5.0"
     vue-tsc: "npm:2.0.19"
   peerDependencies:
@@ -7797,7 +7789,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:3.5.13, vue@npm:^3.5.12, vue@npm:^3.5.13":
+"vue@npm:^3.5.12, vue@npm:^3.5.13":
   version: 3.5.13
   resolution: "vue@npm:3.5.13"
   dependencies:
