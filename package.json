@@ -9,7 +9,11 @@
         "node": ">=18.0.0"
     },
     "scripts": {
+        "dev": "yarn concurrently \"yarn workspace flyonui-vue dev\" \"yarn workspace flyonui-vue-docs dev\"",
         "build": "yarn workspaces foreach -Apt run build",
         "test": "yarn workspaces foreach -Apt run test"
+    },
+    "devDependencies": {
+        "concurrently": "^9.1.2"
     }
 }

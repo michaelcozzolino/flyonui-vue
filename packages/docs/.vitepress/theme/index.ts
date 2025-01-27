@@ -7,6 +7,7 @@ import StatListDocs                             from '../../Components/StatList/
 import SelectDocs                               from '../../Forms/Select/SelectDocs.vue';
 import MenuDocs                                 from '../../Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                               from '../../Navigations/Navbar/NavbarDocs.vue';
+import Playground                               from '../../Playground/Playground.vue';
 import './tailwind.css';
 import './style.scss';
 
@@ -38,6 +39,10 @@ export default {
             {
                 name:     'SelectThemeController',
                 instance: FoSelectThemeController,
+            },
+            {
+                name:     'Playground',
+                instance: Playground,
             },
         ]);
     },
