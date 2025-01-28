@@ -1,11 +1,11 @@
-import type { IconType }                                     from '@/Components/Icon/Types/Icon';
+import type { PositionableIcon }                             from '@/Components/Icon/Types/Icon';
 import type { Color, HasGlass, Layout, Preset, Shape, Size } from '@/Shared/Types/Variants';
 import type { RouteRecordRaw }                               from 'vue-router';
 
 export interface ButtonProps extends HasGlass {
     color?:        Color;
     to?:           RouteRecordRaw;
-    icon?:         ButtonIconProp;
+    icon?:         PositionableIcon;
     shape?:        Shape;
     size?:         Size;
     layout?:       Layout;
@@ -14,9 +14,4 @@ export interface ButtonProps extends HasGlass {
     isDisabled?:   boolean;
     noAnimation?:  boolean;
     preset?:       Preset;
-}
-
-export interface ButtonIconProp {
-    left?:  IconType;
-    right?: IconType;
 }

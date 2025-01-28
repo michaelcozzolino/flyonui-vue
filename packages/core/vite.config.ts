@@ -11,6 +11,7 @@ export default defineConfig({
         dedupe: ['vue'],
     },
     build: {
+        emptyOutDir:  false,
         cssCodeSplit: true,
         target:       'ESNext',
         lib:          {

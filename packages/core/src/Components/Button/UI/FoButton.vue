@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
 import type { ButtonProps }                       from '@/Components/Button/Types/Button';
-import type { State }                             from '@/Shared/Types/Variants';
+import type { ElementName, State }                from '@/Shared/Types/Variants';
 import FoIcon                                     from '@/Components/Icon/UI/FoIcon.vue';
 import { useGlass }                               from '@/Shared/Lib/UseClass';
 import { useColor, usePreset, useShape, useSize } from '@/Shared/Lib/UseElementClass';
@@ -57,10 +57,21 @@ const buttonTag = computed(() => {
     return RouterLink;
 });
 
-const colorClass = useColor('btn', () => props.color);
-const presetClass = usePreset('btn', () => props.preset);
-const shapeClass = useShape('btn', () => props.shape);
-const sizeClass = useSize('btn', () => props.size);
+const elementName: ElementName = 'btn';
+
+const [
+    colorClass,
+    presetClass,
+    shapeClass,
+    sizeClass,
+    glassClass,
+] = [
+    useColor(elementName, () => props.color),
+    usePreset(elementName, () => props.preset),
+    useShape(elementName, () => props.shape),
+    useSize(elementName, () => props.size),
+    useGlass(() => props.hasGlass),
+];
 
 const stateClass = computed(() => {
     const states: Record<State, string> = {
@@ -89,6 +100,4 @@ const layoutClass = computed(() => {
 
     return layouts[props.layout];
 });
-
-const glassClass = useGlass(() => props.hasGlass);
 </script>

@@ -2,6 +2,7 @@ import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 import { FoSelectThemeController }              from 'flyonui-vue';
 import DefaultTheme                             from 'vitepress/theme';
+import BadgeDocs                                from '../../Components/Badge/BadgeDocs.vue';
 import ButtonDocs                               from '../../Components/Button/ButtonDocs.vue';
 import StatListDocs                             from '../../Components/StatList/StatListDocs.vue';
 import SelectDocs                               from '../../Forms/Select/SelectDocs.vue';
@@ -16,6 +17,10 @@ export default {
     extends: DefaultTheme,
     enhanceApp({ app }) {
         registerDocComponents(app, [
+            {
+                name:     'BadgeDocs',
+                instance: BadgeDocs,
+            },
             {
                 name:     'ButtonDocs',
                 instance: ButtonDocs,

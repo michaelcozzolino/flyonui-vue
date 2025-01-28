@@ -1,7 +1,7 @@
 <template>
     <CodeSnippet v-if="section === 'solid'"
-                 :code="ButtonColorRaw"
-                 :component="ButtonColor"
+                 :code="SolidButtonRaw"
+                 :component="SolidButton"
     />
 
     <CodeSnippet v-else-if="section === 'soft'"
@@ -74,8 +74,6 @@
 
 <script setup lang="ts">
 import CodeSnippet          from '../../.vitepress/theme/Components/CodeSnippet.vue';
-import ButtonColor          from './ButtonColor.vue';
-import ButtonColorRaw       from './ButtonColor.vue?raw';
 import ButtonLayout         from './ButtonLayout.vue';
 import ButtonLayoutRaw      from './ButtonLayout.vue?raw';
 import ButtonSize           from './ButtonSize.vue';
@@ -100,6 +98,8 @@ import SocialButtonShape    from './SocialButtonShape.vue';
 import SocialButtonShapeRaw from './SocialButtonShape.vue?raw';
 import SoftButton           from './SoftButton.vue';
 import SoftButtonRaw        from './SoftButton.vue?raw';
+import SolidButton          from './SolidButton.vue';
+import SolidButtonRaw       from './SolidButton.vue?raw';
 import TextButton           from './TextButton.vue';
 import TextButtonRaw        from './TextButton.vue?raw';
 

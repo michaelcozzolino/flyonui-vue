@@ -54,7 +54,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                         // { text: 'Accordion', link: 'accordion' },
                         // { text: 'Alert', link: 'alert' },
                         // { text: 'Avatar', link: 'avatar' },
-                        // { text: 'Badge', link: 'badge' },
+                        { text: 'Badge', link: 'badge' },
                         { text: 'Button', link: 'button' },
                         // { text: 'Card', link: 'card' },
                         // { text: 'Carousel', link: 'carousel' },

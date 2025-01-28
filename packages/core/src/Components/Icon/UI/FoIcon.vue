@@ -3,9 +3,9 @@
                v-if="isIconTypeComponent(icon)"
     />
 
-    <Icon v-else
-          :icon="icon"
-    />
+    <span v-else>
+        <Icon :icon="icon" />
+    </span>
 </template>
 
 <script setup lang="ts">
