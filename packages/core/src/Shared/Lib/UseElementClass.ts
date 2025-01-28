@@ -20,18 +20,9 @@ export function useColor(
     return useElementClass<ColorableElementName, Color>(
         elementName,
         {
-            btn: {
-                default:   '',
-                primary:   'btn-primary',
-                secondary: 'btn-secondary',
-                accent:    'btn-accent',
-                info:      'btn-info',
-                success:   'btn-success',
-                warning:   'btn-warning',
-                error:     'btn-error',
-            },
             badge: {
                 default:   '',
+                neutral:   'badge-neutral',
                 primary:   'badge-primary',
                 secondary: 'badge-secondary',
                 accent:    'badge-accent',
@@ -40,8 +31,20 @@ export function useColor(
                 warning:   'badge-warning',
                 error:     'badge-error',
             },
+            btn: {
+                default:   '',
+                neutral:   '',
+                primary:   'btn-primary',
+                secondary: 'btn-secondary',
+                accent:    'btn-accent',
+                info:      'btn-info',
+                success:   'btn-success',
+                warning:   'btn-warning',
+                error:     'btn-error',
+            },
             checkbox: {
                 default:   '',
+                neutral:   '',
                 primary:   'checkbox-primary',
                 secondary: 'checkbox-secondary',
                 accent:    'checkbox-accent',
@@ -88,6 +91,12 @@ export function useShape(
     return useElementClass<ShapeableElementName, Shape>(
         elementName,
         {
+            badge: {
+                default: '',
+                circle:  'rounded-full size-6 p-0 ',
+                pilled:  'rounded-full',
+                square:  'size-6 p-0',
+            },
             btn: {
                 default: '',
                 circle:  'btn-circle',
@@ -112,6 +121,13 @@ export function useSize(
                 small:      'btn-sm',
                 large:      'btn-lg',
                 extraLarge: '',
+            },
+            badge: {
+                default:    '',
+                extraSmall: 'badge-xs',
+                small:      'badge-sm',
+                large:      'badge-lg',
+                extraLarge: 'badge-xl',
             },
             menu: {
                 default:    '',
