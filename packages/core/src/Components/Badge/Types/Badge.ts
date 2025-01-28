@@ -1,4 +1,4 @@
-import type { HorizontalIconProp }         from '@/Components/Icon/Types/Icon';
+import type { PositionableIcon }           from '@/Components/Icon/Types/Icon';
 import type { Color, Preset, Shape, Size } from '@/Shared/Types/Variants';
 
 export interface BadgeProps {
@@ -6,6 +6,6 @@ export interface BadgeProps {
     preset?:        Preset;
     shape?:         Shape;
     size?:          Size;
-    icon?:          HorizontalIconProp;
+    icon?:          PositionableIcon;
     isDismissible?: boolean;
 }

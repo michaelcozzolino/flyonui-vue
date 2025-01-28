@@ -9,12 +9,12 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps }        from '@/Components/Button/Types/Button';
-import type { HorizontalIconProp } from '@/Components/Icon/Types/Icon';
-import type { LoadingIconProps }   from '@/Shared/Types/Loading';
-import FoButton                    from '@/Components/Button/UI/FoButton.vue';
-import FoLoadingIcon               from '@/Components/Icon/UI/FoLoadingIcon.vue';
-import { computed, h }             from 'vue';
+import type { ButtonProps }      from '@/Components/Button/Types/Button';
+import type { PositionableIcon } from '@/Components/Icon/Types/Icon';
+import type { LoadingIconProps } from '@/Shared/Types/Loading';
+import FoButton                  from '@/Components/Button/UI/FoButton.vue';
+import FoLoadingIcon             from '@/Components/Icon/UI/FoLoadingIcon.vue';
+import { computed, h }           from 'vue';
 
 interface Props extends Omit<ButtonProps, 'icon'> {
     isLoading?: boolean;
@@ -38,7 +38,7 @@ const props = withDefaults(defineProps<Props>(), {
     },
 });
 
-const loadingIcon = computed((): HorizontalIconProp => {
+const loadingIcon = computed((): PositionableIcon => {
     const icon = props.isLoading ? h(FoLoadingIcon, { animation: props.icon.animation }) : '';
 
     if (props.icon.position === undefined) {
