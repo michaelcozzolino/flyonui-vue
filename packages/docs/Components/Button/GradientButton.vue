@@ -1,4 +1,8 @@
 <template>
+    <FoButton preset="gradient">
+        Default
+    </FoButton>
+
     <FoButton color="primary"
               preset="gradient"
     >

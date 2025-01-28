@@ -1,4 +1,8 @@
 <template>
+    <FoButton>
+        Default
+    </FoButton>
+
     <FoButton color="primary">
         Primary
     </FoButton>

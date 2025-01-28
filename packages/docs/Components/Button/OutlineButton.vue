@@ -1,4 +1,8 @@
 <template>
+    <FoButton preset="outline">
+        Default
+    </FoButton>
+
     <FoButton color="primary"
               preset="outline"
     >

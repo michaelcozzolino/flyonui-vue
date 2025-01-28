@@ -1,4 +1,8 @@
 <template>
+    <FoButton shape="pilled">
+        Default
+    </FoButton>
+
     <FoButton color="primary"
               shape="pilled"
     >

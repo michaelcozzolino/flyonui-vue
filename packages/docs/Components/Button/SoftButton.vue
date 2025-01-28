@@ -1,4 +1,8 @@
 <template>
+    <FoButton preset="soft">
+        Default
+    </FoButton>
+
     <FoButton color="primary"
               preset="soft"
     >
