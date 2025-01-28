@@ -1,3 +1,6 @@
+export { default as FoBadge } from '@/Components/Badge/UI/FoBadge.vue';
+export { default as FoDotStyleBadge } from '@/Components/Badge/UI/FoDotStyleBadge.vue';
+export { default as FoIconBadge } from '@/Components/Badge/UI/FoIconBadge.vue';
 export { default as FoButton } from '@/Components/Button/UI/FoButton.vue';
 
 export { default as FoLoadingButton } from '@/Components/Button/UI/FoLoadingButton.vue';

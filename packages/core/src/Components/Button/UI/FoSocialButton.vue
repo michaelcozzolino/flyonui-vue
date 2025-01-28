@@ -8,10 +8,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonIconProp, ButtonProps } from '@/Components/Button/Types/Button';
-import type { Preset }                      from '@/Shared/Types/Variants';
-import FoButton                             from '@/Components/Button/UI/FoButton.vue';
-import { computed }                         from 'vue';
+import type { ButtonProps }        from '@/Components/Button/Types/Button';
+import type { HorizontalIconProp } from '@/Components/Icon/Types/Icon';
+import type { Preset }             from '@/Shared/Types/Variants';
+import FoButton                    from '@/Components/Button/UI/FoButton.vue';
+import { computed }                from 'vue';
 
 type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
 
@@ -26,7 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
     shape:    'default',
 });
 
-const icon = computed((): ButtonIconProp => {
+const icon = computed((): HorizontalIconProp => {
     const icons: Record<Social, string> = {
         Facebook: 'tabler:brand-facebook',
         Twitter:  'tabler:brand-x',
