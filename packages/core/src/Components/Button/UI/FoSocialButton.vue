@@ -1,17 +1,27 @@
 <template>
-    <FoButton :class="colorClass"
+    <FoButton v-if="isTextAllowedForShape(shape)"
+              :class="colorClass"
               v-bind="props"
-              :icon="icon"
+              :icon="{ left: icon }"
     >
-        {{ ['circle', 'square'].includes(shape) ? '' : social }}
+        {{ social }}
     </FoButton>
+
+    <FoIconButton v-else
+                  :class="colorClass"
+                  v-bind="props"
+                  :icon="icon"
+                  :shape="shape"
+    />
 </template>
 
 <script setup lang="ts">
 import type { ButtonProps }      from '@/Components/Button/Types/Button';
-import type { PositionableIcon } from '@/Components/Icon/Types/Icon';
+import type { IconType }         from '@/Components/Icon/Types/Icon';
 import type { Preset }           from '@/Shared/Types/Variants';
 import FoButton                  from '@/Components/Button/UI/FoButton.vue';
+import FoIconButton              from '@/Components/Button/UI/FoIconButton.vue';
+import { isTextAllowedForShape } from '@/Shared/Lib/IsTextAllowedForShape';
 import { computed }              from 'vue';
 
 type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
@@ -27,7 +37,7 @@ const props = withDefaults(defineProps<Props>(), {
     shape:    'default',
 });
 
-const icon = computed((): PositionableIcon => {
+const icon = computed((): IconType => {
     const icons: Record<Social, string> = {
         Facebook: 'tabler:brand-facebook',
         Twitter:  'tabler:brand-x',
@@ -35,9 +45,7 @@ const icon = computed((): PositionableIcon => {
         Github:   'tabler:brand-github',
     };
 
-    return {
-        left: icons[props.social],
-    };
+    return icons[props.social];
 });
 
 const colorClass = computed((): string => {

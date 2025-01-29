@@ -44,8 +44,18 @@
                  :component="ButtonLayout"
     />
 
+    <CodeSnippet v-else-if="section === 'icon'"
+                 :code="IconButtonRaw"
+                 :component="IconButton"
+                 :preview="{ columns: 8, rows: 2 }"
+    />
+
+    <CodeSnippet v-else-if="section === 'icon-position'"
+                 :code="IconPositionButtonRaw"
+                 :component="IconPositionButton"
+    />
+
     <CodeSnippet v-else-if="section === 'social'"
-                 :preview="{ columns: 4, rows: 3 }"
                  :code="SocialButtonRaw"
                  :component="SocialButton"
     />
@@ -73,38 +83,42 @@
 </template>
 
 <script setup lang="ts">
-import CodeSnippet          from '../../.vitepress/theme/Components/CodeSnippet.vue';
-import ButtonLayout         from './ButtonLayout.vue';
-import ButtonLayoutRaw      from './ButtonLayout.vue?raw';
-import ButtonSize           from './ButtonSize.vue';
-import ButtonSizeRaw        from './ButtonSize.vue?raw';
-import ButtonState          from './ButtonState.vue';
-import ButtonStateRaw       from './ButtonState.vue?raw';
-import GlassButton          from './GlassButton.vue';
-import GlassButtonRaw       from './GlassButton.vue?raw';
-import GradientButton       from './GradientButton.vue';
-import GradientButtonRaw    from './GradientButton.vue?raw';
-import LoadingButton        from './LoadingButton.vue';
-import LoadingButtonRaw     from './LoadingButton.vue?raw';
-import NoAnimationButton    from './NoAnimationButton.vue';
-import NoAnimationButtonRaw from './NoAnimationButton.vue?raw';
-import OutlineButton        from './OutlineButton.vue';
-import OutlineButtonRaw     from './OutlineButton.vue?raw';
-import PilledButton         from './PilledButton.vue';
-import PilledButtonRaw      from './PilledButton.vue?raw';
-import SocialButton         from './SocialButton.vue';
-import SocialButtonRaw      from './SocialButton.vue?raw';
-import SocialButtonShape    from './SocialButtonShape.vue';
-import SocialButtonShapeRaw from './SocialButtonShape.vue?raw';
-import SoftButton           from './SoftButton.vue';
-import SoftButtonRaw        from './SoftButton.vue?raw';
-import SolidButton          from './SolidButton.vue';
-import SolidButtonRaw       from './SolidButton.vue?raw';
-import TextButton           from './TextButton.vue';
-import TextButtonRaw        from './TextButton.vue?raw';
+import CodeSnippet           from '../../.vitepress/theme/Components/CodeSnippet.vue';
+import ButtonLayout          from './ButtonLayout.vue';
+import ButtonLayoutRaw       from './ButtonLayout.vue?raw';
+import ButtonSize            from './ButtonSize.vue';
+import ButtonSizeRaw         from './ButtonSize.vue?raw';
+import ButtonState           from './ButtonState.vue';
+import ButtonStateRaw        from './ButtonState.vue?raw';
+import GlassButton           from './GlassButton.vue';
+import GlassButtonRaw        from './GlassButton.vue?raw';
+import GradientButton        from './GradientButton.vue';
+import GradientButtonRaw     from './GradientButton.vue?raw';
+import IconButton            from './IconButton.vue';
+import IconButtonRaw         from './IconButton.vue?raw';
+import IconPositionButton    from './IconPositionButton.vue';
+import IconPositionButtonRaw from './IconPositionButton.vue?raw';
+import LoadingButton         from './LoadingButton.vue';
+import LoadingButtonRaw      from './LoadingButton.vue?raw';
+import NoAnimationButton     from './NoAnimationButton.vue';
+import NoAnimationButtonRaw  from './NoAnimationButton.vue?raw';
+import OutlineButton         from './OutlineButton.vue';
+import OutlineButtonRaw      from './OutlineButton.vue?raw';
+import PilledButton          from './PilledButton.vue';
+import PilledButtonRaw       from './PilledButton.vue?raw';
+import SocialButton          from './SocialButton.vue';
+import SocialButtonRaw       from './SocialButton.vue?raw';
+import SocialButtonShape     from './SocialButtonShape.vue';
+import SocialButtonShapeRaw  from './SocialButtonShape.vue?raw';
+import SoftButton            from './SoftButton.vue';
+import SoftButtonRaw         from './SoftButton.vue?raw';
+import SolidButton           from './SolidButton.vue';
+import SolidButtonRaw        from './SolidButton.vue?raw';
+import TextButton            from './TextButton.vue';
+import TextButtonRaw         from './TextButton.vue?raw';
 
 interface Props {
-    section: 'solid' | 'soft' | 'outline' | 'text' | 'gradient' | 'pilled' | 'state' | 'size' | 'layout' | 'social' | 'social-shape' | 'loading' | 'glass' | 'no-animation';
+    section: 'solid' | 'soft' | 'outline' | 'text' | 'gradient' | 'pilled' | 'state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass' | 'no-animation';
 }
 
 defineProps<Props>();

@@ -11,7 +11,7 @@
                 :icon="icon.left"
         />
 
-        <slot v-if="shape !== 'square' && shape !== 'circle'" />
+        <slot v-if="isTextAllowedForShape(shape)" />
 
         <FoIcon v-if="icon?.right"
                 :icon="icon.right"
@@ -26,6 +26,7 @@
 <script setup lang="ts">
 import type { BadgeProps }                        from '@/Components/Badge/Types/Badge';
 import FoIcon                                     from '@/Components/Icon/UI/FoIcon.vue';
+import { isTextAllowedForShape }                  from '@/Shared/Lib/IsTextAllowedForShape';
 import { useColor, usePreset, useShape, useSize } from '@/Shared/Lib/UseElementClass';
 
 const props = withDefaults(defineProps<BadgeProps>(), {
