@@ -1,7 +1,6 @@
 <template>
     <FoBadge v-bind="props"
              :icon="{ left: icon }"
-             :shape="shape"
     />
 </template>
 

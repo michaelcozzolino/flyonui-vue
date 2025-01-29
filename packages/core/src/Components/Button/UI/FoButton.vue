@@ -19,7 +19,7 @@
             />
         </slot>
 
-        <slot />
+        <slot v-if="isTextAllowedForShape(shape)" />
 
         <slot name="append">
             <FoIcon v-if="icon?.right"
@@ -33,6 +33,7 @@
 import type { ButtonProps }                       from '@/Components/Button/Types/Button';
 import type { ElementName, State }                from '@/Shared/Types/Variants';
 import FoIcon                                     from '@/Components/Icon/UI/FoIcon.vue';
+import { isTextAllowedForShape }                  from '@/Shared/Lib/IsTextAllowedForShape';
 import { useGlass }                               from '@/Shared/Lib/UseClass';
 import { useColor, usePreset, useShape, useSize } from '@/Shared/Lib/UseElementClass';
 import { computed }                               from 'vue';

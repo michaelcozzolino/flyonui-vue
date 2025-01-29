@@ -35,6 +35,12 @@
 ## Button layouts
 <ButtonDocs section="layout" />
 
+## Icon buttons
+<ButtonDocs section="icon" />
+
+## Icon position buttons
+<ButtonDocs section="icon-position" />
+
 ## Social buttons
 <ButtonDocs section="social" />
 
