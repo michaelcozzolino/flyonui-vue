@@ -7,10 +7,12 @@ export default defineConfig({
         vue(),
     ],
     test: {
-        include:         ['tests/**/*.{vue,ts,tsx}'],
-        globals:         true,
-        environment:     'jsdom',
-        passWithNoTests: true, // todo: remove after first test
+        include:      ['tests/**/*.{vue,ts,tsx}'],
+        globals:      true,
+        clearMocks:   true,
+        mockReset:    true,
+        restoreMocks: true,
+        environment:  'jsdom',
     },
     resolve: {
         alias: {
