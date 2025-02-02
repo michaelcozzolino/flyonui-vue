@@ -129,6 +129,13 @@ export function useSize(
                 large:      'badge-lg',
                 extraLarge: 'badge-xl',
             },
+            checkbox: {
+                default:    '',
+                extraSmall: 'checkbox-xs',
+                small:      'checkbox-sm',
+                large:      'checkbox-lg',
+                extraLarge: '',
+            },
             menu: {
                 default:    '',
                 extraSmall: 'menu-xs',
@@ -155,6 +162,10 @@ export function useOrientation(
     return useElementClass<OrientableElementName, Orientation>(
         elementName,
         {
+            'checkbox': {
+                horizontal: 'gap-4 horizontal-scrollbar',
+                vertical:   'flex-col gap-2',
+            },
             'menu': {
                 horizontal: 'menu-horizontal',
                 vertical:   '',

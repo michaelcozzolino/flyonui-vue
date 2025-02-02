@@ -8,6 +8,8 @@ export { default as FoLoadingButton } from '@/Components/Button/UI/FoLoadingButt
 
 export { default as FoSocialButton } from '@/Components/Button/UI/FoSocialButton.vue';
 
+export { default as FoCheckbox } from '@/Components/Checkbox/UI/FoCheckbox.vue';
+export { default as FoCheckboxGroup } from '@/Components/Checkbox/UI/FoCheckboxGroup.vue';
 export { default as FoIcon } from '@/Components/Icon/UI/FoIcon.vue';
 export type { MenuItem } from '@/Components/Menu/Types/Menu';
 export { default as FoMenu } from '@/Components/Menu/UI/FoMenu.vue';
@@ -15,7 +17,6 @@ export type { NavbarLink } from '@/Components/Navbar/Types/Navbar';
 export { default as FoNavbar } from '@/Components/Navbar/UI/FoNavbar.vue';
 export { default as FoNavbarBrand } from '@/Components/Navbar/UI/FoNavbarBrand.vue';
 export { default as FoSelect } from '@/Components/Select/UI/FoSelect.vue';
-
 export { default as FoStatList } from '@/Components/StatList/UI/FoStatList.vue';
 // todo: undocumented
 

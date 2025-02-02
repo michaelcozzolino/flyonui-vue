@@ -27,8 +27,8 @@
             </option>
         </select>
 
-        <FoHorizontalActiveMarker v-if="label.type === 'filled'"
-                                  element="select"
+        <span v-if="label.type === 'filled'"
+              class="select-filled-focused"
         />
 
         <FoLabel v-if="label.type !== undefined"
@@ -44,7 +44,6 @@
 <script setup lang="ts">
 import type { LabelType }        from '@/Components/Label/Types/Label';
 import type { Size }             from '@/Shared/Types/Variants';
-import FoHorizontalActiveMarker  from '@/Components/HorizontalActiveMarker/UI/FoHorizontalActiveMarker.vue';
 import { useLabelType }          from '@/Components/Label/Lib/UseLabelType';
 import FoLabel                   from '@/Components/Label/UI/FoLabel.vue';
 import { useSize }               from '@/Shared/Lib/UseElementClass';

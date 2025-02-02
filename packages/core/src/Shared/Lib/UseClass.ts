@@ -12,19 +12,31 @@ export function useBorder(
     return useClass(isBordered, availableClasses[toValue(elementName)]);
 }
 
-export function useGlass(hasGlass: MaybeRefOrGetter<boolean>): ComputedRef<'glass' | ''> {
+export function useGlass(hasGlass: MaybeRefOrGetter<boolean>): ComputedRef<string> {
     return useClass(hasGlass, 'glass');
 }
 
-export function useRoundedBox(isRounded: MaybeRefOrGetter<boolean>): ComputedRef<'rounded-box' | ''> {
+export function useValidity(isValid: MaybeRefOrGetter<boolean | undefined>): ComputedRef<string> {
+    return useClass(isValid, 'is-valid', 'is-invalid');
+}
+
+export function useRoundedBox(isRounded: MaybeRefOrGetter<boolean>): ComputedRef<string> {
     return useClass(isRounded, 'rounded-box');
 }
 
-export function useClass<T extends string>(
-    test: MaybeRefOrGetter<boolean>,
-    classToUse: MaybeRefOrGetter<T>,
-): ComputedRef<T | ''> {
+export function useClass(
+    test: MaybeRefOrGetter<boolean | undefined>,
+    positiveClass: MaybeRefOrGetter<string>,
+    negativeClass: MaybeRefOrGetter<string> = '',
+    undefinedClass: MaybeRefOrGetter<string> = '',
+): ComputedRef<string> {
     return computed(() => {
-        return toValue(test) ? toValue(classToUse) : '';
+        const _test = toValue(test);
+
+        if (_test === undefined) {
+            return toValue(undefinedClass);
+        }
+
+        return _test ? toValue(positiveClass) : toValue(negativeClass);
     });
 }
