@@ -18,12 +18,12 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    type: 'text',
+    element: 'label',
 });
 
 const labelClass = computed(() => {
-    if (props.element === undefined) {
-        return props.type === 'text' ? 'label label-text' : '';
+    if (props.type === undefined) {
+        return 'label';
     }
 
     const classes: Record<LabellableElementName, Record<LabelType, string>> = {
@@ -31,6 +31,11 @@ const labelClass = computed(() => {
             text:     '',
             filled:   'input-filled-label',
             floating: 'input-floating-label',
+        },
+        label: {
+            text:     'label label-text',
+            filled:   '',
+            floating: '',
         },
         select: {
             text:     '',
