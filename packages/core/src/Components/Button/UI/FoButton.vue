@@ -75,6 +75,7 @@ const [
 ];
 
 const stateClass = computed(() => {
+    // todo: i'm not sure this is the correct ay to handle it as an active button could also be disabled
     const states: Record<State, string> = {
         default:  '',
         active:   'btn-active',
