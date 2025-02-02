@@ -15,7 +15,9 @@
         </template>
 
         <template #end>
-            <FoSelectThemeController class="!w-48" />
+            <FoSelectThemeController class="!w-48"
+                                     storage-key="vitepress-theme-appearance"
+            />
 
             <FoSocialButton class="place-self-center"
                             social="Github"

@@ -5,10 +5,6 @@ export default defineConfig({
     resolve: {
         alias: [
             {
-                find:        /^.*\/VPSwitchAppearance\.vue$/,
-                replacement: resolve(__dirname, '.vitepress/theme/Components/ThemeSwitcher.vue'),
-            },
-            {
                 find:        /^.*\/VPNavBar\.vue$/,
                 replacement: resolve(__dirname, '.vitepress/theme/Components/Navbar.vue'),
             },
