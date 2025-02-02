@@ -89,6 +89,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                     base:  '/forms/',
                     items: [
                         { text: 'Select', link: 'select' },
+                        { text: 'Checkbox', link: 'checkbox' },
                     ],
                 },
             ],
