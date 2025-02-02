@@ -14,7 +14,7 @@
                    sizeClass,
                    validityClass,
                ]"
-               :aria-label="isDisabled ? 'disabled checkbox' : 'checkbox'"
+               :aria-label="label ?? (isDisabled ? 'disabled checkbox' : 'checkbox')"
                :disabled="isDisabled"
                :indeterminate.prop="isIndeterminate"
         >
