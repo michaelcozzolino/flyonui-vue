@@ -14,14 +14,13 @@
     ],
     "main": "./dist/flyonui-vue.umd.cjs",
     "module": "./dist/flyonui-vue.js",
-    "types": "./dist/index.d.ts",
+    "types": "./dist/src/index.d.ts",
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
+            "types": "./dist/src/index.d.ts",
             "import": "./dist/flyonui-vue.js",
             "require": "./dist/flyonui-vue.umd.cjs"
-        },
-        "./*": "./dist/*"
+        }
     },
     "scripts": {
         "dev": "yarn concurrently \"yarn build:ui -w\" \"yarn build:types -w\" \"yarn alias:types -w\"",
