@@ -62,7 +62,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                         // { text: 'Collapse', link: 'collapse' },
                         // { text: 'Diff', link: 'diff' },
                         // { text: 'Indicator', link: 'indicator' },
-                        // { text: 'List Group', link: 'list-group' },
+                        { text: 'List Group', link: 'list-group' },
                         // { text: 'Loading', link: 'loading' },
                         // { text: 'Progress', link: 'progress' },
                         // { text: 'Radial Progress', link: 'radial-progress' },

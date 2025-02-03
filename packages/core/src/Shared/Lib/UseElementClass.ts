@@ -136,6 +136,13 @@ export function useSize(
                 large:      'checkbox-lg',
                 extraLarge: '',
             },
+            icon: {
+                default:    'text-base',
+                extraSmall: 'text-xs',
+                small:      'text-sm',
+                large:      'text-lg',
+                extraLarge: 'text-xl',
+            },
             menu: {
                 default:    '',
                 extraSmall: 'menu-xs',
@@ -165,6 +172,14 @@ export function useOrientation(
             'checkbox': {
                 horizontal: 'gap-4 horizontal-scrollbar',
                 vertical:   'flex-col gap-2',
+            },
+            'list-group': {
+                horizontal: 'w-full divide-base-content/25 flex flex-col sm:flex-row sm:divide-x sm:divide-y-0 first:*:sm:rounded-s-md first:*:sm:rounded-tr-none last:*:sm:rounded-e-md last:*:sm:rounded-bl-none rtl:divide-x-reverse',
+                vertical:   'w-96',
+            },
+            'list-group-item': {
+                horizontal: 'w-full',
+                vertical:   'flex items-center',
             },
             'menu': {
                 horizontal: 'menu-horizontal',
