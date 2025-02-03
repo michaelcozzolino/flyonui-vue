@@ -1,4 +1,4 @@
-import type { BorderableElementName }                                 from '@/Shared/Types/Variants';
+import type { BorderableElementName, StripedElementName }             from '@/Shared/Types/Variants';
 import { computed, type ComputedRef, type MaybeRefOrGetter, toValue } from 'vue';
 
 export function useBorder(
@@ -22,6 +22,18 @@ export function useValidity(isValid: MaybeRefOrGetter<boolean | undefined>): Com
 
 export function useRoundedBox(isRounded: MaybeRefOrGetter<boolean>): ComputedRef<string> {
     return useClass(isRounded, 'rounded-box');
+}
+
+export function useStripes(
+    elementName: MaybeRefOrGetter<StripedElementName>,
+    isStriped: MaybeRefOrGetter<boolean>,
+): ComputedRef<string> {
+    const classes: Record<StripedElementName, ComputedRef<string>> = {
+        'list-group':      useClass(isStriped, 'odd:*:bg-base-300/60'),
+        'list-group-item': useClass(isStriped, 'bg-base-300/60'),
+    };
+
+    return classes[toValue(elementName)];
 }
 
 export function useClass(
