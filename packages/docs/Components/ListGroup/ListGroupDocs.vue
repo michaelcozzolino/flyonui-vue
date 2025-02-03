@@ -69,7 +69,7 @@ import StripedListGroup           from './StripedListGroup.vue';
 import StripedListGroupRaw        from './StripedListGroup.vue?raw';
 
 interface Props {
-    section: Default | 'with-icons' | 'with-badge' | 'horizontal' | 'flushed' | 'without-gutters' | 'striped' | 'with-checkbox' | 'invoice';
+    section: Default | 'with-icons' | 'with-badges' | 'horizontal' | 'flushed' | 'without-gutters' | 'striped' | 'with-checkbox' | 'invoice';
 }
 
 defineProps<Props>();
