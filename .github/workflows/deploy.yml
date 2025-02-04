@@ -42,11 +42,11 @@ jobs:
             -   name: Setup GitHub Pages
                 uses: actions/configure-pages@v4
 
-            -   name: Yarn audit
-                run: yarn audit
-
             -   name: Install dependencies
                 run: yarn install
+
+            -   name: Yarn audit
+                run: yarn audit
 
             -   name: Build with VitePress
                 run: yarn build
