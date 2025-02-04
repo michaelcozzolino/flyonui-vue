@@ -45,6 +45,9 @@ jobs:
             -   name: Install dependencies
                 run: yarn install
 
+            -   name: Yarn audit
+                run: yarn audit
+
             -   name: Build with VitePress
                 run: yarn build
 

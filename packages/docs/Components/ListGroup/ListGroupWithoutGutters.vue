@@ -1,5 +1,7 @@
 <template>
-    <FoListGroup is-flushed without-gutters>
+    <FoListGroup is-flushed
+                 without-gutters
+    >
         <FoListGroupItem v-for="item in items"
                          :key="item.id"
         >
