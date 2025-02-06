@@ -1,5 +1,4 @@
 <template>
-    <!--    todo: can be done through fragment -->
     <div class="flex items-center justify-center gap-1.5 text-base">
         <FoBadge class="size-2 p-0"
                  v-bind="props"

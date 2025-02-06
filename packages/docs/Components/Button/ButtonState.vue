@@ -10,9 +10,16 @@
     </FoButton>
 
     <FoButton color="primary"
-              :is-active="false"
+              is-disabled
     >
         Disabled
+    </FoButton>
+
+    <FoButton color="primary"
+              is-active
+              is-disabled
+    >
+        Active & Disabled
     </FoButton>
 </template>
 

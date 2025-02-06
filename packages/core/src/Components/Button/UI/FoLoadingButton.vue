@@ -28,7 +28,6 @@ interface Props extends Omit<ButtonProps, 'icon'> {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    isActive:  undefined,
     isLoading: true,
     icon() {
         return {

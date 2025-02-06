@@ -32,9 +32,8 @@ interface Props extends Omit<ButtonProps, 'preset'> {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    preset:   'default',
-    isActive: undefined,
-    shape:    'default',
+    preset: 'default',
+    shape:  'default',
 });
 
 const icon = computed((): IconType => {

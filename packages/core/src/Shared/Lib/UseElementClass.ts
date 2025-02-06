@@ -10,6 +10,8 @@ import type {
     ShapeableElementName,
     SizableElementName,
     Size,
+    State,
+    StatefulElementName,
 } from '@/Shared/Types/Variants';
 import { computed, type ComputedRef, type MaybeRefOrGetter, toValue } from 'vue';
 
@@ -191,6 +193,23 @@ export function useOrientation(
             },
         },
         orientation,
+    );
+}
+
+export function useState(
+    elementName: MaybeRefOrGetter<StatefulElementName>,
+    state: MaybeRefOrGetter<State>,
+): ComputedRef<string> {
+    return useElementClass<StatefulElementName, State>(
+        elementName,
+        {
+            btn: {
+                default:  '',
+                active:   'btn-active',
+                disabled: 'btn-disabled',
+            },
+        },
+        state,
     );
 }
 
