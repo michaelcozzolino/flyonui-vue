@@ -1,5 +1,4 @@
 <template>
-    <!--    todo: check if size can be applied to this one too -->
     <component :is="icon"
                v-if="isIconTypeComponent(icon)"
                class="fo-icon"
@@ -22,6 +21,10 @@ import { Icon }           from '@iconify/vue';
 
 interface Props {
     icon:  IconType;
+    /**
+     * The size of the icon that will be applied only to an iconify icon.
+     * If the icon is a custom component you should define the size in that component itself.
+     */
     size?: Size;
 }
 

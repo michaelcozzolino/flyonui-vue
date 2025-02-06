@@ -22,12 +22,3 @@ export type Orientation = 'horizontal' | 'vertical';
 export type State = Default | 'active' | 'disabled';
 export type Layout = Default | 'wide' | 'block';
 export type Shape = Default | 'circle' | 'pilled' | 'square';
-
-// todo: these should be moved somewhere
-export interface HasGlass {
-    hasGlass?: boolean;
-}
-
-export interface IsStriped {
-    isStriped?: boolean;
-}

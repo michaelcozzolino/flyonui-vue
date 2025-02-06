@@ -72,7 +72,7 @@ const [
     usePreset(elementName, () => props.preset),
     useShape(elementName, () => props.shape),
     useSize(elementName, () => props.size),
-    useGlass(() => props.hasGlass),
+    useGlass(() => props.withGlass),
 ];
 
 const stateClass = computed(() => {
