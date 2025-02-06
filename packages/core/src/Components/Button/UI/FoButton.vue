@@ -6,11 +6,12 @@
                    presetClass,
                    shapeClass,
                    sizeClass,
-                   stateClass,
+                   ...stateClass,
                    responsiveClass,
                    layoutClass,
                    noAnimation && 'no-animation',
                    glassClass,
+                   isDisabled && 'btn-disabled',
                ]"
     >
         <slot name="prepend">
@@ -30,14 +31,14 @@
 </template>
 
 <script lang="ts" setup>
-import type { ButtonProps }                       from '@/Components/Button/Types/Button';
-import type { ElementName, State }                from '@/Shared/Types/Variants';
-import FoIcon                                     from '@/Components/Icon/UI/FoIcon.vue';
-import { isTextAllowedForShape }                  from '@/Shared/Lib/IsTextAllowedForShape';
-import { useGlass }                               from '@/Shared/Lib/UseClass';
-import { useColor, usePreset, useShape, useSize } from '@/Shared/Lib/UseElementClass';
-import { computed }                               from 'vue';
-import { RouterLink }                             from 'vue-router';
+import type { ButtonProps }                                 from '@/Components/Button/Types/Button';
+import type { ElementName }                                 from '@/Shared/Types/Variants';
+import FoIcon                                               from '@/Components/Icon/UI/FoIcon.vue';
+import { isTextAllowedForShape }                            from '@/Shared/Lib/IsTextAllowedForShape';
+import { useGlass }                                         from '@/Shared/Lib/UseClass';
+import { useColor, usePreset, useShape, useSize, useState } from '@/Shared/Lib/UseElementClass';
+import { computed }                                         from 'vue';
+import { RouterLink }                                       from 'vue-router';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
     color:        'default',
@@ -45,7 +46,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
     shape:        'default',
     size:         'default',
     noAnimation:  false,
-    isActive:     undefined,
+    isActive:     false,
     layout:       'default',
     isResponsive: false,
 });
@@ -71,22 +72,14 @@ const [
     usePreset(elementName, () => props.preset),
     useShape(elementName, () => props.shape),
     useSize(elementName, () => props.size),
-    useGlass(() => props.hasGlass),
+    useGlass(() => props.withGlass),
 ];
 
 const stateClass = computed(() => {
-    // todo: i'm not sure this is the correct ay to handle it as an active button could also be disabled
-    const states: Record<State, string> = {
-        default:  '',
-        active:   'btn-active',
-        disabled: 'btn-disabled',
-    };
-
-    if (props.isActive === undefined) {
-        return states.default;
-    }
-
-    return props.isActive ? states.active : states.disabled;
+    return [
+        useState(elementName, props.isActive ? 'active' : 'default').value,
+        useState(elementName, props.isDisabled ? 'disabled' : 'default').value,
+    ];
 });
 
 const responsiveClass = computed(() => {

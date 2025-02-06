@@ -5,6 +5,7 @@ export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'check
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
 export type ShapeableElementName = Extract<ElementName, 'badge' | 'btn'>;
 export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'menu' | 'select'>;
+export type StatefulElementName = Extract<ElementName, 'btn'>;
 export type OrientableElementName = Extract<ElementName, 'checkbox' | 'list-group' | 'list-group-item' | 'menu' | 'stat-list'>;
 export type BorderableElementName = Extract<ElementName, 'stat-list'>;
 export type LabellableTypeElementName = Extract<ElementName, 'input' | 'select'>;
@@ -21,12 +22,3 @@ export type Orientation = 'horizontal' | 'vertical';
 export type State = Default | 'active' | 'disabled';
 export type Layout = Default | 'wide' | 'block';
 export type Shape = Default | 'circle' | 'pilled' | 'square';
-
-// todo: these should be moved somewhere
-export interface HasGlass {
-    hasGlass?: boolean;
-}
-
-export interface IsStriped {
-    isStriped?: boolean;
-}

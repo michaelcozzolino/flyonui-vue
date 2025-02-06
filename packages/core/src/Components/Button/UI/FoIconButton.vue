@@ -15,7 +15,5 @@ interface Props extends Omit<ButtonProps, 'icon'> {
     shape: Extract<Shape, 'circle' | 'square'>;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-    isActive: undefined,
-});
+const props = defineProps<Props>();
 </script>

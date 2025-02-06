@@ -21,15 +21,6 @@ import { computed }         from 'vue';
 import * as CodeHighlighter from 'vue-code-highlighter';
 import 'vue-code-highlighter/dist/style.css';
 
-const props = withDefaults(defineProps<Props>(), {
-    preview: () => {
-        return {
-            columns: 0,
-            rows:    0,
-        };
-    },
-});
-const VueCodeHighlighter = CodeHighlighter.VueCodeHighlighter;
 interface Props {
     preview?: {
         columns: number;
@@ -39,6 +30,17 @@ interface Props {
     component: Component;
 }
 
+const props = withDefaults(defineProps<Props>(), {
+    preview: () => {
+        return {
+            columns: 0,
+            rows:    0,
+        };
+    },
+});
+
+const VueCodeHighlighter = CodeHighlighter.VueCodeHighlighter;
+
 const previewGridClass = computed(() => {
     const columns = props.preview.columns;
     const rows    = props.preview.rows;
@@ -46,8 +48,6 @@ const previewGridClass = computed(() => {
     if (columns === 0 || rows === 0) {
         return 'flex flex-wrap';
     }
-
-    // todo: a type check should be added if the class is not available
 
     const classes: Record<'columns' | 'rows', Record<number, string>> = {
         columns: {
@@ -65,6 +65,13 @@ const previewGridClass = computed(() => {
         },
     };
 
-    return `grid ${classes.columns[props.preview.columns]} ${classes.rows[props.preview.rows]}`.trim();
+    const columnsClass = classes.columns[props.preview.columns];
+    const rowsClass    = classes.rows[props.preview.rows];
+
+    if (columnsClass === undefined || rowsClass === undefined) {
+        throw new Error('The given amount of columns or rows does not have any matching class.');
+    }
+
+    return `grid ${columnsClass} ${rowsClass}`.trim();
 });
 </script>
