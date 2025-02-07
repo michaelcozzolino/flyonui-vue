@@ -35,19 +35,19 @@
 
 <script setup lang="ts">
 import type { Default }           from 'flyonui-vue/dist/Shared/Types/Variants';
-import CodeSnippet                from '../../.vitepress/theme/Components/CodeSnippet.vue';
-import DefaultSelect              from './DefaultSelect.vue';
-import DefaultSelectRaw           from './DefaultSelect.vue?raw';
-import DefaultSelectSize          from './DefaultSelectSize.vue';
-import DefaultSelectSizeRaw       from './DefaultSelectSize.vue?raw';
-import SelectFilledLabel          from './SelectFilledLabel.vue';
-import SelectFilledLabelRaw       from './SelectFilledLabel.vue?raw';
-import SelectFilledLabelSize      from './SelectFilledLabelSize.vue';
-import SelectFilledLabelSizeRaw   from './SelectFilledLabelSize.vue?raw';
-import SelectFloatingLabel        from './SelectFloatingLabel.vue';
-import SelectFloatingLabelRaw     from './SelectFloatingLabel.vue?raw';
-import SelectFloatingLabelSize    from './SelectFloatingLabelSize.vue';
-import SelectFloatingLabelSizeRaw from './SelectFloatingLabelSize.vue?raw';
+import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import DefaultSelect              from '@/Forms/Select/DefaultSelect.vue';
+import DefaultSelectRaw           from '@/Forms/Select/DefaultSelect.vue?raw';
+import DefaultSelectSize          from '@/Forms/Select/DefaultSelectSize.vue';
+import DefaultSelectSizeRaw       from '@/Forms/Select/DefaultSelectSize.vue?raw';
+import SelectFilledLabel          from '@/Forms/Select/SelectFilledLabel.vue';
+import SelectFilledLabelRaw       from '@/Forms/Select/SelectFilledLabel.vue?raw';
+import SelectFilledLabelSize      from '@/Forms/Select/SelectFilledLabelSize.vue';
+import SelectFilledLabelSizeRaw   from '@/Forms/Select/SelectFilledLabelSize.vue?raw';
+import SelectFloatingLabel        from '@/Forms/Select/SelectFloatingLabel.vue';
+import SelectFloatingLabelRaw     from '@/Forms/Select/SelectFloatingLabel.vue?raw';
+import SelectFloatingLabelSize    from '@/Forms/Select/SelectFloatingLabelSize.vue';
+import SelectFloatingLabelSizeRaw from '@/Forms/Select/SelectFloatingLabelSize.vue?raw';
 
 interface Props {
     section: Default | 'floating-label' | 'filled-label' | 'default-size' | 'floating-label-size' | 'filled-label-size';

@@ -11,11 +11,11 @@
 </template>
 
 <script setup lang="ts">
-import CodeSnippet       from '../../.vitepress/theme/Components/CodeSnippet.vue';
-import DefaultNavbar     from './DefaultNavbar.vue';
-import DefaultNavbarRaw  from './DefaultNavbar.vue?raw';
-import NavbarWithLogo    from './NavbarWithLogo.vue';
-import NavbarWithLogoRaw from './NavbarWithLogo.vue?raw';
+import CodeSnippet       from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import DefaultNavbar     from '@/Navigations/Navbar/DefaultNavbar.vue';
+import DefaultNavbarRaw  from '@/Navigations/Navbar/DefaultNavbar.vue?raw';
+import NavbarWithLogo    from '@/Navigations/Navbar/NavbarWithLogo.vue';
+import NavbarWithLogoRaw from '@/Navigations/Navbar/NavbarWithLogo.vue?raw';
 
 interface Props {
     section: 'default' | 'with-logo';

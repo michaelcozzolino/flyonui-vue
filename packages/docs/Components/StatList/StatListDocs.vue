@@ -31,19 +31,19 @@
 </template>
 
 <script setup lang="ts">
-import CodeSnippet                  from '../../.vitepress/theme/Components/CodeSnippet.vue';
-import BorderedStatList             from './BorderedStatList.vue';
-import BorderedStatListRaw          from './BorderedStatList.vue?raw';
-import CenteredItemStatList         from './CenteredItemStatList.vue';
-import CenteredItemStatListRaw      from './CenteredItemStatList.vue?raw';
-import DefaultStatList              from './DefaultStatList.vue';
-import DefaultStatListRaw           from './DefaultStatList.vue?raw';
-import StatListWithAvatar           from './StatListWithAvatar.vue';
-import StatListWithAvatarRaw        from './StatListWithAvatar.vue?raw';
-import StatListWithIconsAndImage    from './StatListWithIconsAndImage.vue';
-import StatListWithIconsAndImageRaw from './StatListWithIconsAndImage.vue?raw';
-import VerticalStatList             from './VerticalStatList.vue';
-import VerticalStatListRaw          from './VerticalStatList.vue?raw';
+import CodeSnippet                  from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import BorderedStatList             from '@/Components/StatList/BorderedStatList.vue';
+import BorderedStatListRaw          from '@/Components/StatList/BorderedStatList.vue?raw';
+import CenteredItemStatList         from '@/Components/StatList/CenteredItemStatList.vue';
+import CenteredItemStatListRaw      from '@/Components/StatList/CenteredItemStatList.vue?raw';
+import DefaultStatList              from '@/Components/StatList/DefaultStatList.vue';
+import DefaultStatListRaw           from '@/Components/StatList/DefaultStatList.vue?raw';
+import StatListWithAvatar           from '@/Components/StatList/StatListWithAvatar.vue';
+import StatListWithAvatarRaw        from '@/Components/StatList/StatListWithAvatar.vue?raw';
+import StatListWithIconsAndImage    from '@/Components/StatList/StatListWithIconsAndImage.vue';
+import StatListWithIconsAndImageRaw from '@/Components/StatList/StatListWithIconsAndImage.vue?raw';
+import VerticalStatList             from '@/Components/StatList/VerticalStatList.vue';
+import VerticalStatListRaw          from '@/Components/StatList/VerticalStatList.vue?raw';
 
 interface Props {
     section: 'default' | 'with-avatar' | 'with-icons-and-image' | 'centered-item' | 'vertical' | 'bordered';

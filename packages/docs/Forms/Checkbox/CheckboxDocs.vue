@@ -47,25 +47,25 @@
 
 <script setup lang="ts">
 import type { Default }           from 'flyonui-vue/dist/src/Shared/Types/Variants';
-import CodeSnippet                from '../../.vitepress/theme/Components/CodeSnippet.vue';
-import CheckboxColor              from './CheckboxColor.vue';
-import CheckboxColorRaw           from './CheckboxColor.vue?raw';
-import CheckboxSize               from './CheckboxSize.vue';
-import CheckboxSizeRaw            from './CheckboxSize.vue?raw';
-import CheckboxState              from './CheckboxState.vue';
-import CheckboxStateRaw           from './CheckboxState.vue?raw';
-import CheckboxValidationState    from './CheckboxValidationState.vue';
-import CheckboxValidationStateRaw from './CheckboxValidationState.vue?raw';
-import CheckboxWithCustomColor    from './CheckboxWithCustomColor.vue';
-import CheckboxWithCustomColorRaw from './CheckboxWithCustomColor.vue?raw';
-import CheckboxWithHelperText     from './CheckboxWithHelperText.vue';
-import CheckboxWithHelperTextRaw  from './CheckboxWithHelperText.vue?raw';
-import DefaultCheckbox            from './DefaultCheckbox.vue';
-import DefaultCheckboxRaw         from './DefaultCheckbox.vue?raw';
-import InlineCheckboxGroup        from './InlineCheckboxGroup.vue';
-import InlineCheckboxGroupRaw     from './InlineCheckboxGroup.vue?raw';
-import VerticalCheckboxGroup      from './VerticalCheckboxGroup.vue';
-import VerticalCheckboxGroupRaw   from './VerticalCheckboxGroup.vue?raw';
+import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CheckboxColor              from '@/Forms/Checkbox/CheckboxColor.vue';
+import CheckboxColorRaw           from '@/Forms/Checkbox/CheckboxColor.vue?raw';
+import CheckboxSize               from '@/Forms/Checkbox/CheckboxSize.vue';
+import CheckboxSizeRaw            from '@/Forms/Checkbox/CheckboxSize.vue?raw';
+import CheckboxState              from '@/Forms/Checkbox/CheckboxState.vue';
+import CheckboxStateRaw           from '@/Forms/Checkbox/CheckboxState.vue?raw';
+import CheckboxValidationState    from '@/Forms/Checkbox/CheckboxValidationState.vue';
+import CheckboxValidationStateRaw from '@/Forms/Checkbox/CheckboxValidationState.vue?raw';
+import CheckboxWithCustomColor    from '@/Forms/Checkbox/CheckboxWithCustomColor.vue';
+import CheckboxWithCustomColorRaw from '@/Forms/Checkbox/CheckboxWithCustomColor.vue?raw';
+import CheckboxWithHelperText     from '@/Forms/Checkbox/CheckboxWithHelperText.vue';
+import CheckboxWithHelperTextRaw  from '@/Forms/Checkbox/CheckboxWithHelperText.vue?raw';
+import DefaultCheckbox            from '@/Forms/Checkbox/DefaultCheckbox.vue';
+import DefaultCheckboxRaw         from '@/Forms/Checkbox/DefaultCheckbox.vue?raw';
+import InlineCheckboxGroup        from '@/Forms/Checkbox/InlineCheckboxGroup.vue';
+import InlineCheckboxGroupRaw     from '@/Forms/Checkbox/InlineCheckboxGroup.vue?raw';
+import VerticalCheckboxGroup      from '@/Forms/Checkbox/VerticalCheckboxGroup.vue';
+import VerticalCheckboxGroupRaw   from '@/Forms/Checkbox/VerticalCheckboxGroup.vue?raw';
 
 interface Props {
     section: Default | 'with-helper-text' | 'color' | 'with-custom-color' | 'size' | 'validation-state' | 'state' | 'inline-group' | 'vertical-group';

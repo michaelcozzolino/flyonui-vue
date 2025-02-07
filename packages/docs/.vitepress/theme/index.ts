@@ -1,22 +1,21 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
+import BadgeDocs                                from '@/Components/Badge/BadgeDocs.vue';
+import ButtonDocs                               from '@/Components/Button/ButtonDocs.vue';
+import ListGroupDocs                            from '@/Components/ListGroup/ListGroupDocs.vue';
+import LoadingDocs                              from '@/Components/Loading/LoadingDocs.vue';
+import StatListDocs                             from '@/Components/StatList/StatListDocs.vue';
+import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
+import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
+import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
+import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
+import Playground                               from '@/Playground/Playground.vue';
 import { FoSelectThemeController }              from 'flyonui-vue';
 import DefaultTheme                             from 'vitepress/theme';
-import BadgeDocs                                from '../../Components/Badge/BadgeDocs.vue';
-import ButtonDocs                               from '../../Components/Button/ButtonDocs.vue';
-import ListGroupDocs                            from '../../Components/ListGroup/ListGroupDocs.vue';
-import LoadingDocs                              from '../../Components/Loading/LoadingDocs.vue';
-import StatListDocs                             from '../../Components/StatList/StatListDocs.vue';
-import CheckboxDocs                             from '../../Forms/Checkbox/CheckboxDocs.vue';
-import SelectDocs                               from '../../Forms/Select/SelectDocs.vue';
-import MenuDocs                                 from '../../Navigations/Menu/MenuDocs.vue';
-import NavbarDocs                               from '../../Navigations/Navbar/NavbarDocs.vue';
-import Playground                               from '../../Playground/Playground.vue';
 import './tailwind.css';
 import './style.scss';
 import 'flyonui-vue/index.css';
 
-// todo: imports could use aliases
 export default {
     extends: DefaultTheme,
     enhanceApp({ app }) {
