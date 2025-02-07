@@ -5,6 +5,7 @@ import DefaultTheme                             from 'vitepress/theme';
 import BadgeDocs                                from '../../Components/Badge/BadgeDocs.vue';
 import ButtonDocs                               from '../../Components/Button/ButtonDocs.vue';
 import ListGroupDocs                            from '../../Components/ListGroup/ListGroupDocs.vue';
+import LoadingDocs                              from '../../Components/Loading/LoadingDocs.vue';
 import StatListDocs                             from '../../Components/StatList/StatListDocs.vue';
 import CheckboxDocs                             from '../../Forms/Checkbox/CheckboxDocs.vue';
 import SelectDocs                               from '../../Forms/Select/SelectDocs.vue';
@@ -23,6 +24,7 @@ export default {
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
+            { name: 'LoadingDocs', instance: LoadingDocs },
             { name: 'ListGroupDocs', instance: ListGroupDocs },
             { name: 'MenuDocs', instance: MenuDocs },
             { name: 'NavbarDocs', instance: NavbarDocs },
