@@ -11,16 +11,16 @@
 <script setup lang="ts">
 import type { ButtonProps }      from '@/Components/Button/Types/Button';
 import type { PositionableIcon } from '@/Components/Icon/Types/Icon';
-import type { LoadingIconProps } from '@/Shared/Types/Loading';
+import type { LoadingProps }     from '@/Components/Loading/Types/Loading';
 import FoButton                  from '@/Components/Button/UI/FoButton.vue';
-import FoLoadingIcon             from '@/Components/Icon/UI/FoLoadingIcon.vue';
+import FoLoading                 from '@/Components/Loading/UI/FoLoading.vue';
 import { computed, h }           from 'vue';
 
 interface Props extends Omit<ButtonProps, 'icon'> {
     isLoading?: boolean;
     icon?: {
         position?: 'left' | 'right';
-    } & LoadingIconProps;
+    } & LoadingProps;
     text?: {
         loading:    string;
         notLoading: string;
@@ -38,15 +38,17 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const loadingIcon = computed((): PositionableIcon => {
-    const icon = props.isLoading ? h(FoLoadingIcon, { animation: props.icon.animation }) : '';
+    const { position, ...loadingProps } = props.icon;
 
-    if (props.icon.position === undefined) {
+    const icon = props.isLoading ? h(FoLoading, loadingProps) : '';
+
+    if (position === undefined) {
         return { left: icon };
     }
 
     return {
-        left:  props.icon.position === 'left' ? icon : undefined,
-        right: props.icon.position === 'right' ? icon : undefined,
+        left:  position === 'left' ? icon : undefined,
+        right: position === 'right' ? icon : undefined,
     };
 });
 </script>

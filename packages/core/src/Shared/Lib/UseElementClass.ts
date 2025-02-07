@@ -55,6 +55,17 @@ export function useColor(
                 warning:   'checkbox-warning',
                 error:     'checkbox-error',
             },
+            loading: {
+                default:   '',
+                neutral:   'text-neutral',
+                primary:   'text-primary',
+                secondary: 'text-secondary',
+                accent:    'text-accent',
+                info:      'text-info',
+                success:   'text-success',
+                warning:   'text-warning',
+                error:     'text-error',
+            },
         },
         color,
     );
@@ -144,6 +155,13 @@ export function useSize(
                 small:      'text-sm',
                 large:      'text-lg',
                 extraLarge: 'text-xl',
+            },
+            loading: {
+                default:    '',
+                extraSmall: 'loading-xs',
+                small:      'loading-sm',
+                large:      'loading-lg',
+                extraLarge: '',
             },
             menu: {
                 default:    '',
