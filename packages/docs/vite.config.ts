@@ -5,6 +5,10 @@ export default defineConfig({
     resolve: {
         alias: [
             {
+                find:        '@',
+                replacement: resolve(__dirname, '.'),
+            },
+            {
                 find:        /^.*\/VPNavBar\.vue$/,
                 replacement: resolve(__dirname, '.vitepress/theme/Components/Navbar.vue'),
             },

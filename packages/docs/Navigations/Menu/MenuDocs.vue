@@ -26,17 +26,17 @@
 </template>
 
 <script setup lang="ts">
-import CodeSnippet        from '../../.vitepress/theme/Components/CodeSnippet.vue';
-import DefaultMenu        from './DefaultMenu.vue';
-import DefaultMenuRaw     from './DefaultMenu.vue?raw';
-import IconMenu           from './IconMenu.vue';
-import IconMenuRaw        from './IconMenu.vue?raw';
-import MenuOrientation    from './MenuOrientation.vue';
-import MenuOrientationRaw from './MenuOrientation.vue?raw';
-import MenuWithTooltip    from './MenuWithTooltip.vue';
-import MenuWithTooltipRaw from './MenuWithTooltip.vue?raw';
-import OnlyIconMenu       from './OnlyIconMenu.vue';
-import OnlyIconMenuRaw    from './OnlyIconMenu.vue?raw';
+import CodeSnippet        from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import DefaultMenu        from '@/Navigations/Menu/DefaultMenu.vue';
+import DefaultMenuRaw     from '@/Navigations/Menu/DefaultMenu.vue?raw';
+import IconMenu           from '@/Navigations/Menu/IconMenu.vue';
+import IconMenuRaw        from '@/Navigations/Menu/IconMenu.vue?raw';
+import MenuOrientation    from '@/Navigations/Menu/MenuOrientation.vue';
+import MenuOrientationRaw from '@/Navigations/Menu/MenuOrientation.vue?raw';
+import MenuWithTooltip    from '@/Navigations/Menu/MenuWithTooltip.vue';
+import MenuWithTooltipRaw from '@/Navigations/Menu/MenuWithTooltip.vue?raw';
+import OnlyIconMenu       from '@/Navigations/Menu/OnlyIconMenu.vue';
+import OnlyIconMenuRaw    from '@/Navigations/Menu/OnlyIconMenu.vue?raw';
 
 interface Props {
     section: 'default' | 'icon' | 'only-icon' | 'orientation' | 'with-tooltip';

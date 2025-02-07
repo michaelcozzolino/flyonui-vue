@@ -42,23 +42,23 @@
 </template>
 
 <script setup lang="ts">
-import CodeSnippet          from '../../.vitepress/theme/Components/CodeSnippet.vue';
-import BadgeSize            from './BadgeSize.vue';
-import BadgeSizeRaw         from './BadgeSize.vue?raw';
-import DotStyleBadge        from './DotStyleBadge.vue';
-import DotStyleBadgeRaw     from './DotStyleBadge.vue?raw';
-import IconBadge            from './IconBadge.vue';
-import IconBadgeRaw         from './IconBadge.vue?raw';
-import IconPositionBadge    from './IconPositionBadge.vue';
-import IconPositionBadgeRaw from './IconPositionBadge.vue?raw';
-import OutlineBadge         from './OutlineBadge.vue';
-import OutlineBadgeRaw      from './OutlineBadge.vue?raw';
-import PilledBadge          from './PilledBadge.vue';
-import PilledBadgeRaw       from './PilledBadge.vue?raw';
-import SoftBadge            from './SoftBadge.vue';
-import SoftBadgeRaw         from './SoftBadge.vue?raw';
-import SolidBadge           from './SolidBadge.vue';
-import SolidBadgeRaw        from './SolidBadge.vue?raw';
+import CodeSnippet          from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import BadgeSize            from '@/Components/Badge/BadgeSize.vue';
+import BadgeSizeRaw         from '@/Components/Badge/BadgeSize.vue?raw';
+import DotStyleBadge        from '@/Components/Badge/DotStyleBadge.vue';
+import DotStyleBadgeRaw     from '@/Components/Badge/DotStyleBadge.vue?raw';
+import IconBadge            from '@/Components/Badge/IconBadge.vue';
+import IconBadgeRaw         from '@/Components/Badge/IconBadge.vue?raw';
+import IconPositionBadge    from '@/Components/Badge/IconPositionBadge.vue';
+import IconPositionBadgeRaw from '@/Components/Badge/IconPositionBadge.vue?raw';
+import OutlineBadge         from '@/Components/Badge/OutlineBadge.vue';
+import OutlineBadgeRaw      from '@/Components/Badge/OutlineBadge.vue?raw';
+import PilledBadge          from '@/Components/Badge/PilledBadge.vue';
+import PilledBadgeRaw       from '@/Components/Badge/PilledBadge.vue?raw';
+import SoftBadge            from '@/Components/Badge/SoftBadge.vue';
+import SoftBadgeRaw         from '@/Components/Badge/SoftBadge.vue?raw';
+import SolidBadge           from '@/Components/Badge/SolidBadge.vue';
+import SolidBadgeRaw        from '@/Components/Badge/SolidBadge.vue?raw';
 
 interface Props {
     section: 'solid' | 'soft' | 'outline' | 'pilled' | 'size' | 'dot-style' | 'icon' | 'icon-position';
