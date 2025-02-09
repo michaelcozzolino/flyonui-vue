@@ -9,8 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import type { BadgeProps } from '@/Components/Badge/Types/Badge';
-import FoBadge             from '@/Components/Badge/UI/FoBadge.vue';
+import { type BadgeProps, FoBadge } from '@/Components/Badge';
 
 const props = defineProps<BadgeProps>();
 </script>

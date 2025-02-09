@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import type { BadgeProps }                        from '@/Components/Badge/Types/Badge';
-import FoIcon                                     from '@/Components/Icon/UI/FoIcon.vue';
+import { FoIcon }                                 from '@/Components/Icon';
 import { isTextAllowedForShape }                  from '@/Shared/Lib/IsTextAllowedForShape';
 import { useColor, usePreset, useShape, useSize } from '@/Shared/Lib/UseElementClass';
 

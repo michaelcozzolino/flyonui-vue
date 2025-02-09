@@ -22,8 +22,8 @@
 <script setup lang="ts">
 import type { Stat }             from '@/Components/StatList/Types/StatList';
 import type { Orientation }      from '@/Shared/Types/Variants';
+import { FoStatListItem }        from '@/Components/StatList';
 import { useTemplateIdentifier } from '@/Components/StatList/Lib/UseTemplateIdentifier';
-import FoStatListItem            from '@/Components/StatList/UI/FoStatListItem.vue';
 import { useBorder }             from '@/Shared/Lib/UseClass';
 import { useOrientation }        from '@/Shared/Lib/UseElementClass';
 

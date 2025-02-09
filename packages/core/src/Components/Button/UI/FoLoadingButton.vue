@@ -12,8 +12,8 @@
 import type { ButtonProps }      from '@/Components/Button/Types/Button';
 import type { PositionableIcon } from '@/Components/Icon/Types/Icon';
 import type { LoadingProps }     from '@/Components/Loading/Types/Loading';
-import FoButton                  from '@/Components/Button/UI/FoButton.vue';
-import FoLoading                 from '@/Components/Loading/UI/FoLoading.vue';
+import { FoButton }              from '@/Components/Button';
+import { FoLoading }             from '@/Components/Loading';
 import { computed, h }           from 'vue';
 
 interface Props extends Omit<ButtonProps, 'icon'> {

@@ -38,11 +38,10 @@
 </template>
 
 <script setup lang="ts">
-import type { NavbarLink }          from '@/Components/Navbar/Types/Navbar';
-import FoNavbarHamburgerMenuToggler from '@/Components/Navbar/UI/FoNavbarHamburgerMenuToggler.vue';
-import FoNavbarLinkList             from '@/Components/Navbar/UI/FoNavbarLinkList.vue';
-import { useRoundedBox }            from '@/Shared/Lib/UseClass';
-import { ref }                      from 'vue';
+import type { NavbarLink }                                from '@/Components/Navbar/Types/Navbar';
+import { FoNavbarHamburgerMenuToggler, FoNavbarLinkList } from '@/Components/Navbar';
+import { useRoundedBox }                                  from '@/Shared/Lib/UseClass';
+import { ref }                                            from 'vue';
 
 interface Props {
     links?:     NavbarLink[];
@@ -56,5 +55,5 @@ const props = withDefaults(defineProps<Props>(), {
     isRounded: false,
 });
 
-const isCollapsed   = ref<boolean>(true);
+const isCollapsed = ref<boolean>(true);
 </script>

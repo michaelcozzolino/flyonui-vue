@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Default }           from 'flyonui-vue/dist/Shared/Types/Variants';
+import type { Default }           from 'flyonui-vue';
 import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet.vue';
 import DefaultSelect              from '@/Forms/Select/DefaultSelect.vue';
 import DefaultSelectRaw           from '@/Forms/Select/DefaultSelect.vue?raw';

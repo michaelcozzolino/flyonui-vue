@@ -19,11 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import type { MenuItem }           from '@/Components/Menu/Types/Menu';
-import type { Orientation, Size }  from '@/Shared/Types/Variants';
-import FoMenuItem                  from '@/Components/Menu/UI/FoMenuItem.vue';
-import FoMenuTitle                 from '@/Components/Menu/UI/FoMenuTitle.vue';
-import { useOrientation, useSize } from '@/Shared/Lib/UseElementClass';
+import type { MenuItem }                   from '@/Components/Menu/Types/Menu';
+import type { Orientation, Size }          from '@/Shared/Types/Variants';
+import { FoMenu, FoMenuItem, FoMenuTitle } from '@/Components/Menu';
+import { useOrientation, useSize }         from '@/Shared/Lib/UseElementClass';
 
 interface Props {
     items:        MenuItem[];

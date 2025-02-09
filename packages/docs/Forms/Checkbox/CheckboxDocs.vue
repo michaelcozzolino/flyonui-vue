@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Default }           from 'flyonui-vue/dist/src/Shared/Types/Variants';
+import type { Default }           from 'flyonui-vue';
 import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet.vue';
 import CheckboxColor              from '@/Forms/Checkbox/CheckboxColor.vue';
 import CheckboxColorRaw           from '@/Forms/Checkbox/CheckboxColor.vue?raw';
