@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         vue(),
         visualizer({
-            filename: 'build-size-visualizer.html',
+            filename: '../docs/public/build-size-visualizer.html',
         }),
     ],
     resolve: {

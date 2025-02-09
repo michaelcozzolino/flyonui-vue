@@ -9,11 +9,10 @@
         "node": ">=18.0.0"
     },
     "scripts": {
-        "dev": "yarn concurrently \"yarn workspace flyonui-vue dev\" \"yarn workspace flyonui-vue-docs dev\" \"yarn move:build-size-visualizer\"",
-        "build": "yarn workspaces foreach -Apt run build && yarn move:build-size-visualizer",
+        "dev": "yarn concurrently \"yarn workspace flyonui-vue dev\" \"yarn workspace flyonui-vue-docs dev\"",
+        "build": "yarn workspaces foreach -Apt run build",
         "test": "yarn workspaces foreach -Apt run test",
-        "audit": "yarn npm audit --all",
-        "move:build-size-visualizer": "mv packages/core/build-size-visualizer.html packages/docs/public/build-size-visualizer.html"
+        "audit": "yarn npm audit --all"
     },
     "devDependencies": {
         "concurrently": "^9.1.2"
