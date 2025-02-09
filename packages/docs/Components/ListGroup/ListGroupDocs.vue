@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Default }           from 'flyonui-vue/dist/src/Shared/Types/Variants';
+import type { Default }           from 'flyonui-vue';
 import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet.vue';
 import DefaultListGroup           from '@/Components/ListGroup/DefaultListGroup.vue';
 import DefaultListGroupRaw        from '@/Components/ListGroup/DefaultListGroup.vue?raw';

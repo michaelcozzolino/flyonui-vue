@@ -5,9 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import type { MenuItem } from 'flyonui-vue/dist/Components/Menu/Types/Menu';
-import { FoMenu }        from 'flyonui-vue';
-import { ref }           from 'vue';
+import { FoMenu, type MenuItem } from 'flyonui-vue';
+import { ref }                   from 'vue';
 
 const items = ref<MenuItem[]>([
     {

@@ -43,18 +43,13 @@
 
 <script setup lang="ts">
 import type { LabelType }        from '@/Components/Label/Types/Label';
+import type { Option }           from '@/Components/Select';
 import type { Size }             from '@/Shared/Types/Variants';
+import { FoLabel }               from '@/Components/Label';
 import { useLabelType }          from '@/Components/Label/Lib/UseLabelType';
-import FoLabel                   from '@/Components/Label/UI/FoLabel.vue';
 import { useSize }               from '@/Shared/Lib/UseElementClass';
 import { nanoid }                from 'nanoid';
 import { computed, watchEffect } from 'vue';
-
-export interface Option {
-    id:          number;
-    text:        string;
-    isDisabled?: boolean;
-}
 
 interface Props {
     label: {

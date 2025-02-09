@@ -8,7 +8,7 @@
 import type { ButtonProps } from '@/Components/Button/Types/Button';
 import type { IconType }    from '@/Components/Icon/Types/Icon';
 import type { Shape }       from '@/Shared/Types/Variants';
-import FoButton             from '@/Components/Button/UI/FoButton.vue';
+import { FoButton }         from '@/Components/Button';
 
 interface Props extends Omit<ButtonProps, 'icon'> {
     icon:  IconType;

@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import FoIcon from '@/Components/Icon/UI/FoIcon.vue';
+import { FoIcon } from '@/Components/Icon';
 
 const isCollapsed = defineModel<boolean>({ required: true });
 </script>

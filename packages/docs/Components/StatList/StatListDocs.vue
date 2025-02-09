@@ -31,6 +31,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Default }             from 'flyonui-vue';
 import CodeSnippet                  from '@/.vitepress/theme/Components/CodeSnippet.vue';
 import BorderedStatList             from '@/Components/StatList/BorderedStatList.vue';
 import BorderedStatListRaw          from '@/Components/StatList/BorderedStatList.vue?raw';
@@ -46,7 +47,7 @@ import VerticalStatList             from '@/Components/StatList/VerticalStatList
 import VerticalStatListRaw          from '@/Components/StatList/VerticalStatList.vue?raw';
 
 interface Props {
-    section: 'default' | 'with-avatar' | 'with-icons-and-image' | 'centered-item' | 'vertical' | 'bordered';
+    section: Default | 'with-avatar' | 'with-icons-and-image' | 'centered-item' | 'vertical' | 'bordered';
 }
 
 defineProps<Props>();

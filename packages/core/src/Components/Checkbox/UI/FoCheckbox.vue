@@ -44,7 +44,7 @@
 <script lang="ts" setup>
 import type { CheckboxProps }                                      from '@/Components/Checkbox/Types/Checkbox';
 import { isInCheckboxGroupInjectionKey }                           from '@/Components/Checkbox/Lib/InjectionKeys';
-import FoLabel                                                     from '@/Components/Label/UI/FoLabel.vue';
+import { FoLabel }                                                 from '@/Components/Label';
 import { useValidity }                                             from '@/Shared/Lib/UseClass';
 import { useColor, useSize }                                       from '@/Shared/Lib/UseElementClass';
 import { availableColors, type Color }                             from '@/Shared/Types/Variants';

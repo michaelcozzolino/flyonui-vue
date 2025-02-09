@@ -33,7 +33,7 @@
 
 <script setup lang="ts">
 import type { MenuItem }    from '@/Components/Menu/Types/Menu';
-import FoIcon               from '@/Components/Icon/UI/FoIcon.vue';
+import { FoIcon }           from '@/Components/Icon';
 import { ref, watchEffect } from 'vue';
 
 interface Props {

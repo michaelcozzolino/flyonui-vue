@@ -16,19 +16,18 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps }      from '@/Components/Button/Types/Button';
-import type { IconType }         from '@/Components/Icon/Types/Icon';
-import type { Preset }           from '@/Shared/Types/Variants';
-import FoButton                  from '@/Components/Button/UI/FoButton.vue';
-import FoIconButton              from '@/Components/Button/UI/FoIconButton.vue';
-import { isTextAllowedForShape } from '@/Shared/Lib/IsTextAllowedForShape';
-import { computed }              from 'vue';
+import type { ButtonProps }        from '@/Components/Button/Types/Button';
+import type { IconType }           from '@/Components/Icon/Types/Icon';
+import type { Preset }             from '@/Shared/Types/Variants';
+import { FoButton, FoIconButton  } from '@/Components/Button';
+import { isTextAllowedForShape }   from '@/Shared/Lib/IsTextAllowedForShape';
+import { computed }                from 'vue';
 
 type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
 
 interface Props extends Omit<ButtonProps, 'preset'> {
-    social: Social;
-    preset: Extract<Preset, 'default' | 'soft' | 'outline'>;
+    social:  Social;
+    preset?: Extract<Preset, 'default' | 'soft' | 'outline'>;
 }
 
 const props = withDefaults(defineProps<Props>(), {
