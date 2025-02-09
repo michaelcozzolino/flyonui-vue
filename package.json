@@ -12,7 +12,6 @@
         "build": "yarn workspaces foreach -Apt run build",
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
-        "type-check": "yarn workspaces foreach -Apt run type-check",
         "audit": "yarn npm audit --all"
     },
     "devDependencies": {
