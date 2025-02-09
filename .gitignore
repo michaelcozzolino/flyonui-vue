@@ -65,6 +65,7 @@ jspm_packages/
 .env.test
 
 packages/docs/.vitepress/cache
+packages/docs/public/build-size-visualizer.html
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
