@@ -1,5 +1,6 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
+import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/Lib/VueCodeHighlighter';
 import BadgeDocs                                from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                               from '@/Components/Button/ButtonDocs.vue';
 import ListGroupDocs                            from '@/Components/ListGroup/ListGroupDocs.vue';
@@ -13,7 +14,6 @@ import NavbarDocs                               from '@/Navigations/Navbar/Navba
 import Playground                               from '@/Playground/Playground.vue';
 import { FoSelectThemeController }              from 'flyonui-vue';
 import DefaultTheme                             from 'vitepress/theme';
-import { VueCodeHighlighter }                   from 'vue-code-highlighter';
 import './tailwind.css';
 import './style.scss';
 import 'flyonui-vue/index.css';
