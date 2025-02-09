@@ -1,8 +1,7 @@
 {
     "private": true,
     "workspaces": [
-        "packages/core",
-        "packages/docs"
+        "packages/*"
     ],
     "packageManager": "yarn@4.6.0",
     "engines": {
@@ -11,10 +10,14 @@
     "scripts": {
         "dev": "yarn concurrently \"yarn workspace flyonui-vue dev\" \"yarn workspace flyonui-vue-docs dev\"",
         "build": "yarn workspaces foreach -Apt run build",
-        "test": "yarn workspaces foreach -Apt run test",
+        "test": "vitest run",
+        "test-coverage": "vitest run --coverage",
+        "type-check": "yarn workspaces foreach -Apt run type-check",
         "audit": "yarn npm audit --all"
     },
     "devDependencies": {
-        "concurrently": "^9.1.2"
+        "@vitest/coverage-v8": "^3.0.5",
+        "concurrently": "^9.1.2",
+        "vitest": "^3.0.5"
     }
 }
