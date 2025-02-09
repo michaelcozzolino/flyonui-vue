@@ -1,10 +1,11 @@
+import path    from 'node:path';
 import flyonui from 'flyonui';
 
 export default {
     content: [
         './.vitepress/**/*.{html,js,ts,vue}',
         './{Components,Forms,Navigations}/**/*.{html,js,ts,vue}',
-        '../../node_modules/flyonui-vue/**/*.{html,js,ts,vue}',
+        `${path.dirname(require.resolve('flyonui-vue'))}/**/*.{html,js,ts,vue}`,
     ],
     plugins: [
         flyonui,

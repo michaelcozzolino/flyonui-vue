@@ -55,7 +55,6 @@
         "@iconify/vue": "^4.2.0",
         "@types/node": "20.12.12",
         "@vitejs/plugin-vue": "^5.2.1",
-        "@vitest/coverage-v8": "1.6.0",
         "@vue/test-utils": "2.4.6",
         "@vue/tsconfig": "0.5.1",
         "concurrently": "^9.1.2",
@@ -67,7 +66,6 @@
         "tsc-alias": "1.8.10",
         "typescript": "5.4.5",
         "vite": "^6.0.7",
-        "vitest": "^3.0.5",
         "vue": "^3.5.13",
         "vue-router": "^4.5.0",
         "vue-tsc": "2.0.19"

@@ -16,10 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Component }   from 'vue';
-import { computed }         from 'vue';
-import * as CodeHighlighter from 'vue-code-highlighter';
-import 'vue-code-highlighter/dist/style.css';
+import type { Component }     from 'vue';
+import { VueCodeHighlighter } from '@/.vitepress/theme/Components/Lib/VueCodeHighlighter';
+import { computed }           from 'vue';
 
 interface Props {
     preview?: {
@@ -38,8 +37,6 @@ const props = withDefaults(defineProps<Props>(), {
         };
     },
 });
-
-const VueCodeHighlighter = CodeHighlighter.VueCodeHighlighter;
 
 const previewGridClass = computed(() => {
     const columns = props.preview.columns;

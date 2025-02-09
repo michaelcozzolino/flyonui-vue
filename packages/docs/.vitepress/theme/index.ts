@@ -1,5 +1,6 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
+import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/Lib/VueCodeHighlighter';
 import BadgeDocs                                from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                               from '@/Components/Button/ButtonDocs.vue';
 import ListGroupDocs                            from '@/Components/ListGroup/ListGroupDocs.vue';
@@ -16,6 +17,7 @@ import DefaultTheme                             from 'vitepress/theme';
 import './tailwind.css';
 import './style.scss';
 import 'flyonui-vue/index.css';
+import 'vue-code-highlighter/dist/style.css';
 
 export default {
     extends: DefaultTheme,
@@ -33,6 +35,7 @@ export default {
             { name: 'SelectThemeController', instance: FoSelectThemeController },
             { name: 'Playground', instance: Playground },
             { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
+            { name: 'VueCodeHighlighter', instance: VueCodeHighlighter },
         ]);
     },
 } satisfies Theme;
