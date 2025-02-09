@@ -28,8 +28,9 @@ export default defineConfig({
             external: ['@iconify/vue', 'vue', 'vue-router'],
             output:   {
                 globals: {
-                    'vue':        'Vue',
-                    'vue-router': 'VueRouter',
+                    '@iconify/vue': 'Iconify',
+                    'vue':          'Vue',
+                    'vue-router':   'VueRouter',
                 },
             },
         },
