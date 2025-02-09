@@ -13,9 +13,11 @@ import NavbarDocs                               from '@/Navigations/Navbar/Navba
 import Playground                               from '@/Playground/Playground.vue';
 import { FoSelectThemeController }              from 'flyonui-vue';
 import DefaultTheme                             from 'vitepress/theme';
+import { VueCodeHighlighter }                   from 'vue-code-highlighter';
 import './tailwind.css';
 import './style.scss';
 import 'flyonui-vue/index.css';
+import 'vue-code-highlighter/dist/style.css';
 
 export default {
     extends: DefaultTheme,
@@ -33,6 +35,7 @@ export default {
             { name: 'SelectThemeController', instance: FoSelectThemeController },
             { name: 'Playground', instance: Playground },
             { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
+            { name: 'VueCodeHighlighter', instance: VueCodeHighlighter },
         ]);
     },
 } satisfies Theme;

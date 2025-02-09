@@ -35,6 +35,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
             text:  'Getting Started',
             items: [
                 {
+                    base:  '/',
                     items: [
                         {
                             text: 'Quick Start',

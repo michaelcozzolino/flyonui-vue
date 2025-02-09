@@ -22,7 +22,6 @@
 
 ## Pilled buttons
 
-[//]: # (todo: shape can be tzpe Sahpe = Default | 'pilled')
 <ButtonDocs section="pilled" />
 
 ## Button states

@@ -19,7 +19,6 @@
 import type { Component }   from 'vue';
 import { computed }         from 'vue';
 import * as CodeHighlighter from 'vue-code-highlighter';
-import 'vue-code-highlighter/dist/style.css';
 
 interface Props {
     preview?: {
