@@ -5,6 +5,7 @@ import ButtonDocs                               from '@/Components/Button/Button
 import ListGroupDocs                            from '@/Components/ListGroup/ListGroupDocs.vue';
 import LoadingDocs                              from '@/Components/Loading/LoadingDocs.vue';
 import StatListDocs                             from '@/Components/StatList/StatListDocs.vue';
+import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
 import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
 import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
@@ -31,6 +32,7 @@ export default {
             { name: 'SelectDocs', instance: SelectDocs },
             { name: 'SelectThemeController', instance: FoSelectThemeController },
             { name: 'Playground', instance: Playground },
+            { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
         ]);
     },
 } satisfies Theme;

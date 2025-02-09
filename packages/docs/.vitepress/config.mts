@@ -94,5 +94,19 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                 },
             ],
         },
+        {
+            items: [
+                {
+                    text:  'Extra',
+                    base:  '/extra/',
+                    items: [
+                        {
+                            text: 'Build Size Visualizer',
+                            link: 'build-size-visualizer',
+                        },
+                    ],
+                },
+            ],
+        },
     ];
 }

@@ -1,0 +1,5 @@
+---
+aside: false
+---
+
+<BuildSizeVisualizer />
