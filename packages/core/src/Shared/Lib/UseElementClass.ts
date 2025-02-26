@@ -221,10 +221,15 @@ export function useState(
     return useElementClass<StatefulElementName, State>(
         elementName,
         {
-            btn: {
+            'btn': {
                 default:  '',
                 active:   'btn-active',
                 disabled: 'btn-disabled',
+            },
+            'menu-item': {
+                default:  '',
+                active:   'active',
+                disabled: 'disabled',
             },
         },
         state,

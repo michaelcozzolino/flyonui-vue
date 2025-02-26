@@ -42,14 +42,13 @@
 </template>
 
 <script setup lang="ts">
-import type { LabelType }        from '@/Components/Label/Types/Label';
-import type { Option }           from '@/Components/Select';
-import type { Size }             from '@/Shared/Types/Variants';
-import { FoLabel }               from '@/Components/Label';
-import { useLabelType }          from '@/Components/Label/Lib/UseLabelType';
-import { useSize }               from '@/Shared/Lib/UseElementClass';
-import { nanoid }                from 'nanoid';
-import { computed, watchEffect } from 'vue';
+import type { LabelType }               from '@/Components/Label/Types/Label';
+import type { Option }                  from '@/Components/Select';
+import type { Size }                    from '@/Shared/Types/Variants';
+import { FoLabel }                      from '@/Components/Label';
+import { useLabelType }                 from '@/Components/Label/Lib/UseLabelType';
+import { useSize }                      from '@/Shared/Lib/UseElementClass';
+import { computed, useId, watchEffect } from 'vue';
 
 interface Props {
     label: {
@@ -64,7 +63,7 @@ const props = withDefaults(defineProps<Props>(), {
     size: 'default',
 });
 
-const id = nanoid();
+const id = useId();
 
 const selectedOption = defineModel<Option | null>({ required: true });
 
