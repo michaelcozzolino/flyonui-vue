@@ -55,6 +55,17 @@ export function useColor(
                 warning:   'checkbox-warning',
                 error:     'checkbox-error',
             },
+            link: {
+                default:   '',
+                neutral:   'link-neutral',
+                primary:   'link-primary',
+                secondary: 'link-secondary',
+                accent:    'link-accent',
+                info:      'link-info',
+                success:   'link-success',
+                warning:   'link-warning',
+                error:     'link-error',
+            },
             loading: {
                 default:   '',
                 neutral:   'text-neutral',

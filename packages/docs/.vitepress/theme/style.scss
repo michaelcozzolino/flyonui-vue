@@ -44,12 +44,8 @@ textarea {
     @apply text-sm py-1.5 #{!important};
 }
 
-.link {
-    text-decoration-line: none !important;
-}
-
 .VPLink {
-    @apply hover:border-base-content/60 hover:text-base-content/90 text-base-content/80 #{!important};
+    @apply hover:border-base-content/60 hover:text-base-content/90 text-base-content/80 no-underline #{!important};
 }
 
 .VPMenu {
