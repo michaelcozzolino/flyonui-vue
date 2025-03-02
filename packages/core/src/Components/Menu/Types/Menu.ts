@@ -1,16 +1,21 @@
-import type { IconType }       from '@/Components/Icon/Types/Icon';
-import type { RouteRecordRaw } from 'vue-router';
+import type { IconType } from '@/Components/Icon/Types/Icon';
+// import type { To }                from '@/Components/Link';
+import type { Orientation, Size } from '@/Shared/Types';
+
+export interface MenuTextProps {
+    hideText?:      boolean;
+    textAsTooltip?: boolean;
+}
+
+export interface MenuProps extends MenuTextProps {
+    orientation?: Orientation;
+    size?:        Size;
+    isFlushed?:   boolean;
+}
 
 export interface MenuItem {
-    icon?:  IconType;
-    title?: string; // to be used
-    text: {
-        // todo: maybe these properties should not stay inside this object as having an hidden item and a non hidden one doesnt make so much sense
-        value:      string;
-        asTooltip?: boolean;
-        isHidden?:  boolean;
-    };
-    children?:   MenuItem[];
-    to:          RouteRecordRaw | string;
+    icon?:       IconType;
+    text:        string;
+    to?:         string; // todo: To
     isDisabled?: boolean;
 }

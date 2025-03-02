@@ -6,10 +6,12 @@
             >
                 <component :is="component" />
             </div>
-
-            <VueCodeHighlighter title="Vue"
-                                lang="js"
-                                :code="code"
+            <!-- todo: make another code snippet to fulfill all my needs -->
+            <VueCodeHighlighter v-for="codeSnippet in codeSnippets"
+                                :key="codeSnippet.title"
+                                :title="codeSnippet.title"
+                                :lang="codeSnippet.lang"
+                                :code="codeSnippet.code"
             />
         </section>
     </div>
@@ -25,7 +27,7 @@ interface Props {
         columns: number;
         rows:    number;
     };
-    code:      string;
+    code:      string | { title: string; code: string }[];
     component: Component;
 }
 
@@ -36,6 +38,14 @@ const props = withDefaults(defineProps<Props>(), {
             rows:    0,
         };
     },
+});
+
+const codeSnippets = computed(() => {
+    if (typeof props.code === 'string') {
+        return [{ title: 'Vue', code: props.code, lang: 'js' }];
+    }
+
+    return props.code.map(c => ({ ...c, lang: 'js' }));
 });
 
 const previewGridClass = computed(() => {

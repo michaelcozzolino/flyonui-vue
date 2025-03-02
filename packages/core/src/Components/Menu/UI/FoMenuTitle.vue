@@ -1,5 +1,17 @@
 <template>
-    <li class="menu-title">
+    <Component :is="isParent ? 'span' : 'li'"
+               class="menu-title"
+    >
         <slot />
-    </li>
+    </component>
 </template>
+
+<script setup lang="ts">
+interface Props {
+    isParent?: boolean;
+}
+
+withDefaults(defineProps<Props>(), {
+    isParent: false,
+});
+</script>

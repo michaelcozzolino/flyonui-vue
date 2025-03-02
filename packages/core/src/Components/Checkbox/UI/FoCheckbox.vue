@@ -42,14 +42,13 @@
 </template>
 
 <script lang="ts" setup>
-import type { CheckboxProps }                                      from '@/Components/Checkbox/Types/Checkbox';
-import { isInCheckboxGroupInjectionKey }                           from '@/Components/Checkbox/Lib/InjectionKeys';
-import { FoLabel }                                                 from '@/Components/Label';
-import { useValidity }                                             from '@/Shared/Lib/UseClass';
-import { useColor, useSize }                                       from '@/Shared/Lib/UseElementClass';
-import { availableColors, type Color }                             from '@/Shared/Types/Variants';
-import { nanoid }                                                  from 'nanoid';
-import { computed, inject, type MaybeRefOrGetter, toValue, watch } from 'vue';
+import type { CheckboxProps }                                             from '@/Components/Checkbox/Types/Checkbox';
+import { isInCheckboxGroupInjectionKey }                                  from '@/Components/Checkbox/Lib/InjectionKeys';
+import { FoLabel }                                                        from '@/Components/Label';
+import { useValidity }                                                    from '@/Shared/Lib/UseClass';
+import { useColor, useSize }                                              from '@/Shared/Lib/UseElementClass';
+import { availableColors, type Color }                                    from '@/Shared/Types/Variants';
+import { computed, inject, type MaybeRefOrGetter, toValue, useId, watch } from 'vue';
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
     color:      'default',
@@ -59,7 +58,7 @@ const props = withDefaults(defineProps<CheckboxProps>(), {
 });
 
 const elementName       = 'checkbox';
-const id                = nanoid();
+const id                = useId();
 const isInCheckboxGroup = inject(isInCheckboxGroupInjectionKey, false);
 
 const checked         = defineModel({ required: true, type: Boolean });

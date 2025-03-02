@@ -1,5 +1,5 @@
 <template>
-    <FoMenu hide-text>
+    <FoMenu>
         <FoMenuItem v-for="item in items"
                     :key="item.id"
                     :item="item"
@@ -20,15 +20,16 @@ const items = ref<(MenuItem & Identifiable)[]>([
     },
     {
         id:   2,
-        icon: 'tabler:user',
-        text: 'Account',
+        icon: 'tabler:settings',
+        text: 'Settings',
         to:   '#',
     },
     {
-        id:   3,
-        icon: 'tabler:message',
-        text: 'Notifications',
-        to:   '#',
+        id:         3,
+        icon:       'tabler:lock',
+        text:       'Security',
+        to:         '#',
+        isDisabled: true,
     },
 ]);
 </script>

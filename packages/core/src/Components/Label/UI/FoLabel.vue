@@ -12,6 +12,7 @@ import type { LabellableElementName } from '@/Shared/Types/Variants';
 import { computed }                   from 'vue';
 
 interface Props {
+    // todo: find another way to distinguish between id and forId
     id:       string;
     element?: LabellableElementName;
     type?:    LabelType;

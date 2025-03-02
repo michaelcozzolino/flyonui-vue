@@ -1,5 +1,26 @@
 <template>
-    <FoMenu hide-text>
+    <FoMenu size="extraSmall">
+        <FoMenuItem v-for="item in items"
+                    :key="item.id"
+                    :item="item"
+        />
+    </FoMenu>
+
+    <FoMenu size="small">
+        <FoMenuItem v-for="item in items"
+                    :key="item.id"
+                    :item="item"
+        />
+    </FoMenu>
+
+    <FoMenu>
+        <FoMenuItem v-for="item in items"
+                    :key="item.id"
+                    :item="item"
+        />
+    </FoMenu>
+
+    <FoMenu size="large">
         <FoMenuItem v-for="item in items"
                     :key="item.id"
                     :item="item"
@@ -14,19 +35,16 @@ import { ref }                                                  from 'vue';
 const items = ref<(MenuItem & Identifiable)[]>([
     {
         id:   1,
-        icon: 'tabler:home',
         text: 'Home',
         to:   '#',
     },
     {
         id:   2,
-        icon: 'tabler:user',
         text: 'Account',
         to:   '#',
     },
     {
         id:   3,
-        icon: 'tabler:message',
         text: 'Notifications',
         to:   '#',
     },

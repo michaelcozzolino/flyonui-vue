@@ -1,11 +1,11 @@
 export type Default = 'default';
 
-export type ElementName = 'badge' | 'btn' | 'checkbox' | 'icon' | 'input' | 'label' | 'list-group' | 'list-group-item' | 'loading' | 'menu' | 'select' | 'stat-list';
+export type ElementName = 'badge' | 'btn' | 'checkbox' | 'icon' | 'input' | 'label' | 'list-group' | 'list-group-item' | 'loading' | 'menu' | 'menu-item' | 'select' | 'stat-list';
 export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'loading'>;
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
 export type ShapeableElementName = Extract<ElementName, 'badge' | 'btn'>;
 export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'loading' | 'menu' | 'select'>;
-export type StatefulElementName = Extract<ElementName, 'btn'>;
+export type StatefulElementName = Extract<ElementName, 'btn' | 'menu-item'>;
 export type OrientableElementName = Extract<ElementName, 'checkbox' | 'list-group' | 'list-group-item' | 'menu' | 'stat-list'>;
 export type BorderableElementName = Extract<ElementName, 'stat-list'>;
 export type LabellableTypeElementName = Extract<ElementName, 'input' | 'select'>;
