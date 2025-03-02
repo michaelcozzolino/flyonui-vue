@@ -71,6 +71,7 @@ const disabledClass = useState(elementName, () => props.item.isDisabled ? 'disab
 const tooltipElement = useTemplateRef('tooltip');
 const showTooltip    = ref<boolean>(false);
 
+// todo: the position of the tooltip can be improved
 const { apply: applyTooltipAnimation } = useMotion(tooltipElement, {
     initial: {
         opacity: 0,
