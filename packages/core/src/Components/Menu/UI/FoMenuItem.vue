@@ -7,10 +7,8 @@
         @mouseover="showTooltip = true"
     >
         <template v-if="item.to !== undefined">
-            <!--  todo: everything here should be adjusted -->
-            <a active-class="active"
-               exact-active-class="active"
-               href="item.to"
+            <FoLink :to="item.to"
+                    :exact-active-class="activeClass"
             >
                 <FoIcon v-if="item.icon !== undefined"
                         :icon="item.icon"
@@ -24,7 +22,7 @@
 
                     <slot name="append" />
                 </template>
-            </a>
+            </FoLink>
 
             <span v-if="!menuTextProps.hideText && menuTextProps.textAsTooltip"
                   v-show="showTooltip"
@@ -47,6 +45,7 @@
 import type { MenuItem }                                             from '@/Components/Menu/Types/Menu';
 import type { ElementName }                                          from '@/Shared/Types';
 import { FoIcon }                                                    from '@/Components/Icon';
+import { FoLink }                                                    from '@/Components/Link';
 import { menuTextPropsInjectionKey }                                 from '@/Components/Menu/Lib/InjectionKeys';
 import { useState }                                                  from '@/Shared/Lib/UseElementClass';
 import { useMotion }                                                 from '@vueuse/motion';
@@ -65,7 +64,7 @@ const menuTextProps = inject(menuTextPropsInjectionKey, computed(() => ({
     textAsTooltip: false,
 })));
 
-// const activeClass   = useState(elementName, 'active');
+const activeClass   = useState(elementName, 'active');
 const disabledClass = useState(elementName, () => props.item.isDisabled ? 'disabled' : 'default');
 
 const tooltipElement = useTemplateRef('tooltip');

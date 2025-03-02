@@ -1,9 +1,9 @@
 <template>
-    <a v-if="isExternalLink(to)"
+    <a v-if="useATag(to)"
        v-bind="$attrs"
        :href="to"
-       target="_blank"
-       rel="noopener, noreferrer"
+       :target="isExternalLink(to) ? '_blank' : undefined"
+       :rel="isExternalLink(to) ? 'noopener, noreferrer' : undefined"
     >
         <slot />
     </a>
@@ -25,15 +25,22 @@
 
 <script setup lang="ts">
 import type { FoRouterLinkProps, To } from '@/Components/Link/Types/Link';
-import { RouterLink }                 from 'vue-router';
 
 defineOptions({
     inheritAttrs: false,
 });
 
-defineProps<FoRouterLinkProps>();
+const props = defineProps<FoRouterLinkProps>();
+
+function isStringLink(to: To): to is string {
+    return typeof to === 'string';
+}
 
 function isExternalLink(to: To): to is string {
-    return typeof to === 'string' && (to.startsWith('http') || to.startsWith('www'));
+    return isStringLink(to) && (to.startsWith('http') || to.startsWith('www.'));
+}
+
+function useATag(to: To): to is string {
+    return (isStringLink(to) && to.startsWith('#')) || isExternalLink(props.to);
 }
 </script>
