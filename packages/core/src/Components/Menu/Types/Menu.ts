@@ -1,5 +1,5 @@
-import type { IconType }          from '@/Components/Icon/Types/Icon';
-import type { To }                from '@/Components/Link';
+import type { IconType } from '@/Components/Icon/Types/Icon';
+// import type { To }                from '@/Components/Link';
 import type { Orientation, Size } from '@/Shared/Types';
 
 export interface MenuTextProps {
@@ -16,6 +16,6 @@ export interface MenuProps extends MenuTextProps {
 export interface MenuItem {
     icon?:       IconType;
     text:        string;
-    to?:         To;
+    to?:         string; // todo: To
     isDisabled?: boolean;
 }
