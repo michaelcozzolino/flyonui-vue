@@ -2,6 +2,7 @@ export * from '@/Components/Badge';
 export * from '@/Components/Button';
 export * from '@/Components/Checkbox';
 export * from '@/Components/Icon';
+export * from '@/Components/Link';
 export * from '@/Components/ListGroup';
 export * from '@/Components/Loading';
 export * from '@/Components/Menu';

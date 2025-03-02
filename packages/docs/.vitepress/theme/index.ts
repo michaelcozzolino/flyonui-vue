@@ -6,6 +6,7 @@ import ButtonDocs                               from '@/Components/Button/Button
 import ListGroupDocs                            from '@/Components/ListGroup/ListGroupDocs.vue';
 import LoadingDocs                              from '@/Components/Loading/LoadingDocs.vue';
 import StatListDocs                             from '@/Components/StatList/StatListDocs.vue';
+import LinkDocs                                 from '@/Content/Link/LinkDocs.vue';
 import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
 import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
@@ -23,6 +24,7 @@ export default {
     extends: DefaultTheme,
     enhanceApp({ app }) {
         registerDocComponents(app, [
+            { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
