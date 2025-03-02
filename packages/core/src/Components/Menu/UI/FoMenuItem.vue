@@ -1,51 +1,105 @@
 <template>
-    <li :class="[item.isDisabled && 'disabled', item.text.asTooltip && 'tooltip [--placement:right] hover:show']"
-        @mouseover="showTooltip = true"
+    <li :class="[
+            disabledClass,
+            menuTextProps.textAsTooltip && 'tooltip',
+        ]"
         @mouseleave="showTooltip = false"
+        @mouseover="showTooltip = true"
     >
-        <!--  todo: everything here should be adjusted -->
-        <a active-class="active"
-           exact-active-class="active"
-           href="item.to"
-           :class="item.text.asTooltip && 'tooltip-toggle'"
-        >
-            <FoIcon v-if="item.icon !== undefined"
-                    class="size-5"
-                    :icon="item.icon"
-            />
+        <template v-if="item.to !== undefined">
+            <!--  todo: everything here should be adjusted -->
+            <a active-class="active"
+               exact-active-class="active"
+               href="item.to"
+            >
+                <FoIcon v-if="item.icon !== undefined"
+                        :icon="item.icon"
+                        size="extraLarge"
+                />
 
-            <template v-if="!item.text.isHidden && !item.text.asTooltip">
-                {{ item.text.value }}
-            </template>
-        </a>
+                <template v-if="!menuTextProps.hideText && !menuTextProps.textAsTooltip">
+                    <slot name="prepend" />
 
-        <span v-if="item.text.asTooltip"
-              class="tooltip-shown:opacity-100 tooltip-shown:visible"
-              :class="!showTooltip && 'tooltip-content'"
-              role="tooltip"
-        >
-            <span class="tooltip-body">{{ item.text.value }}</span>
-        </span>
+                    {{ item.text }}
+
+                    <slot name="append" />
+                </template>
+            </a>
+
+            <span v-if="!menuTextProps.hideText && menuTextProps.textAsTooltip"
+                  v-show="showTooltip"
+                  ref="tooltip"
+                  class="tooltip-content"
+                  :class="[showTooltip && 'visible']"
+                  role="tooltip"
+            >
+                <span class="tooltip-body">
+                    {{ item.text }}
+                </span>
+            </span>
+        </template>
 
         <slot />
     </li>
 </template>
 
 <script setup lang="ts">
-import type { MenuItem }    from '@/Components/Menu/Types/Menu';
-import { FoIcon }           from '@/Components/Icon';
-import { ref, watchEffect } from 'vue';
+import type { MenuItem }                                             from '@/Components/Menu/Types/Menu';
+import type { ElementName }                                          from '@/Shared/Types';
+import { FoIcon }                                                    from '@/Components/Icon';
+import { menuTextPropsInjectionKey }                                 from '@/Components/Menu/Lib/InjectionKeys';
+import { useState }                                                  from '@/Shared/Lib/UseElementClass';
+import { useMotion }                                                 from '@vueuse/motion';
+import { computed, inject, ref, useTemplateRef, watch, watchEffect } from 'vue';
 
 interface Props {
     item: MenuItem;
 }
 
 const props = defineProps<Props>();
-const showTooltip = ref<boolean>(false);
+
+const elementName: ElementName = 'menu-item';
+
+const menuTextProps = inject(menuTextPropsInjectionKey, computed(() => ({
+    hideText:      false,
+    textAsTooltip: false,
+})));
+
+// const activeClass   = useState(elementName, 'active');
+const disabledClass = useState(elementName, () => props.item.isDisabled ? 'disabled' : 'default');
+
+const tooltipElement = useTemplateRef('tooltip');
+const showTooltip    = ref<boolean>(false);
+
+const { apply: applyTooltipAnimation } = useMotion(tooltipElement, {
+    initial: {
+        opacity: 0,
+        x:       30,
+        y:       -45,
+    },
+    hovered: {
+        opacity:    1,
+        x:          30,
+        y:          -45,
+        transition: {
+            duration: 0,
+        },
+    },
+});
+
+watch(showTooltip, (visible: boolean): void => {
+    if (visible) {
+        applyTooltipAnimation('hovered');
+
+        return;
+    }
+
+    applyTooltipAnimation('initial');
+});
 
 watchEffect(() => {
-    if (props.item.icon === undefined && props.item.text.isHidden) {
-        throw new Error('The text is hidden but the icon is not specified.');
+    if (props.item.icon === undefined && menuTextProps.value.hideText) {
+        throw new Error(`The text ${props.item.text} is hidden but the icon is not specified.`);
     }
 });
 </script>

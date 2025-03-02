@@ -1,41 +1,40 @@
 <template>
     <ul class="menu"
-        :class="[orientationClass, sizeClass]"
+        :class="[orientationClass, sizeClass, flushClass]"
     >
-        <FoMenuTitle v-if="title">
-            {{ title }}
-        </FoMenuTitle>
-
-        <FoMenuItem v-for="item in items"
-                    :key="item.to.toString()"
-                    :item="item"
-        >
-            <FoMenu v-if="item.children?.length"
-                    :items="item.children"
-                    :orientation="orientation"
-            />
-        </FoMenuItem>
+        <slot />
     </ul>
 </template>
 
 <script setup lang="ts">
-import type { MenuItem }                   from '@/Components/Menu/Types/Menu';
-import type { Orientation, Size }          from '@/Shared/Types/Variants';
-import { FoMenu, FoMenuItem, FoMenuTitle } from '@/Components/Menu';
-import { useOrientation, useSize }         from '@/Shared/Lib/UseElementClass';
+import type { MenuProps }            from '@/Components/Menu';
+import type { ElementName }          from '@/Shared/Types/Variants';
+import { menuTextPropsInjectionKey } from '@/Components/Menu/Lib/InjectionKeys';
+import { useClass }                  from '@/Shared/Lib/UseClass';
+import { useOrientation, useSize }   from '@/Shared/Lib/UseElementClass';
+import { computed, provide }         from 'vue';
 
-interface Props {
-    items:        MenuItem[];
-    orientation?: Orientation;
-    size?:        Size;
-    title?:       string;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-    orientation: 'vertical',
-    size:        'default',
+const props = withDefaults(defineProps<MenuProps>(), {
+    hideText:      false,
+    textAsTooltip: false,
+    orientation:   'vertical',
+    size:          'default',
+    isFlushed:     false,
 });
 
-const orientationClass = useOrientation('menu', () => props.orientation);
-const sizeClass        = useSize('menu', () => props.size);
+provide(menuTextPropsInjectionKey, computed(() => (
+    { hideText: props.hideText, textAsTooltip: props.textAsTooltip }
+)));
+
+const elementName: ElementName = 'menu';
+
+const [
+    orientationClass,
+    sizeClass,
+    flushClass,
+] = [
+    useOrientation(elementName, () => props.orientation),
+    useSize(elementName, () => props.size),
+    useClass(() => props.isFlushed, 'rounded-none p-0 [&_li>*]:rounded-none'),
+];
 </script>
