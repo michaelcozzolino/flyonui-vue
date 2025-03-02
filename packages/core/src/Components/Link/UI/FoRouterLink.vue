@@ -41,6 +41,6 @@ function isExternalLink(to: To): to is string {
 }
 
 function useATag(to: To): to is string {
-    return (isStringLink(to) && to.startsWith('#')) || isExternalLink(props.to);
+    return (isStringLink(to) && to.startsWith('#')) || isExternalLink(to);
 }
 </script>
