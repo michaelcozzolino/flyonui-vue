@@ -1,22 +1,30 @@
 <template>
-    <FoMenu :items="items" />
+    <FoMenu>
+        <FoMenuItem v-for="item in items"
+                    :key="item.id"
+                    :item="item"
+        />
+    </FoMenu>
 </template>
 
 <script setup lang="ts">
-import { FoMenu, type MenuItem } from 'flyonui-vue';
-import { ref }                   from 'vue';
+import { FoMenu, FoMenuItem, type Identifiable, type MenuItem } from 'flyonui-vue';
+import { ref }                                                  from 'vue';
 
-const items = ref<MenuItem[]>([
+const items = ref<(MenuItem & Identifiable)[] >([
     {
-        text: { value: 'Home' },
+        id:   1,
+        text: 'Home',
         to:   '#',
     },
     {
-        text: { value: 'Account' },
+        id:   2,
+        text: 'Account',
         to:   '#',
     },
     {
-        text: { value: 'Notifications' },
+        id:   3,
+        text: 'Notifications',
         to:   '#',
     },
 ]);
