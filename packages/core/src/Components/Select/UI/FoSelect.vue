@@ -41,9 +41,9 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { LabelType }               from '@/Components/Label/Types/Label';
-import type { Option }                  from '@/Components/Select';
+import type { SelectOption }            from '@/Components/Select';
 import type { Size }                    from '@/Shared/Types/Variants';
 import { FoLabel }                      from '@/Components/Label';
 import { useLabelType }                 from '@/Components/Label/Lib/UseLabelType';
@@ -55,7 +55,7 @@ interface Props {
         text:  string;
         type?: LabelType; // When undefined the label will be a text by default
     };
-    options: Option[];
+    options: K[];
     size?:   Exclude<Size, 'extraLarge'>;
 }
 
@@ -65,7 +65,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const id = useId();
 
-const selectedOption = defineModel<Option | null>({ required: true });
+const selectedOption = defineModel<K | null>({ required: true });
 
 const sizeClass = useSize('select', () => props.size);
 
@@ -79,7 +79,7 @@ watchEffect(() => {
     }
 
     /**
-     * when no option is selected and the label is not the disabled option, the selected one will be the first.
+     * when no option is selected and the label is not the null option, the selected one will be the first.
      */
     if (selectedOption.value === null && isTextLabel.value === false) {
         selectedOption.value = props.options[0];

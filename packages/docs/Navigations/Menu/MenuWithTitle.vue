@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import { FoMenu, FoMenuItem, FoMenuTitle, type Identifiable, type MenuItem } from 'flyonui-vue';
-import { ref }                                                               from 'vue';
+import { FoMenu, FoMenuItem, FoMenuTitle, type Id, type MenuItem } from 'flyonui-vue';
+import { ref }                                                     from 'vue';
 
-const items = ref<(MenuItem & Identifiable)[]>([
+const items = ref<(MenuItem & Id)[]>([
     {
         id:   1,
         icon: 'tabler:message',
