@@ -1,7 +1,7 @@
 export type Default = 'default';
 
-export type ElementName = 'badge' | 'btn' | 'checkbox' | 'icon' | 'input' | 'label' | 'list-group' | 'list-group-item' | 'loading' | 'menu' | 'menu-item' | 'select' | 'stat-list';
-export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'loading'>;
+export type ElementName = 'badge' | 'btn' | 'checkbox' | 'icon' | 'input' | 'label' | 'link' | 'list-group' | 'list-group-item' | 'loading' | 'menu' | 'menu-item' | 'select' | 'stat-list';
+export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'link' | 'loading'>;
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
 export type ShapeableElementName = Extract<ElementName, 'badge' | 'btn'>;
 export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'loading' | 'menu' | 'select'>;
