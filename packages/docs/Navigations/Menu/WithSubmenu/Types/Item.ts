@@ -1,5 +1,5 @@
-import type { Identifiable, MenuItem } from 'flyonui-vue';
+import type { Id, MenuItem } from 'flyonui-vue';
 
-export interface Item extends Identifiable, MenuItem {
+export interface Item extends Id, MenuItem {
     children: Item[];
 }

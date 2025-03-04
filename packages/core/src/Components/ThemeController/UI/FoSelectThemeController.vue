@@ -9,9 +9,9 @@
 <script setup lang="ts">
 import type { FlyonUITheme } from '@/Components/ThemeController/Lib/ThemeController';
 
-import { FoSelect, type Option }                  from '@/Components/Select';
-import { useColorMode, type UseColorModeOptions } from '@vueuse/core';
-import { computed, onMounted, toValue }           from 'vue';
+import { FoSelect, type SelectOption, useSelectedOption } from '@/Components/Select';
+import { useColorMode, type UseColorModeOptions }         from '@vueuse/core';
+import { computed, onMounted, toValue }                   from 'vue';
 
 // todo: many thing props could be ref and this should not be allowed through props
 const props = withDefaults(defineProps<UseColorModeOptions<FlyonUITheme>>(), {
@@ -29,17 +29,14 @@ const props = withDefaults(defineProps<UseColorModeOptions<FlyonUITheme>>(), {
     },
 });
 
-interface ThemeOption extends Option {
-    text: FlyonUITheme;
-}
+type ThemeOption = SelectOption<FlyonUITheme>;
 
 const themeOptions = computed((): ThemeOption[] => {
-    let id = 0;
     const options: ThemeOption[] = [];
 
     for (const theme of Object.values(props.modes)) {
         if (theme !== undefined) {
-            options.push({ id: ++id, text: theme });
+            options.push({ id: theme, text: theme });
         }
     }
 
@@ -49,7 +46,7 @@ const themeOptions = computed((): ThemeOption[] => {
 const theme = useColorMode<FlyonUITheme>(props);
 
 const selectedTheme = computed({
-    get: (): ThemeOption => themeOptions.value.find(t => t.text === theme.value) ?? themeOptions.value[0],
+    get: (): ThemeOption => useSelectedOption(themeOptions, theme.value).value ?? themeOptions.value[0],
     set: (newSelectedTheme: ThemeOption): void => {
         theme.value = newSelectedTheme.text;
     },

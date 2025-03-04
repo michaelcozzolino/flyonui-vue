@@ -20,10 +20,10 @@
 </template>
 
 <script setup lang="ts">
-import { type BadgeProps, FoBadge, FoDotStyleBadge, FoMenu, FoMenuItem, type Identifiable, type MenuItem } from 'flyonui-vue';
-import { ref }                                                                                             from 'vue';
+import { type BadgeProps, FoBadge, FoDotStyleBadge, FoMenu, FoMenuItem, type Id, type MenuItem } from 'flyonui-vue';
+import { ref }                                                                                   from 'vue';
 
-const items = ref<(MenuItem & Identifiable & { info: BadgeProps & { text: string | null } })[]>([
+const items = ref<(MenuItem & Id & { info: BadgeProps & { text: string | null } })[]>([
     {
         id:   1,
         icon: 'tabler:mail',

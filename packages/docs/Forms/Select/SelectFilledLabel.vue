@@ -6,10 +6,10 @@
 </template>
 
 <script setup lang="ts">
-import { FoSelect, type Option } from 'flyonui-vue';
-import { ref }                   from 'vue';
+import { FoSelect, type SelectOption, useSelectedOption } from 'flyonui-vue';
+import { ref }                                            from 'vue';
 
-const options = ref<Option[]>([
+const options = ref<SelectOption[]>([
     { id: 1, text: 'The Godfather' },
     { id: 2, text: 'The Shawshank Redemption' },
     { id: 3, text: 'Pulp Fiction' },
@@ -17,5 +17,5 @@ const options = ref<Option[]>([
     { id: 5, text: `Schindler's List` },
 ]);
 
-const selectedOption = ref<Option | null>(null);
+const selectedOption = ref<SelectOption | null>(useSelectedOption(options, null).value);
 </script>
