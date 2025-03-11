@@ -30,7 +30,7 @@ defineOptions({
     inheritAttrs: false,
 });
 
-const props = defineProps<FoRouterLinkProps>();
+defineProps<FoRouterLinkProps>();
 
 function isStringLink(to: To): to is string {
     return typeof to === 'string';
