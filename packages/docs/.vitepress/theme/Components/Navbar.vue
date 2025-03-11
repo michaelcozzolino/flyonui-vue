@@ -19,23 +19,20 @@
                                      storage-key="vitepress-theme-appearance"
             />
 
-            <FoSocialButton class="place-self-center"
-                            social="Github"
-                            shape="square"
-                            @click="goToGitHub"
-            />
+            <FoLink to="https://github.com/michaelcozzolino/flyonui-vue">
+                <FoSocialButton class="place-self-center"
+                                social="Github"
+                                shape="square"
+                />
+            </FoLink>
         </template>
     </FoNavbar>
 </template>
 
 <script setup lang="ts">
-import { FoNavbar, FoNavbarBrand, FoSelectThemeController, FoSocialButton, type NavbarLink } from 'flyonui-vue';
-import { withBase }                                                                          from 'vitepress';
-import { computed }                                                                          from 'vue';
-
-function goToGitHub(): void {
-    window.open('https://github.com/michaelcozzolino/flyonui-vue', '_blank', 'noopener,noreferrer');
-}
+import { FoLink, FoNavbar, FoNavbarBrand, FoSelectThemeController, FoSocialButton, type NavbarLink } from 'flyonui-vue';
+import { withBase }                                                                                  from 'vitepress';
+import { computed }                                                                                  from 'vue';
 
 const links = computed((): NavbarLink[] => {
     return [

@@ -15,10 +15,10 @@
 </template>
 
 <script setup lang="ts">
-import { FoListGroup, FoListGroupItem } from 'flyonui-vue';
-import { ref }                          from 'vue';
+import { FoListGroup, FoListGroupItem, type Identifiable } from 'flyonui-vue';
+import { ref }                                             from 'vue';
 
-const invoiceItems = ref<{ id: number; text: string; amount: number }[]>([
+const invoiceItems = ref<(Identifiable & { text: string; amount: number })[]>([
     {
         id:     1,
         text:   'Payment to Front',

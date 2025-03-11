@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import { FoCheckbox, FoListGroup, FoListGroupItem } from 'flyonui-vue';
-import { ref }                                      from 'vue';
+import { FoCheckbox, FoListGroup, FoListGroupItem, type Identifiable } from 'flyonui-vue';
+import { ref }                                                         from 'vue';
 
-const skills = ref<{ id: number; name: string; isAcquired: boolean }[]>([
+const skills = ref<(Identifiable & { name: string; isAcquired: boolean })[]>([
     {
         id:         1,
         name:       'Web Development',

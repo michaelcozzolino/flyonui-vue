@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import { FoBadge, FoListGroup, FoListGroupItem } from 'flyonui-vue';
-import { ref }                                   from 'vue';
+import { FoBadge, FoListGroup, FoListGroupItem, type Identifiable } from 'flyonui-vue';
+import { ref }                                                      from 'vue';
 
-const items = ref<{ id: number; text: string; info: string }[]>([
+const items = ref<(Identifiable & { text: string; info: string })[]>([
     {
         id:   1,
         text: 'Recent posts',

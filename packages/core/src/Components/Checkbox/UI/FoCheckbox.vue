@@ -20,7 +20,7 @@
         >
 
         <FoLabel v-if="label !== undefined"
-                 :id="id"
+                 :for="id"
                  :class="helperText && '-mt-1 pt-0'"
                  class="cursor-pointer flex-col items-start "
         >

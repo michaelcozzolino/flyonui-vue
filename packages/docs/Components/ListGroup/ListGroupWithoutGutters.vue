@@ -11,10 +11,10 @@
 </template>
 
 <script setup lang="ts">
-import { FoListGroup, FoListGroupItem } from 'flyonui-vue';
-import { ref }                          from 'vue';
+import { FoListGroup, FoListGroupItem, type Identifiable } from 'flyonui-vue';
+import { ref }                                             from 'vue';
 
-const items = ref<{ id: number; text: string }[]>([
+const items = ref<(Identifiable & { text: string })[]>([
     {
         id:   1,
         text: 'Recent posts',
