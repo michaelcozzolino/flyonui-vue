@@ -9,6 +9,7 @@
         <template v-if="item.to !== undefined">
             <FoLink :to="item.to"
                     :exact-active-class="activeClass"
+                    underline-effect="no-underline"
             >
                 <FoIcon v-if="item.icon !== undefined"
                         :icon="item.icon"

@@ -10,7 +10,9 @@ export interface FoRouterLinkProps extends RouterLinkProps {
     to: To;
 }
 
+export type UnderlineLinkEffect = 'hover' | 'hover-animated' | 'no-underline';
+
 export interface LinkProps extends FoRouterLinkProps {
     color?:           Color;
-    underlineEffect?: 'hover' | 'hover-animated';
+    underlineEffect?: UnderlineLinkEffect;
 }
