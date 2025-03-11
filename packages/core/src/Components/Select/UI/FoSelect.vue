@@ -32,7 +32,7 @@
         />
 
         <FoLabel v-if="label.type !== undefined"
-                 :id="id"
+                 :for="id"
                  element="select"
                  :type="label.type"
         >
