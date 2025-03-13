@@ -21,6 +21,14 @@
 
 <StatListDocs section="vertical" />
 
+## With progress bar
+
+<StatListDocs section="with-progress-bar" />
+
+## With actions button
+
+<StatListDocs section="with-actions-button" />
+
 ## Bordered
 
 <StatListDocs section="bordered" />
