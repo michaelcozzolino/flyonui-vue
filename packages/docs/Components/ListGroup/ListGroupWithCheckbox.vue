@@ -1,8 +1,9 @@
 <template>
-    <!--    todo: make heading component -->
-    <h6 class="text-base text-base-content mb-1">
+    <FoHeading level="6"
+               class="mb-1"
+    >
         Select your skills:
-    </h6>
+    </FoHeading>
 
     <FoListGroup>
         <FoListGroupItem v-for="item in skills"
@@ -16,8 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import { FoCheckbox, FoListGroup, FoListGroupItem, type Identifiable } from 'flyonui-vue';
-import { ref }                                                         from 'vue';
+import { FoCheckbox, FoHeading, FoListGroup, FoListGroupItem, type Identifiable } from 'flyonui-vue';
+import { ref }                                                                    from 'vue';
 
 const skills = ref<(Identifiable & { name: string; isAcquired: boolean })[]>([
     {

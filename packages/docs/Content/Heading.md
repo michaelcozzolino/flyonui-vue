@@ -1,0 +1,3 @@
+# Heading
+
+<HeadingDocs section="heading" />

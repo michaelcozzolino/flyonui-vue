@@ -54,6 +54,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                     items: [
                         { text: 'Link', link: 'link' },
                         { text: 'Mask', link: 'mask' },
+                        { text: 'Heading', link: 'heading' },
                     ],
                 },
                 {

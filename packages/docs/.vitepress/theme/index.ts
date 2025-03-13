@@ -6,6 +6,7 @@ import ButtonDocs                               from '@/Components/Button/Button
 import ListGroupDocs                            from '@/Components/ListGroup/ListGroupDocs.vue';
 import LoadingDocs                              from '@/Components/Loading/LoadingDocs.vue';
 import StatListDocs                             from '@/Components/StatList/StatListDocs.vue';
+import HeadingDocs                              from '@/Content/Heading/HeadingDocs.vue';
 import LinkDocs                                 from '@/Content/Link/LinkDocs.vue';
 import MaskDocs                                 from '@/Content/Mask/MaskDocs.vue';
 import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
@@ -34,6 +35,7 @@ export default {
             { name: 'LoadingDocs', instance: LoadingDocs },
             { name: 'ListGroupDocs', instance: ListGroupDocs },
             { name: 'MaskDocs', instance: MaskDocs },
+            { name: 'HeadingDocs', instance: HeadingDocs },
             { name: 'MenuDocs', instance: MenuDocs },
             { name: 'NavbarDocs', instance: NavbarDocs },
             { name: 'StatListDocs', instance: StatListDocs },
