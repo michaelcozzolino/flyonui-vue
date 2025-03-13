@@ -1,29 +1,39 @@
 <template>
-    <FoStatList :stats="stats">
-        <template #image-1>
-            <!--            todo: avatar component -->
-            <div class="avatar">
-                <div class="size-12 rounded-full">
-                    <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
-                         alt="User Avatar"
-                    >
+    <FoStatList>
+        <FoStatListItem>
+            <FoStatListItemFigure>
+                <!--            todo: avatar component -->
+                <div class="avatar">
+                    <div class="size-12 rounded-full">
+                        <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
+                             alt="User Avatar"
+                        >
+                    </div>
                 </div>
-            </div>
-        </template>
+            </FoStatListItemFigure>
+
+            <FoStatListItemTitle>
+                Total page views
+            </FoStatListItemTitle>
+
+            <FoStatListItemValue>
+                89400
+            </FoStatListItemValue>
+
+            <FoStatListItemDescription>
+                21% ↗︎ than last month
+            </FoStatListItemDescription>
+        </FoStatListItem>
     </FoStatList>
 </template>
 
 <script setup lang="ts">
-import type { Stat }  from 'flyonui-vue';
-import { FoStatList } from 'flyonui-vue';
-import { ref }        from 'vue';
-
-const stats = ref<Stat[]>([
-    {
-        id:          1,
-        title:       'Total page views',
-        value:       89400,
-        description: '21% ↗︎ than last month',
-    },
-]);
+import {
+    FoStatList,
+    FoStatListItem,
+    FoStatListItemDescription,
+    FoStatListItemFigure,
+    FoStatListItemTitle,
+    FoStatListItemValue,
+} from 'flyonui-vue';
 </script>

@@ -16,7 +16,7 @@ export const availableColors = ['default', 'neutral', 'primary', 'secondary', 'a
 export type Color = typeof availableColors[number];
 
 export type Preset = Default | 'gradient' | 'text' | 'soft' | 'outline';
-export type Size = Default | 'extraLarge' | 'large' | 'small' | 'extraSmall';
+export type Size = Default | 'extraSmall' | 'small' | 'large' | 'extraLarge' | 'doubleExtraLarge';
 export type Orientation = 'horizontal' | 'vertical';
 
 export type State = Default | 'active' | 'disabled';

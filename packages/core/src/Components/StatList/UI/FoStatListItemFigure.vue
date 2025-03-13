@@ -1,5 +1,5 @@
 <template>
-    <div class="stat">
+    <div class="stat-figure">
         <slot />
     </div>
 </template>
