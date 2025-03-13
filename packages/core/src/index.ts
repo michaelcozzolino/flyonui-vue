@@ -1,6 +1,7 @@
 export * from '@/Components/Badge';
 export * from '@/Components/Button';
 export * from '@/Components/Checkbox';
+export * from '@/Components/Heading';
 export * from '@/Components/Icon';
 export * from '@/Components/Link';
 export * from '@/Components/ListGroup';
