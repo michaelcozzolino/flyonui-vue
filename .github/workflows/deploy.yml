@@ -49,6 +49,8 @@ jobs:
                 run: yarn audit
 
             -   name: Build with VitePress
+                env:
+                    GENERATE_BUILD_SIZE_VISUALIZER: true
                 run: yarn build
 
             -   name: Upload artifact
