@@ -1,5 +1,6 @@
 {
     "name": "flyonui-vue",
+    "type": "module",
     "version": "1.0.0-alpha.6",
     "author": "Michael Cozzolino",
     "license": "MIT",
@@ -7,14 +8,6 @@
         "type": "git",
         "url": "git+https://github.com/michaelcozzolino/flyonui-vue.git"
     },
-    "type": "module",
-    "files": [
-        "dist",
-        "src"
-    ],
-    "main": "./dist/flyonui-vue.umd.cjs",
-    "module": "./dist/flyonui-vue.js",
-    "types": "./dist/src/index.d.ts",
     "exports": {
         ".": {
             "types": "./dist/src/index.d.ts",
@@ -26,6 +19,13 @@
             "require": "./dist/index.css"
         }
     },
+    "main": "./dist/flyonui-vue.umd.cjs",
+    "module": "./dist/flyonui-vue.js",
+    "types": "./dist/src/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
     "scripts": {
         "dev": "yarn concurrently \"yarn build:ui -w\" \"yarn build:types -w\" \"yarn alias:types -w\"",
         "build": "yarn build:ui && yarn build:types && yarn alias:types",
