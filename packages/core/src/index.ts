@@ -5,6 +5,7 @@ export * from '@/Components/Icon';
 export * from '@/Components/Link';
 export * from '@/Components/ListGroup';
 export * from '@/Components/Loading';
+export * from '@/Components/Mask';
 export * from '@/Components/Menu';
 export * from '@/Components/Navbar';
 export * from '@/Components/Select';
