@@ -9,7 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { type BadgeProps, FoBadge } from '@/Components/Badge';
+import type { BadgeProps } from '@/Components/Badge';
+import { FoBadge }         from '@/Components/Badge';
 
 const props = defineProps<BadgeProps>();
 </script>

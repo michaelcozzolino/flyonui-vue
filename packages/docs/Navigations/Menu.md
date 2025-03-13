@@ -28,7 +28,7 @@
 
 ## With active items
 
-The active items will automatically be highlighted when the exact route corresponding to the item is visited. 
+The active items will automatically be highlighted when the exact route corresponding to the item is visited.
 Unluckily it's not possible to preview a demo because Vitepress does not support the Vue Router.
 
 ## Sizes
@@ -43,7 +43,7 @@ Unluckily it's not possible to preview a demo because Vitepress does not support
 
 <MenuDocs section="with-title" />
 
-## With title as parent 
+## With title as parent
 
 <MenuDocs section="with-title-as-parent" />
 

@@ -17,8 +17,8 @@ import CodeSnippet from '@/.vitepress/theme/Components/CodeSnippet.vue';
 
 import MaskShape    from '@/Content/Mask/MaskShape.vue';
 import MaskShapeRaw from '@/Content/Mask/MaskShape.vue?raw';
-import VMask        from "@/Content/Mask/VMask.vue";
-import VMaskRaw     from "@/Content/Mask/VMask.vue?raw";
+import VMask        from '@/Content/Mask/VMask.vue';
+import VMaskRaw     from '@/Content/Mask/VMask.vue?raw';
 
 interface Props {
     section: 'shape' | 'v-mask';

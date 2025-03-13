@@ -7,11 +7,13 @@
 </template>
 
 <script setup lang="ts">
-import type { FlyonUITheme } from '@/Components/ThemeController/Lib/ThemeController';
+import type { SelectOption } from '@/Components/Select';
 
-import { FoSelect, type SelectOption, useSelectedOption } from '@/Components/Select';
-import { useColorMode, type UseColorModeOptions }         from '@vueuse/core';
-import { computed, onMounted, toValue }                   from 'vue';
+import type { FlyonUITheme }            from '@/Components/ThemeController/Lib/ThemeController';
+import type { UseColorModeOptions }     from '@vueuse/core';
+import { FoSelect, useSelectedOption }  from '@/Components/Select';
+import { useColorMode }                 from '@vueuse/core';
+import { computed, onMounted, toValue } from 'vue';
 
 // todo: many thing props could be ref and this should not be allowed through props
 const props = withDefaults(defineProps<UseColorModeOptions<FlyonUITheme>>(), {

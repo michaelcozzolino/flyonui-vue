@@ -8,8 +8,9 @@
 </template>
 
 <script setup lang="ts">
-import { FoMenu, FoMenuItem, type Id, type MenuItem } from 'flyonui-vue';
-import { ref }                                        from 'vue';
+import type { Id, MenuItem }  from 'flyonui-vue';
+import { FoMenu, FoMenuItem } from 'flyonui-vue';
+import { ref }                from 'vue';
 
 const items = ref<(MenuItem & Id)[]>([
     {

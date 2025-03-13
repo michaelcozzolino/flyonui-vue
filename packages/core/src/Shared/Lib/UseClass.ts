@@ -1,5 +1,6 @@
-import type { BorderableElementName, StripedElementName }             from '@/Shared/Types/Variants';
-import { computed, type ComputedRef, type MaybeRefOrGetter, toValue } from 'vue';
+import type { BorderableElementName, StripedElementName } from '@/Shared/Types/Variants';
+import type { ComputedRef, MaybeRefOrGetter }             from 'vue';
+import { computed, toValue }                              from 'vue';
 
 export function useBorder(
     elementName: MaybeRefOrGetter<BorderableElementName>,

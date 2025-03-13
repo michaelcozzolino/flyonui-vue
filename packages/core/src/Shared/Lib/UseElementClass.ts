@@ -12,8 +12,9 @@ import type {
     Size,
     State,
     StatefulElementName,
-} from '@/Shared/Types/Variants';
-import { computed, type ComputedRef, type MaybeRefOrGetter, toValue } from 'vue';
+}                                             from '@/Shared/Types/Variants';
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import { computed, toValue }                  from 'vue';
 
 export function useColor(
     elementName: MaybeRefOrGetter<ColorableElementName>,

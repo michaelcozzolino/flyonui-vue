@@ -42,13 +42,15 @@
 </template>
 
 <script lang="ts" setup>
-import type { CheckboxProps }                                             from '@/Components/Checkbox/Types/Checkbox';
-import { isInCheckboxGroupInjectionKey }                                  from '@/Components/Checkbox/Lib/InjectionKeys';
-import { FoLabel }                                                        from '@/Components/Label';
-import { useValidity }                                                    from '@/Shared/Lib/UseClass';
-import { useColor, useSize }                                              from '@/Shared/Lib/UseElementClass';
-import { availableColors, type Color }                                    from '@/Shared/Types/Variants';
-import { computed, inject, type MaybeRefOrGetter, toValue, useId, watch } from 'vue';
+import type { CheckboxProps }                      from '@/Components/Checkbox/Types/Checkbox';
+import type { Color }                              from '@/Shared/Types/Variants';
+import type { MaybeRefOrGetter }                   from 'vue';
+import { isInCheckboxGroupInjectionKey }           from '@/Components/Checkbox/Lib/InjectionKeys';
+import { FoLabel }                                 from '@/Components/Label';
+import { useValidity }                             from '@/Shared/Lib/UseClass';
+import { useColor, useSize }                       from '@/Shared/Lib/UseElementClass';
+import { availableColors }                         from '@/Shared/Types/Variants';
+import { computed, inject, toValue, useId, watch } from 'vue';
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
     color:      'default',

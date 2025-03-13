@@ -10,8 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import { type CheckboxProps, FoCheckbox, FoCheckboxGroup } from 'flyonui-vue';
-import { ref }                                             from 'vue';
+import type { CheckboxProps }          from 'flyonui-vue';
+import { FoCheckbox, FoCheckboxGroup } from 'flyonui-vue';
+import { ref }                         from 'vue';
 
 const checkboxes = ref<(CheckboxProps & { isChecked: boolean })[]>([
     {

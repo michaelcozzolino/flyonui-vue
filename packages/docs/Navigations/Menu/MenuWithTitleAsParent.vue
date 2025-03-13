@@ -19,8 +19,9 @@
 </template>
 
 <script setup lang="ts">
-import { FoMenu, FoMenuItem, FoMenuParentTitle, type Id, type MenuItem } from 'flyonui-vue';
-import { ref }                                                           from 'vue';
+import type { Id, MenuItem }                     from 'flyonui-vue';
+import { FoMenu, FoMenuItem, FoMenuParentTitle } from 'flyonui-vue';
+import { ref }                                   from 'vue';
 
 interface Item extends Id, MenuItem {
     children: Item[];

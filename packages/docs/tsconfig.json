@@ -2,15 +2,15 @@
     "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
         "baseUrl": ".",
-        "outDir": "dist",
         "paths": {
             "@/*": [
                 "./*"
             ]
-        }
+        },
+        "outDir": "dist"
     },
     "vueCompilerOptions": {
-        "vitePressExtensions": [".md"],
+        "vitePressExtensions": [".md"]
     },
     "include": [
         "./.vitepress/**/*",
