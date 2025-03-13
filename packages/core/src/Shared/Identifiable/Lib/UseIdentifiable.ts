@@ -1,6 +1,7 @@
-import type { Identifiable }                                          from '@/Shared/Types';
-import { useArrayFind }                                               from '@vueuse/core';
-import { computed, type ComputedRef, type MaybeRefOrGetter, toValue } from 'vue';
+import type { Identifiable }                  from '@/Shared/Types';
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import { useArrayFind }                       from '@vueuse/core';
+import { computed, toValue }                  from 'vue';
 
 export function useIdentifiable<
     Name extends string = 'id',

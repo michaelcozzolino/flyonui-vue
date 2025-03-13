@@ -14,8 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import { FoStatList, type Stat } from 'flyonui-vue';
-import { ref }                   from 'vue';
+import type { Stat }  from 'flyonui-vue';
+import { FoStatList } from 'flyonui-vue';
+import { ref }        from 'vue';
 
 const stats = ref<Stat[]>([
     {

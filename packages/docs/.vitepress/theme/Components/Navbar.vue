@@ -30,9 +30,10 @@
 </template>
 
 <script setup lang="ts">
-import { FoLink, FoNavbar, FoNavbarBrand, FoSelectThemeController, FoSocialButton, type NavbarLink } from 'flyonui-vue';
-import { withBase }                                                                                  from 'vitepress';
-import { computed }                                                                                  from 'vue';
+import type { NavbarLink }                                                          from 'flyonui-vue';
+import { FoLink, FoNavbar, FoNavbarBrand, FoSelectThemeController, FoSocialButton } from 'flyonui-vue';
+import { withBase }                                                                 from 'vitepress';
+import { computed }                                                                 from 'vue';
 
 const links = computed((): NavbarLink[] => {
     return [

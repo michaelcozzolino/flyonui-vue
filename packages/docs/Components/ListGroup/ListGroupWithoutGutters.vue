@@ -11,8 +11,9 @@
 </template>
 
 <script setup lang="ts">
-import { FoListGroup, FoListGroupItem, type Identifiable } from 'flyonui-vue';
-import { ref }                                             from 'vue';
+import type { Identifiable }            from 'flyonui-vue';
+import { FoListGroup, FoListGroupItem } from 'flyonui-vue';
+import { ref }                          from 'vue';
 
 const items = ref<(Identifiable & { text: string })[]>([
     {

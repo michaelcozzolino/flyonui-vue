@@ -6,8 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { FoSelect, type SelectOption, useSelectedOption } from 'flyonui-vue';
-import { ref }                                            from 'vue';
+import type { SelectOption }           from 'flyonui-vue';
+import { FoSelect, useSelectedOption } from 'flyonui-vue';
+import { ref }                         from 'vue';
 
 const options = ref<SelectOption[]>([
     { id: 1, text: 'The Godfather' },

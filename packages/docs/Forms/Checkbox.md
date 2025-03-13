@@ -35,4 +35,3 @@
 ## Vertical checkbox group
 
 <CheckboxDocs section="vertical-group" />
-
