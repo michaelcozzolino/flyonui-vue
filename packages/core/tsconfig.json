@@ -2,12 +2,12 @@
     "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
         "baseUrl": ".",
-        "noEmit": false,
         "paths": {
             "@/*": [
                 "./src/*"
             ]
         },
+        "noEmit": false,
         "outDir": "dist"
     },
     "include": [
@@ -15,7 +15,7 @@
         "src/**/*.d.ts",
         "src/**/*.tsx",
         "src/**/*.vue",
-        "tests/**/*.ts",
+        "tests/**/*.ts"
     ],
     "exclude": [
         "node_modules",

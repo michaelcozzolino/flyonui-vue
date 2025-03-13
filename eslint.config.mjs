@@ -6,20 +6,21 @@ import alignImport           from 'eslint-plugin-align-import';
 
 export default antfu(
     {
-        plugins:   {
+        plugins: {
             'align-import': alignImport,
         },
         type:      'lib',
         stylistic: {
-            indent: 4,
-            semi:   true,
+            braceStyle: '1tbs',
+            indent:     4,
+            semi:       true,
         },
-        ignores:   includeIgnoreFile(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.gitignore')).ignores,
+        ignores: includeIgnoreFile(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.gitignore')).ignores,
     },
     {
         files: ['**/*.vue'],
         rules: {
-            'vue/block-order':               [
+            'vue/block-order': [
                 'error',
                 {
                     order: ['template', 'script', 'style'],
@@ -32,13 +33,12 @@ export default antfu(
                     multiline:  'beside',
                 },
             ],
-            'vue/no-empty-component-block':  ['error'],
+            'vue/no-empty-component-block': ['error'],
         },
     },
     {
         rules: {
-            '@stylistic/js/brace-style':  ['error', '1tbs'],
-            '@stylistic/key-spacing':     [
+            '@stylistic/key-spacing': [
                 'error',
                 {
                     align: { afterColon: true, beforeColon: false, on: 'value' },
@@ -55,8 +55,8 @@ export default antfu(
                     },
                 },
             ],
-            'align-import/align-import':  ['error'],
-            'align-import/trim-import':   ['error'],
+            'align-import/align-import': ['error'],
+            'align-import/trim-import':  ['error'],
         },
     },
 );
