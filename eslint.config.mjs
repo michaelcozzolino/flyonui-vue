@@ -11,9 +11,8 @@ export default antfu(
         },
         type:      'lib',
         stylistic: {
-            braceStyle: '1tbs',
-            indent:     4,
-            semi:       true,
+            indent: 4,
+            semi:   true,
         },
         ignores: includeIgnoreFile(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.gitignore')).ignores,
     },
@@ -38,6 +37,7 @@ export default antfu(
     },
     {
         rules: {
+            '@stylistic/brace-style': ['error', '1tbs'],
             '@stylistic/key-spacing': [
                 'error',
                 {

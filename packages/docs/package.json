@@ -1,8 +1,8 @@
 {
     "name": "flyonui-vue-docs",
+    "type": "module",
     "author": "Michael Cozzolino",
     "license": "MIT",
-    "type": "module",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/michaelcozzolino/flyonui-vue.git"
@@ -28,15 +28,15 @@
         "vue-router": "^4.5.0"
     },
     "devDependencies": {
-        "@antfu/eslint-config": "^3.12.1",
-        "@eslint/compat": "^1.2.4",
+        "@antfu/eslint-config": "^4.10.1",
+        "@eslint/compat": "^1.2.7",
         "@iconify/vue": "^4.2.0",
         "@rushstack/eslint-patch": "1.10.3",
         "@types/node": "20.12.12",
         "@vitejs/plugin-vue": "^5.2.1",
         "@vue/test-utils": "2.4.6",
         "@vue/tsconfig": "0.5.1",
-        "eslint": "^9.18.0",
+        "eslint": "^9.22.0",
         "eslint-plugin-align-import": "^1.0.0",
         "jsdom": "^26.0.0",
         "postcss": "8.4.38",
