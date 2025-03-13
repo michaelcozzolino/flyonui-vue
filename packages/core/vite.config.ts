@@ -1,4 +1,5 @@
 import { resolve }      from 'node:path';
+import process          from 'node:process';
 import vue              from '@vitejs/plugin-vue';
 import { visualizer }   from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
@@ -6,9 +7,11 @@ import { defineConfig } from 'vite';
 export default defineConfig({
     plugins: [
         vue(),
-        visualizer({
-            filename: '../docs/public/build-size-visualizer.html',
-        }),
+        ...process.env.GENERATE_BUILD_SIZE_VISUALIZER
+            ? [visualizer({
+                    filename: '../docs/public/build-size-visualizer.html',
+                })]
+            : [],
     ],
     resolve: {
         alias: {
