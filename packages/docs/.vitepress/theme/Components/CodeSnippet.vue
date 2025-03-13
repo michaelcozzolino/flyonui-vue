@@ -62,6 +62,7 @@ const previewGridClass = computed(() => {
             2: 'grid-cols-2',
             3: 'grid-cols-3',
             4: 'grid-cols-4',
+            7: 'grid-cols-7',
             8: 'grid-cols-8',
         },
         rows: {

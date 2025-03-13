@@ -7,13 +7,14 @@ import ListGroupDocs                            from '@/Components/ListGroup/Lis
 import LoadingDocs                              from '@/Components/Loading/LoadingDocs.vue';
 import StatListDocs                             from '@/Components/StatList/StatListDocs.vue';
 import LinkDocs                                 from '@/Content/Link/LinkDocs.vue';
+import MaskDocs                                 from '@/Content/Mask/MaskDocs.vue';
 import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
 import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
 import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
 import Playground                               from '@/Playground/Playground.vue';
-import { FoSelectThemeController }              from 'flyonui-vue';
+import { FoSelectThemeController, vMask }       from 'flyonui-vue';
 import DefaultTheme                             from 'vitepress/theme';
 import './tailwind.css';
 import './style.scss';
@@ -23,6 +24,8 @@ import 'vue-code-highlighter/dist/style.css';
 export default {
     extends: DefaultTheme,
     enhanceApp({ app }) {
+        app.directive('mask', vMask());
+
         registerDocComponents(app, [
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
@@ -30,6 +33,7 @@ export default {
             { name: 'CheckboxDocs', instance: CheckboxDocs },
             { name: 'LoadingDocs', instance: LoadingDocs },
             { name: 'ListGroupDocs', instance: ListGroupDocs },
+            { name: 'MaskDocs', instance: MaskDocs },
             { name: 'MenuDocs', instance: MenuDocs },
             { name: 'NavbarDocs', instance: NavbarDocs },
             { name: 'StatListDocs', instance: StatListDocs },
