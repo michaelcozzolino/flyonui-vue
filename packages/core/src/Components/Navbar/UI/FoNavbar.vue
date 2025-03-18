@@ -40,7 +40,7 @@
 <script setup lang="ts">
 import type { NavbarLink }                                from '@/Components/Navbar/Types/Navbar';
 import { FoNavbarHamburgerMenuToggler, FoNavbarLinkList } from '@/Components/Navbar';
-import { useRoundedBox }                                  from '@/Shared/Lib/UseClass';
+import { useRoundedBox }                                  from '@/Shared/Internal/Lib';
 import { ref }                                            from 'vue';
 
 interface Props {

@@ -16,7 +16,7 @@
 import type { IconType }  from '@/Components/Icon/Types/Icon';
 import type { Size }      from '@/Shared/Types/Variants';
 import type { Component } from 'vue';
-import { useSize }        from '@/Shared/Lib/UseElementClass';
+import { useSize }        from '@/Shared/Internal/Lib';
 import { Icon }           from '@iconify/vue';
 
 interface Props {

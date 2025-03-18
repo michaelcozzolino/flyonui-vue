@@ -7,9 +7,8 @@
 <script setup lang="ts">
 import type { ListGroupItemProps }          from '@/Components/ListGroup/Types/ListGroup';
 import type { Orientation }                 from '@/Shared/Types/Variants';
-import { listGroupOrientationInjectionKey } from '@/Components/ListGroup/Lib/InjectionKeys';
-import { useStripes }                       from '@/Shared/Lib/UseClass';
-import { useOrientation }                   from '@/Shared/Lib/UseElementClass';
+import { listGroupOrientationInjectionKey } from '@/Components/ListGroup/Internal';
+import { useOrientation, useStripes }       from '@/Shared/Internal/Lib';
 import { computed, inject }                 from 'vue';
 
 const props = withDefaults(defineProps<ListGroupItemProps>(), {

@@ -47,8 +47,8 @@ import type { MenuItem }                                             from '@/Com
 import type { ElementName }                                          from '@/Shared/Types';
 import { FoIcon }                                                    from '@/Components/Icon';
 import { FoLink }                                                    from '@/Components/Link';
-import { menuTextPropsInjectionKey }                                 from '@/Components/Menu/Lib/InjectionKeys';
-import { useState }                                                  from '@/Shared/Lib/UseElementClass';
+import { menuTextPropsInjectionKey }                                 from '@/Components/Menu/Internal';
+import { useState }                                                  from '@/Shared/Internal/Lib';
 import { useMotion }                                                 from '@vueuse/motion';
 import { computed, inject, ref, useTemplateRef, watch, watchEffect } from 'vue';
 

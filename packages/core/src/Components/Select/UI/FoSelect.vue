@@ -39,13 +39,12 @@
 </template>
 
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
-import type { LabelType }               from '@/Components/Label/Types/Label';
+import type { LabelType }               from '@/Components/Label';
 import type { SelectOption }            from '@/Components/Select';
 import type { ElementName, Size }       from '@/Shared/Types/Variants';
 import { FoFilledFocused }              from '@/Components/Focus/Internal';
-import { FoLabel }                      from '@/Components/Label';
-import { useLabelType }                 from '@/Components/Label/Internal';
-import { useSize }                      from '@/Shared/Lib/UseElementClass';
+import { FoLabel, useLabelType }        from '@/Components/Label/Internal';
+import { useSize }                      from '@/Shared/Internal/Lib';
 import { computed, useId, watchEffect } from 'vue';
 
 interface Props {

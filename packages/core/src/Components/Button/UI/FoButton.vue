@@ -31,14 +31,22 @@
 </template>
 
 <script lang="ts" setup>
-import type { ButtonProps }                                 from '@/Components/Button/Types/Button';
-import type { ElementName }                                 from '@/Shared/Types/Variants';
-import { FoIcon }                                           from '@/Components/Icon';
-import { isTextAllowedForShape }                            from '@/Shared/Lib/IsTextAllowedForShape';
-import { useGlass }                                         from '@/Shared/Lib/UseClass';
-import { useColor, usePreset, useShape, useSize, useState } from '@/Shared/Lib/UseElementClass';
-import { computed }                                         from 'vue';
-import { RouterLink }                                       from 'vue-router';
+import type { ButtonProps } from '@/Components/Button/Types/Button';
+import type {
+    ElementName,
+}                           from '@/Shared/Types/Variants';
+import { FoIcon } from '@/Components/Icon';
+import {
+    isTextAllowedForShape,
+    useColor,
+    useGlass,
+    usePreset,
+    useShape,
+    useSize,
+    useState,
+}                           from '@/Shared/Internal/Lib';
+import { computed }   from 'vue';
+import { RouterLink } from 'vue-router';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
     color:        'default',
