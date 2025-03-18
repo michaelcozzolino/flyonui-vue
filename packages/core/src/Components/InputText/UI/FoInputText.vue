@@ -94,18 +94,17 @@
 </template>
 
 <script setup lang="ts">
-import type { InputTextLabelProp, InputTextProps } from '@/Components/InputText';
-import type { LabelType }                          from '@/Components/Label';
-import type { ElementName }                        from '@/Shared/Types';
-import type { VNode }                              from 'vue';
-import { FoFilledFocused }                         from '@/Components/Focus/Internal';
-import { FoFragment }                              from '@/Components/Fragment/Internal';
-import { FoIcon }                                  from '@/Components/Icon';
-import { FoInputGroupText }                        from '@/Components/InputText/Internal';
-import { FoLabel }                                 from '@/Components/Label';
-import { FoAlternativeLabel, useLabelType }        from '@/Components/Label/Internal';
-import { useShape, useSize, useValidity }          from '@/Shared/Internal/Lib';
-import { computed, useId }                         from 'vue';
+import type { InputTextLabelProp, InputTextProps }   from '@/Components/InputText';
+import type { LabelType }                            from '@/Components/Label/Internal';
+import type { ElementName }                          from '@/Shared/Types';
+import type { VNode }                                from 'vue';
+import { FoFilledFocused }                           from '@/Components/Focus/Internal';
+import { FoFragment }                                from '@/Components/Fragment/Internal';
+import { FoIcon }                                    from '@/Components/Icon';
+import { FoInputGroupText }                          from '@/Components/InputText/Internal';
+import { FoAlternativeLabel, FoLabel, useLabelType } from '@/Components/Label/Internal';
+import { useShape, useSize, useValidity }            from '@/Shared/Internal/Lib';
+import { computed, useId }                           from 'vue';
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',

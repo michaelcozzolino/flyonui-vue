@@ -46,8 +46,7 @@ import type { CheckboxProps }                      from '@/Components/Checkbox/T
 import type { Color }                              from '@/Shared/Types/Variants';
 import type { MaybeRefOrGetter }                   from 'vue';
 import { isInCheckboxGroupInjectionKey }           from '@/Components/Checkbox/Lib/InjectionKeys';
-import { FoLabel }                                 from '@/Components/Label';
-import { FoAlternativeLabel }                      from '@/Components/Label/Internal';
+import { FoAlternativeLabel, FoLabel }             from '@/Components/Label/Internal';
 import { useColor, useSize, useValidity }          from '@/Shared/Internal/Lib';
 import { availableColors }                         from '@/Shared/Types/Variants';
 import { computed, inject, toValue, useId, watch } from 'vue';

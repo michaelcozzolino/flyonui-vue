@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import type { LabelType }                 from '@/Components/Label';
+import type { LabelType }                 from '@/Components/Label/Internal';
 import type { LabellableTypeElementName } from '@/Shared/Types';
 import { computed }                       from 'vue';
 

@@ -43,8 +43,7 @@ import type { LabelType }               from '@/Components/Label/Internal';
 import type { SelectOption }            from '@/Components/Select';
 import type { ElementName, Size }       from '@/Shared/Types/Variants';
 import { FoFilledFocused }              from '@/Components/Focus/Internal';
-import { FoLabel }                      from '@/Components/Label';
-import { useLabelType }                 from '@/Components/Label/Internal';
+import { FoLabel, useLabelType }        from '@/Components/Label/Internal';
 import { useSize }                      from '@/Shared/Internal/Lib';
 import { computed, useId, watchEffect } from 'vue';
 
