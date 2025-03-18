@@ -38,7 +38,7 @@
     <FoInputText v-model="customDomain"
                  :label="{ text: 'Domain', type: 'floating' }"
                  :icon="{ left: 'gridicons:domains' }"
-                 placeholder="my-custom-domain"
+                 placeholder="My custom domain"
     >
         <template #append>
             .com
@@ -47,7 +47,7 @@
 
     <FoInputText v-model="customDomain"
                  :label="{ text: 'Domain', type: 'floating' }"
-                 placeholder="my-custom-domain"
+                 placeholder="My custom domain"
     >
         <template #prepend>
             www.
