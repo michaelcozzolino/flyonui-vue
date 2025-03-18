@@ -128,6 +128,12 @@ export function useShape(
                 pilled:  'rounded-full',
                 square:  'btn-square',
             },
+            input: {
+                default: '',
+                circle:  '',
+                pilled:  'rounded-full',
+                square:  '',
+            },
         },
         shape,
     );
@@ -171,6 +177,14 @@ export function useSize(
                 large:            'text-lg',
                 extraLarge:       'text-xl',
                 doubleExtraLarge: 'text-2xl',
+            },
+            input: {
+                default:          '',
+                extraSmall:       'input-xs',
+                small:            'input-sm',
+                large:            'input-lg',
+                extraLarge:       '',
+                doubleExtraLarge: '',
             },
             loading: {
                 default:          '',
