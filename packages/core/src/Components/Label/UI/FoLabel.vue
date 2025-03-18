@@ -32,19 +32,19 @@ const labelClass = computed(() => {
     }
 
     const classes: Record<LabellableElementName, Record<LabelType, string>> = {
-        input: {
+        'input-text': {
             text:     '',
             filled:   'input-filled-label',
             floating: 'input-floating-label',
             inline:   'input-group-text',
         },
-        label: {
+        'label': {
             text:     'label label-text',
             filled:   '',
             floating: '',
             inline:   '',
         },
-        select: {
+        'select': {
             text:     '',
             filled:   'select-filled-label',
             floating: 'select-floating-label',

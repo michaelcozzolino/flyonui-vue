@@ -116,19 +116,19 @@ export function useShape(
     return useElementClass<ShapeableElementName, Shape>(
         elementName,
         {
-            badge: {
+            'badge': {
                 default: '',
                 circle:  'rounded-full size-6 p-0 ',
                 pilled:  'rounded-full',
                 square:  'size-6 p-0',
             },
-            btn: {
+            'btn': {
                 default: '',
                 circle:  'btn-circle',
                 pilled:  'rounded-full',
                 square:  'btn-square',
             },
-            input: {
+            'input-text': {
                 default: '',
                 circle:  '',
                 pilled:  'rounded-full',
@@ -146,7 +146,7 @@ export function useSize(
     return useElementClass<SizableElementName, Size>(
         elementName,
         {
-            btn: {
+            'btn': {
                 default:          '',
                 extraSmall:       'btn-xs',
                 small:            'btn-sm',
@@ -154,7 +154,7 @@ export function useSize(
                 extraLarge:       '',
                 doubleExtraLarge: '',
             },
-            badge: {
+            'badge': {
                 default:          '',
                 extraSmall:       'badge-xs',
                 small:            'badge-sm',
@@ -162,7 +162,7 @@ export function useSize(
                 extraLarge:       'badge-xl',
                 doubleExtraLarge: '',
             },
-            checkbox: {
+            'checkbox': {
                 default:          '',
                 extraSmall:       'checkbox-xs',
                 small:            'checkbox-sm',
@@ -170,7 +170,7 @@ export function useSize(
                 extraLarge:       '',
                 doubleExtraLarge: '',
             },
-            icon: {
+            'icon': {
                 default:          'text-base',
                 extraSmall:       'text-xs',
                 small:            'text-sm',
@@ -178,7 +178,7 @@ export function useSize(
                 extraLarge:       'text-xl',
                 doubleExtraLarge: 'text-2xl',
             },
-            input: {
+            'input-text': {
                 default:          '',
                 extraSmall:       'input-xs',
                 small:            'input-sm',
@@ -186,7 +186,7 @@ export function useSize(
                 extraLarge:       '',
                 doubleExtraLarge: '',
             },
-            loading: {
+            'loading': {
                 default:          '',
                 extraSmall:       'loading-xs',
                 small:            'loading-sm',
@@ -194,7 +194,7 @@ export function useSize(
                 extraLarge:       '',
                 doubleExtraLarge: '',
             },
-            menu: {
+            'menu': {
                 default:          '',
                 extraSmall:       'menu-xs',
                 small:            'menu-sm',
@@ -202,7 +202,7 @@ export function useSize(
                 extraLarge:       '',
                 doubleExtraLarge: '',
             },
-            select: {
+            'select': {
                 default:          '',
                 extraSmall:       'select-xs',
                 small:            'select-sm',

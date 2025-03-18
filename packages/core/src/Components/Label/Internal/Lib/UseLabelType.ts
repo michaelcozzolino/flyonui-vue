@@ -10,13 +10,13 @@ export function useLabelType(
     return useElementClass<LabellableTypeElementName, LabelType>(
         elementName,
         {
-            input: {
+            'input-text': {
                 text:     '',
                 filled:   'input-filled peer',
                 floating: 'input-floating peer',
                 inline:   'grow',
             },
-            select: {
+            'select': {
                 text:     '',
                 filled:   'select-filled',
                 floating: 'select-floating',
