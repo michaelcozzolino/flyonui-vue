@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import type { ListGroupProps }                  from '@/Components/ListGroup/Types/ListGroup';
 import { FoFragment }                           from '@/Components/Fragment/Internal';
-import { listGroupOrientationInjectionKey }     from '@/Components/ListGroup/Lib/InjectionKeys';
+import { listGroupOrientationInjectionKey }     from '@/Components/ListGroup/Internal';
 import { useClass, useOrientation, useStripes } from '@/Shared/Internal/Lib';
 import { computed, provide }                    from 'vue';
 

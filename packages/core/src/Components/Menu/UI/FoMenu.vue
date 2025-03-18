@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import type { MenuProps }                    from '@/Components/Menu';
 import type { ElementName }                  from '@/Shared/Types/Variants';
-import { menuTextPropsInjectionKey }         from '@/Components/Menu/Lib/InjectionKeys';
+import { menuTextPropsInjectionKey }         from '@/Components/Menu/Internal';
 import { useClass, useOrientation, useSize } from '@/Shared/Internal/Lib';
 import { computed, provide }                 from 'vue';
 
