@@ -16,12 +16,12 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps }        from '@/Components/Button/Types/Button';
-import type { IconType }           from '@/Components/Icon/Types/Icon';
-import type { Preset }             from '@/Shared/Types/Variants';
-import { FoButton, FoIconButton  } from '@/Components/Button';
-import { isTextAllowedForShape }   from '@/Shared/Lib/IsTextAllowedForShape';
-import { computed }                from 'vue';
+import type { ButtonProps }       from '@/Components/Button/Types/Button';
+import type { IconType }          from '@/Components/Icon/Types/Icon';
+import type { Preset }            from '@/Shared/Types/Variants';
+import { FoButton, FoIconButton } from '@/Components/Button';
+import { isTextAllowedForShape }  from '@/Shared/Internal/Lib';
+import { computed }               from 'vue';
 
 type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
 

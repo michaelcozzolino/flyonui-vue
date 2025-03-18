@@ -48,8 +48,7 @@ import type { MaybeRefOrGetter }                   from 'vue';
 import { isInCheckboxGroupInjectionKey }           from '@/Components/Checkbox/Lib/InjectionKeys';
 import { FoLabel }                                 from '@/Components/Label';
 import { FoAlternativeLabel }                      from '@/Components/Label/Internal';
-import { useValidity }                             from '@/Shared/Lib/UseClass';
-import { useColor, useSize }                       from '@/Shared/Lib/UseElementClass';
+import { useColor, useSize, useValidity }          from '@/Shared/Internal/Lib';
 import { availableColors }                         from '@/Shared/Types/Variants';
 import { computed, inject, toValue, useId, watch } from 'vue';
 

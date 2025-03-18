@@ -7,9 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Orientation } from '@/Shared/Types/Variants';
-import { useBorder }        from '@/Shared/Lib/UseClass';
-import { useOrientation }   from '@/Shared/Lib/UseElementClass';
+import type { Orientation }          from '@/Shared/Types/Variants';
+import { useBorder, useOrientation } from '@/Shared/Internal/Lib';
 
 interface Props {
     orientation?: Orientation;

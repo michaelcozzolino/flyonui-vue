@@ -16,12 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ListGroupProps }              from '@/Components/ListGroup/Types/ListGroup';
-import { FoFragment }                       from '@/Components/Fragment/Internal';
-import { listGroupOrientationInjectionKey } from '@/Components/ListGroup/Lib/InjectionKeys';
-import { useClass, useStripes }             from '@/Shared/Lib/UseClass';
-import { useOrientation }                   from '@/Shared/Lib/UseElementClass';
-import { computed, provide }                from 'vue';
+import type { ListGroupProps }                  from '@/Components/ListGroup/Types/ListGroup';
+import { FoFragment }                           from '@/Components/Fragment/Internal';
+import { listGroupOrientationInjectionKey }     from '@/Components/ListGroup/Lib/InjectionKeys';
+import { useClass, useOrientation, useStripes } from '@/Shared/Internal/Lib';
+import { computed, provide }                    from 'vue';
 
 const props = withDefaults(defineProps<ListGroupProps>(), {
     orientation:    'vertical',

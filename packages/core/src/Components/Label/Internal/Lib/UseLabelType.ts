@@ -1,7 +1,7 @@
 import type { LabelType }                     from '@/Components/Label/Internal';
 import type { LabellableTypeElementName }     from '@/Shared/Types/Variants';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useElementClass }                    from '@/Shared/Lib/UseElementClass';
+import { useElementClass }                    from '@/Shared/Internal/Lib/UseElementClass';
 
 export function useLabelType(
     elementName: MaybeRefOrGetter<LabellableTypeElementName>,

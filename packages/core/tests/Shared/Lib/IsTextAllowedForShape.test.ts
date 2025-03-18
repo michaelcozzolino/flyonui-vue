@@ -1,6 +1,6 @@
 import type { Shape }            from '@/Shared/Types/Variants';
 import type { MaybeRefOrGetter } from 'vue';
-import { isTextAllowedForShape } from '@/Shared/Lib/IsTextAllowedForShape';
+import { isTextAllowedForShape } from '@/Shared/Internal/Lib';
 import { describe, expect, it }  from 'vitest';
 import { computed, ref }         from 'vue';
 

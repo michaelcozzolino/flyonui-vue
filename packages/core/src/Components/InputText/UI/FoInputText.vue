@@ -104,9 +104,8 @@ import { FoIcon }                                  from '@/Components/Icon';
 import { FoInputGroupText }                        from '@/Components/InputText/Internal';
 import { FoLabel }                                 from '@/Components/Label';
 import { FoAlternativeLabel, useLabelType }        from '@/Components/Label/Internal';
-import { useValidity }                             from '@/Shared/Lib/UseClass';
-import { useShape, useSize }                       from '@/Shared/Lib/UseElementClass';
-import { computed, useId  }                        from 'vue';
+import { useShape, useSize, useValidity }          from '@/Shared/Internal/Lib';
+import { computed, useId }                         from 'vue';
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
@@ -154,7 +153,7 @@ const hasFilledInputContainer = computed(() => {
 });
 
 const inputGroupContainerClass = computed(() => {
-    const inputGroupClass =  defaultLabel.value?.type === 'filled' ? 'input-group-filled' : 'input-group';
+    const inputGroupClass = defaultLabel.value?.type === 'filled' ? 'input-group-filled' : 'input-group';
 
     return (isGroup.value || defaultLabel.value?.type === 'inline') && inputGroupClass;
 });

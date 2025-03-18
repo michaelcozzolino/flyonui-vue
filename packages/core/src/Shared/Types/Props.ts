@@ -1,5 +1,3 @@
-// Shared props among different components
-
 export interface WithGlass {
     withGlass?: boolean;
 }

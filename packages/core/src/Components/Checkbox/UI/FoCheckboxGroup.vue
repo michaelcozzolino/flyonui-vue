@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import type { Orientation }              from '@/Shared/Types/Variants';
 import { isInCheckboxGroupInjectionKey } from '@/Components/Checkbox/Lib/InjectionKeys';
-import { useOrientation }                from '@/Shared/Lib/UseElementClass';
+import { useOrientation }                from '@/Shared/Internal/Lib';
 import { provide }                       from 'vue';
 
 interface Props {

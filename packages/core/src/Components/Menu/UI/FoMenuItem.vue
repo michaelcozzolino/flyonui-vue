@@ -48,7 +48,7 @@ import type { ElementName }                                          from '@/Sha
 import { FoIcon }                                                    from '@/Components/Icon';
 import { FoLink }                                                    from '@/Components/Link';
 import { menuTextPropsInjectionKey }                                 from '@/Components/Menu/Lib/InjectionKeys';
-import { useState }                                                  from '@/Shared/Lib/UseElementClass';
+import { useState }                                                  from '@/Shared/Internal/Lib';
 import { useMotion }                                                 from '@vueuse/motion';
 import { computed, inject, ref, useTemplateRef, watch, watchEffect } from 'vue';
 

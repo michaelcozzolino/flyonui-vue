@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import type { LinkProps, UnderlineLinkEffect } from '@/Components/Link/Types/Link';
 import FoRouterLink                            from '@/Components/Link/Internal';
-import { useColor }                            from '@/Shared/Lib/UseElementClass';
+import { useColor }                            from '@/Shared/Internal/Lib';
 import { computed }                            from 'vue';
 
 const props = withDefaults(defineProps<LinkProps>(), {
