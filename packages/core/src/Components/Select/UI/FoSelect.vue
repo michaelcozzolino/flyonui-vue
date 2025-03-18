@@ -42,7 +42,7 @@
 import type { LabelType }               from '@/Components/Label/Types/Label';
 import type { SelectOption }            from '@/Components/Select';
 import type { ElementName, Size }       from '@/Shared/Types/Variants';
-import { FoFilledFocused }              from '@/Components/Focus';
+import { FoFilledFocused }              from '@/Components/Focus/Internal';
 import { FoLabel }                      from '@/Components/Label';
 import { useLabelType }                 from '@/Components/Label/Lib/UseLabelType';
 import { useSize }                      from '@/Shared/Lib/UseElementClass';
