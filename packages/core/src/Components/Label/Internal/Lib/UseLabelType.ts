@@ -1,4 +1,4 @@
-import type { LabelType }                     from '@/Components/Label/Types/Label';
+import type { LabelType }                     from '@/Components/Label/Internal';
 import type { LabellableTypeElementName }     from '@/Shared/Types/Variants';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import { useElementClass }                    from '@/Shared/Lib/UseElementClass';
