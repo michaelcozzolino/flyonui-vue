@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import type { LinkProps, UnderlineLinkEffect } from '@/Components/Link/Types/Link';
-import FoRouterLink                            from '@/Components/Link/UI/FoRouterLink.vue';
+import FoRouterLink                            from '@/Components/Link/Internal';
 import { useColor }                            from '@/Shared/Lib/UseElementClass';
 import { computed }                            from 'vue';
 
