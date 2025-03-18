@@ -5,10 +5,7 @@
         <select :id="id"
                 v-model="selectedOption"
                 class="select appearance-none"
-                :class="[
-                    sizeClass,
-                    useLabelType('select', () => label.type ?? 'text').value,
-                ]"
+                :class="[labelTypeClass, sizeClass]"
                 aria-label="select"
         >
             <option v-if="isTextLabel"
@@ -27,8 +24,8 @@
             </option>
         </select>
 
-        <span v-if="label.type === 'filled'"
-              class="select-filled-focused"
+        <FoFilledFocused :element-name="elementName"
+                         :label-type="label.type"
         />
 
         <FoLabel v-if="label.type !== undefined"
@@ -44,7 +41,8 @@
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { LabelType }               from '@/Components/Label/Types/Label';
 import type { SelectOption }            from '@/Components/Select';
-import type { Size }                    from '@/Shared/Types/Variants';
+import type { ElementName, Size }       from '@/Shared/Types/Variants';
+import { FoFilledFocused }              from '@/Components/Focus';
 import { FoLabel }                      from '@/Components/Label';
 import { useLabelType }                 from '@/Components/Label/Lib/UseLabelType';
 import { useSize }                      from '@/Shared/Lib/UseElementClass';
@@ -67,7 +65,15 @@ const id = useId();
 
 const selectedOption = defineModel<K | null>({ required: true });
 
-const sizeClass = useSize('select', () => props.size);
+const elementName: ElementName = 'select';
+
+const [
+    labelTypeClass,
+    sizeClass,
+] = [
+    useLabelType(elementName, () => props.label.type ?? 'text'),
+    useSize(elementName, () => props.size),
+];
 
 const isTextLabel = computed(() => {
     return [undefined, 'text'].includes(props.label.type);
