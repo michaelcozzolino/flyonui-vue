@@ -1,5 +1,5 @@
 <template>
-    <component :is="hasFilledInputContainer ? 'div' : Fragment">
+    <component :is="hasFilledInputContainer ? 'div' : FoFragment">
         <div class="relative w-96"
              :class="inputGroupContainerClass"
         >
@@ -20,7 +20,7 @@
                 </FoAlternativeLabel>
             </span>
 
-            <component :is="showTopHelperText(helperText?.top) || growInput ? 'div' : Fragment"
+            <component :is="showTopHelperText(helperText?.top) || growInput ? 'div' : FoFragment"
                        class="relative"
                        :class="growInput && 'grow'"
             >
@@ -99,11 +99,11 @@ import type { LabelType }                          from '@/Components/Label';
 import type { ElementName }                        from '@/Shared/Types';
 import type { VNode }                              from 'vue';
 import { FoFilledFocused }                         from '@/Components/Focus/Internal';
+import { FoFragment }                              from '@/Components/Fragment/Internal';
 import { FoIcon }                                  from '@/Components/Icon';
 import { FoInputGroupText }                        from '@/Components/InputText/Internal';
 import { FoLabel }                                 from '@/Components/Label';
 import { FoAlternativeLabel, useLabelType }        from '@/Components/Label/Internal';
-import Fragment                                    from '@/Shared/Fragment/UI/Fragment.vue';
 import { useValidity }                             from '@/Shared/Lib/UseClass';
 import { useShape, useSize }                       from '@/Shared/Lib/UseElementClass';
 import { computed, useId  }                        from 'vue';
