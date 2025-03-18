@@ -1,4 +1,4 @@
-import type { LabelType }   from '@/Components/Label/Internal';
+import type { LabelType }   from '@/Components/Label';
 import type { Shape, Size } from '@/Shared/Types';
 
 export interface InputTextLabelProp {

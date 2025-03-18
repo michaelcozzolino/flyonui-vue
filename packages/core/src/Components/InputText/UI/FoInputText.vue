@@ -95,7 +95,7 @@
 
 <script setup lang="ts">
 import type { InputTextLabelProp, InputTextProps }   from '@/Components/InputText';
-import type { LabelType }                            from '@/Components/Label/Internal';
+import type { LabelType }                            from '@/Components/Label';
 import type { ElementName }                          from '@/Shared/Types';
 import type { VNode }                                from 'vue';
 import { FoFilledFocused }                           from '@/Components/Focus/Internal';
