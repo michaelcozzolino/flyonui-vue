@@ -11,7 +11,7 @@ import LinkDocs                                 from '@/Content/Link/LinkDocs.vu
 import MaskDocs                                 from '@/Content/Mask/MaskDocs.vue';
 import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
-import InputTextDocs                            from '@/Forms/Input/InputTextDocs.vue';
+import InputTextDocs                            from '@/Forms/InputText/InputTextDocs.vue';
 import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
 import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
