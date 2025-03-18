@@ -24,7 +24,8 @@
 </template>
 
 <script setup lang="ts">
-import type { FoRouterLinkProps, To } from '@/Components/Link/Types/Link';
+import type { FoRouterLinkProps } from '@/Components/Link/Internal';
+import type { To }                from '@/Components/Link/Types/Link';
 
 defineOptions({
     inheritAttrs: false,
