@@ -29,9 +29,9 @@
                     {{ label }}
                 </span>
 
-                <span class="label-text-alt">
+                <FoAlternativeLabel>
                     {{ helperText }}
-                </span>
+                </FoAlternativeLabel>
             </template>
 
             <template v-else>
@@ -47,6 +47,7 @@ import type { Color }                              from '@/Shared/Types/Variants
 import type { MaybeRefOrGetter }                   from 'vue';
 import { isInCheckboxGroupInjectionKey }           from '@/Components/Checkbox/Lib/InjectionKeys';
 import { FoLabel }                                 from '@/Components/Label';
+import { FoAlternativeLabel }                      from '@/Components/Label/Internal';
 import { useValidity }                             from '@/Shared/Lib/UseClass';
 import { useColor, useSize }                       from '@/Shared/Lib/UseElementClass';
 import { availableColors }                         from '@/Shared/Types/Variants';

@@ -11,6 +11,7 @@ import LinkDocs                                 from '@/Content/Link/LinkDocs.vu
 import MaskDocs                                 from '@/Content/Mask/MaskDocs.vue';
 import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
+import InputTextDocs                            from '@/Forms/InputText/InputTextDocs.vue';
 import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
 import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
@@ -32,6 +33,7 @@ export default {
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
+            { name: 'InputDocs', instance: InputTextDocs },
             { name: 'LoadingDocs', instance: LoadingDocs },
             { name: 'ListGroupDocs', instance: ListGroupDocs },
             { name: 'MaskDocs', instance: MaskDocs },

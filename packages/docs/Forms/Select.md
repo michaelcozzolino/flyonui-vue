@@ -12,7 +12,7 @@
 
 <SelectDocs section="filled-label" />
 
-# Size
+# Sizes
 
 ## Default size
 
