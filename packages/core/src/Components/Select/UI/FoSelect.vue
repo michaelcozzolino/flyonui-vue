@@ -44,14 +44,14 @@ import type { SelectOption }            from '@/Components/Select';
 import type { ElementName, Size }       from '@/Shared/Types/Variants';
 import { FoFilledFocused }              from '@/Components/Focus/Internal';
 import { FoLabel }                      from '@/Components/Label';
-import { useLabelType }                 from '@/Components/Label/Lib/UseLabelType';
+import { useLabelType }                 from '@/Components/Label/Internal';
 import { useSize }                      from '@/Shared/Lib/UseElementClass';
 import { computed, useId, watchEffect } from 'vue';
 
 interface Props {
     label: {
         text:  string;
-        type?: LabelType; // When undefined the label will be a text by default
+        type?: Exclude<LabelType, 'inline'>; // When undefined the label will be a text by default
     };
     options: K[];
     size?:   Exclude<Size, 'extraLarge'>;

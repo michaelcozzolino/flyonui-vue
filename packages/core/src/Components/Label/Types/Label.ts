@@ -1,1 +1,1 @@
-export type LabelType = 'text' | 'filled' | 'floating';
+export type LabelType = 'text' | 'filled' | 'floating' | 'inline';

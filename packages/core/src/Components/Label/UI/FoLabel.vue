@@ -1,5 +1,5 @@
 <template>
-    <label :class="labelClass"
+    <label :class="[labelClass, isHidden && 'sr-only']"
            v-bind="$attrs"
     >
         <slot />
@@ -12,8 +12,9 @@ import type { LabellableElementName } from '@/Shared/Types/Variants';
 import { computed }                   from 'vue';
 
 interface Props {
-    element?: LabellableElementName;
-    type?:    LabelType;
+    element?:  LabellableElementName;
+    type?:     LabelType;
+    isHidden?: boolean;
 }
 
 defineOptions({
@@ -21,7 +22,8 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<Props>(), {
-    element: 'label',
+    element:  'label',
+    isHidden: false,
 });
 
 const labelClass = computed(() => {
@@ -34,16 +36,19 @@ const labelClass = computed(() => {
             text:     '',
             filled:   'input-filled-label',
             floating: 'input-floating-label',
+            inline:   'input-group-text',
         },
         label: {
             text:     'label label-text',
             filled:   '',
             floating: '',
+            inline:   '',
         },
         select: {
             text:     '',
             filled:   'select-filled-label',
             floating: 'select-floating-label',
+            inline:   '',
         },
     };
 
