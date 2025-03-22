@@ -12,6 +12,7 @@ import MaskDocs                                 from '@/Content/Mask/MaskDocs.vu
 import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
 import InputTextDocs                            from '@/Forms/InputText/InputTextDocs.vue';
+import JoinDocs                                 from '@/Forms/Join/JoinDocs.vue';
 import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
 import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
@@ -34,6 +35,7 @@ export default {
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
             { name: 'InputDocs', instance: InputTextDocs },
+            { name: 'JoinDocs', instance: JoinDocs },
             { name: 'LoadingDocs', instance: LoadingDocs },
             { name: 'ListGroupDocs', instance: ListGroupDocs },
             { name: 'MaskDocs', instance: MaskDocs },
