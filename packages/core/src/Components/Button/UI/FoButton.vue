@@ -41,10 +41,11 @@ import {
     useColor,
     useGlass,
     usePreset,
+    useResponsive,
     useShape,
     useSize,
     useState,
-}                           from '@/Shared/Internal/Lib';
+}                   from '@/Shared/Internal/Lib';
 import { computed }   from 'vue';
 import { RouterLink } from 'vue-router';
 
@@ -75,12 +76,14 @@ const [
     shapeClass,
     sizeClass,
     glassClass,
+    responsiveClass,
 ] = [
     useColor(elementName, () => props.color),
     usePreset(elementName, () => props.preset),
     useShape(elementName, () => props.shape),
     useSize(elementName, () => props.size),
     useGlass(() => props.withGlass),
+    useResponsive(elementName, () => props.isResponsive),
 ];
 
 const stateClass = computed(() => {
@@ -88,10 +91,6 @@ const stateClass = computed(() => {
         useState(elementName, props.isActive ? 'active' : 'default').value,
         useState(elementName, props.isDisabled ? 'disabled' : 'default').value,
     ];
-});
-
-const responsiveClass = computed(() => {
-    return props.isResponsive && 'max-sm:btn-sm lg:btn-lg';
 });
 
 const layoutClass = computed(() => {

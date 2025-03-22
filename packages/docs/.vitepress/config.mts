@@ -100,6 +100,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                     items: [
                         { text: 'Checkbox', link: 'checkbox' },
                         { text: 'Input Text', link: 'input-text' },
+                        { text: 'Join', link: 'join' },
                         { text: 'Select', link: 'select' },
                     ],
                 },

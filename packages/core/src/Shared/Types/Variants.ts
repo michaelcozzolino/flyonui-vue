@@ -1,12 +1,30 @@
 export type Default = 'default';
 
-export type ElementName = 'badge' | 'btn' | 'checkbox' | 'icon' | 'input-text' | 'label' | 'link' | 'list-group' | 'list-group-item' | 'loading' | 'menu' | 'menu-item' | 'select' | 'stat-list';
+// todo: btn must become button
+export type ElementName =
+    'badge'
+    | 'btn'
+    | 'checkbox'
+    | 'icon'
+    | 'input-text'
+    | 'join'
+    | 'label'
+    | 'link'
+    | 'list-group'
+    | 'list-group-item'
+    | 'loading'
+    | 'menu'
+    | 'menu-item'
+    | 'select'
+    | 'stat-list';
+
 export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'link' | 'loading'>;
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
+export type ResponsiveElementName = Extract<ElementName, 'btn' | 'join'>;
 export type ShapeableElementName = Extract<ElementName, 'badge' | 'btn' | 'input-text'>;
 export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'input-text' | 'loading' | 'menu' | 'select'>;
 export type StatefulElementName = Extract<ElementName, 'btn' | 'menu-item'>;
-export type OrientableElementName = Extract<ElementName, 'checkbox' | 'list-group' | 'list-group-item' | 'menu' | 'stat-list'>;
+export type OrientableElementName = Extract<ElementName, 'checkbox' | 'join' | 'list-group' | 'list-group-item' | 'menu' | 'stat-list'>;
 export type BorderableElementName = Extract<ElementName, 'stat-list'>;
 export type LabellableTypeElementName = Extract<ElementName, 'input-text' | 'select'>;
 export type LabellableElementName = Extract<ElementName, 'label'> | LabellableTypeElementName;

@@ -1,7 +1,10 @@
 <template>
     <component :is="hasFilledInputContainer ? 'div' : FoFragment">
-        <div class="relative w-96"
-             :class="inputGroupContainerClass"
+        <div :class="[
+            defaultLabel && defaultLabel.type !== 'text' && 'relative',
+            !hasFilledInputContainer && $attrs?.class,
+            inputGroupContainerClass,
+        ]"
         >
             <FoInputGroupText v-if="$slots.prepend !== undefined || icon?.left">
                 <slot name="prepend">
@@ -36,7 +39,7 @@
                 <input :id="id"
                        v-model="input"
                        :type="type"
-                       class="input max-w-sm"
+                       class="input"
                        :class="[
                            inputLabelTypeClass,
                            shapeClass,
@@ -177,7 +180,7 @@ function showTopHelperText(text?: string): text is string {
     if (defaultLabel.value === undefined) {
         return false;
     }
-
+    // todo: some type restrictions
     return defaultLabel.value.type !== 'text' && text !== undefined;
 }
 </script>
