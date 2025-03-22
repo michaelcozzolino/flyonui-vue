@@ -12,6 +12,7 @@
     <CodeSnippet v-else-if="section === 'with-label-and-helper-text'"
                  :code="InputTextWithLabelAndHelperTextRaw"
                  :component="InputTextWithLabelAndHelperText"
+                 :preview="{ columns: 1, rows: 4 }"
     />
 
     <CodeSnippet v-else-if="section === 'hidden-label'"
@@ -32,26 +33,31 @@
     <CodeSnippet v-else-if="section === 'with-helper-text-position'"
                  :code="InputTextWithHelperTextPositionRaw"
                  :component="InputTextWithHelperTextPosition"
+                 :preview="{ columns: 1, rows: 3 }"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
                  :code="InputTextSizeRaw"
                  :component="InputTextSize"
+                 :preview="{ columns: 1, rows: 4 }"
     />
 
     <CodeSnippet v-else-if="section === 'floating-label-size'"
                  :code="InputTextFloatingLabelSizeRaw"
                  :component="InputTextFloatingLabelSize"
+                 :preview="{ columns: 1, rows: 3 }"
     />
 
     <CodeSnippet v-else-if="section === 'filled-label-size'"
                  :code="InputTextFilledLabelSizeRaw"
                  :component="InputTextFilledLabelSize"
+                 :preview="{ columns: 1, rows: 3 }"
     />
 
     <CodeSnippet v-else-if="section === 'validation-state'"
                  :code="InputTextValidationStateRaw"
                  :component="InputTextValidationState"
+                 :preview="{ columns: 1, rows: 6 }"
     />
 
     <CodeSnippet v-else-if="section === 'inline-label'"
@@ -67,6 +73,7 @@
     <CodeSnippet v-else-if="section === 'shape'"
                  :code="InputTextShapeRaw"
                  :component="InputTextShape"
+                 :preview="{ columns: 1, rows: 3 }"
     />
 
     <CodeSnippet v-else-if="section === 'without-focus'"
@@ -77,11 +84,17 @@
     <CodeSnippet v-else-if="section === 'disabled'"
                  :code="DisabledInputTextRaw"
                  :component="DisabledInputText"
+                 :preview="{ columns: 1, rows: 3 }"
     />
 
     <CodeSnippet v-else-if="section === 'readonly'"
                  :code="ReadonlyInputTextRaw"
                  :component="ReadonlyInputText"
+    />
+
+    <CodeSnippet v-else-if="section === 'join'"
+                 :code="JoinInputTextRaw"
+                 :component="JoinInputText"
     />
 </template>
 
@@ -120,6 +133,8 @@ import InputTextWithoutFocus              from '@/Forms/InputText/InputTextWitho
 import InputTextWithoutFocusRaw           from '@/Forms/InputText/InputTextWithoutFocus.vue?raw';
 import InputTextWithPlaceholder           from '@/Forms/InputText/InputTextWithPlaceholder.vue';
 import InputTextWithPlaceholderRaw        from '@/Forms/InputText/InputTextWithPlaceholder.vue?raw';
+import JoinInputText                      from '@/Forms/InputText/JoinInputText.vue';
+import JoinInputTextRaw                   from '@/Forms/InputText/JoinInputText.vue?raw';
 import ReadonlyInputText                  from '@/Forms/InputText/ReadonlyInputText.vue';
 import ReadonlyInputTextRaw               from '@/Forms/InputText/ReadonlyInputText.vue?raw';
 
@@ -140,7 +155,8 @@ interface Props {
         | 'shape'
         | 'without-focus'
         | 'disabled'
-        | 'readonly';
+        | 'readonly'
+        | 'join';
 }
 
 defineProps<Props>();

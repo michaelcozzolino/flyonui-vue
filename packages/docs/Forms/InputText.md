@@ -75,3 +75,7 @@
 ## Readonly
 
 <InputDocs section="readonly" />
+
+# Join
+
+<InputDocs section="join" />
