@@ -11,9 +11,11 @@ import type { Shape }       from '@/Shared/Types/Variants';
 import { FoButton }         from '@/Components/Button';
 
 interface Props extends Omit<ButtonProps, 'icon'> {
-    icon:  IconType;
-    shape: Extract<Shape, 'circle' | 'square'>;
+    icon:   IconType;
+    shape?: Extract<Shape, 'circle' | 'square'>;
 }
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+    shape: 'square',
+});
 </script>

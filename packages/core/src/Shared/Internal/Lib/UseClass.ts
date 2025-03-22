@@ -1,6 +1,6 @@
-import type { BorderableElementName, StripedElementName } from '@/Shared/Types/Variants';
-import type { ComputedRef, MaybeRefOrGetter }             from 'vue';
-import { computed, toValue }                              from 'vue';
+import type { BorderableElementName, ResponsiveElementName, StripedElementName } from '@/Shared/Types/Variants';
+import type { ComputedRef, MaybeRefOrGetter }                                    from 'vue';
+import { computed, toValue }                                                     from 'vue';
 
 export function useBorder(
     elementName: MaybeRefOrGetter<BorderableElementName>,
@@ -23,6 +23,18 @@ export function useValidity(isValid: MaybeRefOrGetter<boolean | undefined>): Com
 
 export function useRoundedBox(isRounded: MaybeRefOrGetter<boolean>): ComputedRef<string> {
     return useClass(isRounded, 'rounded-box');
+}
+
+export function useResponsive(
+    elementName: MaybeRefOrGetter<ResponsiveElementName>,
+    isResponsive: MaybeRefOrGetter<boolean>,
+): ComputedRef<string> {
+    const classes: Record<ResponsiveElementName, ComputedRef<string>> = {
+        btn:  useClass(isResponsive, 'max-sm:btn-sm lg:btn-lg'),
+        join: useClass(isResponsive, 'max-sm:join-vertical'),
+    };
+
+    return classes[toValue(elementName)];
 }
 
 export function useStripes(
