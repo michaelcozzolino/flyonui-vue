@@ -1,5 +1,5 @@
 <template>
-    <FoListGroup>
+    <FoListGroup class="w-96">
         <FoListGroupItem v-for="item in items"
                          :key="item.id"
                          class="justify-between"

@@ -1,5 +1,7 @@
 <template>
-    <FoListGroup is-flushed>
+    <FoListGroup class="w-96"
+                 is-flushed
+    >
         <FoListGroupItem v-for="item in items"
                          :key="item.id"
         >

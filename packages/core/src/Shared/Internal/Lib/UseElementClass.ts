@@ -232,7 +232,7 @@ export function useOrientation(
             },
             'list-group': {
                 horizontal: 'w-full divide-base-content/25 flex flex-col sm:flex-row sm:divide-x sm:divide-y-0 first:*:sm:rounded-s-md first:*:sm:rounded-tr-none last:*:sm:rounded-e-md last:*:sm:rounded-bl-none rtl:divide-x-reverse',
-                vertical:   'w-96',
+                vertical:   '',
             },
             'list-group-item': {
                 horizontal: 'w-full',

@@ -5,7 +5,7 @@
         Select your skills:
     </FoHeading>
 
-    <FoListGroup>
+    <FoListGroup class="w-96">
         <FoListGroupItem v-for="item in skills"
                          :key="item.id"
         >
