@@ -52,7 +52,6 @@ const previewGridClass = computed(() => {
     const columns = props.preview.columns;
     const rows    = props.preview.rows;
 
-    // todo: adjust to use flex or grid depending on a prop and to have automatic columns and rows as well
     if (columns === 0 || rows === 0) {
         return 'flex flex-wrap';
     }

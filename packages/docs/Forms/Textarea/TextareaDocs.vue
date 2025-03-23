@@ -2,26 +2,31 @@
     <CodeSnippet v-if="section === 'default'"
                  :code="DefaultTextareaRaw"
                  :component="DefaultTextarea"
+                 :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'with-label-and-placeholder'"
                  :code="TextareaWithLabelAndPlaceholderRaw"
                  :component="TextareaWithLabelAndPlaceholder"
+                 :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'hidden-label'"
                  :code="TextareaHiddenLabelRaw"
                  :component="TextareaHiddenLabel"
+                 :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'floating-label'"
                  :code="TextareaFloatingLabelRaw"
                  :component="TextareaFloatingLabel"
+                 :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'filled-label'"
                  :code="TextareaFilledLabelRaw"
                  :component="TextareaFilledLabel"
+                 :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'with-helper-text'"
@@ -45,6 +50,7 @@
     <CodeSnippet v-else-if="section === 'readonly'"
                  :code="ReadonlyTextareaRaw"
                  :component="ReadonlyTextarea"
+                 :preview="{ columns: 1, rows: 1 }"
     />
 </template>
 
