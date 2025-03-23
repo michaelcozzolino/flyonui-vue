@@ -22,6 +22,12 @@ export function useLabelType(
                 floating: 'select-floating',
                 inline:   '',
             },
+            'textarea': {
+                text:     '',
+                filled:   'textarea-filled peer',
+                floating: 'textarea-floating peer',
+                inline:   '',
+            },
         },
         labelType,
     );

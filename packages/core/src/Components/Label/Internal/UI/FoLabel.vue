@@ -2,13 +2,17 @@
     <label :class="[labelClass, isHidden && 'sr-only']"
            v-bind="$attrs"
     >
-        <slot />
+        <slot>
+            {{ useRequiredSlotMessage('label') }}
+        </slot>
     </label>
 </template>
 
 <script setup lang="ts">
 import type { LabelType }             from '@/Components/Label';
 import type { LabellableElementName } from '@/Shared/Types/Variants';
+import type { VNode }                 from 'vue';
+import { useRequiredSlotMessage }     from '@/Shared/Internal';
 import { computed }                   from 'vue';
 
 interface Props {
@@ -26,6 +30,10 @@ const props = withDefaults(defineProps<Props>(), {
     isHidden: false,
 });
 
+defineSlots<{
+    default: () => VNode[];
+}>();
+
 const labelClass = computed(() => {
     if (props.type === undefined) {
         return 'label';
@@ -33,7 +41,7 @@ const labelClass = computed(() => {
 
     const classes: Record<LabellableElementName, Record<LabelType, string>> = {
         'input-text': {
-            text:     '',
+            text:     'label label-text',
             filled:   'input-filled-label',
             floating: 'input-floating-label',
             inline:   'input-group-text',
@@ -48,6 +56,12 @@ const labelClass = computed(() => {
             text:     '',
             filled:   'select-filled-label',
             floating: 'select-floating-label',
+            inline:   '',
+        },
+        'textarea': {
+            text:     'label label-text',
+            filled:   'textarea-filled-label',
+            floating: 'textarea-floating-label',
             inline:   '',
         },
     };
