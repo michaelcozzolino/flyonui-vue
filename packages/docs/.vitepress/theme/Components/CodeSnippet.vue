@@ -1,7 +1,7 @@
 <template>
     <div class="vp-raw">
-        <section class="border-neutral/10 rounded-box my-4 flex flex-col gap-4 border p-3 sm:p-6 md:my-8">
-            <div class="gap-3 bg-base-200/20 border-neutral/10 rounded-box not-prose flex w-full flex-[1_0_0] flex-wrap border p-3 sm:p-6"
+        <section class="border-neutral/10 rounded-box flex flex-col gap-4 border p-3 sm:p-6 md:my-8">
+            <div class="gap-3 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6"
                  :class="previewGridClass"
             >
                 <component :is="component" />
@@ -52,6 +52,7 @@ const previewGridClass = computed(() => {
     const columns = props.preview.columns;
     const rows    = props.preview.rows;
 
+    // todo: adjust to use flex or grid depending on a prop and to have automatic columns and rows as well
     if (columns === 0 || rows === 0) {
         return 'flex flex-wrap';
     }

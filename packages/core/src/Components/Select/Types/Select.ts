@@ -1,6 +1,5 @@
-import type { Id } from '@/Shared/Types';
+import type { Id, IsDisabled } from '@/Shared/Types';
 
-export type SelectOption<T extends number | string = number> = Id<T> & {
-    text:        string;
-    isDisabled?: boolean;
-};
+export interface SelectOption<T extends number | string = number> extends Id<T>, IsDisabled {
+    text: string;
+}

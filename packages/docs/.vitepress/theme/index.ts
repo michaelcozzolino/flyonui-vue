@@ -14,6 +14,7 @@ import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxD
 import InputTextDocs                            from '@/Forms/InputText/InputTextDocs.vue';
 import JoinDocs                                 from '@/Forms/Join/JoinDocs.vue';
 import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
+import TextareaDocs                             from '@/Forms/Textarea/TextareaDocs.vue';
 import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
 import Playground                               from '@/Playground/Playground.vue';
@@ -34,7 +35,7 @@ export default {
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
-            { name: 'InputDocs', instance: InputTextDocs },
+            { name: 'InputTextDocs', instance: InputTextDocs },
             { name: 'JoinDocs', instance: JoinDocs },
             { name: 'LoadingDocs', instance: LoadingDocs },
             { name: 'ListGroupDocs', instance: ListGroupDocs },
@@ -44,6 +45,7 @@ export default {
             { name: 'NavbarDocs', instance: NavbarDocs },
             { name: 'StatListDocs', instance: StatListDocs },
             { name: 'SelectDocs', instance: SelectDocs },
+            { name: 'TextareaDocs', instance: TextareaDocs },
             { name: 'SelectThemeController', instance: FoSelectThemeController },
             { name: 'Playground', instance: Playground },
             { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
