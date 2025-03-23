@@ -24,6 +24,7 @@ const filledFocusedClass = computed((): string | undefined => {
     const classes: Record<LabellableTypeElementName, string> = {
         'input-text': 'input-filled-focused',
         'select':     'select-filled-focused',
+        'textarea':   'textarea-filled-focused',
     };
 
     return classes[props.elementName];
