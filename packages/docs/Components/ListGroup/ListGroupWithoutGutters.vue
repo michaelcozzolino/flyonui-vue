@@ -1,5 +1,6 @@
 <template>
-    <FoListGroup is-flushed
+    <FoListGroup class="w-96"
+                 is-flushed
                  without-gutters
     >
         <FoListGroupItem v-for="item in items"

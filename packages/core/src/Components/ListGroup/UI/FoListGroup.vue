@@ -2,12 +2,13 @@
     <component :is="orientation === 'horizontal' ? 'div' : FoFragment"
                class="w-full"
     >
-        <ul class="divide-base-content/25 w-96 divide-y"
+        <ul class="divide-base-content/25 divide-y"
             :class="[
                 orientationClass,
                 flushClass,
                 stripesClass,
                 withoutGuttersClass,
+                orientation !== 'horizontal' && $attrs?.class,
             ]"
         >
             <slot />

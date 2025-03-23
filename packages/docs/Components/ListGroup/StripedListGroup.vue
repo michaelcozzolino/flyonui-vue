@@ -1,5 +1,7 @@
 <template>
-    <FoListGroup is-striped>
+    <FoListGroup class="w-96"
+                 is-striped
+    >
         <FoListGroupItem v-for="item in items"
                          :key="item.id"
         >
