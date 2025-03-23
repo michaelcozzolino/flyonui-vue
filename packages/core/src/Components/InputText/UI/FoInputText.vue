@@ -29,7 +29,7 @@
             >
                 <FoLabel v-if="defaultLabel && (['text', 'inline'] as LabelType[]).includes(defaultLabel.type)"
                          :for="id"
-                         :element="defaultLabel.type === 'text' ? 'label' : elementName"
+                         :element="elementName"
                          :type="defaultLabel.type"
                          :is-hidden="defaultLabel.isHidden"
                 >
@@ -41,7 +41,7 @@
                        :type="type"
                        class="input"
                        :class="[
-                           inputLabelTypeClass,
+                           labelTypeClass,
                            shapeClass,
                            sizeClass,
                            validityClass,
@@ -97,8 +97,8 @@
 </template>
 
 <script setup lang="ts">
-import type { InputTextLabelProp, InputTextProps }   from '@/Components/InputText';
-import type { LabelType }                            from '@/Components/Label';
+import type { InputTextProps }                       from '@/Components/InputText';
+import type { InputLabel, LabelType }                from '@/Components/Label';
 import type { ElementName }                          from '@/Shared/Types';
 import type { VNode }                                from 'vue';
 import { FoFilledFocused }                           from '@/Components/Focus/Internal';
@@ -130,7 +130,7 @@ const elementName: ElementName = 'input-text';
 
 const input = defineModel<string>({ required: true });
 
-const defaultLabel = computed((): Required<InputTextLabelProp> | undefined => {
+const defaultLabel = computed((): Required<InputLabel> | undefined => {
     if (props.label === undefined) {
         return undefined;
     }
@@ -165,7 +165,7 @@ const growInput = computed(() => {
 });
 
 const [
-    inputLabelTypeClass,
+    labelTypeClass,
     shapeClass,
     sizeClass,
     validityClass,

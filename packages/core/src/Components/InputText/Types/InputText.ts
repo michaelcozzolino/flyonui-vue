@@ -1,5 +1,5 @@
-import type { LabelType }   from '@/Components/Label';
-import type { Shape, Size } from '@/Shared/Types';
+import type { InputHelperText, InputLabel, LabelType }       from '@/Components/Label';
+import type { IsDisabled, IsReadonly, IsValid, Shape, Size } from '@/Shared/Types';
 
 export interface InputTextLabelProp {
     text:      string;
@@ -7,25 +7,16 @@ export interface InputTextLabelProp {
     isHidden?: boolean;
 }
 
-export interface InputTextProps {
+export interface InputTextProps extends IsDisabled, IsReadonly, IsValid {
     type?:  'text' | 'email';
-    label?: InputTextLabelProp;
+    label?: InputLabel;
     icon?: {
         left?:  string;
         right?: string;
     };
-    placeholder?: string;
-    helperText?: {
-        top?:    string;
-        bottom?: {
-            left?:  string;
-            right?: string;
-        };
-    };
+    placeholder?:  string;
+    helperText?:   InputHelperText;
     shape?:        Extract<Shape, 'default' | 'pilled'>;
     size?:         Exclude<Size, 'extraLarge' | 'doubleExtraLarge'>;
-    isDisabled?:   boolean;
-    isReadonly?:   boolean;
-    isValid?:      boolean;
     withoutFocus?: boolean;
 }
