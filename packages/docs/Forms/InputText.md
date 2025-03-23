@@ -2,80 +2,80 @@
 
 ## Default
 
-<InputDocs section="default" />
+<InputTextDocs section="default" />
 
 ## Placeholder
 
-<InputDocs section="with-placeholder" />
+<InputTextDocs section="with-placeholder" />
 
 ## Label and helper text
 
-<InputDocs section="with-label-and-helper-text" />
+<InputTextDocs section="with-label-and-helper-text" />
 
 ## Hidden label
 
-<InputDocs section="hidden-label" />
+<InputTextDocs section="hidden-label" />
 
 ## Floating label
 
-<InputDocs section="floating-label" />
+<InputTextDocs section="floating-label" />
 
 ## Filled label
 
-<InputDocs section="filled-label" />
+<InputTextDocs section="filled-label" />
 
 ## Helper text positions
 
-<InputDocs section="with-helper-text-position" />
+<InputTextDocs section="with-helper-text-position" />
 
 # Sizes
 
 ## Default size
 
-<InputDocs section="size" />
+<InputTextDocs section="size" />
 
 ## Floating label size
 
-<InputDocs section="floating-label-size" />
+<InputTextDocs section="floating-label-size" />
 
 ## Filled label size
 
-<InputDocs section="filled-label-size" />
+<InputTextDocs section="filled-label-size" />
 
 ## Validation states
 
-<InputDocs section="validation-state" />
+<InputTextDocs section="validation-state" />
 
 # Merged inputs
 
 ## Inline label
 
-<InputDocs section="inline-label" />
+<InputTextDocs section="inline-label" />
 
 ## Icons
 
-<InputDocs section="with-icon" />
+<InputTextDocs section="with-icon" />
 
 # Shape
 
 ## Pilled input
 
-<InputDocs section="shape" />
+<InputTextDocs section="shape" />
 
 # Illustrations
 
 ## Without focus
 
-<InputDocs section="without-focus" />
+<InputTextDocs section="without-focus" />
 
 ## Disabled
 
-<InputDocs section="disabled" />
+<InputTextDocs section="disabled" />
 
 ## Readonly
 
-<InputDocs section="readonly" />
+<InputTextDocs section="readonly" />
 
 # Join
 
-<InputDocs section="join" />
+<InputTextDocs section="join" />

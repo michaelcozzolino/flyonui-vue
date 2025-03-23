@@ -102,6 +102,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                         { text: 'Input Text', link: 'input-text' },
                         { text: 'Join', link: 'join' },
                         { text: 'Select', link: 'select' },
+                        { text: 'Textarea', link: 'textarea' },
                     ],
                 },
             ],
