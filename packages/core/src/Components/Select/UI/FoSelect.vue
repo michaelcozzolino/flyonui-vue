@@ -39,24 +39,14 @@
 </template>
 
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
-import type { LabelType }               from '@/Components/Label';
-import type { SelectOption }            from '@/Components/Select';
-import type { ElementName, Size }       from '@/Shared/Types/Variants';
-import { FoFilledFocused }              from '@/Components/Focus/Internal';
-import { FoLabel, useLabelType }        from '@/Components/Label/Internal';
-import { useSize }                      from '@/Shared/Internal/Lib';
-import { computed, useId, watchEffect } from 'vue';
+import type { SelectOption, SelectProps } from '@/Components/Select';
+import type { ElementName }               from '@/Shared/Types/Variants';
+import { FoFilledFocused }                from '@/Components/Focus/Internal';
+import { FoLabel, useLabelType }          from '@/Components/Label/Internal';
+import { useSize }                        from '@/Shared/Internal/Lib';
+import { computed, useId, watchEffect }   from 'vue';
 
-interface Props {
-    label: {
-        text:  string;
-        type?: Exclude<LabelType, 'inline'>; // When undefined the label will be a text by default
-    };
-    options: K[];
-    size?:   Exclude<Size, 'extraLarge'>;
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<SelectProps<T, K>>(), {
     size: 'default',
 });
 

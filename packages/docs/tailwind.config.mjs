@@ -1,5 +1,4 @@
-import path    from 'node:path';
-import flyonui from 'flyonui';
+import path from 'node:path';
 
 export default {
     content: [
@@ -7,11 +6,4 @@ export default {
         './{Components,Forms,Navigations}/**/*.{html,js,ts,vue}',
         `${path.dirname(require.resolve('flyonui-vue'))}/**/*.{html,js,ts,vue}`,
     ],
-    plugins: [
-        flyonui,
-    ],
-    theme:   {},
-    flyonui: {
-        themes: true,
-    },
 };

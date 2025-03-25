@@ -8,6 +8,7 @@
         "node": ">=18.0.0"
     },
     "scripts": {
+        "dependency-upgrade": "npx yarn-upgrade-all",
         "dev": "yarn concurrently \"yarn workspace flyonui-vue dev\" \"yarn workspace flyonui-vue-docs dev\"",
         "build": "yarn workspaces foreach -Apt run build",
         "lint": "yarn workspaces foreach -Apt run lint",
