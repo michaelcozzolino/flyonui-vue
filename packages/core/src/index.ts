@@ -1,3 +1,5 @@
+import '@/index.css';
+
 export * from '@/Components/Badge';
 export * from '@/Components/Button';
 export * from '@/Components/Checkbox';

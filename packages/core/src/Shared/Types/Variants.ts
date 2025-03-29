@@ -19,21 +19,22 @@ export type ElementName =
     | 'stat-list'
     | 'textarea';
 
-export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'link' | 'loading'>;
+export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox'>;
+export type ColorableTextElementName = Extract<ElementName, 'link' | 'loading'>;
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
 export type ResponsiveElementName = Extract<ElementName, 'btn' | 'join'>;
 export type ShapeableElementName = Extract<ElementName, 'badge' | 'btn' | 'input-text'>;
-export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'input-text' | 'loading' | 'menu' | 'select'>;
+export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'input-text' | 'loading' | 'menu' | 'select' | 'textarea'>;
 export type StatefulElementName = Extract<ElementName, 'btn' | 'menu-item'>;
 export type OrientableElementName = Extract<ElementName, 'checkbox' | 'join' | 'list-group' | 'list-group-item' | 'menu' | 'stat-list'>;
 export type BorderableElementName = Extract<ElementName, 'stat-list'>;
 export type LabellableTypeElementName = Extract<ElementName, 'input-text' | 'select' | 'textarea'>;
 export type LabellableElementName = Extract<ElementName, 'label'> | LabellableTypeElementName;
 export type StripedElementName = Extract<ElementName, 'list-group' | 'list-group-item'>;
-
+// todo: make some configuration where the user can choose which color/size and so on to be the default, neutral is the default color now.
 export const availableColors = ['default', 'neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'] as const;
-export type Color = typeof availableColors[number];
-
+export type TextColor = typeof availableColors[number];
+export type Color = Exclude<TextColor, 'neutral'>;
 export type Preset = Default | 'gradient' | 'text' | 'soft' | 'outline';
 export type Size = Default | 'extraSmall' | 'small' | 'large' | 'extraLarge' | 'doubleExtraLarge';
 export type Orientation = 'horizontal' | 'vertical';
