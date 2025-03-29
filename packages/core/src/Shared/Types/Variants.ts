@@ -43,3 +43,4 @@ export type Orientation = 'horizontal' | 'vertical';
 export type State = Default | 'active' | 'disabled';
 export type Layout = Default | 'wide' | 'block';
 export type Shape = Default | 'circle' | 'pilled' | 'square';
+export type HorizontalPosition = 'left' | 'right';

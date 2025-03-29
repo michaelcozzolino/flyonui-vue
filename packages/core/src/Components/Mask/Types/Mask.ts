@@ -18,5 +18,3 @@ export type Mask =
     | 'triangle-2'
     | 'triangle-3'
     | 'triangle-4';
-
-export type SideMask = 'left' | 'right';
