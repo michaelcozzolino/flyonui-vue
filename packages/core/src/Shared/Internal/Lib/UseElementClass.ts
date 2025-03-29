@@ -1,6 +1,7 @@
 import type {
     Color,
     ColorableElementName,
+    ColorableTextElementName,
     ElementName,
     OrientableElementName,
     Orientation,
@@ -12,6 +13,7 @@ import type {
     Size,
     State,
     StatefulElementName,
+    TextColor,
 }                                             from '@/Shared/Types/Variants';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import { computed, toValue }                  from 'vue';
@@ -25,7 +27,6 @@ export function useColor(
         {
             badge: {
                 default:   '',
-                neutral:   'badge-neutral',
                 primary:   'badge-primary',
                 secondary: 'badge-secondary',
                 accent:    'badge-accent',
@@ -36,7 +37,6 @@ export function useColor(
             },
             btn: {
                 default:   '',
-                neutral:   '',
                 primary:   'btn-primary',
                 secondary: 'btn-secondary',
                 accent:    'btn-accent',
@@ -47,7 +47,6 @@ export function useColor(
             },
             checkbox: {
                 default:   '',
-                neutral:   '',
                 primary:   'checkbox-primary',
                 secondary: 'checkbox-secondary',
                 accent:    'checkbox-accent',
@@ -56,6 +55,18 @@ export function useColor(
                 warning:   'checkbox-warning',
                 error:     'checkbox-error',
             },
+        },
+        color,
+    );
+}
+
+export function useTextColor(
+    elementName: MaybeRefOrGetter<ColorableTextElementName>,
+    color: MaybeRefOrGetter<TextColor>,
+): ComputedRef<string> {
+    return useElementClass<ColorableTextElementName, TextColor>(
+        elementName,
+        {
             link: {
                 default:   '',
                 neutral:   'link-neutral',
@@ -151,7 +162,7 @@ export function useSize(
                 extraSmall:       'btn-xs',
                 small:            'btn-sm',
                 large:            'btn-lg',
-                extraLarge:       '',
+                extraLarge:       'btn-xl',
                 doubleExtraLarge: '',
             },
             'badge': {
@@ -167,7 +178,7 @@ export function useSize(
                 extraSmall:       'checkbox-xs',
                 small:            'checkbox-sm',
                 large:            'checkbox-lg',
-                extraLarge:       '',
+                extraLarge:       'checkbox-xl',
                 doubleExtraLarge: '',
             },
             'icon': {
@@ -183,7 +194,7 @@ export function useSize(
                 extraSmall:       'input-xs',
                 small:            'input-sm',
                 large:            'input-lg',
-                extraLarge:       '',
+                extraLarge:       'input-xl',
                 doubleExtraLarge: '',
             },
             'loading': {
@@ -191,15 +202,15 @@ export function useSize(
                 extraSmall:       'loading-xs',
                 small:            'loading-sm',
                 large:            'loading-lg',
-                extraLarge:       '',
+                extraLarge:       'loading-xl',
                 doubleExtraLarge: '',
             },
             'menu': {
-                default:          '',
+                default:          'menu-md',
                 extraSmall:       'menu-xs',
                 small:            'menu-sm',
                 large:            'menu-lg',
-                extraLarge:       '',
+                extraLarge:       'menu-xl',
                 doubleExtraLarge: '',
             },
             'select': {
@@ -208,6 +219,14 @@ export function useSize(
                 small:            'select-sm',
                 large:            'select-lg',
                 extraLarge:       '',
+                doubleExtraLarge: '',
+            },
+            'textarea': {
+                default:          'textarea-md',
+                extraSmall:       'textarea-xs',
+                small:            'textarea-sm',
+                large:            'textarea-lg',
+                extraLarge:       'textarea-xl',
                 doubleExtraLarge: '',
             },
         },
@@ -243,7 +262,7 @@ export function useOrientation(
                 vertical:   '',
             },
             'stat-list': {
-                horizontal: '',
+                horizontal: 'stats-horizontal',
                 vertical:   'stats-vertical',
             },
         },
@@ -265,8 +284,8 @@ export function useState(
             },
             'menu-item': {
                 default:  '',
-                active:   'active',
-                disabled: 'disabled',
+                active:   'menu-active',
+                disabled: 'menu-disabled',
             },
         },
         state,

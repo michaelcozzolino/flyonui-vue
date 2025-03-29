@@ -17,6 +17,10 @@ export function useGlass(hasGlass: MaybeRefOrGetter<boolean>): ComputedRef<strin
     return useClass(hasGlass, 'glass');
 }
 
+export function useJoinItem(isInJoin: MaybeRefOrGetter<boolean>): ComputedRef<string> {
+    return useClass(isInJoin, 'join-item');
+}
+
 export function useValidity(isValid: MaybeRefOrGetter<boolean | undefined>): ComputedRef<string> {
     return useClass(isValid, 'is-valid', 'is-invalid');
 }
