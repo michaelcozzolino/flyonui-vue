@@ -16,10 +16,6 @@
 
 <TextareaDocs section="floating-label" />
 
-## Filled label
-
-<TextareaDocs section="filled-label" />
-
 ## Helper text
 
 <TextareaDocs section="with-helper-text" />

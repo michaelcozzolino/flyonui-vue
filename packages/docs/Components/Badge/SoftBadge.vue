@@ -3,12 +3,6 @@
         Default
     </FoBadge>
 
-    <FoBadge color="neutral"
-             preset="soft"
-    >
-        Neutral
-    </FoBadge>
-
     <FoBadge color="primary"
              preset="soft"
     >

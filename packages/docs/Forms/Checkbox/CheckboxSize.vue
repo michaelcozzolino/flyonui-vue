@@ -21,6 +21,12 @@
                 label="Large"
                 size="large"
     />
+
+    <FoCheckbox v-model="isChecked"
+                color="primary"
+                label="Large"
+                size="extraLarge"
+    />
 </template>
 
 <script setup lang="ts">

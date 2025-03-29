@@ -1,6 +1,5 @@
 <template>
-    <FoIconBadge color="neutral"
-                 icon="tabler:headphones"
+    <FoIconBadge icon="tabler:user"
                  shape="square"
     />
 
@@ -37,11 +36,6 @@
     <FoIconBadge color="error"
                  icon="tabler:clock"
                  shape="square"
-    />
-
-    <FoIconBadge color="neutral"
-                 icon="tabler:headphones"
-                 shape="circle"
     />
 
     <FoIconBadge color="primary"
