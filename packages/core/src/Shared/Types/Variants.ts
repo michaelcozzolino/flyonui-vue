@@ -37,6 +37,7 @@ export type TextColor = typeof availableColors[number];
 export type Color = Exclude<TextColor, 'neutral'>;
 export type Preset = Default | 'gradient' | 'text' | 'soft' | 'outline';
 export type Size = Default | 'extraSmall' | 'small' | 'large' | 'extraLarge' | 'doubleExtraLarge';
+export type SizeWithout2XL = Exclude<Size, 'doubleExtraLarge'>;
 export type Orientation = 'horizontal' | 'vertical';
 
 export type State = Default | 'active' | 'disabled';
