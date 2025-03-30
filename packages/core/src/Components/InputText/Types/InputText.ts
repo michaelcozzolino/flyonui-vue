@@ -1,5 +1,6 @@
-import type { InputHelperText, InputLabel, LabelType }       from '@/Components/Label';
-import type { IsDisabled, IsReadonly, IsValid, Shape, Size } from '@/Shared/Types';
+import type { InputHelperText }                                        from '@/Components/HelperText/Internal';
+import type { InputLabel, LabelType }                                  from '@/Components/Label';
+import type { IsDisabled, IsReadonly, IsValid, Shape, SizeWithout2XL } from '@/Shared/Types';
 
 export interface InputTextLabelProp {
     text:      string;
@@ -17,6 +18,6 @@ export interface InputTextProps extends IsDisabled, IsReadonly, IsValid {
     placeholder?:  string;
     helperText?:   InputHelperText;
     shape?:        Extract<Shape, 'default' | 'pilled'>;
-    size?:         Exclude<Size, 'extraLarge' | 'doubleExtraLarge'>;
+    size?:         SizeWithout2XL;
     withoutFocus?: boolean;
 }
