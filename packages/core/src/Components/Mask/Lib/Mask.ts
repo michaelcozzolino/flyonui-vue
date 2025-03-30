@@ -1,4 +1,5 @@
-import type { Mask, SideMask }                from '@/Components/Mask/Types/Mask';
+import type { Mask }                          from '@/Components/Mask/Types/Mask';
+import type { HorizontalPosition }            from '@/Shared/Types';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import { computed, toValue }                  from 'vue';
 
@@ -30,9 +31,9 @@ function useMask(mask: MaybeRefOrGetter<Mask>): ComputedRef<string> {
     });
 }
 
-function useSideMask(sideMask: MaybeRefOrGetter<SideMask>): ComputedRef<string> {
+function useSideMask(sideMask: MaybeRefOrGetter<HorizontalPosition>): ComputedRef<string> {
     return computed((): string => {
-        const classes: Record<SideMask, string> = {
+        const classes: Record<HorizontalPosition, string> = {
             left:  'mask-half-1',
             right: 'mask-half-2',
         };
