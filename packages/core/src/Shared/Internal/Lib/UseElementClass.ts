@@ -214,11 +214,11 @@ export function useSize(
                 doubleExtraLarge: '',
             },
             'select': {
-                default:          '',
+                default:          'select-md',
                 extraSmall:       'select-xs',
                 small:            'select-sm',
                 large:            'select-lg',
-                extraLarge:       '',
+                extraLarge:       'select-xl',
                 doubleExtraLarge: '',
             },
             'textarea': {

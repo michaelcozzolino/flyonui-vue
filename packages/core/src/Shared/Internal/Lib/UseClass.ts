@@ -46,8 +46,8 @@ export function useStripes(
     isStriped: MaybeRefOrGetter<boolean>,
 ): ComputedRef<string> {
     const classes: Record<StripedElementName, ComputedRef<string>> = {
-        'list-group':      useClass(isStriped, 'odd:*:bg-base-300/60'),
-        'list-group-item': useClass(isStriped, 'bg-base-300/60'),
+        'list-group':      useClass(isStriped, '*:odd:bg-base-200'),
+        'list-group-item': useClass(isStriped, 'bg-base-200'),
     };
 
     return classes[toValue(elementName)];
