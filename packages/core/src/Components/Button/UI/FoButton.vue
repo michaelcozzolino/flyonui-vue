@@ -3,6 +3,7 @@
                class="btn"
                :class="[
                    colorClass,
+                   joinItemClass,
                    presetClass,
                    shapeClass,
                    sizeClass,
@@ -34,20 +35,22 @@
 import type { ButtonProps } from '@/Components/Button/Types/Button';
 import type {
     ElementName,
-}                           from '@/Shared/Types/Variants';
-import { FoIcon } from '@/Components/Icon';
+}                               from '@/Shared/Types/Variants';
+import { FoIcon }               from '@/Components/Icon';
+import { isInJoinInjectionKey } from '@/Components/Join/Internal';
 import {
     isTextAllowedForShape,
     useColor,
     useGlass,
+    useJoinItem,
     usePreset,
     useResponsive,
     useShape,
     useSize,
     useState,
-}                   from '@/Shared/Internal/Lib';
-import { computed }   from 'vue';
-import { RouterLink } from 'vue-router';
+}                               from '@/Shared/Internal/Lib';
+import { computed, inject } from 'vue';
+import { RouterLink }       from 'vue-router';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
     color:        'default',
@@ -69,9 +72,11 @@ const buttonTag = computed(() => {
 });
 
 const elementName: ElementName = 'btn';
+const isInJoin: boolean        = inject(isInJoinInjectionKey, false);
 
 const [
     colorClass,
+    joinItemClass,
     presetClass,
     shapeClass,
     sizeClass,
@@ -79,6 +84,7 @@ const [
     responsiveClass,
 ] = [
     useColor(elementName, () => props.color),
+    useJoinItem(isInJoin),
     usePreset(elementName, () => props.preset),
     useShape(elementName, () => props.shape),
     useSize(elementName, () => props.size),

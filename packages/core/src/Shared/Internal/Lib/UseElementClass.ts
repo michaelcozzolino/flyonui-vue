@@ -104,6 +104,7 @@ export function usePreset(
             btn: {
                 default:  '',
                 outline:  'btn-outline',
+                dash:     'btn-outline border-dashed',
                 soft:     'btn-soft',
                 gradient: 'btn-gradient',
                 text:     'btn-text',
@@ -111,6 +112,7 @@ export function usePreset(
             badge: {
                 default:  '',
                 outline:  'badge-outline',
+                dash:     'badge-outline border-dashed',
                 soft:     'badge-soft',
                 gradient: '',
                 text:     '',
