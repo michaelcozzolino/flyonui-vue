@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import type { Animation, LoadingProps } from '@/Components/Loading/Types/Loading';
 import type { ElementName }             from '@/Shared/Types/Variants';
-import { useColor, useSize }            from '@/Shared/Internal/Lib';
+import { useSize, useTextColor }        from '@/Shared/Internal/Lib';
 import { computed }                     from 'vue';
 
 const props = withDefaults(defineProps<LoadingProps>(), {
@@ -39,7 +39,7 @@ const [
     colorClass,
     sizeClass,
 ] = [
-    useColor(elementName, () => props.color),
+    useTextColor(elementName, () => props.color),
     useSize(elementName, () => props.size),
 ];
 </script>
