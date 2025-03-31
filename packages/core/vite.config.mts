@@ -30,7 +30,7 @@ export default defineConfig({
             name:  'flyonui-vue',
         },
         rollupOptions: {
-            external: ['@iconify/vue', 'vue', 'vue-router'],
+            external: ['@iconify/vue', 'vue', 'vue-router', 'tailwindcss'],
             output:   {
                 globals: {
                     '@iconify/vue': 'Iconify',
