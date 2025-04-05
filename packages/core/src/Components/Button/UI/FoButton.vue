@@ -10,7 +10,6 @@
                    ...stateClass,
                    responsiveClass,
                    layoutClass,
-                   noAnimation && 'no-animation',
                    glassClass,
                    isDisabled && 'btn-disabled',
                ]"
@@ -57,7 +56,6 @@ const props = withDefaults(defineProps<ButtonProps>(), {
     preset:       'default',
     shape:        'default',
     size:         'default',
-    noAnimation:  false,
     isActive:     false,
     layout:       'default',
     isResponsive: false,

@@ -4,13 +4,12 @@ import type { Color, Layout, Preset, Shape, SizeWithout2XL } from '@/Shared/Type
 import type { RouteRecordRaw }                               from 'vue-router';
 
 export interface ButtonProps extends IsDisabled, IsResponsive, WithGlass {
-    color?:       Color;
-    to?:          RouteRecordRaw;
-    icon?:        PositionableIcon;
-    shape?:       Shape;
-    size?:        SizeWithout2XL;
-    layout?:      Layout;
-    isActive?:    boolean;
-    noAnimation?: boolean;
-    preset?:      Preset;
+    color?:    Color;
+    to?:       RouteRecordRaw;
+    icon?:     PositionableIcon;
+    shape?:    Shape;
+    size?:     SizeWithout2XL;
+    layout?:   Layout;
+    isActive?: boolean;
+    preset?:   Preset;
 }
