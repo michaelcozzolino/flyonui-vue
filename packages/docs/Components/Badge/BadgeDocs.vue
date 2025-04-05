@@ -14,6 +14,11 @@
                  :component="OutlineBadge"
     />
 
+    <CodeSnippet v-else-if="section === 'dash'"
+                 :code="DashedBadgeRaw"
+                 :component="DashedBadge"
+    />
+
     <CodeSnippet v-else-if="section === 'pilled'"
                  :code="PilledBadgeRaw"
                  :component="PilledBadge"
@@ -39,12 +44,21 @@
                  :code="IconPositionBadgeRaw"
                  :component="IconPositionBadge"
     />
+
+    <CodeSnippet v-else-if="section === 'in-a-button'"
+                 :code="BadgeInAButtonRaw"
+                 :component="BadgeInAButton"
+    />
 </template>
 
 <script setup lang="ts">
 import CodeSnippet          from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import BadgeInAButton       from '@/Components/Badge/BadgeInAButton.vue';
+import BadgeInAButtonRaw    from '@/Components/Badge/BadgeInAButton.vue?raw';
 import BadgeSize            from '@/Components/Badge/BadgeSize.vue';
 import BadgeSizeRaw         from '@/Components/Badge/BadgeSize.vue?raw';
+import DashedBadge          from '@/Components/Badge/DashedBadge.vue';
+import DashedBadgeRaw       from '@/Components/Badge/DashedBadge.vue?raw';
 import DotStyleBadge        from '@/Components/Badge/DotStyleBadge.vue';
 import DotStyleBadgeRaw     from '@/Components/Badge/DotStyleBadge.vue?raw';
 import IconBadge            from '@/Components/Badge/IconBadge.vue';
@@ -60,8 +74,9 @@ import SoftBadgeRaw         from '@/Components/Badge/SoftBadge.vue?raw';
 import SolidBadge           from '@/Components/Badge/SolidBadge.vue';
 import SolidBadgeRaw        from '@/Components/Badge/SolidBadge.vue?raw';
 
+// todo: dismissible badges
 interface Props {
-    section: 'solid' | 'soft' | 'outline' | 'pilled' | 'size' | 'dot-style' | 'icon' | 'icon-position';
+    section: 'solid' | 'soft' | 'outline' | 'dash' | 'pilled' | 'size' | 'dot-style' | 'icon' | 'icon-position' | 'in-a-button';
 }
 
 defineProps<Props>();
