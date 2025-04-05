@@ -11,6 +11,7 @@
 
             <FoStatListItemActions>
                 <FoButton color="primary"
+                          preset="gradient"
                           size="small"
                 >
                     Upgrade Plan
