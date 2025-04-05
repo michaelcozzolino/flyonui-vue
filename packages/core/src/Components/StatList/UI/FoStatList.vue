@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import type { Orientation }          from '@/Shared/Types/Variants';
 import { useBorder, useOrientation } from '@/Shared/Internal/Lib';
-
+// todo: rename to FoStats
 interface Props {
     orientation?: Orientation;
     isBordered?:  boolean;

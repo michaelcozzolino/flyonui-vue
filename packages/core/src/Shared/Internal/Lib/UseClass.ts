@@ -7,7 +7,7 @@ export function useBorder(
     isBordered: MaybeRefOrGetter<boolean>,
 ): ComputedRef<string> {
     const availableClasses = {
-        'stat-list': 'border border-base-content/10 shadow-none',
+        'stat-list': 'stats-border shadow-none',
     };
 
     return useClass(isBordered, availableClasses[toValue(elementName)]);
