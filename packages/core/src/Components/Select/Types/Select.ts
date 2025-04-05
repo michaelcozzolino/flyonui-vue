@@ -1,5 +1,5 @@
-import type { LabelType }            from '@/Components/Label';
-import type { Id, IsDisabled, Size } from '@/Shared/Types';
+import type { LabelType }                      from '@/Components/Label';
+import type { Id, IsDisabled, SizeWithout2XL } from '@/Shared/Types';
 
 export interface SelectOption<T extends number | string = number> extends Id<T>, IsDisabled {
     text: string;
@@ -11,5 +11,5 @@ export interface SelectProps<T extends string | number, K extends SelectOption<T
         type?: Exclude<LabelType, 'inline'>; // When undefined the label will be a text by default
     };
     options: K[];
-    size?:   Exclude<Size, 'extraLarge'>;
+    size?:   SizeWithout2XL;
 }

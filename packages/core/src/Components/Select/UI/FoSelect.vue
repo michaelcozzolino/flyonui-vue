@@ -1,11 +1,12 @@
 <template>
+    <!--    todo: new features  -->
     <div v-if="options.length"
-         class="relative w-full max-w-sm"
+         :class="labelTypeClass"
     >
         <select :id="id"
                 v-model="selectedOption"
-                class="select appearance-none"
-                :class="[labelTypeClass, sizeClass]"
+                class="select"
+                :class="[sizeClass]"
                 aria-label="select"
         >
             <option v-if="isTextLabel"
@@ -24,10 +25,6 @@
             </option>
         </select>
 
-        <FoFilledFocused :element-name="elementName"
-                         :label-type="label.type"
-        />
-
         <FoLabel v-if="label.type !== undefined"
                  :for="id"
                  element="select"
@@ -41,7 +38,6 @@
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { SelectOption, SelectProps } from '@/Components/Select';
 import type { ElementName }               from '@/Shared/Types/Variants';
-import { FoFilledFocused }                from '@/Components/Focus/Internal';
 import { FoLabel, useLabelType }          from '@/Components/Label/Internal';
 import { useSize }                        from '@/Shared/Internal/Lib';
 import { computed, useId, watchEffect }   from 'vue';
