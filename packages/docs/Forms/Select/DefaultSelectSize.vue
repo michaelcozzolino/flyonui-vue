@@ -21,6 +21,12 @@
               :options="options"
               size="large"
     />
+
+    <FoSelect v-model="selectedOption"
+              :label="{ text: 'Pick your favorite Movie' }"
+              :options="options"
+              size="extraLarge"
+    />
 </template>
 
 <script setup lang="ts">
