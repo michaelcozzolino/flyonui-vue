@@ -1,30 +1,35 @@
 <template>
     <FoTextarea v-model="input"
-                :label="{ text: 'Full name' }"
+                :icon="{ left: 'tabler:message' }"
                 placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
-                is-valid
     />
 
     <FoTextarea v-model="input"
+                :icon="{ right: 'tabler:message' }"
+                placeholder="Hello!!!"
+    />
+
+    <FoTextarea v-model="input"
+                :icon="{ left: 'tabler:message', right: 'info-circle' }"
+                placeholder="Hello!!!"
+    />
+
+    <FoTextarea v-model="input"
+                :icon="{ left: 'tabler:message' }"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
-                is-valid
     />
 
     <FoTextarea v-model="input"
-                :label="{ text: 'Full name' }"
-                placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
-                :is-valid="false"
-    />
-
-    <FoTextarea v-model="input"
+                :icon="{ right: 'tabler:message' }"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
-                :is-valid="false"
+    />
+
+    <FoTextarea v-model="input"
+                :icon="{ left: 'tabler:message', right: 'info-circle' }"
+                :label="{ text: 'Your bio', type: 'floating' }"
+                placeholder="Hello!!!"
     />
 </template>
 

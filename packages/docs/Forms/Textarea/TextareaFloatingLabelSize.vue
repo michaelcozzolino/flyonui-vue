@@ -1,30 +1,31 @@
 <template>
     <FoTextarea v-model="input"
-                :label="{ text: 'Full name' }"
+                :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
-                is-valid
+                size="extraSmall"
     />
 
     <FoTextarea v-model="input"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
-                is-valid
-    />
-
-    <FoTextarea v-model="input"
-                :label="{ text: 'Full name' }"
-                placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
-                :is-valid="false"
+                size="small"
     />
 
     <FoTextarea v-model="input"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
-                :is-valid="false"
+    />
+
+    <FoTextarea v-model="input"
+                :label="{ text: 'Your bio', type: 'floating' }"
+                placeholder="Hello!!!"
+                size="large"
+    />
+
+    <FoTextarea v-model="input"
+                :label="{ text: 'Your bio', type: 'floating' }"
+                placeholder="Hello!!!"
+                size="extraLarge"
     />
 </template>
 

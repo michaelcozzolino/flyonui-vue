@@ -10,12 +10,6 @@
                 placeholder="Hello!!!"
                 is-disabled
     />
-
-    <FoTextarea v-model="input"
-                :label="{ text: 'Your bio', type: 'filled' }"
-                placeholder="Hello!!!"
-                is-disabled
-    />
 </template>
 
 <script setup lang="ts">

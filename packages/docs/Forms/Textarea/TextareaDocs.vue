@@ -23,28 +23,40 @@
                  :preview="{ columns: 1, rows: 1 }"
     />
 
-    <CodeSnippet v-else-if="section === 'filled-label'"
-                 :code="TextareaFilledLabelRaw"
-                 :component="TextareaFilledLabel"
-                 :preview="{ columns: 1, rows: 1 }"
+    <CodeSnippet v-else-if="section === 'default-size'"
+                 :code="TextareaDefaultSizeRaw"
+                 :component="TextareaDefaultSize"
+                 :preview="{ columns: 1, rows: 5 }"
+    />
+
+    <CodeSnippet v-else-if="section === 'floating-label-size'"
+                 :code="TextareaFloatingLabelSizeRaw"
+                 :component="TextareaFloatingLabelSize"
+                 :preview="{ columns: 1, rows: 5 }"
+    />
+
+    <CodeSnippet v-else-if="section === 'with-icon'"
+                 :code="TextareaWithIconRaw"
+                 :component="TextareaWithIcon"
+                 :preview="{ columns: 1, rows: 6 }"
     />
 
     <CodeSnippet v-else-if="section === 'with-helper-text'"
                  :code="TextareaWithHelperTextRaw"
                  :component="TextareaWithHelperText"
-                 :preview="{ columns: 1, rows: 3 }"
+                 :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'validation-state'"
                  :code="TextareaValidationStateRaw"
                  :component="TextareaValidationState"
-                 :preview="{ columns: 1, rows: 6 }"
+                 :preview="{ columns: 1, rows: 4 }"
     />
 
     <CodeSnippet v-else-if="section === 'disabled'"
                  :code="DisabledTextareaRaw"
                  :component="DisabledTextarea"
-                 :preview="{ columns: 1, rows: 3 }"
+                 :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'readonly'"
@@ -63,16 +75,20 @@ import DisabledTextarea                   from '@/Forms/Textarea/DisabledTextare
 import DisabledTextareaRaw                from '@/Forms/Textarea/DisabledTextarea.vue?raw';
 import ReadonlyTextarea                   from '@/Forms/Textarea/ReadonlyTextarea.vue';
 import ReadonlyTextareaRaw                from '@/Forms/Textarea/ReadonlyTextarea.vue?raw';
-import TextareaFilledLabel                from '@/Forms/Textarea/TextareaFilledLabel.vue';
-import TextareaFilledLabelRaw             from '@/Forms/Textarea/TextareaFilledLabel.vue?raw';
+import TextareaDefaultSize                from '@/Forms/Textarea/TextareaDefaultSize.vue';
+import TextareaDefaultSizeRaw             from '@/Forms/Textarea/TextareaDefaultSize.vue?raw';
 import TextareaFloatingLabel              from '@/Forms/Textarea/TextareaFloatingLabel.vue';
 import TextareaFloatingLabelRaw           from '@/Forms/Textarea/TextareaFloatingLabel.vue?raw';
+import TextareaFloatingLabelSize          from '@/Forms/Textarea/TextareaFloatingLabelSize.vue';
+import TextareaFloatingLabelSizeRaw       from '@/Forms/Textarea/TextareaFloatingLabelSize.vue?raw';
 import TextareaHiddenLabel                from '@/Forms/Textarea/TextareaHiddenLabel.vue';
 import TextareaHiddenLabelRaw             from '@/Forms/Textarea/TextareaHiddenLabel.vue?raw';
 import TextareaValidationState            from '@/Forms/Textarea/TextareaValidationState.vue';
 import TextareaValidationStateRaw         from '@/Forms/Textarea/TextareaValidationState.vue?raw';
 import TextareaWithHelperText             from '@/Forms/Textarea/TextareaWithHelperText.vue';
 import TextareaWithHelperTextRaw          from '@/Forms/Textarea/TextareaWithHelperText.vue?raw';
+import TextareaWithIcon                   from '@/Forms/Textarea/TextareaWithIcon.vue';
+import TextareaWithIconRaw                from '@/Forms/Textarea/TextareaWithIcon.vue?raw';
 import TextareaWithLabelAndPlaceholder    from '@/Forms/Textarea/TextareaWithLabelAndPlaceholder.vue';
 import TextareaWithLabelAndPlaceholderRaw from '@/Forms/Textarea/TextareaWithLabelAndPlaceholder.vue?raw';
 
@@ -81,7 +97,9 @@ interface Props {
         | 'with-label-and-placeholder'
         | 'hidden-label'
         | 'floating-label'
-        | 'filled-label'
+        | 'default-size'
+        | 'floating-label-size'
+        | 'with-icon'
         | 'with-helper-text'
         | 'validation-state'
         | 'disabled'
