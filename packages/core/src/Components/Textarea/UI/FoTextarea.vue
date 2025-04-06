@@ -1,5 +1,4 @@
 <template>
-    <!--    todo: docs, add also textarea group -->
     <div :class="hasIcon ? 'textarea' : defaultLabel?.type === 'floating' && 'textarea-floating'">
         <FoLabel v-if="defaultLabel?.type === 'text'"
                  :for="id"
