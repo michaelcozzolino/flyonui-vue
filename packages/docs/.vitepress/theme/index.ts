@@ -21,9 +21,7 @@ import Playground                               from '@/Playground/Playground.vu
 import { FoSelectThemeController, vMask }       from 'flyonui-vue';
 import DefaultTheme                             from 'vitepress/theme';
 
-import './tailwind.css';
-import './style.scss';
-import 'vue-code-highlighter/dist/style.css';
+import './index.css';
 
 export default {
     extends: DefaultTheme,
