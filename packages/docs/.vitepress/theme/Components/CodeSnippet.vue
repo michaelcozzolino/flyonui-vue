@@ -1,7 +1,7 @@
 <template>
     <div class="vp-raw">
         <section class="border-neutral/10 rounded-box flex flex-col gap-4 border p-3 sm:p-6 md:my-8">
-            <div class="gap-3 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6"
+            <div class="gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6"
                  :class="previewGridClass"
             >
                 <component :is="component" />
@@ -73,6 +73,8 @@ const previewGridClass = computed(() => {
             4: 'grid-rows-4',
             5: 'grid-rows-5',
             6: 'grid-rows-6',
+            7: 'grid-rows-7',
+            8: 'grid-rows-8',
         },
     };
 
