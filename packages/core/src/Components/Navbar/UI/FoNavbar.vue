@@ -50,7 +50,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    links:     () => [],
+    links:     (): NavbarLink[] => [],
     linkType:  'vue',
     isRounded: false,
 });
