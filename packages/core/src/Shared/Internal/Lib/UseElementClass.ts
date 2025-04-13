@@ -46,7 +46,7 @@ export function useColor(
                 error:     'btn-error',
             },
             checkbox: {
-                default:   '',
+                default:   'checkbox-default',
                 primary:   'checkbox-primary',
                 secondary: 'checkbox-secondary',
                 accent:    'checkbox-accent',

@@ -1,6 +1,12 @@
-import type { BorderableElementName, ResponsiveElementName, StripedElementName } from '@/Shared/Types/Variants';
-import type { ComputedRef, MaybeRefOrGetter }                                    from 'vue';
-import { computed, toValue }                                                     from 'vue';
+import type { LabelType } from '@/Components/Label';
+import type {
+    BorderableElementName,
+    FloatingElementName,
+    ResponsiveElementName,
+    StripedElementName,
+} from '@/Shared/Types/Variants';
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import { computed, toValue }                  from 'vue';
 
 export function useBorder(
     elementName: MaybeRefOrGetter<BorderableElementName>,
@@ -48,6 +54,21 @@ export function useStripes(
     const classes: Record<StripedElementName, ComputedRef<string>> = {
         'list-group':      useClass(isStriped, '*:odd:bg-base-200'),
         'list-group-item': useClass(isStriped, 'bg-base-200'),
+    };
+
+    return classes[toValue(elementName)];
+}
+
+export function useFloating(
+    elementName: MaybeRefOrGetter<FloatingElementName>,
+    labelType: MaybeRefOrGetter<LabelType | undefined>,
+): ComputedRef<string> {
+    const isFloating = toValue(labelType) === 'floating';
+
+    const classes: Record<FloatingElementName, ComputedRef<string>> = {
+        'input-text': useClass(isFloating, 'input-floating'),
+        'select':     useClass(isFloating, 'select-floating'),
+        'textarea':   useClass(isFloating, 'textarea-floating'),
     };
 
     return classes[toValue(elementName)];
