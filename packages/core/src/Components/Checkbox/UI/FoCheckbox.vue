@@ -13,6 +13,8 @@
                    colorClass,
                    sizeClass,
                    validityClass,
+                   helperText && 'mt-2',
+                   $attrs.class,
                ]"
                :aria-label="label ?? (isDisabled ? 'disabled checkbox' : 'checkbox')"
                :disabled="isDisabled"
@@ -21,17 +23,17 @@
 
         <FoLabel v-if="label !== undefined"
                  :for="id"
-                 :class="helperText && '-mt-1 pt-0'"
-                 class="cursor-pointer flex-col items-start "
+                 class="cursor-pointer flex flex-col"
+                 :class="helperText === undefined && 'text-base'"
         >
             <template v-if="helperText !== undefined">
-                <span class="label-text text-base">
+                <span class="text-base">
                     {{ label }}
                 </span>
 
-                <FoAlternativeLabel>
+                <span>
                     {{ helperText }}
-                </FoAlternativeLabel>
+                </span>
             </template>
 
             <template v-else>
@@ -42,14 +44,15 @@
 </template>
 
 <script lang="ts" setup>
-import type { CheckboxProps }                      from '@/Components/Checkbox/Types/Checkbox';
-import type { Color }                              from '@/Shared/Types/Variants';
-import type { MaybeRefOrGetter }                   from 'vue';
-import { isInCheckboxGroupInjectionKey }           from '@/Components/Checkbox/Internal';
-import { FoAlternativeLabel, FoLabel }             from '@/Components/Label/Internal';
-import { useColor, useSize, useValidity }          from '@/Shared/Internal/Lib';
-import { availableColors }                         from '@/Shared/Types/Variants';
-import { computed, inject, toValue, useId, watch } from 'vue';
+import type { CheckboxProps }             from '@/Components/Checkbox/Types/Checkbox';
+import { isInCheckboxGroupInjectionKey }  from '@/Components/Checkbox/Internal';
+import { FoLabel }                        from '@/Components/Label/Internal';
+import { useColor, useSize, useValidity } from '@/Shared/Internal/Lib';
+import { computed, inject, useId, watch } from 'vue';
+
+defineOptions({
+    inheritAttrs: false,
+});
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
     color:      'default',
@@ -70,7 +73,7 @@ const [
     sizeClass,
     validityClass,
 ] = [
-    useCheckboxColor(() => props.color),
+    useColor(elementName, () => props.color),
     useSize(elementName, () => props.size),
     useValidity(() => props.isValid),
 ];
@@ -82,16 +85,6 @@ const gapClass = computed(() => {
 
     return 'gap-1';
 });
-
-function useCheckboxColor(color: MaybeRefOrGetter<Color | string>) {
-    return isColor(color)
-        ? useColor(elementName, color)
-        : computed(() => toValue(color));
-}
-
-function isColor(color: MaybeRefOrGetter<Color | string>): color is MaybeRefOrGetter<Color> {
-    return availableColors.includes(toValue(color) as Color);
-}
 
 watch(isIndeterminate, (newValue: boolean | undefined) => {
     if (newValue) {

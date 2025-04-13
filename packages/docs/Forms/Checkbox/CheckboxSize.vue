@@ -24,7 +24,7 @@
 
     <FoCheckbox v-model="isChecked"
                 color="primary"
-                label="Large"
+                label="Extra Large"
                 size="extraLarge"
     />
 </template>
