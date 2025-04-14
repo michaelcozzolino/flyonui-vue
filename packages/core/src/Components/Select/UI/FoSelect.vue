@@ -1,7 +1,7 @@
 <template>
-    <!--    todo: new features  -->
+    <!--    todo: some features are missing  -->
     <div v-if="options.length"
-         :class="labelTypeClass"
+         :class="floatingClass"
     >
         <select :id="id"
                 v-model="selectedOption"
@@ -38,8 +38,8 @@
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { SelectOption, SelectProps } from '@/Components/Select';
 import type { ElementName }               from '@/Shared/Types/Variants';
-import { FoLabel, useLabelType }          from '@/Components/Label/Internal';
-import { useSize }                        from '@/Shared/Internal/Lib';
+import { FoLabel }                        from '@/Components/Label/Internal';
+import { useFloating, useSize }           from '@/Shared/Internal/Lib';
 import { computed, useId, watchEffect }   from 'vue';
 
 const props = withDefaults(defineProps<SelectProps<T, K>>(), {
@@ -53,10 +53,10 @@ const selectedOption = defineModel<K | null>({ required: true });
 const elementName: ElementName = 'select';
 
 const [
-    labelTypeClass,
+    floatingClass,
     sizeClass,
 ] = [
-    useLabelType(elementName, () => props.label.type ?? 'text'),
+    useFloating(elementName, () => props.label.type),
     useSize(elementName, () => props.size),
 ];
 
