@@ -17,6 +17,11 @@
                  placeholder="John doe"
                  size="large"
     />
+
+    <FoInputText v-model="input"
+                 placeholder="John doe"
+                 size="extraLarge"
+    />
 </template>
 
 <script setup lang="ts">

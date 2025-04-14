@@ -10,12 +10,6 @@
                  placeholder="John Doe"
                  is-disabled
     />
-
-    <FoInputText v-model="input"
-                 :label="{ text: 'Full Name', type: 'filled' }"
-                 placeholder="John Doe"
-                 is-disabled
-    />
 </template>
 
 <script setup lang="ts">

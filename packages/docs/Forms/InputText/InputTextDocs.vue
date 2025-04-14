@@ -25,17 +25,6 @@
                  :component="InputTextFloatingLabel"
     />
 
-    <CodeSnippet v-else-if="section === 'filled-label'"
-                 :code="InputTextFilledLabelRaw"
-                 :component="InputTextFilledLabel"
-    />
-
-    <CodeSnippet v-else-if="section === 'with-helper-text-position'"
-                 :code="InputTextWithHelperTextPositionRaw"
-                 :component="InputTextWithHelperTextPosition"
-                 :preview="{ columns: 1, rows: 3 }"
-    />
-
     <CodeSnippet v-else-if="section === 'size'"
                  :code="InputTextSizeRaw"
                  :component="InputTextSize"
@@ -48,16 +37,10 @@
                  :preview="{ columns: 1, rows: 3 }"
     />
 
-    <CodeSnippet v-else-if="section === 'filled-label-size'"
-                 :code="InputTextFilledLabelSizeRaw"
-                 :component="InputTextFilledLabelSize"
-                 :preview="{ columns: 1, rows: 3 }"
-    />
-
     <CodeSnippet v-else-if="section === 'validation-state'"
                  :code="InputTextValidationStateRaw"
                  :component="InputTextValidationState"
-                 :preview="{ columns: 1, rows: 6 }"
+                 :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'inline-label'"
@@ -73,7 +56,7 @@
     <CodeSnippet v-else-if="section === 'shape'"
                  :code="InputTextShapeRaw"
                  :component="InputTextShape"
-                 :preview="{ columns: 1, rows: 3 }"
+                 :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'without-focus'"
@@ -84,7 +67,7 @@
     <CodeSnippet v-else-if="section === 'disabled'"
                  :code="DisabledInputTextRaw"
                  :component="DisabledInputText"
-                 :preview="{ columns: 1, rows: 3 }"
+                 :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'readonly'"
@@ -105,10 +88,6 @@ import DefaultInputText                   from '@/Forms/InputText/DefaultInputTe
 import DefaultInputTextRaw                from '@/Forms/InputText/DefaultInputText.vue?raw';
 import DisabledInputText                  from '@/Forms/InputText/DisabledInputText.vue';
 import DisabledInputTextRaw               from '@/Forms/InputText/DisabledInputText.vue?raw';
-import InputTextFilledLabel               from '@/Forms/InputText/InputTextFilledLabel.vue';
-import InputTextFilledLabelRaw            from '@/Forms/InputText/InputTextFilledLabel.vue?raw';
-import InputTextFilledLabelSize           from '@/Forms/InputText/InputTextFilledLabelSize.vue';
-import InputTextFilledLabelSizeRaw        from '@/Forms/InputText/InputTextFilledLabelSize.vue?raw';
 import InputTextFloatingLabel             from '@/Forms/InputText/InputTextFloatingLabel.vue';
 import InputTextFloatingLabelRaw          from '@/Forms/InputText/InputTextFloatingLabel.vue?raw';
 import InputTextFloatingLabelSize         from '@/Forms/InputText/InputTextFloatingLabelSize.vue';
@@ -123,8 +102,6 @@ import InputTextSize                      from '@/Forms/InputText/InputTextSize.
 import InputTextSizeRaw                   from '@/Forms/InputText/InputTextSize.vue?raw';
 import InputTextValidationState           from '@/Forms/InputText/InputTextValidationState.vue';
 import InputTextValidationStateRaw        from '@/Forms/InputText/InputTextValidationState.vue?raw';
-import InputTextWithHelperTextPosition    from '@/Forms/InputText/InputTextWithHelperTextPosition.vue';
-import InputTextWithHelperTextPositionRaw from '@/Forms/InputText/InputTextWithHelperTextPosition.vue?raw';
 import InputTextWithIcon                  from '@/Forms/InputText/InputTextWithIcon.vue';
 import InputTextWithIconRaw               from '@/Forms/InputText/InputTextWithIcon.vue?raw';
 import InputTextWithLabelAndHelperText    from '@/Forms/InputText/InputTextWithLabelAndHelperText.vue';
@@ -144,11 +121,8 @@ interface Props {
         | 'with-label-and-helper-text'
         | 'hidden-label'
         | 'floating-label'
-        | 'filled-label'
-        | 'with-helper-text-position'
         | 'size'
         | 'floating-label-size'
-        | 'filled-label-size'
         | 'validation-state'
         | 'inline-label'
         | 'with-icon'

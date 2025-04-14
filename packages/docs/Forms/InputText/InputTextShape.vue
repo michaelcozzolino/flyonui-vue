@@ -10,12 +10,6 @@
                  placeholder="John doe"
                  shape="pilled"
     />
-
-    <FoInputText v-model="input"
-                 :label="{ text: 'Full Name', type: 'filled' }"
-                 placeholder="John doe"
-                 shape="pilled"
-    />
 </template>
 
 <script setup lang="ts">

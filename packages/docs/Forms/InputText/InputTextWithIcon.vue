@@ -12,7 +12,7 @@
     />
 
     <FoInputText v-model="cardNumber"
-                 :label="{ text: 'Card Number' }"
+                 :label="{ text: 'Card Number', type: 'inline' }"
                  :icon="{ right: 'tabler:brand-mastercard' }"
                  placeholder="xxxx-xxxx-xxxx-xxxx"
     />
@@ -23,25 +23,15 @@
                  placeholder="xxxx-xxxx-xxxx-xxxx"
     />
 
-    <FoInputText v-model="name"
-                 :label="{ text: 'Full Name', type: 'filled' }"
-                 :icon="{ left: 'tabler:user' }"
-                 placeholder="John Doe"
-    />
-
-    <FoInputText v-model="name"
-                 :label="{ text: 'Card Number', type: 'filled' }"
-                 :icon="{ right: 'tabler:brand-mastercard' }"
-                 placeholder="xxxx-xxxx-xxxx-xxxx"
-    />
-
     <FoInputText v-model="customDomain"
                  :label="{ text: 'Domain', type: 'floating' }"
                  :icon="{ left: 'gridicons:domains' }"
                  placeholder="My custom domain"
     >
         <template #append>
-            .com
+            <FoLabel type="inline">
+                .com
+            </FoLabel>
         </template>
     </FoInputText>
 
@@ -50,10 +40,14 @@
                  placeholder="My custom domain"
     >
         <template #prepend>
-            www.
+            <FoLabel type="inline">
+                www.
+            </FoLabel>
         </template>
         <template #append>
-            .com
+            <FoLabel type="inline">
+                .com
+            </FoLabel>
         </template>
     </FoInputText>
 
@@ -72,8 +66,8 @@
 </template>
 
 <script setup lang="ts">
-import { FoCheckbox, FoInputText } from 'flyonui-vue';
-import { ref }                     from 'vue';
+import { FoCheckbox, FoInputText, FoLabel } from 'flyonui-vue';
+import { ref }                              from 'vue';
 
 const name         = ref<string>('');
 const email        = ref<string>('');
