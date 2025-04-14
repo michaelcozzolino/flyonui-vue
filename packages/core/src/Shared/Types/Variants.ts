@@ -29,7 +29,7 @@ export type StatefulElementName = Extract<ElementName, 'btn' | 'menu-item'>;
 export type OrientableElementName = Extract<ElementName, 'checkbox' | 'join' | 'list-group' | 'list-group-item' | 'menu' | 'stat-list'>;
 export type BorderableElementName = Extract<ElementName, 'stat-list'>;
 export type FloatingElementName = Extract<ElementName, 'input-text' | 'select' | 'textarea'>;
-export type LabellableElementName = Extract<ElementName, 'label'> | FloatingElementName;
+export type LabellableElementName = FloatingElementName;
 export type StripedElementName = Extract<ElementName, 'list-group' | 'list-group-item'>;
 // todo: make some configuration where the user can choose which color/size and so on to be the default, neutral is the default color now.
 export const availableColors = ['default', 'neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'] as const;

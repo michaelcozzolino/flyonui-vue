@@ -16,7 +16,7 @@
         />
 
         <component :is="hasIcon && defaultLabel?.type === 'floating' ? 'div' : FoFragment"
-                   :class="[labelTypeClass, hasIcon && 'grow']"
+                   :class="[floatingClass, hasIcon && 'grow']"
         >
             <textarea :id="id"
                       v-model="input"
@@ -64,8 +64,8 @@ import type { ElementName, IsDisabled, IsReadonly, IsValid, SizeWithout2XL } fro
 import { FoFragment }                                                        from '@/Components/Fragment/Internal';
 import { FoHelperText }                                                      from '@/Components/HelperText/Internal';
 import { FoIcon }                                                            from '@/Components/Icon';
-import { FoLabel, useLabelType }                                             from '@/Components/Label/Internal';
-import { useSize, useValidity }                                              from '@/Shared/Internal';
+import { FoLabel }                                                           from '@/Components/Label/Internal';
+import { useFloating, useSize, useValidity }                                 from '@/Shared/Internal';
 import { computed, useId }                                                   from 'vue';
 
 type TextareaLabelType = Exclude<LabelType, 'inline'>;
@@ -108,11 +108,11 @@ const defaultLabel = computed((): Required<TextareaLabel> | undefined => {
 });
 
 const [
-    labelTypeClass,
+    floatingClass,
     sizeClass,
     validityClass,
 ] = [
-    useLabelType(elementName, () => defaultLabel.value?.type ?? 'text'),
+    useFloating(elementName, () => defaultLabel.value?.type),
     useSize(elementName, () => props.size),
     useValidity(() => props.isValid),
 ];
