@@ -26,7 +26,7 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<Props>(), {
-    element:  'label',
+    element:  'input-text',
     isHidden: false,
 });
 
@@ -36,31 +36,22 @@ defineSlots<{
 
 const labelClass = computed(() => {
     if (props.type === undefined) {
-        return 'label';
+        return 'label-text';
     }
 
     const classes: Record<LabellableElementName, Record<LabelType, string>> = {
         'input-text': {
-            text:     'label label-text',
-            filled:   'input-filled-label',
+            text:     'label-text',
             floating: 'input-floating-label',
-            inline:   'input-group-text',
-        },
-        'label': {
-            text:     'label label-text',
-            filled:   '',
-            floating: '',
-            inline:   '',
+            inline:   'label-text my-auto me-3 p-0',
         },
         'select': {
             text:     '',
-            filled:   'select-filled-label',
             floating: 'select-floating-label',
             inline:   '',
         },
         'textarea': {
-            text:     'label label-text',
-            filled:   'textarea-filled-label',
+            text:     'label-text',
             floating: 'textarea-floating-label',
             inline:   '',
         },
