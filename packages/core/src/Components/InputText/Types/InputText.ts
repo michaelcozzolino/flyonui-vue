@@ -1,20 +1,12 @@
 import type { InputHelperText }                                        from '@/Components/HelperText/Internal';
-import type { InputLabel, LabelType }                                  from '@/Components/Label';
+import type { PositionableIcon }                                       from '@/Components/Icon';
+import type { InputLabel }                                             from '@/Components/Label';
 import type { IsDisabled, IsReadonly, IsValid, Shape, SizeWithout2XL } from '@/Shared/Types';
 
-export interface InputTextLabelProp {
-    text:      string;
-    type?:     LabelType; // When undefined the label will be a text by default
-    isHidden?: boolean;
-}
-
 export interface InputTextProps extends IsDisabled, IsReadonly, IsValid {
-    type?:  'text' | 'email';
-    label?: InputLabel;
-    icon?: {
-        left?:  string;
-        right?: string;
-    };
+    type?:         'text' | 'email';
+    label?:        InputLabel;
+    icon?:         PositionableIcon;
     placeholder?:  string;
     helperText?:   InputHelperText;
     shape?:        Extract<Shape, 'default' | 'pilled'>;
