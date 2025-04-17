@@ -10,22 +10,17 @@
 
 <script setup lang="ts">
 import type { LabelType }             from '@/Components/Label';
+import type { LabelProps }            from '@/Components/Label/Internal/Types/Label';
 import type { LabellableElementName } from '@/Shared/Types/Variants';
 import type { VNode }                 from 'vue';
 import { useRequiredSlotMessage }     from '@/Shared/Internal';
 import { computed }                   from 'vue';
 
-interface Props {
-    element?:  LabellableElementName;
-    type?:     LabelType;
-    isHidden?: boolean;
-}
-
 defineOptions({
     inheritAttrs: false,
 });
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<LabelProps>(), {
     element:  'input-text',
     isHidden: false,
 });
@@ -43,7 +38,7 @@ const labelClass = computed(() => {
         'input-text': {
             text:     'label-text',
             floating: 'input-floating-label',
-            inline:   'label-text my-auto me-3 p-0',
+            inline:   'label-text my-auto p-0',
         },
         'select': {
             text:     '',
