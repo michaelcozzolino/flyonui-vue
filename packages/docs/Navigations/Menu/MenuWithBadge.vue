@@ -7,6 +7,7 @@
             <template #append>
                 <FoBadge v-if="item.info.text !== null"
                          :color="item.info.color"
+                         size="small"
                 >
                     {{ item.info.text }}
                 </FoBadge>
