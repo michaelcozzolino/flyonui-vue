@@ -4540,9 +4540,9 @@ __metadata:
     "@vue/test-utils": "npm:^2.4.6"
     "@vue/tsconfig": "npm:^0.7.0"
     "@vueuse/core": "npm:^13.0.0"
-    flyonui: "npm:^2.0.0"
+    flyonui: "npm:^2.1.0"
     flyonui-vue: "workspace:*"
-    highlight.js: "npm:^11.11.1"
+    highlight.js: "npm:^10.7.3"
     jsdom: "npm:^26.0.0"
     postcss: "npm:^8.5.3"
     sass-embedded: "npm:^1.86.0"
@@ -4590,12 +4590,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"flyonui@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "flyonui@npm:2.0.0"
+"flyonui@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "flyonui@npm:2.1.0"
   dependencies:
     "@floating-ui/dom": "npm:^1.6.13"
-  checksum: 10c0/45ca0a46ff5e64bfda7e45df5b9cc2328855c0edfb54c84631994f4992eeb05b3dc82a0f0491d129a2ec7300d5af8b3722210ee5c0d481b076db3b62422710b9
+  checksum: 10c0/459bb2529eb0f39cd62354a78229c6b0487bf2ef7ca3d1f7aa35d3bc83588eac0cae763189ec7c9edbeb18b15ddb6fefed76fb117855ab568942bbcee350ed83
   languageName: node
   linkType: hard
 
@@ -4887,7 +4887,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^11.11.1, highlight.js@npm:^11.9.0":
+"highlight.js@npm:^10.7.3":
+  version: 10.7.3
+  resolution: "highlight.js@npm:10.7.3"
+  checksum: 10c0/073837eaf816922427a9005c56c42ad8786473dc042332dfe7901aa065e92bc3d94ebf704975257526482066abb2c8677cc0326559bb8621e046c21c5991c434
+  languageName: node
+  linkType: hard
+
+"highlight.js@npm:^11.9.0":
   version: 11.11.1
   resolution: "highlight.js@npm:11.11.1"
   checksum: 10c0/40f53ac19dac079891fcefd5bd8a21cf2e8931fd47da5bd1dca73b7e4375c1defed0636fc39120c639b9c44119b7d110f7f0c15aa899557a5a1c8910f3c0144c
