@@ -29,9 +29,9 @@
                  placeholder="My custom domain"
     >
         <template #append>
-            <FoLabel type="inline">
+            <FoInlineLabel type="inline">
                 .com
-            </FoLabel>
+            </FoInlineLabel>
         </template>
     </FoInputText>
 
@@ -40,14 +40,14 @@
                  placeholder="My custom domain"
     >
         <template #prepend>
-            <FoLabel type="inline">
+            <FoInlineLabel type="inline">
                 www.
-            </FoLabel>
+            </FoInlineLabel>
         </template>
         <template #append>
-            <FoLabel type="inline">
+            <FoInlineLabel type="inline">
                 .com
-            </FoLabel>
+            </FoInlineLabel>
         </template>
     </FoInputText>
 
@@ -66,8 +66,8 @@
 </template>
 
 <script setup lang="ts">
-import { FoCheckbox, FoInputText, FoLabel } from 'flyonui-vue';
-import { ref }                              from 'vue';
+import { FoCheckbox, FoInlineLabel, FoInputText } from 'flyonui-vue';
+import { ref }                                    from 'vue';
 
 const name         = ref<string>('');
 const email        = ref<string>('');
