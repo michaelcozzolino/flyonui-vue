@@ -44,7 +44,7 @@ const [
     useClass(
         () => props.isFlushed,
         () => props.withoutGutters ? '*:py-3' : '',
-        'border-base-content/25 rounded-md border first:*:rounded-t-md last:*:rounded-b-md',
+        'border-base-content/25 rounded-md border *:first:rounded-t-md *:last:rounded-b-md',
     ),
     useClass(() => props.withoutGutters, '', '*:p-3'),
     useStripes(elementName, () => props.isStriped),

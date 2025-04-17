@@ -1,74 +1,93 @@
 <template>
-    <div :class="defaultLabel && defaultLabel.type !== 'text' && 'relative'">
+    <div :class="hasIcon ? 'textarea' : defaultLabel?.type === 'floating' && 'textarea-floating'">
         <FoLabel v-if="defaultLabel?.type === 'text'"
                  :for="id"
                  :element="elementName"
-                 :type="defaultLabel.type"
+                 type="text"
                  :is-hidden="defaultLabel.isHidden"
         >
             {{ defaultLabel.text }}
         </FoLabel>
 
-        <!--        todo: add possibility for native attributes -->
-        <textarea :id="id"
-                  v-model="input"
-                  :placeholder="placeholder"
-                  class="textarea"
-                  :class="[labelTypeClass, validityClass]"
-                  :disabled="isDisabled"
-                  :readonly="isReadonly"
+        <FoIcon v-if="icon?.left"
+                :class="iconClass"
+                :icon="icon.left"
+                size="extraLarge"
         />
 
-        <FoLabel v-if="defaultLabel && (['floating', 'filled'] as TextareaLabelType[]).includes(defaultLabel.type)"
-                 :for="id"
-                 :element="elementName"
-                 :type="defaultLabel.type"
-                 :is-hidden="defaultLabel.isHidden"
+        <component :is="hasIcon && defaultLabel?.type === 'floating' ? 'div' : FoFragment"
+                   :class="[floatingClass, hasIcon && 'grow']"
         >
-            {{ defaultLabel.text }}
-        </FoLabel>
+            <textarea :id="id"
+                      v-model="input"
+                      v-bind="$attrs"
+                      :placeholder="placeholder"
+                      :class="[
+                          hasIcon ? 'grow' : 'textarea',
+                          icon?.right && 'resize-none',
+                          sizeClass,
+                          validityClass,
+                      ]"
+                      :disabled="isDisabled"
+                      :readonly="isReadonly"
+            />
 
-        <FoFilledFocused v-if="defaultLabel && defaultLabel.type === 'filled'"
-                         :element-name="elementName"
-                         :label-type="defaultLabel.type"
+            <FoLabel v-if="defaultLabel?.type === 'floating'"
+                     :for="id"
+                     :element="elementName"
+                     type="floating"
+                     :is-hidden="defaultLabel.isHidden"
+            >
+                {{ defaultLabel.text }}
+            </FoLabel>
+        </component>
+
+        <FoIcon v-if="icon?.right"
+                :class="iconClass"
+                :icon="icon.right"
+                size="extraLarge"
         />
 
-        <!--        todo: maybe this can be unified with the FoInputText -->
-        <div v-if="helperText?.bottom && (helperText.bottom.left || helperText.bottom.right)"
-             class="label"
+        <FoHelperText v-if="helperText !== undefined"
+                      :position="helperText.position"
         >
-            <FoAlternativeLabel v-if="helperText.bottom.left">
-                {{ helperText.bottom.left }}
-            </FoAlternativeLabel>
-
-            <FoAlternativeLabel v-if="helperText.bottom.right">
-                {{ helperText.bottom.right }}
-            </FoAlternativeLabel>
-        </div>
+            {{ helperText.text }}
+        </FoHelperText>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { InputHelperText, InputLabel, LabelType }       from '@/Components/Label';
-import type { ElementName, IsDisabled, IsReadonly, IsValid } from '@/Shared/Types';
-import { FoFilledFocused }                                   from '@/Components/Focus/Internal';
-import { FoAlternativeLabel, FoLabel, useLabelType }         from '@/Components/Label/Internal';
-import { useValidity }                                       from '@/Shared/Internal';
-import { computed, useId }                                   from 'vue';
+import type { InputHelperText }                                              from '@/Components/HelperText/Internal';
+import type { PositionableIcon }                                             from '@/Components/Icon';
+import type { InputLabel, LabelType }                                        from '@/Components/Label';
+import type { ElementName, IsDisabled, IsReadonly, IsValid, SizeWithout2XL } from '@/Shared/Types';
+import { FoFragment }                                                        from '@/Components/Fragment/Internal';
+import { FoHelperText }                                                      from '@/Components/HelperText/Internal';
+import { FoIcon }                                                            from '@/Components/Icon';
+import { FoLabel }                                                           from '@/Components/Label/Internal';
+import { useFloating, useSize, useValidity }                                 from '@/Shared/Internal';
+import { computed, useId }                                                   from 'vue';
 
 type TextareaLabelType = Exclude<LabelType, 'inline'>;
 type TextareaLabel = InputLabel<TextareaLabelType>;
 
 interface Props extends IsDisabled, IsReadonly, IsValid {
+    icon?:        PositionableIcon;
     label?:       TextareaLabel;
     placeholder?: string;
     helperText?:  InputHelperText;
+    size?:        SizeWithout2XL;
 }
+
+defineOptions({
+    inheritAttrs: false,
+});
 
 const props = withDefaults(defineProps<Props>(), {
     isDisabled: false,
     isReadonly: false,
     isValid:    undefined,
+    size:       'default',
 });
 
 const id                       = useId();
@@ -89,10 +108,18 @@ const defaultLabel = computed((): Required<TextareaLabel> | undefined => {
 });
 
 const [
-    labelTypeClass,
+    floatingClass,
+    sizeClass,
     validityClass,
 ] = [
-    useLabelType(elementName, () => defaultLabel.value?.type ?? 'text'),
+    useFloating(elementName, () => defaultLabel.value?.type),
+    useSize(elementName, () => props.size),
     useValidity(() => props.isValid),
 ];
+
+const iconClass = computed(() => 'text-base-content/80 mt-2 mx-4 shrink-0');
+
+const hasIcon = computed((): boolean => {
+    return props.icon?.left !== undefined || props.icon?.right !== undefined;
+});
 </script>

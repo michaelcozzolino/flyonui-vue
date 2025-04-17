@@ -7,6 +7,8 @@
 
     <FoLoading size="large" />
 
+    <FoLoading size="extraLarge" />
+
     <FoLoading animation="dots"
                size="extraSmall"
     />
@@ -19,6 +21,10 @@
 
     <FoLoading animation="dots"
                size="large"
+    />
+
+    <FoLoading animation="dots"
+               size="extraLarge"
     />
 
     <FoLoading animation="ring"
@@ -35,6 +41,10 @@
                size="large"
     />
 
+    <FoLoading animation="ring"
+               size="extraLarge"
+    />
+
     <FoLoading animation="ball"
                size="extraSmall"
     />
@@ -47,6 +57,10 @@
 
     <FoLoading animation="ball"
                size="large"
+    />
+
+    <FoLoading animation="ball"
+               size="extraLarge"
     />
 
     <FoLoading animation="bars"
@@ -63,6 +77,10 @@
                size="large"
     />
 
+    <FoLoading animation="bars"
+               size="extraLarge"
+    />
+
     <FoLoading animation="infinity"
                size="extraSmall"
     />
@@ -75,6 +93,10 @@
 
     <FoLoading animation="infinity"
                size="large"
+    />
+
+    <FoLoading animation="infinity"
+               size="extraLarge"
     />
 </template>
 

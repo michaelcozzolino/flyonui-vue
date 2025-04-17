@@ -11,7 +11,9 @@
 <script setup lang="ts">
 import type { ElementName, IsResponsive, Orientation }           from '@/Shared/Types';
 import type { VNode }                                            from 'vue';
+import { isInJoinInjectionKey }                                  from '@/Components/Join/Internal';
 import { useOrientation, useRequiredSlotMessage, useResponsive } from '@/Shared/Internal';
+import { provide }                                               from 'vue';
 
 interface Props extends IsResponsive {
     orientation?: Orientation;
@@ -23,8 +25,10 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 defineSlots<{
-    default: () => VNode[];
+    default?: () => VNode[];
 }>();
+
+provide(isInJoinInjectionKey, true);
 
 const elementName: ElementName = 'join';
 
@@ -38,36 +42,15 @@ const [
 </script>
 
 <style lang="scss" scoped>
-:deep(input),
-:deep(.input-group),
-:slotted(input),
-:slotted(.btn) {
-    @apply join-item;
-
-}
-:deep(div:first-child > input) {
-    @apply rounded-s-md
-}
-
-:deep(div:last-child > input) {
-    @apply rounded-e-md;
-}
-
-:slotted(.btn) {
-    @apply h-auto;
-}
-
-.join > :deep(.input-group:first-child) {
-    @apply rounded-e-none;
-}
+@reference "tailwindcss";
 
 .join > :first-child :deep(.input.rounded-full),
 .join > :slotted(.btn.rounded-full:first-child) {
-    @apply rounded-s-full;
+    @apply rounded-e-none;
 }
 
 .join > :last-child :deep(.input.rounded-full),
 .join > :slotted(.btn.rounded-full:last-child) {
-    @apply rounded-e-full;
+    @apply rounded-s-none;
 }
 </style>

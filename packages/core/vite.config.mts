@@ -1,5 +1,6 @@
 import { resolve }      from 'node:path';
 import process          from 'node:process';
+import tailwindcss      from '@tailwindcss/vite';
 import vue              from '@vitejs/plugin-vue';
 import { visualizer }   from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
@@ -7,6 +8,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
     plugins: [
         vue(),
+        tailwindcss(),
         ...process.env.GENERATE_BUILD_SIZE_VISUALIZER
             ? [visualizer({
                     filename: '../docs/public/build-size-visualizer.html',
@@ -28,7 +30,7 @@ export default defineConfig({
             name:  'flyonui-vue',
         },
         rollupOptions: {
-            external: ['@iconify/vue', 'vue', 'vue-router'],
+            external: ['@iconify/vue', 'vue', 'vue-router', 'tailwindcss'],
             output:   {
                 globals: {
                     '@iconify/vue': 'Iconify',

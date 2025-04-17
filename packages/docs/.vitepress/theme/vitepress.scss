@@ -1,0 +1,45 @@
+@layer base {
+    :root {
+        --vp-c-brand-1: var(--color-primary) !important;
+        --vp-c-bg: var(--color-base-100) !important;
+
+        --vp-c-text-1: var(--color-base-100)/0.9 !important;
+        --vp-c-text-2: var(--color-base-100)/0.9 !important;
+        --vp-font-family-base: inherit !important;
+
+        --vp-sidebar-bg-color: var(--color-base-100)/0.1 !important;
+        --vp-nav-bg-color: var(--color-base-100)/0.1 !important;
+
+        --vp-c-divider: var(--color-base-content)/0.1 !important;
+        --vp-c-gutter: var(--color-base-content)/0.1 !important;
+    }
+
+    .VPSidebarItem.level-1 .text {
+        font-weight: 700 !important;
+    }
+
+    .VPSidebarItem.level-2 .text,
+    .VPSidebarItem.level-3 .text,
+    .VPSidebarItem.level-4 .text,
+    .VPSidebarItem.level-5 .text {
+        font-weight: 400 !important;
+    }
+
+    .VPLink > p:hover {
+        color: var(--color-primary) !important;
+        border-color: var(--color-primary) !important;
+    }
+
+    .VPMenu {
+        min-width: 268px !important;
+    }
+
+    .VPNav {
+        pointer-events: auto !important;
+    }
+
+    .VPNavScreenAppearance {
+        justify-content: space-evenly !important;
+        padding: 12px 0 12px 0 !important;
+    }
+}

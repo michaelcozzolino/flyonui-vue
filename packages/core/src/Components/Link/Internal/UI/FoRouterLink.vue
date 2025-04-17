@@ -1,6 +1,6 @@
 <template>
     <a v-if="useATag(to)"
-       v-bind="$attrs"
+       :class="$attrs?.class"
        :href="to"
        :target="isExternalLink(to) ? '_blank' : undefined"
        :rel="isExternalLink(to) ? 'noopener, noreferrer' : undefined"
@@ -13,9 +13,8 @@
                 v-bind="$props"
                 custom
     >
-        <a v-bind="$attrs"
-           :href="href"
-           :class="[isActive && activeClass, isExactActive && exactActiveClass]"
+        <a :href="href"
+           :class="[$attrs?.class, isActive && activeClass, isExactActive && exactActiveClass]"
            @click="navigate"
         >
             <slot />

@@ -1,13 +1,19 @@
-import type { BorderableElementName, ResponsiveElementName, StripedElementName } from '@/Shared/Types/Variants';
-import type { ComputedRef, MaybeRefOrGetter }                                    from 'vue';
-import { computed, toValue }                                                     from 'vue';
+import type { LabelType } from '@/Components/Label';
+import type {
+    BorderableElementName,
+    FloatingElementName,
+    ResponsiveElementName,
+    StripedElementName,
+} from '@/Shared/Types/Variants';
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import { computed, toValue }                  from 'vue';
 
 export function useBorder(
     elementName: MaybeRefOrGetter<BorderableElementName>,
     isBordered: MaybeRefOrGetter<boolean>,
 ): ComputedRef<string> {
     const availableClasses = {
-        'stat-list': 'border border-base-content/10 shadow-none',
+        'stat-list': 'stats-border shadow-none',
     };
 
     return useClass(isBordered, availableClasses[toValue(elementName)]);
@@ -15,6 +21,10 @@ export function useBorder(
 
 export function useGlass(hasGlass: MaybeRefOrGetter<boolean>): ComputedRef<string> {
     return useClass(hasGlass, 'glass');
+}
+
+export function useJoinItem(isInJoin: MaybeRefOrGetter<boolean>): ComputedRef<string> {
+    return useClass(isInJoin, 'join-item');
 }
 
 export function useValidity(isValid: MaybeRefOrGetter<boolean | undefined>): ComputedRef<string> {
@@ -42,8 +52,23 @@ export function useStripes(
     isStriped: MaybeRefOrGetter<boolean>,
 ): ComputedRef<string> {
     const classes: Record<StripedElementName, ComputedRef<string>> = {
-        'list-group':      useClass(isStriped, 'odd:*:bg-base-300/60'),
-        'list-group-item': useClass(isStriped, 'bg-base-300/60'),
+        'list-group':      useClass(isStriped, '*:odd:bg-base-200'),
+        'list-group-item': useClass(isStriped, 'bg-base-200'),
+    };
+
+    return classes[toValue(elementName)];
+}
+
+export function useFloating(
+    elementName: MaybeRefOrGetter<FloatingElementName>,
+    labelType: MaybeRefOrGetter<LabelType | undefined>,
+): ComputedRef<string> {
+    const isFloating = toValue(labelType) === 'floating';
+
+    const classes: Record<FloatingElementName, ComputedRef<string>> = {
+        'input-text': useClass(isFloating, 'input-floating'),
+        'select':     useClass(isFloating, 'select-floating'),
+        'textarea':   useClass(isFloating, 'textarea-floating'),
     };
 
     return classes[toValue(elementName)];

@@ -20,10 +20,8 @@ import NavbarDocs                               from '@/Navigations/Navbar/Navba
 import Playground                               from '@/Playground/Playground.vue';
 import { FoSelectThemeController, vMask }       from 'flyonui-vue';
 import DefaultTheme                             from 'vitepress/theme';
-import './tailwind.css';
-import './style.scss';
-import 'flyonui-vue/index.css';
-import 'vue-code-highlighter/dist/style.css';
+
+import './index.css';
 
 export default {
     extends: DefaultTheme,

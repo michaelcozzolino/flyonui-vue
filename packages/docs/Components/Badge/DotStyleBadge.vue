@@ -1,6 +1,6 @@
 <template>
-    <FoDotStyleBadge color="neutral">
-        Neutral
+    <FoDotStyleBadge>
+        Default
     </FoDotStyleBadge>
 
     <FoDotStyleBadge color="primary">
@@ -11,20 +11,24 @@
         Secondary
     </FoDotStyleBadge>
 
-    <FoDotStyleBadge color="success">
-        Success
+    <FoDotStyleBadge color="accent">
+        Accent
     </FoDotStyleBadge>
 
-    <FoDotStyleBadge color="error">
-        Error
+    <FoDotStyleBadge color="info">
+        Info
+    </FoDotStyleBadge>
+
+    <FoDotStyleBadge color="success">
+        Success
     </FoDotStyleBadge>
 
     <FoDotStyleBadge color="warning">
         Warning
     </FoDotStyleBadge>
 
-    <FoDotStyleBadge color="info">
-        Info
+    <FoDotStyleBadge color="error">
+        Error
     </FoDotStyleBadge>
 </template>
 

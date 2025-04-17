@@ -16,6 +16,10 @@
 
 ## With tooltips
 
+::: warning
+The following component might have changes in future releases
+:::
+
 <MenuDocs section="with-tooltip" />
 
 ## With disabled items

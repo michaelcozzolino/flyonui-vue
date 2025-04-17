@@ -20,14 +20,6 @@
 
 <InputTextDocs section="floating-label" />
 
-## Filled label
-
-<InputTextDocs section="filled-label" />
-
-## Helper text positions
-
-<InputTextDocs section="with-helper-text-position" />
-
 # Sizes
 
 ## Default size
@@ -37,10 +29,6 @@
 ## Floating label size
 
 <InputTextDocs section="floating-label-size" />
-
-## Filled label size
-
-<InputTextDocs section="filled-label-size" />
 
 ## Validation states
 

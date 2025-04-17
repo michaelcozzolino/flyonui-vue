@@ -3,10 +3,6 @@
         Default
     </FoBadge>
 
-    <FoBadge color="neutral">
-        Neutral
-    </FoBadge>
-
     <FoBadge color="primary">
         Primary
     </FoBadge>

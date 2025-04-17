@@ -1,5 +1,5 @@
 import type { FoRouterLinkProps } from '@/Components/Link/Internal';
-import type { Color }             from '@/Shared/Types';
+import type { TextColor }         from '@/Shared/Types';
 import type { RouteLocationRaw }  from 'vue-router';
 
 export type To = string | RouteLocationRaw;
@@ -7,6 +7,6 @@ export type To = string | RouteLocationRaw;
 export type UnderlineLinkEffect = 'hover' | 'hover-animated' | 'no-underline';
 
 export interface LinkProps extends FoRouterLinkProps {
-    color?:           Color;
+    color?:           TextColor;
     underlineEffect?: UnderlineLinkEffect;
 }

@@ -2,7 +2,7 @@
     <CodeSnippet v-if="section === 'animation'"
                  :code="LoadingAnimationRaw"
                  :component="LoadingAnimation"
-                 :preview="{ columns: 4, rows: 6 }"
+                 :preview="{ columns: 5, rows: 6 }"
     />
 
     <CodeSnippet v-else-if="section === 'color'"

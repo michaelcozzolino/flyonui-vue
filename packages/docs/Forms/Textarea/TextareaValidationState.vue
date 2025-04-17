@@ -2,54 +2,28 @@
     <FoTextarea v-model="input"
                 :label="{ text: 'Full name' }"
                 placeholder="Hello!!!"
-                :helper-text="{ bottom: { left: 'Bottom Left label', right: 'Bottom Right label' } }"
+                :helper-text="{ text: 'Helper text' }"
                 is-valid
     />
 
     <FoTextarea v-model="input"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
-                :helper-text="{
-                    bottom: { left: 'Bottom Left label', right: 'Bottom Right label' },
-                    top: 'Top right label',
-                }"
-                is-valid
-    />
-
-    <FoTextarea v-model="input"
-                :label="{ text: 'Your bio', type: 'filled' }"
-                placeholder="Hello!!!"
-                :helper-text="{
-                    bottom: { left: 'Bottom Left label', right: 'Bottom Right label' },
-                    top: 'Top right label',
-                }"
+                :helper-text="{ text: 'Helper text' }"
                 is-valid
     />
 
     <FoTextarea v-model="input"
                 :label="{ text: 'Full name' }"
                 placeholder="Hello!!!"
-                :helper-text="{ bottom: { left: 'Bottom Left label', right: 'Bottom Right label' } }"
+                :helper-text="{ text: 'Helper text' }"
                 :is-valid="false"
     />
 
     <FoTextarea v-model="input"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
-                :helper-text="{
-                    bottom: { left: 'Bottom Left label', right: 'Bottom Right label' },
-                    top: 'Top right label',
-                }"
-                :is-valid="false"
-    />
-
-    <FoTextarea v-model="input"
-                :label="{ text: 'Your bio', type: 'filled' }"
-                placeholder="Hello!!!"
-                :helper-text="{
-                    bottom: { left: 'Bottom Left label', right: 'Bottom Right label' },
-                    top: 'Top right label',
-                }"
+                :helper-text="{ text: 'Helper text' }"
                 :is-valid="false"
     />
 </template>

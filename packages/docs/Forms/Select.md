@@ -8,10 +8,6 @@
 
 <SelectDocs section="floating-label" />
 
-## Filled label
-
-<SelectDocs section="filled-label" />
-
 # Sizes
 
 ## Default size
@@ -21,7 +17,3 @@
 ## Floating label size
 
 <SelectDocs section="floating-label-size" />
-
-## Filled label size
-
-<SelectDocs section="filled-label-size" />

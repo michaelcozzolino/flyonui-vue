@@ -14,6 +14,11 @@
                  :component="OutlineButton"
     />
 
+    <CodeSnippet v-else-if="section === 'dash'"
+                 :code="DashedButtonRaw"
+                 :component="DashedButton"
+    />
+
     <CodeSnippet v-else-if="section === 'text'"
                  :code="TextButtonRaw"
                  :component="TextButton"
@@ -75,11 +80,6 @@
                  :code="GlassButtonRaw"
                  :component="GlassButton"
     />
-
-    <CodeSnippet v-else-if="section === 'no-animation'"
-                 :code="NoAnimationButtonRaw"
-                 :component="NoAnimationButton"
-    />
 </template>
 
 <script setup lang="ts">
@@ -90,6 +90,8 @@ import ButtonSize            from '@/Components/Button/ButtonSize.vue';
 import ButtonSizeRaw         from '@/Components/Button/ButtonSize.vue?raw';
 import ButtonState           from '@/Components/Button/ButtonState.vue';
 import ButtonStateRaw        from '@/Components/Button/ButtonState.vue?raw';
+import DashedButton          from '@/Components/Button/DashedButton.vue';
+import DashedButtonRaw       from '@/Components/Button/DashedButton.vue?raw';
 import GlassButton           from '@/Components/Button/GlassButton.vue';
 import GlassButtonRaw        from '@/Components/Button/GlassButton.vue?raw';
 import GradientButton        from '@/Components/Button/GradientButton.vue';
@@ -100,8 +102,6 @@ import IconPositionButton    from '@/Components/Button/IconPositionButton.vue';
 import IconPositionButtonRaw from '@/Components/Button/IconPositionButton.vue?raw';
 import LoadingButton         from '@/Components/Button/LoadingButton.vue';
 import LoadingButtonRaw      from '@/Components/Button/LoadingButton.vue?raw';
-import NoAnimationButton     from '@/Components/Button/NoAnimationButton.vue';
-import NoAnimationButtonRaw  from '@/Components/Button/NoAnimationButton.vue?raw';
 import OutlineButton         from '@/Components/Button/OutlineButton.vue';
 import OutlineButtonRaw      from '@/Components/Button/OutlineButton.vue?raw';
 import PilledButton          from '@/Components/Button/PilledButton.vue';
@@ -118,7 +118,7 @@ import TextButton            from '@/Components/Button/TextButton.vue';
 import TextButtonRaw         from '@/Components/Button/TextButton.vue?raw';
 
 interface Props {
-    section: 'solid' | 'soft' | 'outline' | 'text' | 'gradient' | 'pilled' | 'state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass' | 'no-animation';
+    section: 'solid' | 'soft' | 'outline' | 'dash' | 'text' | 'gradient' | 'pilled' | 'state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass';
 }
 
 defineProps<Props>();

@@ -1,4 +1,8 @@
 <template>
+    <FoLink to="https://www.google.com">
+        Default link
+    </FoLink>
+
     <FoLink to="https://www.google.com"
             color="neutral"
     >

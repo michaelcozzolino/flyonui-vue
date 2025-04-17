@@ -1,4 +1,6 @@
 <template>
+    <FoLoading />
+
     <FoLoading color="primary" />
 
     <FoLoading color="secondary" />

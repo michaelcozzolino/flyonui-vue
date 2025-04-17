@@ -2,6 +2,12 @@
     <FoInputText v-model="input"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
+                 size="extraSmall"
+    />
+
+    <FoInputText v-model="input"
+                 :label="{ text: 'Full Name', type: 'floating' }"
+                 placeholder="John Doe"
                  size="small"
     />
 
@@ -14,6 +20,12 @@
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
                  size="large"
+    />
+
+    <FoInputText v-model="input"
+                 :label="{ text: 'Full Name', type: 'floating' }"
+                 placeholder="John Doe"
+                 size="extraLarge"
     />
 </template>
 

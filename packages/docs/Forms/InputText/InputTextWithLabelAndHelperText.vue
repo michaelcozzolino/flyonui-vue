@@ -2,25 +2,25 @@
     <FoInputText v-model="input"
                  :label="{ text: 'Full Name' }"
                  placeholder="John Doe"
-                 :helper-text="{ bottom: { left: 'Please write your full name' } }"
+                 :helper-text="{ text: 'Please write your full name' }"
     />
 
     <FoInputText v-model="input"
                  :label="{ text: 'Full Name' }"
                  placeholder="John Doe"
-                 :helper-text="{ bottom: { left: 'Please write your full name' } }"
+                 :helper-text="{ text: 'Please write your full name', position: 'right' }"
     />
 
     <FoInputText v-model="input"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
-                 :helper-text="{ bottom: { left: 'Please write your full name' } }"
+                 :helper-text="{ text: 'Please write your full name' }"
     />
 
     <FoInputText v-model="input"
-                 :label="{ text: 'Full Name', type: 'filled' }"
+                 :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
-                 :helper-text="{ bottom: { left: 'Please write your full name' } }"
+                 :helper-text="{ text: 'Please write your full name', position: 'right' }"
     />
 </template>
 

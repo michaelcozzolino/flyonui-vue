@@ -1,12 +1,8 @@
 <template>
     <FoButton color="primary"
-              size="large"
+              size="extraSmall"
     >
-        Large
-    </FoButton>
-
-    <FoButton color="primary">
-        Default
+        Tiny
     </FoButton>
 
     <FoButton color="primary"
@@ -15,10 +11,20 @@
         Small
     </FoButton>
 
+    <FoButton color="primary">
+        Default
+    </FoButton>
+
     <FoButton color="primary"
-              size="extraSmall"
+              size="large"
     >
-        Tiny
+        Large
+    </FoButton>
+
+    <FoButton color="primary"
+              size="extraLarge"
+    >
+        Extra Large
     </FoButton>
 </template>
 

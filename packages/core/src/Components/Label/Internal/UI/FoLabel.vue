@@ -10,23 +10,18 @@
 
 <script setup lang="ts">
 import type { LabelType }             from '@/Components/Label';
+import type { LabelProps }            from '@/Components/Label/Internal/Types/Label';
 import type { LabellableElementName } from '@/Shared/Types/Variants';
 import type { VNode }                 from 'vue';
 import { useRequiredSlotMessage }     from '@/Shared/Internal';
 import { computed }                   from 'vue';
 
-interface Props {
-    element?:  LabellableElementName;
-    type?:     LabelType;
-    isHidden?: boolean;
-}
-
 defineOptions({
     inheritAttrs: false,
 });
 
-const props = withDefaults(defineProps<Props>(), {
-    element:  'label',
+const props = withDefaults(defineProps<LabelProps>(), {
+    element:  'input-text',
     isHidden: false,
 });
 
@@ -36,31 +31,22 @@ defineSlots<{
 
 const labelClass = computed(() => {
     if (props.type === undefined) {
-        return 'label';
+        return 'label-text';
     }
 
     const classes: Record<LabellableElementName, Record<LabelType, string>> = {
         'input-text': {
-            text:     'label label-text',
-            filled:   'input-filled-label',
+            text:     'label-text',
             floating: 'input-floating-label',
-            inline:   'input-group-text',
-        },
-        'label': {
-            text:     'label label-text',
-            filled:   '',
-            floating: '',
-            inline:   '',
+            inline:   'label-text my-auto p-0',
         },
         'select': {
             text:     '',
-            filled:   'select-filled-label',
             floating: 'select-floating-label',
             inline:   '',
         },
         'textarea': {
-            text:     'label label-text',
-            filled:   'textarea-filled-label',
+            text:     'label-text',
             floating: 'textarea-floating-label',
             inline:   '',
         },

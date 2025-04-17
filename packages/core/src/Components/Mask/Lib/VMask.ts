@@ -1,8 +1,8 @@
-import type { SideMask }                         from '@/Components/Mask';
+import type { HorizontalPosition }               from '@/Shared/Types';
 import type { ComputedRef, FunctionDirective }   from 'vue';
 import { leftSideMaskClass, rightSideMaskClass } from '@/Components/Mask';
 
-export function vMask(): FunctionDirective<HTMLElement, string, string, SideMask> {
+export function vMask(): FunctionDirective<HTMLElement, string, string, HorizontalPosition> {
     return (el, { value, arg }) => {
         // Removing all the masks previously added to avoid conflicts on updated
         el.classList.remove(...Array.from(el.classList).filter(c => c.startsWith('mask-')));

@@ -2,6 +2,12 @@
     <FoSelect v-model="selectedOption"
               :label="{ text: 'Pick your favorite Movie', type: 'floating' }"
               :options="options"
+              size="extraSmall"
+    />
+
+    <FoSelect v-model="selectedOption"
+              :label="{ text: 'Pick your favorite Movie', type: 'floating' }"
+              :options="options"
               size="small"
     />
 
@@ -14,6 +20,12 @@
               :label="{ text: 'Pick your favorite Movie', type: 'floating' }"
               :options="options"
               size="large"
+    />
+
+    <FoSelect v-model="selectedOption"
+              :label="{ text: 'Pick your favorite Movie', type: 'floating' }"
+              :options="options"
+              size="extraLarge"
     />
 </template>
 

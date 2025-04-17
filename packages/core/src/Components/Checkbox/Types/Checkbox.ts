@@ -1,11 +1,9 @@
-import type { IsDisabled, IsValid } from '@/Shared/Types';
-import type { Color, Size }         from '@/Shared/Types/Variants';
-
-export type CheckboxSize = Exclude<Size, 'extraLarge'>;
+import type { IsDisabled, IsValid, SizeWithout2XL } from '@/Shared/Types';
+import type { Color }                               from '@/Shared/Types/Variants';
 
 export interface CheckboxProps extends IsDisabled, IsValid {
-    color?:      Color | string; // The string is for custom colors
+    color?:      Color;
     label?:      string;
     helperText?: string;
-    size?:       CheckboxSize;
+    size?:       SizeWithout2XL;
 }

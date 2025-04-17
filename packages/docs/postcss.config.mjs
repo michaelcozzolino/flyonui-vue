@@ -1,5 +1,4 @@
-import autoprefixer             from 'autoprefixer';
-import tailwindcss              from 'tailwindcss';
+import tailwindcss              from '@tailwindcss/postcss';
 import { postcssIsolateStyles } from 'vitepress';
 
 export default {
@@ -7,7 +6,6 @@ export default {
         postcssIsolateStyles({
             includeFiles: [/base\.css/, /vp-doc\.css/],
         }),
-        tailwindcss,
-        autoprefixer,
+        tailwindcss(),
     ],
 };

@@ -1,6 +1,5 @@
 <template>
-    <FoIconButton color="neutral"
-                  icon="tabler:headphones"
+    <FoIconButton icon="tabler:headphones"
                   shape="square"
     />
 
@@ -39,8 +38,7 @@
                   shape="square"
     />
 
-    <FoIconButton color="neutral"
-                  icon="tabler:headphones"
+    <FoIconButton icon="tabler:headphones"
                   shape="circle"
     />
 

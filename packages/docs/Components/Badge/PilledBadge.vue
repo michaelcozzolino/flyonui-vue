@@ -3,12 +3,6 @@
         Default
     </FoBadge>
 
-    <FoBadge color="neutral"
-             shape="pilled"
-    >
-        Neutral
-    </FoBadge>
-
     <FoBadge color="primary"
              shape="pilled"
     >

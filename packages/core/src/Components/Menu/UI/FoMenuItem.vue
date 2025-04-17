@@ -9,7 +9,6 @@
         <template v-if="item.to !== undefined">
             <FoLink :to="item.to"
                     :exact-active-class="activeClass"
-                    underline-effect="no-underline"
             >
                 <FoIcon v-if="item.icon !== undefined"
                         :icon="item.icon"
@@ -43,14 +42,14 @@
 </template>
 
 <script setup lang="ts">
-import type { MenuItem }                                             from '@/Components/Menu/Types/Menu';
-import type { ElementName }                                          from '@/Shared/Types';
-import { FoIcon }                                                    from '@/Components/Icon';
-import { FoLink }                                                    from '@/Components/Link';
-import { menuTextPropsInjectionKey }                                 from '@/Components/Menu/Internal';
-import { useState }                                                  from '@/Shared/Internal/Lib';
-import { useMotion }                                                 from '@vueuse/motion';
-import { computed, inject, ref, useTemplateRef, watch, watchEffect } from 'vue';
+import type { MenuItem }                                                      from '@/Components/Menu/Types/Menu';
+import type { ElementName }                                                   from '@/Shared/Types';
+import { FoIcon }                                                             from '@/Components/Icon';
+import { FoLink }                                                             from '@/Components/Link';
+import { isInMenuItemInjectionKey, menuTextPropsInjectionKey }                from '@/Components/Menu/Internal';
+import { useState }                                                           from '@/Shared/Internal/Lib';
+import { useMotion }                                                          from '@vueuse/motion';
+import { computed, inject, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 
 interface Props {
     item: MenuItem;
@@ -59,6 +58,8 @@ interface Props {
 const props = defineProps<Props>();
 
 const elementName: ElementName = 'menu-item';
+
+provide(isInMenuItemInjectionKey, true);
 
 const menuTextProps = inject(menuTextPropsInjectionKey, computed(() => ({
     hideText:      false,

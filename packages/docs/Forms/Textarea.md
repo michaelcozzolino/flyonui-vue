@@ -16,9 +16,19 @@
 
 <TextareaDocs section="floating-label" />
 
-## Filled label
+# Size
 
-<TextareaDocs section="filled-label" />
+## Default Size
+
+<TextareaDocs section="default-size" />
+
+## Floating label size
+
+<TextareaDocs section="floating-label-size" />
+
+## Icons
+
+<TextareaDocs section="with-icon" />
 
 ## Helper text
 

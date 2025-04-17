@@ -10,6 +10,10 @@
 
 <ButtonDocs section="outline" />
 
+## Dashed buttons
+
+<ButtonDocs section="dash" />
+
 ## Text buttons
 
 <ButtonDocs section="text" />
@@ -52,6 +56,3 @@
 
 ## Glass button
 <ButtonDocs section="glass" />
-
-## Button w/o animation
-<ButtonDocs section="no-animation" />

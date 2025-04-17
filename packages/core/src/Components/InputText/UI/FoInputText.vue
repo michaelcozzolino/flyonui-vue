@@ -1,113 +1,93 @@
 <template>
-    <component :is="hasFilledInputContainer ? 'div' : FoFragment">
-        <div :class="[
-            defaultLabel && defaultLabel.type !== 'text' && 'relative',
-            !hasFilledInputContainer && $attrs?.class,
-            inputGroupContainerClass,
-        ]"
+    <div :class="[
+        $attrs?.class,
+        inputGroupContainerClass,
+        isGroup === false && floatingClass,
+    ]"
+    >
+        <slot v-if="$slots.prepend !== undefined || icon?.left"
+              name="prepend"
         >
-            <FoInputGroupText v-if="$slots.prepend !== undefined || icon?.left">
-                <slot name="prepend">
-                    <FoIcon v-if="icon?.left"
-                            :icon="icon.left"
-                            size="extraLarge"
-                    />
-                </slot>
-            </FoInputGroupText>
+            <FoIcon v-if="icon?.left"
+                    class="text-base-content/80 my-auto shrink-0"
+                    :icon="icon.left"
+                    size="extraLarge"
+            />
+        </slot>
 
-            <span v-if="showTopHelperText(helperText?.top)"
-                  class="label justify-end"
+        <component :is="hasInputContainer ? 'div' : FoFragment"
+                   class="grow"
+                   :class="floatingClass"
+        >
+            <FoLabel v-if="defaultLabel && (['text', 'inline'] as LabelType[]).includes(defaultLabel.type)"
+                     :for="id"
+                     :element="elementName"
+                     :type="defaultLabel.type"
+                     :is-hidden="defaultLabel.isHidden"
+                     :class="($slots.prepend || icon?.left) ? 'px-3' : defaultLabel.type === 'inline' && 'me-3'"
             >
-                <FoAlternativeLabel>
-                    {{ helperText.top }}
-                </FoAlternativeLabel>
-            </span>
+                {{ defaultLabel.text }}
+            </FoLabel>
 
-            <component :is="showTopHelperText(helperText?.top) || growInput ? 'div' : FoFragment"
-                       class="relative"
-                       :class="growInput && 'grow'"
+            <input :id="id"
+                   v-model="input"
+                   :type="type"
+                   :class="[
+                       joinItemClass,
+                       isGroup ? 'grow' : 'input',
+                       isGroup && 'pb-1 placeholder:pb-1', // todo: temporary because the padding doesn't seem to be correct even with the same flyonui code
+                       paddingClass,
+                       shapeClass,
+                       sizeClass,
+                       validityClass,
+                       withoutFocus && 'no-focus border-0',
+                   ]"
+                   :placeholder="placeholder"
+                   :disabled="isDisabled"
+                   :readonly="isReadonly"
             >
-                <FoLabel v-if="defaultLabel && (['text', 'inline'] as LabelType[]).includes(defaultLabel.type)"
-                         :for="id"
-                         :element="elementName"
-                         :type="defaultLabel.type"
-                         :is-hidden="defaultLabel.isHidden"
-                >
-                    {{ defaultLabel.text }}
-                </FoLabel>
 
-                <input :id="id"
-                       v-model="input"
-                       :type="type"
-                       class="input"
-                       :class="[
-                           labelTypeClass,
-                           shapeClass,
-                           sizeClass,
-                           validityClass,
-                           withoutFocus && 'no-focus border-0',
-                       ]"
-                       :placeholder="placeholder"
-                       :disabled="isDisabled"
-                       :readonly="isReadonly"
-                >
-
-                <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
-                         :for="id"
-                         :element="elementName"
-                         :type="defaultLabel.type"
-                         :is-hidden="defaultLabel.isHidden"
-                >
-                    {{ defaultLabel.text }}
-                </FoLabel>
-
-                <FoFilledFocused v-if="shape !== 'pilled' && hasFilledInputContainer === false"
-                                 :element-name="elementName"
-                                 :label-type="defaultLabel?.type"
-                />
-            </component>
-
-            <FoInputGroupText v-if="$slots.append !== undefined || icon?.right">
-                <slot name="append">
-                    <FoIcon v-if="icon?.right"
-                            :icon="icon.right"
-                            size="extraLarge"
-                    />
-                </slot>
-            </FoInputGroupText>
-
-            <span v-if="helperText?.bottom && (helperText.bottom.left || helperText.bottom.right)"
-                  class="label"
+            <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
+                     :for="id"
+                     :element="elementName"
+                     :type="defaultLabel.type"
+                     :is-hidden="defaultLabel.isHidden"
+                     :class="defaultLabel.type === 'floating' && icon?.left === undefined && slots.append === undefined && (icon?.right || slots.prepend !== undefined) && 'ms-0'"
             >
-                <FoAlternativeLabel v-if="helperText.bottom.left">
-                    {{ helperText.bottom.left }}
-                </FoAlternativeLabel>
+                {{ defaultLabel.text }}
+            </FoLabel>
+        </component>
 
-                <FoAlternativeLabel v-if="helperText.bottom.right">
-                    {{ helperText.bottom.right }}
-                </FoAlternativeLabel>
-            </span>
-        </div>
+        <slot v-if="$slots.append !== undefined || icon?.right"
+              name="append"
+        >
+            <FoIcon v-if="icon?.right"
+                    class="text-base-content/80 my-auto ms-3 shrink-0"
+                    :icon="icon.right"
+                    size="extraLarge"
+            />
+        </slot>
 
-        <FoFilledFocused v-if="shape !== 'pilled' && hasFilledInputContainer"
-                         :element-name="elementName"
-                         :label-type="defaultLabel?.type"
-        />
-    </component>
+        <FoHelperText v-if="helperText !== undefined"
+                      :position="helperText.position"
+        >
+            {{ helperText.text }}
+        </FoHelperText>
+    </div>
 </template>
 
 <script setup lang="ts">
-import type { InputTextProps }                       from '@/Components/InputText';
-import type { InputLabel, LabelType }                from '@/Components/Label';
-import type { ElementName }                          from '@/Shared/Types';
-import type { VNode }                                from 'vue';
-import { FoFilledFocused }                           from '@/Components/Focus/Internal';
-import { FoFragment }                                from '@/Components/Fragment/Internal';
-import { FoIcon }                                    from '@/Components/Icon';
-import { FoInputGroupText }                          from '@/Components/InputText/Internal';
-import { FoAlternativeLabel, FoLabel, useLabelType } from '@/Components/Label/Internal';
-import { useShape, useSize, useValidity }            from '@/Shared/Internal/Lib';
-import { computed, useId }                           from 'vue';
+import type { InputTextProps }                                      from '@/Components/InputText';
+import type { InputLabel, LabelType }                               from '@/Components/Label';
+import type { ElementName }                                         from '@/Shared/Types';
+import type { VNode }                                               from 'vue';
+import { FoFragment }                                               from '@/Components/Fragment/Internal';
+import { FoHelperText }                                             from '@/Components/HelperText/Internal';
+import { FoIcon }                                                   from '@/Components/Icon';
+import { isInJoinInjectionKey }                                     from '@/Components/Join/Internal';
+import { FoLabel }                                                  from '@/Components/Label/Internal';
+import { useFloating, useJoinItem, useShape, useSize, useValidity } from '@/Shared/Internal/Lib';
+import { computed, inject, useId }                                  from 'vue';
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
@@ -127,6 +107,7 @@ const slots = defineSlots<{
 
 const id                       = useId();
 const elementName: ElementName = 'input-text';
+const isInJoin: boolean        = inject(isInJoinInjectionKey, false);
 
 const input = defineModel<string>({ required: true });
 
@@ -147,40 +128,51 @@ const hasIcon = computed(() => {
 });
 
 const isGroup = computed(() => {
-    return hasIcon.value || slots.append !== undefined || slots.prepend !== undefined;
-});
-
-const hasFilledInputContainer = computed(() => {
-    return isGroup.value && defaultLabel.value?.type === 'filled';
+    return hasIcon.value || slots.append !== undefined || slots.prepend !== undefined || defaultLabel.value?.type === 'inline';
 });
 
 const inputGroupContainerClass = computed(() => {
-    const inputGroupClass = defaultLabel.value?.type === 'filled' ? 'input-group-filled' : 'input-group';
-
-    return (isGroup.value || defaultLabel.value?.type === 'inline') && inputGroupClass;
+    return isGroup.value && 'input';
 });
 
-const growInput = computed(() => {
-    return isGroup.value && defaultLabel.value?.type !== 'text' && defaultLabel.value?.type !== 'inline';
+const hasInputContainer = computed(() => {
+    return isGroup.value && defaultLabel.value?.type === 'floating';
+});
+
+const paddingClass = computed(() => {
+    if (isGroup.value && defaultLabel.value?.type !== 'inline') {
+        const leftIcon    = props.icon?.left;
+        const rightIcon   = props.icon?.right;
+        const prependSlot = slots.prepend;
+        const appendSlot  = slots.append;
+
+        if ((leftIcon && rightIcon) || (prependSlot && appendSlot)) {
+            return 'px-3';
+        }
+
+        if (leftIcon || prependSlot) {
+            return 'ps-3';
+        }
+
+        if (rightIcon || appendSlot) {
+            return 'pe-3';
+        }
+    }
+
+    return '';
 });
 
 const [
-    labelTypeClass,
+    joinItemClass,
+    floatingClass,
     shapeClass,
     sizeClass,
     validityClass,
 ] = [
-    useLabelType(elementName, () => defaultLabel.value?.type ?? 'text'),
+    useJoinItem(isInJoin),
+    useFloating(elementName, () => defaultLabel.value?.type),
     useShape(elementName, () => props.shape),
     useSize(elementName, () => props.size),
     useValidity(() => props.isValid),
 ];
-
-function showTopHelperText(text?: string): text is string {
-    if (defaultLabel.value === undefined) {
-        return false;
-    }
-    // todo: some type restrictions
-    return defaultLabel.value.type !== 'text' && text !== undefined;
-}
 </script>
