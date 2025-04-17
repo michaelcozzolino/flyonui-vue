@@ -1,0 +1,3 @@
+@import 'tailwind.css';
+@import 'vitepress.scss';
+@import 'vue-code-highlighter/dist/style.css';
