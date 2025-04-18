@@ -87,7 +87,7 @@ import { FoIcon }                                                   from '@/Comp
 import { isInJoinInjectionKey }                                     from '@/Components/Join/Internal';
 import { FoLabel }                                                  from '@/Components/Label/Internal';
 import { useFloating, useJoinItem, useShape, useSize, useValidity } from '@/Shared/Internal/Lib';
-import { computed, inject, useId }                                  from 'vue';
+import { computed, inject, onMounted, useId   }                     from 'vue';
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
@@ -110,6 +110,11 @@ const elementName: ElementName = 'input-text';
 const isInJoin: boolean        = inject(isInJoinInjectionKey, false);
 
 const input = defineModel<string>({ required: true });
+const options = inject('flyonui-vue');
+
+onMounted(() => {
+    // console.log(options);
+});
 
 const defaultLabel = computed((): Required<InputLabel> | undefined => {
     if (props.label === undefined) {
