@@ -14,10 +14,7 @@
             "import": "./dist/flyonui-vue.js",
             "require": "./dist/flyonui-vue.umd.cjs"
         },
-        "./index.css": {
-            "import": "./dist/index.css",
-            "require": "./dist/index.css"
-        }
+        "./*.css": "./dist/*.css"
     },
     "main": "./dist/flyonui-vue.umd.cjs",
     "module": "./dist/flyonui-vue.js",
