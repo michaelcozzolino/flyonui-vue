@@ -24,19 +24,11 @@ if you also want to use components with icons, you need to install `@iconify/vue
                     code="yarn add @iconify/vue"
 />
 
-2. Add the `flyonui-vue` dist folder to tailwind.config.js content:
+2. Import styles:
 
-<VueCodeHighlighter title="Javascript"
-                    lang="js"
-                    code="import path from 'node:path';
-module.exports = {
-    content: [
-        'node_modules/flyonui-vue/**/*.{js,jsx,ts,tsx,vue}',
-        'node_modules/flyonui/dist/js/*.js',
-        `${path.dirname(require.resolve('flyonui-vue'))}/**/*.{html,js,ts,vue}`,
-    ],
-    ...
-};"
+<VueCodeHighlighter title="Bash"
+                    lang="css"
+                    code="@import 'flyonui-vue/index.css';"
 />
 
 3. Now you can use `flyonui-vue` anywhere in your project by importing the components you need.
