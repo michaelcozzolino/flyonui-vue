@@ -7,9 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Orientation }          from '@/Shared/Types/Variants';
-import { useBorder, useOrientation } from '@/Shared/Internal/Lib';
-// todo: rename to FoStats
+import type { ElementName, Orientation } from '@/Shared/Types/Variants';
+import { useBorder, useOrientation }     from '@/Shared/Internal/Lib';
+
 interface Props {
     orientation?: Orientation;
     isBordered?:  boolean;
@@ -20,11 +20,13 @@ const props = withDefaults(defineProps<Props>(), {
     isBordered:  false,
 });
 
+const elementName: ElementName = 'stats';
+
 const [
     orientationClass,
     borderClass,
 ] = [
-    useOrientation('stat-list', () => props.orientation),
-    useBorder('stat-list', () => props.isBordered),
+    useOrientation(elementName, () => props.orientation),
+    useBorder(elementName, () => props.isBordered),
 ];
 </script>

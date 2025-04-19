@@ -1,33 +1,32 @@
 <template>
-    <FoStatList orientation="vertical">
-        <FoStatListItem v-for="stat in stats"
-                        :key="stat.id"
+    <FoStats orientation="vertical">
+        <FoStat v-for="stat in stats"
+                :key="stat.id"
         >
-            <FoStatListItemTitle>
+            <FoStatTitle>
                 {{ stat.title }}
-            </FoStatListItemTitle>
+            </FoStatTitle>
 
-            <FoStatListItemValue>
+            <FoStatValue>
                 {{ stat.value }}
-            </FoStatListItemValue>
+            </FoStatValue>
 
-            <FoStatListItemDescription>
+            <FoStatDescription>
                 {{ stat.description }}
-            </FoStatListItemDescription>
-        </FoStatListItem>
-    </FoStatList>
+            </FoStatDescription>
+        </FoStat>
+    </FoStats>
 </template>
 
 <script setup lang="ts">
 import type { Identifiable } from 'flyonui-vue';
 import {
-    FoStatList,
-    FoStatListItem,
-    FoStatListItemDescription,
-    FoStatListItemTitle,
-    FoStatListItemValue,
-
-} from 'flyonui-vue';
+    FoStat,
+    FoStatDescription,
+    FoStats,
+    FoStatTitle,
+    FoStatValue,
+}                            from 'flyonui-vue';
 import { ref } from 'vue';
 
 interface Stat extends Identifiable {

@@ -1,29 +1,29 @@
 <template>
-    <FoStatList>
-        <FoStatListItem v-for="websiteStat in websiteStats"
-                        :key="websiteStat.id"
+    <FoStats>
+        <FoStat v-for="websiteStat in websiteStats"
+                :key="websiteStat.id"
         >
-            <FoStatListItemFigure>
+            <FoStatFigure>
                 <FoIcon :icon="websiteStat.icon"
                         size="doubleExtraLarge"
                 />
-            </FoStatListItemFigure>
+            </FoStatFigure>
 
-            <FoStatListItemTitle>
+            <FoStatTitle>
                 {{ websiteStat.title }}
-            </FoStatListItemTitle>
+            </FoStatTitle>
 
-            <FoStatListItemValue>
+            <FoStatValue>
                 {{ websiteStat.value }}
-            </FoStatListItemValue>
+            </FoStatValue>
 
-            <FoStatListItemDescription>
+            <FoStatDescription>
                 {{ websiteStat.description }}
-            </FoStatListItemDescription>
-        </FoStatListItem>
+            </FoStatDescription>
+        </FoStat>
 
-        <FoStatListItem>
-            <FoStatListItemFigure>
+        <FoStat>
+            <FoStatFigure>
                 <!--            todo: avatar component -->
                 <div class="avatar">
                     <div class="size-12 rounded-full">
@@ -32,33 +32,33 @@
                         >
                     </div>
                 </div>
-            </FoStatListItemFigure>
+            </FoStatFigure>
 
-            <FoStatListItemValue class="text-success">
+            <FoStatValue class="text-success">
                 95%
-            </FoStatListItemValue>
+            </FoStatValue>
 
-            <FoStatListItemTitle>
+            <FoStatTitle>
                 Customer Retention
-            </FoStatListItemTitle>
+            </FoStatTitle>
 
-            <FoStatListItemDescription>
+            <FoStatDescription>
                 Steady over last quarter
-            </FoStatListItemDescription>
-        </FoStatListItem>
-    </FoStatList>
+            </FoStatDescription>
+        </FoStat>
+    </FoStats>
 </template>
 
 <script setup lang="ts">
 import type { Identifiable } from 'flyonui-vue';
 import {
     FoIcon,
-    FoStatList,
-    FoStatListItem,
-    FoStatListItemDescription,
-    FoStatListItemFigure,
-    FoStatListItemTitle,
-    FoStatListItemValue,
+    FoStat,
+    FoStatDescription,
+    FoStatFigure,
+    FoStats,
+    FoStatTitle,
+    FoStatValue,
 }                            from 'flyonui-vue';
 import { ref } from 'vue';
 

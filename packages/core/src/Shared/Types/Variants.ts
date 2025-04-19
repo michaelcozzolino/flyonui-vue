@@ -16,7 +16,7 @@ export type ElementName =
     | 'menu'
     | 'menu-item'
     | 'select'
-    | 'stat-list'
+    | 'stats'
     | 'textarea';
 
 export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox'>;
@@ -26,8 +26,8 @@ export type ResponsiveElementName = Extract<ElementName, 'btn' | 'join'>;
 export type ShapeableElementName = Extract<ElementName, 'badge' | 'btn' | 'input-text'>;
 export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'input-text' | 'loading' | 'menu' | 'select' | 'textarea'>;
 export type StatefulElementName = Extract<ElementName, 'btn' | 'menu-item'>;
-export type OrientableElementName = Extract<ElementName, 'checkbox' | 'join' | 'list-group' | 'list-group-item' | 'menu' | 'stat-list'>;
-export type BorderableElementName = Extract<ElementName, 'stat-list'>;
+export type OrientableElementName = Extract<ElementName, 'checkbox' | 'join' | 'list-group' | 'list-group-item' | 'menu' | 'stats'>;
+export type BorderableElementName = Extract<ElementName, 'stats'>;
 export type FloatingElementName = Extract<ElementName, 'input-text' | 'select' | 'textarea'>;
 export type LabellableElementName = FloatingElementName;
 export type StripedElementName = Extract<ElementName, 'list-group' | 'list-group-item'>;
