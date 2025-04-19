@@ -67,6 +67,8 @@ jspm_packages/
 packages/docs/.vitepress/cache
 packages/docs/public/build-size-visualizer.html
 
+packages/create-flyonui-vue/src/Templates/*/yarn.lock
+
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
