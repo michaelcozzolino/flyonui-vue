@@ -3,6 +3,9 @@
     "version": "0.0.0",
     "type": "module",
     "bin": "src/index.ts",
+    "scripts": {
+        "publish": "yarn npm publish --access public"
+    },
     "dependencies": {
         "fs-extra": "^11.1.1",
         "prompts": "^2.4.2"
