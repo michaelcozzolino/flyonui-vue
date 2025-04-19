@@ -6,10 +6,10 @@ import { fileURLToPath } from 'node:url';
 import { copy }          from 'fs-extra';
 import prompts           from 'prompts';
 
-const templates = path.resolve(path.dirname(fileURLToPath(import.meta.url)), './Templates/Vue');
+const templates = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../src/Templates/Vue');
 
 async function main(): Promise<void> {
-    log('🚀  Create a new FlyonUI‑powered project');
+    log('🚀  Create a new FlyonUI Vue project');
 
     const { name } = await prompts([
         { name: 'name', type: 'text', message: 'Project name', initial: 'my-app' },
