@@ -4734,6 +4734,11 @@ __metadata:
     tailwindcss: ^4
     vue: ^3
     vue-router: ^4
+  peerDependenciesMeta:
+    "@iconify/vue":
+      optional: true
+    vue-router:
+      optional: true
   languageName: unknown
   linkType: soft
 
