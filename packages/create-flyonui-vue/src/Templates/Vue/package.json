@@ -13,6 +13,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@iconify/vue": "^4.3.0",
     "@tailwindcss/vite": "^4.1.4",
     "flyonui": "^2.1.0",
     "flyonui-vue": "^2.0.0-alpha.3",
