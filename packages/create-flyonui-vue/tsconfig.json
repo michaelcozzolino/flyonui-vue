@@ -5,5 +5,6 @@
         "moduleResolution": "Bundler",
         "module": "ESNext",
         "target": "ESNext",
+        "outDir": "dist",
     }
 }

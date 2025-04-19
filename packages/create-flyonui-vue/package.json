@@ -2,7 +2,7 @@
     "name": "create-flyonui-vue",
     "version": "0.0.0",
     "type": "module",
-    "bin": "src/index.ts",
+    "bin": "dist/index.js",
     "scripts": {
         "publish": "yarn npm publish --access public"
     },
