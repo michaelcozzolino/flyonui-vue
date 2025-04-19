@@ -3616,9 +3616,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-flyon-ui@workspace:packages/create-flyonui-vue":
+"create-flyonui-vue@workspace:packages/create-flyonui-vue":
   version: 0.0.0-use.local
-  resolution: "create-flyon-ui@workspace:packages/create-flyonui-vue"
+  resolution: "create-flyonui-vue@workspace:packages/create-flyonui-vue"
   dependencies:
     "@tsconfig/node-lts": "npm:^22.0.1"
     "@types/fs-extra": "npm:^11.0.4"
@@ -3627,7 +3627,7 @@ __metadata:
     prompts: "npm:^2.4.2"
     typescript: "npm:^5.8.2"
   bin:
-    create-flyon-ui: src/index.ts
+    create-flyonui-vue: src/index.ts
   languageName: unknown
   linkType: soft
 
