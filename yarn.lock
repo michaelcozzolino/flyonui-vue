@@ -4794,6 +4794,9 @@ __metadata:
     tailwindcss: ^4
     vue: ^3
     vue-router: ^4
+  peerDependenciesMeta:
+    vue-router:
+      optional: true
   languageName: unknown
   linkType: soft
 
