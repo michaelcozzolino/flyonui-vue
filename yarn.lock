@@ -3627,7 +3627,7 @@ __metadata:
     prompts: "npm:^2.4.2"
     typescript: "npm:^5.8.2"
   bin:
-    create-flyonui-vue: src/index.ts
+    create-flyonui-vue: dist/index.js
   languageName: unknown
   linkType: soft
 
