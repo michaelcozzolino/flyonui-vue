@@ -1,5 +1,17 @@
 # Getting Started
 
+### New Projects
+
+If you are starting a new `Vite` + `Vue` project you can use our automatic flyonui-vue installation tool 
+[create-flyonui-vue](https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/create-flyonui-vue/README.md):
+
+<VueCodeHighlighter title="Bash"
+                    lang="bash"
+                    code="yarn create flyonui-vue"
+/>
+
+### Already existing Projects
+
 Make sure that you have [FlyonUI](https://flyonui.com/docs/getting-started/quick-start/)
 and [Tailwind CSS](https://tailwindcss.com/) installed.
 
@@ -17,7 +29,7 @@ or
                     code="yarn add flyonui-vue"
 />
 
-if you also want to use components with icons, you need to install `@iconify/vue`:
+in order to use icons, `@iconify/vue` is required:
 
 <VueCodeHighlighter title="Bash"
                     lang="bash"
