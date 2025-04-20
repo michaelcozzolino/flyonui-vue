@@ -1,7 +1,7 @@
 <template>
-    <FoStatList>
-        <FoStatListItem>
-            <FoStatListItemFigure>
+    <FoStats>
+        <FoStat>
+            <FoStatFigure>
                 <!--            todo: avatar component -->
                 <div class="avatar">
                     <div class="size-12 rounded-full">
@@ -10,30 +10,30 @@
                         >
                     </div>
                 </div>
-            </FoStatListItemFigure>
+            </FoStatFigure>
 
-            <FoStatListItemTitle>
+            <FoStatTitle>
                 Total page views
-            </FoStatListItemTitle>
+            </FoStatTitle>
 
-            <FoStatListItemValue>
+            <FoStatValue>
                 89400
-            </FoStatListItemValue>
+            </FoStatValue>
 
-            <FoStatListItemDescription>
+            <FoStatDescription>
                 21% ↗︎ than last month
-            </FoStatListItemDescription>
-        </FoStatListItem>
-    </FoStatList>
+            </FoStatDescription>
+        </FoStat>
+    </FoStats>
 </template>
 
 <script setup lang="ts">
 import {
-    FoStatList,
-    FoStatListItem,
-    FoStatListItemDescription,
-    FoStatListItemFigure,
-    FoStatListItemTitle,
-    FoStatListItemValue,
+    FoStat,
+    FoStatDescription,
+    FoStatFigure,
+    FoStats,
+    FoStatTitle,
+    FoStatValue,
 } from 'flyonui-vue';
 </script>

@@ -1,32 +1,31 @@
 <template>
-    <FoStatList is-bordered>
-        <FoStatListItem v-for="stat in stats"
-                        :key="stat.id"
+    <FoStats is-bordered>
+        <FoStat v-for="stat in stats"
+                :key="stat.id"
         >
-            <FoStatListItemTitle>
+            <FoStatTitle>
                 {{ stat.title }}
-            </FoStatListItemTitle>
+            </FoStatTitle>
 
-            <FoStatListItemValue>
+            <FoStatValue>
                 {{ stat.value }}
-            </FoStatListItemValue>
+            </FoStatValue>
 
-            <FoStatListItemDescription>
+            <FoStatDescription>
                 {{ stat.description }}
-            </FoStatListItemDescription>
-        </FoStatListItem>
-    </FoStatList>
+            </FoStatDescription>
+        </FoStat>
+    </FoStats>
 </template>
 
 <script setup lang="ts">
 import type { Identifiable } from 'flyonui-vue';
 import {
-    FoStatList,
-    FoStatListItem,
-    FoStatListItemDescription,
-    FoStatListItemTitle,
-    FoStatListItemValue,
-
+    FoStat,
+    FoStatDescription,
+    FoStats,
+    FoStatTitle,
+    FoStatValue,
 }                            from 'flyonui-vue';
 import { ref } from 'vue';
 

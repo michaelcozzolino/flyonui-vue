@@ -1,34 +1,34 @@
 <template>
-    <FoStatList :orientation="orientation">
-        <FoStatListItem>
-            <FoStatListItemTitle>
+    <FoStats :orientation="orientation">
+        <FoStat>
+            <FoStatTitle>
                 Subscription Plan
-            </FoStatListItemTitle>
+            </FoStatTitle>
 
-            <FoStatListItemValue>
+            <FoStatValue>
                 Premium
-            </FoStatListItemValue>
+            </FoStatValue>
 
-            <FoStatListItemActions>
+            <FoStatActions>
                 <FoButton color="primary"
                           preset="gradient"
                           size="small"
                 >
                     Upgrade Plan
                 </FoButton>
-            </FoStatListItemActions>
-        </FoStatListItem>
+            </FoStatActions>
+        </FoStat>
 
-        <FoStatListItem>
-            <FoStatListItemTitle>
+        <FoStat>
+            <FoStatTitle>
                 Next Billing Date
-            </FoStatListItemTitle>
+            </FoStatTitle>
 
-            <FoStatListItemValue>
+            <FoStatValue>
                 Oct 15, 2024
-            </FoStatListItemValue>
+            </FoStatValue>
 
-            <FoStatListItemActions>
+            <FoStatActions>
                 <FoButton preset="soft"
                           size="small"
                 >
@@ -41,20 +41,20 @@
                 >
                     Change Payment Method
                 </FoButton>
-            </FoStatListItemActions>
-        </FoStatListItem>
-    </FoStatList>
+            </FoStatActions>
+        </FoStat>
+    </FoStats>
 </template>
 
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 import {
     FoButton,
-    FoStatList,
-    FoStatListItem,
-    FoStatListItemActions,
-    FoStatListItemTitle,
-    FoStatListItemValue,
+    FoStat,
+    FoStatActions,
+    FoStats,
+    FoStatTitle,
+    FoStatValue,
 }                                              from 'flyonui-vue';
 import { computed } from 'vue';
 

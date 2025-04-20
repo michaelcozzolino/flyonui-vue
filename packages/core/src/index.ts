@@ -15,7 +15,7 @@ export * from '@/Components/Mask';
 export * from '@/Components/Menu';
 export * from '@/Components/Navbar';
 export * from '@/Components/Select';
-export * from '@/Components/StatList';
+export * from '@/Components/Stats';
 export * from '@/Components/Textarea';
 export * from '@/Components/ThemeController';
 export * from '@/Shared/Types';
