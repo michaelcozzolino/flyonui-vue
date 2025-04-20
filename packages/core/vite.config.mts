@@ -9,6 +9,7 @@ export default defineConfig({
     plugins: [
         vue(),
         tailwindcss(),
+        // todo: understand why not working in local
         ...process.env.GENERATE_BUILD_SIZE_VISUALIZER
             ? [visualizer({
                     filename: '../docs/public/build-size-visualizer.html',
