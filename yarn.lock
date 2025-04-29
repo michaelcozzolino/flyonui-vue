@@ -4815,6 +4815,7 @@ __metadata:
     "@vue/test-utils": "npm:^2.4.6"
     "@vue/tsconfig": "npm:^0.7.0"
     concurrently: "npm:^9.1.2"
+    flyonui: "npm:^2.1.0"
     flyonui-vue: "workspace:*"
     jsdom: "npm:^26.0.0"
     tsc-alias: "npm:^1.8.11"
