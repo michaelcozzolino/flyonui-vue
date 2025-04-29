@@ -1,6 +1,8 @@
 # Vite
 .DS_Store
 dist
+dist-ce.vue
+dist-vue
 dist_types
 dist-ssr
 *.local
