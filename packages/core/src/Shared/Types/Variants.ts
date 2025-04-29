@@ -16,6 +16,10 @@ export type ElementName =
     | 'menu'
     | 'menu-item'
     | 'select'
+    | 'stat'
+    | 'stat-description'
+    | 'stat-title'
+    | 'stat-value'
     | 'stats'
     | 'textarea';
 
