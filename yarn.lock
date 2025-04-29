@@ -4817,7 +4817,6 @@ __metadata:
     concurrently: "npm:^9.1.2"
     flyonui-vue: "workspace:*"
     jsdom: "npm:^26.0.0"
-    rollup-plugin-visualizer: "npm:^5.14.0"
     tsc-alias: "npm:^1.8.11"
     typescript: "npm:^5.8.2"
     vite: "npm:^6.2.6"
