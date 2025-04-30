@@ -21,6 +21,11 @@
     "exclude": [
         "node_modules",
         "dist",
-        "vite.config.vue.mts"
+        "exclude": [
+            "node_modules",
+            "dist",
+            "vite.config.vue.mts",
+            "vite.config.ce.vue.mts"
+        ]
     ]
 }
