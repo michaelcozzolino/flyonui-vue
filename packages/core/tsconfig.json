@@ -7,6 +7,7 @@
                 "./src/*"
             ]
         },
+        "composite": true,
         "noEmit": false,
         "outDir": "dist"
     },
@@ -20,6 +21,7 @@
     "exclude": [
         "node_modules",
         "dist",
-        "vite.config.mts"
+        "vite.config.vue.mts",
+        "vite.config.ce.vue.mts"
     ]
 }

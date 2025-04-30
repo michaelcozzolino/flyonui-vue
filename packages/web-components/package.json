@@ -1,0 +1,57 @@
+{
+    "name": "flyonui-web-components",
+    "type": "module",
+    "version": "0.0.0",
+    "author": "Michael Cozzolino",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/michaelcozzolino/flyonui-web-components.git"
+    },
+    "browserslist": [
+        "defaults and fully supports es6-module",
+        "maintained node versions"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/src/index.d.ts",
+            "import": "./dist/flyonui-web-components.js",
+            "require": "./dist/flyonui-web-components.umd.cjs"
+        }
+    },
+    "main": "./dist/flyonui-web-components.umd.cjs",
+    "module": "./dist/flyonui-web-components.js",
+    "types": "./dist/src/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "scripts": {
+        "dev": "yarn concurrently \"yarn build:ui -w\" \"yarn build:types -w\" \"yarn alias:types -w\"",
+        "build": "yarn build:ui && yarn build:types && yarn alias:types",
+        "build:ui": "vite build",
+        "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.json",
+        "alias:types": "tsc-alias -p tsconfig.json",
+        "lint": "eslint . --fix",
+        "publish": "yarn npm publish --access public",
+        "test": "vitest run",
+        "test-coverage": "vitest run --coverage",
+        "type-check": "vue-tsc --noEmit -p tsconfig.json"
+    },
+    "dependencies": {
+        "flyonui": "^2.1.0",
+        "flyonui-vue": "workspace:*"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.13",
+        "@vue/test-utils": "^2.4.6",
+        "@vue/tsconfig": "^0.7.0",
+        "concurrently": "^9.1.2",
+        "jsdom": "^26.0.0",
+        "tsc-alias": "^1.8.11",
+        "typescript": "^5.8.2",
+        "vite": "^6.2.6",
+        "vue": "^3.5.13",
+        "vue-tsc": "^2.2.8"
+    }
+}

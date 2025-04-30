@@ -5,7 +5,7 @@ import BadgeDocs                                      from '@/Components/Badge/B
 import ButtonDocs                                     from '@/Components/Button/ButtonDocs.vue';
 import ListGroupDocs                                  from '@/Components/ListGroup/ListGroupDocs.vue';
 import LoadingDocs                                    from '@/Components/Loading/LoadingDocs.vue';
-import StatListDocs                                   from '@/Components/StatList/StatListDocs.vue';
+import StatsDocs                                   from '@/Components/Stat/StatsDocs.vue';
 import HeadingDocs                                    from '@/Content/Heading/HeadingDocs.vue';
 import LinkDocs                                       from '@/Content/Link/LinkDocs.vue';
 import MaskDocs                                       from '@/Content/Mask/MaskDocs.vue';
@@ -42,7 +42,7 @@ export default {
             { name: 'HeadingDocs', instance: HeadingDocs },
             { name: 'MenuDocs', instance: MenuDocs },
             { name: 'NavbarDocs', instance: NavbarDocs },
-            { name: 'StatListDocs', instance: StatListDocs },
+            { name: 'StatsDocs', instance: StatsDocs },
             { name: 'SelectDocs', instance: SelectDocs },
             { name: 'TextareaDocs', instance: TextareaDocs },
             { name: 'SelectThemeController', instance: FoSelectThemeController },

@@ -1,0 +1,39 @@
+<template>
+    <FoStats>
+        <FoStat>
+            <FoStatFigure>
+                <!--            todo: avatar component -->
+                <div class="avatar">
+                    <div class="size-12 rounded-full">
+                        <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
+                             alt="User Avatar"
+                        >
+                    </div>
+                </div>
+            </FoStatFigure>
+
+            <FoStatTitle>
+                Total page views
+            </FoStatTitle>
+
+            <FoStatValue>
+                89400
+            </FoStatValue>
+
+            <FoStatDescription>
+                21% ↗︎ than last month
+            </FoStatDescription>
+        </FoStat>
+    </FoStats>
+</template>
+
+<script setup lang="ts">
+import {
+    FoStat,
+    FoStatDescription,
+    FoStatFigure,
+    FoStats,
+    FoStatTitle,
+    FoStatValue,
+} from 'flyonui-vue';
+</script>

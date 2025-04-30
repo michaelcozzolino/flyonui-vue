@@ -1,11 +1,18 @@
 import type { DefaultTheme } from 'vitepress';
+import { kebabCase }         from 'change-case';
 import { defineConfig }      from 'vitepress';
 
 export default defineConfig({
-    base: '/flyonui-vue/',
-    rewrites(id) {
-        // PascalCase to kebab-case for route urls
-        return id.replace(/([a-z0–9])([A-Z])/g, '$1-$2').toLowerCase();
+    base:     '/flyonui-vue/',
+    rewrites: (id) => {
+        const format = '.md';
+
+        // E.G: Forms/InputText.md
+        return id.replace(format, '') // removes .md because the kebabCase function would replace the "." with "-": Forms/InputText
+            .split('/') // ['Forms', 'InputText']
+            .map(id => kebabCase(id)) // ['forms', 'input-text']
+            .join('/') // forms/input-text
+            + format; // forms/input-text.md
     },
     title:     'FlyonUI Vue',
     cleanUrls: true,
@@ -79,7 +86,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                         // { text: 'Remove Element', link: 'remove-element' },
                         // { text: 'Skeleton', link: 'skeleton' },
                         // { text: 'Stack', link: 'stack' },
-                        { text: 'Stat List', link: 'stat-list' },
+                        { text: 'Stats', link: 'stats' },
                         // { text: 'Swap', link: 'swap' },
                         // { text: 'Theme Controller', link: 'theme-controller' },
                         // { text: 'Timeline', link: 'timeline' },

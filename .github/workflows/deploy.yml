@@ -60,7 +60,7 @@ jobs:
 
     deploy:
         environment:
-            name: github-pages
+            name: flyonui-vue
             url: ${{ steps.deployment.outputs.page_url }}
         needs: build
         runs-on: ubuntu-latest

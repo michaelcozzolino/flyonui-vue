@@ -9,12 +9,15 @@
     },
     "scripts": {
         "dependency-upgrade": "npx yarn-upgrade-all",
-        "dev": "yarn concurrently \"yarn workspace flyonui-vue dev\" \"yarn workspace flyonui-vue-docs dev\"",
+        "dev": "yarn concurrently \"yarn workspace flyonui-vue dev:vue\" \"yarn workspace flyonui-vue-docs dev\"",
         "build": "yarn workspaces foreach -Apt run build",
         "lint": "yarn workspaces foreach -Apt run lint",
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all"
+    },
+    "dependencies": {
+        "change-case": "^5.4.4"
     },
     "devDependencies": {
         "@michaelcozzolino/eslint-config": "^1.1.2",

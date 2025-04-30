@@ -1,5 +1,17 @@
 # Getting Started
 
+### New Projects
+
+If you are starting a new `Vite` + `Vue` project you can use our automatic flyonui-vue installation tool 
+[create-flyonui-vue](https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/create-flyonui-vue/README.md):
+
+<VueCodeHighlighter title="Bash"
+                    lang="bash"
+                    code="yarn create flyonui-vue"
+/>
+
+### Already existing Projects
+
 Make sure that you have [FlyonUI](https://flyonui.com/docs/getting-started/quick-start/)
 and [Tailwind CSS](https://tailwindcss.com/) installed.
 
@@ -17,26 +29,18 @@ or
                     code="yarn add flyonui-vue"
 />
 
-if you also want to use components with icons, you need to install `@iconify/vue`:
+in order to use icons, `@iconify/vue` is required:
 
 <VueCodeHighlighter title="Bash"
                     lang="bash"
                     code="yarn add @iconify/vue"
 />
 
-2. Add the `flyonui-vue` dist folder to tailwind.config.js content:
+2. Import styles:
 
-<VueCodeHighlighter title="Javascript"
-                    lang="js"
-                    code="import path from 'node:path';
-module.exports = {
-    content: [
-        'node_modules/flyonui-vue/**/*.{js,jsx,ts,tsx,vue}',
-        'node_modules/flyonui/dist/js/*.js',
-        `${path.dirname(require.resolve('flyonui-vue'))}/**/*.{html,js,ts,vue}`,
-    ],
-    ...
-};"
+<VueCodeHighlighter title="Bash"
+                    lang="css"
+                    code="@import 'flyonui-vue/index.css';"
 />
 
 3. Now you can use `flyonui-vue` anywhere in your project by importing the components you need.

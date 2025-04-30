@@ -263,7 +263,7 @@ export function useOrientation(
                 horizontal: 'menu-horizontal',
                 vertical:   '',
             },
-            'stat-list': {
+            'stats': {
                 horizontal: 'stats-horizontal',
                 vertical:   'stats-vertical',
             },
