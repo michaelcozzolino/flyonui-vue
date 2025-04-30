@@ -34,13 +34,15 @@
         "test-coverage": "vitest run --coverage",
         "type-check": "vue-tsc --noEmit -p tsconfig.json"
     },
+    "dependencies": {
+        "flyonui": "^2.1.0",
+        "flyonui-vue": "workspace:*"
+    },
     "devDependencies": {
         "@types/node": "^22.13.13",
         "@vue/test-utils": "^2.4.6",
         "@vue/tsconfig": "^0.7.0",
         "concurrently": "^9.1.2",
-        "flyonui": "^2.1.0",
-        "flyonui-vue": "workspace:*",
         "jsdom": "^26.0.0",
         "tsc-alias": "^1.8.11",
         "typescript": "^5.8.2",
