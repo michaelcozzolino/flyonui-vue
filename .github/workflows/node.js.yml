@@ -28,5 +28,7 @@ jobs:
                     cache: yarn
             -   run: yarn install
             -   run: yarn audit
+            - name: Setup tmate session
+              uses: mxschmitt/action-tmate@v3
             -   run: yarn build
             -   run: yarn test
