@@ -8,6 +8,10 @@
         "type": "git",
         "url": "git+https://github.com/michaelcozzolino/flyonui-web-components.git"
     },
+    "browserslist": [
+        "defaults and fully supports es6-module",
+        "maintained node versions"
+    ],
     "exports": {
         ".": {
             "types": "./dist/src/index.d.ts",

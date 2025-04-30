@@ -35,6 +35,7 @@ const vueComponents: FlyonUIVueComponent[] = [
     { component: FoStatValue, styleSheet: statStyleSheet },
     { component: FoStatDescription, styleSheet: statStyleSheet },
 ];
+
 const webComponents: FlyonUIWebComponent[] = vueComponents.map(
     ({ component, styleSheet }: FlyonUIVueComponent): FlyonUIWebComponent => {
         const name = component.__name;
