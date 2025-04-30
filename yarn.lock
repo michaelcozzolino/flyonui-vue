@@ -3369,6 +3369,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"change-case@npm:^5.4.4":
+  version: 5.4.4
+  resolution: "change-case@npm:5.4.4"
+  checksum: 10c0/2a9c2b9c9ad6ab2491105aaf506db1a9acaf543a18967798dcce20926c6a173aa63266cb6189f3086e3c14bf7ae1f8ea4f96ecc466fcd582310efa00372f3734
+  languageName: node
+  linkType: hard
+
 "character-entities-html4@npm:^2.0.0":
   version: 2.1.0
   resolution: "character-entities-html4@npm:2.1.0"
@@ -4797,6 +4804,25 @@ __metadata:
   peerDependenciesMeta:
     vue-router:
       optional: true
+  languageName: unknown
+  linkType: soft
+
+"flyonui-web-components@workspace:packages/web-components":
+  version: 0.0.0-use.local
+  resolution: "flyonui-web-components@workspace:packages/web-components"
+  dependencies:
+    "@types/node": "npm:^22.13.13"
+    "@vue/test-utils": "npm:^2.4.6"
+    "@vue/tsconfig": "npm:^0.7.0"
+    concurrently: "npm:^9.1.2"
+    flyonui: "npm:^2.1.0"
+    flyonui-vue: "workspace:*"
+    jsdom: "npm:^26.0.0"
+    tsc-alias: "npm:^1.8.11"
+    typescript: "npm:^5.8.2"
+    vite: "npm:^6.2.6"
+    vue: "npm:^3.5.13"
+    vue-tsc: "npm:^2.2.8"
   languageName: unknown
   linkType: soft
 
@@ -7645,6 +7671,7 @@ __metadata:
   dependencies:
     "@michaelcozzolino/eslint-config": "npm:^1.1.2"
     "@vitest/coverage-v8": "npm:^3.0.5"
+    change-case: "npm:^5.4.4"
     concurrently: "npm:^9.1.2"
     eslint: "npm:^9.23.0"
     vitest: "npm:^3.0.5"

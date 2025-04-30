@@ -14,14 +14,11 @@
     "include": [
         "src/**/*.ts",
         "src/**/*.d.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue",
         "tests/**/*.ts"
     ],
     "exclude": [
         "node_modules",
         "dist",
-        "vite.config.vue.mts",
-        "vite.config.ce.vue.mts"
+        "vite.config.mts"
     ]
 }

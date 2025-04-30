@@ -23,6 +23,7 @@ export default defineConfig({
         dedupe: ['vue'],
     },
     build: {
+        outDir:       'dist-vue',
         emptyOutDir:  false,
         cssCodeSplit: true,
         target:       'ESNext',

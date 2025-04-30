@@ -1,34 +1,50 @@
 {
     "name": "flyonui-vue",
     "type": "module",
-    "version": "2.0.0-alpha.3",
+    "version": "2.0.0-alpha.4",
     "author": "Michael Cozzolino",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/michaelcozzolino/flyonui-vue.git"
     },
+    "browserslist": [
+        "defaults and fully supports es6-module",
+        "maintained node versions"
+    ],
     "exports": {
         ".": {
-            "types": "./dist/src/index.d.ts",
-            "import": "./dist/flyonui-vue.js",
-            "require": "./dist/flyonui-vue.umd.cjs"
+            "types": "./dist-vue/src/index.d.ts",
+            "import": "./dist-vue/flyonui-vue.js",
+            "require": "./dist-vue/flyonui-vue.umd.cjs"
         },
-        "./*.css": "./dist/*.css"
+        "./ce": {
+            "types": "./dist-ce.vue/src/index.d.ts",
+            "import": "./dist-ce.vue/flyonui-vue.js",
+            "require": "./dist-ce.vue/flyonui-vue.umd.cjs"
+        },
+        "./*.css": "./dist-vue/*.css"
     },
-    "main": "./dist/flyonui-vue.umd.cjs",
-    "module": "./dist/flyonui-vue.js",
-    "types": "./dist/src/index.d.ts",
+    "main": "./dist-vue/flyonui-vue.umd.cjs",
+    "module": "./dist-vue/flyonui-vue.js",
+    "types": "./dist-vue/src/index.d.ts",
     "files": [
-        "dist",
+        "dist-vue",
+        "dist-ce.vue",
         "src"
     ],
     "scripts": {
-        "dev": "yarn concurrently \"yarn build:ui -w\" \"yarn build:types -w\" \"yarn alias:types -w\"",
-        "build": "yarn build:ui && yarn build:types && yarn alias:types",
-        "build:ui": "vite build",
-        "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.json",
-        "alias:types": "tsc-alias -p tsconfig.json",
+        "build": "yarn build:vue && yarn build:ce.vue",
+        "dev:vue": "yarn concurrently \"yarn build:vue:ui -w\" \"yarn build:vue:types -w\" \"yarn alias:vue:types -w\"",
+        "build:vue": "yarn build:vue:ui && yarn build:vue:types && yarn alias:vue:types",
+        "build:vue:ui": "vite build -c vite.config.vue.mts",
+        "build:vue:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.json --outDir dist-vue",
+        "alias:vue:types": "tsc-alias -p tsconfig.json --outDir dist-vue",
+        "dev:ce.vue": "yarn concurrently \"yarn build:ce.vue:ui -w\" \"yarn build:ce.vue:types -w\" \"yarn alias:ce.vue:types -w\"",
+        "build:ce.vue": "yarn build:ce.vue:ui && yarn build:ce.vue:types && yarn alias:ce.vue:types",
+        "build:ce.vue:ui": "vite build -c vite.config.ce.vue.mts",
+        "build:ce.vue:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.json --outDir dist-ce.vue",
+        "alias:ce.vue:types": "tsc-alias -p tsconfig.json --outDir dist-ce.vue",
         "lint": "eslint . --fix",
         "publish": "yarn npm publish --access public",
         "test": "vitest run",
