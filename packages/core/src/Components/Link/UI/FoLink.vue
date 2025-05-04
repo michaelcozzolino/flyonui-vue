@@ -14,12 +14,10 @@
 import type { LinkProps, UnderlineLinkEffect } from '@/Components/Link/Types/Link';
 import { FoRouterLink }                        from '@/Components/Link/Internal';
 import { isInMenuItemInjectionKey }            from '@/Components/Menu/Internal';
-import { useTextColor }                        from '@/Shared/Internal/Lib';
+import { useTextColor }                        from '@/Shared/UseColor/Internal';
 import { computed, inject }                    from 'vue';
 
-const props = withDefaults(defineProps<LinkProps>(), {
-    color: 'default',
-});
+const props = defineProps<LinkProps>();
 
 const isInMenuItem = inject(isInMenuItemInjectionKey, false);
 

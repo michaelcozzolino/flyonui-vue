@@ -23,8 +23,6 @@ export type ElementName =
     | 'stats'
     | 'textarea';
 
-export type ColorableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox'>;
-export type ColorableTextElementName = Extract<ElementName, 'link' | 'loading'>;
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
 export type ResponsiveElementName = Extract<ElementName, 'btn' | 'join'>;
 export type ShapeableElementName = Extract<ElementName, 'badge' | 'btn' | 'input-text'>;
@@ -35,10 +33,7 @@ export type BorderableElementName = Extract<ElementName, 'stats'>;
 export type FloatingElementName = Extract<ElementName, 'input-text' | 'select' | 'textarea'>;
 export type LabellableElementName = FloatingElementName;
 export type StripedElementName = Extract<ElementName, 'list-group' | 'list-group-item'>;
-// todo: make some configuration where the user can choose which color/size and so on to be the default, neutral is the default color now.
-export const availableColors = ['default', 'neutral', 'primary', 'secondary', 'accent', 'info', 'success', 'warning', 'error'] as const;
-export type TextColor = typeof availableColors[number];
-export type Color = Exclude<TextColor, 'neutral'>;
+
 export type Preset = Default | 'gradient' | 'text' | 'soft' | 'outline' | 'dash';
 export type Size = Default | 'extraSmall' | 'small' | 'large' | 'extraLarge' | 'doubleExtraLarge';
 export type SizeWithout2XL = Exclude<Size, 'doubleExtraLarge'>;
