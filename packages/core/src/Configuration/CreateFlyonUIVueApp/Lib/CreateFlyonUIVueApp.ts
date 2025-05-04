@@ -20,14 +20,14 @@ export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     },
 };
 
-export const injectionKey: InjectionKey<Ref<FlyonUIVueAppDefaultConfig>> = Symbol('Create FlyonUI Vue app');
+export const flyonUIVueAppConfigInjectionKey: InjectionKey<Ref<FlyonUIVueAppDefaultConfig>> = Symbol('Create FlyonUI Vue app');
 
 export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: App, config: FlyonUIVueAppConfig) => {
     const global     = deepMerge(flyonUIVueAppDefaultConfig.global, config.global ?? {});
     const components = deepMerge(flyonUIVueAppDefaultConfig.components ?? {}, config.components ?? {});
 
     app.provide(
-        injectionKey,
+        flyonUIVueAppConfigInjectionKey,
         ref<FlyonUIVueAppDefaultConfig>({ global, components }),
     );
 };
