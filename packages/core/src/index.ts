@@ -19,5 +19,5 @@ export * from '@/Components/Select';
 export * from '@/Components/Stats';
 export * from '@/Components/Textarea';
 export * from '@/Components/ThemeController';
-export { default as flyonUIVue } from '@/Configuration';
+export * from '@/Configuration/CreateFlyonUIVueApp';
 export * from '@/Shared/Types';

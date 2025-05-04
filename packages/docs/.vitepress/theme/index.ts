@@ -1,25 +1,26 @@
-import type { Theme }                                 from 'vitepress';
-import type { App, Component, DefineComponent }       from 'vue';
-import { VueCodeHighlighter }                         from '@/.vitepress/theme/Components/Lib/VueCodeHighlighter';
-import BadgeDocs                                      from '@/Components/Badge/BadgeDocs.vue';
-import ButtonDocs                                     from '@/Components/Button/ButtonDocs.vue';
-import ListGroupDocs                                  from '@/Components/ListGroup/ListGroupDocs.vue';
-import LoadingDocs                                    from '@/Components/Loading/LoadingDocs.vue';
-import StatsDocs                                   from '@/Components/Stat/StatsDocs.vue';
-import HeadingDocs                                    from '@/Content/Heading/HeadingDocs.vue';
-import LinkDocs                                       from '@/Content/Link/LinkDocs.vue';
-import MaskDocs                                       from '@/Content/Mask/MaskDocs.vue';
-import BuildSizeVisualizer                            from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
-import CheckboxDocs                                   from '@/Forms/Checkbox/CheckboxDocs.vue';
-import InputTextDocs                                  from '@/Forms/InputText/InputTextDocs.vue';
-import JoinDocs                                       from '@/Forms/Join/JoinDocs.vue';
-import SelectDocs                                     from '@/Forms/Select/SelectDocs.vue';
-import TextareaDocs                                   from '@/Forms/Textarea/TextareaDocs.vue';
-import MenuDocs                                       from '@/Navigations/Menu/MenuDocs.vue';
-import NavbarDocs                                     from '@/Navigations/Navbar/NavbarDocs.vue';
-import Playground                                     from '@/Playground/Playground.vue';
-import { flyonUIVue, FoSelectThemeController, vMask } from 'flyonui-vue';
-import DefaultTheme                                   from 'vitepress/theme';
+import type { FlyonUIVueAppConfig }                             from 'flyonui-vue';
+import type { Theme }                                           from 'vitepress';
+import type { App, Component, DefineComponent }                 from 'vue';
+import { VueCodeHighlighter }                                   from '@/.vitepress/theme/Components/Lib/VueCodeHighlighter';
+import BadgeDocs                                                from '@/Components/Badge/BadgeDocs.vue';
+import ButtonDocs                                               from '@/Components/Button/ButtonDocs.vue';
+import ListGroupDocs                                            from '@/Components/ListGroup/ListGroupDocs.vue';
+import LoadingDocs                                              from '@/Components/Loading/LoadingDocs.vue';
+import StatsDocs                                                from '@/Components/Stat/StatsDocs.vue';
+import HeadingDocs                                              from '@/Content/Heading/HeadingDocs.vue';
+import LinkDocs                                                 from '@/Content/Link/LinkDocs.vue';
+import MaskDocs                                                 from '@/Content/Mask/MaskDocs.vue';
+import BuildSizeVisualizer                                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
+import CheckboxDocs                                             from '@/Forms/Checkbox/CheckboxDocs.vue';
+import InputTextDocs                                            from '@/Forms/InputText/InputTextDocs.vue';
+import JoinDocs                                                 from '@/Forms/Join/JoinDocs.vue';
+import SelectDocs                                               from '@/Forms/Select/SelectDocs.vue';
+import TextareaDocs                                             from '@/Forms/Textarea/TextareaDocs.vue';
+import MenuDocs                                                 from '@/Navigations/Menu/MenuDocs.vue';
+import NavbarDocs                                               from '@/Navigations/Navbar/NavbarDocs.vue';
+import Playground                                               from '@/Playground/Playground.vue';
+import { createFlyonUIVueApp,  FoSelectThemeController, vMask } from 'flyonui-vue';
+import DefaultTheme                                             from 'vitepress/theme';
 
 import './index.css';
 
@@ -27,7 +28,19 @@ export default {
     extends: DefaultTheme,
     enhanceApp({ app }) {
         app.directive('mask', vMask());
-        app.use(flyonUIVue, { labelType: 'inline' });
+
+        const createFlyonUIVueAppOptions: FlyonUIVueAppConfig = {
+            global: {
+                horizontalPosition: 'right',
+            },
+            // components: {
+            //     FoInputText: {
+            //         iconPosition: 'right',
+            //     },
+            // },
+        };
+
+        app.use(createFlyonUIVueApp, createFlyonUIVueAppOptions);
 
         registerDocComponents(app, [
             { name: 'LinkDocs', instance: LinkDocs },
