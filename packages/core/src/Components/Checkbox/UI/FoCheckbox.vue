@@ -47,7 +47,8 @@
 import type { CheckboxProps }             from '@/Components/Checkbox/Types/Checkbox';
 import { isInCheckboxGroupInjectionKey }  from '@/Components/Checkbox/Internal';
 import { FoLabel }                        from '@/Components/Label/Internal';
-import { useColor, useSize, useValidity } from '@/Shared/Internal/Lib';
+import {  useSize, useValidity }          from '@/Shared/Internal/Lib';
+import { useColor }                       from '@/Shared/UseColor/Internal';
 import { computed, inject, useId, watch } from 'vue';
 
 defineOptions({
@@ -55,7 +56,7 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
-    color:      'default',
+    color:      'neutral',
     size:       'default',
     isDisabled: false,
     isValid:    undefined,

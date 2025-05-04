@@ -1,7 +1,4 @@
 import type {
-    Color,
-    ColorableElementName,
-    ColorableTextElementName,
     ElementName,
     OrientableElementName,
     Orientation,
@@ -13,86 +10,9 @@ import type {
     Size,
     State,
     StatefulElementName,
-    TextColor,
 }                                             from '@/Shared/Types/Variants';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import { computed, toValue }                  from 'vue';
-
-export function useColor(
-    elementName: MaybeRefOrGetter<ColorableElementName>,
-    color: MaybeRefOrGetter<Color>,
-): ComputedRef<string> {
-    return useElementClass<ColorableElementName, Color>(
-        elementName,
-        {
-            badge: {
-                default:   '',
-                primary:   'badge-primary',
-                secondary: 'badge-secondary',
-                accent:    'badge-accent',
-                info:      'badge-info',
-                success:   'badge-success',
-                warning:   'badge-warning',
-                error:     'badge-error',
-            },
-            btn: {
-                default:   '',
-                primary:   'btn-primary',
-                secondary: 'btn-secondary',
-                accent:    'btn-accent',
-                info:      'btn-info',
-                success:   'btn-success',
-                warning:   'btn-warning',
-                error:     'btn-error',
-            },
-            checkbox: {
-                default:   'checkbox-default',
-                primary:   'checkbox-primary',
-                secondary: 'checkbox-secondary',
-                accent:    'checkbox-accent',
-                info:      'checkbox-info',
-                success:   'checkbox-success',
-                warning:   'checkbox-warning',
-                error:     'checkbox-error',
-            },
-        },
-        color,
-    );
-}
-
-export function useTextColor(
-    elementName: MaybeRefOrGetter<ColorableTextElementName>,
-    color: MaybeRefOrGetter<TextColor>,
-): ComputedRef<string> {
-    return useElementClass<ColorableTextElementName, TextColor>(
-        elementName,
-        {
-            link: {
-                default:   '',
-                neutral:   'link-neutral',
-                primary:   'link-primary',
-                secondary: 'link-secondary',
-                accent:    'link-accent',
-                info:      'link-info',
-                success:   'link-success',
-                warning:   'link-warning',
-                error:     'link-error',
-            },
-            loading: {
-                default:   '',
-                neutral:   'text-neutral',
-                primary:   'text-primary',
-                secondary: 'text-secondary',
-                accent:    'text-accent',
-                info:      'text-info',
-                success:   'text-success',
-                warning:   'text-warning',
-                error:     'text-error',
-            },
-        },
-        color,
-    );
-}
 
 export function usePreset(
     elementName: MaybeRefOrGetter<PresetElementName>,

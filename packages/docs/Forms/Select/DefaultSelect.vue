@@ -17,6 +17,6 @@ const options = ref<SelectOption[]>([
     { id: 4, text: 'The Dark Knight' },
     { id: 5, text: `Schindler's List` },
 ]);
-
+// todo: refactor to not use it as initial value
 const selectedOption = ref<SelectOption | null>(useSelectedOption(options, null).value);
 </script>

@@ -66,7 +66,8 @@
     "dependencies": {
         "@vueuse/components": "^13.0.0",
         "@vueuse/core": "^13.0.0",
-        "@vueuse/motion": "^3.0.3"
+        "@vueuse/motion": "^3.0.3",
+        "deepmerge": "^4.3.1"
     },
     "devDependencies": {
         "@iconify/vue": "^4.3.0",
@@ -82,7 +83,7 @@
         "tailwindcss": "^4.0.17",
         "tsc-alias": "^1.8.11",
         "typescript": "^5.8.2",
-        "vite": "^6.2.6",
+        "vite": "^6.3.4",
         "vue": "^3.5.13",
         "vue-router": "^4.5.0",
         "vue-tsc": "^2.2.8"

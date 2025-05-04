@@ -11,12 +11,12 @@
 <script setup lang="ts">
 import type { Animation, LoadingProps } from '@/Components/Loading/Types/Loading';
 import type { ElementName }             from '@/Shared/Types/Variants';
-import { useSize, useTextColor }        from '@/Shared/Internal/Lib';
+import { useSize }                      from '@/Shared/Internal/Lib';
+import { useTextColor }                 from '@/Shared/UseColor/Internal';
 import { computed }                     from 'vue';
 
 const props = withDefaults(defineProps<LoadingProps>(), {
     animation: 'spinner',
-    color:     'default',
     size:      'default',
 });
 

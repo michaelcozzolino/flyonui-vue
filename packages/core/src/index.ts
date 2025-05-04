@@ -1,6 +1,7 @@
 import '@/index.css';
 
 export * from '@/Components/Badge';
+
 export * from '@/Components/Button';
 export * from '@/Components/Checkbox';
 export * from '@/Components/Heading';
@@ -18,4 +19,5 @@ export * from '@/Components/Select';
 export * from '@/Components/Stats';
 export * from '@/Components/Textarea';
 export * from '@/Components/ThemeController';
+export * from '@/Configuration/CreateFlyonUIVueApp';
 export * from '@/Shared/Types';

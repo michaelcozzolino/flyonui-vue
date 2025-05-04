@@ -3743,6 +3743,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"deepmerge@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "deepmerge@npm:4.3.1"
+  checksum: 10c0/e53481aaf1aa2c4082b5342be6b6d8ad9dfe387bc92ce197a66dea08bd4265904a087e75e464f14d1347cf2ac8afe1e4c16b266e0561cc5df29382d3c5f80044
+  languageName: node
+  linkType: hard
+
 "define-lazy-prop@npm:^2.0.0":
   version: 2.0.0
   resolution: "define-lazy-prop@npm:2.0.0"
@@ -4679,6 +4686,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fdir@npm:^6.4.4":
+  version: 6.4.4
+  resolution: "fdir@npm:6.4.4"
+  peerDependencies:
+    picomatch: ^3 || ^4
+  peerDependenciesMeta:
+    picomatch:
+      optional: true
+  checksum: 10c0/6ccc33be16945ee7bc841e1b4178c0b4cf18d3804894cb482aa514651c962a162f96da7ffc6ebfaf0df311689fb70091b04dd6caffe28d56b9ebdc0e7ccadfdd
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^8.0.0":
   version: 8.0.0
   resolution: "file-entry-cache@npm:8.0.0"
@@ -4762,7 +4781,7 @@ __metadata:
     sass-embedded: "npm:^1.86.0"
     tailwindcss: "npm:^4.0.17"
     typescript: "npm:^5.8.2"
-    vite: "npm:^6.2.6"
+    vite: "npm:^6.3.4"
     vitepress: "npm:2.0.0-alpha.4"
     vue: "npm:^3.5.13"
     vue-code-highlighter: "npm:^1.1.3"
@@ -4785,13 +4804,14 @@ __metadata:
     "@vueuse/core": "npm:^13.0.0"
     "@vueuse/motion": "npm:^3.0.3"
     concurrently: "npm:^9.1.2"
+    deepmerge: "npm:^4.3.1"
     jsdom: "npm:^26.0.0"
     rollup-plugin-visualizer: "npm:^5.14.0"
     sass-embedded: "npm:^1.86.0"
     tailwindcss: "npm:^4.0.17"
     tsc-alias: "npm:^1.8.11"
     typescript: "npm:^5.8.2"
-    vite: "npm:^6.2.6"
+    vite: "npm:^6.3.4"
     vue: "npm:^3.5.13"
     vue-router: "npm:^4.5.0"
     vue-tsc: "npm:^2.2.8"
@@ -4820,7 +4840,7 @@ __metadata:
     jsdom: "npm:^26.0.0"
     tsc-alias: "npm:^1.8.11"
     typescript: "npm:^5.8.2"
-    vite: "npm:^6.2.6"
+    vite: "npm:^6.3.4"
     vue: "npm:^3.5.13"
     vue-tsc: "npm:^2.2.8"
   languageName: unknown
@@ -8488,6 +8508,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tinyglobby@npm:^0.2.13":
+  version: 0.2.13
+  resolution: "tinyglobby@npm:0.2.13"
+  dependencies:
+    fdir: "npm:^6.4.4"
+    picomatch: "npm:^4.0.2"
+  checksum: 10c0/ef07dfaa7b26936601d3f6d999f7928a4d1c6234c5eb36896bb88681947c0d459b7ebe797022400e555fe4b894db06e922b95d0ce60cb05fd827a0a66326b18c
+  languageName: node
+  linkType: hard
+
 "tinypool@npm:^1.0.2":
   version: 1.0.2
   resolution: "tinypool@npm:1.0.2"
@@ -9020,17 +9050,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.2.6":
-  version: 6.3.1
-  resolution: "vite@npm:6.3.1"
+"vite@npm:^6.3.4":
+  version: 6.3.4
+  resolution: "vite@npm:6.3.4"
   dependencies:
     esbuild: "npm:^0.25.0"
-    fdir: "npm:^6.4.3"
+    fdir: "npm:^6.4.4"
     fsevents: "npm:~2.3.3"
     picomatch: "npm:^4.0.2"
     postcss: "npm:^8.5.3"
     rollup: "npm:^4.34.9"
-    tinyglobby: "npm:^0.2.12"
+    tinyglobby: "npm:^0.2.13"
   peerDependencies:
     "@types/node": ^18.0.0 || ^20.0.0 || >=22.0.0
     jiti: ">=1.21.0"
@@ -9071,7 +9101,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/79a330a9cd0348195e9b693e0576c5480436fd7b21da53fda84877027274d39ef00fa26516fdbbf8b561700c2994c26d31d5460404e8d6982bd19ed28533a6fa
+  checksum: 10c0/f1534a3f42d14b30e11c58e5e451903d965d5f5ba18d8c81f9df208589e3d2c65535abaa3268d3963573174b8e056ea7bc445f567622c65fcdf98eb4acc1bf4e
   languageName: node
   linkType: hard
 
