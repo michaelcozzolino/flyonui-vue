@@ -39,7 +39,6 @@ import { FoIcon }               from '@/Components/Icon';
 import { isInJoinInjectionKey } from '@/Components/Join/Internal';
 import {
     isTextAllowedForShape,
-    useColor,
     useGlass,
     useJoinItem,
     usePreset,
@@ -48,11 +47,12 @@ import {
     useSize,
     useState,
 }                               from '@/Shared/Internal/Lib';
+import { useColor }         from '@/Shared/UseColor/Internal';
 import { computed, inject } from 'vue';
 import { RouterLink }       from 'vue-router';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
-    color:        'default',
+    color:        'neutral',
     preset:       'default',
     shape:        'default',
     size:         'default',

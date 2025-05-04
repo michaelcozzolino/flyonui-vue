@@ -24,12 +24,13 @@
 </template>
 
 <script setup lang="ts">
-import type { BadgeProps }                                               from '@/Components/Badge/Types/Badge';
-import { FoIcon }                                                        from '@/Components/Icon';
-import { isTextAllowedForShape, useColor, usePreset, useShape, useSize } from '@/Shared/Internal/Lib';
+import type { BadgeProps }                                     from '@/Components/Badge/Types/Badge';
+import { FoIcon }                                              from '@/Components/Icon';
+import { isTextAllowedForShape, usePreset, useShape, useSize } from '@/Shared/Internal/Lib';
+import { useColor }                                            from '@/Shared/UseColor/Internal';
 
 const props = withDefaults(defineProps<BadgeProps>(), {
-    color:         'default',
+    color:         'neutral',
     preset:        'default',
     shape:         'default',
     size:          'default',
