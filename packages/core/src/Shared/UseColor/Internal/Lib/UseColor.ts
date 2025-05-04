@@ -70,9 +70,11 @@ export function useTextColor(
     elementName: MaybeRefOrGetter<ColorableTextElementName>,
     color: MaybeRefOrGetter<Color | undefined>,
 ): ComputedRef<string> {
-    if (isDefined(color)) {
-        return useColor(elementName, color);
-    }
+    return computed((): string => {
+        if (isDefined(color)) {
+            return useColor(elementName, color).value;
+        }
 
-    return computed(() => '');
+        return '';
+    });
 }
