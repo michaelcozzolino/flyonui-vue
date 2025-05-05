@@ -87,7 +87,7 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                         // { text: 'Skeleton', link: 'skeleton' },
                         // { text: 'Stack', link: 'stack' },
                         { text: 'Stats', link: 'stats' },
-                        // { text: 'Swap', link: 'swap' },
+                        { text: 'Swap', link: 'swap' },
                         // { text: 'Theme Controller', link: 'theme-controller' },
                         // { text: 'Timeline', link: 'timeline' },
                         // { text: 'Tree View', link: 'tree-view' },

@@ -1,0 +1,34 @@
+<template>
+    <CodeSnippet v-if="section === 'default'"
+                 :code="DefaultSwapRaw"
+                 :component="DefaultSwap"
+    />
+
+    <CodeSnippet v-if="section === 'rotation'"
+                 :code="SwapRotationRaw"
+                 :component="SwapRotation"
+    />
+
+    <CodeSnippet v-if="section === 'flip'"
+                 :code="SwapFlipRaw"
+                 :component="SwapFlip"
+    />
+</template>
+
+<script setup lang="ts">
+import type { Default } from 'flyonui-vue';
+import CodeSnippet      from '@/.vitepress/theme/Components/CodeSnippet.vue';
+
+import DefaultSwap     from '@/Components/Swap/DefaultSwap.vue';
+import DefaultSwapRaw  from '@/Components/Swap/DefaultSwap.vue?raw';
+import SwapFlip        from '@/Components/Swap/SwapFlip.vue';
+import SwapFlipRaw     from '@/Components/Swap/SwapFlip.vue?raw';
+import SwapRotation    from '@/Components/Swap/SwapRotation.vue';
+import SwapRotationRaw from '@/Components/Swap/SwapRotation.vue?raw';
+
+interface Props {
+    section: Default | 'rotation' | 'flip';
+}
+
+defineProps<Props>();
+</script>

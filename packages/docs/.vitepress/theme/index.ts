@@ -7,6 +7,7 @@ import ButtonDocs                                               from '@/Componen
 import ListGroupDocs                                            from '@/Components/ListGroup/ListGroupDocs.vue';
 import LoadingDocs                                              from '@/Components/Loading/LoadingDocs.vue';
 import StatsDocs                                                from '@/Components/Stat/StatsDocs.vue';
+import SwapDocs                                                 from '@/Components/Swap/SwapDocs.vue';
 import HeadingDocs                                              from '@/Content/Heading/HeadingDocs.vue';
 import LinkDocs                                                 from '@/Content/Link/LinkDocs.vue';
 import MaskDocs                                                 from '@/Content/Mask/MaskDocs.vue';
@@ -20,8 +21,8 @@ import MenuDocs                                                 from '@/Navigati
 import NavbarDocs                                               from '@/Navigations/Navbar/NavbarDocs.vue';
 import Playground                                               from '@/Playground/Playground.vue';
 import { createFlyonUIVueApp,  FoSelectThemeController, vMask } from 'flyonui-vue';
-import DefaultTheme                                             from 'vitepress/theme';
 
+import DefaultTheme from 'vitepress/theme';
 import './index.css';
 
 export default {
@@ -56,6 +57,7 @@ export default {
             { name: 'MenuDocs', instance: MenuDocs },
             { name: 'NavbarDocs', instance: NavbarDocs },
             { name: 'StatsDocs', instance: StatsDocs },
+            { name: 'SwapDocs', instance: SwapDocs },
             { name: 'SelectDocs', instance: SelectDocs },
             { name: 'TextareaDocs', instance: TextareaDocs },
             { name: 'SelectThemeController', instance: FoSelectThemeController },
