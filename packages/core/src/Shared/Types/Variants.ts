@@ -21,6 +21,7 @@ export type ElementName =
     | 'stat-title'
     | 'stat-value'
     | 'stats'
+    | 'swap'
     | 'textarea';
 
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
