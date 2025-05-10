@@ -22,12 +22,13 @@ export type ElementName =
     | 'stat-value'
     | 'stats'
     | 'swap'
-    | 'textarea';
+    | 'textarea'
+    | 'tooltip';
 
 export type PresetElementName = Extract<ElementName, 'btn' | 'badge'>;
 export type ResponsiveElementName = Extract<ElementName, 'btn' | 'join'>;
 export type ShapeableElementName = Extract<ElementName, 'badge' | 'btn' | 'input-text'>;
-export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'input-text' | 'loading' | 'menu' | 'select' | 'textarea'>;
+export type SizableElementName = Extract<ElementName, 'badge' | 'btn' | 'checkbox' | 'icon' | 'input-text' | 'loading' | 'menu' | 'select' | 'textarea' | 'tooltip'>;
 export type StatefulElementName = Extract<ElementName, 'btn' | 'menu-item'>;
 export type OrientableElementName = Extract<ElementName, 'checkbox' | 'join' | 'list-group' | 'list-group-item' | 'menu' | 'stats'>;
 export type BorderableElementName = Extract<ElementName, 'stats'>;

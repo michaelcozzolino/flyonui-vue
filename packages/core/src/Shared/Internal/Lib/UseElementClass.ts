@@ -151,6 +151,14 @@ export function useSize(
                 extraLarge:       'textarea-xl',
                 doubleExtraLarge: '',
             },
+            'tooltip': {
+                default:          'max-w-xs',
+                extraSmall:       'max-w-xs',
+                small:            'max-w-sm',
+                large:            'max-w-lg',
+                extraLarge:       'max-w-xl',
+                doubleExtraLarge: 'max-w-xl',
+            },
         },
         size,
     );
