@@ -5,9 +5,9 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Popover title</span>
+            <span class="text-lg font-medium">Tooltip title</span>
             <p class="text-base pt-4">
-                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+                This text serves as placeholder content for the tooltip, showcasing its overall look in the user interface.
             </p>
         </template>
     </FoTooltip>
@@ -18,9 +18,9 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Popover title</span>
+            <span class="text-lg font-medium">Tooltip title</span>
             <p class="text-base pt-4">
-                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+                This text serves as placeholder content for the tooltip, showcasing its overall look in the user interface.
             </p>
         </template>
     </FoTooltip>
@@ -31,9 +31,9 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Popover title</span>
+            <span class="text-lg font-medium">Tooltip title</span>
             <p class="text-base pt-4">
-                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+                This text serves as placeholder content for the tooltip, showcasing its overall look in the user interface.
             </p>
         </template>
     </FoTooltip>
@@ -44,9 +44,9 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Popover title</span>
+            <span class="text-lg font-medium">Tooltip title</span>
             <p class="text-base pt-4">
-                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+                This text serves as placeholder content for the tooltip, showcasing its overall look in the user interface.
             </p>
         </template>
     </FoTooltip>
@@ -57,9 +57,9 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Popover title</span>
+            <span class="text-lg font-medium">Tooltip title</span>
             <p class="text-base pt-4">
-                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+                This text serves as placeholder content for the tooltip, showcasing its overall look in the user interface.
             </p>
         </template>
     </FoTooltip>
@@ -70,9 +70,9 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Popover title</span>
+            <span class="text-lg font-medium">Tooltip title</span>
             <p class="text-base pt-4">
-                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+                This text serves as placeholder content for the tooltip, showcasing its overall look in the user interface.
             </p>
         </template>
     </FoTooltip>
@@ -83,9 +83,9 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Popover title</span>
+            <span class="text-lg font-medium">Tooltip title</span>
             <p class="text-base pt-4">
-                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+                This text serves as placeholder content for the tooltip, showcasing its overall look in the user interface.
             </p>
         </template>
     </FoTooltip>

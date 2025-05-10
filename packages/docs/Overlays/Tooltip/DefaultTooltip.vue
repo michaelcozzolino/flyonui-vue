@@ -3,9 +3,9 @@
         <FoIconButton icon="tabler:chevron-up" />
 
         <template #body>
-            <span class="text-base-content text-lg font-medium">Popover title</span>
+            <span class="text-base-content text-lg font-medium">Tooltip title</span>
             <p class="text-base-content/80 text-base pt-4">
-                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+                This text serves as placeholder content for the tooltip, showcasing its overall look in the user interface.
             </p>
         </template>
     </FoTooltip>
