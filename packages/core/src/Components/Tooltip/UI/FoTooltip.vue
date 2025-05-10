@@ -4,7 +4,7 @@
     >
         <div ref="reference"
              @click.prevent="isPopover && (showTooltip = !showTooltip)"
-             @mouseover="!isPopover && (showTooltip = !showTooltip)"
+             @mouseover="!isPopover && (showTooltip = true)"
              @mouseout="!isPopover && (showTooltip = false)"
         >
             <slot />
