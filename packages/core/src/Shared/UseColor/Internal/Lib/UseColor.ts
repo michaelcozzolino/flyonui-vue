@@ -61,6 +61,16 @@ export function useColor(
                 warning:   'text-warning',
                 error:     'text-error',
             },
+            tooltip: {
+                neutral:   '',
+                primary:   'tooltip-primary',
+                secondary: 'tooltip-secondary',
+                accent:    'tooltip-accent',
+                info:      'tooltip-info',
+                success:   'tooltip-success',
+                warning:   'tooltip-warning',
+                error:     'tooltip-error',
+            },
         },
         color,
     );

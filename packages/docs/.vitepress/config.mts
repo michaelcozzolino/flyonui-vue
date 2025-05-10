@@ -102,6 +102,14 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
                     ],
                 },
                 {
+                    text:  'Overlays',
+                    base:  '/overlays/',
+                    items: [
+                        { text: 'Popover', link: 'popover' },
+                        { text: 'Tooltip', link: 'tooltip' },
+                    ],
+                },
+                {
                     text:  'Forms',
                     base:  '/forms/',
                     items: [

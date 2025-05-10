@@ -1,0 +1,16 @@
+<template>
+    <FoTooltip>
+        <FoIconButton icon="tabler:chevron-up" />
+
+        <template #body>
+            <span class="text-base-content text-lg font-medium">Popover title</span>
+            <p class="text-base-content/80 text-base pt-4">
+                This text serves as placeholder content for the popover, showcasing its overall look in the user interface.
+            </p>
+        </template>
+    </FoTooltip>
+</template>
+
+<script setup lang="ts">
+import { FoIconButton, FoTooltip } from 'flyonui-vue';
+</script>
