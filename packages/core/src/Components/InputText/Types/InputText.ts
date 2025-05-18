@@ -1,7 +1,9 @@
-import type { InputHelperText }                                        from '@/Components/HelperText/Internal';
-import type { IconType, PositionableIcon }                             from '@/Components/Icon';
-import type { InputLabel }                                             from '@/Components/Label';
-import type { IsDisabled, IsReadonly, IsValid, Shape, SizeWithout2XL } from '@/Shared/Types';
+import type { InputHelperText }                 from '@/Components/HelperText/Internal';
+import type { IconType, PositionableIcon }      from '@/Components/Icon';
+import type { InputLabel }                      from '@/Components/Label';
+import type { IsDisabled, IsReadonly, IsValid } from '@/Shared/Types';
+import type { Shape }                           from '@/Shared/UseShape';
+import type { SizeWithout2XL }                  from '@/Shared/UseSize';
 
 export interface InputTextProps extends IsDisabled, IsReadonly, IsValid {
     type?:         'text' | 'email';
@@ -9,7 +11,7 @@ export interface InputTextProps extends IsDisabled, IsReadonly, IsValid {
     icon?:         IconType | PositionableIcon;
     placeholder?:  string;
     helperText?:   InputHelperText;
-    shape?:        Extract<Shape, 'default' | 'pilled'>;
+    shape?:        Extract<Shape, 'rounded' | 'pilled'>;
     size?:         SizeWithout2XL;
     withoutFocus?: boolean;
 }
