@@ -1,7 +1,7 @@
 <template>
-    <CodeSnippet v-if="section === 'solid'"
-                 :code="SolidButtonRaw"
-                 :component="SolidButton"
+    <CodeSnippet v-if="section === 'default'"
+                 :code="DefaultButtonRaw"
+                 :component="DefaultButton"
     />
 
     <CodeSnippet v-else-if="section === 'soft'"
@@ -83,6 +83,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Default }      from 'flyonui-vue';
 import CodeSnippet           from '@/.vitepress/theme/Components/CodeSnippet.vue';
 import ButtonLayout          from '@/Components/Button/ButtonLayout.vue';
 import ButtonLayoutRaw       from '@/Components/Button/ButtonLayout.vue?raw';
@@ -92,6 +93,8 @@ import ButtonState           from '@/Components/Button/ButtonState.vue';
 import ButtonStateRaw        from '@/Components/Button/ButtonState.vue?raw';
 import DashedButton          from '@/Components/Button/DashedButton.vue';
 import DashedButtonRaw       from '@/Components/Button/DashedButton.vue?raw';
+import DefaultButton         from '@/Components/Button/DefaultButton.vue';
+import DefaultButtonRaw      from '@/Components/Button/DefaultButton.vue?raw';
 import GlassButton           from '@/Components/Button/GlassButton.vue';
 import GlassButtonRaw        from '@/Components/Button/GlassButton.vue?raw';
 import GradientButton        from '@/Components/Button/GradientButton.vue';
@@ -112,13 +115,11 @@ import SocialButtonShape     from '@/Components/Button/SocialButtonShape.vue';
 import SocialButtonShapeRaw  from '@/Components/Button/SocialButtonShape.vue?raw';
 import SoftButton            from '@/Components/Button/SoftButton.vue';
 import SoftButtonRaw         from '@/Components/Button/SoftButton.vue?raw';
-import SolidButton           from '@/Components/Button/SolidButton.vue';
-import SolidButtonRaw        from '@/Components/Button/SolidButton.vue?raw';
 import TextButton            from '@/Components/Button/TextButton.vue';
 import TextButtonRaw         from '@/Components/Button/TextButton.vue?raw';
 
 interface Props {
-    section: 'solid' | 'soft' | 'outline' | 'dash' | 'text' | 'gradient' | 'pilled' | 'state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass';
+    section: Default | 'soft' | 'outline' | 'dash' | 'text' | 'gradient' | 'pilled' | 'state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass';
 }
 
 defineProps<Props>();

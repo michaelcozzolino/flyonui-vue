@@ -1,10 +1,15 @@
-import type { PositionableIcon }                       from '@/Components/Icon/Types/Icon';
-import type { IsDisabled, IsResponsive, WithGlass }    from '@/Shared/Types/Props';
-import type {  Layout, Preset, Shape, SizeWithout2XL } from '@/Shared/Types/Variants';
-import type { Color }                                  from '@/Shared/UseColor';
-import type { RouteRecordRaw }                         from 'vue-router';
+import type { PositionableIcon } from '@/Components/Icon/Types/Icon';
+import type { IsDisabled }       from '@/Shared/Types/Props';
+import type {  Layout }          from '@/Shared/Types/Variants';
+import type { Color }            from '@/Shared/UseColor';
+import type { WithGlass }        from '@/Shared/UseGlass';
+import type { Preset }           from '@/Shared/UsePreset';
+import type { Responsive }       from '@/Shared/UseResponsitivity';
+import type { Shape }            from '@/Shared/UseShape';
+import type { SizeWithout2XL }   from '@/Shared/UseSize';
+import type { RouteRecordRaw }   from 'vue-router';
 
-export interface ButtonProps extends IsDisabled, IsResponsive, WithGlass {
+export interface ButtonProps extends IsDisabled, Responsive, WithGlass {
     color?:    Color;
     to?:       RouteRecordRaw;
     icon?:     PositionableIcon;
@@ -13,4 +18,13 @@ export interface ButtonProps extends IsDisabled, IsResponsive, WithGlass {
     layout?:   Layout;
     isActive?: boolean;
     preset?:   Preset;
+}
+
+export type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
+
+type SocialButtonPreset = Extract<Preset, 'solid' | 'soft' | 'outline'>;
+
+export interface SocialButtonProps extends Omit<ButtonProps, 'preset'> {
+    social:  Social;
+    preset?: SocialButtonPreset;
 }
