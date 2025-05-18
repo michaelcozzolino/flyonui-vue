@@ -43,11 +43,11 @@
 
 <script setup lang="ts">
 import type { MenuItem }                                                      from '@/Components/Menu/Types/Menu';
-import type { ElementName }                                                   from '@/Shared/Types';
+import type { ComponentName }                                                 from '@/Shared/Types/ComponentTypes';
 import { FoIcon }                                                             from '@/Components/Icon';
 import { FoLink }                                                             from '@/Components/Link';
 import { isInMenuItemInjectionKey, menuTextPropsInjectionKey }                from '@/Components/Menu/Internal';
-import { useState }                                                           from '@/Shared/Internal/Lib';
+import { useState }                                                           from '@/Shared/UseState/Internal/Lib';
 import { useMotion }                                                          from '@vueuse/motion';
 import { computed, inject, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 
@@ -57,7 +57,7 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const elementName: ElementName = 'menu-item';
+const componentName: ComponentName = 'FoMenuItem';
 
 provide(isInMenuItemInjectionKey, true);
 
@@ -66,8 +66,8 @@ const menuTextProps = inject(menuTextPropsInjectionKey, computed(() => ({
     textAsTooltip: false,
 })));
 
-const activeClass   = useState(elementName, 'active');
-const disabledClass = useState(elementName, () => props.item.isDisabled ? 'disabled' : 'default');
+const activeClass   = useState(componentName, 'active');
+const disabledClass = useState(componentName, () => props.item.isDisabled ? 'disabled' : 'default');
 
 const tooltipElement = useTemplateRef('tooltip');
 const showTooltip    = ref<boolean>(false);
