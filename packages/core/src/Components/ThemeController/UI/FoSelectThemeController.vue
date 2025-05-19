@@ -2,24 +2,21 @@
     <FoSelect v-model="selectedTheme"
               :label="{ text: 'Theme', type: 'floating' }"
               :options="themeOptions"
-              size="large"
     />
 </template>
 
 <script setup lang="ts">
-import type { SelectOption } from '@/Components/Select';
+import type { SelectOption, SelectProps } from '@/Components/Select';
 
-import type { FlyonUITheme }            from '@/Components/ThemeController/Lib/ThemeController';
-import type { UseColorModeOptions }     from '@vueuse/core';
-import { FoSelect, useSelectedOption }  from '@/Components/Select';
-import { useColorMode }                 from '@vueuse/core';
-import { computed, onMounted, toValue } from 'vue';
+import type { FlyonUITheme, ThemeControllerProps } from '@/Components/ThemeController';
+import { FoSelect, useSelectedOption }             from '@/Components/Select';
+import { useArrayMap, useColorMode }               from '@vueuse/core';
+import { computed, onMounted, toValue }            from 'vue';
 
-// todo: many thing props could be ref and this should not be allowed through props
-const props = withDefaults(defineProps<UseColorModeOptions<FlyonUITheme>>(), {
+const props = withDefaults(defineProps<ThemeControllerProps & SelectProps<FlyonUITheme>>(), {
     initialValue: 'dark',
     attribute:    'data-theme',
-    modes(): Record<FlyonUITheme, FlyonUITheme> {
+    modes:        (): Record<FlyonUITheme, FlyonUITheme> => {
         return {
             light:     'light',
             dark:      'dark',
@@ -33,17 +30,10 @@ const props = withDefaults(defineProps<UseColorModeOptions<FlyonUITheme>>(), {
 
 type ThemeOption = SelectOption<FlyonUITheme>;
 
-const themeOptions = computed((): ThemeOption[] => {
-    const options: ThemeOption[] = [];
-
-    for (const theme of Object.values(props.modes)) {
-        if (theme !== undefined) {
-            options.push({ id: theme, text: theme });
-        }
-    }
-
-    return options;
-});
+const themeOptions = useArrayMap(() => Object.values(props.modes), (mode: FlyonUITheme) => ({
+    id:   mode,
+    text: mode,
+}));
 
 const theme = useColorMode<FlyonUITheme>(props);
 
@@ -56,7 +46,7 @@ const selectedTheme = computed({
 
 onMounted(() => {
     if (toValue(props.initialValue) in props.modes === false) {
-        throw new Error('The initial theme is not available');
+        throw new Error(`The initial theme ${props.initialValue} is not available.`);
     }
 });
 </script>
