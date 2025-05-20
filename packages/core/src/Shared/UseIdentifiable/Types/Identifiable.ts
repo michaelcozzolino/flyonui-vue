@@ -1,4 +1,4 @@
-import type { IsUnion } from '@/Shared/Internal';
+import type { IsUnion } from '@/Shared/Utils/Internal';
 
 export type Identifiable<
     Name extends string = 'id',
