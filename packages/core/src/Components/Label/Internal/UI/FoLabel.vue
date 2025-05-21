@@ -3,26 +3,26 @@
            v-bind="$attrs"
     >
         <slot>
-            {{ useRequiredSlotMessage('label') }}
+            {{ useRequiredSlotMessage('FoLabel') }}
         </slot>
     </label>
 </template>
 
 <script setup lang="ts">
-import type { LabelType }             from '@/Components/Label';
-import type { LabelProps }            from '@/Components/Label/Internal/Types/Label';
-import type { LabellableElementName } from '@/Shared/Types/Variants';
-import type { VNode }                 from 'vue';
-import { useRequiredSlotMessage }     from '@/Shared/Internal';
-import { computed }                   from 'vue';
+import type { LabelType }                  from '@/Components/Label';
+import type { LabelProps }                 from '@/Components/Label/Internal/Types/Label';
+import type { FloatingLabelComponentName } from '@/Shared/UseFloatingLabel';
+import type { VNode }                      from 'vue';
+import { useRequiredSlotMessage }          from '@/Shared/Utils/Internal';
+import { computed }                        from 'vue';
 
 defineOptions({
     inheritAttrs: false,
 });
 
 const props = withDefaults(defineProps<LabelProps>(), {
-    element:  'input-text',
-    isHidden: false,
+    componentName: 'FoInputText',
+    isHidden:      false,
 });
 
 defineSlots<{
@@ -34,24 +34,24 @@ const labelClass = computed(() => {
         return 'label-text';
     }
 
-    const classes: Record<LabellableElementName, Record<LabelType, string>> = {
-        'input-text': {
+    const classes: Record<FloatingLabelComponentName, Record<LabelType, string>> = {
+        FoInputText: {
             text:     'label-text',
             floating: 'input-floating-label',
             inline:   'label-text my-auto p-0',
         },
-        'select': {
+        FoSelect: {
             text:     '',
             floating: 'select-floating-label',
             inline:   '',
         },
-        'textarea': {
+        FoTextarea: {
             text:     'label-text',
             floating: 'textarea-floating-label',
             inline:   '',
         },
     };
 
-    return classes[props.element][props.type];
+    return classes[props.componentName][props.type];
 });
 </script>

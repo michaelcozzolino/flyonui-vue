@@ -43,8 +43,8 @@
                        withoutFocus && 'no-focus border-0',
                    ]"
                    :placeholder="placeholder"
-                   :disabled="isDisabled"
-                   :readonly="isReadonly"
+                   :disabled="disabled"
+                   :readonly="readonly"
             >
 
             <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
@@ -80,28 +80,28 @@
 import type { PositionableIcon }      from '@/Components/Icon';
 import type { InputTextProps }        from '@/Components/InputText';
 import type { InputLabel, LabelType } from '@/Components/Label';
+import type { ComponentName }         from '@/Shared/Utils/Internal';
 
-import type { ComponentName }                from '@/Shared/Types/ComponentTypes.ts';
 import type { VNode }                        from 'vue';
 import { FoFragment }                        from '@/Components/Fragment/Internal';
 import { FoHelperText }                      from '@/Components/HelperText/Internal';
 import { FoIcon }                            from '@/Components/Icon';
 import { isPositionableIcon }                from '@/Components/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
+import { FoLabel }                           from '@/Components/Label/Internal';
 
-import { FoLabel }                   from '@/Components/Label/Internal';
-import { injectFlyonUIVueAppConfig } from '@/Configuration/CreateFlyonUIVueApp/Lib/InjectFlyonUIVueAppConfig.ts';
+import { useFlyonUIVueAppConfig } from '@/Configuration/CreateFlyonUIVueApp';
+import { useFloatingLabel }       from '@/Shared/UseFloatingLabel/Internal';
 
-import { useFloatingLabel }        from '@/Shared/UseFloatingLabel/Internal/Lib';
-import { useShape }                from '@/Shared/UseShape/Internal/Lib';
-import { useSize }                 from '@/Shared/UseSize/Internal/Lib';
+import { useShape }                from '@/Shared/UseShape/Internal';
+import { useSize }                 from '@/Shared/UseSize/Internal';
 import { useValidity }             from '@/Shared/UseValidity/Internal';
 import { computed, inject, useId } from 'vue';
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
-    isDisabled:   false,
-    isReadonly:   false,
+    disabled:     false,
+    readonly:     false,
     isValid:      undefined,
     withoutFocus: false,
 });
@@ -115,7 +115,7 @@ const slots = defineSlots<{
 const id                           = useId();
 const componentName: ComponentName = 'FoInputText';
 
-const config            = injectFlyonUIVueAppConfig();
+const config            = useFlyonUIVueAppConfig();
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 
 const input = defineModel<string>({ required: true });
@@ -130,7 +130,7 @@ const inputIcon = computed((): PositionableIcon | undefined => {
     }
 
     return {
-        [config.value.components?.FoInputText?.iconPosition ?? config.value.global.horizontalPosition]: props.icon,
+        [config.value.components?.FoInputText?.horizontalPosition ?? config.value.global.horizontalPosition]: props.icon,
     };
 });
 

@@ -1,4 +1,4 @@
-import type { HorizontalPosition } from '@/Shared/Types';
+import type { HorizontalPosition } from '@/Shared/Utils';
 
 export interface InputHelperText {
     text:      string;

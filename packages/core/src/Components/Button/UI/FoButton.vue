@@ -11,7 +11,7 @@
                    responsiveClass,
                    layoutClass,
                    glassClass,
-                   isDisabled && 'btn-disabled',
+                   disabled && 'btn-disabled',
                ]"
     >
         <slot name="prepend">
@@ -31,31 +31,31 @@
 </template>
 
 <script lang="ts" setup>
-import type { ButtonProps }   from '@/Components/Button/Types/Button';
-import type { ComponentName } from '@/Shared/Types/ComponentTypes';
+import type { ButtonProps }   from '@/Components/Button';
+import type { ComponentName } from '@/Shared/Utils/Internal';
 
 import { FoIcon }                            from '@/Components/Icon';
 import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
-import { injectFlyonUIVueAppConfig }         from '@/Configuration/CreateFlyonUIVueApp';
-import { isTextAllowedForShape }             from '@/Shared/Internal/Lib';
+import { useFlyonUIVueAppConfig }            from '@/Configuration/CreateFlyonUIVueApp';
 import { useColor }                          from '@/Shared/UseColor/Internal';
-import { useGlass }                          from '@/Shared/UseGlass/Internal/Lib';
-import { usePreset }                         from '@/Shared/UsePreset/Internal/Lib';
-import { useResponsitivity }                 from '@/Shared/UseResponsitivity/Internal/Lib';
-import { useShape }                          from '@/Shared/UseShape/Internal/Lib';
-import { useSize }                           from '@/Shared/UseSize/Internal/Lib';
-import { useState }                          from '@/Shared/UseState/Internal/Lib';
+import { useGlass }                          from '@/Shared/UseGlass/Internal';
+import { usePreset }                         from '@/Shared/UsePreset/Internal';
+import { useResponsitivity }                 from '@/Shared/UseResponsitivity/Internal';
+import { isTextAllowedForShape, useShape }   from '@/Shared/UseShape/Internal';
+import { useSize }                           from '@/Shared/UseSize/Internal';
+import { useState }                          from '@/Shared/UseState/Internal';
 import { computed, inject }                  from 'vue';
 import { RouterLink }                        from 'vue-router';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
+    disabled:     false,
     isActive:     false,
     layout:       'default',
     isResponsive: false,
 });
 
 const componentName: ComponentName = 'FoButton';
-const config                       = injectFlyonUIVueAppConfig();
+const config                       = useFlyonUIVueAppConfig();
 
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 
@@ -88,7 +88,7 @@ const [
 const stateClass = computed(() => {
     return [
         useState(componentName, props.isActive ? 'active' : 'default').value,
-        useState(componentName, props.isDisabled ? 'disabled' : 'default').value,
+        useState(componentName, props.disabled ? 'disabled' : 'default').value,
     ];
 });
 

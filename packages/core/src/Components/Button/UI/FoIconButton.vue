@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps } from '@/Components/Button/Types/Button';
-import type { IconType }    from '@/Components/Icon/Types/Icon';
-import type { Shape }       from '@/Shared/Types/Variants';
+import type { ButtonProps } from '@/Components/Button';
+import type { IconType }    from '@/Components/Icon';
+import type { Shape }       from '@/Shared/UseShape';
 import { FoButton }         from '@/Components/Button';
 
 interface Props extends Omit<ButtonProps, 'icon'> {

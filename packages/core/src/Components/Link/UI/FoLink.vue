@@ -11,13 +11,16 @@
 </template>
 
 <script setup lang="ts">
-import type { LinkProps, UnderlineLinkEffect } from '@/Components/Link/Types/Link';
+import type { LinkProps, UnderlineLinkEffect } from '@/Components/Link';
 import { FoRouterLink }                        from '@/Components/Link/Internal';
 import { isInMenuItemInjectionKey }            from '@/Components/Menu/Internal';
+import { useFlyonUIVueAppConfig }              from '@/Configuration/CreateFlyonUIVueApp';
 import { useTextColor }                        from '@/Shared/UseColor/Internal';
 import { computed, inject }                    from 'vue';
 
 const props = defineProps<LinkProps>();
+
+const config = useFlyonUIVueAppConfig();
 
 const isInMenuItem = inject(isInMenuItemInjectionKey, false);
 
@@ -25,7 +28,7 @@ const [
     colorClass,
     underlineClass,
 ] = [
-    useTextColor('link', () => props.color),
+    useTextColor(config, 'FoLink', () => props.color),
     computed(() => {
         if (props.underlineEffect === undefined) {
             return '';

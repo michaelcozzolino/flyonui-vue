@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import type { BadgeProps } from '@/Components/Badge/Types/Badge';
-import type { IconType }   from '@/Components/Icon/Types/Icon';
-import type { Shape }      from '@/Shared/Types/Variants';
+import type { BadgeProps } from '@/Components/Badge';
+import type { IconType }   from '@/Components/Icon';
+import type { Shape }      from '@/Shared/UseShape';
 import { FoBadge }         from '@/Components/Badge';
 
 interface Props extends Omit<BadgeProps, 'icon' | 'shape'> {

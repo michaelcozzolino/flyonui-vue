@@ -1,10 +1,9 @@
-import type { IsStriped }   from '@/Shared/Types/Props';
-import type { Orientation } from '@/Shared/Types/Variants';
+import type { Orientable } from '@/Shared/UseOrientation';
+import type { Striped }    from '@/Shared/UseStripes';
 
-export interface ListGroupProps extends IsStriped {
-    orientation?:    Orientation;
+export interface ListGroupProps extends Striped, Orientable {
     isFlushed?:      boolean;
     withoutGutters?: boolean;
 }
 
-export type ListGroupItemProps = IsStriped;
+export type ListGroupItemProps = Striped;
