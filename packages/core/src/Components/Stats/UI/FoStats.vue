@@ -7,26 +7,23 @@
 </template>
 
 <script setup lang="ts">
-import type { ElementName, Orientation } from '@/Shared/Types/Variants';
-import { useBorder, useOrientation }     from '@/Shared/Internal/Lib';
+import type { StatsProps }    from '@/Components/Stats';
+import type { ComponentName } from '@/Shared/Utils/Internal';
+import { useBorder }          from '@/Shared/UseBorder/Internal';
+import { useOrientation }     from '@/Shared/UseOrientation/Internal';
 
-interface Props {
-    orientation?: Orientation;
-    isBordered?:  boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<StatsProps>(), {
     orientation: 'horizontal',
     isBordered:  false,
 });
 
-const elementName: ElementName = 'stats';
+const componentName: ComponentName = 'FoStats';
 
 const [
     orientationClass,
     borderClass,
 ] = [
-    useOrientation(elementName, () => props.orientation),
-    useBorder(elementName, () => props.isBordered),
+    useOrientation(componentName, () => props.orientation),
+    useBorder(componentName, () => props.isBordered),
 ];
 </script>

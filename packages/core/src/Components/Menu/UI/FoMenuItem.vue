@@ -42,12 +42,12 @@
 </template>
 
 <script setup lang="ts">
-import type { MenuItem }                                                      from '@/Components/Menu/Types/Menu';
-import type { ComponentName }                                                 from '@/Shared/Types/ComponentTypes';
+import type { MenuItem }                                                      from '@/Components/Menu';
+import type { ComponentName }                                                 from '@/Shared/Utils/Internal';
 import { FoIcon }                                                             from '@/Components/Icon';
 import { FoLink }                                                             from '@/Components/Link';
 import { isInMenuItemInjectionKey, menuTextPropsInjectionKey }                from '@/Components/Menu/Internal';
-import { useState }                                                           from '@/Shared/UseState/Internal/Lib';
+import { useState }                                                           from '@/Shared/UseState/Internal';
 import { useMotion }                                                          from '@vueuse/motion';
 import { computed, inject, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 

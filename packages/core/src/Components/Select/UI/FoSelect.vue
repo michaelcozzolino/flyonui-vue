@@ -1,7 +1,7 @@
 <template>
     <!--    todo: some features are missing  -->
     <div v-if="options.length"
-         :class="floatingClass"
+         :class="floatingLabelClass"
     >
         <select :id="id"
                 v-model="selectedOption"
@@ -18,7 +18,7 @@
 
             <option v-for="option in options"
                     :key="option.id"
-                    :disabled="option.isDisabled"
+                    :disabled="option.disabled"
                     :value="option"
             >
                 {{ option.text }}
@@ -27,7 +27,7 @@
 
         <FoLabel v-if="label.type !== undefined"
                  :for="id"
-                 element="select"
+                 :component-name="componentName"
                  :type="label.type"
         >
             {{ label.text }}
@@ -37,27 +37,29 @@
 
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { SelectOption, SelectProps } from '@/Components/Select';
-import type { ElementName }               from '@/Shared/Types/Variants';
+import type { ComponentName }             from '@/Shared/Utils/Internal';
 import { FoLabel }                        from '@/Components/Label/Internal';
-import { useFloating, useSize }           from '@/Shared/Internal/Lib';
+import { useFlyonUIVueAppConfig }         from '@/Configuration/CreateFlyonUIVueApp';
+import { useFloatingLabel }               from '@/Shared/UseFloatingLabel/Internal';
+import { useSize }                        from '@/Shared/UseSize/Internal';
 import { computed, useId, watchEffect }   from 'vue';
 
-const props = withDefaults(defineProps<SelectProps<T, K>>(), {
-    size: 'default',
-});
+const props = defineProps<SelectProps<T, K>>();
 
 const id = useId();
 
 const selectedOption = defineModel<K | null>({ required: true });
 
-const elementName: ElementName = 'select';
+const componentName: ComponentName = 'FoSelect';
+
+const config = useFlyonUIVueAppConfig();
 
 const [
-    floatingClass,
+    floatingLabelClass,
     sizeClass,
 ] = [
-    useFloating(elementName, () => props.label.type),
-    useSize(elementName, () => props.size),
+    useFloatingLabel(componentName, () => props.label.type),
+    useSize(config, componentName, () => props.size),
 ];
 
 const isTextLabel = computed(() => {

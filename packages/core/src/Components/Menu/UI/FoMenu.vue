@@ -8,12 +8,12 @@
 
 <script setup lang="ts">
 import type { MenuProps }            from '@/Components/Menu';
-import type { ComponentName }        from '@/Shared/Types/ComponentTypes';
+import type { ComponentName }        from '@/Shared/Utils/Internal';
 import { menuTextPropsInjectionKey } from '@/Components/Menu/Internal';
-import { injectFlyonUIVueAppConfig } from '@/Configuration/CreateFlyonUIVueApp';
-import { useClass }                  from '@/Shared/Internal/Lib';
+import { useFlyonUIVueAppConfig }    from '@/Configuration/CreateFlyonUIVueApp';
+import { useClass }                  from '@/Shared/UseClass/Internal';
 import { useOrientation }            from '@/Shared/UseOrientation/Internal';
-import { useSize }                   from '@/Shared/UseSize/Internal/Lib';
+import { useSize }                   from '@/Shared/UseSize/Internal';
 import { computed, provide }         from 'vue';
 
 const props = withDefaults(defineProps<MenuProps>(), {
@@ -29,7 +29,7 @@ provide(menuTextPropsInjectionKey, computed(() => (
 
 const componentName: ComponentName = 'FoMenu';
 
-const config = injectFlyonUIVueAppConfig();
+const config = useFlyonUIVueAppConfig();
 
 const [
     orientationClass,

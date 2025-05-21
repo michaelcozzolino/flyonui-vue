@@ -2,7 +2,7 @@
     <div :class="hasIcon ? 'textarea' : defaultLabel?.type === 'floating' && 'textarea-floating'">
         <FoLabel v-if="defaultLabel?.type === 'text'"
                  :for="id"
-                 :element="elementName"
+                 :component-name="componentName"
                  type="text"
                  :is-hidden="defaultLabel.isHidden"
         >
@@ -28,13 +28,13 @@
                           sizeClass,
                           validityClass,
                       ]"
-                      :disabled="isDisabled"
-                      :readonly="isReadonly"
+                      :disabled="disabled"
+                      :readonly="readonly"
             />
 
             <FoLabel v-if="defaultLabel?.type === 'floating'"
                      :for="id"
-                     :element="elementName"
+                     :component-name="componentName"
                      type="floating"
                      :is-hidden="defaultLabel.isHidden"
             >
@@ -57,41 +57,32 @@
 </template>
 
 <script setup lang="ts">
-import type { InputHelperText }                                              from '@/Components/HelperText/Internal';
-import type { PositionableIcon }                                             from '@/Components/Icon';
-import type { InputLabel, LabelType }                                        from '@/Components/Label';
-import type { ElementName, IsDisabled, IsReadonly, IsValid, SizeWithout2XL } from '@/Shared/Types';
-import { FoFragment }                                                        from '@/Components/Fragment/Internal';
-import { FoHelperText }                                                      from '@/Components/HelperText/Internal';
-import { FoIcon }                                                            from '@/Components/Icon';
-import { FoLabel }                                                           from '@/Components/Label/Internal';
-import { useFloating, useSize, useValidity }                                 from '@/Shared/Internal';
-import { computed, useId }                                                   from 'vue';
-
-type TextareaLabelType = Exclude<LabelType, 'inline'>;
-type TextareaLabel = InputLabel<TextareaLabelType>;
-
-interface Props extends IsDisabled, IsReadonly, IsValid {
-    icon?:        PositionableIcon;
-    label?:       TextareaLabel;
-    placeholder?: string;
-    helperText?:  InputHelperText;
-    size?:        SizeWithout2XL;
-}
+import type { TextareaLabel, TextareaProps } from '@/Components/Textarea';
+import type { ComponentName }                from '@/Shared/Utils/Internal';
+import { FoFragment }                        from '@/Components/Fragment/Internal';
+import { FoHelperText }                      from '@/Components/HelperText/Internal';
+import { FoIcon }                            from '@/Components/Icon';
+import { FoLabel }                           from '@/Components/Label/Internal';
+import { useFlyonUIVueAppConfig }            from '@/Configuration/CreateFlyonUIVueApp';
+import { useFloatingLabel }                  from '@/Shared/UseFloatingLabel/Internal';
+import { useSize }                           from '@/Shared/UseSize/Internal';
+import { useValidity }                       from '@/Shared/UseValidity/Internal';
+import { computed, useId }                   from 'vue';
 
 defineOptions({
     inheritAttrs: false,
 });
 
-const props = withDefaults(defineProps<Props>(), {
-    isDisabled: false,
-    isReadonly: false,
-    isValid:    undefined,
-    size:       'default',
+const props = withDefaults(defineProps<TextareaProps>(), {
+    disabled: false,
+    readonly: false,
+    isValid:  undefined,
 });
 
-const id                       = useId();
-const elementName: ElementName = 'textarea';
+const id                           = useId();
+const componentName: ComponentName = 'FoTextarea';
+
+const config = useFlyonUIVueAppConfig();
 
 const input = defineModel<string>({ required: true });
 
@@ -112,8 +103,8 @@ const [
     sizeClass,
     validityClass,
 ] = [
-    useFloating(elementName, () => defaultLabel.value?.type),
-    useSize(elementName, () => props.size),
+    useFloatingLabel(componentName, () => defaultLabel.value?.type),
+    useSize(config, componentName, () => props.size),
     useValidity(() => props.isValid),
 ];
 

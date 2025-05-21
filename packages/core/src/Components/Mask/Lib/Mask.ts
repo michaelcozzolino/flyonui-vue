@@ -1,5 +1,5 @@
-import type { Mask }                          from '@/Components/Mask/Types/Mask';
-import type { HorizontalPosition }            from '@/Shared/Types';
+import type { Mask }                          from '@/Components/Mask';
+import type { HorizontalPosition }            from '@/Shared/Utils';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import { computed, toValue }                  from 'vue';
 

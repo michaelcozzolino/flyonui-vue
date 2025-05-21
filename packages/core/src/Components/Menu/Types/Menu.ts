@@ -1,8 +1,8 @@
-import type { IconType }   from '@/Components/Icon/Types/Icon';
-import type { To }         from '@/Components/Link';
-import type { IsDisabled } from '@/Shared/Types';
-import type { Orientable } from '@/Shared/UseOrientation';
-import type { Size }       from '@/Shared/UseSize/Types';
+import type { IconType }    from '@/Components/Icon';
+import type { To }          from '@/Components/Link';
+import type { Orientable }  from '@/Shared/UseOrientation';
+import type { Size }        from '@/Shared/UseSize';
+import type { Disableable } from '@/Shared/UseState';
 
 export interface MenuTextProps {
     hideText?:      boolean;
@@ -14,7 +14,7 @@ export interface MenuProps extends MenuTextProps, Orientable {
     isFlushed?: boolean;
 }
 
-export interface MenuItem extends IsDisabled {
+export interface MenuItem extends Disableable {
     icon?: IconType;
     text:  string;
     to?:   To;
