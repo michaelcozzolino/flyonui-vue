@@ -1,7 +1,7 @@
 import type { LabelType }                     from '@/Components/Label';
 import type { FloatingLabelComponentName }    from '@/Shared/UseFloatingLabel';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useClass }                           from '@/Shared/Internal';
+import { useClass }                           from '@/Shared/UseClass/Internal';
 import { computed, toValue }                  from 'vue';
 
 export function useFloatingLabel(

@@ -1,7 +1,7 @@
 import type { FlyonUIVueAppDefaultConfig }         from '@/Configuration/CreateFlyonUIVueApp';
 import type { Preset, PresetComponentName }        from '@/Shared/UsePreset';
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
-import { useElementClass }                         from '@/Shared/Internal';
+import { useElementClass }                         from '@/Shared/UseClass/Internal';
 import { computed, toValue }                       from 'vue';
 
 export function usePreset(

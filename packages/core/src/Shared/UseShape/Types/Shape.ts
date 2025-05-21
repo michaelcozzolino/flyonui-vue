@@ -1,4 +1,4 @@
-import type { ComponentName } from '@/Shared/Types/ComponentTypes';
+import type { ComponentName } from '@/Shared/Utils/Internal';
 
 export type ShapeableComponentName = Extract<ComponentName, 'FoBadge' | 'FoButton' | 'FoInputText'>;
 

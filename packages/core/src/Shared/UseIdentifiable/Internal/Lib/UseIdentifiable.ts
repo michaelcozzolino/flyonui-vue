@@ -1,4 +1,4 @@
-import type { Identifiable }                  from '@/Shared/Types';
+import type { Identifiable }                  from '@/Shared/UseIdentifiable';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import { useArrayFind }                       from '@vueuse/core';
 import { computed, toValue }                  from 'vue';

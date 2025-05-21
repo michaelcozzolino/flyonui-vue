@@ -1,4 +1,4 @@
-import type { ComponentName } from '@/Shared/Types/ComponentTypes.ts';
+import type { ComponentName } from '@/Shared/Utils/Internal';
 
 export type PresetComponentName = Extract<ComponentName, 'FoBadge' | 'FoButton'>;
 

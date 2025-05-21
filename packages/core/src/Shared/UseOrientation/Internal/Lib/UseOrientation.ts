@@ -1,6 +1,6 @@
 import type { OrientableComponentName, Orientation } from '@/Shared/UseOrientation';
 import type { ComputedRef, MaybeRefOrGetter }        from 'vue';
-import { useElementClass }                           from '@/Shared/Internal';
+import { useElementClass }                           from '@/Shared/UseClass/Internal';
 
 export function useOrientation(
     componentName: MaybeRefOrGetter<OrientableComponentName>,

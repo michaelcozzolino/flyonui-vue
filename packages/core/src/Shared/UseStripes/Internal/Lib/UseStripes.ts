@@ -1,7 +1,7 @@
 import type { StripedComponentName } from '@/Shared/UseStripes';
 
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useClass }                           from '@/Shared/Internal';
+import { useClass }                           from '@/Shared/UseClass/Internal';
 import { toValue }                            from 'vue';
 
 export function useStripes(

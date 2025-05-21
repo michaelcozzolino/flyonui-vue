@@ -1,6 +1,6 @@
 import type { State, StatefulComponentName }  from '@/Shared/UseState';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useElementClass }                    from '@/Shared/Internal';
+import { useElementClass }                    from '@/Shared/UseClass/Internal';
 
 export function useState(
     componentName: MaybeRefOrGetter<StatefulComponentName>,
