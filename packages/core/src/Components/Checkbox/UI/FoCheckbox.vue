@@ -16,8 +16,8 @@
                    helperText && 'mt-2',
                    $attrs.class,
                ]"
-               :aria-label="label ?? (disabled ? 'disabled checkbox' : 'checkbox')"
-               :disabled="disabled"
+               :aria-label="label ?? (isDisabled ? 'disabled checkbox' : 'checkbox')"
+               :disabled="isDisabled"
                :indeterminate.prop="isIndeterminate"
         >
 
@@ -59,8 +59,8 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
-    disabled: false,
-    isValid:  undefined,
+    isDisabled: false,
+    isValid:    undefined,
 });
 
 const componentName: ComponentName = 'FoCheckbox';

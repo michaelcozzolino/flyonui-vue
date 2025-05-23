@@ -8,3 +8,7 @@ export type Identifiable<
     : never;
 
 export type Id<T extends number | string = number> = Identifiable<'id', T>;
+
+type StringId = Identifiable<'id', string>;
+
+export type MaybeStringId = Partial<StringId>;

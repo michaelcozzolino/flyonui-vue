@@ -74,9 +74,9 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<TextareaProps>(), {
-    disabled: false,
-    readonly: false,
-    isValid:  undefined,
+    isDisabled: false,
+    readonly:   false,
+    isValid:    undefined,
 });
 
 const id                           = useId();

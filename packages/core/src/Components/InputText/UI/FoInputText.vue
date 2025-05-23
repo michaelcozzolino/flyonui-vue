@@ -100,7 +100,7 @@ import { computed, inject, useId } from 'vue';
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
-    disabled:     false,
+    isDisabled:   false,
     readonly:     false,
     isValid:      undefined,
     withoutFocus: false,

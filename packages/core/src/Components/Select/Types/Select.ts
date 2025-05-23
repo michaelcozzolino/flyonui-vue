@@ -1,10 +1,9 @@
-import type { LabelType }            from '@/Components/Label';
-import type { Id }                   from '@/Shared/UseIdentifiable';
-import type { SizeWithout2XL }       from '@/Shared/UseSize';
-import type { SelectHTMLAttributes } from 'vue';
+import type { LabelType }      from '@/Components/Label';
+import type { Id }             from '@/Shared/UseIdentifiable';
+import type { SizeWithout2XL } from '@/Shared/UseSize';
+import type { Disableable }    from '@/Shared/UseState';
 
-export interface SelectOption<T extends number | string = number> extends Id<T>,
-    /* @vue-ignore */ Pick<SelectHTMLAttributes, 'disabled'> {
+export interface SelectOption<T extends number | string = number> extends Id<T>, Disableable {
     text: string;
 }
 

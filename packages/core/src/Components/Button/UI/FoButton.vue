@@ -11,7 +11,7 @@
                    responsiveClass,
                    layoutClass,
                    glassClass,
-                   disabled && 'btn-disabled',
+                   isDisabled && 'btn-disabled',
                ]"
     >
         <slot name="prepend">
@@ -48,7 +48,6 @@ import { computed, inject }                  from 'vue';
 import { RouterLink }                        from 'vue-router';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
-    disabled:     false,
     isActive:     false,
     layout:       'default',
     isResponsive: false,
@@ -88,7 +87,7 @@ const [
 const stateClass = computed(() => {
     return [
         useState(componentName, props.isActive ? 'active' : 'default').value,
-        useState(componentName, props.disabled ? 'disabled' : 'default').value,
+        useState(componentName, () => props.isDisabled ? 'disabled' : 'default').value,
     ];
 });
 
