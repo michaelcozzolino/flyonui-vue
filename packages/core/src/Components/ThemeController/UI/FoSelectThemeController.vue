@@ -14,7 +14,7 @@ import { FoSelect, useSelectedOption }             from '@/Components/Select';
 import { useArrayMap, useColorMode }               from '@vueuse/core';
 import { computed, onMounted, toValue }            from 'vue';
 
-const props = withDefaults(defineProps<ThemeControllerProps & SelectProps<FlyonUITheme>>(), {
+const props = withDefaults(defineProps<ThemeControllerProps & Omit<SelectProps<FlyonUITheme>, 'label' | 'options'>>(), {
     initialValue: 'dark',
     attribute:    'data-theme',
     modes:        (): Record<FlyonUITheme, FlyonUITheme> => {
