@@ -1,4 +1,4 @@
-import type { FlyonUIVueAppDefaultConfig }    from '@/Configuration/CreateFlyonUIVueApp';
+import type { FlyonUIVueAppDefaultConfig }    from '@/Shared/UseFlyonUIVueAppConfig';
 import type { Shape, ShapeableComponentName } from '@/Shared/UseShape';
 import type { MaybeRefOrGetter }              from 'vue';
 import { getShape }                           from '@/Shared/UseShape/Internal';

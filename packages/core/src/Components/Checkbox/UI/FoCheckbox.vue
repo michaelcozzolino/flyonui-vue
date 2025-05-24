@@ -48,8 +48,8 @@ import type { CheckboxProps }             from '@/Components/Checkbox/Types/Chec
 import type { ComponentName }             from '@/Shared/Utils/Internal';
 import { isInCheckboxGroupInjectionKey }  from '@/Components/Checkbox/Internal';
 import { FoLabel }                        from '@/Components/Label/Internal';
-import { useFlyonUIVueAppConfig }         from '@/Configuration/CreateFlyonUIVueApp';
 import { useColor }                       from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }         from '@/Shared/UseFlyonUIVueAppConfig';
 import { useSize }                        from '@/Shared/UseSize/Internal/Lib';
 import { useValidity }                    from '@/Shared/UseValidity/Internal';
 import { computed, inject, useId, watch } from 'vue';

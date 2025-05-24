@@ -14,8 +14,8 @@
 import type { LinkProps, UnderlineLinkEffect } from '@/Components/Link';
 import { FoRouterLink }                        from '@/Components/Link/Internal';
 import { isInMenuItemInjectionKey }            from '@/Components/Menu/Internal';
-import { useFlyonUIVueAppConfig }              from '@/Configuration/CreateFlyonUIVueApp';
 import { useTextColor }                        from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }              from '@/Shared/UseFlyonUIVueAppConfig';
 import { computed, inject }                    from 'vue';
 
 const props = defineProps<LinkProps>();

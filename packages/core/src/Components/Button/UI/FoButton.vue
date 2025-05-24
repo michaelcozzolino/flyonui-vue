@@ -36,8 +36,8 @@ import type { ComponentName } from '@/Shared/Utils/Internal';
 
 import { FoIcon }                            from '@/Components/Icon';
 import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
-import { useFlyonUIVueAppConfig }            from '@/Configuration/CreateFlyonUIVueApp';
 import { useColor }                          from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }            from '@/Shared/UseFlyonUIVueAppConfig';
 import { useGlass }                          from '@/Shared/UseGlass/Internal';
 import { usePreset }                         from '@/Shared/UsePreset/Internal';
 import { useResponsitivity }                 from '@/Shared/UseResponsitivity/Internal';

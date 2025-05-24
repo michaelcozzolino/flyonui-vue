@@ -1,5 +1,5 @@
-import type { FlyonUIVueAppDefaultConfig }                                from '@/Configuration/CreateFlyonUIVueApp';
 import type { Color, ColorableComponentName, ColorableTextComponentName } from '@/Shared/UseColor';
+import type { FlyonUIVueAppDefaultConfig }                                from '@/Shared/UseFlyonUIVueAppConfig';
 
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { useElementClass }                         from '@/Shared/UseClass/Internal';

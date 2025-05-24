@@ -1,4 +1,4 @@
-import type { FlyonUIVueAppDefaultConfig }         from '@/Configuration/CreateFlyonUIVueApp';
+import type { FlyonUIVueAppDefaultConfig }         from '@/Shared/UseFlyonUIVueAppConfig';
 import type { Preset, PresetComponentName }        from '@/Shared/UsePreset';
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { useElementClass }                         from '@/Shared/UseClass/Internal';

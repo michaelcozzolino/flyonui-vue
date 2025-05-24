@@ -39,8 +39,8 @@
 import type { SelectOption, SelectProps } from '@/Components/Select';
 import type { ComponentName }             from '@/Shared/Utils/Internal';
 import { FoLabel }                        from '@/Components/Label/Internal';
-import { useFlyonUIVueAppConfig }         from '@/Configuration/CreateFlyonUIVueApp';
 import { useFloatingLabel }               from '@/Shared/UseFloatingLabel/Internal';
+import { useFlyonUIVueAppConfig }         from '@/Shared/UseFlyonUIVueAppConfig';
 import { useSize }                        from '@/Shared/UseSize/Internal';
 import { computed, useId, watchEffect }   from 'vue';
 

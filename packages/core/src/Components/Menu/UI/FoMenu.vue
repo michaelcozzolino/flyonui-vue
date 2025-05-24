@@ -10,8 +10,8 @@
 import type { MenuProps }            from '@/Components/Menu';
 import type { ComponentName }        from '@/Shared/Utils/Internal';
 import { menuTextPropsInjectionKey } from '@/Components/Menu/Internal';
-import { useFlyonUIVueAppConfig }    from '@/Configuration/CreateFlyonUIVueApp';
 import { useClass }                  from '@/Shared/UseClass/Internal';
+import { useFlyonUIVueAppConfig }    from '@/Shared/UseFlyonUIVueAppConfig';
 import { useOrientation }            from '@/Shared/UseOrientation/Internal';
 import { useSize }                   from '@/Shared/UseSize/Internal';
 import { computed, provide }         from 'vue';

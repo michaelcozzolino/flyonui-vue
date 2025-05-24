@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import type { IconProps, IconType } from '@/Components/Icon';
 import type { Component }           from 'vue';
-import { useFlyonUIVueAppConfig }   from '@/Configuration/CreateFlyonUIVueApp';
+import { useFlyonUIVueAppConfig }   from '@/Shared/UseFlyonUIVueAppConfig';
 import { useSize }                  from '@/Shared/UseSize/Internal';
 import { Icon }                     from '@iconify/vue';
 

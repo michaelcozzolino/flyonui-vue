@@ -63,8 +63,8 @@ import { FoFragment }                        from '@/Components/Fragment/Interna
 import { FoHelperText }                      from '@/Components/HelperText/Internal';
 import { FoIcon }                            from '@/Components/Icon';
 import { FoLabel }                           from '@/Components/Label/Internal';
-import { useFlyonUIVueAppConfig }            from '@/Configuration/CreateFlyonUIVueApp';
 import { useFloatingLabel }                  from '@/Shared/UseFloatingLabel/Internal';
+import { useFlyonUIVueAppConfig }            from '@/Shared/UseFlyonUIVueAppConfig';
 import { useSize }                           from '@/Shared/UseSize/Internal';
 import { useValidity }                       from '@/Shared/UseValidity/Internal';
 import { computed, useId }                   from 'vue';

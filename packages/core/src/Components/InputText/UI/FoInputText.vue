@@ -90,8 +90,8 @@ import { isPositionableIcon }                from '@/Components/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
 import { FoLabel }                           from '@/Components/Label/Internal';
 
-import { useFlyonUIVueAppConfig } from '@/Configuration/CreateFlyonUIVueApp';
 import { useFloatingLabel }       from '@/Shared/UseFloatingLabel/Internal';
+import { useFlyonUIVueAppConfig } from '@/Shared/UseFlyonUIVueAppConfig';
 
 import { useShape }                from '@/Shared/UseShape/Internal';
 import { useSize }                 from '@/Shared/UseSize/Internal';

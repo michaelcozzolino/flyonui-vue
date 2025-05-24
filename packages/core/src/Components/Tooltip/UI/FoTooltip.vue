@@ -28,8 +28,8 @@
 import type { TooltipProps }           from '@/Components/Tooltip';
 import type { ComponentName }          from '@/Shared/Utils/Internal';
 import { tooltipAsPopover }            from '@/Components/Tooltip/Internal';
-import { useFlyonUIVueAppConfig }      from '@/Configuration/CreateFlyonUIVueApp';
 import { useColor }                    from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }      from '@/Shared/UseFlyonUIVueAppConfig';
 import { useSize }                     from '@/Shared/UseSize/Internal';
 import { offset, useFloating }         from '@floating-ui/vue';
 import { onClickOutside }              from '@vueuse/core';

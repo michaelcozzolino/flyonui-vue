@@ -27,8 +27,8 @@
 import type { BadgeProps }                 from '@/Components/Badge';
 import type { ComponentName }              from '@/Shared/Utils/Internal';
 import { FoIcon }                          from '@/Components/Icon';
-import { useFlyonUIVueAppConfig }          from '@/Configuration/CreateFlyonUIVueApp';
 import { useColor }                        from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }          from '@/Shared/UseFlyonUIVueAppConfig';
 import { usePreset }                       from '@/Shared/UsePreset/Internal';
 import { isTextAllowedForShape, useShape } from '@/Shared/UseShape/Internal';
 import { useSize }                         from '@/Shared/UseSize/Internal';

@@ -1,5 +1,5 @@
-import type { FlyonUIVueAppDefaultConfig }         from '@/Configuration/CreateFlyonUIVueApp';
 import type { Direction }                          from '@/Shared/UseDirection';
+import type { FlyonUIVueAppDefaultConfig }         from '@/Shared/UseFlyonUIVueAppConfig';
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { computed, toValue }                       from 'vue';
 
