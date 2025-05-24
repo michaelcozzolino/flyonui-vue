@@ -16,7 +16,7 @@
         </template>
 
         <template #end>
-            <FoPopover max-size="large"
+            <FoPopover size="large"
                        placement="bottom-end"
             >
                 <FoIconButton icon="tabler:settings-bolt"
@@ -43,6 +43,7 @@
 import type { NavbarLink }   from 'flyonui-vue';
 import ConfigurationSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
+import { loadIcons }                                                                from '@iconify/vue';
 import { useColorMode, useLocalStorage }                                            from '@vueuse/core';
 import { FoIconButton, FoLink, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
 import { useRouter, withBase }                                                      from 'vitepress';
@@ -71,5 +72,15 @@ onMounted(() => {
     const initialValue = useLocalStorage(themeStorageKey, 'dark');
     const theme        = useColorMode({ initialValue, attribute: 'data-theme' });
     theme.value = initialValue.value;
+
+    loadIcons([
+        'radix-icons:dimensions',
+        'la:border-style',
+        'fluent:color-20-regular',
+        'fluent:shapes-20-regular',
+        'fluent:text-direction-horizontal-ltr-20-regular',
+        'fluent:text-direction-horizontal-rtl-20-regular',
+        'ep:select',
+    ]);
 });
 </script>
