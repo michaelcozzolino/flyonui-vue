@@ -2,7 +2,7 @@
     <FoInputText v-model="input"
                  :label="{ text: 'What is your name?' }"
                  placeholder="John Doe"
-                 readonly
+                 is-readonly
     />
 </template>
 

@@ -43,8 +43,8 @@
                        withoutFocus && 'no-focus border-0',
                    ]"
                    :placeholder="placeholder"
-                   :disabled="disabled"
-                   :readonly="readonly"
+                   :disabled="isDisabled"
+                   :readonly="isReadonly"
             >
 
             <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
@@ -101,7 +101,7 @@ import { computed, inject, useId } from 'vue';
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
     isDisabled:   false,
-    readonly:     false,
+    isReadonly:   false,
     isValid:      undefined,
     withoutFocus: false,
 });

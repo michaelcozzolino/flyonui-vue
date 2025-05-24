@@ -7,8 +7,11 @@ export type Identifiable<
     ? { readonly [K in Name]: Value }
     : never;
 
+// todo: vue might not recognize this properly
 export type Id<T extends number | string = number> = Identifiable<'id', T>;
 
-type StringId = Identifiable<'id', string>;
+interface StringId {
+    id: string;
+}
 
 export type MaybeStringId = Partial<StringId>;
