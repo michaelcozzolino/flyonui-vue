@@ -15,8 +15,8 @@
              :style="floatingStyles"
              :role="isPopover ? 'popover' : 'tooltip'"
         >
-            <div class="tooltip-body rounded-lg p-4 text-start"
-                 :class="[colorClass, maxSizeClass]"
+            <div class="tooltip-body text-start"
+                 :class="[colorClass, sizeClass, isPopover && 'rounded-lg p-4']"
             >
                 <slot name="body" />
             </div>
@@ -26,18 +26,22 @@
 
 <script setup lang="ts">
 import type { TooltipProps }           from '@/Components/Tooltip';
+import type { ComponentName }          from '@/Shared/Utils/Internal';
 import { tooltipAsPopover }            from '@/Components/Tooltip/Internal';
-import { useSize }                     from '@/Shared/Internal';
+import { useFlyonUIVueAppConfig }      from '@/Configuration/CreateFlyonUIVueApp';
 import { useColor }                    from '@/Shared/UseColor/Internal';
+import { useSize }                     from '@/Shared/UseSize/Internal';
 import { offset, useFloating }         from '@floating-ui/vue';
 import { onClickOutside }              from '@vueuse/core';
 import { inject, ref, useTemplateRef } from 'vue';
 
 const props = withDefaults(defineProps<TooltipProps>(), {
-    color:     'neutral',
     placement: 'top',
-    maxSize:   'default',
 });
+
+const componentName: ComponentName = 'FoTooltip';
+
+const config = useFlyonUIVueAppConfig();
 
 const isPopover = inject(tooltipAsPopover, false);
 
@@ -54,10 +58,10 @@ const { floatingStyles } = useFloating(referenceElement, floatingElement, {
 
 const [
     colorClass,
-    maxSizeClass,
+    sizeClass,
 ] = [
-    useColor('tooltip', () => props.color),
-    useSize('tooltip', () => props.maxSize),
+    useColor(config, componentName, () => props.color),
+    useSize(config, componentName, () => props.size),
 ];
 
 // todo: on resize
