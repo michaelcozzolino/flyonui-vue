@@ -14,9 +14,9 @@ export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
         horizontalPosition: 'left',
         labelType:          'text',
         orientation:        'horizontal',
-        preset:             'default',
-        shape:              'default',
-        size:               'default',
+        preset:             'solid',
+        shape:              'rounded',
+        size:               'medium',
     },
 };
 
