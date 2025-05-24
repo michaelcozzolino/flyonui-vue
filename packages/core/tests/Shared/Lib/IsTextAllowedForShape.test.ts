@@ -1,16 +1,17 @@
-import type { Shape }            from '@/Shared/Types/Variants';
-import type { MaybeRefOrGetter } from 'vue';
-import { isTextAllowedForShape } from '@/Shared/Internal/Lib';
-import { describe, expect, it }  from 'vitest';
-import { computed, ref }         from 'vue';
+import type { Shape }                 from '@/Shared/UseShape';
+import type { MaybeRefOrGetter }      from 'vue';
+import { flyonUIVueAppDefaultConfig } from '@/Shared/UseFlyonUIVueAppConfig';
+import { isTextAllowedForShape }      from '@/Shared/UseShape/Internal';
+import { describe, expect, it }       from 'vitest';
+import { computed, ref }              from 'vue';
 
 describe('isTextAllowedForShape', () => {
     it.each<[MaybeRefOrGetter<Shape>, boolean]>([
-        ['default', true],
+        ['rounded', true],
         [() => 'circle', false],
         [ref('pilled'), true],
         [computed(() => 'square'), false],
     ])('should allow text for shape', (shape: MaybeRefOrGetter<Shape>, expectedResult: boolean) => {
-        expect(isTextAllowedForShape(shape)).toBe(expectedResult);
+        expect(isTextAllowedForShape(flyonUIVueAppDefaultConfig, 'FoButton', shape)).toBe(expectedResult);
     });
 });
