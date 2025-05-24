@@ -1,6 +1,6 @@
 import type { SelectOption }                  from '@/Components/Select';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useIdentifiable }                    from '@/Shared/Identifiable/Lib';
+import { useIdentifiable }                    from '@/Shared/UseIdentifiable/Internal';
 
 export function useSelectedOption<T extends number | string = number>(
     options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOption<T>>[]>,

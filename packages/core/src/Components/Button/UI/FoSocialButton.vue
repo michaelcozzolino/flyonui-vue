@@ -1,38 +1,21 @@
 <template>
-    <FoButton v-if="isTextAllowedForShape(shape)"
-              :class="colorClass"
+    <FoButton :class="colorClass"
               v-bind="props"
               :icon="{ left: icon }"
     >
         {{ social }}
     </FoButton>
-
-    <FoIconButton v-else
-                  :class="colorClass"
-                  v-bind="props"
-                  :icon="icon"
-                  :shape="shape"
-    />
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps }       from '@/Components/Button/Types/Button';
-import type { IconType }          from '@/Components/Icon/Types/Icon';
-import type { Preset }            from '@/Shared/Types/Variants';
-import { FoButton, FoIconButton } from '@/Components/Button';
-import { isTextAllowedForShape }  from '@/Shared/Internal/Lib';
-import { computed }               from 'vue';
+import type { Social, SocialButtonProps } from '@/Components/Button';
+import type { IconType }                  from '@/Components/Icon/Types/Icon';
+import type { Preset }                    from '@/Shared/UsePreset';
+import { FoButton }                       from '@/Components/Button';
+import { computed }                       from 'vue';
 
-type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
-
-interface Props extends Omit<ButtonProps, 'preset'> {
-    social:  Social;
-    preset?: Extract<Preset, 'default' | 'soft' | 'outline'>;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-    preset: 'default',
-    shape:  'default',
+const props = withDefaults(defineProps<SocialButtonProps>(), {
+    preset: 'solid',
 });
 
 const icon = computed((): IconType => {
@@ -47,8 +30,8 @@ const icon = computed((): IconType => {
 });
 
 const colorClass = computed((): string => {
-    const colorClasses: Record<Extract<Preset, 'default' | 'soft' | 'outline'>, Record<Social, string>> = {
-        default: {
+    const colorClasses: Record<Extract<Preset, 'solid' | 'soft' | 'outline'>, Record<Social, string>> = {
+        solid: {
             Facebook: 'border-[#1877F2] bg-[#1877F2] text-white shadow-[#1877F2]/30 hover:border-[#1877F2] hover:bg-[#1877F2]/90',
             Twitter:  'border-[#1da1f2] bg-[#1da1f2] text-white shadow-[#1da1f2]/30 hover:border-[#1da1f2] hover:bg-[#1da1f2]/90',
             Linkedin: 'border-[#0a66c2] bg-[#0a66c2] text-white shadow-[#0a66c2]/30 hover:border-[#0a66c2] hover:bg-[#0a66c2]/90',

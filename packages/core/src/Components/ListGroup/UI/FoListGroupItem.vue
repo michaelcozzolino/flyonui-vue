@@ -5,17 +5,19 @@
 </template>
 
 <script setup lang="ts">
-import type { ListGroupItemProps }          from '@/Components/ListGroup/Types/ListGroup';
-import type { Orientation }                 from '@/Shared/Types/Variants';
+import type { ListGroupItemProps }          from '@/Components/ListGroup';
+import type { Orientation }                 from '@/Shared/UseOrientation';
+import type { ComponentName }               from '@/Shared/Utils/Internal';
 import { listGroupOrientationInjectionKey } from '@/Components/ListGroup/Internal';
-import { useOrientation, useStripes }       from '@/Shared/Internal/Lib';
+import { useOrientation }                   from '@/Shared/UseOrientation/Internal';
+import { useStripes }                       from '@/Shared/UseStripes/Internal';
 import { computed, inject }                 from 'vue';
 
 const props = withDefaults(defineProps<ListGroupItemProps>(), {
     isStriped: false,
 });
 
-const elementName = 'list-group-item';
+const componentName: ComponentName = 'FoListGroupItem';
 
 const listGroupOrientation = inject(listGroupOrientationInjectionKey, computed((): Orientation => 'vertical'));
 
@@ -23,8 +25,8 @@ const [
     orientationClass,
     stripesClass,
 ] = [
-    useOrientation(elementName, listGroupOrientation),
-    useStripes(elementName, () => props.isStriped),
+    useOrientation(componentName, listGroupOrientation),
+    useStripes(componentName, () => props.isStriped),
 ];
 </script>
 

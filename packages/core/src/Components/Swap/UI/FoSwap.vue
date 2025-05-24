@@ -5,13 +5,13 @@
     >
         <span class="swap-on">
             <slot name="on">
-                {{ useRequiredSlotMessage('swap', '', 'on') }}
+                {{ useRequiredSlotMessage(componentName, '', 'on') }}
             </slot>
         </span>
 
         <span class="swap-off">
             <slot name="off">
-                {{ useRequiredSlotMessage('swap', '', 'off') }}
+                {{ useRequiredSlotMessage(componentName, '', 'off') }}
             </slot>
         </span>
     </label>
@@ -19,8 +19,9 @@
 
 <script setup lang="ts">
 import type { SwapAnimation, SwapProps } from '@/Components/Swap';
+import type { ComponentName }            from '@/Shared/Utils/Internal';
 import type { VNode }                    from 'vue';
-import { useRequiredSlotMessage }        from '@/Shared/Internal';
+import { useRequiredSlotMessage }        from '@/Shared/Utils/Internal';
 import { computed }                      from 'vue';
 
 const props = defineProps<SwapProps>();
@@ -29,6 +30,8 @@ defineSlots<{
     on:  () => VNode[];
     off: () => VNode[];
 }>();
+
+const componentName: ComponentName = 'FoSwap';
 
 const isOn = defineModel<boolean>({ required: true });
 

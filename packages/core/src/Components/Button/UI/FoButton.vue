@@ -20,7 +20,7 @@
             />
         </slot>
 
-        <slot v-if="isTextAllowedForShape(shape)" />
+        <slot v-if="isTextAllowedForShape(config, componentName, shape)" />
 
         <slot name="append">
             <FoIcon v-if="icon?.right"
@@ -31,35 +31,32 @@
 </template>
 
 <script lang="ts" setup>
-import type { ButtonProps } from '@/Components/Button/Types/Button';
-import type {
-    ElementName,
-}                               from '@/Shared/Types/Variants';
-import { FoIcon }               from '@/Components/Icon';
-import { isInJoinInjectionKey } from '@/Components/Join/Internal';
-import {
-    isTextAllowedForShape,
-    useGlass,
-    useJoinItem,
-    usePreset,
-    useResponsive,
-    useShape,
-    useSize,
-    useState,
-}                               from '@/Shared/Internal/Lib';
-import { useColor }         from '@/Shared/UseColor/Internal';
-import { computed, inject } from 'vue';
-import { RouterLink }       from 'vue-router';
+import type { ButtonProps }   from '@/Components/Button';
+import type { ComponentName } from '@/Shared/Utils/Internal';
+
+import { FoIcon }                            from '@/Components/Icon';
+import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
+import { useColor }                          from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }            from '@/Shared/UseFlyonUIVueAppConfig';
+import { useGlass }                          from '@/Shared/UseGlass/Internal';
+import { usePreset }                         from '@/Shared/UsePreset/Internal';
+import { useResponsitivity }                 from '@/Shared/UseResponsitivity/Internal';
+import { isTextAllowedForShape, useShape }   from '@/Shared/UseShape/Internal';
+import { useSize }                           from '@/Shared/UseSize/Internal';
+import { useState }                          from '@/Shared/UseState/Internal';
+import { computed, inject }                  from 'vue';
+import { RouterLink }                        from 'vue-router';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
-    color:        'neutral',
-    preset:       'default',
-    shape:        'default',
-    size:         'default',
     isActive:     false,
     layout:       'default',
     isResponsive: false,
 });
+
+const componentName: ComponentName = 'FoButton';
+const config                       = useFlyonUIVueAppConfig();
+
+const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 
 const buttonTag = computed(() => {
     if (props.to === undefined) {
@@ -68,9 +65,6 @@ const buttonTag = computed(() => {
 
     return RouterLink;
 });
-
-const elementName: ElementName = 'btn';
-const isInJoin: boolean        = inject(isInJoinInjectionKey, false);
 
 const [
     colorClass,
@@ -81,19 +75,19 @@ const [
     glassClass,
     responsiveClass,
 ] = [
-    useColor(elementName, () => props.color),
+    useColor(config, componentName, () => props.color),
     useJoinItem(isInJoin),
-    usePreset(elementName, () => props.preset),
-    useShape(elementName, () => props.shape),
-    useSize(elementName, () => props.size),
+    usePreset(config, componentName, () => props.preset),
+    useShape(config, componentName, () => props.shape),
+    useSize(config, componentName, () => props.size),
     useGlass(() => props.withGlass),
-    useResponsive(elementName, () => props.isResponsive),
+    useResponsitivity(componentName, () => props.isResponsive),
 ];
 
 const stateClass = computed(() => {
     return [
-        useState(elementName, props.isActive ? 'active' : 'default').value,
-        useState(elementName, props.isDisabled ? 'disabled' : 'default').value,
+        useState(componentName, props.isActive ? 'active' : 'default').value,
+        useState(componentName, () => props.isDisabled ? 'disabled' : 'default').value,
     ];
 });
 

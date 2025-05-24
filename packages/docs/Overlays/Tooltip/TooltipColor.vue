@@ -3,11 +3,7 @@
         <FoIconButton icon="tabler:chevron-up" />
 
         <template #body>
-            <span class="text-lg font-medium">Tooltip title</span>
-            <p class="text-base pt-4">
-                This text serves as placeholder content for the tooltip, showcasing its overall look in the user
-                interface.
-            </p>
+            Default
         </template>
     </FoTooltip>
 
@@ -17,11 +13,7 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Tooltip title</span>
-            <p class="text-base pt-4">
-                This text serves as placeholder content for the tooltip, showcasing its overall look in the user
-                interface.
-            </p>
+            Primary
         </template>
     </FoTooltip>
 
@@ -31,11 +23,7 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Tooltip title</span>
-            <p class="text-base pt-4">
-                This text serves as placeholder content for the tooltip, showcasing its overall look in the user
-                interface.
-            </p>
+            Secondary
         </template>
     </FoTooltip>
 
@@ -45,11 +33,7 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Tooltip title</span>
-            <p class="text-base pt-4">
-                This text serves as placeholder content for the tooltip, showcasing its overall look in the user
-                interface.
-            </p>
+            Accent
         </template>
     </FoTooltip>
 
@@ -59,11 +43,7 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Tooltip title</span>
-            <p class="text-base pt-4">
-                This text serves as placeholder content for the tooltip, showcasing its overall look in the user
-                interface.
-            </p>
+            Info
         </template>
     </FoTooltip>
 
@@ -73,11 +53,7 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Tooltip title</span>
-            <p class="text-base pt-4">
-                This text serves as placeholder content for the tooltip, showcasing its overall look in the user
-                interface.
-            </p>
+            Success
         </template>
     </FoTooltip>
 
@@ -87,11 +63,7 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Tooltip title</span>
-            <p class="text-base pt-4">
-                This text serves as placeholder content for the tooltip, showcasing its overall look in the user
-                interface.
-            </p>
+            Warning
         </template>
     </FoTooltip>
 
@@ -101,11 +73,7 @@
         />
 
         <template #body>
-            <span class="text-lg font-medium">Tooltip title</span>
-            <p class="text-base pt-4">
-                This text serves as placeholder content for the tooltip, showcasing its overall look in the user
-                interface.
-            </p>
+            Error
         </template>
     </FoTooltip>
 </template>

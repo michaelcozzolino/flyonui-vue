@@ -1,9 +1,9 @@
-import type { Size }      from '@/Shared/Types';
 import type { Color }     from '@/Shared/UseColor';
+import type { Size }      from '@/Shared/UseSize';
 import type { Placement } from '@floating-ui/vue';
 
 export interface TooltipProps {
     color?:     Color;
     placement?: Placement;
-    maxSize?:   Size;
+    size?:      Size;
 }

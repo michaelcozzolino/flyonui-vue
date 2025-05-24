@@ -1,6 +1,6 @@
-## Solid buttons
+## Default buttons
 
-<ButtonDocs section="solid" />
+<ButtonDocs section="default" />
 
 ## Soft buttons
 

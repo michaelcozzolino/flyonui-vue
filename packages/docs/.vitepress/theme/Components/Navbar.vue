@@ -16,9 +16,18 @@
         </template>
 
         <template #end>
-            <FoSelectThemeController class="!w-48"
-                                     storage-key="vitepress-theme-appearance"
-            />
+            <FoPopover size="large"
+                       placement="bottom-end"
+            >
+                <FoIconButton icon="tabler:settings-bolt"
+                              color="info"
+                              @click="showSettings = !showSettings"
+                />
+
+                <template #body>
+                    <ConfigurationSettings theme-storage-key="vitepress-theme-appearance" />
+                </template>
+            </FoPopover>
 
             <FoLink to="https://github.com/michaelcozzolino/flyonui-vue">
                 <FoSocialButton class="place-self-center"
@@ -31,10 +40,14 @@
 </template>
 
 <script setup lang="ts">
-import type { NavbarLink }                                                          from 'flyonui-vue';
-import { FoLink, FoNavbar, FoNavbarBrand, FoSelectThemeController, FoSocialButton } from 'flyonui-vue';
+import type { NavbarLink }   from 'flyonui-vue';
+import ConfigurationSettings
+    from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
+import { loadIcons }                                                                from '@iconify/vue';
+import { useColorMode, useLocalStorage }                                            from '@vueuse/core';
+import { FoIconButton, FoLink, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
 import { useRouter, withBase }                                                      from 'vitepress';
-import { computed }                                                                 from 'vue';
+import { computed, onMounted, ref }                                                 from 'vue';
 
 const router = useRouter();
 
@@ -46,5 +59,28 @@ const links = computed((): NavbarLink[] => {
             to:   withBase('/playground/'),
         },
     ];
+});
+
+const showSettings    = ref<boolean>(false);
+const themeStorageKey = 'vitepress-theme-appearance';
+
+onMounted(() => {
+    /**
+     * The theme selector will be shown only on click, in order to allow the automatic theme selection from local
+     * storage on first load, it must be fetched and set according to the user one.
+     */
+    const initialValue = useLocalStorage(themeStorageKey, 'dark');
+    const theme        = useColorMode({ initialValue, attribute: 'data-theme' });
+    theme.value = initialValue.value;
+
+    loadIcons([
+        'radix-icons:dimensions',
+        'la:border-style',
+        'fluent:color-20-regular',
+        'fluent:shapes-20-regular',
+        'fluent:text-direction-horizontal-ltr-20-regular',
+        'fluent:text-direction-horizontal-rtl-20-regular',
+        'ep:select',
+    ]);
 });
 </script>

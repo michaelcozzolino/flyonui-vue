@@ -3,25 +3,24 @@
          :class="[orientationClass, responsiveClass]"
     >
         <slot>
-            {{ useRequiredSlotMessage('join') }}
+            {{ useRequiredSlotMessage('FoJoin') }}
         </slot>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { ElementName, IsResponsive, Orientation }           from '@/Shared/Types';
-import type { VNode }                                            from 'vue';
-import { isInJoinInjectionKey }                                  from '@/Components/Join/Internal';
-import { useOrientation, useRequiredSlotMessage, useResponsive } from '@/Shared/Internal';
-import { provide }                                               from 'vue';
+import type { JoinProps }         from '@/Components/Join';
+import type { ComponentName }     from '@/Shared/Utils/Internal';
+import type { VNode }             from 'vue';
+import { isInJoinInjectionKey }   from '@/Components/Join/Internal';
+import { useOrientation }         from '@/Shared/UseOrientation/Internal';
+import { useResponsitivity }      from '@/Shared/UseResponsitivity/Internal';
+import { useRequiredSlotMessage } from '@/Shared/Utils/Internal';
+import { provide }                from 'vue';
 
-interface Props extends IsResponsive {
-    orientation?: Orientation;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-    orientation: 'horizontal',
-    shape:       'default',
+const props = withDefaults(defineProps<JoinProps>(), {
+    isResponsive: false,
+    orientation:  'horizontal',
 });
 
 defineSlots<{
@@ -30,14 +29,14 @@ defineSlots<{
 
 provide(isInJoinInjectionKey, true);
 
-const elementName: ElementName = 'join';
+const componentName: ComponentName = 'FoJoin';
 
 const [
     orientationClass,
     responsiveClass,
 ] = [
-    useOrientation(elementName, () => props.orientation),
-    useResponsive(elementName, () => props.isResponsive),
+    useOrientation(componentName, () => props.orientation),
+    useResponsitivity(componentName, () => props.isResponsive),
 ];
 </script>
 

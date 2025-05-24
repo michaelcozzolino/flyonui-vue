@@ -9,18 +9,20 @@
 </template>
 
 <script setup lang="ts">
-import type { Animation, LoadingProps } from '@/Components/Loading/Types/Loading';
-import type { ElementName }             from '@/Shared/Types/Variants';
-import { useSize }                      from '@/Shared/Internal/Lib';
+import type { Animation, LoadingProps } from '@/Components/Loading/';
+import type { ComponentName }           from '@/Shared/Utils/Internal';
 import { useTextColor }                 from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }       from '@/Shared/UseFlyonUIVueAppConfig';
+import { useSize }                      from '@/Shared/UseSize/Internal';
 import { computed }                     from 'vue';
 
 const props = withDefaults(defineProps<LoadingProps>(), {
     animation: 'spinner',
-    size:      'default',
 });
 
-const elementName: ElementName = 'loading';
+const componentName: ComponentName = 'FoLoading';
+
+const config = useFlyonUIVueAppConfig();
 
 const animationClass = computed(() => {
     const icons: Record<Animation, string> = {
@@ -39,7 +41,7 @@ const [
     colorClass,
     sizeClass,
 ] = [
-    useTextColor(elementName, () => props.color),
-    useSize(elementName, () => props.size),
+    useTextColor(config, componentName, () => props.color),
+    useSize(config, componentName, () => props.size),
 ];
 </script>

@@ -45,10 +45,13 @@
 
 <script lang="ts" setup>
 import type { CheckboxProps }             from '@/Components/Checkbox/Types/Checkbox';
+import type { ComponentName }             from '@/Shared/Utils/Internal';
 import { isInCheckboxGroupInjectionKey }  from '@/Components/Checkbox/Internal';
 import { FoLabel }                        from '@/Components/Label/Internal';
-import {  useSize, useValidity }          from '@/Shared/Internal/Lib';
 import { useColor }                       from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }         from '@/Shared/UseFlyonUIVueAppConfig';
+import { useSize }                        from '@/Shared/UseSize/Internal/Lib';
+import { useValidity }                    from '@/Shared/UseValidity/Internal';
 import { computed, inject, useId, watch } from 'vue';
 
 defineOptions({
@@ -56,15 +59,15 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
-    color:      'neutral',
-    size:       'default',
     isDisabled: false,
     isValid:    undefined,
 });
 
-const elementName       = 'checkbox';
-const id                = useId();
-const isInCheckboxGroup = inject(isInCheckboxGroupInjectionKey, false);
+const componentName: ComponentName = 'FoCheckbox';
+const id                           = useId();
+const config                       = useFlyonUIVueAppConfig();
+
+const isInCheckboxGroup            = inject(isInCheckboxGroupInjectionKey, false);
 
 const checked         = defineModel({ required: true, type: Boolean });
 const isIndeterminate = defineModel('isIndeterminate', { type: Boolean });
@@ -74,8 +77,8 @@ const [
     sizeClass,
     validityClass,
 ] = [
-    useColor(elementName, () => props.color),
-    useSize(elementName, () => props.size),
+    useColor(config, componentName, () => props.color),
+    useSize(config, componentName, () => props.size),
     useValidity(() => props.isValid),
 ];
 

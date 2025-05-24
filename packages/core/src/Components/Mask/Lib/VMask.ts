@@ -1,4 +1,4 @@
-import type { HorizontalPosition }               from '@/Shared/Types';
+import type { HorizontalPosition }               from '@/Shared/Utils';
 import type { ComputedRef, FunctionDirective }   from 'vue';
 import { leftSideMaskClass, rightSideMaskClass } from '@/Components/Mask';
 

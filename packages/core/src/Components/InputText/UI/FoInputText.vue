@@ -21,7 +21,7 @@
         >
             <FoLabel v-if="defaultLabel && (['text', 'inline'] as LabelType[]).includes(defaultLabel.type)"
                      :for="id"
-                     :element="elementName"
+                     :component-name="componentName"
                      :type="defaultLabel.type"
                      :is-hidden="defaultLabel.isHidden"
                      :class="($slots.prepend || inputIcon?.left) ? 'px-3' : defaultLabel.type === 'inline' && 'me-3'"
@@ -49,7 +49,7 @@
 
             <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
                      :for="id"
-                     :element="elementName"
+                     :component-name="componentName"
                      :type="defaultLabel.type"
                      :is-hidden="defaultLabel.isHidden"
                      :class="defaultLabel.type === 'floating' && inputIcon?.left === undefined && slots.append === undefined && (inputIcon?.right || slots.prepend !== undefined) && 'ms-0'"
@@ -80,31 +80,26 @@
 import type { PositionableIcon }      from '@/Components/Icon';
 import type { InputTextProps }        from '@/Components/InputText';
 import type { InputLabel, LabelType } from '@/Components/Label';
+import type { ComponentName }         from '@/Shared/Utils/Internal';
 
-import type { ElementName } from '@/Shared/Types';
+import type { VNode }                        from 'vue';
+import { FoFragment }                        from '@/Components/Fragment/Internal';
+import { FoHelperText }                      from '@/Components/HelperText/Internal';
+import { FoIcon }                            from '@/Components/Icon';
+import { isPositionableIcon }                from '@/Components/Icon/Internal';
+import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
+import { FoLabel }                           from '@/Components/Label/Internal';
 
-import type { VNode }           from 'vue';
-import { FoFragment }           from '@/Components/Fragment/Internal';
-import { FoHelperText }         from '@/Components/HelperText/Internal';
-import { FoIcon }               from '@/Components/Icon';
-import { isPositionableIcon }   from '@/Components/Icon/Internal';
-import { isInJoinInjectionKey } from '@/Components/Join/Internal';
-import { FoLabel }              from '@/Components/Label/Internal';
+import { useFloatingLabel }       from '@/Shared/UseFloatingLabel/Internal';
+import { useFlyonUIVueAppConfig } from '@/Shared/UseFlyonUIVueAppConfig';
 
-import { injectFlyonUIVueAppConfig } from '@/Configuration/CreateFlyonUIVueApp/Lib/InjectFlyonUIVueAppConfig.ts';
-import {
-    useFloating,
-    useJoinItem,
-    useShape,
-    useSize,
-    useValidity,
-}                                    from '@/Shared/Internal/Lib';
+import { useShape }                from '@/Shared/UseShape/Internal';
+import { useSize }                 from '@/Shared/UseSize/Internal';
+import { useValidity }             from '@/Shared/UseValidity/Internal';
 import { computed, inject, useId } from 'vue';
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
-    shape:        'default',
-    size:         'default',
     isDisabled:   false,
     isReadonly:   false,
     isValid:      undefined,
@@ -117,12 +112,13 @@ const slots = defineSlots<{
     append?:  () => VNode[];
 }>();
 
-const id                       = useId();
-const elementName: ElementName = 'input-text';
-const isInJoin: boolean        = inject(isInJoinInjectionKey, false);
+const id                           = useId();
+const componentName: ComponentName = 'FoInputText';
 
-const input  = defineModel<string>({ required: true });
-const config = injectFlyonUIVueAppConfig();
+const config            = useFlyonUIVueAppConfig();
+const isInJoin: boolean = inject(isInJoinInjectionKey, false);
+
+const input = defineModel<string>({ required: true });
 
 const inputIcon = computed((): PositionableIcon | undefined => {
     if (props.icon === undefined) {
@@ -134,7 +130,7 @@ const inputIcon = computed((): PositionableIcon | undefined => {
     }
 
     return {
-        [config.value.components?.FoInputText?.iconPosition ?? config.value.global.horizontalPosition]: props.icon,
+        [config.value.components?.FoInputText?.horizontalPosition ?? config.value.global.horizontalPosition]: props.icon,
     };
 });
 
@@ -197,9 +193,9 @@ const [
     validityClass,
 ] = [
     useJoinItem(isInJoin),
-    useFloating(elementName, () => defaultLabel.value?.type),
-    useShape(elementName, () => props.shape),
-    useSize(elementName, () => props.size),
+    useFloatingLabel(componentName, () => defaultLabel.value?.type),
+    useShape(config, componentName, () => props.shape),
+    useSize(config, componentName, () => props.size),
     useValidity(() => props.isValid),
 ];
 </script>

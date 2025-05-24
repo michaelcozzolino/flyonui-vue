@@ -1,0 +1,9 @@
+import type { ComponentName } from '@/Shared/Utils/Internal';
+
+export type SizableComponentName = Extract<
+    ComponentName,
+    'FoBadge' | 'FoButton' | 'FoCheckbox' | 'FoIcon' | 'FoInputText' | 'FoLoading' | 'FoMenu' | 'FoSelect' | 'FoTextarea' | 'FoTooltip'
+>;
+
+export type Size = 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge' | 'doubleExtraLarge';
+export type SizeWithout2XL = Exclude<Size, 'doubleExtraLarge'>;

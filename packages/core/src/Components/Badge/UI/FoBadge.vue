@@ -11,7 +11,7 @@
                 :icon="icon.left"
         />
 
-        <slot v-if="isTextAllowedForShape(shape)" />
+        <slot v-if="isTextAllowedForShape(config, componentName, shape)" />
 
         <FoIcon v-if="icon?.right"
                 :icon="icon.right"
@@ -24,18 +24,22 @@
 </template>
 
 <script setup lang="ts">
-import type { BadgeProps }                                     from '@/Components/Badge/Types/Badge';
-import { FoIcon }                                              from '@/Components/Icon';
-import { isTextAllowedForShape, usePreset, useShape, useSize } from '@/Shared/Internal/Lib';
-import { useColor }                                            from '@/Shared/UseColor/Internal';
+import type { BadgeProps }                 from '@/Components/Badge';
+import type { ComponentName }              from '@/Shared/Utils/Internal';
+import { FoIcon }                          from '@/Components/Icon';
+import { useColor }                        from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }          from '@/Shared/UseFlyonUIVueAppConfig';
+import { usePreset }                       from '@/Shared/UsePreset/Internal';
+import { isTextAllowedForShape, useShape } from '@/Shared/UseShape/Internal';
+import { useSize }                         from '@/Shared/UseSize/Internal';
 
 const props = withDefaults(defineProps<BadgeProps>(), {
-    color:         'neutral',
-    preset:        'default',
-    shape:         'default',
-    size:          'default',
     isDismissible: false,
 });
+
+const componentName: ComponentName = 'FoBadge';
+
+const config = useFlyonUIVueAppConfig();
 
 const [
     colorClass,
@@ -43,9 +47,9 @@ const [
     shapeClass,
     sizeClass,
 ] = [
-    useColor('badge', () => props.color),
-    usePreset('badge', () => props.preset),
-    useShape('badge', () => props.shape),
-    useSize('badge', () => props.size),
+    useColor(config, componentName, () => props.color),
+    usePreset(config, componentName, () => props.preset),
+    useShape(config, componentName, () => props.shape),
+    useSize(config, componentName, () => props.size),
 ];
 </script>

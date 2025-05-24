@@ -38,9 +38,10 @@
 </template>
 
 <script setup lang="ts">
-import type { NavbarLink }                                from '@/Components/Navbar/Types/Navbar';
+import type { NavbarLink }                                from '@/Components/Navbar';
+import type { ComputedRef, MaybeRefOrGetter }             from 'vue';
 import { FoNavbarHamburgerMenuToggler, FoNavbarLinkList } from '@/Components/Navbar';
-import { useRoundedBox }                                  from '@/Shared/Internal/Lib';
+import { useClass }                                       from '@/Shared/UseClass/Internal';
 import { ref }                                            from 'vue';
 
 interface Props {
@@ -56,4 +57,9 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const isCollapsed = ref<boolean>(true);
+
+// todo: maybe this should be in a single file if there would be the need for future components
+function useRoundedBox(isRounded: MaybeRefOrGetter<boolean>): ComputedRef<string> {
+    return useClass(isRounded, 'rounded-box');
+}
 </script>

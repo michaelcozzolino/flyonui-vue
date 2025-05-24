@@ -1,17 +1,26 @@
-import type { Color, ColorableElementName, ColorableTextElementName } from '@/Shared/UseColor';
-import type { ComputedRef, MaybeRefOrGetter }                         from 'vue';
-import { useElementClass }                                            from '@/Shared/Internal';
-import { isDefined }                                                  from '@/Shared/Internal/Lib/Assertions.ts';
-import { computed }                                                   from 'vue';
+import type { Color, ColorableComponentName, ColorableTextComponentName } from '@/Shared/UseColor';
+import type { FlyonUIVueAppDefaultConfig }                                from '@/Shared/UseFlyonUIVueAppConfig';
+
+import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
+import { useElementClass }                         from '@/Shared/UseClass/Internal';
+import { isDefined }                               from '@/Shared/Utils/Internal';
+import { computed, toValue }                       from 'vue';
 
 export function useColor(
-    elementName: MaybeRefOrGetter<ColorableElementName>,
-    color: MaybeRefOrGetter<Color>,
+    config: Ref<FlyonUIVueAppDefaultConfig>,
+    componentName: MaybeRefOrGetter<ColorableComponentName>,
+    color: MaybeRefOrGetter<Color | undefined>,
 ): ComputedRef<string> {
-    return useElementClass<ColorableElementName, Color>(
-        elementName,
+    const _color = computed(() => {
+        const { components, global } = config.value;
+
+        return components?.[toValue(componentName)]?.color ?? toValue(color) ?? global.color;
+    });
+
+    return useElementClass<ColorableComponentName, Color>(
+        componentName,
         {
-            badge: {
+            FoBadge: {
                 neutral:   '',
                 primary:   'badge-primary',
                 secondary: 'badge-secondary',
@@ -21,7 +30,7 @@ export function useColor(
                 warning:   'badge-warning',
                 error:     'badge-error',
             },
-            btn: {
+            FoButton: {
                 neutral:   '',
                 primary:   'btn-primary',
                 secondary: 'btn-secondary',
@@ -31,7 +40,7 @@ export function useColor(
                 warning:   'btn-warning',
                 error:     'btn-error',
             },
-            checkbox: {
+            FoCheckbox: {
                 neutral:   '',
                 primary:   'checkbox-primary',
                 secondary: 'checkbox-secondary',
@@ -41,7 +50,7 @@ export function useColor(
                 warning:   'checkbox-warning',
                 error:     'checkbox-error',
             },
-            link: {
+            FoLink: {
                 neutral:   'link-neutral',
                 primary:   'link-primary',
                 secondary: 'link-secondary',
@@ -51,7 +60,7 @@ export function useColor(
                 warning:   'link-warning',
                 error:     'link-error',
             },
-            loading: {
+            FoLoading: {
                 neutral:   'text-neutral',
                 primary:   'text-primary',
                 secondary: 'text-secondary',
@@ -61,7 +70,17 @@ export function useColor(
                 warning:   'text-warning',
                 error:     'text-error',
             },
-            tooltip: {
+            FoRadio: {
+                neutral:   '',
+                primary:   'radio-primary',
+                secondary: 'radio-secondary',
+                accent:    'radio-accent',
+                info:      'radio-info',
+                success:   'radio-success',
+                warning:   'radio-warning',
+                error:     'radio-error',
+            },
+            FoTooltip: {
                 neutral:   '',
                 primary:   'tooltip-primary',
                 secondary: 'tooltip-secondary',
@@ -72,17 +91,18 @@ export function useColor(
                 error:     'tooltip-error',
             },
         },
-        color,
+        _color,
     );
 }
 
 export function useTextColor(
-    elementName: MaybeRefOrGetter<ColorableTextElementName>,
+    config: Ref<FlyonUIVueAppDefaultConfig>,
+    componentName: MaybeRefOrGetter<ColorableTextComponentName>,
     color: MaybeRefOrGetter<Color | undefined>,
 ): ComputedRef<string> {
     return computed((): string => {
         if (isDefined(color)) {
-            return useColor(elementName, color).value;
+            return useColor(config, componentName, color).value;
         }
 
         return '';

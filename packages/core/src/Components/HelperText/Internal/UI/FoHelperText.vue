@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import type { HorizontalPosition } from '@/Shared/Types';
+import type { HorizontalPosition } from '@/Shared/Utils';
 
 interface Props {
     position?: HorizontalPosition;

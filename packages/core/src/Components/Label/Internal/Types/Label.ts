@@ -1,8 +1,8 @@
-import type { LabelType }             from '@/Components/Label';
-import type { LabellableElementName } from '@/Shared/Types';
+import type { LabelType }                  from '@/Components/Label';
+import type { FloatingLabelComponentName } from '@/Shared/UseFloatingLabel';
 
 export interface LabelProps {
-    element?:  LabellableElementName;
-    type?:     LabelType;
-    isHidden?: boolean;
+    componentName?: FloatingLabelComponentName;
+    type?:          LabelType;
+    isHidden?:      boolean;
 }
