@@ -1,10 +1,8 @@
-import type {
-    FlyonUIVueAppConfig,
-    FlyonUIVueAppDefaultConfig,
-}                                                      from '@/Configuration/CreateFlyonUIVueApp/Types/CreateFlyonUIVueApp.ts';
-import type { App, FunctionPlugin, InjectionKey, Ref } from 'vue';
-import deepMerge                                       from 'deepmerge';
-import { ref }                                         from 'vue';
+import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig } from '@/Shared/UseFlyonUIVueAppConfig';
+import type { App, FunctionPlugin }                             from 'vue';
+import { useFlyonUIVueAppConfigInjectionKey }                   from '@/Shared/UseFlyonUIVueAppConfig';
+import deepMerge                                                from 'deepmerge';
+import { ref }                                                  from 'vue';
 
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     global: {
@@ -20,14 +18,12 @@ export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     },
 };
 
-export const flyonUIVueAppConfigInjectionKey: InjectionKey<Ref<FlyonUIVueAppDefaultConfig>> = Symbol('Create FlyonUI Vue app');
-
 export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: App, config: FlyonUIVueAppConfig) => {
     const global     = deepMerge(flyonUIVueAppDefaultConfig.global, config.global ?? {});
     const components = deepMerge(flyonUIVueAppDefaultConfig.components ?? {}, config.components ?? {});
 
     app.provide(
-        flyonUIVueAppConfigInjectionKey,
+        useFlyonUIVueAppConfigInjectionKey,
         ref<FlyonUIVueAppDefaultConfig>({ global, components }),
     );
 };
