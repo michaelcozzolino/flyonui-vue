@@ -2,13 +2,13 @@
     <FoInputText v-model="input"
                  :label="{ text: 'What is your name?' }"
                  placeholder="John Doe"
-                 disabled
+                 is-disabled
     />
 
     <FoInputText v-model="input"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
-                 disabled
+                 is-disabled
     />
 </template>
 

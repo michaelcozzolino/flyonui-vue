@@ -28,8 +28,8 @@
                           sizeClass,
                           validityClass,
                       ]"
-                      :disabled="disabled"
-                      :readonly="readonly"
+                      :disabled="isDisabled"
+                      :readonly="isReadonly"
             />
 
             <FoLabel v-if="defaultLabel?.type === 'floating'"

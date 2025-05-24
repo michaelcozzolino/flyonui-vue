@@ -2,13 +2,13 @@
     <FoTextarea v-model="input"
                 :label="{ text: 'Your bio' }"
                 placeholder="Hello!!!"
-                disabled
+                is-disabled
     />
 
     <FoTextarea v-model="input"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
-                disabled
+                is-disabled
     />
 </template>
 

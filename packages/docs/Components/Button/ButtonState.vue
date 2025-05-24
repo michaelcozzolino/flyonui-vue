@@ -10,14 +10,14 @@
     </FoButton>
 
     <FoButton color="primary"
-              disabled
+              is-disabled
     >
         Disabled
     </FoButton>
 
     <FoButton color="primary"
               is-active
-              disabled
+              is-disabled
     >
         Active & Disabled
     </FoButton>

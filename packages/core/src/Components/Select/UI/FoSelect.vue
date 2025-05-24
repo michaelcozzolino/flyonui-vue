@@ -18,7 +18,7 @@
 
             <option v-for="option in options"
                     :key="option.id"
-                    :disabled="option.disabled"
+                    :disabled="option.isDisabled"
                     :value="option"
             >
                 {{ option.text }}

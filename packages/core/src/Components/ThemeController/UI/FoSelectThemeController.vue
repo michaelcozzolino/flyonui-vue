@@ -2,6 +2,7 @@
     <FoSelect v-model="selectedTheme"
               :label="{ text: 'Theme', type: 'floating' }"
               :options="themeOptions"
+              :size="size"
     />
 </template>
 

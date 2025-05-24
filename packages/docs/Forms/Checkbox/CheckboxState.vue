@@ -1,10 +1,10 @@
 <template>
     <FoCheckbox v-model="disabledChecked"
-                disabled
+                is-disabled
     />
 
     <FoCheckbox v-model="disabledUnchecked"
-                disabled
+                is-disabled
     />
 
     <FoCheckbox v-model="isIndeterminateChecked"
