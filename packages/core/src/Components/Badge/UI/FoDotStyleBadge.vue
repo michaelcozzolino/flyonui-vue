@@ -11,6 +11,6 @@
 <script setup lang="ts">
 import type { BadgeProps } from '@/Components/Badge';
 import { FoBadge }         from '@/Components/Badge';
-// todo: maybe this component can stay in FoBadge
+
 const props = defineProps<BadgeProps>();
 </script>
