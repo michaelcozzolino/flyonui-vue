@@ -2,7 +2,7 @@
     <FoTextarea v-model="input"
                 :label="{ text: 'Full name' }"
                 placeholder="Hello!!!"
-                :helper-text="{ text: 'Helper text' }"
+                helper-text="Helper text"
     />
 
     <FoTextarea v-model="input"

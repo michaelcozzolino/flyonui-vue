@@ -1,6 +1,6 @@
 <template>
     <FoTextarea v-model="input"
-                :icon="{ left: 'tabler:message' }"
+                icon="tabler:message"
                 placeholder="Hello!!!"
     />
 
@@ -10,12 +10,12 @@
     />
 
     <FoTextarea v-model="input"
-                :icon="{ left: 'tabler:message', right: 'info-circle' }"
+                :icon="{ left: 'tabler:message', right: 'tabler:info-circle' }"
                 placeholder="Hello!!!"
     />
 
     <FoTextarea v-model="input"
-                :icon="{ left: 'tabler:message' }"
+                icon="tabler:message"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
     />
@@ -27,7 +27,7 @@
     />
 
     <FoTextarea v-model="input"
-                :icon="{ left: 'tabler:message', right: 'info-circle' }"
+                :icon="{ left: 'tabler:message', right: 'tabler:info-circle' }"
                 :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
     />

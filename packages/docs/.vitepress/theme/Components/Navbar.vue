@@ -19,9 +19,10 @@
             <FoPopover size="large"
                        placement="bottom-end"
             >
-                <FoIconButton icon="tabler:settings-bolt"
-                              color="info"
-                              @click="showSettings = !showSettings"
+                <FoButton icon="tabler:settings-bolt"
+                          color="info"
+                          shape="square"
+                          @click="showSettings = !showSettings"
                 />
 
                 <template #body>
@@ -43,11 +44,11 @@
 import type { NavbarLink }   from 'flyonui-vue';
 import ConfigurationSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
-import { loadIcons }                                                                from '@iconify/vue';
-import { useColorMode, useLocalStorage }                                            from '@vueuse/core';
-import { FoIconButton, FoLink, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
-import { useRouter, withBase }                                                      from 'vitepress';
-import { computed, onMounted, ref }                                                 from 'vue';
+import { loadIcons }                                                            from '@iconify/vue';
+import { useColorMode, useLocalStorage }                                        from '@vueuse/core';
+import { FoButton, FoLink, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
+import { useRouter, withBase }                                                  from 'vitepress';
+import { computed, onMounted, ref }                                             from 'vue';
 
 const router = useRouter();
 

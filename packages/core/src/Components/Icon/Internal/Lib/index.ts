@@ -1,1 +1,1 @@
-export * from '@/Components/Icon/Internal/Lib/Assertions';
+export * from '@/Components/Icon/Internal/Lib/UsePositionableIcon';

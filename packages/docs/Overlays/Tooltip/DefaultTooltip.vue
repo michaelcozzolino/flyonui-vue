@@ -1,6 +1,6 @@
 <template>
     <FoTooltip>
-        <FoIconButton icon="tabler:chevron-up" />
+        <FoButton icon="tabler:chevron-up" />
 
         <template #body>
             <span class="text-lg font-medium">Tooltip title</span>
@@ -13,5 +13,5 @@
 </template>
 
 <script setup lang="ts">
-import { FoIconButton, FoTooltip } from 'flyonui-vue';
+import { FoButton, FoTooltip } from 'flyonui-vue';
 </script>

@@ -9,9 +9,9 @@
             {{ defaultLabel.text }}
         </FoLabel>
 
-        <FoIcon v-if="icon?.left"
+        <FoIcon v-if="textareaIcon?.left"
                 :class="iconClass"
-                :icon="icon.left"
+                :icon="textareaIcon.left"
                 size="extraLarge"
         />
 
@@ -24,7 +24,7 @@
                       :placeholder="placeholder"
                       :class="[
                           hasIcon ? 'grow' : 'textarea',
-                          icon?.right && 'resize-none',
+                          textareaIcon?.right && 'resize-none',
                           sizeClass,
                           validityClass,
                       ]"
@@ -42,32 +42,33 @@
             </FoLabel>
         </component>
 
-        <FoIcon v-if="icon?.right"
+        <FoIcon v-if="textareaIcon?.right"
                 :class="iconClass"
-                :icon="icon.right"
+                :icon="textareaIcon.right"
                 size="extraLarge"
         />
 
-        <FoHelperText v-if="helperText !== undefined"
-                      :position="helperText.position"
+        <FoHelperText v-if="textareaHelperText !== undefined"
+                      :position="textareaHelperText.position"
         >
-            {{ helperText.text }}
+            {{ textareaHelperText.text }}
         </FoHelperText>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { TextareaLabel, TextareaProps } from '@/Components/Textarea';
-import type { ComponentName }                from '@/Shared/Utils/Internal';
-import { FoFragment }                        from '@/Components/Fragment/Internal';
-import { FoHelperText }                      from '@/Components/HelperText/Internal';
-import { FoIcon }                            from '@/Components/Icon';
-import { FoLabel }                           from '@/Components/Label/Internal';
-import { useFloatingLabel }                  from '@/Shared/UseFloatingLabel/Internal';
-import { useFlyonUIVueAppConfig }            from '@/Shared/UseFlyonUIVueAppConfig';
-import { useSize }                           from '@/Shared/UseSize/Internal';
-import { useValidity }                       from '@/Shared/UseValidity/Internal';
-import { computed, useId }                   from 'vue';
+import type { TextareaLabel, TextareaProps }       from '@/Components/Textarea';
+import type { ComponentName }                      from '@/Shared/Utils/Internal';
+import { FoFragment }                              from '@/Components/Fragment/Internal';
+import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';
+import { FoIcon }                                  from '@/Components/Icon';
+import { usePositionableIcon }                     from '@/Components/Icon/Internal';
+import { FoLabel }                                 from '@/Components/Label/Internal';
+import { useFloatingLabel }                        from '@/Shared/UseFloatingLabel/Internal';
+import { useFlyonUIVueAppConfig }                  from '@/Shared/UseFlyonUIVueAppConfig';
+import { useSize }                                 from '@/Shared/UseSize/Internal';
+import { useValidity }                             from '@/Shared/UseValidity/Internal';
+import { computed, useId }                         from 'vue';
 
 defineOptions({
     inheritAttrs: false,
@@ -85,6 +86,18 @@ const componentName: ComponentName = 'FoTextarea';
 const config = useFlyonUIVueAppConfig();
 
 const input = defineModel<string>({ required: true });
+
+const textareaIcon = usePositionableIcon(
+    config,
+    componentName,
+    () => props.icon,
+);
+
+const textareaHelperText = usePositionableHelperText(
+    config,
+    componentName,
+    () => props.helperText,
+);
 
 const defaultLabel = computed((): Required<TextareaLabel> | undefined => {
     if (props.label === undefined) {
@@ -111,6 +124,6 @@ const [
 const iconClass = computed(() => 'text-base-content/80 mt-2 mx-4 shrink-0');
 
 const hasIcon = computed((): boolean => {
-    return props.icon?.left !== undefined || props.icon?.right !== undefined;
+    return textareaIcon.value?.left !== undefined || textareaIcon.value?.right !== undefined;
 });
 </script>
