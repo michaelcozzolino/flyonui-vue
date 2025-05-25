@@ -2,24 +2,31 @@
     <FoButton v-bind="props"
               :icon="loadingIcon"
     >
-        <template v-if="text !== undefined">
-            {{ isLoading ? text.loading : text.notLoading }}
-        </template>
+        <slot v-if="$slots.loading && isLoading"
+              name="loading"
+        />
+
+        <slot v-if="$slots.notLoading && isLoading === false"
+              name="notLoading"
+        />
     </FoButton>
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps }      from '@/Components/Button/Types/Button';
-import type { PositionableIcon } from '@/Components/Icon/Types/Icon';
-import type { LoadingProps }     from '@/Components/Loading/Types/Loading';
-import { FoButton }              from '@/Components/Button';
-import { FoLoading }             from '@/Components/Loading';
-import { computed, h }           from 'vue';
+import type { ButtonProps }        from '@/Components/Button/Types/Button';
+import type { PositionableIcon }   from '@/Components/Icon/Types/Icon';
+import type { LoadingProps }       from '@/Components/Loading/Types/Loading';
+import type { HorizontalPosition } from '@/Shared/Utils';
+import type { VNode }              from 'vue';
+import { FoButton }                from '@/Components/Button';
+import { FoLoading }               from '@/Components/Loading';
+import { useFlyonUIVueAppConfig }  from '@/Shared/UseFlyonUIVueAppConfig';
+import { computed, h  }            from 'vue';
 
 interface Props extends Omit<ButtonProps, 'icon'> {
     isLoading?: boolean;
     icon?: {
-        position?: 'left' | 'right';
+        position?: HorizontalPosition;
     } & LoadingProps;
     text?: {
         loading:    string;
@@ -29,13 +36,17 @@ interface Props extends Omit<ButtonProps, 'icon'> {
 
 const props = withDefaults(defineProps<Props>(), {
     isLoading: true,
-    icon() {
-        return {
-            position:  'left',
-            animation: 'spinner',
-        };
+    icon:      () => {
+        return { animation: 'spinner' };
     },
 });
+
+defineSlots<{
+    loading?:    () => VNode[];
+    notLoading?: () => VNode[];
+}>();
+
+const config = useFlyonUIVueAppConfig();
 
 const loadingIcon = computed((): PositionableIcon => {
     const { position, ...loadingProps } = props.icon;
@@ -43,7 +54,12 @@ const loadingIcon = computed((): PositionableIcon => {
     const icon = props.isLoading ? h(FoLoading, loadingProps) : '';
 
     if (position === undefined) {
-        return { left: icon };
+        const [_position, globalPosition] = [
+            config.value.components?.FoButton?.horizontalPosition?.icon,
+            config.value.global.horizontalPosition.icon,
+        ];
+
+        return { [_position ?? globalPosition]: icon };
     }
 
     return {

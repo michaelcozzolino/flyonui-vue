@@ -1,17 +1,30 @@
 <template>
     <FoLoadingButton color="primary"
                      :is-loading="isLoading"
-                     :icon="{ position: 'left' }"
-                     :text="{ loading: 'Saving', notLoading: 'Save' }"
                      @click.prevent="isLoading = !isLoading"
-    />
+    >
+        <template #loading>
+            Saving
+        </template>
+
+        <template #notLoading>
+            Save
+        </template>
+    </FoLoadingButton>
 
     <FoLoadingButton color="primary"
                      :is-loading="isLoading"
                      :icon="{ animation: 'dots', position: 'right' }"
-                     :text="{ loading: 'Saving', notLoading: 'Save' }"
                      @click.prevent="isLoading = !isLoading"
-    />
+    >
+        <template #loading>
+            Saving
+        </template>
+
+        <template #notLoading>
+            Save
+        </template>
+    </FoLoadingButton>
 
     <FoLoadingButton color="primary"
                      shape="circle"
