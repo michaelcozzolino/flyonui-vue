@@ -1,6 +1,8 @@
 <template>
     <FoTooltip>
-        <FoIconButton icon="tabler:chevron-up" />
+        <FoButton icon="tabler:chevron-up"
+                  shape="square"
+        />
 
         <template #body>
             Default
@@ -8,8 +10,9 @@
     </FoTooltip>
 
     <FoTooltip color="primary">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="primary"
+        <FoButton icon="tabler:chevron-up"
+                  color="primary"
+                  shape="square"
         />
 
         <template #body>
@@ -18,8 +21,9 @@
     </FoTooltip>
 
     <FoTooltip color="secondary">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="secondary"
+        <FoButton icon="tabler:chevron-up"
+                  color="secondary"
+                  shape="square"
         />
 
         <template #body>
@@ -28,8 +32,9 @@
     </FoTooltip>
 
     <FoTooltip color="accent">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="accent"
+        <FoButton icon="tabler:chevron-up"
+                  color="accent"
+                  shape="square"
         />
 
         <template #body>
@@ -38,8 +43,9 @@
     </FoTooltip>
 
     <FoTooltip color="info">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="info"
+        <FoButton icon="tabler:chevron-up"
+                  color="info"
+                  shape="square"
         />
 
         <template #body>
@@ -48,8 +54,9 @@
     </FoTooltip>
 
     <FoTooltip color="success">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="success"
+        <FoButton icon="tabler:chevron-up"
+                  color="success"
+                  shape="square"
         />
 
         <template #body>
@@ -58,8 +65,9 @@
     </FoTooltip>
 
     <FoTooltip color="warning">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="warning"
+        <FoButton icon="tabler:chevron-up"
+                  color="warning"
+                  shape="square"
         />
 
         <template #body>
@@ -68,8 +76,9 @@
     </FoTooltip>
 
     <FoTooltip color="error">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="error"
+        <FoButton icon="tabler:chevron-up"
+                  color="error"
+                  shape="square"
         />
 
         <template #body>
@@ -79,5 +88,5 @@
 </template>
 
 <script setup lang="ts">
-import { FoIconButton, FoTooltip } from 'flyonui-vue';
+import { FoButton, FoTooltip } from 'flyonui-vue';
 </script>

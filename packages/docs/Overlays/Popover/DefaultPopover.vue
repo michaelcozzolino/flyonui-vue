@@ -1,6 +1,6 @@
 <template>
     <FoPopover>
-        <FoIconButton icon="tabler:chevron-up" />
+        <FoButton icon="tabler:chevron-up" />
 
         <template #body>
             <span class="text-lg font-medium">Popover title</span>
@@ -13,5 +13,5 @@
 </template>
 
 <script setup lang="ts">
-import { FoIconButton, FoPopover } from 'flyonui-vue';
+import { FoButton, FoPopover } from 'flyonui-vue';
 </script>

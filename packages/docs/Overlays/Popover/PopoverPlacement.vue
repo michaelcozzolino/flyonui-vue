@@ -1,6 +1,8 @@
 <template>
     <FoPopover placement="left">
-        <FoIconButton icon="tabler:chevron-left" />
+        <FoButton icon="tabler:chevron-left"
+                  shape="square"
+        />
 
         <template #body>
             <span class="text-lg font-medium">Popover title</span>
@@ -11,7 +13,9 @@
     </FoPopover>
 
     <FoPopover>
-        <FoIconButton icon="tabler:chevron-up" />
+        <FoButton icon="tabler:chevron-up"
+                  shape="square"
+        />
 
         <template #body>
             <span class="text-lg font-medium">Popover title</span>
@@ -22,7 +26,9 @@
     </FoPopover>
 
     <FoPopover placement="bottom">
-        <FoIconButton icon="tabler:chevron-down" />
+        <FoButton icon="tabler:chevron-down"
+                  shape="square"
+        />
 
         <template #body>
             <span class="text-lg font-medium">Popover title</span>
@@ -33,7 +39,9 @@
     </FoPopover>
 
     <FoPopover placement="right">
-        <FoIconButton icon="tabler:chevron-right" />
+        <FoButton icon="tabler:chevron-right"
+                  shape="square"
+        />
 
         <template #body>
             <span class="text-lg font-medium">Popover title</span>
@@ -45,5 +53,5 @@
 </template>
 
 <script setup lang="ts">
-import { FoIconButton, FoPopover } from 'flyonui-vue';
+import { FoButton, FoPopover } from 'flyonui-vue';
 </script>

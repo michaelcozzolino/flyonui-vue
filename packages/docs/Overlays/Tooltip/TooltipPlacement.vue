@@ -1,6 +1,8 @@
 <template>
     <FoTooltip placement="left">
-        <FoIconButton icon="tabler:chevron-left" />
+        <FoButton icon="tabler:chevron-left"
+                  shape="square"
+        />
 
         <template #body>
             Left
@@ -8,7 +10,9 @@
     </FoTooltip>
 
     <FoTooltip>
-        <FoIconButton icon="tabler:chevron-up" />
+        <FoButton icon="tabler:chevron-up"
+                  shape="square"
+        />
 
         <template #body>
             Top
@@ -16,7 +20,9 @@
     </FoTooltip>
 
     <FoTooltip placement="bottom">
-        <FoIconButton icon="tabler:chevron-down" />
+        <FoButton icon="tabler:chevron-down"
+                  shape="square"
+        />
 
         <template #body>
             Bottom
@@ -24,7 +30,9 @@
     </FoTooltip>
 
     <FoTooltip placement="right">
-        <FoIconButton icon="tabler:chevron-right" />
+        <FoButton icon="tabler:chevron-right"
+                  shape="square"
+        />
 
         <template #body>
             Right
@@ -33,5 +41,5 @@
 </template>
 
 <script setup lang="ts">
-import { FoIconButton, FoTooltip } from 'flyonui-vue';
+import { FoButton, FoTooltip } from 'flyonui-vue';
 </script>

@@ -1,6 +1,8 @@
 <template>
     <FoPopover>
-        <FoIconButton icon="tabler:chevron-up" />
+        <FoButton icon="tabler:chevron-up"
+                  shape="square"
+        />
 
         <template #body>
             <span class="text-lg font-medium">Popover title</span>
@@ -12,8 +14,9 @@
     </FoPopover>
 
     <FoPopover color="primary">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="primary"
+        <FoButton icon="tabler:chevron-up"
+                  color="primary"
+                  shape="square"
         />
 
         <template #body>
@@ -26,8 +29,9 @@
     </FoPopover>
 
     <FoPopover color="secondary">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="secondary"
+        <FoButton icon="tabler:chevron-up"
+                  color="secondary"
+                  shape="square"
         />
 
         <template #body>
@@ -40,8 +44,9 @@
     </FoPopover>
 
     <FoPopover color="accent">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="accent"
+        <FoButton icon="tabler:chevron-up"
+                  color="accent"
+                  shape="square"
         />
 
         <template #body>
@@ -54,8 +59,9 @@
     </FoPopover>
 
     <FoPopover color="info">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="info"
+        <FoButton icon="tabler:chevron-up"
+                  color="info"
+                  shape="square"
         />
 
         <template #body>
@@ -68,8 +74,9 @@
     </FoPopover>
 
     <FoPopover color="success">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="success"
+        <FoButton icon="tabler:chevron-up"
+                  color="success"
+                  shape="square"
         />
 
         <template #body>
@@ -82,8 +89,9 @@
     </FoPopover>
 
     <FoPopover color="warning">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="warning"
+        <FoButton icon="tabler:chevron-up"
+                  color="warning"
+                  shape="square"
         />
 
         <template #body>
@@ -96,8 +104,9 @@
     </FoPopover>
 
     <FoPopover color="error">
-        <FoIconButton icon="tabler:chevron-up"
-                      color="error"
+        <FoButton icon="tabler:chevron-up"
+                  color="error"
+                  shape="square"
         />
 
         <template #body>
@@ -111,5 +120,5 @@
 </template>
 
 <script setup lang="ts">
-import { FoIconButton, FoPopover } from 'flyonui-vue';
+import { FoButton, FoPopover } from 'flyonui-vue';
 </script>
