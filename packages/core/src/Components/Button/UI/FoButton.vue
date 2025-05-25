@@ -15,16 +15,16 @@
                ]"
     >
         <slot name="prepend">
-            <FoIcon v-if="icon?.left"
-                    :icon="icon.left"
+            <FoIcon v-if="buttonIcon?.left"
+                    :icon="buttonIcon.left"
             />
         </slot>
 
         <slot v-if="isTextAllowedForShape(config, componentName, shape)" />
 
         <slot name="append">
-            <FoIcon v-if="icon?.right"
-                    :icon="icon.right"
+            <FoIcon v-if="buttonIcon?.right"
+                    :icon="buttonIcon.right"
             />
         </slot>
     </component>
@@ -35,6 +35,7 @@ import type { ButtonProps }   from '@/Components/Button';
 import type { ComponentName } from '@/Shared/Utils/Internal';
 
 import { FoIcon }                            from '@/Components/Icon';
+import { usePositionableIcon }               from '@/Components/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
 import { useColor }                          from '@/Shared/UseColor/Internal';
 import { useFlyonUIVueAppConfig }            from '@/Shared/UseFlyonUIVueAppConfig';
@@ -65,6 +66,12 @@ const buttonTag = computed(() => {
 
     return RouterLink;
 });
+
+const buttonIcon = usePositionableIcon(
+    config,
+    componentName,
+    () => props.icon,
+);
 
 const [
     colorClass,

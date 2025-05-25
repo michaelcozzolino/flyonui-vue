@@ -19,14 +19,14 @@
             animation="rotation"
     >
         <template #on>
-            <FoIconButton icon="tabler:x"
-                          shape="circle"
+            <FoButton icon="tabler:x"
+                      shape="circle"
             />
         </template>
 
         <template #off>
-            <FoIconButton icon="tabler:menu-2"
-                          shape="circle"
+            <FoButton icon="tabler:menu-2"
+                      shape="circle"
             />
         </template>
     </FoSwap>
@@ -35,22 +35,22 @@
             animation="rotation"
     >
         <template #on>
-            <FoIconButton icon="tabler:player-pause"
-                          shape="circle"
+            <FoButton icon="tabler:player-pause"
+                      shape="circle"
             />
         </template>
 
         <template #off>
-            <FoIconButton icon="tabler:player-play"
-                          shape="circle"
+            <FoButton icon="tabler:player-play"
+                      shape="circle"
             />
         </template>
     </FoSwap>
 </template>
 
 <script setup lang="ts">
-import { FoIcon, FoIconButton, FoSwap } from 'flyonui-vue';
-import { ref }                          from 'vue';
+import { FoButton, FoIcon, FoSwap } from 'flyonui-vue';
+import { ref }                      from 'vue';
 
 const isOn = ref<boolean>(false);
 </script>

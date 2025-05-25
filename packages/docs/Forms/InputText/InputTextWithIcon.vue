@@ -1,7 +1,7 @@
 <template>
     <FoInputText v-model="name"
                  :label="{ text: 'Name', type: 'inline' }"
-                 :icon="{ left: 'tabler:user' }"
+                 icon="tabler:user"
                  placeholder="John Doe"
     />
 

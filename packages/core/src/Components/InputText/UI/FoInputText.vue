@@ -68,31 +68,30 @@
             />
         </slot>
 
-        <FoHelperText v-if="helperText !== undefined"
-                      :position="helperText.position"
+        <FoHelperText v-if="inputHelperText !== undefined"
+                      :position="inputHelperText.position"
         >
-            {{ helperText.text }}
+            {{ inputHelperText.text }}
         </FoHelperText>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { PositionableIcon }      from '@/Components/Icon';
 import type { InputTextProps }        from '@/Components/InputText';
 import type { InputLabel, LabelType } from '@/Components/Label';
-import type { ComponentName }         from '@/Shared/Utils/Internal';
 
-import type { VNode }                        from 'vue';
-import { FoFragment }                        from '@/Components/Fragment/Internal';
-import { FoHelperText }                      from '@/Components/HelperText/Internal';
-import { FoIcon }                            from '@/Components/Icon';
-import { isPositionableIcon }                from '@/Components/Icon/Internal';
-import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
-import { FoLabel }                           from '@/Components/Label/Internal';
+import type { ComponentName }                      from '@/Shared/Utils/Internal';
+import type { VNode }                              from 'vue';
+import { FoFragment }                              from '@/Components/Fragment/Internal';
+import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';
+import { FoIcon }                                  from '@/Components/Icon';
+import { usePositionableIcon }                     from '@/Components/Icon/Internal';
+import { isInJoinInjectionKey, useJoinItem }       from '@/Components/Join/Internal';
 
-import { useFloatingLabel }       from '@/Shared/UseFloatingLabel/Internal';
-import { useFlyonUIVueAppConfig } from '@/Shared/UseFlyonUIVueAppConfig';
+import { FoLabel }          from '@/Components/Label/Internal';
+import { useFloatingLabel } from '@/Shared/UseFloatingLabel/Internal';
 
+import { useFlyonUIVueAppConfig }  from '@/Shared/UseFlyonUIVueAppConfig';
 import { useShape }                from '@/Shared/UseShape/Internal';
 import { useSize }                 from '@/Shared/UseSize/Internal';
 import { useValidity }             from '@/Shared/UseValidity/Internal';
@@ -120,19 +119,17 @@ const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 
 const input = defineModel<string>({ required: true });
 
-const inputIcon = computed((): PositionableIcon | undefined => {
-    if (props.icon === undefined) {
-        return undefined;
-    }
+const inputIcon = usePositionableIcon(
+    config,
+    componentName,
+    () => props.icon,
+);
 
-    if (isPositionableIcon(props.icon)) {
-        return props.icon;
-    }
-
-    return {
-        [config.value.components?.FoInputText?.horizontalPosition ?? config.value.global.horizontalPosition]: props.icon,
-    };
-});
+const inputHelperText = usePositionableHelperText(
+    config,
+    componentName,
+    () => props.helperText,
+);
 
 const defaultLabel = computed((): Required<InputLabel> | undefined => {
     if (props.label === undefined) {

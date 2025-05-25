@@ -1,7 +1,7 @@
 <template>
     <FoButton :class="colorClass"
               v-bind="props"
-              :icon="{ left: icon }"
+              :icon="icon"
     >
         {{ social }}
     </FoButton>

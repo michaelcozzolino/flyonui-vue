@@ -9,12 +9,15 @@ export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
         color:              'neutral',
         // textColor:          undefined,
         direction:          'ltr',
-        horizontalPosition: 'left',
-        labelType:          'text',
-        orientation:        'horizontal',
-        preset:             'solid',
-        shape:              'rounded',
-        size:               'medium',
+        horizontalPosition: {
+            icon:       'left',
+            helperText: 'left',
+        },
+        labelType:   'text',
+        orientation: 'horizontal',
+        preset:      'solid',
+        shape:       'rounded',
+        size:        'medium',
     },
 };
 

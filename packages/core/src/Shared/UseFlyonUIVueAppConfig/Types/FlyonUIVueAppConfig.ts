@@ -19,12 +19,26 @@ import type { SizeWithout2XL }                                    from '@/Shared
 import type { HorizontalPosition }                                from '@/Shared/Utils';
 import type { ConfigurableComponentName, PickIfExists, Prettify } from '@/Shared/Utils/Internal';
 
-type LabelTypeConfig = Exclude<LabelType, 'inline'>;
-type ShapeConfig = Extract<Shape, 'rounded' | 'pilled'>;
-
 export interface FlyonUIVueAppDefaultConfig {
     global:      FlyonUIVueAppGlobalConfig;
     components?: FlyonUIVueAppComponentsConfig;
+}
+
+type LabelTypeConfig = Exclude<LabelType, 'inline'>;
+type ShapeConfig = Extract<Shape, 'rounded' | 'pilled'>;
+
+interface HorizontalIconPositionConfig {
+    icon: HorizontalPosition;
+}
+
+interface HorizontalHelperTextPositionConfig {
+    helperText: HorizontalPosition;
+}
+
+type HorizontalPositionGlobalConfig = HorizontalIconPositionConfig & HorizontalHelperTextPositionConfig;
+
+interface HorizontalPositionComponentConfig<T> {
+    horizontalPosition?: Prettify<Partial<T>>;
 }
 
 export interface FlyonUIVueAppGlobalConfig {
@@ -32,7 +46,7 @@ export interface FlyonUIVueAppGlobalConfig {
     // todo
     // textColor:          Color | undefined;
     direction:          Direction;
-    horizontalPosition: HorizontalPosition;
+    horizontalPosition: HorizontalPositionGlobalConfig;
     labelType:          LabelTypeConfig;
     orientation:        Orientation;
     preset:             Preset;
@@ -40,21 +54,22 @@ export interface FlyonUIVueAppGlobalConfig {
     size:               SizeWithout2XL;
 }
 
-// todo: temporary
-type ConfigurableProps<Props extends object> = Prettify<PickIfExists<Props, 'color' | 'preset' | 'shape' | 'size'>>;
+type ConfigurableProps<MaybeProps extends object> = Prettify<
+    PickIfExists<MaybeProps, 'color' | 'horizontalPosition' | 'preset' | 'shape' | 'size'>
+>;
 
 export interface ConfigurableComponentProps {
-    FoBadge:     ConfigurableProps<BadgeProps>;
-    FoButton:    ConfigurableProps<ButtonProps>;
+    FoBadge:     ConfigurableProps<BadgeProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
+    FoButton:    ConfigurableProps<ButtonProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     FoCheckbox:  ConfigurableProps<CheckboxProps>;
     FoIcon:      ConfigurableProps<IconProps>;
-    FoInputText: ConfigurableProps<InputTextProps> & { horizontalPosition: HorizontalPosition }; // todo: this must be renamed
+    FoInputText: ConfigurableProps<InputTextProps & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>>;
     FoLink:      ConfigurableProps<LinkProps>;
     FoLoading:   ConfigurableProps<LoadingProps>;
     FoMenu:      ConfigurableProps<MenuProps>;
     FoRadio:     ConfigurableProps<ButtonProps>; // todo: temporary
     FoSelect:    ConfigurableProps<SelectProps>;
-    FoTextarea:  ConfigurableProps<TextareaProps>;
+    FoTextarea:  ConfigurableProps<TextareaProps & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>>;
     FoTooltip:   ConfigurableProps<TooltipProps>;
 }
 

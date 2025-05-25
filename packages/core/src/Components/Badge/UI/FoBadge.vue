@@ -7,14 +7,14 @@
               sizeClass,
           ]"
     >
-        <FoIcon v-if="icon?.left"
-                :icon="icon.left"
+        <FoIcon v-if="badgeIcon?.left"
+                :icon="badgeIcon.left"
         />
 
         <slot v-if="isTextAllowedForShape(config, componentName, shape)" />
 
-        <FoIcon v-if="icon?.right"
-                :icon="icon.right"
+        <FoIcon v-if="badgeIcon?.right"
+                :icon="badgeIcon.right"
         />
 
         <FoIcon v-if="isDismissible"
@@ -27,6 +27,7 @@
 import type { BadgeProps }                 from '@/Components/Badge';
 import type { ComponentName }              from '@/Shared/Utils/Internal';
 import { FoIcon }                          from '@/Components/Icon';
+import { usePositionableIcon }             from '@/Components/Icon/Internal';
 import { useColor }                        from '@/Shared/UseColor/Internal';
 import { useFlyonUIVueAppConfig }          from '@/Shared/UseFlyonUIVueAppConfig';
 import { usePreset }                       from '@/Shared/UsePreset/Internal';
@@ -40,6 +41,12 @@ const props = withDefaults(defineProps<BadgeProps>(), {
 const componentName: ComponentName = 'FoBadge';
 
 const config = useFlyonUIVueAppConfig();
+
+const badgeIcon = usePositionableIcon(
+    config,
+    componentName,
+    () => props.icon,
+);
 
 const [
     colorClass,

@@ -1,83 +1,83 @@
 <template>
-    <FoIconButton icon="tabler:headphones"
-                  shape="square"
+    <FoButton icon="tabler:headphones"
+              shape="square"
     />
 
-    <FoIconButton color="primary"
-                  icon="tabler:star"
-                  shape="square"
+    <FoButton color="primary"
+              icon="tabler:star"
+              shape="square"
     />
 
-    <FoIconButton color="secondary"
-                  icon="tabler:sun"
-                  shape="square"
+    <FoButton color="secondary"
+              icon="tabler:sun"
+              shape="square"
     />
 
-    <FoIconButton color="accent"
-                  icon="tabler:moon"
-                  shape="square"
+    <FoButton color="accent"
+              icon="tabler:moon"
+              shape="square"
     />
 
-    <FoIconButton color="info"
-                  icon="tabler:folder"
-                  shape="square"
+    <FoButton color="info"
+              icon="tabler:folder"
+              shape="square"
     />
 
-    <FoIconButton color="success"
-                  icon="tabler:check"
-                  shape="square"
+    <FoButton color="success"
+              icon="tabler:check"
+              shape="square"
     />
 
-    <FoIconButton color="warning"
-                  icon="tabler:cloud"
-                  shape="square"
+    <FoButton color="warning"
+              icon="tabler:cloud"
+              shape="square"
     />
 
-    <FoIconButton color="error"
-                  icon="tabler:clock"
-                  shape="square"
+    <FoButton color="error"
+              icon="tabler:clock"
+              shape="square"
     />
 
-    <FoIconButton icon="tabler:headphones"
-                  shape="circle"
+    <FoButton icon="tabler:headphones"
+              shape="circle"
     />
 
-    <FoIconButton color="primary"
-                  icon="tabler:star"
-                  shape="circle"
+    <FoButton color="primary"
+              icon="tabler:star"
+              shape="circle"
     />
 
-    <FoIconButton color="secondary"
-                  icon="tabler:sun"
-                  shape="circle"
+    <FoButton color="secondary"
+              icon="tabler:sun"
+              shape="circle"
     />
 
-    <FoIconButton color="accent"
-                  icon="tabler:moon"
-                  shape="circle"
+    <FoButton color="accent"
+              icon="tabler:moon"
+              shape="circle"
     />
 
-    <FoIconButton color="info"
-                  icon="tabler:folder"
-                  shape="circle"
+    <FoButton color="info"
+              icon="tabler:folder"
+              shape="circle"
     />
 
-    <FoIconButton color="success"
-                  icon="tabler:check"
-                  shape="circle"
+    <FoButton color="success"
+              icon="tabler:check"
+              shape="circle"
     />
 
-    <FoIconButton color="warning"
-                  icon="tabler:cloud"
-                  shape="circle"
+    <FoButton color="warning"
+              icon="tabler:cloud"
+              shape="circle"
     />
 
-    <FoIconButton color="error"
-                  icon="tabler:clock"
-                  shape="circle"
+    <FoButton color="error"
+              icon="tabler:clock"
+              shape="circle"
     />
 </template>
 
 <script setup lang="ts">
-import { FoIconButton } from 'flyonui-vue';
+import { FoButton   } from 'flyonui-vue';
 </script>

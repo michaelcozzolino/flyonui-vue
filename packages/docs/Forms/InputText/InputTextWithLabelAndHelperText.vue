@@ -2,7 +2,7 @@
     <FoInputText v-model="input"
                  :label="{ text: 'Full Name' }"
                  placeholder="John Doe"
-                 :helper-text="{ text: 'Please write your full name' }"
+                 helper-text="Please write your full name"
     />
 
     <FoInputText v-model="input"
