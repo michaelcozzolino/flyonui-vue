@@ -17,7 +17,7 @@
         <slot name="prepend">
             <FoIcon v-if="buttonIcon?.left"
                     :icon="buttonIcon.left"
-                    :size="size"
+                    :size="iconSize"
             />
         </slot>
 
@@ -26,7 +26,7 @@
         <slot name="append">
             <FoIcon v-if="buttonIcon?.right"
                     :icon="buttonIcon.right"
-                    :size="size"
+                    :size="iconSize"
             />
         </slot>
     </component>
@@ -45,7 +45,7 @@ import { useGlass }                          from '@/Shared/UseGlass/Internal';
 import { usePreset }                         from '@/Shared/UsePreset/Internal';
 import { useResponsitivity }                 from '@/Shared/UseResponsitivity/Internal';
 import { isTextAllowedForShape, useShape }   from '@/Shared/UseShape/Internal';
-import { useSize }                           from '@/Shared/UseSize/Internal';
+import { getSize, useSize }                  from '@/Shared/UseSize/Internal';
 import { useState }                          from '@/Shared/UseState/Internal';
 import { computed, inject }                  from 'vue';
 import { RouterLink }                        from 'vue-router';
@@ -92,6 +92,8 @@ const [
     useGlass(() => props.withGlass),
     useResponsitivity(componentName, () => props.isResponsive),
 ];
+
+const iconSize = getSize(config, componentName, () => props.size);
 
 const stateClass = computed(() => {
     return [

@@ -4,17 +4,23 @@ import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { useElementClass }                         from '@/Shared/UseClass/Internal';
 import { computed, toValue }                       from 'vue';
 
+export function getSize(
+    config: Ref<FlyonUIVueAppDefaultConfig>,
+    componentName: MaybeRefOrGetter<SizableComponentName>,
+    size: MaybeRefOrGetter<Size | undefined>,
+): ComputedRef<Size> {
+    return computed(() => {
+        const { components, global } = config.value;
+
+        return components?.[toValue(componentName)]?.size ?? toValue(size) ?? global.size;
+    });
+}
+
 export function useSize(
     config: Ref<FlyonUIVueAppDefaultConfig>,
     componentName: MaybeRefOrGetter<SizableComponentName>,
     size: MaybeRefOrGetter<Size | undefined>,
 ): ComputedRef<string> {
-    const _size = computed(() => {
-        const { components, global } = config.value;
-
-        return components?.[toValue(componentName)]?.size ?? toValue(size) ?? global.size;
-    });
-
     return useElementClass<SizableComponentName, Size>(
         componentName,
         {
@@ -82,6 +88,6 @@ export function useSize(
                 extraLarge: 'max-w-xl',
             },
         },
-        _size,
+        getSize(config, componentName, size),
     );
 }
