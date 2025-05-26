@@ -56,6 +56,13 @@ function getSidebar(): DefaultTheme.SidebarItem[] {
             text:  'Vue Components',
             items: [
                 {
+                    text:  'Customisation',
+                    base:  '/customisation/',
+                    items: [
+                        { text: 'Icons', link: 'icons' },
+                    ],
+                },
+                {
                     text:  'Content',
                     base:  '/content/',
                     items: [

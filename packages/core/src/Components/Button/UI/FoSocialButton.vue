@@ -9,7 +9,6 @@
 
 <script setup lang="ts">
 import type { Social, SocialButtonProps } from '@/Components/Button';
-import type { IconType }                  from '@/Components/Icon/Types/Icon';
 import type { Preset }                    from '@/Shared/UsePreset';
 import { FoButton }                       from '@/Components/Button';
 import { computed }                       from 'vue';
@@ -18,7 +17,7 @@ const props = withDefaults(defineProps<SocialButtonProps>(), {
     preset: 'solid',
 });
 
-const icon = computed((): IconType => {
+const icon = computed((): string => {
     const icons: Record<Social, string> = {
         Facebook: 'tabler:brand-facebook',
         Twitter:  'tabler:brand-x',

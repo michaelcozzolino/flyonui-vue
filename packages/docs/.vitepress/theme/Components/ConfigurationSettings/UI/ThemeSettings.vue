@@ -9,15 +9,11 @@
                 class="text-base-content"
         >
             <template #on>
-                <FoIcon icon="fluent:text-direction-horizontal-ltr-20-regular"
-                        size="doubleExtraLarge"
-                />
+                <FoIcon icon="fluent:text-direction-horizontal-ltr-20-regular" />
             </template>
 
             <template #off>
-                <FoIcon icon="fluent:text-direction-horizontal-rtl-20-regular"
-                        size="doubleExtraLarge"
-                />
+                <FoIcon icon="fluent:text-direction-horizontal-rtl-20-regular" />
             </template>
         </FoSwap>
     </div>

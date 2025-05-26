@@ -1,4 +1,3 @@
-import type { IconType }    from '@/Components/Icon';
 import type { To }          from '@/Components/Link';
 import type { Orientable }  from '@/Shared/UseOrientation';
 import type { Size }        from '@/Shared/UseSize';
@@ -15,7 +14,7 @@ export interface MenuProps extends MenuTextProps, Orientable {
 }
 
 export interface MenuItem extends Disableable {
-    icon?: IconType;
+    icon?: string;
     text:  string;
     to?:   To;
 }

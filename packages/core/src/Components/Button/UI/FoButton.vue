@@ -17,6 +17,7 @@
         <slot name="prepend">
             <FoIcon v-if="buttonIcon?.left"
                     :icon="buttonIcon.left"
+                    :size="size"
             />
         </slot>
 
@@ -25,6 +26,7 @@
         <slot name="append">
             <FoIcon v-if="buttonIcon?.right"
                     :icon="buttonIcon.right"
+                    :size="size"
             />
         </slot>
     </component>

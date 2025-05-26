@@ -20,11 +20,11 @@
     />
 
     <FoIcon icon="mdi:account-child"
-            size="extralarge"
+            size="extraLarge"
     />
 
     <FoIcon icon="mdi:account-child"
-            size="doubleExtralarge"
+            size="doubleExtraLarge"
     />
 
     <FoIcon icon="mdi:account-child"
