@@ -14,24 +14,21 @@
     ],
     "exports": {
         ".": {
-            "types": "./dist-vue/src/index.d.ts",
+            "types": "./dist-vue/index.d.ts",
             "import": "./dist-vue/flyonui-vue.js",
-            "require": "./dist-vue/flyonui-vue.umd.cjs"
+            "require": "./dist-vue/flyonui-vue.umd.cjs",
+            "default": "./dist-vue/index.d.ts"
         },
         "./ce": {
-            "types": "./dist-ce.vue/src/index.d.ts",
+            "types": "./dist-ce.vue/index.d.ts",
             "import": "./dist-ce.vue/flyonui-vue.js",
             "require": "./dist-ce.vue/flyonui-vue.umd.cjs"
         },
         "./*.css": "./dist-vue/*.css"
     },
-    "main": "./dist-vue/flyonui-vue.umd.cjs",
-    "module": "./dist-vue/flyonui-vue.js",
-    "types": "./dist-vue/src/index.d.ts",
     "files": [
         "dist-vue",
-        "dist-ce.vue",
-        "src"
+        "dist-ce.vue"
     ],
     "scripts": {
         "build": "yarn build:vue && yarn build:ce.vue",

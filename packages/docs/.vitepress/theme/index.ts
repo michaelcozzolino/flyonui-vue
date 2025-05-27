@@ -10,6 +10,7 @@ import SwapDocs                                 from '@/Components/Swap/SwapDocs
 import HeadingDocs                              from '@/Content/Heading/HeadingDocs.vue';
 import LinkDocs                                 from '@/Content/Link/LinkDocs.vue';
 import MaskDocs                                 from '@/Content/Mask/MaskDocs.vue';
+import IconsDocs                                from '@/Customisation/Icons/IconsDocs.vue';
 import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
 import InputTextDocs                            from '@/Forms/InputText/InputTextDocs.vue';
@@ -21,9 +22,9 @@ import NavbarDocs                               from '@/Navigations/Navbar/Navba
 import PopoverDocs                              from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                              from '@/Overlays/Tooltip/TooltipDocs.vue';
 import Playground                               from '@/Playground/Playground.vue';
-import { FoSelectThemeController, vMask }       from 'flyonui-vue';
 
-import DefaultTheme from 'vitepress/theme';
+import { FoSelectThemeController, vMask } from 'flyonui-vue';
+import DefaultTheme                       from 'vitepress/theme';
 import './index.css';
 
 export default {
@@ -31,12 +32,32 @@ export default {
     enhanceApp({ app }) {
         app.directive('mask', vMask());
 
+        // const createFlyonUIVueAppOptions: FlyonUIVueAppConfig = {
+        //     global: {
+        //         horizontalPosition: {
+        //             icon:       'left',
+        //             helperText: 'right',
+        //         },
+        //     },
+        //     components: {
+        //         FoInputText: {
+        //             horizontalPosition: {
+        //                 helperText: 'left',
+        //                 icon:       'left',
+        //             },
+        //         },
+        //     },
+        // };
+
+        // app.use(createFlyonUIVueApp, createFlyonUIVueAppOptions);
+
         registerDocComponents(app, [
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
             { name: 'InputTextDocs', instance: InputTextDocs },
+            { name: 'IconsDocs', instance: IconsDocs },
             { name: 'JoinDocs', instance: JoinDocs },
             { name: 'LoadingDocs', instance: LoadingDocs },
             { name: 'ListGroupDocs', instance: ListGroupDocs },

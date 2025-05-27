@@ -15,7 +15,7 @@ import type { Direction }                                         from '@/Shared
 import type { Orientation }                                       from '@/Shared/UseOrientation';
 import type { Preset }                                            from '@/Shared/UsePreset';
 import type { Shape }                                             from '@/Shared/UseShape';
-import type { SizeWithout2XL }                                    from '@/Shared/UseSize';
+import type { Size }                                              from '@/Shared/UseSize';
 import type { HorizontalPosition }                                from '@/Shared/Utils';
 import type { ConfigurableComponentName, PickIfExists, Prettify } from '@/Shared/Utils/Internal';
 
@@ -51,7 +51,7 @@ export interface FlyonUIVueAppGlobalConfig {
     orientation:        Orientation;
     preset:             Preset;
     shape:              ShapeConfig;
-    size:               SizeWithout2XL;
+    size:               Size;
 }
 
 type ConfigurableProps<MaybeProps extends object> = Prettify<

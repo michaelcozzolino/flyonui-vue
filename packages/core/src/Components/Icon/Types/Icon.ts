@@ -1,27 +1,36 @@
-import type { Size }               from '@/Shared/UseSize';
+import type { IconSize }           from '@/Shared/UseSize';
 import type { HorizontalPosition } from '@/Shared/Utils';
 import type { ComponentName }      from '@/Shared/Utils/Internal';
-import type { IconifyIcon }        from '@iconify/vue';
 import type { Component }          from 'vue';
 
 export type PositionableIconComponentName = Extract<ComponentName, 'FoBadge' | 'FoButton' | 'FoInputText' | 'FoTextarea'>;
 
-// The Component type can be used if you have a custom icon that is not an iconify one, such as a custom svg or component.
-export type IconType = IconifyIcon | string | Component;
+export type IconType = string | Component;
 
-export type PositionableIcon = Partial<Record<HorizontalPosition, IconType>>;
+/**
+ * This does not need to be IconType, because it is mainly used by components using FoIcon, such as FoButton, FoBadge
+ * and these already have slots to enter custom content instead of the icon directly
+ */
+export type PositionableIcon = Partial<Record<HorizontalPosition, string>>;
 
-export type ConfigurableIcon = IconType | PositionableIcon;
+export type ConfigurableIcon = string | PositionableIcon;
 
-export interface IconProps {
-    icon:  IconType;
+export interface Dimension2D {
+    height: number;
+    width:  number;
+}
+
+export type IconProps = {
+    icon:  string;
     /**
-     * todo: must be improved, as it is too small
      * The size of the icon that will be applied only to an iconify icon.
      * If the icon is a custom component you should define the size in that component itself.
      */
-    size?: Size;
-}
+    size?: IconSize | Dimension2D;
+} | {
+    // It can be used if you have a custom icon that is not an iconify one, such as a custom svg or component.
+    icon: Component;
+};
 
 export interface WithConfigurableIcon {
     icon?: ConfigurableIcon;

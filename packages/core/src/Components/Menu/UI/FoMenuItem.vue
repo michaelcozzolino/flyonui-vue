@@ -12,7 +12,7 @@
             >
                 <FoIcon v-if="item.icon !== undefined"
                         :icon="item.icon"
-                        size="extraLarge"
+                        size="small"
                 />
 
                 <template v-if="!menuTextProps.hideText && !menuTextProps.textAsTooltip">

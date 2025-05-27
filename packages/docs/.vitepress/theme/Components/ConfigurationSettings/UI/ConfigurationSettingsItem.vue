@@ -3,7 +3,6 @@
         <div class="flex items-center">
             <FoIcon v-if="icon"
                     :icon="icon"
-                    size="doubleExtraLarge"
             />
 
             <div class="flex flex-wrap gap-2">
