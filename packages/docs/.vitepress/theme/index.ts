@@ -23,8 +23,8 @@ import PopoverDocs                              from '@/Overlays/Popover/Popover
 import TooltipDocs                              from '@/Overlays/Tooltip/TooltipDocs.vue';
 import Playground                               from '@/Playground/Playground.vue';
 
-import { FoSelectThemeController, vMask } from 'flyonui-vue';
-import DefaultTheme                       from 'vitepress/theme';
+import { createFlyonUIVueApp, FoSelectThemeController, vMask } from 'flyonui-vue';
+import DefaultTheme                                            from 'vitepress/theme';
 import './index.css';
 
 export default {
@@ -49,7 +49,7 @@ export default {
         //     },
         // };
 
-        // app.use(createFlyonUIVueApp, createFlyonUIVueAppOptions);
+        app.use(createFlyonUIVueApp, {});
 
         registerDocComponents(app, [
             { name: 'LinkDocs', instance: LinkDocs },

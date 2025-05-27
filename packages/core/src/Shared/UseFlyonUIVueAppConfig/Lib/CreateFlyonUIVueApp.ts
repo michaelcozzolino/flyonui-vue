@@ -1,8 +1,8 @@
 import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig } from '@/Shared/UseFlyonUIVueAppConfig';
 import type { App, FunctionPlugin }                             from 'vue';
 import { useFlyonUIVueAppConfigInjectionKey }                   from '@/Shared/UseFlyonUIVueAppConfig';
+import { useStorage }                                           from '@vueuse/core';
 import deepMerge                                                from 'deepmerge';
-import { ref }                                                  from 'vue';
 
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     global: {
@@ -25,8 +25,15 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
     const global     = deepMerge(flyonUIVueAppDefaultConfig.global, config.global ?? {});
     const components = deepMerge(flyonUIVueAppDefaultConfig.components ?? {}, config.components ?? {});
 
+    const data = useStorage<FlyonUIVueAppDefaultConfig>(
+        'flyonui-vue-config',
+        { global, components },
+        localStorage,
+        { mergeDefaults: true },
+    );
+
     app.provide(
         useFlyonUIVueAppConfigInjectionKey,
-        ref<FlyonUIVueAppDefaultConfig>({ global, components }),
+        data,
     );
 };
