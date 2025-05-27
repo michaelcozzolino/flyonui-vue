@@ -3,8 +3,23 @@ import type { InjectionKey, Ref }          from 'vue';
 import { flyonUIVueAppDefaultConfig }      from '@/Shared/UseFlyonUIVueAppConfig';
 import { inject, ref }                     from 'vue';
 
-export const useFlyonUIVueAppConfigInjectionKey: InjectionKey<Ref<FlyonUIVueAppDefaultConfig>> = Symbol('Create FlyonUI Vue App');
+interface FlyonUIVueAppInjectedConfig {
+    config:      Ref<FlyonUIVueAppDefaultConfig>;
+    resetConfig: () => void;
+}
 
-export function useFlyonUIVueAppConfig(): Ref<FlyonUIVueAppDefaultConfig> {
-    return inject(useFlyonUIVueAppConfigInjectionKey, ref({ ...flyonUIVueAppDefaultConfig }));
+export const useFlyonUIVueAppConfigInjectionKey: InjectionKey<FlyonUIVueAppInjectedConfig> = Symbol('Create FlyonUI Vue App');
+
+export function useFlyonUIVueAppConfig(): FlyonUIVueAppInjectedConfig {
+    const defaultConfig = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
+
+    const defaultValue: FlyonUIVueAppInjectedConfig = {
+        config:      defaultConfig,
+        resetConfig: () => defaultConfig.value = flyonUIVueAppDefaultConfig,
+    };
+
+    return inject(
+        useFlyonUIVueAppConfigInjectionKey,
+        defaultValue,
+    );
 }

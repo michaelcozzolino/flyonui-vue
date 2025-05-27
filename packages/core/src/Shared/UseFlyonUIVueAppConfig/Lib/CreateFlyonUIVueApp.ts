@@ -21,19 +21,25 @@ export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     },
 };
 
-export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: App, config: FlyonUIVueAppConfig) => {
-    const global     = deepMerge(flyonUIVueAppDefaultConfig.global, config.global ?? {});
-    const components = deepMerge(flyonUIVueAppDefaultConfig.components ?? {}, config.components ?? {});
+export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: App, userConfig: FlyonUIVueAppConfig) => {
+    const global     = deepMerge(flyonUIVueAppDefaultConfig.global, userConfig.global ?? {});
+    const components = deepMerge(flyonUIVueAppDefaultConfig.components ?? {}, userConfig.components ?? {});
 
-    const data = useStorage<FlyonUIVueAppDefaultConfig>(
+    const initialConfig = { global, components };
+
+    const config = useStorage<FlyonUIVueAppDefaultConfig>(
         'flyonui-vue-config',
-        { global, components },
+        initialConfig,
         localStorage,
         { mergeDefaults: true },
     );
 
+    const resetConfig = (): void => {
+        config.value = initialConfig;
+    };
+
     app.provide(
         useFlyonUIVueAppConfigInjectionKey,
-        data,
+        { config, resetConfig },
     );
 };

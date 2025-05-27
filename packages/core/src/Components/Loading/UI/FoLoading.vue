@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<LoadingProps>(), {
 
 const componentName: ComponentName = 'FoLoading';
 
-const config = useFlyonUIVueAppConfig();
+const { config } = useFlyonUIVueAppConfig();
 
 const animationClass = computed(() => {
     const icons: Record<Animation, string> = {

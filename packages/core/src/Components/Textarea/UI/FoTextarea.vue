@@ -83,7 +83,7 @@ const props = withDefaults(defineProps<TextareaProps>(), {
 const id                           = useId();
 const componentName: ComponentName = 'FoTextarea';
 
-const config = useFlyonUIVueAppConfig();
+const { config } = useFlyonUIVueAppConfig();
 
 const input = defineModel<string>({ required: true });
 

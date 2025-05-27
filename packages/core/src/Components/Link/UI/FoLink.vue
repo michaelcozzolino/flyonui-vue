@@ -20,7 +20,7 @@ import { computed, inject }                    from 'vue';
 
 const props = defineProps<LinkProps>();
 
-const config = useFlyonUIVueAppConfig();
+const { config } = useFlyonUIVueAppConfig();
 
 const isInMenuItem = inject(isInMenuItemInjectionKey, false);
 

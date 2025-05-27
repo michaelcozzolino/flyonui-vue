@@ -56,7 +56,7 @@ defineSlots<{
     notLoading?: () => VNode[];
 }>();
 
-const config = useFlyonUIVueAppConfig();
+const { config } = useFlyonUIVueAppConfig();
 
 const loadingIcon = computed((): Partial<Record<HorizontalPosition, LoadingProps>> => {
     const { position, ...loadingProps } = props.icon;
