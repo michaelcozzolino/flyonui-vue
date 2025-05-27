@@ -1,33 +1,59 @@
 <template>
     <component :is="icon"
-               v-if="isIconTypeComponent(icon)"
-               class="fo-icon"
+               v-if="isComponentIcon(icon)"
+               :class="iconClass"
     />
 
-    <span v-else
-          class="fo-icon"
-          :class="sizeClass"
+    <span v-else-if="sizeClass"
+          :class="[iconClass, sizeClass]"
     >
-        <Icon :icon="icon" />
+        <Icon :icon="icon"
+              :height="sizeClass?.height"
+              :width="sizeClass?.width"
+        />
     </span>
 </template>
 
 <script setup lang="ts">
-import type { IconProps, IconType } from '@/Components/Icon';
-import type { Component }           from 'vue';
-import { useFlyonUIVueAppConfig }   from '@/Shared/UseFlyonUIVueAppConfig';
-import { useSize }                  from '@/Shared/UseSize/Internal';
-import { Icon }                     from '@iconify/vue';
+import type { Dimension2D, IconProps, IconType } from '@/Components/Icon';
+import type { IconSize }                         from '@/Shared';
+import type { Component }                        from 'vue';
+import { Icon }                                  from '@iconify/vue';
+import { computed }                              from 'vue';
 
 const props = defineProps<IconProps>();
 
-const config = useFlyonUIVueAppConfig();
+const [
+    iconClass,
+    sizeClass,
+] = [
+    computed(() => 'fo-icon'),
+    computed((): Dimension2D | undefined => {
+        if ('size' in props === false) {
+            return undefined;
+        }
 
-const sizeClass = useSize(config, 'FoIcon', () => props.size);
+        const size = props.size;
 
-function isIconTypeComponent(icon?: IconType): icon is Component {
-    return icon !== undefined
-        && typeof icon !== 'string'
-        && !('body' in icon); // The last condition checks whether the icon is IconifyIcon
+        if (typeof size === 'object') {
+            return size;
+        }
+
+        const sizes: Record<IconSize, Dimension2D> = {
+            doubleExtraSmall: { height: 12, width: 12 },
+            extraSmall:       { height: 16, width: 16 },
+            small:            { height: 20, width: 20 },
+            medium:           { height: 24, width: 24 },
+            large:            { height: 32, width: 32 },
+            extraLarge:       { height: 48, width: 48 },
+            doubleExtraLarge: { height: 96, width: 96 },
+        };
+
+        return sizes[size ?? 'medium'];
+    }),
+];
+
+function isComponentIcon(icon: IconType): icon is Component {
+    return typeof icon !== 'string';
 }
 </script>

@@ -1,7 +1,17 @@
 <template>
-    <FoButton v-bind="props"
-              :icon="loadingIcon"
-    >
+    <FoButton v-bind="reactiveOmit(props, 'icon')">
+        <template v-if="loadingIcon.left !== undefined"
+                  #prepend
+        >
+            <FoLoading v-bind="loadingIcon.left" />
+        </template>
+
+        <template v-if="loadingIcon.right !== undefined"
+                  #append
+        >
+            <FoLoading v-bind="loadingIcon.right" />
+        </template>
+
         <slot v-if="$slots.loading && isLoading"
               name="loading"
         />
@@ -14,14 +24,14 @@
 
 <script setup lang="ts">
 import type { ButtonProps }        from '@/Components/Button/Types/Button';
-import type { PositionableIcon }   from '@/Components/Icon/Types/Icon';
 import type { LoadingProps }       from '@/Components/Loading/Types/Loading';
 import type { HorizontalPosition } from '@/Shared/Utils';
 import type { VNode }              from 'vue';
 import { FoButton }                from '@/Components/Button';
 import { FoLoading }               from '@/Components/Loading';
 import { useFlyonUIVueAppConfig }  from '@/Shared/UseFlyonUIVueAppConfig';
-import { computed, h  }            from 'vue';
+import { reactiveOmit }            from '@vueuse/core';
+import { computed }                from 'vue';
 
 interface Props extends Omit<ButtonProps, 'icon'> {
     isLoading?: boolean;
@@ -48,10 +58,10 @@ defineSlots<{
 
 const config = useFlyonUIVueAppConfig();
 
-const loadingIcon = computed((): PositionableIcon => {
+const loadingIcon = computed((): Partial<Record<HorizontalPosition, LoadingProps>> => {
     const { position, ...loadingProps } = props.icon;
 
-    const icon = props.isLoading ? h(FoLoading, loadingProps) : '';
+    const icon = props.isLoading ? loadingProps : undefined;
 
     if (position === undefined) {
         const [_position, globalPosition] = [
