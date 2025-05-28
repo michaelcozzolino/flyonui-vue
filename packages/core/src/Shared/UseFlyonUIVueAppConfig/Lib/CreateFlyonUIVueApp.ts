@@ -27,10 +27,14 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
 
     const initialConfig = { global, components };
 
+    if (globalThis.localStorage === undefined) {
+        return;
+    }
+
     const config = useStorage<FlyonUIVueAppDefaultConfig>(
         'flyonui-vue-config',
         initialConfig,
-        localStorage,
+        globalThis.localStorage,
         { mergeDefaults: true },
     );
 
