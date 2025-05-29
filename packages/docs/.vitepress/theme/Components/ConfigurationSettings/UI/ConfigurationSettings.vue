@@ -68,8 +68,11 @@ import SizeSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/SizeSettings.vue';
 import ThemeSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ThemeSettings.vue';
-import { flyonUIVueAppDefaultConfig, FoListGroup, useFlyonUIVueAppConfigInjectionKey } from 'flyonui-vue';
-import { inject, ref }                                                                 from 'vue';
+import {
+    FoListGroup,
+    useFlyonUIVueAppConfig,
+} from 'flyonui-vue';
+import { ref } from 'vue';
 
 interface Props {
     themeStorageKey: string;
@@ -77,7 +80,7 @@ interface Props {
 
 defineProps<Props>();
 
-const config = inject(useFlyonUIVueAppConfigInjectionKey, ref(flyonUIVueAppDefaultConfig));
+const { config } = useFlyonUIVueAppConfig();
 
 const showGlobalSettings = ref<boolean>(true);
 </script>

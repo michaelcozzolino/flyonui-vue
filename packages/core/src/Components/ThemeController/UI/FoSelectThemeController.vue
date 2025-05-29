@@ -23,8 +23,13 @@ const props = withDefaults(defineProps<ThemeControllerProps & Omit<SelectProps<F
             dark:      'dark',
             gourmet:   'gourmet',
             corporate: 'corporate',
+            ghibli:    'ghibli',
             luxury:    'luxury',
+            mintlify:  'mintlify',
+            shadcn:    'shadcn',
+            slack:     'slack',
             soft:      'soft',
+            valorant:  'valorant',
         };
     },
 });

@@ -41,11 +41,11 @@
 </template>
 
 <script setup lang="ts">
-import type { NavbarLink }   from 'flyonui-vue';
+import type { FlyonUITheme, NavbarLink } from 'flyonui-vue';
 import ConfigurationSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
 import { loadIcons }                                                            from '@iconify/vue';
-import { useColorMode, useLocalStorage }                                        from '@vueuse/core';
+import { useColorMode, useStorage }                                             from '@vueuse/core';
 import { FoButton, FoLink, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
 import { useRouter, withBase }                                                  from 'vitepress';
 import { computed, onMounted, ref }                                             from 'vue';
@@ -70,9 +70,19 @@ onMounted(() => {
      * The theme selector will be shown only on click, in order to allow the automatic theme selection from local
      * storage on first load, it must be fetched and set according to the user one.
      */
-    const initialValue = useLocalStorage(themeStorageKey, 'dark');
-    const theme        = useColorMode({ initialValue, attribute: 'data-theme' });
-    theme.value = initialValue.value;
+    const initialValue = useStorage<FlyonUITheme>(
+        themeStorageKey,
+        'dark',
+        localStorage,
+        { mergeDefaults: true },
+    );
+
+    useColorMode({
+        initialValue,
+        attribute:     'data-theme',
+        mergeDefaults: true,
+        storageKey:    themeStorageKey,
+    });
 
     loadIcons([
         'radix-icons:dimensions',

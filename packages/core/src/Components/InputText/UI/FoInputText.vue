@@ -114,7 +114,7 @@ const slots = defineSlots<{
 const id                           = useId();
 const componentName: ComponentName = 'FoInputText';
 
-const config            = useFlyonUIVueAppConfig();
+const { config }        = useFlyonUIVueAppConfig();
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 
 const input = defineModel<string>({ required: true });

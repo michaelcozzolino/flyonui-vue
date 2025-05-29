@@ -1,8 +1,8 @@
 import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig } from '@/Shared/UseFlyonUIVueAppConfig';
 import type { App, FunctionPlugin }                             from 'vue';
 import { useFlyonUIVueAppConfigInjectionKey }                   from '@/Shared/UseFlyonUIVueAppConfig';
+import { useLocalStorage }                                      from '@vueuse/core';
 import deepMerge                                                from 'deepmerge';
-import { ref }                                                  from 'vue';
 
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     global: {
@@ -21,12 +21,25 @@ export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     },
 };
 
-export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: App, config: FlyonUIVueAppConfig) => {
-    const global     = deepMerge(flyonUIVueAppDefaultConfig.global, config.global ?? {});
-    const components = deepMerge(flyonUIVueAppDefaultConfig.components ?? {}, config.components ?? {});
+export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: App, userConfig: FlyonUIVueAppConfig) => {
+    const global     = deepMerge(flyonUIVueAppDefaultConfig.global, userConfig.global ?? {});
+    const components = deepMerge(flyonUIVueAppDefaultConfig.components ?? {}, userConfig.components ?? {});
+
+    // todo: remove when this will be merged https://github.com/vueuse/vueuse/pull/4784
+    const initialConfig = (): FlyonUIVueAppDefaultConfig => structuredClone({ global, components });
+
+    const config = useLocalStorage<FlyonUIVueAppDefaultConfig>(
+        'flyonui-vue-config',
+        initialConfig,
+        { mergeDefaults: true },
+    );
+
+    const resetConfig = (): void => {
+        config.value = initialConfig();
+    };
 
     app.provide(
         useFlyonUIVueAppConfigInjectionKey,
-        ref<FlyonUIVueAppDefaultConfig>({ global, components }),
+        { config, resetConfig },
     );
 };

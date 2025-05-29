@@ -57,7 +57,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 });
 
 const componentName: ComponentName = 'FoButton';
-const config                       = useFlyonUIVueAppConfig();
+const { config }                   = useFlyonUIVueAppConfig();
 
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 

@@ -41,7 +41,7 @@ const props = withDefaults(defineProps<TooltipProps>(), {
 
 const componentName: ComponentName = 'FoTooltip';
 
-const config = useFlyonUIVueAppConfig();
+const { config } = useFlyonUIVueAppConfig();
 
 const isPopover = inject(tooltipAsPopover, false);
 

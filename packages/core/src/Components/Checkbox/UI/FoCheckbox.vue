@@ -65,7 +65,7 @@ const props = withDefaults(defineProps<CheckboxProps>(), {
 
 const componentName: ComponentName = 'FoCheckbox';
 const id                           = useId();
-const config                       = useFlyonUIVueAppConfig();
+const { config }                   = useFlyonUIVueAppConfig();
 
 const isInCheckboxGroup            = inject(isInCheckboxGroupInjectionKey, false);
 

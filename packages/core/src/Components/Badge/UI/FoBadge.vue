@@ -40,7 +40,7 @@ const props = withDefaults(defineProps<BadgeProps>(), {
 
 const componentName: ComponentName = 'FoBadge';
 
-const config = useFlyonUIVueAppConfig();
+const { config } = useFlyonUIVueAppConfig();
 
 const badgeIcon = usePositionableIcon(
     config,

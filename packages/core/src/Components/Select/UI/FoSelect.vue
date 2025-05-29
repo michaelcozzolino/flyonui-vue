@@ -52,7 +52,7 @@ const selectedOption = defineModel<K | null>({ required: true });
 
 const componentName: ComponentName = 'FoSelect';
 
-const config = useFlyonUIVueAppConfig();
+const { config } = useFlyonUIVueAppConfig();
 
 const [
     floatingLabelClass,

@@ -7,12 +7,10 @@
                 @click.prevent="isCollapsed = !isCollapsed"
         >
             <FoIcon v-if="isCollapsed"
-                    class="size-4"
                     icon="tabler:menu-2"
             />
 
             <FoIcon v-else
-                    class="size-4"
                     icon="tabler:x"
             />
         </button>

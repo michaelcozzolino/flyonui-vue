@@ -29,7 +29,7 @@ provide(menuTextPropsInjectionKey, computed(() => (
 
 const componentName: ComponentName = 'FoMenu';
 
-const config = useFlyonUIVueAppConfig();
+const { config } = useFlyonUIVueAppConfig();
 
 const [
     orientationClass,
