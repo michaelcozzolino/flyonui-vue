@@ -20,7 +20,6 @@
                   icon="ix:hard-reset"
                   shape="circle"
                   size="small"
-                  :is-disabled="!canResetConfig"
                   @click.prevent="resetConfig()"
         />
     </FoListGroupItem>
@@ -28,14 +27,8 @@
 
 <script setup lang="ts">
 import { FoButton, FoIcon, FoListGroupItem, FoSwap, useFlyonUIVueAppConfig } from 'flyonui-vue';
-import { ref, watch }                                                        from 'vue';
 
 const show = defineModel<boolean>({ required: true });
 
-const { config, resetConfig } = useFlyonUIVueAppConfig();
-const canResetConfig          = ref<boolean>(false);
-
-watch(config, () => {
-    canResetConfig.value = true;
-}, { deep: true });
+const { resetConfig } = useFlyonUIVueAppConfig();
 </script>
