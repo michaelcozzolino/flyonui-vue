@@ -18,8 +18,8 @@ export function useOrientation(
                 vertical:   'join-vertical',
             },
             FoListGroup: {
-                horizontal: 'w-full divide-base-content/25 flex flex-col sm:flex-row sm:divide-x sm:divide-y-0 first:*:sm:rounded-s-md first:*:sm:rounded-tr-none last:*:sm:rounded-e-md last:*:sm:rounded-bl-none rtl:divide-x-reverse',
-                vertical:   '',
+                horizontal: 'flex w-full flex-col *:w-full max-sm:divide-y sm:flex-row sm:divide-x',
+                vertical:   '*:first:rounded-t-md *:last:rounded-b-md divide-y',
             },
             FoListGroupItem: {
                 horizontal: 'w-full',

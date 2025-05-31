@@ -27,7 +27,7 @@ const [
     iconClass,
     sizeClass,
 ] = [
-    computed(() => 'fo-icon'),
+    'fo-icon',
     computed((): Dimension2D | undefined => {
         if ('size' in props === false) {
             return undefined;

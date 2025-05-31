@@ -11,7 +11,7 @@
             <FoIcon v-if="inputIcon?.left"
                     class="text-base-content/80 my-auto shrink-0"
                     :icon="inputIcon.left"
-                    size="extraLarge"
+                    :size="iconSize"
             />
         </slot>
 
@@ -64,7 +64,7 @@
             <FoIcon v-if="inputIcon?.right"
                     class="text-base-content/80 my-auto ms-3 shrink-0"
                     :icon="inputIcon.right"
-                    size="extraLarge"
+                    :size="iconSize"
             />
         </slot>
 
@@ -80,6 +80,7 @@
 import type { InputTextProps }        from '@/Components/InputText';
 import type { InputLabel, LabelType } from '@/Components/Label';
 
+import type { IconSize }                           from '@/Shared';
 import type { ComponentName }                      from '@/Shared/Utils/Internal';
 import type { VNode }                              from 'vue';
 import { FoFragment }                              from '@/Components/Fragment/Internal';
@@ -118,6 +119,8 @@ const { config }        = useFlyonUIVueAppConfig();
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 
 const input = defineModel<string>({ required: true });
+
+const iconSize: IconSize = 'small';
 
 const inputIcon = usePositionableIcon(
     config,

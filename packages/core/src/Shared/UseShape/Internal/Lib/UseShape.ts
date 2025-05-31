@@ -26,9 +26,9 @@ export function useShape(
         {
             FoBadge: {
                 rounded: '',
-                circle:  'rounded-full size-6 p-0 ',
+                circle:  'rounded-full',
                 pilled:  'rounded-full',
-                square:  'size-6 p-0',
+                square:  '',
             },
             FoButton: {
                 rounded: '',
