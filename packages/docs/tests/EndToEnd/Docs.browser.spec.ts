@@ -16,6 +16,8 @@ test('docs preview screenshots snapshots', async ({ page }) => {
             for (const childChildItem of childItem.items ?? []) {
                 const categoryPath = childItem.base; // E.G: /content/
                 const itemName     = childChildItem.link;
+
+                // todo: check how to do it through github action
                 const url          = `http://localhost:5173/flyonui-vue${categoryPath}${itemName}`;
 
                 await page.goto(url);

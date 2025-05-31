@@ -12,7 +12,7 @@
         <FoIcon v-if="textareaIcon?.left"
                 :class="iconClass"
                 :icon="textareaIcon.left"
-                size="extraLarge"
+                :size="iconSize"
         />
 
         <component :is="hasIcon && defaultLabel?.type === 'floating' ? 'div' : FoFragment"
@@ -45,7 +45,7 @@
         <FoIcon v-if="textareaIcon?.right"
                 :class="iconClass"
                 :icon="textareaIcon.right"
-                size="extraLarge"
+                :size="iconSize"
         />
 
         <FoHelperText v-if="textareaHelperText !== undefined"
@@ -58,6 +58,7 @@
 
 <script setup lang="ts">
 import type { TextareaLabel, TextareaProps }       from '@/Components/Textarea';
+import type { IconSize }                           from '@/Shared';
 import type { ComponentName }                      from '@/Shared/Utils/Internal';
 import { FoFragment }                              from '@/Components/Fragment/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';
@@ -86,6 +87,8 @@ const componentName: ComponentName = 'FoTextarea';
 const { config } = useFlyonUIVueAppConfig();
 
 const input = defineModel<string>({ required: true });
+
+const iconSize: IconSize = 'small';
 
 const textareaIcon = usePositionableIcon(
     config,
