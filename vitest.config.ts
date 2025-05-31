@@ -1,5 +1,7 @@
-import path                                            from 'node:path';
-import { defineConfig, type TestProjectConfiguration } from 'vitest/config';
+import type { TestProjectConfiguration } from 'vitest/config';
+import path                              from 'node:path';
+import vue                               from '@vitejs/plugin-vue';
+import { defineConfig }                  from 'vitest/config';
 
 interface TestablePackage {
     name:               string;
@@ -38,10 +40,14 @@ const workspace: TestProjectConfiguration[] = testablePackages.map((testablePack
                 '@/tests': path.resolve(`packages/${name}/tests`),
             },
         },
+        plugins: [
+            vue(),
+        ],
         test: {
             name,
-            include:       [`packages/${name}/tests/**/*.ts`],
+            include:       [`packages/${name}/tests/**/*.spec.ts`],
             includeSource: [`packages/${name}/src/**/*.{{ts,vue}}`],
+            exclude:       [`packages/${name}/tests/EndToEnd/*.spec.ts`],
         },
     };
 });
