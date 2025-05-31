@@ -10,7 +10,7 @@ export default defineConfig({
             },
             {
                 find:        /^.*\/VPNavBar\.vue$/,
-                replacement: resolve(__dirname, '.vitepress/theme/Components/Navbar.vue'),
+                replacement: resolve(__dirname, '.vitepress/theme/Components/Navbar/UI/Navbar.vue'),
             },
         ],
         dedupe: ['vue'],

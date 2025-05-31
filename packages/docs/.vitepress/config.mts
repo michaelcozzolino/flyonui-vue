@@ -1,6 +1,6 @@
-import { getSidebarItems } from '@/.vitepress/theme/Shared/Config/Lib/getSidebarItems';
 import { kebabCase }       from 'change-case';
 import { defineConfig }    from 'vitepress';
+import { getSidebarItems } from './theme/Shared/Config/Lib/getSidebarItems';
 
 export default defineConfig({
     base:     '/flyonui-vue/',
