@@ -45,7 +45,7 @@ import { useGlass }                          from '@/Shared/UseGlass/Internal';
 import { usePreset }                         from '@/Shared/UsePreset/Internal';
 import { useResponsitivity }                 from '@/Shared/UseResponsitivity/Internal';
 import { isTextAllowedForShape, useShape }   from '@/Shared/UseShape/Internal';
-import { getSize, useSize }                  from '@/Shared/UseSize/Internal';
+import { useSize }                           from '@/Shared/UseSize/Internal';
 import { useState }                          from '@/Shared/UseState/Internal';
 import { computed, inject }                  from 'vue';
 import { RouterLink }                        from 'vue-router';
@@ -93,7 +93,7 @@ const [
     useResponsitivity(componentName, () => props.isResponsive),
 ];
 
-const iconSize = getSize(config, componentName, () => props.size);
+const iconSize = { width: 18, height: 18 };
 
 const stateClass = computed(() => {
     return [

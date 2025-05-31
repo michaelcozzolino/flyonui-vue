@@ -11,15 +11,11 @@
 
     <FoSwap v-model="isOn">
         <template #on>
-            <FoIcon icon="tabler:volume"
-                    size="extraLarge"
-            />
+            <FoIcon icon="tabler:volume" />
         </template>
 
         <template #off>
-            <FoIcon icon="tabler:volume-off"
-                    size="extraLarge"
-            />
+            <FoIcon icon="tabler:volume-off" />
         </template>
     </FoSwap>
 

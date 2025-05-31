@@ -1,45 +1,25 @@
 <template>
-    <FoButton icon="tabler:headphones"
-              shape="square"
-    />
-
     <FoButton color="primary"
               icon="tabler:star"
               shape="square"
     />
 
-    <FoButton color="secondary"
-              icon="tabler:sun"
+    <FoButton color="primary"
+              preset="soft"
+              icon="tabler:star"
               shape="square"
     />
 
-    <FoButton color="accent"
-              icon="tabler:moon"
+    <FoButton color="primary"
+              preset="outline"
+              icon="tabler:star"
               shape="square"
     />
 
-    <FoButton color="info"
-              icon="tabler:folder"
+    <FoButton color="primary"
+              preset="gradient"
+              icon="tabler:star"
               shape="square"
-    />
-
-    <FoButton color="success"
-              icon="tabler:check"
-              shape="square"
-    />
-
-    <FoButton color="warning"
-              icon="tabler:cloud"
-              shape="square"
-    />
-
-    <FoButton color="error"
-              icon="tabler:clock"
-              shape="square"
-    />
-
-    <FoButton icon="tabler:headphones"
-              shape="circle"
     />
 
     <FoButton color="primary"
@@ -47,33 +27,21 @@
               shape="circle"
     />
 
-    <FoButton color="secondary"
-              icon="tabler:sun"
+    <FoButton color="primary"
+              preset="soft"
+              icon="tabler:star"
               shape="circle"
     />
 
-    <FoButton color="accent"
-              icon="tabler:moon"
+    <FoButton color="primary"
+              preset="outline"
+              icon="tabler:star"
               shape="circle"
     />
 
-    <FoButton color="info"
-              icon="tabler:folder"
-              shape="circle"
-    />
-
-    <FoButton color="success"
-              icon="tabler:check"
-              shape="circle"
-    />
-
-    <FoButton color="warning"
-              icon="tabler:cloud"
-              shape="circle"
-    />
-
-    <FoButton color="error"
-              icon="tabler:clock"
+    <FoButton color="primary"
+              preset="gradient"
+              icon="tabler:star"
               shape="circle"
     />
 </template>

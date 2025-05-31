@@ -1,71 +1,84 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
+                 id="default"
                  :code="DefaultButtonRaw"
                  :component="DefaultButton"
     />
 
     <CodeSnippet v-else-if="section === 'soft'"
+                 id="soft"
                  :code="SoftButtonRaw"
                  :component="SoftButton"
     />
 
     <CodeSnippet v-else-if="section === 'outline'"
+                 id="outline"
                  :code="OutlineButtonRaw"
                  :component="OutlineButton"
     />
 
     <CodeSnippet v-else-if="section === 'dash'"
+                 id="dash"
                  :code="DashedButtonRaw"
                  :component="DashedButton"
     />
 
     <CodeSnippet v-else-if="section === 'text'"
+                 id="text"
                  :code="TextButtonRaw"
                  :component="TextButton"
     />
 
     <CodeSnippet v-else-if="section === 'gradient'"
+                 id="gradient"
                  :code="GradientButtonRaw"
                  :component="GradientButton"
     />
 
     <CodeSnippet v-else-if="section === 'pilled'"
+                 id="pilled"
                  :code="PilledButtonRaw"
                  :component="PilledButton"
     />
 
     <CodeSnippet v-else-if="section === 'state'"
+                 id="state"
                  :code="ButtonStateRaw"
                  :component="ButtonState"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
+                 id="size"
                  :code="ButtonSizeRaw"
                  :component="ButtonSize"
     />
 
     <CodeSnippet v-else-if="section === 'layout'"
+                 id="layout"
                  :code="ButtonLayoutRaw"
                  :component="ButtonLayout"
     />
 
     <CodeSnippet v-else-if="section === 'icon'"
+                 id="icon"
                  :code="IconButtonRaw"
                  :component="IconButton"
-                 :preview="{ columns: 8, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'icon-position'"
+                 id="icon-position"
                  :code="IconPositionButtonRaw"
                  :component="IconPositionButton"
     />
 
     <CodeSnippet v-else-if="section === 'social'"
+                 id="social"
                  :code="SocialButtonRaw"
                  :component="SocialButton"
     />
 
     <CodeSnippet v-else-if="section === 'social-shape'"
+                 id="social-shape"
                  :preview="{ columns: 4, rows: 3 }"
                  :code="SocialButtonShapeRaw"
                  :component="SocialButtonShape"
@@ -77,6 +90,7 @@
     />
 
     <CodeSnippet v-else-if="section === 'glass'"
+                 id="glass"
                  :code="GlassButtonRaw"
                  :component="GlassButton"
     />
@@ -84,7 +98,7 @@
 
 <script setup lang="ts">
 import type { Default }      from 'flyonui-vue';
-import CodeSnippet           from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet           from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import ButtonLayout          from '@/Components/Button/ButtonLayout.vue';
 import ButtonLayoutRaw       from '@/Components/Button/ButtonLayout.vue?raw';
 import ButtonSize            from '@/Components/Button/ButtonSize.vue';

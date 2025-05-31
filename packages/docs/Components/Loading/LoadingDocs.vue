@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import CodeSnippet         from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet         from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import LoadingAnimation    from '@/Components/Loading/LoadingAnimation.vue';
 import LoadingAnimationRaw from '@/Components/Loading/LoadingAnimation.vue?raw';
 import LoadingColor        from '@/Components/Loading/LoadingColor.vue';

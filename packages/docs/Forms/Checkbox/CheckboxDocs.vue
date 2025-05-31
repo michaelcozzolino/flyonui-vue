@@ -5,41 +5,49 @@
     />
 
     <CodeSnippet v-else-if="section === 'with-helper-text'"
+                 id="with-helper-text"
                  :code="CheckboxWithHelperTextRaw"
                  :component="CheckboxWithHelperText"
     />
 
     <CodeSnippet v-else-if="section === 'color'"
+                 id="color"
                  :code="CheckboxColorRaw"
                  :component="CheckboxColor"
     />
 
     <CodeSnippet v-else-if="section === 'with-custom-color'"
+                 id="with-custom-color"
                  :code="CheckboxWithCustomColorRaw"
                  :component="CheckboxWithCustomColor"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
+                 id="size"
                  :code="CheckboxSizeRaw"
                  :component="CheckboxSize"
     />
 
     <CodeSnippet v-else-if="section === 'validation-state'"
+                 id="validation-state"
                  :code="CheckboxValidationStateRaw"
                  :component="CheckboxValidationState"
     />
 
     <CodeSnippet v-else-if="section === 'state'"
+                 id="state"
                  :code="CheckboxStateRaw"
                  :component="CheckboxState"
     />
 
     <CodeSnippet v-else-if="section === 'inline-group'"
+                 id="inline-group"
                  :code="InlineCheckboxGroupRaw"
                  :component="InlineCheckboxGroup"
     />
 
     <CodeSnippet v-else-if="section === 'vertical-group'"
+                 id="vertical-group"
                  :code="VerticalCheckboxGroupRaw"
                  :component="VerticalCheckboxGroup"
     />
@@ -47,7 +55,7 @@
 
 <script setup lang="ts">
 import type { Default }           from 'flyonui-vue';
-import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import CheckboxColor              from '@/Forms/Checkbox/CheckboxColor.vue';
 import CheckboxColorRaw           from '@/Forms/Checkbox/CheckboxColor.vue?raw';
 import CheckboxSize               from '@/Forms/Checkbox/CheckboxSize.vue';

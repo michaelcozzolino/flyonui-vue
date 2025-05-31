@@ -1,46 +1,55 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
+                 id="default"
                  :code="DefaultListGroupRaw"
                  :component="DefaultListGroup"
     />
 
     <CodeSnippet v-else-if="section === 'with-icons'"
+                 id="with-icons"
                  :code="ListGroupWithIconsRaw"
                  :component="ListGroupWithIcons"
     />
 
     <CodeSnippet v-else-if="section === 'with-badges'"
+                 id="with-badges"
                  :code="ListGroupWithBadgesRaw"
                  :component="ListGroupWithBadges"
     />
 
     <CodeSnippet v-else-if="section === 'horizontal'"
+                 id="horizontal"
                  :code="HorizontalListGroupRaw"
                  :component="HorizontalListGroup"
     />
 
     <CodeSnippet v-else-if="section === 'flushed'"
+                 id="flushed"
                  :code="FlushedListGroupRaw"
                  :component="FlushedListGroup"
     />
 
     <CodeSnippet v-else-if="section === 'without-gutters'"
+                 id="without-gutters"
                  :code="ListGroupWithoutGuttersRaw"
                  :component="ListGroupWithoutGutters"
     />
 
     <CodeSnippet v-else-if="section === 'striped'"
+                 id="striped"
                  :code="StripedListGroupRaw"
                  :component="StripedListGroup"
     />
 
     <CodeSnippet v-else-if="section === 'with-checkbox'"
+                 id="with-checkbox"
                  :code="ListGroupWithCheckboxRaw"
                  :component="ListGroupWithCheckbox"
                  :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'invoice'"
+                 id="invoice"
                  :code="InvoiceListGroupRaw"
                  :component="InvoiceListGroup"
     />
@@ -48,7 +57,7 @@
 
 <script setup lang="ts">
 import type { Default }           from 'flyonui-vue';
-import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import DefaultListGroup           from '@/Components/ListGroup/DefaultListGroup.vue';
 import DefaultListGroupRaw        from '@/Components/ListGroup/DefaultListGroup.vue?raw';
 import FlushedListGroup           from '@/Components/ListGroup/FlushedListGroup.vue';

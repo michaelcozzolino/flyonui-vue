@@ -2,7 +2,7 @@
     <component :is="orientation === 'horizontal' ? 'div' : FoFragment"
                class="w-full"
     >
-        <ul class="divide-base-content/25 divide-y"
+        <ul class="divide-base-content/25"
             :class="[
                 orientationClass,
                 flushClass,
@@ -47,7 +47,7 @@ const [
     useClass(
         () => props.isFlushed,
         () => props.withoutGutters ? '*:py-3' : '',
-        'border-base-content/25 rounded-md border *:first:rounded-t-md *:last:rounded-b-md',
+        'border-base-content/25 rounded-md border',
     ),
     useClass(() => props.withoutGutters, '', '*:p-3'),
     useStripes(componentName, () => props.isStriped),

@@ -3,15 +3,11 @@
             animation="rotation"
     >
         <template #on>
-            <FoIcon icon="tabler:sun"
-                    size="extraLarge"
-            />
+            <FoIcon icon="tabler:sun" />
         </template>
 
         <template #off>
-            <FoIcon icon="tabler:moon"
-                    size="extraLarge"
-            />
+            <FoIcon icon="tabler:moon" />
         </template>
     </FoSwap>
 

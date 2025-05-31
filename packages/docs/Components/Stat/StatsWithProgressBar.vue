@@ -1,10 +1,10 @@
 <template>
     <FoStats :class="isSmallerOrEqualToSm && 'w-full'">
         <FoStat>
-            <div class="avatar placeholder">
+            <div class="avatar avatar-placeholder">
                 <div class="bg-success/20 text-success size-10 rounded-full">
                     <FoIcon icon="tabler:package"
-                            size="doubleExtraLarge"
+                            size="medium"
                     />
                 </div>
             </div>
@@ -27,10 +27,10 @@
 
     <FoStats :class="isSmallerOrEqualToSm && 'w-full'">
         <FoStat>
-            <div class="avatar placeholder">
+            <div class="avatar avatar-placeholder">
                 <div class="bg-warning/20 text-warning size-10 rounded-full">
                     <FoIcon icon="tabler:cash"
-                            size="doubleExtraLarge"
+                            size="medium"
                     />
                 </div>
             </div>
@@ -54,10 +54,10 @@
     <FoStats :class="isSmallerOrEqualToSm && 'w-full'">
         <FoStat>
             <!--            todo: avatar component -->
-            <div class="avatar placeholder">
+            <div class="avatar avatar-placeholder">
                 <div class="bg-error/20 text-error size-10 rounded-full">
                     <FoIcon icon="tabler:credit-card"
-                            size="doubleExtraLarge"
+                            size="medium"
                     />
                 </div>
             </div>
