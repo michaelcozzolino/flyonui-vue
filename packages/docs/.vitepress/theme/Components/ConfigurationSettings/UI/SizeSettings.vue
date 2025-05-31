@@ -15,6 +15,5 @@ import { FoButton }  from 'flyonui-vue';
 
 const selectedSize = defineModel<Size>({ required: true });
 
-// todo: check what to do with double extra large for icons
 const sizes: Size[] = ['extraSmall', 'small', 'medium', 'large', 'extraLarge'];
 </script>

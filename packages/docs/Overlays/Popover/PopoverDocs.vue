@@ -1,15 +1,18 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
+                 id="default"
                  :code="DefaultPopoverRaw"
                  :component="DefaultPopover"
     />
 
     <CodeSnippet v-if="section === 'color'"
+                 id="color"
                  :code="PopoverColorRaw"
                  :component="PopoverColor"
     />
 
     <CodeSnippet v-if="section === 'placement'"
+                 id="placement"
                  :code="PopoverPlacementRaw"
                  :component="PopoverPlacement"
     />
@@ -17,7 +20,7 @@
 
 <script setup lang="ts">
 import type { Default }    from 'flyonui-vue';
-import CodeSnippet         from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet         from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import DefaultPopover      from '@/Overlays/Popover/DefaultPopover.vue';
 import DefaultPopoverRaw   from '@/Overlays/Popover/DefaultPopover.vue?raw';
 import PopoverColor        from '@/Overlays/Popover/PopoverColor.vue';

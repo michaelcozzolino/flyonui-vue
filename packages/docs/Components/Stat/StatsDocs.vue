@@ -1,40 +1,48 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
+                 id="default"
                  :code="DefaultStatsRaw"
                  :component="DefaultStats"
     />
 
     <CodeSnippet v-else-if="section === 'with-avatar'"
+                 id="with-avatar"
                  :code="StatsWithAvatarRaw"
                  :component="StatsWithAvatar"
     />
 
     <CodeSnippet v-else-if="section === 'with-icons-and-image'"
+                 id="with-icons-and-image"
                  :code="StatsWithIconsAndImageRaw"
                  :component="StatsWithIconsAndImage"
     />
 
     <CodeSnippet v-else-if="section === 'centered-item'"
+                 id="centered-item"
                  :code="CenteredItemStatsRaw"
                  :component="CenteredItemStats"
     />
 
     <CodeSnippet v-else-if="section === 'vertical'"
+                 id="vertical"
                  :code="VerticalStatsRaw"
                  :component="VerticalStats"
     />
 
     <CodeSnippet v-else-if="section === 'with-progress-bar'"
+                 id="with-progress-bar"
                  :code="StatsWithProgressBarRaw"
                  :component="StatsWithProgressBar"
     />
 
     <CodeSnippet v-else-if="section === 'with-actions-button'"
+                 id="with-actions-button"
                  :code="StatsWithActionsButtonRaw"
                  :component="StatsWithActionsButton"
     />
 
     <CodeSnippet v-else-if="section === 'bordered'"
+                 id="bordered"
                  :code="BorderedStatsRaw"
                  :component="BorderedStats"
     />
@@ -42,7 +50,7 @@
 
 <script setup lang="ts">
 import type { Default }          from 'flyonui-vue';
-import CodeSnippet               from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet               from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import BorderedStats             from '@/Components/Stat/BorderedStats.vue';
 import BorderedStatsRaw          from '@/Components/Stat/BorderedStats.vue?raw';
 import CenteredItemStats         from '@/Components/Stat/CenteredItemStats.vue';

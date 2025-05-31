@@ -3,7 +3,7 @@
         <FoListGroupItem v-for="item in items"
                          :key="item.id"
         >
-            <FoIcon size="large"
+            <FoIcon size="small"
                     :icon="item.icon"
             />
 

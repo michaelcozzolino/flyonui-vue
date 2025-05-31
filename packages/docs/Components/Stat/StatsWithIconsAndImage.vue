@@ -5,7 +5,7 @@
         >
             <FoStatFigure>
                 <FoIcon :icon="websiteStat.icon"
-                        size="doubleExtraLarge"
+                        size="large"
                 />
             </FoStatFigure>
 

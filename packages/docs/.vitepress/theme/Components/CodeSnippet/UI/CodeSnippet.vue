@@ -1,7 +1,11 @@
 <template>
-    <div class="vp-raw">
+    <div :id="id"
+         data-test="code-snippet"
+         class="vp-raw"
+    >
         <section class="border-neutral/10 rounded-box flex flex-col gap-4 border p-3 sm:p-6 md:my-8">
             <div class="gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6"
+                 data-test="flyonui-vue-preview"
                  :class="previewGridClass"
             >
                 <component :is="component" />
@@ -19,10 +23,15 @@
 
 <script setup lang="ts">
 import type { Component }     from 'vue';
-import { VueCodeHighlighter } from '@/.vitepress/theme/Components/Lib/VueCodeHighlighter';
+import { VueCodeHighlighter } from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
 import { computed }           from 'vue';
 
 interface Props {
+    /**
+     * Used mainly as name of the screenshot preview for visual tests, In case it is undefined, it means that it
+     * is by purpose as not everything can be tested through screenshots, such as animations.
+     */
+    id?:      string;
     preview?: {
         columns: number;
         rows:    number;

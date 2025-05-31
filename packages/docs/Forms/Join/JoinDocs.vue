@@ -1,25 +1,30 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
+                 id="default"
                  :code="DefaultJoinRaw"
                  :component="DefaultJoin"
     />
 
     <CodeSnippet v-else-if="section === 'icon'"
+                 id="icon"
                  :code="JoinIconRaw"
                  :component="JoinIcon"
     />
 
     <CodeSnippet v-else-if="section === 'vertical'"
+                 id="vertical"
                  :code="VerticalJoinRaw"
                  :component="VerticalJoin"
     />
 
     <CodeSnippet v-else-if="section === 'responsive'"
+                 id="responsive"
                  :code="ResponsiveJoinRaw"
                  :component="ResponsiveJoin"
     />
 
     <CodeSnippet v-else-if="section === 'pilled'"
+                 id="pilled"
                  :code="PilledJoinRaw"
                  :component="PilledJoin"
     />
@@ -27,7 +32,7 @@
 
 <script setup lang="ts">
 import type { Default }  from 'flyonui-vue';
-import CodeSnippet       from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet       from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import DefaultJoin       from '@/Forms/Join/DefaultJoin.vue';
 import DefaultJoinRaw    from '@/Forms/Join/DefaultJoin.vue?raw';
 import JoinIcon          from '@/Forms/Join/JoinIcon.vue';

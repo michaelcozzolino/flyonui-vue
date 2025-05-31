@@ -1,15 +1,18 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
+                 id="default"
                  :code="DefaultSwapRaw"
                  :component="DefaultSwap"
     />
 
     <CodeSnippet v-if="section === 'rotation'"
+                 id="rotation"
                  :code="SwapRotationRaw"
                  :component="SwapRotation"
     />
 
     <CodeSnippet v-if="section === 'flip'"
+                 id="flip"
                  :code="SwapFlipRaw"
                  :component="SwapFlip"
     />
@@ -17,7 +20,7 @@
 
 <script setup lang="ts">
 import type { Default } from 'flyonui-vue';
-import CodeSnippet      from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet      from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 
 import DefaultSwap     from '@/Components/Swap/DefaultSwap.vue';
 import DefaultSwapRaw  from '@/Components/Swap/DefaultSwap.vue?raw';

@@ -1,6 +1,6 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
-import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/Lib/VueCodeHighlighter';
+import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
 import BadgeDocs                                from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                               from '@/Components/Button/ButtonDocs.vue';
 import ListGroupDocs                            from '@/Components/ListGroup/ListGroupDocs.vue';

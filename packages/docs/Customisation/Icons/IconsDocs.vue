@@ -5,6 +5,7 @@
     />
 
     <CodeSnippet v-else-if="section === 'custom'"
+                 id="custom"
                  :code="[
                      { title: 'Vue', code: CustomIconRaw },
                      { title: 'SvgIcon.vue', code: SvgIconRaw },
@@ -13,13 +14,14 @@
     />
 
     <CodeSnippet v-else-if="section === 'size'"
+                 id="size"
                  :code="IconSizeRaw"
                  :component="IconSize"
     />
 </template>
 
 <script setup lang="ts">
-import CodeSnippet    from '@/.vitepress/theme/Components/CodeSnippet.vue';
+import CodeSnippet    from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import CustomIcon     from '@/Customisation/Icons/CustomIcon.vue';
 import CustomIconRaw  from '@/Customisation/Icons/CustomIcon.vue?raw';
 import IconifyIcon    from '@/Customisation/Icons/IconifyIcon.vue';
