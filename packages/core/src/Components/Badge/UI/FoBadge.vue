@@ -5,16 +5,19 @@
               presetClass,
               shapeClass,
               sizeClass,
+              isTextAllowedForShape(config, componentName, shape) === false && 'size-6 p-0',
           ]"
     >
         <FoIcon v-if="badgeIcon?.left"
                 :icon="badgeIcon.left"
+                :size="iconSize"
         />
 
         <slot v-if="isTextAllowedForShape(config, componentName, shape)" />
 
         <FoIcon v-if="badgeIcon?.right"
                 :icon="badgeIcon.right"
+                :size="iconSize"
         />
 
         <FoIcon v-if="isDismissible"
@@ -47,6 +50,8 @@ const badgeIcon = usePositionableIcon(
     componentName,
     () => props.icon,
 );
+
+const iconSize = { width: 14, height: 14 };
 
 const [
     colorClass,
