@@ -64,6 +64,7 @@
         "@floating-ui/vue": "^1.1.6",
         "@vueuse/components": "^13.0.0",
         "@vueuse/core": "^13.0.0",
+        "@vueuse/head": "^2.0.0",
         "@vueuse/motion": "^3.0.3",
         "deepmerge": "^4.3.1"
     },

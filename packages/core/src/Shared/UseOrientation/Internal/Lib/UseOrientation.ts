@@ -10,7 +10,7 @@ export function useOrientation(
         componentName,
         {
             FoCheckboxGroup: {
-                horizontal: 'gap-4 horizontal-scrollbar',
+                horizontal: 'gap-4 overflow-x-auto',
                 vertical:   'flex-col gap-2',
             },
             FoJoin: {

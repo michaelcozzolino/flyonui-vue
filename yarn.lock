@@ -2540,6 +2540,60 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@unhead/dom@npm:1.11.20, @unhead/dom@npm:^1.7.0":
+  version: 1.11.20
+  resolution: "@unhead/dom@npm:1.11.20"
+  dependencies:
+    "@unhead/schema": "npm:1.11.20"
+    "@unhead/shared": "npm:1.11.20"
+  checksum: 10c0/344a61a00418ddc6f06b33f313b589945df18e43af29ab8e19e1df97a102f55bfbc7e8e163f7e8f0a415c58c48ad9878d552b29fdf83080e05cdcf30724a17c6
+  languageName: node
+  linkType: hard
+
+"@unhead/schema@npm:1.11.20, @unhead/schema@npm:^1.7.0":
+  version: 1.11.20
+  resolution: "@unhead/schema@npm:1.11.20"
+  dependencies:
+    hookable: "npm:^5.5.3"
+    zhead: "npm:^2.2.4"
+  checksum: 10c0/f2f968639bbd18f90ddfb83b77c9256bc4c0379ab75efa24dc759f3f597aae707d4dde97df690823f8902eab31d73a5faa8bdd8daf18c6ac8e4503a78b42be74
+  languageName: node
+  linkType: hard
+
+"@unhead/shared@npm:1.11.20":
+  version: 1.11.20
+  resolution: "@unhead/shared@npm:1.11.20"
+  dependencies:
+    "@unhead/schema": "npm:1.11.20"
+    packrup: "npm:^0.1.2"
+  checksum: 10c0/65ab0230e6338541f7a62e131c6d82b1160c71c86479fdb17d733fb5187422f6e287739cf50a1e7556690fb10951990d06e861e7aa3a90def479cb7a5ec638fa
+  languageName: node
+  linkType: hard
+
+"@unhead/ssr@npm:^1.7.0":
+  version: 1.11.20
+  resolution: "@unhead/ssr@npm:1.11.20"
+  dependencies:
+    "@unhead/schema": "npm:1.11.20"
+    "@unhead/shared": "npm:1.11.20"
+  checksum: 10c0/f4ca6809a2436d23dbb4b57aaaa8981cac97eebd34c0c6237377e86cbd90c26079305adf97db9334966ebd4514ad62985648b653512ec35df916f6448d7624e5
+  languageName: node
+  linkType: hard
+
+"@unhead/vue@npm:^1.7.0":
+  version: 1.11.20
+  resolution: "@unhead/vue@npm:1.11.20"
+  dependencies:
+    "@unhead/schema": "npm:1.11.20"
+    "@unhead/shared": "npm:1.11.20"
+    hookable: "npm:^5.5.3"
+    unhead: "npm:1.11.20"
+  peerDependencies:
+    vue: ">=2.7 || >=3"
+  checksum: 10c0/75f1cd8d671de363b02bc8ad2aaf6dc7fb0a402bdd306046ad71608d370190b539e74d6b03ab455d9c2453c5dd62956a235f92d74b09b98c336b68b2d3911602
+  languageName: node
+  linkType: hard
+
 "@unrs/rspack-resolver-binding-darwin-arm64@npm:1.2.2":
   version: 1.2.2
   resolution: "@unrs/rspack-resolver-binding-darwin-arm64@npm:1.2.2"
@@ -3047,6 +3101,20 @@ __metadata:
   peerDependencies:
     vue: ^3.5.0
   checksum: 10c0/1ec663fb17870b43d176180f114b46a235564276ca38e87b487685c6e44f6d1a5cec5569ca73f0641b8e5aa2acb874e36f5ad0e8c241a1505e9b5d79d83629ec
+  languageName: node
+  linkType: hard
+
+"@vueuse/head@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@vueuse/head@npm:2.0.0"
+  dependencies:
+    "@unhead/dom": "npm:^1.7.0"
+    "@unhead/schema": "npm:^1.7.0"
+    "@unhead/ssr": "npm:^1.7.0"
+    "@unhead/vue": "npm:^1.7.0"
+  peerDependencies:
+    vue: ">=2.7 || >=3"
+  checksum: 10c0/0c8c51951eb3d4e8394cc04ba6f1fc36a6e6dfbde9ef677c525b10e14d06007f71df9f2c90d6b02afc6476ca53582070c834357a7af205bf8ef856fe5303f7a1
   languageName: node
   linkType: hard
 
@@ -4963,6 +5031,7 @@ __metadata:
     "@vue/tsconfig": "npm:^0.7.0"
     "@vueuse/components": "npm:^13.0.0"
     "@vueuse/core": "npm:^13.0.0"
+    "@vueuse/head": "npm:^2.0.0"
     "@vueuse/motion": "npm:^3.0.3"
     concurrently: "npm:^9.1.2"
     deepmerge: "npm:^4.3.1"
@@ -7109,6 +7178,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"packrup@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "packrup@npm:0.1.2"
+  checksum: 10c0/8236a89e02a86a1539ee7ff920050544f2abcdc74d1a4c16c6182ad23ca36b8b686adb2203f08ae23f422852d856ff7213e18411a7a3f1ac90b1f850b0b6e86d
+  languageName: node
+  linkType: hard
+
 "parent-module@npm:^1.0.0":
   version: 1.0.1
   resolution: "parent-module@npm:1.0.1"
@@ -8985,6 +9061,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unhead@npm:1.11.20":
+  version: 1.11.20
+  resolution: "unhead@npm:1.11.20"
+  dependencies:
+    "@unhead/dom": "npm:1.11.20"
+    "@unhead/schema": "npm:1.11.20"
+    "@unhead/shared": "npm:1.11.20"
+    hookable: "npm:^5.5.3"
+  checksum: 10c0/cce50a79509984679d3b8f7a2299f7ec7e252c8efdac76e9156ffa816c04c53ff25e526ead88df4cb67dc016b98c37adec8c3e93b7322a972561d3f4cd1c21d8
+  languageName: node
+  linkType: hard
+
 "unicorn-magic@npm:^0.1.0":
   version: 0.1.0
   resolution: "unicorn-magic@npm:0.1.0"
@@ -9807,6 +9895,13 @@ __metadata:
   version: 1.2.1
   resolution: "yocto-queue@npm:1.2.1"
   checksum: 10c0/5762caa3d0b421f4bdb7a1926b2ae2189fc6e4a14469258f183600028eb16db3e9e0306f46e8ebf5a52ff4b81a881f22637afefbef5399d6ad440824e9b27f9f
+  languageName: node
+  linkType: hard
+
+"zhead@npm:^2.2.4":
+  version: 2.2.4
+  resolution: "zhead@npm:2.2.4"
+  checksum: 10c0/3d166fb661f1b7fdf8a0ef2222d9e574ab241e72141f2f1fda62a9250ca73aabf2eaf0d66046a3984cd24d1dd9bac231338c6271684d6b8caa6b66af7c45f275
   languageName: node
   linkType: hard
 
