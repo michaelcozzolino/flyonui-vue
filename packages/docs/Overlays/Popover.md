@@ -1,12 +1,14 @@
-## Default
+# Popover
+
+### Default
 
 <PopoverDocs section="default" />
 
-## Colors
+### Colors
 
 <PopoverDocs section="color" />
 
-## Placements
+### Placements
 
 <PopoverDocs section="placement" />
 

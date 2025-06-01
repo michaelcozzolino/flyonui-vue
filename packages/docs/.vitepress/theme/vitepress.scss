@@ -1,7 +1,13 @@
 @layer base {
     :root {
+        // t0do: many variables with division are not right, to be adjusted
+        --vp-button-brand-bg: var(--color-primary) !important;
+        --vp-button-brand-hover-bg: var(--color-info) !important;
+
         --vp-c-brand-1: var(--color-primary) !important;
         --vp-c-bg: var(--color-base-100) !important;
+        --vp-c-bg-alt: var(--color-base-100) !important;
+        --vp-c-bg-soft: var(--color-base-100) !important;
 
         --vp-c-text-1: var(--color-base-100)/0.9 !important;
         --vp-c-text-2: var(--color-base-100)/0.9 !important;
@@ -13,6 +19,16 @@
         --vp-c-divider: var(--color-base-content)/0.1 !important;
         --vp-c-gutter: var(--color-base-content)/0.1 !important;
     }
+
+    .DocSearch-Button, .VPFeature {
+        border-color: color-mix(in oklab, var(--vp-c-brand-1) 60%, transparent) !important;
+
+    }
+
+    .DocSearch-Button:hover {
+        border-color: var(--vp-c-brand-1) !important;
+    }
+
 
     .VPSidebarItem.level-1 .text {
         font-weight: 700 !important;

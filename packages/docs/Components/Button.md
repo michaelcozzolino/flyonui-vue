@@ -1,58 +1,75 @@
-## Default buttons
+# Button
 
-<ButtonDocs section="default" />
+## Variants
 
-## Soft buttons
+### Solid
+
+<ButtonDocs section="solid" />
+
+### Soft
 
 <ButtonDocs section="soft" />
 
-## Outline buttons
+### Outline
 
 <ButtonDocs section="outline" />
 
-## Dashed buttons
+### Dashed
 
 <ButtonDocs section="dash" />
 
-## Text buttons
+### Text
 
 <ButtonDocs section="text" />
 
-## Gradient buttons
+### Gradient
 
 <ButtonDocs section="gradient" />
 
 [//]: # (todo: wave)
 
-## Pilled buttons
+## Shapes
+
+### Pilled
 
 <ButtonDocs section="pilled" />
 
-## Button states
+### Validation states
 
-<ButtonDocs section="state" />
+<ButtonDocs section="validation-state" />
 
-## Button sizes
+### Sizes
+
 <ButtonDocs section="size" />
 
-## Button layouts
+### Layouts
+
 <ButtonDocs section="layout" />
 
-## Icon buttons
+## Icons
+
+### Only icon
+
 <ButtonDocs section="icon" />
 
-## Icon position buttons
+### Position
+
 <ButtonDocs section="icon-position" />
 
-## Social buttons
+## Illustrations
+
+### Social
+
 <ButtonDocs section="social" />
 
-## Social button shapes
+### Social shapes
 
 <ButtonDocs section="social-shape" />
 
-## Loading buttons
+### Loading
+
 <ButtonDocs section="loading" />
 
-## Glass button
+### Glass
+
 <ButtonDocs section="glass" />

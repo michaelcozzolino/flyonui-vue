@@ -1,35 +1,41 @@
-## Default
+# List Group
+
+### Default
 
 <ListGroupDocs section="default" />
 
-## With icons
+## Illustrations
+
+### With icons
 
 <ListGroupDocs section="with-icons" />
 
-## With badges
+### With badges
 
 <ListGroupDocs section="with-badges" />
 
-## Horizontal
+### Horizontal
 
 <ListGroupDocs section="horizontal" />
 
-## Flushed
+### Flushed
 
 <ListGroupDocs section="flushed" />
 
-## Without gutters
+### Without gutters
 
 <ListGroupDocs section="without-gutters" />
 
-## Striped
+### Striped
 
 <ListGroupDocs section="striped" />
 
-## With checkbox
+### With checkbox
 
 <ListGroupDocs section="with-checkbox" />
 
-## Invoice
+[//]: # (todo: radio, switch and many more)
+
+### Invoice
 
 <ListGroupDocs section="invoice" />

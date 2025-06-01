@@ -1,8 +1,8 @@
 # Loading
 
-## Animations
+### Animations
 
 <LoadingDocs section="animation" />
 
-## Colors
+### Colors
 <LoadingDocs section="color" />

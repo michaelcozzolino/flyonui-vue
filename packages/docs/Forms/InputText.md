@@ -1,69 +1,69 @@
 # Input
 
-## Default
+### Default
 
 <InputTextDocs section="default" />
 
-## Placeholder
+### Placeholder
 
 <InputTextDocs section="with-placeholder" />
 
-## Label and helper text
+### Label and helper text
 
 <InputTextDocs section="with-label-and-helper-text" />
 
-## Hidden label
+### Hidden label
 
 <InputTextDocs section="hidden-label" />
 
-## Floating label
+### Floating label
 
 <InputTextDocs section="floating-label" />
 
 # Sizes
 
-## Default size
+### Default size
 
 <InputTextDocs section="size" />
 
-## Floating label size
+### Floating label size
 
 <InputTextDocs section="floating-label-size" />
 
-## Validation states
+### Validation states
 
 <InputTextDocs section="validation-state" />
 
-# Merged inputs
+## Groups
 
-## Inline label
+### Inline label
 
 <InputTextDocs section="inline-label" />
 
-## Icons
+### Icons
 
 <InputTextDocs section="with-icon" />
 
-# Shape
+## Shape
 
-## Pilled input
+### Pilled input
 
 <InputTextDocs section="shape" />
 
-# Illustrations
+## Illustrations
 
-## Without focus
+### Without focus
 
 <InputTextDocs section="without-focus" />
 
-## Disabled
+### Disabled
 
 <InputTextDocs section="disabled" />
 
-## Readonly
+### Readonly
 
 <InputTextDocs section="readonly" />
 
-# Join
+## Join
 
 <InputTextDocs section="join" />

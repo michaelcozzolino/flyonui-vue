@@ -1,37 +1,37 @@
 # Checkbox
 
-## Default
+### Default
 
 <CheckboxDocs section="default" />
 
-## Helper text
+### Helper text
 
 <CheckboxDocs section="with-helper-text" />
 
-## Semantic colors
+### Colors
 
 <CheckboxDocs section="color" />
 
-## Custom colors
+### Custom colors
 
 <CheckboxDocs section="with-custom-color" />
 
-## Sizes
+### Sizes
 
 <CheckboxDocs section="size" />
 
-## Validation states
+### Validation states
 
 <CheckboxDocs section="validation-state" />
 
-## Disabled & Indeterminate states
+### Disabled & Indeterminate states
 
 <CheckboxDocs section="state" />
 
-## Inline checkbox group
+### Inline checkbox group
 
 <CheckboxDocs section="inline-group" />
 
-## Vertical checkbox group
+### Vertical checkbox group
 
 <CheckboxDocs section="vertical-group" />
