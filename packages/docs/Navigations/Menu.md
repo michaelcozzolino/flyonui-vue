@@ -1,20 +1,22 @@
-## Default
+# Menu
+
+### Default
 
 <MenuDocs section="default" />
 
-## Icon
+### Icon
 
 <MenuDocs section="icon" />
 
-## Only icon
+### Only icon
 
 <MenuDocs section="only-icon" />
 
-## Orientation
+### Orientation
 
 <MenuDocs section="orientation" />
 
-## With tooltips
+### With tooltips
 
 ::: warning
 The following component might have changes in future releases
@@ -22,43 +24,45 @@ The following component might have changes in future releases
 
 <MenuDocs section="with-tooltip" />
 
-## With disabled items
+### With disabled items
 
 <MenuDocs section="with-disabled-item" />
 
-## With badges
+### With badges
 
 <MenuDocs section="with-badge" />
 
-## With active items
+### With active items
 
 The active items will automatically be highlighted when the exact route corresponding to the item is visited.
 Unluckily it's not possible to preview a demo because Vitepress does not support the Vue Router.
 
-## Sizes
+### Sizes
 
 <MenuDocs section="size" />
 
-## Flushed (Simple) Menu
+## Illustrations
+
+### Flushed (Simple) Menu
 
 <MenuDocs section="flushed" />
 
-## With title
+### With title
 
 <MenuDocs section="with-title" />
 
-## With title as parent
+### With title as parent
 
 <MenuDocs section="with-title-as-parent" />
 
-## With submenus
+### With submenus
 
 <MenuDocs section="with-submenu" />
 
-## With horizontal submenu
+### With horizontal submenu
 
 <MenuDocs section="with-horizontal-submenu" />
 
-## Mega menu with submenu
+### Mega menu with submenu
 
 <MenuDocs section="mega-with-submenu" />

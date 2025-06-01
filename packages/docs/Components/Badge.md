@@ -1,20 +1,26 @@
-## Solid badges
+# Badge
+
+## Variants
+
+### Solid
 
 <BadgeDocs section="solid" />
 
-## Soft badges
+### Soft
 
 <BadgeDocs section="soft" />
 
-## Outline badges
+### Outline
 
 <BadgeDocs section="outline" />
 
-## Dashed badges
+### Dashed
 
 <BadgeDocs section="dash" />
 
-## Pilled badges
+## Shapes
+
+### Pilled
 
 <BadgeDocs section="pilled" />
 
@@ -22,18 +28,22 @@
 
 <BadgeDocs section="size" />
 
-## Dot style badges
+## Illustrations
+
+### Dot style
 
 <BadgeDocs section="dot-style" />
 
-## Icon badges
+## Icons
+
+### Shapes
 
 <BadgeDocs section="icon" />
 
-## Icon position badges
+### Position
 
 <BadgeDocs section="icon-position" />
 
-## Badge in a button
+### In a button
 
 <BadgeDocs section="in-a-button" />

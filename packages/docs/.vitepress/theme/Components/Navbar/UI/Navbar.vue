@@ -13,6 +13,8 @@
                     />
                 </svg>
             </FoNavbarBrand>
+
+            <VPNavBarSearch />
         </template>
 
         <template #end>
@@ -48,6 +50,7 @@ import { loadIcons }                                                            
 import { useColorMode, useStorage }                                             from '@vueuse/core';
 import { FoButton, FoLink, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
 import { useRouter, withBase }                                                  from 'vitepress';
+import { VPNavBarSearch }                                                       from 'vitepress/theme';
 import { computed, onMounted, ref }                                             from 'vue';
 
 const router = useRouter();

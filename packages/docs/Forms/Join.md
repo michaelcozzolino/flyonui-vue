@@ -1,4 +1,5 @@
 # Join
+
 ::: tip
 **This component can be used for buttons, inputs, and mixed elements, that's why in order to improve understandability
 aliases like
@@ -11,24 +12,24 @@ component.
 We suggest the usage of the alias only when the group contains non-mixed components.**
 :::
 
-## Default
+### Default
 
 <JoinDocs section="default" />
 
-## icons
+### icons
 
 <JoinDocs section="icon" />
 
-# Illustrations
+## Illustrations
 
-## Vertical
+### Vertical
 
 <JoinDocs section="vertical" />
 
-## Responsive
+### Responsive
 
 <JoinDocs section="responsive" />
 
-## Pilled
+### Pilled
 
 <JoinDocs section="pilled" />

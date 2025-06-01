@@ -5,29 +5,17 @@
 
     <FoLoading color="secondary" />
 
-    <FoLoading animation="dots"
-               color="accent"
-    />
+    <FoLoading color="accent" />
 
-    <FoLoading animation="ring"
-               color="neutral"
-    />
+    <FoLoading color="neutral" />
 
-    <FoLoading animation="ball"
-               color="info"
-    />
+    <FoLoading color="info" />
 
-    <FoLoading animation="bars"
-               color="success"
-    />
+    <FoLoading color="success" />
 
-    <FoLoading animation="infinity"
-               color="warning"
-    />
+    <FoLoading color="warning" />
 
-    <FoLoading animation="spinner"
-               color="error"
-    />
+    <FoLoading color="error" />
 </template>
 
 <script setup lang="ts">

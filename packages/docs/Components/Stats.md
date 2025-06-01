@@ -1,34 +1,35 @@
-# Stat List
+# Stats
 
-## Default
+### Default
 
 <StatsDocs section="default" />
 
 # Illustration
-## With avatar
+
+### With avatar
 
 <StatsDocs section="with-avatar" />
 
-## With icons and image
+### With icons and image
 
 <StatsDocs section="with-icons-and-image" />
 
-## Centered item
+### Centered item
 
 <StatsDocs section="centered-item" />
 
-## Vertical
+### Vertical
 
 <StatsDocs section="vertical" />
 
-## With progress bar
+### With progress bar
 
 <StatsDocs section="with-progress-bar" />
 
-## With actions button
+### With actions button
 
 <StatsDocs section="with-actions-button" />
 
-## Bordered
+### Bordered
 
 <StatsDocs section="bordered" />

@@ -1,9 +1,9 @@
 # Mask
 
-## Shape
+### Shape
 
 <MaskDocs section="shape" />
 
-## v-mask Directive
+### v-mask Directive
 
 <MaskDocs section="v-mask" />

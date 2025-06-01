@@ -1,15 +1,15 @@
 # Swap
 
-## Default
+### Default
 
 <SwapDocs section="default" />
 
-# Animations
+## Animations
 
-## Rotation
+### Rotation
 
 <SwapDocs section="rotation" />
 
-## Flip
+### Flip
 
 <SwapDocs section="flip" />

@@ -1,49 +1,49 @@
 # Textarea
 
-## Default
+### Default
 
 <TextareaDocs section="default" />
 
-## Label and placeholder
+### Label and placeholder
 
 <TextareaDocs section="with-label-and-placeholder" />
 
-## Hidden label
-
-<TextareaDocs section="hidden-label" />
-
-## Floating label
-
-<TextareaDocs section="floating-label" />
-
-# Size
-
-## Default Size
-
-<TextareaDocs section="default-size" />
-
-## Floating label size
-
-<TextareaDocs section="floating-label-size" />
-
-## Icons
-
-<TextareaDocs section="with-icon" />
-
-## Helper text
+### Helper text
 
 <TextareaDocs section="with-helper-text" />
 
-## Validation states
+### Hidden label
+
+<TextareaDocs section="hidden-label" />
+
+### Floating label
+
+<TextareaDocs section="floating-label" />
+
+## Size
+
+### Default Size
+
+<TextareaDocs section="default-size" />
+
+### Floating label size
+
+<TextareaDocs section="floating-label-size" />
+
+### Icons
+
+<TextareaDocs section="with-icon" />
+
+### Validation states
 
 <TextareaDocs section="validation-state" />
 
-# Illustrations
+## Illustrations
 
-## Disabled
+### Disabled
 
 <TextareaDocs section="disabled" />
 
-## Readonly
+### Readonly
 
 <TextareaDocs section="readonly" />

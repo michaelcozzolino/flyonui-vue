@@ -14,9 +14,6 @@ hero:
         -   theme: brand
             text: Get Started
             link: quick-start
-        -   theme: alt
-            text: View on GitHub
-            link: https://github.com/michaelcozzolino/flyonui-vue
 
 features:
     -   title: Powered by FlyonUI 🚀

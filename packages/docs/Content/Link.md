@@ -1,15 +1,19 @@
-## Default
+# Link
+
+### Default
 
 <LinkDocs section="default" />
 
-## Underline on hover
+### Underline on hover
 
 <LinkDocs section="underline-on-hover" />
 
-## Animated underline
+### Animated underline
 
 <LinkDocs section="animated-underline" />
 
-## Color
+### Color
 
 <LinkDocs section="color" />
+
+[//]: # (todo: many other docs are missing)

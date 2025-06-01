@@ -1,12 +1,14 @@
-## Default
+# Tooltip
+
+### Default
 
 <TooltipDocs section="default" />
 
-## Colors
+### Colors
 
 <TooltipDocs section="color" />
 
-## Placements
+### Placements
 
 <TooltipDocs section="placement" />
 

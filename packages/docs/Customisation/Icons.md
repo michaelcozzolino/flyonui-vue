@@ -1,4 +1,4 @@
-## Icons
+# Icons
 
 FlyonUI Vue can either work with [Iconify](https://iconify.design) [icons](https://icon-sets.iconify.design) or custom-made icons.
 

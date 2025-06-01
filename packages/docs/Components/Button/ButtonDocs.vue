@@ -1,6 +1,6 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 id="default"
+    <CodeSnippet v-if="section === 'solid'"
+                 id="solid"
                  :code="DefaultButtonRaw"
                  :component="DefaultButton"
     />
@@ -41,7 +41,7 @@
                  :component="PilledButton"
     />
 
-    <CodeSnippet v-else-if="section === 'state'"
+    <CodeSnippet v-else-if="section === 'validation-state'"
                  id="state"
                  :code="ButtonStateRaw"
                  :component="ButtonState"
@@ -97,7 +97,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Default }      from 'flyonui-vue';
 import CodeSnippet           from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
 import ButtonLayout          from '@/Components/Button/ButtonLayout.vue';
 import ButtonLayoutRaw       from '@/Components/Button/ButtonLayout.vue?raw';
@@ -133,7 +132,7 @@ import TextButton            from '@/Components/Button/TextButton.vue';
 import TextButtonRaw         from '@/Components/Button/TextButton.vue?raw';
 
 interface Props {
-    section: Default | 'soft' | 'outline' | 'dash' | 'text' | 'gradient' | 'pilled' | 'state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass';
+    section: 'solid' | 'soft' | 'outline' | 'dash' | 'text' | 'gradient' | 'rounded' | 'validation-state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass';
 }
 
 defineProps<Props>();

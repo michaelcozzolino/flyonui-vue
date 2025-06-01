@@ -1,19 +1,19 @@
 # Select
 
-## Default
+### Default
 
 <SelectDocs section="default" />
 
-## Floating label
+### Floating label
 
 <SelectDocs section="floating-label" />
 
-# Sizes
+## Sizes
 
-## Default size
+### Default size
 
 <SelectDocs section="default-size" />
 
-## Floating label size
+### Floating label size
 
 <SelectDocs section="floating-label-size" />
