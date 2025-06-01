@@ -5,7 +5,7 @@ title: FlyonUI Vue
 
 hero:
     name: FlyonUI Vue
-    text: The Easiest FlyonUI Vue Components Library
+    text: The Easiest Vue Components Library
     tagline: FlyonUI Vue is an open-source Vue Components Library with prebuilt, production-ready components designed for seamless integration and immediate use.
     image:
         src: /assets/logo.svg
