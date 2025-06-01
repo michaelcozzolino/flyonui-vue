@@ -1,6 +1,5 @@
 export * from '@/Shared/UseBorder';
 export * from '@/Shared/UseColor';
-export * from '@/Shared/UseDirection';
 export * from '@/Shared/UseFlyonUIVueAppConfig';
 export * from '@/Shared/UseGlass';
 export * from '@/Shared/UseIdentifiable';
