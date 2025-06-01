@@ -132,7 +132,7 @@ import TextButton            from '@/Components/Button/TextButton.vue';
 import TextButtonRaw         from '@/Components/Button/TextButton.vue?raw';
 
 interface Props {
-    section: 'solid' | 'soft' | 'outline' | 'dash' | 'text' | 'gradient' | 'rounded' | 'validation-state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass';
+    section: 'solid' | 'soft' | 'outline' | 'dash' | 'text' | 'gradient' | 'pilled' | 'validation-state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass';
 }
 
 defineProps<Props>();
