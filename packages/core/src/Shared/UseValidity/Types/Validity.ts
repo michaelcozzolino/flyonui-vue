@@ -1,4 +1,3 @@
-// todo: rename to validable or similar
-export interface IsValid {
+export interface Validity {
     isValid?: boolean;
 }

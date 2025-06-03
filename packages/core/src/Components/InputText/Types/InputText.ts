@@ -5,9 +5,9 @@ import type { MaybeStringId }              from '@/Shared/UseIdentifiable';
 import type { Shape }                      from '@/Shared/UseShape';
 import type { Sizable }                    from '@/Shared/UseSize';
 import type { Disableable }                from '@/Shared/UseState';
-import type { IsValid }                    from '@/Shared/UseValidity';
+import type { Validity }                   from '@/Shared/UseValidity';
 
-export interface InputTextProps extends MaybeStringId, Disableable, IsValid, Sizable, WithConfigurableHelperText, WithConfigurableIcon {
+export interface InputTextProps extends MaybeStringId, Disableable, Validity, Sizable, WithConfigurableHelperText, WithConfigurableIcon {
     type?:         'text' | 'email';
     label?:        InputLabel;
     placeholder?:  string;
