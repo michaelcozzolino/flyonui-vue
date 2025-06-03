@@ -11,7 +11,7 @@ export type Identifiable<
 export type Id<T extends number | string = number> = Identifiable<'id', T>;
 
 interface StringId {
-    id: string;
+    readonly id: string;
 }
 
 export type MaybeStringId = Partial<StringId>;

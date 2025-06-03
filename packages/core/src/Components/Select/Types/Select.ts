@@ -4,7 +4,7 @@ import type { Sizable }     from '@/Shared/UseSize';
 import type { Disableable } from '@/Shared/UseState';
 
 export interface SelectOption<T extends number | string = number> extends Id<T>, Disableable {
-    text: string;
+    readonly text: string;
 }
 
 export interface SelectProps<T extends string | number = number, K extends SelectOption<T> = SelectOption<T>> extends Sizable {

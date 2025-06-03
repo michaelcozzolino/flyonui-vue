@@ -19,9 +19,15 @@ export function useIdentifiable<
             return null;
         }
 
-        return useArrayFind<T>(
+        const identifiable = useArrayFind<T>(
             identifiables,
             (identifiable: Identifiable<Name, Value>) => identifiable[toValue(key)] === _id,
         ).value ?? null;
+
+        if (identifiable === null) {
+            console.warn(`Id "${_id}" not found.`);
+        }
+
+        return identifiable;
     });
 }
