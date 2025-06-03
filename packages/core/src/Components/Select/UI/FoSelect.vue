@@ -10,7 +10,6 @@
                 aria-label="select"
         >
             <option v-if="isTextLabel"
-                    disabled
                     :value="null"
             >
                 {{ label.text }}
