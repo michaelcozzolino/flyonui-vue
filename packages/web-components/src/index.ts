@@ -53,7 +53,7 @@ const webComponents: FlyonUIWebComponent[] = vueComponents.map(
 );
 
 export function registerFlyonUIWebComponents(): void {
-    console.warn('FlyonUI web components is still is an experimental package, its api and behaviour might change. DO NOT use on production.');
+    console.warn('FlyonUI web components is still an experimental package, its api and behaviour might change. DO NOT use on production.');
 
     for (const webComponent of webComponents) {
         const name = kebabCase(webComponent.name);
