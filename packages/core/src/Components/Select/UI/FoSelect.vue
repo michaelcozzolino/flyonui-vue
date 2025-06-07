@@ -9,10 +9,10 @@
                 :class="[sizeClass]"
                 aria-label="select"
         >
-            <option v-if="isTextLabel"
+            <option v-if="defaultLabel?.type === 'text'"
                     :value="null"
             >
-                {{ label.text }}
+                {{ defaultLabel.text }}
             </option>
 
             <option v-for="option in options"
@@ -24,12 +24,12 @@
             </option>
         </select>
 
-        <FoLabel v-if="label.type !== undefined"
+        <FoLabel v-if="defaultLabel && defaultLabel.type !== 'text'"
                  :for="id"
                  :component-name="componentName"
-                 :type="label.type"
+                 :type="defaultLabel.type"
         >
-            {{ label.text }}
+            {{ defaultLabel.text }}
         </FoLabel>
     </div>
 </template>
@@ -37,11 +37,11 @@
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { SelectOption, SelectProps } from '@/Components/Select';
 import type { ComponentName }             from '@/Shared/Utils/Internal';
-import { FoLabel }                        from '@/Components/Label/Internal';
+import { FoLabel, useLabel }              from '@/Components/Label/Internal';
 import { useFloatingLabel }               from '@/Shared/UseFloatingLabel/Internal';
 import { useFlyonUIVueAppConfig }         from '@/Shared/UseFlyonUIVueAppConfig';
 import { useSize }                        from '@/Shared/UseSize/Internal';
-import { computed, useId, watchEffect }   from 'vue';
+import { useId, watchEffect }             from 'vue';
 
 const props = defineProps<SelectProps<T, K>>();
 
@@ -53,17 +53,19 @@ const componentName: ComponentName = 'FoSelect';
 
 const { config } = useFlyonUIVueAppConfig();
 
+const defaultLabel = useLabel(
+    config,
+    componentName,
+    () => props.label,
+);
+
 const [
     floatingLabelClass,
     sizeClass,
 ] = [
-    useFloatingLabel(componentName, () => props.label.type),
+    useFloatingLabel(componentName, () => defaultLabel.value?.type),
     useSize(config, componentName, () => props.size),
 ];
-
-const isTextLabel = computed(() => {
-    return [undefined, 'text'].includes(props.label.type);
-});
 
 watchEffect(() => {
     if (props.options.length === 0) {
@@ -73,7 +75,7 @@ watchEffect(() => {
     /**
      * when no option is selected and the label is not the null option, the selected one will be the first.
      */
-    if (selectedOption.value === null && isTextLabel.value === false) {
+    if (selectedOption.value === null && defaultLabel.value?.type !== 'text') {
         selectedOption.value = props.options[0];
     }
 });

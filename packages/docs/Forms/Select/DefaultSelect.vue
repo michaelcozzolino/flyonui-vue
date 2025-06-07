@@ -1,6 +1,6 @@
 <template>
     <FoSelect v-model="selectedOption"
-              :label="{ text: 'Pick your favorite Movie' }"
+              label="Pick your favorite Movie"
               :options="options"
     />
 </template>

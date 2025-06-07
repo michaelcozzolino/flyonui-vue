@@ -9,7 +9,7 @@ import type { Validity }                   from '@/Shared/UseValidity';
 
 export interface InputTextProps extends MaybeStringId, Disableable, Validity, Sizable, WithConfigurableHelperText, WithConfigurableIcon {
     type?:         'text' | 'email';
-    label?:        InputLabel;
+    label?:        string | InputLabel;
     placeholder?:  string;
     shape?:        Extract<Shape, 'rounded' | 'pilled'>;
     withoutFocus?: boolean;

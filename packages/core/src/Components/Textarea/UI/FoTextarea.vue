@@ -57,14 +57,14 @@
 </template>
 
 <script setup lang="ts">
-import type { TextareaLabel, TextareaProps }       from '@/Components/Textarea';
+import type { TextareaLabelType, TextareaProps }   from '@/Components/Textarea';
 import type { IconSize }                           from '@/Shared';
 import type { ComponentName }                      from '@/Shared/Utils/Internal';
 import { FoFragment }                              from '@/Components/Fragment/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';
 import { FoIcon }                                  from '@/Components/Icon';
 import { usePositionableIcon }                     from '@/Components/Icon/Internal';
-import { FoLabel }                                 from '@/Components/Label/Internal';
+import { FoLabel, useLabel }                       from '@/Components/Label/Internal';
 import { useFloatingLabel }                        from '@/Shared/UseFloatingLabel/Internal';
 import { useFlyonUIVueAppConfig }                  from '@/Shared/UseFlyonUIVueAppConfig';
 import { useSize }                                 from '@/Shared/UseSize/Internal';
@@ -102,17 +102,11 @@ const textareaHelperText = usePositionableHelperText(
     () => props.helperText,
 );
 
-const defaultLabel = computed((): Required<TextareaLabel> | undefined => {
-    if (props.label === undefined) {
-        return undefined;
-    }
-
-    return {
-        text:     props.label.text,
-        type:     props.label.type === undefined ? 'text' : props.label.type,
-        isHidden: props.label.isHidden ?? false,
-    };
-});
+const defaultLabel = useLabel<TextareaLabelType>(
+    config,
+    componentName,
+    () => props.label,
+);
 
 const [
     floatingClass,
