@@ -1,6 +1,6 @@
 <template>
     <FoInputText v-model="input"
-                 :label="{ text: 'Full Name' }"
+                 label="Full Name"
                  placeholder="John Doe"
                  helper-text="Please write your full name"
     />

@@ -1,6 +1,11 @@
 <template>
     <FoTextarea v-model="input"
-                :label="{ text: 'Your bio' }"
+                label="Your bio"
+                placeholder="Hello!!!"
+    />
+
+    <FoTextarea v-model="input"
+                :label="{ text: 'Your bio', type: 'floating' }"
                 placeholder="Hello!!!"
     />
 </template>

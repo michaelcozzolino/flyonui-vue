@@ -8,7 +8,7 @@ export interface SelectOption<T extends number | string = number> extends Id<T>,
 }
 
 export interface SelectProps<T extends string | number = number, K extends SelectOption<T> = SelectOption<T>> extends Sizable {
-    label: {
+    label?: string | {
         text:  string;
         type?: Exclude<LabelType, 'inline'>; // When undefined the label will be a text by default
     };

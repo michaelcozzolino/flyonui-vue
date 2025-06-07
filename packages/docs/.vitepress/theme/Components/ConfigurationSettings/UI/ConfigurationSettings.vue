@@ -49,6 +49,10 @@
             <ConfigurationSettingsItem icon="fluent:shapes-20-regular">
                 <ShapeSettings v-model="config.global.shape" />
             </ConfigurationSettingsItem>
+
+            <ConfigurationSettingsItem icon="quill:label">
+                <LabelTypeSettings v-model="config.global.labelType" />
+            </ConfigurationSettingsItem>
         </template>
     </FoListGroup>
 </template>
@@ -60,6 +64,7 @@ import ConfigurationSettingsHeader
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettingsHeader.vue';
 import ConfigurationSettingsItem
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettingsItem.vue';
+import LabelTypeSettings from '@/.vitepress/theme/Components/ConfigurationSettings/UI/LabelTypeSettings.vue';
 import PresetSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/PresetSettings.vue';
 import ShapeSettings

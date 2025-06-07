@@ -6,12 +6,12 @@ import type { Sizable }                    from '@/Shared/UseSize';
 import type { Disableable }                from '@/Shared/UseState';
 import type { Validity }                   from '@/Shared/UseValidity';
 
-type TextareaLabelType = Exclude<LabelType, 'inline'>;
+export type TextareaLabelType = Exclude<LabelType, 'inline'>;
 
 export type TextareaLabel = InputLabel<TextareaLabelType>;
 
 export interface TextareaProps extends MaybeStringId, Disableable, Validity, Sizable, WithConfigurableHelperText, WithConfigurableIcon {
     placeholder?: string;
-    label?:       TextareaLabel;
+    label?:       string | InputLabel<TextareaLabelType>;
     isReadonly?:  boolean;
 }

@@ -77,8 +77,8 @@
 </template>
 
 <script setup lang="ts">
-import type { InputTextProps }        from '@/Components/InputText';
-import type { InputLabel, LabelType } from '@/Components/Label';
+import type { InputTextProps } from '@/Components/InputText';
+import type { LabelType }      from '@/Components/Label';
 
 import type { IconSize }                           from '@/Shared';
 import type { ComponentName }                      from '@/Shared/Utils/Internal';
@@ -89,9 +89,9 @@ import { FoIcon }                                  from '@/Components/Icon';
 import { usePositionableIcon }                     from '@/Components/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem }       from '@/Components/Join/Internal';
 
-import { FoLabel }          from '@/Components/Label/Internal';
-import { useFloatingLabel } from '@/Shared/UseFloatingLabel/Internal';
+import { FoLabel, useLabel } from '@/Components/Label/Internal';
 
+import { useFloatingLabel }        from '@/Shared/UseFloatingLabel/Internal';
 import { useFlyonUIVueAppConfig }  from '@/Shared/UseFlyonUIVueAppConfig';
 import { useShape }                from '@/Shared/UseShape/Internal';
 import { useSize }                 from '@/Shared/UseSize/Internal';
@@ -134,17 +134,11 @@ const inputHelperText = usePositionableHelperText(
     () => props.helperText,
 );
 
-const defaultLabel = computed((): Required<InputLabel> | undefined => {
-    if (props.label === undefined) {
-        return undefined;
-    }
-
-    return {
-        text:     props.label.text,
-        type:     props.label.type === undefined ? 'text' : props.label.type,
-        isHidden: props.label.isHidden ?? false,
-    };
-});
+const defaultLabel = useLabel(
+    config,
+    componentName,
+    () => props.label,
+);
 
 const hasIcon = computed(() => {
     return inputIcon.value?.left !== undefined || inputIcon.value?.right !== undefined;
