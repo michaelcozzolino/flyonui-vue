@@ -5002,7 +5002,7 @@ __metadata:
     "@vue/test-utils": "npm:^2.4.6"
     "@vue/tsconfig": "npm:^0.7.0"
     "@vueuse/core": "npm:^13.0.0"
-    flyonui: "npm:^2.1.0"
+    flyonui: "npm:^2.2.0"
     flyonui-vue: "workspace:*"
     highlight.js: "npm:^10.7.3"
     jsdom: "npm:^26.0.0"
@@ -5065,7 +5065,7 @@ __metadata:
     "@vue/test-utils": "npm:^2.4.6"
     "@vue/tsconfig": "npm:^0.7.0"
     concurrently: "npm:^9.1.2"
-    flyonui: "npm:^2.1.0"
+    flyonui: "npm:^2.2.0"
     flyonui-vue: "workspace:*"
     jsdom: "npm:^26.0.0"
     tsc-alias: "npm:^1.8.11"
@@ -5076,12 +5076,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"flyonui@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "flyonui@npm:2.1.0"
+"flyonui@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "flyonui@npm:2.2.0"
   dependencies:
     "@floating-ui/dom": "npm:^1.6.13"
-  checksum: 10c0/459bb2529eb0f39cd62354a78229c6b0487bf2ef7ca3d1f7aa35d3bc83588eac0cae763189ec7c9edbeb18b15ddb6fefed76fb117855ab568942bbcee350ed83
+  checksum: 10c0/240f219503cc574def233d3b3870e7daa9945b94295b5b649aab53cae60783e6b5ff3f1c269087c0ef963da36924dad73a204b0d1994354f897e24049b088ac7
   languageName: node
   linkType: hard
 

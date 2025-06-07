@@ -39,7 +39,7 @@
         "type-check": "vue-tsc --noEmit -p tsconfig.json"
     },
     "dependencies": {
-        "flyonui": "^2.1.0",
+        "flyonui": "^2.2.0",
         "flyonui-vue": "workspace:*"
     },
     "devDependencies": {

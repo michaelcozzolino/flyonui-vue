@@ -23,7 +23,12 @@ export interface FlyonUIVueAppDefaultConfig {
     components?: FlyonUIVueAppComponentsConfig;
 }
 
-type LabelTypeConfig = Exclude<LabelType, 'inline'>;
+export type GlobalLabelType = Exclude<LabelType, 'inline'>;
+
+interface LabelTypeComponentConfig {
+    labelType?: GlobalLabelType;
+}
+
 type ShapeConfig = Extract<Shape, 'rounded' | 'pilled'>;
 
 interface HorizontalIconPositionConfig {
@@ -46,7 +51,7 @@ export interface FlyonUIVueAppGlobalConfig {
     // textColor:          Color | undefined;
     direction:          Direction;
     horizontalPosition: HorizontalPositionGlobalConfig;
-    labelType:          LabelTypeConfig;
+    labelType:          GlobalLabelType;
     orientation:        Orientation;
     preset:             Preset;
     shape:              ShapeConfig;
@@ -54,7 +59,7 @@ export interface FlyonUIVueAppGlobalConfig {
 }
 
 type ConfigurableProps<MaybeProps extends object> = Prettify<
-    PickIfExists<MaybeProps, 'color' | 'horizontalPosition' | 'preset' | 'shape' | 'size'>
+    PickIfExists<MaybeProps, 'color' | 'horizontalPosition' | 'labelType' | 'preset' | 'shape' | 'size'>
 >;
 
 export interface ConfigurableComponentProps {
@@ -62,14 +67,22 @@ export interface ConfigurableComponentProps {
     FoButton:    ConfigurableProps<ButtonProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     FoCheckbox:  ConfigurableProps<CheckboxProps>;
     FoIcon:      ConfigurableProps<IconProps>;
-    FoInputText: ConfigurableProps<InputTextProps & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>>;
-    FoLink:      ConfigurableProps<LinkProps>;
-    FoLoading:   ConfigurableProps<LoadingProps>;
-    FoMenu:      ConfigurableProps<MenuProps>;
-    FoRadio:     ConfigurableProps<ButtonProps>; // todo: temporary
-    FoSelect:    ConfigurableProps<SelectProps>;
-    FoTextarea:  ConfigurableProps<TextareaProps & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>>;
-    FoTooltip:   ConfigurableProps<TooltipProps>;
+    FoInputText: ConfigurableProps<
+        InputTextProps
+        & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>
+        & LabelTypeComponentConfig
+    >;
+    FoLink:     ConfigurableProps<LinkProps>;
+    FoLoading:  ConfigurableProps<LoadingProps>;
+    FoMenu:     ConfigurableProps<MenuProps>;
+    FoRadio:    ConfigurableProps<ButtonProps>; // todo: temporary
+    FoSelect:   ConfigurableProps<SelectProps> & LabelTypeComponentConfig;
+    FoTextarea: ConfigurableProps<
+        TextareaProps
+        & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>
+        & LabelTypeComponentConfig
+    >;
+    FoTooltip: ConfigurableProps<TooltipProps>;
 }
 
 export type FlyonUIVueAppComponentsConfig = {
