@@ -56,7 +56,7 @@ jobs:
     deploy:
         environment:
             name: staging
-            url: ${{ steps.deployment.outputs.page_url }}/staging
+            url: ${{ steps.deployment.outputs.page_url }}staging
         needs: build
         runs-on: ubuntu-latest
         name: Deploy
