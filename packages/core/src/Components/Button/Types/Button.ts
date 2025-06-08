@@ -21,8 +21,7 @@ export interface ButtonProps extends MaybeStringId, Colorable, Disableable, Resp
 }
 
 export type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
-
-type SocialButtonPreset = Extract<Preset, 'solid' | 'soft' | 'outline'>;
+export type SocialButtonPreset = Extract<Preset, 'solid' | 'soft' | 'outline'>;
 
 export interface SocialButtonProps extends Omit<ButtonProps, 'preset'> {
     social:  Social;

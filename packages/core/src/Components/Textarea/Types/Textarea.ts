@@ -12,6 +12,6 @@ export type TextareaLabel = InputLabel<TextareaLabelType>;
 
 export interface TextareaProps extends MaybeStringId, Disableable, Validity, Sizable, WithConfigurableHelperText, WithConfigurableIcon {
     placeholder?: string;
-    label?:       string | InputLabel<TextareaLabelType>;
+    label?:       string | TextareaLabel;
     isReadonly?:  boolean;
 }
