@@ -20,6 +20,7 @@ export default defineConfig({
         ['link', { rel: 'icon', type: 'image/svg', href: '/assets/logo.svg' }],
     ],
     themeConfig: {
+        outline: 'deep',
         sidebar: getSidebarItems(),
         logo:    '/assets/logo.svg',
         search:  {
