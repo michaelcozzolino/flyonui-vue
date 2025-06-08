@@ -55,7 +55,7 @@ jobs:
 
     deploy:
         environment:
-            name: flyonui-vue
+            name: staging
             url: ${{ steps.deployment.outputs.page_url }}/staging
         needs: build
         runs-on: ubuntu-latest
