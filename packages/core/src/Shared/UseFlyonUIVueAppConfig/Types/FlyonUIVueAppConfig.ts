@@ -24,12 +24,12 @@ export interface FlyonUIVueAppDefaultConfig {
 }
 
 export type GlobalLabelType = Exclude<LabelType, 'inline'>;
+export type GlobalPresetType = Exclude<Preset, 'gradient' | 'text'>;
+export type GlobalShapeType = Extract<Shape, 'rounded' | 'pilled'>;
 
 interface LabelTypeComponentConfig {
     labelType?: GlobalLabelType;
 }
-
-type ShapeConfig = Extract<Shape, 'rounded' | 'pilled'>;
 
 interface HorizontalIconPositionConfig {
     icon: HorizontalPosition;
@@ -53,8 +53,8 @@ export interface FlyonUIVueAppGlobalConfig {
     horizontalPosition: HorizontalPositionGlobalConfig;
     labelType:          GlobalLabelType;
     orientation:        Orientation;
-    preset:             Preset;
-    shape:              ShapeConfig;
+    preset:             GlobalPresetType;
+    shape:              GlobalShapeType;
     size:               Size;
 }
 

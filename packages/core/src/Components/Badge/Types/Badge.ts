@@ -5,7 +5,7 @@ import type { Shapeable }            from '@/Shared/UseShape';
 import type { Size }                 from '@/Shared/UseSize';
 
 export interface BadgeProps extends Colorable, Shapeable, WithConfigurableIcon {
-    preset?:        Preset;
+    preset?:        Exclude<Preset, 'gradient' | 'text'>;
     size?:          Size;
     isDismissible?: boolean;
 }
