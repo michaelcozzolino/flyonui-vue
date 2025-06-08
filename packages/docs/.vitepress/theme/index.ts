@@ -21,15 +21,15 @@ import MenuDocs                                 from '@/Navigations/Menu/MenuDoc
 import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
 import PopoverDocs                              from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                              from '@/Overlays/Tooltip/TooltipDocs.vue';
-import Playground                               from '@/Playground/Playground.vue';
 
-import { createFlyonUIVueApp, FoSelectThemeController, vMask } from 'flyonui-vue';
-import DefaultTheme                                            from 'vitepress/theme';
+import Playground                         from '@/Playground/Playground.vue';
+import { FoSelectThemeController, vMask } from 'flyonui-vue';
+import DefaultTheme                       from 'vitepress/theme';
 import './index.css';
 
 export default {
-    extends: DefaultTheme,
-    enhanceApp({ app }) {
+    extends:    DefaultTheme,
+    enhanceApp: async ({ app }) => {
         app.directive('mask', vMask());
 
         // const createFlyonUIVueAppOptions: FlyonUIVueAppConfig = {
@@ -49,7 +49,10 @@ export default {
         //     },
         // };
 
-        app.use(createFlyonUIVueApp, {});
+        if (!import.meta.env.SSR) {
+            const { createFlyonUIVueApp } = await import('flyonui-vue');
+            app.use(createFlyonUIVueApp, {});
+        }
 
         registerDocComponents(app, [
             { name: 'LinkDocs', instance: LinkDocs },
