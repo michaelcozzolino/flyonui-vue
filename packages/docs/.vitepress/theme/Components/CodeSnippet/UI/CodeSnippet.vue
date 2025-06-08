@@ -8,7 +8,9 @@
                  data-test="flyonui-vue-preview"
                  :class="previewGridClass"
             >
-                <component :is="component" />
+                <ClientOnly>
+                    <component :is="component" />
+                </ClientOnly>
             </div>
             <!-- todo: make another code snippet to fulfill all my needs -->
             <VueCodeHighlighter v-for="codeSnippet in codeSnippets"

@@ -10,7 +10,7 @@ export default defineConfig({
         alias: {
             '@': resolve(__dirname, './src'),
         },
-        dedupe: ['vue'],
+        dedupe: ['vue', 'flyonui', 'flyonui-vue'],
     },
     build: {
         outDir:       'dist-ce.vue',
