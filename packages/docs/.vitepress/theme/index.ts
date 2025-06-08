@@ -30,8 +30,6 @@ import './index.css';
 export default {
     extends:    DefaultTheme,
     enhanceApp: async ({ app }) => {
-        app.directive('mask', vMask());
-
         // const createFlyonUIVueAppOptions: FlyonUIVueAppConfig = {
         //     global: {
         //         horizontalPosition: {
@@ -50,6 +48,8 @@ export default {
         // };
 
         if (!import.meta.env.SSR) {
+            app.directive('mask', vMask());
+
             const { createFlyonUIVueApp } = await import('flyonui-vue');
             app.use(createFlyonUIVueApp, {});
         }
