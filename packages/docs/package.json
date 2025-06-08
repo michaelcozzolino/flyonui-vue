@@ -11,6 +11,7 @@
         "dev": "vitepress",
         "preview": "vitepress preview",
         "build": "yarn type-check && vitepress build && cp -r assets/* ./.vitepress/dist/assets/",
+        "build:staging": "vitepress build --base=/flyonui-vue/staging/ --outDir .vitepress/dist/staging && cp -r assets/* ./.vitepress/dist/staging/assets/",
         "lint": "eslint . --fix",
         "test": "vitest run",
         "test:e2e": "npx playwright test EndToEnd",

@@ -51,7 +51,9 @@ jobs:
             -   name: Build with VitePress
                 env:
                     GENERATE_BUILD_SIZE_VISUALIZER: true
-                run: yarn build
+                run: |
+                    yarn build
+                    yarn build:docs:staging
 
             -   name: Upload artifact
                 uses: actions/upload-pages-artifact@v3
