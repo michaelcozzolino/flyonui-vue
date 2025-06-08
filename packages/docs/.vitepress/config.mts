@@ -1,9 +1,10 @@
+import process             from 'node:process';
 import { kebabCase }       from 'change-case';
 import { defineConfig }    from 'vitepress';
 import { getSidebarItems } from './theme/Shared/Config/Lib/getSidebarItems';
 
 export default defineConfig({
-    base:     '/flyonui-vue/',
+    base:     `/flyonui-vue/${process.env.BRANCH_NAME === undefined ? '' : 'staging'}`,
     rewrites: (id) => {
         const format = '.md';
 
