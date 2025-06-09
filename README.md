@@ -30,4 +30,12 @@ This monorepo contains the following:
 ### Private packages
 1) [docs](https://github.com/michaelcozzolino/flyonui-vue/tree/2.x/packages/docs): The documentation of the `Public Packages` built with `Vitepress`.
 
+## Credits 🤘
+
+We are grateful for the contributions of the open-source community, particularly:
+
+- [FlyonUI](https://flyonui.com/)
+
+These projects form the backbone of FlyonUI, allowing us to build a powerful and user-friendly UI kit.
+
 [//]: # (todo: add contribution guide and versioning)
