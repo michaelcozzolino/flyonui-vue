@@ -5052,7 +5052,7 @@ __metadata:
     vue: ^3
     vue-router: ^4
   peerDependenciesMeta:
-    iconify:
+    "@iconify/vue":
       optional: true
     vue-router:
       optional: true
