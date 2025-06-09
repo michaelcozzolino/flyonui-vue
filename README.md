@@ -9,46 +9,25 @@ VueJS components built on top of the [flyonui](https://github.com/themeselection
     <img src="https://img.shields.io/npm/dt/flyonui-vue.svg" alt="Total Downloads">
 </a>
 
-## Getting Started
+## Quick start
 
-### New Projects
-
-If you are starting a new `Vite` + `Vue` project you can use our automatic `flyonui-vue` installation tool
+To quickly create a new `Vite` + `Vue` + `FlyonUI Vue` project you can use our automatic `flyonui-vue` installation tool
 [create-flyonui-vue](https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/create-flyonui-vue/README.md):
 
 ```sh
 yarn create flyonui-vue
 ```
 
-### Already existing Projects
+## Documentation
 
-Make sure that you have [FlyonUI](https://flyonui.com/docs/getting-started/quick-start/)
-and [Tailwind CSS](https://tailwindcss.com/) installed.
+This monorepo contains the following:
 
-1. Install `flyonui-vue` as a dependency using NPM or Yarn by running the following command:
+### Public packages
+1) [core](https://michaelcozzolino.github.io/flyonui-vue): The core set of Vue components built on top of [FlyonUI](https://github.com/themeselection/flyonui).
+2) [create-flyonui-vue](https://github.com/michaelcozzolino/flyonui-vue/tree/2.x/packages/create-flyonui-vue): A tool that allows you to quickly create a new and already set `Vite` + `Vue` + `FlyonUI-vue` project.
+3) [web-components](https://github.com/michaelcozzolino/flyonui-vue/tree/2.x/packages/web-components) (**experimental**): Framework agnostic `FlyonUI Vue` web components, built for a better web.
 
-```sh
-npm i flyonui-vue
-```
-
-or
-
-```sh
-yarn add flyonui-vue
-```
-
-in order to use icons, `@iconify/vue` is required:
-
-```sh
-yarn add @iconify/vue
-```
-
-2. Import styles:
-
-```css
-@import 'flyonui-vue/index.css';
-```
-
-3. Now you can use `flyonui-vue` anywhere in your project by importing the components you need.
+### Private packages
+1) [docs](https://github.com/michaelcozzolino/flyonui-vue/tree/2.x/packages/docs): The documentation of the `Public Packages` built with `Vitepress`.
 
 [//]: # (todo: add contribution guide and versioning)
