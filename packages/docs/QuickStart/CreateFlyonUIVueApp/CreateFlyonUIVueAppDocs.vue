@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import { VueCodeHighlighter }  from 'vue-code-highlighter';
+import { VueCodeHighlighter }  from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
 import ConfigurationExampleRaw from './ConfigurationExample.ts?raw';
 </script>
