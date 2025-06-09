@@ -1,9 +1,8 @@
 import { createFlyonUIVueApp } from 'flyonui-vue';
 import { createApp }           from 'vue';
 
-const app = createApp(App);
-
-app.use(createFlyonUIVueApp, {
+// @ts-expect-error E.G
+createApp(App).use(createFlyonUIVueApp, {
     global: {
         color:              'accent',
         size:               'small',

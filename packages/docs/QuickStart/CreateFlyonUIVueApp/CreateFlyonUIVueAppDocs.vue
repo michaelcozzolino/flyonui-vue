@@ -1,7 +1,7 @@
 <template>
     <VueCodeHighlighter title="TS"
                         lang="ts"
-                        :code="ConfigurationExampleRaw"
+                        :code="ConfigurationExampleRaw.replace('// @ts-expect-error E.G', '')"
     />
 </template>
 
