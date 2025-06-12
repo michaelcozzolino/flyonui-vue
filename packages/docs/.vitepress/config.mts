@@ -3,7 +3,6 @@ import { defineConfig }    from 'vitepress';
 import { getSidebarItems } from './theme/Shared/Config/Lib/getSidebarItems';
 
 export default defineConfig({
-    base:     '/flyonui-vue/',
     rewrites: (id) => {
         const format = '.md';
 
