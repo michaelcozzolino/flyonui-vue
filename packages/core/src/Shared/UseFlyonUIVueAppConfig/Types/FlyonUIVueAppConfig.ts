@@ -11,7 +11,6 @@ import type { SelectProps }                                       from '@/Compon
 import type { TextareaProps }                                     from '@/Components/Textarea';
 import type { TooltipProps }                                      from '@/Components/Tooltip';
 import type { Color }                                             from '@/Shared/UseColor';
-import type { Orientation }                                       from '@/Shared/UseOrientation';
 import type { Preset }                                            from '@/Shared/UsePreset';
 import type { Shape }                                             from '@/Shared/UseShape';
 import type { Size }                                              from '@/Shared/UseSize';
@@ -52,7 +51,6 @@ export interface FlyonUIVueAppGlobalConfig {
     direction:          Direction;
     horizontalPosition: HorizontalPositionGlobalConfig;
     labelType:          GlobalLabelType;
-    orientation:        Orientation;
     preset:             GlobalPresetType;
     shape:              GlobalShapeType;
     size:               Size;

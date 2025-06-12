@@ -20,11 +20,12 @@ import TextareaDocs                             from '@/Forms/Textarea/TextareaD
 import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
 import PopoverDocs                              from '@/Overlays/Popover/PopoverDocs.vue';
-import TooltipDocs                              from '@/Overlays/Tooltip/TooltipDocs.vue';
 
-import Playground                         from '@/Playground/Playground.vue';
-import { FoSelectThemeController, vMask } from 'flyonui-vue';
-import DefaultTheme                       from 'vitepress/theme';
+import TooltipDocs                         from '@/Overlays/Tooltip/TooltipDocs.vue';
+import Playground                          from '@/Playground/Playground.vue';
+import CreateFlyonUiVueAppDocs             from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
+import {  FoSelectThemeController, vMask } from 'flyonui-vue';
+import DefaultTheme                        from 'vitepress/theme';
 import './index.css';
 
 export default {
@@ -78,6 +79,7 @@ export default {
             { name: 'Playground', instance: Playground },
             { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
             { name: 'VueCodeHighlighter', instance: VueCodeHighlighter },
+            { name: 'CreateFlyonUIVueAppDocs', instance: CreateFlyonUiVueAppDocs },
         ]);
     },
 } satisfies Theme;

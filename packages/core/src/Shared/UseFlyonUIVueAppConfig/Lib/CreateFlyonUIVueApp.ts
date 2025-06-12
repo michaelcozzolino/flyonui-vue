@@ -10,17 +10,15 @@ import { watch }                                                from 'vue';
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     global: {
         color:              'neutral',
-        // textColor:          undefined,
         direction:          'ltr',
         horizontalPosition: {
             icon:       'left',
             helperText: 'left',
         },
-        labelType:   'text',
-        orientation: 'horizontal',
-        preset:      'solid',
-        shape:       'rounded',
-        size:        'medium',
+        labelType: 'text',
+        preset:    'solid',
+        shape:     'rounded',
+        size:      'medium',
     },
 };
 

@@ -2,13 +2,13 @@
     <!--    todo: check size on devices such as iphone SE, the tooltip seems to be cut off the screen -->
     <ClientOnly>
         <FoListGroup class="w-80 bg-base-100">
-            <ConfigurationSettingsHeader v-model="showGlobalSettings"
+            <ConfigurationSettingsHeader v-model="showSettings"
                                          class="text-base-content"
             >
-                Global settings
+                Configuration settings
             </ConfigurationSettingsHeader>
 
-            <template v-if="showGlobalSettings">
+            <template v-if="showSettings">
                 <ConfigurationSettingsItem>
                     <ThemeSettings v-model="config.global.direction"
                                    :theme-storage-key="themeStorageKey"
@@ -89,5 +89,5 @@ defineProps<Props>();
 
 const { config } = useFlyonUIVueAppConfig();
 
-const showGlobalSettings = ref<boolean>(true);
+const showSettings = ref<boolean>(true);
 </script>
