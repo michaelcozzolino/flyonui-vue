@@ -1,5 +1,6 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
+                 id="default"
                  :code="DefaultCheckboxRaw"
                  :component="DefaultCheckbox"
     />
