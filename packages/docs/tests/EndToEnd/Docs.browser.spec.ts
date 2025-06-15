@@ -18,7 +18,7 @@ test('docs preview screenshots snapshots', async ({ page }) => {
                 const itemName     = childChildItem.link;
 
                 // todo: check how to do it through github action
-                const url          = `http://localhost:5173/flyonui-vue${categoryPath}${itemName}`;
+                const url          = `http://localhost:5173${categoryPath}${itemName}`;
 
                 await page.goto(url);
 
@@ -34,10 +34,11 @@ test('docs preview screenshots snapshots', async ({ page }) => {
 
                     const preview = codeSnippet.locator('[data-test="flyonui-vue-preview"]').first();
                     await preview.waitFor();
+                    await preview.scrollIntoViewIfNeeded();
 
-                    const screenshot = await preview.screenshot();
+                    const screenshot = await preview.screenshot({ animations: 'disabled' });
 
-                    expect(screenshot).toMatchSnapshot(`${categoryPath?.slice(1)}${itemName}/${id}.png`);
+                    expect.soft(screenshot).toMatchSnapshot(`${categoryPath?.slice(1)}${itemName}/${id}.png`);
                 }
             }
         }
