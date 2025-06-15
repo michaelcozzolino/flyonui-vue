@@ -2,7 +2,7 @@
     <FoTextarea v-model="input"
                 :label="{ text: 'Your bio' }"
                 placeholder="Hello!!!"
-                readonly
+                is-readonly
     />
 </template>
 
