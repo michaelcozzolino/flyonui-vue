@@ -38,7 +38,11 @@ test('docs preview screenshots snapshots', async ({ page }) => {
 
                     const screenshot = await preview.screenshot({ animations: 'disabled' });
 
-                    expect.soft(screenshot).toMatchSnapshot(`${categoryPath?.slice(1)}${itemName}/${id}.png`);
+                    if (categoryPath === undefined) {
+                        throw new Error('The category path cannot be undefined.');
+                    }
+
+                    expect.soft(screenshot).toMatchSnapshot(`${categoryPath.slice(1)}${itemName}/${id}.png`);
                 }
             }
         }
