@@ -36,6 +36,6 @@ We are grateful for the contributions of the open-source community, particularly
 
 - [FlyonUI](https://flyonui.com/)
 
-These projects form the backbone of FlyonUI, allowing us to build a powerful and user-friendly UI kit.
+These projects form the backbone of FlyonUI Vue, allowing us to build a powerful and user-friendly Vue components UI kit.
 
 [//]: # (todo: add contribution guide and versioning)
