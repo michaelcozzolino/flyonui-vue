@@ -22,7 +22,7 @@ export default defineConfig({
         ],
         [
             'script',
-            { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-5CJENG9Y0N' },
+            { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-5TX4XTLE62' },
         ],
         [
             'script',
@@ -30,7 +30,7 @@ export default defineConfig({
             `window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-5CJENG9Y0N');`,
+            gtag('config', 'G-5TX4XTLE62');`,
         ],
     ],
     themeConfig: {
