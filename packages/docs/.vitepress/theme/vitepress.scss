@@ -1,5 +1,6 @@
 @layer base {
     :root {
+        --vp-home-hero-name-color: var(--color-info) !important;
         // t0do: many variables with division are not right, to be adjusted
         --vp-button-brand-bg: var(--color-primary) !important;
         --vp-button-brand-hover-bg: var(--color-info) !important;
@@ -57,5 +58,13 @@
     .VPNavScreenAppearance {
         justify-content: space-evenly !important;
         padding: 12px 0 12px 0 !important;
+    }
+
+    a.VPFeature:hover {
+        background-color: var(--vp-button-brand-hover-bg) !important;
+    }
+
+    a.flyonui:hover {
+        color: var(--vp-button-brand-bg)!important;
     }
 }
