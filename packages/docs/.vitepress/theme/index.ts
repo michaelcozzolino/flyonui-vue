@@ -8,6 +8,7 @@ import LoadingDocs                              from '@/Components/Loading/Loadi
 import StatsDocs                                from '@/Components/Stat/StatsDocs.vue';
 import SwapDocs                                 from '@/Components/Swap/SwapDocs.vue';
 import HeadingDocs                              from '@/Content/Heading/HeadingDocs.vue';
+import KeyboardDocs                             from '@/Content/Keyboard/KeyboardDocs.vue';
 import LinkDocs                                 from '@/Content/Link/LinkDocs.vue';
 import MaskDocs                                 from '@/Content/Mask/MaskDocs.vue';
 import IconsDocs                                from '@/Customisation/Icons/IconsDocs.vue';
@@ -19,8 +20,8 @@ import SelectDocs                               from '@/Forms/Select/SelectDocs.
 import TextareaDocs                             from '@/Forms/Textarea/TextareaDocs.vue';
 import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
-import PopoverDocs                              from '@/Overlays/Popover/PopoverDocs.vue';
 
+import PopoverDocs                         from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                         from '@/Overlays/Tooltip/TooltipDocs.vue';
 import Playground                          from '@/Playground/Playground.vue';
 import CreateFlyonUiVueAppDocs             from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
@@ -56,6 +57,7 @@ export default {
         }
 
         registerDocComponents(app, [
+            { name: 'KeyboardDocs', instance: KeyboardDocs },
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
