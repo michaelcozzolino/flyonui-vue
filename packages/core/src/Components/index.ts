@@ -5,6 +5,7 @@ export * from '@/Components/Heading';
 export * from '@/Components/Icon';
 export * from '@/Components/InputText';
 export * from '@/Components/Join';
+export * from '@/Components/Keyboard';
 export * from '@/Components/Label';
 export * from '@/Components/Link';
 export * from '@/Components/ListGroup';

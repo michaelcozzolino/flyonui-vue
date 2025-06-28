@@ -52,6 +52,13 @@ export function useSize(
                 large:      'input-lg',
                 extraLarge: 'input-xl',
             },
+            FoKeyboard: {
+                extraSmall: 'kbd-xs',
+                small:      'kbd-sm',
+                medium:     '',
+                large:      'kbd-lg',
+                extraLarge: 'kbd-xl',
+            },
             FoLoading: {
                 extraSmall: 'loading-xs',
                 small:      'loading-sm',

@@ -38,11 +38,11 @@
 
 <ButtonDocs section="validation-state" />
 
-### Sizes
+## Sizes
 
 <ButtonDocs section="size" />
 
-### Layouts
+## Layouts
 
 <ButtonDocs section="layout" />
 

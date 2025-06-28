@@ -1,21 +1,20 @@
-import type { BadgeProps }                                        from '@/Components/Badge';
-import type { ButtonProps }                                       from '@/Components/Button';
-import type { CheckboxProps }                                     from '@/Components/Checkbox';
-import type { IconProps }                                         from '@/Components/Icon';
-import type { InputTextProps }                                    from '@/Components/InputText';
-import type { LabelType }                                         from '@/Components/Label';
-import type { LinkProps }                                         from '@/Components/Link';
-import type { LoadingProps }                                      from '@/Components/Loading';
-import type { MenuProps }                                         from '@/Components/Menu';
-import type { SelectProps }                                       from '@/Components/Select';
-import type { TextareaProps }                                     from '@/Components/Textarea';
-import type { TooltipProps }                                      from '@/Components/Tooltip';
-import type { Color }                                             from '@/Shared/UseColor';
-import type { Preset }                                            from '@/Shared/UsePreset';
-import type { Shape }                                             from '@/Shared/UseShape';
-import type { Size }                                              from '@/Shared/UseSize';
-import type { Direction, HorizontalPosition }                     from '@/Shared/Utils';
-import type { ConfigurableComponentName, PickIfExists, Prettify } from '@/Shared/Utils/Internal';
+import type {
+    BadgeProps,
+    ButtonProps,
+    CheckboxProps,
+    IconProps,
+    InputTextProps,
+    KeyboardProps,
+    LabelType,
+    LinkProps,
+    LoadingProps,
+    MenuProps,
+    SelectProps,
+    TextareaProps,
+    TooltipProps,
+}                                                                         from '@/Components';
+import type { Color, Direction, HorizontalPosition, Preset, Shape, Size } from '@/Shared';
+import type { ConfigurableComponentName, PickIfExists, Prettify }         from '@/Shared/Utils/Internal';
 
 export interface FlyonUIVueAppDefaultConfig {
     global:      FlyonUIVueAppGlobalConfig;
@@ -70,6 +69,7 @@ export interface ConfigurableComponentProps {
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>
         & LabelTypeComponentConfig
     >;
+    FoKeyboard: ConfigurableProps<KeyboardProps>;
     FoLink:     ConfigurableProps<LinkProps>;
     FoLoading:  ConfigurableProps<LoadingProps>;
     FoMenu:     ConfigurableProps<MenuProps>;
