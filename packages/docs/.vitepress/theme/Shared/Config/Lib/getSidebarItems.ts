@@ -31,7 +31,7 @@ export function getSidebarItems(): DefaultTheme.SidebarItem[] {
                     base:  '/content/',
                     items: [
                         { text: 'Link', link: 'link' },
-                        { text: 'Keyboard', link: 'keyboard' },
+                        { text: 'Keyboard (Unreleased)', link: 'keyboard' },
                         { text: 'Mask', link: 'mask' },
                         { text: 'Heading', link: 'heading' },
                     ],
