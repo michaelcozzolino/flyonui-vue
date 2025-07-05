@@ -8,10 +8,6 @@ export default defineConfig({
                 find:        '@',
                 replacement: resolve(__dirname, '.'),
             },
-            {
-                find:        /^.*\/VPNavBar\.vue$/,
-                replacement: resolve(__dirname, '.vitepress/theme/Components/Navbar/UI/Navbar.vue'),
-            },
         ],
         dedupe: ['vue', 'flyonui', 'flyonui-vue'],
     },

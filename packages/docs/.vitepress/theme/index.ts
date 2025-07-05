@@ -1,59 +1,66 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
+import Layout                                   from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 import BadgeDocs                                from '@/Components/Badge/BadgeDocs.vue';
-import ButtonDocs                               from '@/Components/Button/ButtonDocs.vue';
-import ListGroupDocs                            from '@/Components/ListGroup/ListGroupDocs.vue';
-import LoadingDocs                              from '@/Components/Loading/LoadingDocs.vue';
-import StatsDocs                                from '@/Components/Stat/StatsDocs.vue';
-import SwapDocs                                 from '@/Components/Swap/SwapDocs.vue';
-import HeadingDocs                              from '@/Content/Heading/HeadingDocs.vue';
-import KeyboardDocs                             from '@/Content/Keyboard/KeyboardDocs.vue';
-import LinkDocs                                 from '@/Content/Link/LinkDocs.vue';
-import MaskDocs                                 from '@/Content/Mask/MaskDocs.vue';
-import IconsDocs                                from '@/Customisation/Icons/IconsDocs.vue';
-import BuildSizeVisualizer                      from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
-import CheckboxDocs                             from '@/Forms/Checkbox/CheckboxDocs.vue';
-import InputTextDocs                            from '@/Forms/InputText/InputTextDocs.vue';
-import JoinDocs                                 from '@/Forms/Join/JoinDocs.vue';
-import SelectDocs                               from '@/Forms/Select/SelectDocs.vue';
-import TextareaDocs                             from '@/Forms/Textarea/TextareaDocs.vue';
-import MenuDocs                                 from '@/Navigations/Menu/MenuDocs.vue';
-import NavbarDocs                               from '@/Navigations/Navbar/NavbarDocs.vue';
 
-import PopoverDocs                         from '@/Overlays/Popover/PopoverDocs.vue';
-import TooltipDocs                         from '@/Overlays/Tooltip/TooltipDocs.vue';
-import Playground                          from '@/Playground/Playground.vue';
-import CreateFlyonUiVueAppDocs             from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
-import {  FoSelectThemeController, vMask } from 'flyonui-vue';
-import DefaultTheme                        from 'vitepress/theme';
+import ButtonDocs                         from '@/Components/Button/ButtonDocs.vue';
+import ListGroupDocs                      from '@/Components/ListGroup/ListGroupDocs.vue';
+import LoadingDocs                        from '@/Components/Loading/LoadingDocs.vue';
+import StatsDocs                          from '@/Components/Stat/StatsDocs.vue';
+import SwapDocs                           from '@/Components/Swap/SwapDocs.vue';
+import HeadingDocs                        from '@/Content/Heading/HeadingDocs.vue';
+import KeyboardDocs                       from '@/Content/Keyboard/KeyboardDocs.vue';
+import LinkDocs                           from '@/Content/Link/LinkDocs.vue';
+import MaskDocs                           from '@/Content/Mask/MaskDocs.vue';
+import IconsDocs                          from '@/Customisation/Icons/IconsDocs.vue';
+import BuildSizeVisualizer                from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
+import CheckboxDocs                       from '@/Forms/Checkbox/CheckboxDocs.vue';
+import InputTextDocs                      from '@/Forms/InputText/InputTextDocs.vue';
+import JoinDocs                           from '@/Forms/Join/JoinDocs.vue';
+import SelectDocs                         from '@/Forms/Select/SelectDocs.vue';
+import TextareaDocs                       from '@/Forms/Textarea/TextareaDocs.vue';
+import MenuDocs                           from '@/Navigations/Menu/MenuDocs.vue';
+import NavbarDocs                         from '@/Navigations/Navbar/NavbarDocs.vue';
+import PopoverDocs                        from '@/Overlays/Popover/PopoverDocs.vue';
+import TooltipDocs                        from '@/Overlays/Tooltip/TooltipDocs.vue';
+import Playground                         from '@/Playground/Playground.vue';
+import CreateFlyonUiVueAppDocs            from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
+import { FoSelectThemeController, vMask } from 'flyonui-vue';
+import { createPinia }                    from 'pinia';
+import DefaultTheme                       from 'vitepress/theme';
+import { h }                              from 'vue';
 import './index.css';
 
 export default {
     extends:    DefaultTheme,
+    Layout:     () => h(Layout),
     enhanceApp: async ({ app }) => {
-        // const createFlyonUIVueAppOptions: FlyonUIVueAppConfig = {
-        //     global: {
-        //         horizontalPosition: {
-        //             icon:       'left',
-        //             helperText: 'right',
-        //         },
-        //     },
-        //     components: {
-        //         FoInputText: {
-        //             horizontalPosition: {
-        //                 helperText: 'left',
-        //                 icon:       'left',
-        //             },
-        //         },
-        //     },
-        // };
-
         if (!import.meta.env.SSR) {
             app.directive('mask', vMask());
 
-            const { createFlyonUIVueApp } = await import('flyonui-vue');
-            app.use(createFlyonUIVueApp, {});
+            // const { createFlyonUIVueApp } = await import('flyonui-vue');
+
+            // const createFlyonUIVueAppOptions: FlyonUIVueAppConfig = {
+            //     global: {
+            //         horizontalPosition: {
+            //             icon:       'left',
+            //             helperText: 'right',
+            //         },
+            //     },
+            //     components: {
+            //         FoInputText: {
+            //             horizontalPosition: {
+            //                 helperText: 'left',
+            //                 icon:       'left',
+            //             },
+            //         },
+            //     },
+            // };
+
+            // app.use(createFlyonUIVueApp, createFlyonUIVueAppOptions);
+
+            app.use(createPinia());
         }
 
         registerDocComponents(app, [
