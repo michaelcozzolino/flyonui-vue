@@ -9,6 +9,7 @@
         <template v-if="item.to !== undefined">
             <FoLink :to="item.to"
                     :exact-active-class="activeClass"
+                    :navigation="navigation"
             >
                 <FoIcon v-if="item.icon !== undefined"
                         :icon="item.icon"
@@ -42,6 +43,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Navigation }                                                    from '@/Components/Link/Internal';
 import type { MenuItem }                                                      from '@/Components/Menu';
 import type { ComponentName }                                                 from '@/Shared/Utils/Internal';
 import { FoIcon }                                                             from '@/Components/Icon';
@@ -52,7 +54,8 @@ import { useMotion }                                                          fr
 import { computed, inject, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 
 interface Props {
-    item: MenuItem;
+    item:        MenuItem;
+    navigation?: Navigation;
 }
 
 const props = defineProps<Props>();
@@ -100,7 +103,7 @@ watch(showTooltip, (visible: boolean): void => {
 });
 
 watchEffect(() => {
-    if (props.item.icon === undefined && menuTextProps.value.hideText) {
+    if (props.item.to !== undefined && props.item.icon === undefined && menuTextProps.value.hideText) {
         throw new Error(`The text ${props.item.text} is hidden but the icon is not specified.`);
     }
 });
