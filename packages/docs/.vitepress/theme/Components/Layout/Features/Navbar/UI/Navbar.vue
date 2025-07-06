@@ -6,7 +6,7 @@
         >
             <template #start>
                 <div class="flex place-items-center gap-4">
-                    <FoIcon v-show="isHomepage() === false"
+                    <FoIcon v-show="isNotHomepage()"
                             class="ms-2 cursor-pointer"
                             :icon="isSidebarCollapsed ? 'tabler:layout-sidebar-right-collapse-filled' : 'tabler:layout-sidebar-left-collapse-filled'"
                             @click="isSidebarCollapsed = !isSidebarCollapsed"
@@ -82,7 +82,7 @@ import { computed, onMounted, ref } from 'vue';
 
 const router = useRouter();
 
-const { isHomepage }         = useLayoutStore();
+const { isNotHomepage }      = useLayoutStore();
 const { isSidebarCollapsed } = storeToRefs(useLayoutStore());
 
 const links = computed((): NavbarLink[] => {

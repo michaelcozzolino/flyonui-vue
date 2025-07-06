@@ -24,5 +24,9 @@ export const useLayoutStore = defineStore('UseLayoutStore', () => {
         return route.path === '/';
     }
 
-    return { isSidebarCollapsed, isPageSizeSmallerThanSm, isHomepage };
+    function isNotHomepage(): boolean {
+        return isHomepage() === false;
+    }
+
+    return { isSidebarCollapsed, isPageSizeSmallerThanSm, isHomepage, isNotHomepage };
 });

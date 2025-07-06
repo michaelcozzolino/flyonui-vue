@@ -2,19 +2,16 @@
     <div>
         <Navbar />
 
-        <Sidebar v-if="isHomepage() === false" />
+        <Sidebar v-if="isNotHomepage()" />
 
-        <div class="p-8"
-             :class="isPageSizeSmallerThanSm ? 'ms-0' : (isSidebarCollapsed ? 'ms-24' : 'ms-64')"
-        >
-            <main class="main">
-                <Home v-if="isHomepage()" />
+        <main class="main">
+            <Home v-if="isHomepage()" />
 
-                <Content v-else
-                         class="vp-doc"
-                />
-            </main>
-        </div>
+            <Content v-else
+                     class="vp-doc p-8"
+                     :class="isPageSizeSmallerThanSm ? 'ms-0' : (isSidebarCollapsed ? 'ms-24' : 'ms-64')"
+            />
+        </main>
     </div>
 </template>
 
@@ -26,6 +23,7 @@ import { useLayoutStore } from '@/.vitepress/theme/Components/Layout/Lib/UseLayo
 import { storeToRefs }    from 'pinia';
 import { Content }        from 'vitepress';
 
-const { isHomepage }         = useLayoutStore();
+const { isHomepage, isNotHomepage } = useLayoutStore();
+
 const { isSidebarCollapsed, isPageSizeSmallerThanSm } = storeToRefs(useLayoutStore());
 </script>
