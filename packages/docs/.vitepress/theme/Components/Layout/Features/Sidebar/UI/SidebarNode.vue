@@ -1,6 +1,6 @@
 <template>
     <FoMenuItem :item="item"
-                :navigation="{ navigate: (to: string) => router.go(to), locationHash: '/' }"
+                :navigation="{ navigate: (to: string) => router.go(to), activePath: router.route.path }"
     >
         <template v-if="item.badge !== undefined"
                   #append
