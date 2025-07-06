@@ -1,5 +1,13 @@
 <template>
-    <a v-if="useATag(to)"
+    <a v-if="navigation !== undefined && isStringLink(to)"
+       :class="[$attrs?.class, navigation.activePath === to && exactActiveClass]"
+       :href="to"
+       @click.prevent=" navigation.navigate(to);"
+    >
+        <slot />
+    </a>
+
+    <a v-else-if="useATag(to)"
        :class="$attrs?.class"
        :href="to"
        :target="isExternalLink(to) ? '_blank' : undefined"
