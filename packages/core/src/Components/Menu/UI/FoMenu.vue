@@ -2,18 +2,22 @@
     <ul class="menu"
         :class="[orientationClass, sizeClass, flushClass]"
     >
-        <slot />
+        <slot>
+            {{ useRequiredSlotMessage(componentName) }}
+        </slot>
     </ul>
 </template>
 
 <script setup lang="ts">
 import type { MenuProps }            from '@/Components/Menu';
 import type { ComponentName }        from '@/Shared/Utils/Internal';
+import type { VNode }                from 'vue';
 import { menuTextPropsInjectionKey } from '@/Components/Menu/Internal';
 import { useClass }                  from '@/Shared/UseClass/Internal';
 import { useFlyonUIVueAppConfig }    from '@/Shared/UseFlyonUIVueAppConfig';
 import { useOrientation }            from '@/Shared/UseOrientation/Internal';
 import { useSize }                   from '@/Shared/UseSize/Internal';
+import { useRequiredSlotMessage }    from '@/Shared/Utils/Internal';
 import { computed, provide }         from 'vue';
 
 const props = withDefaults(defineProps<MenuProps>(), {
@@ -22,6 +26,10 @@ const props = withDefaults(defineProps<MenuProps>(), {
     orientation:   'vertical',
     isFlushed:     false,
 });
+
+defineSlots<{
+    default: () => VNode[];
+}>();
 
 provide(menuTextPropsInjectionKey, computed(() => (
     { hideText: props.hideText, textAsTooltip: props.textAsTooltip }

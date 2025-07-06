@@ -32,10 +32,16 @@ The following component might have changes in future releases
 
 <MenuDocs section="with-badge" />
 
-### With active items
+### With active item (Vue Router) (Unreleased)
 
-The active items will automatically be highlighted when the exact route corresponding to the item is visited.
-Unluckily it's not possible to preview a demo because Vitepress does not support the Vue Router.
+<MenuDocs section="with-active-item-vue-router" />
+
+### With active item (External Router) (Unreleased)
+
+In case of external router, you need to pass a navigation props that contains a function to navigate to the item route
+and an active path that will be used to highlight the active item. 
+These docs are an use case to this, where the Vitepress router is used.
+<MenuDocs section="with-active-item-external-router" />
 
 ### Sizes
 
