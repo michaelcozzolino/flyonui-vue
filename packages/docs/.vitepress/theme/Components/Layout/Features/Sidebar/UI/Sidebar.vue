@@ -1,12 +1,12 @@
 <template>
-    <aside class="drawer drawer-start translate-x-0 mt-16"
+    <aside class="sticky top-16 overflow-x-hidden overflow-y-auto h-[calc(100vh-4.25rem)] shrink-0"
            :class="[
-               isCollapsed ? 'max-w-24' : 'max-w-64',
+               isCollapsed ? 'w-24' : 'w-64',
                isPageSizeSmallerThanSm && isCollapsed && 'hidden',
            ]"
            tabindex="-1"
     >
-        <div class="drawer-body px-0! pt-4">
+        <div class="px-0!">
             <FoMenu class="vp-raw pl-0!"
                     size="small"
                     :hide-text="isCollapsed"
