@@ -1,9 +1,7 @@
 <template>
-    <div
-        class="sticky top-28 h-[calc(100vh-7.25rem)] max-w-64 overflow-x-hidden overflow-y-auto max-lg:hidden shrink-0 pr-8"
-    >
+    <div class="sticky top-28 h-[calc(100vh-7.25rem)] w-40 overflow-x-hidden overflow-y-auto max-lg:hidden shrink-0">
         <FoMenu class="vp-raw p-0!"
-                size="small"
+                size="extraSmall"
         >
             <FoMenuParentTitle>
                 <b>On This page</b>

@@ -1,7 +1,6 @@
 <template>
     <div>
         <Navbar />
-
         <main class="main">
             <template v-if="page.isNotFound">
                 <NotFound />
@@ -10,11 +9,11 @@
             <Home v-else-if="isHomepage()" />
 
             <div v-else
-                 class="flex gap-8"
+                 class="flex"
             >
                 <Sidebar />
 
-                <Content class="VPDoc vp-doc flex-grow pt-8"
+                <Content class="VPDoc vp-doc flex-grow p-8 w-4xl"
                          :class="isPageSizeSmallerThanSm && 'ms-0'"
                 />
 
