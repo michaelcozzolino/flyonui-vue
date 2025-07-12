@@ -9,7 +9,7 @@ export default defineConfig({
                 replacement: resolve(__dirname, '.'),
             },
         ],
-        dedupe: ['vue', 'flyonui', 'flyonui-vue'],
+        dedupe: ['vue', 'flyonui', 'flyonui-vue', 'pinia'],
     },
     css: {
         preprocessorOptions: {
