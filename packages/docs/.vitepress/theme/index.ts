@@ -29,12 +29,11 @@ import CreateFlyonUiVueAppDocs            from '@/QuickStart/CreateFlyonUIVueApp
 import { FoSelectThemeController, vMask } from 'flyonui-vue';
 import { createPinia }                    from 'pinia';
 import DefaultTheme                       from 'vitepress/theme';
-import { h }                              from 'vue';
 import './index.css';
 
 export default {
     extends:    DefaultTheme,
-    Layout:     () => h(Layout),
+    Layout,
     enhanceApp: async ({ app }) => {
         if (!import.meta.env.SSR) {
             app.directive('mask', vMask());
@@ -59,9 +58,9 @@ export default {
             // };
 
             // app.use(createFlyonUIVueApp, createFlyonUIVueAppOptions);
-
-            app.use(createPinia());
         }
+
+        app.use(createPinia());
 
         registerDocComponents(app, [
             { name: 'KeyboardDocs', instance: KeyboardDocs },

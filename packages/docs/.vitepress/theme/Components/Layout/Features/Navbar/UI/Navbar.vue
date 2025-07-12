@@ -6,14 +6,14 @@
         >
             <template #start>
                 <div class="flex place-items-center gap-4">
-                    <FoIcon v-show="isNotHomepage()"
+                    <FoIcon v-show="isNotHomepage() && !page.isNotFound"
                             class="ms-2 cursor-pointer"
                             :icon="isSidebarCollapsed ? 'tabler:layout-sidebar-right-collapse-filled' : 'tabler:layout-sidebar-left-collapse-filled'"
                             @click="isSidebarCollapsed = !isSidebarCollapsed"
                     />
 
                     <!--                    todo: this should be fetched through npm -->
-                    <p class="text-sm text-primary">
+                    <p class="text-sm text-primary select-none">
                         v2.0.0
                     </p>
 
@@ -74,14 +74,15 @@ import {
     FoNavbarBrand,
     FoPopover,
     FoSocialButton,
-}                                   from 'flyonui-vue';
-import { storeToRefs }              from 'pinia';
-import { useRouter, withBase }      from 'vitepress';
-import { VPNavBarSearch }           from 'vitepress/theme';
-import { computed, onMounted, ref } from 'vue';
+}                                        from 'flyonui-vue';
+import { storeToRefs }                  from 'pinia';
+import { useData, useRouter, withBase } from 'vitepress';
+import { VPNavBarSearch }               from 'vitepress/theme';
+import { computed, onMounted, ref }     from 'vue';
 
 const router = useRouter();
 
+const { page }               = useData();
 const { isNotHomepage }      = useLayoutStore();
 const { isSidebarCollapsed } = storeToRefs(useLayoutStore());
 
