@@ -16,10 +16,11 @@
         <slot />
     </a>
 
-    <RouterLink v-else
-                v-slot="{ isActive, isExactActive, href, navigate }"
-                v-bind="$props"
-                custom
+    <component :is="RouterLink"
+               v-else
+               v-slot="{ isActive, isExactActive, href, navigate }"
+               v-bind="$props"
+               custom
     >
         <a :href="href"
            :class="[$attrs?.class, isActive && activeClass, isExactActive && exactActiveClass]"
@@ -27,12 +28,13 @@
         >
             <slot />
         </a>
-    </RouterLink>
+    </component>
 </template>
 
 <script setup lang="ts">
 import type { FoRouterLinkProps } from '@/Components/Link/Internal';
 import type { To }                from '@/Components/Link/Types/Link';
+import { RouterLink }             from 'vue-router';
 
 defineOptions({
     inheritAttrs: false,
