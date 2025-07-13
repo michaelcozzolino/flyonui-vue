@@ -3,6 +3,7 @@
            :class="[
                isCollapsed ? 'w-24' : 'w-64',
                isPageSizeSmallerThanSm && isCollapsed && 'hidden',
+               isPageSizeSmallerThanSm && 'sidebar-mobile',
            ]"
            tabindex="-1"
     >
@@ -210,3 +211,19 @@ const items = ref<SidebarItem[]>([
     },
 ]);
 </script>
+
+<style scoped>
+@reference "tailwindcss";
+
+.sidebar-mobile {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.5s;
+
+    /* due to the search input becoming an icon that is higher than the input */
+    @apply top-20;
+}
+</style>

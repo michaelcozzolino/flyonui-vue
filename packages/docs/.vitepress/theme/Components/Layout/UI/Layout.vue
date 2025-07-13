@@ -13,9 +13,7 @@
             >
                 <Sidebar />
 
-                <Content class="VPDoc vp-doc flex-grow p-8 w-4xl"
-                         :class="isPageSizeSmallerThanSm && 'ms-0'"
-                />
+                <Content class="VPDoc vp-doc flex-grow p-8 w-4xl" />
 
                 <DocsSidebar v-if="frontmatter.aside !== false && items.length"
                              :items="items"
@@ -36,13 +34,11 @@ import Home    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Ho
 import Sidebar
     from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Sidebar.vue';
 import { useLayoutStore }                     from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { storeToRefs }                        from 'pinia';
 import { Content, onContentUpdated, useData } from 'vitepress';
 import { computed, ref }                      from 'vue';
 
-const { isHomepage }              = useLayoutStore();
-const { isPageSizeSmallerThanSm } = storeToRefs(useLayoutStore());
-const { frontmatter, page }       = useData();
+const { isHomepage }        = useLayoutStore();
+const { frontmatter, page } = useData();
 
 const docsHeadings = ref<NodeListOf<Element> | null>(null);
 
