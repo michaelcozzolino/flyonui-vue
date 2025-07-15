@@ -16,7 +16,7 @@ export const useLayoutStore = defineStore('UseLayoutStore', () => {
         if (isPageSizeSmallerThanSm.value) {
             isSidebarCollapsed.value = true;
         }
-    }, { immediate: true });
+    }, { immediate: true, flush: 'sync' });
 
     function isHomepage(): boolean {
         const route = useRoute();
