@@ -5,6 +5,7 @@
                       colorClass,
                       underlineClass,
                   ]"
+                  @click:link="emit('click:link')"
     >
         <slot />
     </FoRouterLink>
@@ -19,6 +20,10 @@ import { useFlyonUIVueAppConfig }              from '@/Shared/UseFlyonUIVueAppCo
 import { computed, inject }                    from 'vue';
 
 const props = defineProps<LinkProps>();
+
+const emit = defineEmits<{
+    (e: 'click:link'): void;
+}>();
 
 const { config } = useFlyonUIVueAppConfig();
 

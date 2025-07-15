@@ -2,7 +2,7 @@
     <a v-if="navigation !== undefined && isStringLink(to)"
        :class="[$attrs?.class, navigation.activePath === to && exactActiveClass]"
        :href="to"
-       @click.prevent=" navigation.navigate(to);"
+       @click.prevent="navigation.navigate(to); emit('click:link')"
     >
         <slot />
     </a>
@@ -24,7 +24,7 @@
     >
         <a :href="href"
            :class="[$attrs?.class, isActive && activeClass, isExactActive && exactActiveClass]"
-           @click="navigate"
+           @click="navigate($event); emit('click:link')"
         >
             <slot />
         </a>
@@ -41,6 +41,10 @@ defineOptions({
 });
 
 defineProps<FoRouterLinkProps>();
+
+const emit = defineEmits<{
+    (e: 'click:link'): void;
+}>();
 
 function isStringLink(to: To): to is string {
     return typeof to === 'string';

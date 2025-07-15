@@ -10,6 +10,7 @@
             <FoLink :to="item.to"
                     :exact-active-class="activeClass"
                     :navigation="navigation"
+                    @click:link="emit('click:item')"
             >
                 <FoIcon v-if="item.icon !== undefined"
                         :icon="item.icon"
@@ -59,6 +60,10 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+
+const emit = defineEmits<{
+    (e: 'click:item'): void;
+}>();
 
 const componentName: ComponentName = 'FoMenuItem';
 
