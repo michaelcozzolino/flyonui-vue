@@ -1,6 +1,7 @@
 <template>
     <FoMenuItem :item="item"
                 :navigation="{ navigate: (to: string) => router.go(to), activePath: router.route.path }"
+                @click:item="collapseSidebar()"
     >
         <template v-if="item.badge !== undefined"
                   #append
@@ -34,16 +35,27 @@
 </template>
 
 <script setup lang="ts">
-import type { SidebarItem }                               from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar.ts';
+import type { SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar.ts';
+import {
+    useLayoutStore,
+}                                                         from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore.ts';
 import { FoBadge, FoMenu, FoMenuItem, FoMenuParentTitle } from 'flyonui-vue';
+import { storeToRefs }                                    from 'pinia';
 import { useRouter }                                      from 'vitepress';
 
 interface Props {
-    item:        SidebarItem;
-    isCollapsed: boolean;
+    item: SidebarItem;
 }
 
 defineProps<Props>();
 
 const router = useRouter();
+
+const { isSidebarCollapsed: isCollapsed, isPageSizeSmallerThanSm } = storeToRefs(useLayoutStore());
+
+function collapseSidebar(): void {
+    if (isPageSizeSmallerThanSm.value) {
+        isCollapsed.value = true;
+    }
+}
 </script>

@@ -1,5 +1,6 @@
 <template>
-    <aside class="sticky top-16 overflow-x-hidden overflow-y-auto h-[calc(100vh-4.25rem)] shrink-0"
+    <aside ref="sidebar"
+           class="sticky top-16 overflow-x-hidden overflow-y-auto h-[calc(100vh-4.25rem)] shrink-0"
            :class="[
                isCollapsed ? 'w-24' : 'w-64',
                isPageSizeSmallerThanSm && isCollapsed && 'hidden',
@@ -15,7 +16,6 @@
                 <SidebarNode v-for="item in items"
                              :key="item.id"
                              :item="item"
-                             :is-collapsed="isCollapsed"
                 />
             </FoMenu>
         </div>
@@ -23,12 +23,15 @@
 </template>
 
 <script setup lang="ts">
-import type { SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar.ts';
-import SidebarNode          from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
-import { useLayoutStore }   from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore.ts';
-import { FoMenu }           from 'flyonui-vue';
-import { storeToRefs }      from 'pinia';
-import { ref }              from 'vue';
+import type { SidebarItem }    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar.ts';
+import SidebarNode             from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
+import { useLayoutStore }      from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore.ts';
+import { onClickOutside }      from '@vueuse/core';
+import { FoMenu }              from 'flyonui-vue';
+import { storeToRefs }         from 'pinia';
+import { ref, useTemplateRef } from 'vue';
+
+const sidebarElement = useTemplateRef<HTMLElement>('sidebar');
 
 const { isSidebarCollapsed: isCollapsed, isPageSizeSmallerThanSm } = storeToRefs(useLayoutStore());
 
@@ -210,9 +213,11 @@ const items = ref<SidebarItem[]>([
         ],
     },
 ]);
+
+onClickOutside(sidebarElement, () => isCollapsed.value = true);
 </script>
 
-<style scoped>
+<style scoped lang="css">
 @reference "tailwindcss";
 
 .sidebar-mobile {
