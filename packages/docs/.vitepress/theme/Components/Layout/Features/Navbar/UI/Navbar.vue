@@ -7,7 +7,7 @@
             <template #start>
                 <div class="flex place-items-center gap-4">
                     <FoIcon v-show="isNotHomepage() && !page.isNotFound"
-                            class="ms-2 cursor-pointer"
+                            class="flyonui-vue-navbar-collapse ms-2 cursor-pointer"
                             :icon="isSidebarCollapsed ? 'tabler:layout-sidebar-right-collapse-filled' : 'tabler:layout-sidebar-left-collapse-filled'"
                             @click="isSidebarCollapsed = !isSidebarCollapsed"
                     />

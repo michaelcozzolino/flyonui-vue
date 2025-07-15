@@ -214,7 +214,11 @@ const items = ref<SidebarItem[]>([
     },
 ]);
 
-onClickOutside(sidebarElement, () => isCollapsed.value = true);
+onClickOutside(
+    sidebarElement,
+    () => isCollapsed.value = true,
+    { ignore: ['.flyonui-vue-navbar-collapse'] },
+);
 </script>
 
 <style scoped lang="css">
