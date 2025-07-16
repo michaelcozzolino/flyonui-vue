@@ -2,7 +2,7 @@
     <a v-if="navigation !== undefined && isStringLink(to)"
        :class="[$attrs?.class, navigation.activePath === to && exactActiveClass]"
        :href="to"
-       @click.prevent=" navigation.navigate(to);"
+       @click.prevent="navigation.navigate(to); emit('click:link')"
     >
         <slot />
     </a>
@@ -16,29 +16,35 @@
         <slot />
     </a>
 
-    <RouterLink v-else
-                v-slot="{ isActive, isExactActive, href, navigate }"
-                v-bind="$props"
-                custom
+    <component :is="RouterLink"
+               v-else
+               v-slot="{ isActive, isExactActive, href, navigate }"
+               v-bind="$props"
+               custom
     >
         <a :href="href"
            :class="[$attrs?.class, isActive && activeClass, isExactActive && exactActiveClass]"
-           @click="navigate"
+           @click="navigate($event); emit('click:link')"
         >
             <slot />
         </a>
-    </RouterLink>
+    </component>
 </template>
 
 <script setup lang="ts">
 import type { FoRouterLinkProps } from '@/Components/Link/Internal';
 import type { To }                from '@/Components/Link/Types/Link';
+import { RouterLink }             from 'vue-router';
 
 defineOptions({
     inheritAttrs: false,
 });
 
 defineProps<FoRouterLinkProps>();
+
+const emit = defineEmits<{
+    (e: 'click:link'): void;
+}>();
 
 function isStringLink(to: To): to is string {
     return typeof to === 'string';

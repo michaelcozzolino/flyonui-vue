@@ -10,3 +10,9 @@ export interface LinkProps extends FoRouterLinkProps {
     color?:           Color;
     underlineEffect?: UnderlineLinkEffect;
 }
+
+// to be used only for SPA that do not use vue-router
+export interface Navigation {
+    navigate:   (to: string) => Promise<void>;
+    activePath: string;
+}

@@ -1,5 +1,6 @@
 import type { DefaultTheme } from 'vitepress';
 
+// todo: this is not needed anymore because the items are created in Sidebar.vue, but at the moment, they are used in tests
 export function getSidebarItems(): DefaultTheme.SidebarItem[] {
     return [
         {

@@ -10,6 +10,7 @@
             <FoLink :to="item.to"
                     :exact-active-class="activeClass"
                     :navigation="navigation"
+                    @click:link="emit('click:item')"
             >
                 <FoIcon v-if="item.icon !== undefined"
                         :icon="item.icon"
@@ -43,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Navigation }                                                    from '@/Components/Link/Internal';
+import type { Navigation }                                                    from '@/Components/Link';
 import type { MenuItem }                                                      from '@/Components/Menu';
 import type { ComponentName }                                                 from '@/Shared/Utils/Internal';
 import { FoIcon }                                                             from '@/Components/Icon';
@@ -59,6 +60,10 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+
+const emit = defineEmits<{
+    (e: 'click:item'): void;
+}>();
 
 const componentName: ComponentName = 'FoMenuItem';
 

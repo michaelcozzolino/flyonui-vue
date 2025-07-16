@@ -1,3 +1,5 @@
 # Heading
 
-<HeadingDocs section="heading" />
+### Levels
+
+<HeadingDocs section="level" />
