@@ -1,25 +1,27 @@
 <template>
-    <aside ref="sidebar"
-           class="sticky top-16 overflow-x-hidden overflow-y-auto h-[calc(100vh-4.25rem)] shrink-0"
-           :class="[
-               isCollapsed ? 'w-24' : 'w-64',
-               isPageSizeSmallerThanSm && isCollapsed && 'hidden',
-               isPageSizeSmallerThanSm && 'sidebar-mobile',
-           ]"
-           tabindex="-1"
-    >
-        <div class="px-0!">
-            <FoMenu class="vp-raw pl-0!"
-                    size="small"
-                    :hide-text="isCollapsed"
-            >
-                <SidebarNode v-for="item in items"
-                             :key="item.id"
-                             :item="item"
-                />
-            </FoMenu>
-        </div>
-    </aside>
+    <ClientOnly>
+        <aside ref="sidebar"
+               class="sticky top-16 overflow-x-hidden overflow-y-auto h-[calc(100vh-4.25rem)] shrink-0"
+               :class="[
+                   isCollapsed ? 'w-24' : 'w-64',
+                   isPageSizeSmallerThanSm && isCollapsed && 'hidden',
+                   isPageSizeSmallerThanSm && 'sidebar-mobile',
+               ]"
+               tabindex="-1"
+        >
+            <div class="px-0!">
+                <FoMenu class="vp-raw pl-0!"
+                        size="small"
+                        :hide-text="isCollapsed"
+                >
+                    <SidebarNode v-for="item in items"
+                                 :key="item.id"
+                                 :item="item"
+                    />
+                </FoMenu>
+            </div>
+        </aside>
+    </ClientOnly>
 </template>
 
 <script setup lang="ts">
