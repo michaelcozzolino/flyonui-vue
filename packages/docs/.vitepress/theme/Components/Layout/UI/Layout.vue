@@ -27,10 +27,10 @@
 import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar.ts';
 import DocsSidebar
     from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebar.vue';
+import Home     from '@/.vitepress/theme/Components/Layout/Features/Home/UI/Home.vue';
 import Navbar   from '@/.vitepress/theme/Components/Layout/Features/Navbar/UI/Navbar.vue';
 import NotFound
     from '@/.vitepress/theme/Components/Layout/Features/NotFound/UI/NotFound.vue';
-import Home    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Home.vue';
 import Sidebar
     from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Sidebar.vue';
 import { useLayoutStore }                     from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
