@@ -13,7 +13,7 @@
             >
                 <Sidebar />
 
-                <Content class="VPDoc vp-doc flex-grow p-8 w-4xl" />
+                <Content class="VPDoc vp-doc flex-grow m-8 w-4xl" />
 
                 <DocsSidebar v-if="frontmatter.aside !== false && items.length"
                              :items="items"
@@ -52,8 +52,6 @@ const items = computed((): DocsSidebarItem[] => {
     let lastHeadingLevel: number | null             = null;
     let lastDocsSidebarItem: DocsSidebarItem | null = null;
 
-    const error = new Error('Doc sidebar item cannot be added because there is no parent item.');
-
     for (let i = 0; i < docsHeadings.value.length; i++) {
         const heading = docsHeadings.value.item(i);
 
@@ -66,7 +64,7 @@ const items = computed((): DocsSidebarItem[] => {
         const a = heading.querySelector<HTMLAnchorElement>('a.header-anchor');
 
         if (a === null) {
-            throw new Error('Heading does not have an anchor.');
+            continue;
         }
 
         const item: DocsSidebarItem = {
@@ -82,13 +80,13 @@ const items = computed((): DocsSidebarItem[] => {
             const itemsLength = docsSidebarItems.length;
 
             if (itemsLength === 0) {
-                throw error;
+                continue;
             }
 
             docsSidebarItems[docsSidebarItems.length - 1].children.push(item);
         } else {
             if (lastDocsSidebarItem === null) {
-                throw error;
+                continue;
             }
 
             lastDocsSidebarItem.children.push(item);
