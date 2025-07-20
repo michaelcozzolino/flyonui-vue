@@ -42,6 +42,12 @@ export function useShape(
                 pilled:  'rounded-full',
                 square:  '',
             },
+            FoSelect: {
+                rounded: '',
+                circle:  '',
+                pilled:  'rounded-full',
+                square:  '',
+            },
         },
         getShape(config, componentName, shape),
     );
