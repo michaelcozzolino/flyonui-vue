@@ -45,6 +45,7 @@
                    :placeholder="placeholder"
                    :disabled="isDisabled"
                    :readonly="isReadonly"
+                   :list="list"
             >
 
             <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
@@ -118,7 +119,19 @@ const componentName: ComponentName = 'FoInputText';
 const { config }        = useFlyonUIVueAppConfig();
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 
-const input = defineModel<string>({ required: true });
+type InputTextValue = string | (string | null);
+
+// todo: this should be documented through the component api
+const [input, modifiers] = defineModel<InputTextValue, 'trim' | 'null'>({
+    required: true,
+    set:      (value: InputTextValue) => {
+        if (modifiers.null) {
+            return value === '' ? null : value;
+        }
+
+        return value;
+    },
+});
 
 const iconSize: IconSize = 'small';
 
