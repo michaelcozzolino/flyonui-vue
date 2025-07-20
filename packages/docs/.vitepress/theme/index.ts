@@ -38,7 +38,7 @@ export default {
         if (!import.meta.env.SSR) {
             app.directive('mask', vMask());
 
-            // const { createFlyonUIVueApp } = await import('flyonui-vue');
+            const { createFlyonUIVueApp } = await import('flyonui-vue');
 
             // const createFlyonUIVueAppOptions: FlyonUIVueAppConfig = {
             //     global: {
@@ -57,7 +57,8 @@ export default {
             //     },
             // };
 
-            // app.use(createFlyonUIVueApp, createFlyonUIVueAppOptions);
+            // todo: document this
+            app.use(createFlyonUIVueApp, {});
         }
 
         app.use(createPinia());

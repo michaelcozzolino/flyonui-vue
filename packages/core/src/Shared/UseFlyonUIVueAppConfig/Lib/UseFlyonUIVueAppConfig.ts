@@ -10,13 +10,13 @@ interface FlyonUIVueAppInjectedConfig {
 
 export const useFlyonUIVueAppConfigInjectionKey: InjectionKey<FlyonUIVueAppInjectedConfig> = Symbol('Create FlyonUI Vue App');
 
-const initialConfig = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
+const config = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
 
 export function useFlyonUIVueAppConfig(): FlyonUIVueAppInjectedConfig {
     const defaultValue: FlyonUIVueAppInjectedConfig = {
-        config:      initialConfig,
+        config,
         resetConfig: () => {
-            initialConfig.value = { ...flyonUIVueAppDefaultConfig };
+            config.value = { ...flyonUIVueAppDefaultConfig };
         },
     };
 
