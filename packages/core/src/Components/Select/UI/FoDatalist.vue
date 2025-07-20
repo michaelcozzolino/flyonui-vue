@@ -9,11 +9,10 @@
                      :shape="shape"
                      :list="id"
                      :is-disabled="isDisabled"
+                     :is-valid="isValid"
         />
 
-        <datalist :id="id"
-                  :class="validityClass"
-        >
+        <datalist :id="id">
             <FoSelectOption v-for="option in options"
                             :key="option.id"
                             :option="option"
@@ -29,7 +28,6 @@ import { FoInputText }                      from '@/Components';
 import { FoLabel }                          from '@/Components/Label/Internal';
 import { FoSelectOption, onEmptyOptions }   from '@/Components/Select/Internal';
 import { useId }                            from '@/Shared/UseIdentifiable/Internal';
-import { useValidity }                      from '@/Shared/UseValidity/Internal';
 import { computed }                         from 'vue';
 
 const props = withDefaults(defineProps<DatalistProps<T, K>>(), {
@@ -53,8 +51,6 @@ const input = computed({
         selectedOption.value = newOption;
     },
 });
-
-const validityClass = useValidity(() => props.isValid);
 
 onEmptyOptions(() => props.options);
 </script>
