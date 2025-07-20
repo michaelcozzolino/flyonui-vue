@@ -14,4 +14,5 @@ export interface InputTextProps extends MaybeStringId, Disableable, Validity, Si
     shape?:        Extract<Shape, 'rounded' | 'pilled'>;
     withoutFocus?: boolean;
     isReadonly?:   boolean;
+    list?:         string; // for datalist
 }
