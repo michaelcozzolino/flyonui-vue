@@ -1,5 +1,4 @@
 <template>
-    <!--     todo: this should use the option instead of text when i will refactor -->
     <FoSelect v-model="selectedOption"
               :label="{ text: 'Pick your favorite Movie', type: 'text' }"
               helper-text="helper text"
@@ -20,5 +19,5 @@ const options = ref<SelectOption[]>([
     { id: 5, text: `Schindler's List` },
 ]);
 
-const selectedOption = useSelectedOption(options, null);
+const selectedOption = useSelectedOption(options, options.value[0].id, false);
 </script>

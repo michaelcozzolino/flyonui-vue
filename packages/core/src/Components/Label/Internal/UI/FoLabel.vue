@@ -41,7 +41,7 @@ const labelClass = computed(() => {
             inline:   'label-text my-auto p-0',
         },
         FoSelect: {
-            text:     '',
+            text:     'label-text',
             floating: 'select-floating-label',
             inline:   '',
         },

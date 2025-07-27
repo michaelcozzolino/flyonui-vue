@@ -1,7 +1,8 @@
-import type { InputLabel, LabelType }    from '@/Components/Label';
-import type { Shape, Sizable, Validity } from '@/Shared';
-import type { Id, MaybeStringId }        from '@/Shared/UseIdentifiable';
-import type { Disableable }              from '@/Shared/UseState';
+import type { WithConfigurableHelperText } from '@/Components/HelperText';
+import type { InputLabel }                 from '@/Components/Label';
+import type { Shape, Sizable, Validity }   from '@/Shared';
+import type { Id, MaybeStringId }          from '@/Shared/UseIdentifiable';
+import type { Disableable }                from '@/Shared/UseState';
 
 export interface SelectOption<T extends number | string = number> extends Id<T>, Disableable {
     readonly text: string;
@@ -21,7 +22,7 @@ interface BaseSelectProps<
     T extends string | number,
     K extends SelectOption<T>,
     V extends SelectOptionType<T, K>,
-> extends MaybeStringId, Disableable, Validity {
+> extends MaybeStringId, Disableable, Validity, WithConfigurableHelperText {
     shape?:  Extract<Shape, 'rounded' | 'pilled'>;
     options: V[];
 }
@@ -31,7 +32,7 @@ export interface SelectProps<
     K extends SelectOption<T> = SelectOption<T>,
     V extends SelectOptionType<T, K> = SelectOptionType<T, K>,
 > extends BaseSelectProps<T, K, V>, Sizable {
-    label?: string | InputLabel<Exclude<LabelType, 'inline'>>; // todo: option label
+    label?: string | InputLabel;
 }
 
 export type DatalistOption<T extends number | string> = Omit<SelectOption<T>, 'isDisabled'>;

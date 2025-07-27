@@ -28,11 +28,9 @@
 
 ## Illustrations
 
-[//]: # (### Label and helper text)
+### Label and helper text
 
-[//]: # ()
-
-[//]: # (<SelectDocs section="with-label-and-helper-text" />)
+<SelectDocs section="with-label-and-helper-text" />
 
 ### Disabled <Badge type="warning" text="Unreleased" />
 
