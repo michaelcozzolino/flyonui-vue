@@ -2,8 +2,8 @@ import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
 import Layout                                   from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
-import BadgeDocs                                from '@/Components/Badge/BadgeDocs.vue';
 
+import BadgeDocs                          from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                         from '@/Components/Button/ButtonDocs.vue';
 import ListGroupDocs                      from '@/Components/ListGroup/ListGroupDocs.vue';
 import LoadingDocs                        from '@/Components/Loading/LoadingDocs.vue';
