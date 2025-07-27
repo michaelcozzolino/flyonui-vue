@@ -28,9 +28,13 @@
 
 ## Illustrations
 
-### Label and helper text
+### Label and helper text <Badge type="warning" text="Unreleased" />
 
 <SelectDocs section="with-label-and-helper-text" />
+
+### Hidden label <Badge type="warning" text="Unreleased" />
+
+<SelectDocs section="hidden-label" />
 
 ### Disabled <Badge type="warning" text="Unreleased" />
 

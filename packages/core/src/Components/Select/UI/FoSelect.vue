@@ -7,6 +7,7 @@
                  :for="id"
                  :component-name="componentName"
                  :type="defaultLabel.type"
+                 :is-hidden="defaultLabel.isHidden"
         >
             {{ defaultLabel.text }}
         </FoLabel>
@@ -54,6 +55,7 @@
                  :for="id"
                  :component-name="componentName"
                  :type="defaultLabel.type"
+                 :is-hidden="defaultLabel.isHidden"
         >
             {{ defaultLabel.text }}
         </FoLabel>
