@@ -60,6 +60,12 @@
                  :code="SelectWithOptgroupRaw"
                  :component="SelectWithOptgroup"
     />
+
+    <CodeSnippet v-else-if="section === 'ref-usage'"
+                 id="ref-usage"
+                 :code="SelectRefUsageRaw"
+                 :component="SelectRefUsage"
+    />
 </template>
 
 <script setup lang="ts">
@@ -77,6 +83,8 @@ import SelectFloatingLabel             from '@/Forms/Select/SelectFloatingLabel.
 import SelectFloatingLabelRaw          from '@/Forms/Select/SelectFloatingLabel.vue?raw';
 import SelectFloatingLabelSize         from '@/Forms/Select/SelectFloatingLabelSize.vue';
 import SelectFloatingLabelSizeRaw      from '@/Forms/Select/SelectFloatingLabelSize.vue?raw';
+import SelectRefUsage                  from '@/Forms/Select/SelectRefUsage.vue';
+import SelectRefUsageRaw               from '@/Forms/Select/SelectRefUsage.vue?raw';
 import SelectShape                     from '@/Forms/Select/SelectShape.vue';
 import SelectShapeRaw                  from '@/Forms/Select/SelectShape.vue?raw';
 import SelectValidationState           from '@/Forms/Select/SelectValidationState.vue';
@@ -96,7 +104,8 @@ interface Props {
         | 'with-label-and-helper-text'
         | 'disabled'
         | 'datalist'
-        | 'optgroup';
+        | 'optgroup'
+        | 'ref-usage';
 }
 
 defineProps<Props>();
