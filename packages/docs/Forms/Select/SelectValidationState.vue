@@ -38,5 +38,5 @@ const options = ref<SelectOption[]>([
 ]);
 
 const selectedOption         = useSelectedOption(options, null);
-const selectedOptionFloating = useSelectedOption(options, null);
+const selectedOptionFloating = useSelectedOption(options, options.value[0].id, false);
 </script>

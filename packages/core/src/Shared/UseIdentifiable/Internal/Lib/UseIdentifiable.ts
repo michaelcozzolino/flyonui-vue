@@ -24,10 +24,6 @@ export function useIdentifiable<
             (identifiable: Identifiable<Name, Value>) => identifiable[toValue(key)] === _id,
         ).value ?? null;
 
-        if (identifiable === null) {
-            console.warn(`Id "${_id}" not found.`);
-        }
-
         return identifiable;
     });
 }

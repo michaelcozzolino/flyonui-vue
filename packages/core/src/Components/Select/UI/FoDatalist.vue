@@ -4,7 +4,7 @@
             {{ label }}
         </FoLabel>
 
-        <FoInputText v-model="input"
+        <FoInputText v-model.null="input"
                      :placeholder="placeholder"
                      :shape="shape"
                      :list="id"
@@ -42,6 +42,12 @@ const id = useId(() => props.id);
 const input = computed({
     get: (): string | null => selectedOption.value?.text ?? null,
     set: (newOptionText: string | null) => {
+        if (newOptionText === null) {
+            selectedOption.value = null;
+
+            return;
+        }
+
         const newOption = props.options.find((option: K): boolean => option.text === newOptionText);
 
         if (newOption === undefined) {
