@@ -45,7 +45,6 @@ export function useSelectedNullableOption<T extends number | string, K extends S
 
     watch(selectedOption, () => option.value = selectedOption.value, { immediate: true });
 
-    // todo: this behaviour should be documented
     watchEffect(() => {
         if (isReadonly(id) === false && isRef(id)) {
             (id as Ref<T | null>).value = option.value?.id ?? null;
@@ -73,7 +72,6 @@ export function useSelectedNonNullableOption<T extends number | string, K extend
         { immediate: true },
     );
 
-    // todo: this behaviour should be documented
     watchEffect(() => {
         if (isReadonly(id) === false && isRef(id)) {
             (id as Ref<UnwrapRef<T>>).value = getSelectedOptionIfNotNull(option).value.id;
