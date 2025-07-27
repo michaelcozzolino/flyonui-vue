@@ -25,6 +25,12 @@
                  :component="SelectFloatingLabelSize"
     />
 
+    <CodeSnippet v-else-if="section === 'with-icon'"
+                 id="with-icon"
+                 :code="SelectWithIconRaw"
+                 :component="SelectWithIcon"
+    />
+
     <CodeSnippet v-else-if="section === 'validation-state'"
                  id="validation-state"
                  :code="SelectValidationStateRaw"
@@ -41,6 +47,12 @@
                  id="with-label-and-helper-text"
                  :code="SelectWithLabelAndHelperTextRaw"
                  :component="SelectWithLabelAndHelperText"
+    />
+
+    <CodeSnippet v-else-if="section === 'hidden-label'"
+                 id="hidden-label"
+                 :code="SelectHiddenLabelRaw"
+                 :component="SelectHiddenLabel"
     />
 
     <CodeSnippet v-else-if="section === 'disabled'"
@@ -83,12 +95,16 @@ import SelectFloatingLabel             from '@/Forms/Select/SelectFloatingLabel.
 import SelectFloatingLabelRaw          from '@/Forms/Select/SelectFloatingLabel.vue?raw';
 import SelectFloatingLabelSize         from '@/Forms/Select/SelectFloatingLabelSize.vue';
 import SelectFloatingLabelSizeRaw      from '@/Forms/Select/SelectFloatingLabelSize.vue?raw';
+import SelectHiddenLabel               from '@/Forms/Select/SelectHiddenLabel.vue';
+import SelectHiddenLabelRaw            from '@/Forms/Select/SelectHiddenLabel.vue?raw';
 import SelectRefUsage                  from '@/Forms/Select/SelectRefUsage.vue';
 import SelectRefUsageRaw               from '@/Forms/Select/SelectRefUsage.vue?raw';
 import SelectShape                     from '@/Forms/Select/SelectShape.vue';
 import SelectShapeRaw                  from '@/Forms/Select/SelectShape.vue?raw';
 import SelectValidationState           from '@/Forms/Select/SelectValidationState.vue';
 import SelectValidationStateRaw        from '@/Forms/Select/SelectValidationState.vue?raw';
+import SelectWithIcon                  from '@/Forms/Select/SelectWithIcon.vue';
+import SelectWithIconRaw               from '@/Forms/Select/SelectWithIcon.vue?raw';
 import SelectWithLabelAndHelperText    from '@/Forms/Select/SelectWithLabelAndHelperText.vue';
 import SelectWithLabelAndHelperTextRaw from '@/Forms/Select/SelectWithLabelAndHelperText.vue?raw';
 import SelectWithOptgroup              from '@/Forms/Select/SelectWithOptgroup.vue';
@@ -99,9 +115,11 @@ interface Props {
         | 'floating-label'
         | 'default-size'
         | 'floating-label-size'
+        | 'with-icon'
         | 'validation-state'
         | 'shape'
         | 'with-label-and-helper-text'
+        | 'hidden-label'
         | 'disabled'
         | 'datalist'
         | 'optgroup'

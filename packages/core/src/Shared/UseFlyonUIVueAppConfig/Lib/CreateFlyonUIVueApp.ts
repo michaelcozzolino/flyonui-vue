@@ -32,7 +32,7 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
     const config = useLocalStorage<FlyonUIVueAppDefaultConfig>(
         'flyonui-vue-config',
         initialConfig,
-        { mergeDefaults: true },
+        { mergeDefaults: (storageValue, defaults) => deepMerge(storageValue, defaults) },
     );
 
     const resetConfig = (): void => {

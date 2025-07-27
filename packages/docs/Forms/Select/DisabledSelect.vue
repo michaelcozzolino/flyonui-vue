@@ -1,6 +1,6 @@
 <template>
     <FoSelect v-model="selectedOption"
-              label="Pick your favorite Movie"
+              :label="{ text: 'Pick your favorite Movie', type: 'inline' }"
               :options="options"
               is-disabled
     />

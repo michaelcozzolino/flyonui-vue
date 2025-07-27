@@ -74,7 +74,7 @@ export interface ConfigurableComponentProps {
     FoLoading:  ConfigurableProps<LoadingProps>;
     FoMenu:     ConfigurableProps<MenuProps>;
     FoRadio:    ConfigurableProps<ButtonProps>; // todo: temporary
-    FoSelect:   ConfigurableProps<SelectProps> & LabelTypeComponentConfig;
+    FoSelect:   ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
     FoTextarea: ConfigurableProps<
         TextareaProps
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>

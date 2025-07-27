@@ -1,7 +1,7 @@
 <template>
     <FoSelect v-model="selectedOption"
-              :label="{ text: 'Pick your favorite Movie', type: 'text' }"
-              helper-text="helper text"
+              :label="{ text: 'Pick your favorite Movie', type: 'inline' }"
+              icon="tabler:movie"
               :options="options"
     />
 </template>
@@ -19,5 +19,5 @@ const options = ref<SelectOption[]>([
     { id: 5, text: `Schindler's List` },
 ]);
 
-const selectedOption = useSelectedOption(options, options.value[0].id, false);
+const selectedOption = useSelectedOption(options, null);
 </script>

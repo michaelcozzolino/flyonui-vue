@@ -29,5 +29,5 @@ const options = ref<SelectOptionType[]>([
     },
 ]);
 
-const selectedOption = useSelectedOption(options, null);
+const selectedOption = useSelectedOption(options, 1, false);
 </script>

@@ -1,7 +1,11 @@
 <template>
     <FoSelect v-model="selectedOption"
-              :label="{ text: 'Pick your favorite Movie', type: 'text' }"
-              helper-text="helper text"
+              :label="{ text: 'Pick your favorite Movie', isHidden: true }"
+              :options="options"
+    />
+
+    <FoSelect v-model="selectedOption"
+              :label="{ text: 'Pick your favorite Movie', type: 'floating', isHidden: true }"
               :options="options"
     />
 </template>

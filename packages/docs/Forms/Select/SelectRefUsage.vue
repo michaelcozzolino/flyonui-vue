@@ -1,11 +1,11 @@
 <template>
     <FoSelect v-model="favoriteMovie"
-              label="Pick your favorite Movie"
+              :label="{ text: 'Pick your favorite Movie', type: 'inline' }"
               :options="movies"
     />
 
     <FoSelect v-model="favoriteSeries"
-              label="Pick your favorite Series"
+              :label="{ text: 'Pick your favorite Series', type: 'inline' }"
               :options="series"
     />
 </template>
