@@ -3,7 +3,7 @@
          data-test="code-snippet"
          class="vp-raw"
     >
-        <section class="border-neutral/10 rounded-box flex flex-col border p-3 sm:p-6 md:my-8">
+        <section class="gap-4 border-neutral/10 rounded-box flex flex-col border p-3 sm:p-6 md:my-8">
             <div class="gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6"
                  data-test="flyonui-vue-preview"
                  :class="previewGridClass"
