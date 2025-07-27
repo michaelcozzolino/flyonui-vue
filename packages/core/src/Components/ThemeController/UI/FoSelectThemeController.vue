@@ -7,12 +7,12 @@
 </template>
 
 <script setup lang="ts">
-import type { SelectOption, SelectProps } from '@/Components/Select';
-
+import type { SelectProps }                        from '@/Components/Select';
 import type { FlyonUITheme, ThemeControllerProps } from '@/Components/ThemeController';
-import { FoSelect, useSelectedOption }             from '@/Components/Select';
-import { useArrayMap, useColorMode }               from '@vueuse/core';
-import { computed, onMounted, toValue }            from 'vue';
+
+import { FoSelect, useSelectedOption } from '@/Components/Select';
+import { useArrayMap, useColorMode }   from '@vueuse/core';
+import { onMounted, toValue }          from 'vue';
 
 const props = withDefaults(defineProps<ThemeControllerProps & Omit<SelectProps<FlyonUITheme>, 'label' | 'options'>>(), {
     initialValue: 'dark',
@@ -34,21 +34,12 @@ const props = withDefaults(defineProps<ThemeControllerProps & Omit<SelectProps<F
     },
 });
 
-type ThemeOption = SelectOption<FlyonUITheme>;
-
 const themeOptions = useArrayMap(() => Object.values(props.modes), (mode: FlyonUITheme) => ({
     id:   mode,
     text: mode,
 }));
 
-const theme = useColorMode<FlyonUITheme>(props);
-
-const selectedTheme = computed({
-    get: (): ThemeOption => useSelectedOption(themeOptions, theme.value).value ?? themeOptions.value[0],
-    set: (newSelectedTheme: ThemeOption): void => {
-        theme.value = newSelectedTheme.text;
-    },
-});
+const selectedTheme = useSelectedOption(themeOptions, useColorMode<FlyonUITheme>(props));
 
 onMounted(() => {
     if (toValue(props.initialValue) in props.modes === false) {

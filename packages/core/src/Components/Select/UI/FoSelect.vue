@@ -1,5 +1,5 @@
 <template>
-    <!--    todo: some features are missing  -->
+    <!--    todo: missing hidden label, multiple options  -->
     <component :is="floatingLabelClass === '' ? FoFragment : 'div'"
                v-if="options.length"
                :class="floatingLabelClass"
@@ -47,20 +47,20 @@
     </component>
 </template>
 
-<script setup lang="ts" generic="T extends string | number, K extends SelectOptionType<T>">
-import type { SelectOption, SelectOptionType, SelectProps } from '@/Components/Select';
-import type { ComponentName }                               from '@/Shared/Utils/Internal';
-import { FoFragment }                                       from '@/Components/Fragment/Internal';
-import { FoLabel, useLabel }                                from '@/Components/Label/Internal';
-import { isSelectOptionGroup }                              from '@/Components/Select/Internal';
-import { onEmptyOptions }                                   from '@/Components/Select/Internal/Lib/OnEmptyOptions.ts';
-import FoSelectOption                                       from '@/Components/Select/Internal/UI/FoSelectOption.vue';
-import { useFloatingLabel }                                 from '@/Shared/UseFloatingLabel/Internal';
-import { useFlyonUIVueAppConfig }                           from '@/Shared/UseFlyonUIVueAppConfig';
-import { useShape }                                         from '@/Shared/UseShape/Internal';
-import { useSize }                                          from '@/Shared/UseSize/Internal';
-import { useValidity }                                      from '@/Shared/UseValidity/Internal';
-import { useId, watchEffect }                               from 'vue';
+<script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
+import type { SelectOption, SelectProps } from '@/Components/Select';
+import type { ComponentName }             from '@/Shared/Utils/Internal';
+import { FoFragment }                     from '@/Components/Fragment/Internal';
+import { FoLabel, useLabel }              from '@/Components/Label/Internal';
+import { isSelectOptionGroup }            from '@/Components/Select/Internal';
+import { onEmptyOptions }                 from '@/Components/Select/Internal/Lib/OnEmptyOptions.ts';
+import FoSelectOption                     from '@/Components/Select/Internal/UI/FoSelectOption.vue';
+import { useFloatingLabel }               from '@/Shared/UseFloatingLabel/Internal';
+import { useFlyonUIVueAppConfig }         from '@/Shared/UseFlyonUIVueAppConfig';
+import { useShape }                       from '@/Shared/UseShape/Internal';
+import { useSize }                        from '@/Shared/UseSize/Internal';
+import { useValidity }                    from '@/Shared/UseValidity/Internal';
+import { useId, watchEffect }             from 'vue';
 
 const props = withDefaults(defineProps<SelectProps<T, K>>(), {
     isDisabled: undefined,
@@ -98,6 +98,8 @@ onEmptyOptions(() => props.options);
 watchEffect(() => {
     /**
      * when no option is selected and the label is not the null option, the selected one will be the first.
+     * So that in case the developer is using the useSelectedOption composable where allowNull is true, but there is no
+     * way to automatically select the null option, it will still get one option back that is the first one.
      */
     if (selectedOption.value === null && defaultLabel.value?.type !== 'text') {
         const option = props.options[0];

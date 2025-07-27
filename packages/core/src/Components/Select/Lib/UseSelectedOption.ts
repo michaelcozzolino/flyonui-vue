@@ -1,10 +1,19 @@
-import type { SelectOption, SelectOptionType }            from '@/Components/Select';
-import type { MaybeRefOrGetter, Ref, UnwrapRef }          from 'vue';
-import { isSelectOptionGroup }                            from '@/Components/Select/Internal';
-import { useIdentifiable }                                from '@/Shared/UseIdentifiable/Internal';
-import { isReadonly, isRef, toRef, toValue, watchEffect } from 'vue';
+import type { SelectOption, SelectOptionType }                 from '@/Components/Select';
+import type { MaybeRefOrGetter, Ref, UnwrapRef }               from 'vue';
+import { isSelectOptionGroup }                                 from '@/Components/Select/Internal';
+import { useIdentifiable }                                     from '@/Shared/UseIdentifiable/Internal';
+import { isReadonly, isRef, ref, toValue, watch, watchEffect } from 'vue';
 
-type UseSelectedOptionReturn<T extends number | string> = Ref<UnwrapRef<SelectOption<T> | null>>;
+export function useSelectedOption<T extends number | string, K extends SelectOption<T>>(
+    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
+    id: MaybeRefOrGetter<T | null>,
+): Ref<K | null>;
+
+export function useSelectedOption<T extends number | string, K extends SelectOption<T>>(
+    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
+    id: MaybeRefOrGetter<T>,
+    allowNull: false,
+): Ref<K>;
 
 /**
  * Retrieves the select option of a select field.
@@ -12,15 +21,97 @@ type UseSelectedOptionReturn<T extends number | string> = Ref<UnwrapRef<SelectOp
  * @param options
  * @param id The initial id of the option to retrieve, if it is a writable ref, the id will automatically be
  *           overridden with the selected option id when a new one is selected.
- * @return UseSelectedOptionReturn<T>
+ * @param allowNull true if there can be a non-selected option, false otherwise.
  */
-export function useSelectedOption<T extends number | string = number>(
-    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T>>[]>,
+export function useSelectedOption<T extends number | string, K extends SelectOption<T>>(
+    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
+    id: MaybeRefOrGetter<T | null> | MaybeRefOrGetter<T>,
+    allowNull: boolean = true,
+): Ref<K | null> | Ref<K> {
+    return isNullAllowed(id, allowNull)
+        ? useSelectedNullableOption(options, id)
+        : useSelectedNonNullableOption(options, id);
+}
+
+export function useSelectedNullableOption<T extends number | string, K extends SelectOption<T>>(
+    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
     id: MaybeRefOrGetter<T | null>,
-): UseSelectedOptionReturn<T> {
+): Ref<K | null> {
+    const flatOptions = getFlatOptions(options);
+
+    const selectedOption = useIdentifiable<'id', T, K>(flatOptions, id, 'id');
+
+    const option = ref<K | null>(null);
+
+    watch(selectedOption, () => option.value = selectedOption.value, { immediate: true });
+
+    // todo: this behaviour should be documented
+    watchEffect(() => {
+        if (isReadonly(id) === false && isRef(id)) {
+            (id as Ref<T | null>).value = option.value?.id ?? null;
+        }
+    });
+
+    return option as Ref<K | null>;
+}
+
+export function useSelectedNonNullableOption<T extends number | string, K extends SelectOption<T>>(
+    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
+    id: MaybeRefOrGetter<T>,
+): Ref<K> {
+    const flatOptions = getFlatOptions(options);
+
+    const selectedOption = useIdentifiable<'id', T, K>(flatOptions, id, 'id');
+
+    const option = ref<K | null>(null);
+
+    watch(
+        selectedOption,
+        () => {
+            option.value = getSelectedOptionIfNotNull(selectedOption).value;
+        },
+        { immediate: true },
+    );
+
+    // todo: this behaviour should be documented
+    watchEffect(() => {
+        if (isReadonly(id) === false && isRef(id)) {
+            (id as Ref<UnwrapRef<T>>).value = getSelectedOptionIfNotNull(option).value.id;
+        }
+    });
+
+    return getSelectedOptionIfNotNull(option) as Ref<K>;
+}
+
+function isNullAllowed<T extends number | string>(
+    id: MaybeRefOrGetter<T | null> | MaybeRefOrGetter<T>,
+    allowNull: boolean,
+): id is MaybeRefOrGetter<T | null> {
+    return allowNull;
+}
+
+function guardAgainstSelectedOption<T extends string | number>(
+    selectedOption: Ref<SelectOption<T> | null>,
+): asserts selectedOption is Ref<SelectOption<T>> {
+    if (selectedOption.value === null) {
+        throw new Error('Selected option cannot be null.');
+    }
+}
+
+function getSelectedOptionIfNotNull<T extends string | number, K extends SelectOption<T>>(
+    selectedOption: Ref<K | null>,
+): Ref<K> {
+    guardAgainstSelectedOption(selectedOption);
+
+    return selectedOption;
+}
+
+function getFlatOptions<T extends number | string, K extends SelectOption<T>>(
+    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
+): K[] {
     const maybeGroupedOptions = toValue(options).map(toValue);
 
-    let flatOptions: SelectOption<T>[] = [];
+    let flatOptions: K[] = [];
 
     for (const maybeGroupedOption of maybeGroupedOptions) {
         if (isSelectOptionGroup(maybeGroupedOption)) {
@@ -30,14 +121,5 @@ export function useSelectedOption<T extends number | string = number>(
         }
     }
 
-    const selectedOption = toRef(useIdentifiable<'id', T, SelectOption<T>>(flatOptions, id, 'id').value);
-
-    // todo: this behaviour should be documented
-    watchEffect(() => {
-        if (isReadonly(id) === false && isRef(id)) {
-            (id as Ref<T | null>).value = (selectedOption.value?.id ?? null) as T | null;
-        }
-    });
-
-    return selectedOption;
+    return flatOptions;
 }
