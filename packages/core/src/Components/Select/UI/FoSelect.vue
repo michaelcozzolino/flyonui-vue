@@ -1,8 +1,14 @@
 <template>
-    <!--    todo: missing hidden label, multiple options  -->
+    <!--    todo: multiple options  -->
     <div v-if="options.length"
-         :class="defaultLabel?.type === 'floating' && floatingLabelClass"
+         :class="[icon && useIcon && 'select', defaultLabel?.type === 'floating' && floatingLabelClass]"
     >
+        <FoIcon v-if="icon && useIcon"
+                class="text-base-content/80 my-auto shrink-0"
+                :icon="icon"
+                size="small"
+        />
+
         <FoLabel v-if="defaultLabel && defaultLabel.type === 'text'"
                  :for="id"
                  :component-name="componentName"
@@ -65,6 +71,7 @@
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { SelectOption, SelectProps }          from '@/Components/Select';
 import type { ComponentName }                      from '@/Shared/Utils/Internal';
+import { FoIcon }                                  from '@/Components';
 import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';
 import { FoLabel, useLabel }                       from '@/Components/Label/Internal';
 import { isSelectOptionGroup }                     from '@/Components/Select/Internal';
@@ -75,7 +82,7 @@ import { useFlyonUIVueAppConfig }                  from '@/Shared/UseFlyonUIVueA
 import { useShape }                                from '@/Shared/UseShape/Internal';
 import { useSize }                                 from '@/Shared/UseSize/Internal';
 import { useValidity }                             from '@/Shared/UseValidity/Internal';
-import { useId, watchEffect }                      from 'vue';
+import { computed, useId, watchEffect }            from 'vue';
 
 const props = withDefaults(defineProps<SelectProps<T, K>>(), {
     isDisabled: undefined,
@@ -101,6 +108,8 @@ const selectHelperText = usePositionableHelperText(
     componentName,
     () => props.helperText,
 );
+
+const useIcon = computed((): boolean => (defaultLabel.value?.type === 'inline'));
 
 const [
     floatingLabelClass,

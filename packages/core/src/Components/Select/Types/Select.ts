@@ -32,6 +32,7 @@ export interface SelectProps<
     K extends SelectOption<T> = SelectOption<T>,
     V extends SelectOptionType<T, K> = SelectOptionType<T, K>,
 > extends BaseSelectProps<T, K, V>, Sizable {
+    icon?:  string;
     label?: string | InputLabel;
 }
 

@@ -25,6 +25,12 @@
                  :component="SelectFloatingLabelSize"
     />
 
+    <CodeSnippet v-else-if="section === 'with-icon'"
+                 id="with-icon"
+                 :code="SelectWithIconRaw"
+                 :component="SelectWithIcon"
+    />
+
     <CodeSnippet v-else-if="section === 'validation-state'"
                  id="validation-state"
                  :code="SelectValidationStateRaw"
@@ -97,6 +103,8 @@ import SelectShape                     from '@/Forms/Select/SelectShape.vue';
 import SelectShapeRaw                  from '@/Forms/Select/SelectShape.vue?raw';
 import SelectValidationState           from '@/Forms/Select/SelectValidationState.vue';
 import SelectValidationStateRaw        from '@/Forms/Select/SelectValidationState.vue?raw';
+import SelectWithIcon                  from '@/Forms/Select/SelectWithIcon.vue';
+import SelectWithIconRaw               from '@/Forms/Select/SelectWithIcon.vue?raw';
 import SelectWithLabelAndHelperText    from '@/Forms/Select/SelectWithLabelAndHelperText.vue';
 import SelectWithLabelAndHelperTextRaw from '@/Forms/Select/SelectWithLabelAndHelperText.vue?raw';
 import SelectWithOptgroup              from '@/Forms/Select/SelectWithOptgroup.vue';
@@ -107,6 +115,7 @@ interface Props {
         | 'floating-label'
         | 'default-size'
         | 'floating-label-size'
+        | 'with-icon'
         | 'validation-state'
         | 'shape'
         | 'with-label-and-helper-text'

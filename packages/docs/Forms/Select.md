@@ -18,6 +18,12 @@
 
 <SelectDocs section="floating-label-size" />
 
+## Illustrations
+
+### Icon <Badge type="warning" text="Unreleased" />
+
+<SelectDocs section="with-icon" />
+
 ### Validation states <Badge type="warning" text="Unreleased" />
 
 <SelectDocs section="validation-state" />
@@ -25,8 +31,6 @@
 ### Shapes <Badge type="warning" text="Unreleased" />
 
 <SelectDocs section="shape" />
-
-## Illustrations
 
 ### Label and helper text <Badge type="warning" text="Unreleased" />
 
