@@ -67,18 +67,18 @@ export function useSelectedNonNullableOption<T extends number | string, K extend
     watch(
         selectedOption,
         () => {
-            option.value = getSelectedOptionIfNotNull(selectedOption).value;
+            option.value = getSelectedOptionIfExists(id, selectedOption).value;
         },
         { immediate: true },
     );
 
     watchEffect(() => {
         if (isReadonly(id) === false && isRef(id)) {
-            (id as Ref<UnwrapRef<T>>).value = getSelectedOptionIfNotNull(option).value.id;
+            (id as Ref<UnwrapRef<T>>).value = getSelectedOptionIfExists(id, option).value.id;
         }
     });
 
-    return getSelectedOptionIfNotNull(option) as Ref<K>;
+    return getSelectedOptionIfExists(id, option) as Ref<K>;
 }
 
 function isNullAllowed<T extends number | string>(
@@ -88,18 +88,20 @@ function isNullAllowed<T extends number | string>(
     return allowNull;
 }
 
-function guardAgainstSelectedOption<T extends string | number>(
+function guardAgainstNonExistingSelectedOption<T extends string | number>(
+    id: MaybeRefOrGetter<T>,
     selectedOption: Ref<SelectOption<T> | null>,
 ): asserts selectedOption is Ref<SelectOption<T>> {
     if (selectedOption.value === null) {
-        throw new Error('Selected option cannot be null.');
+        throw new Error(`Selected option ${toValue(id)} does not exist.`);
     }
 }
 
-function getSelectedOptionIfNotNull<T extends string | number, K extends SelectOption<T>>(
+function getSelectedOptionIfExists<T extends string | number, K extends SelectOption<T>>(
+    id: MaybeRefOrGetter<T>,
     selectedOption: Ref<K | null>,
 ): Ref<K> {
-    guardAgainstSelectedOption(selectedOption);
+    guardAgainstNonExistingSelectedOption(id, selectedOption);
 
     return selectedOption;
 }
