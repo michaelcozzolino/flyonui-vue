@@ -1,10 +1,12 @@
 <template>
     <FoSelect v-model="selectedOption"
+              class="max-w-sm"
               label="Pick your favorite Movie"
               :options="options"
     />
 
     <FoSelect v-model="selectedNullableOption"
+              class="max-w-sm"
               :label="{ text: 'Pick your favorite Movie', type: 'inline' }"
               :options="options"
     />

@@ -1,6 +1,14 @@
 <template>
     <FoSelect v-model="selectedOption"
+              class="max-w-sm"
               :label="{ text: 'Pick your favorite Movie', type: 'inline' }"
+              icon="tabler:movie"
+              :options="options"
+    />
+
+    <FoSelect v-model="selectedOption"
+              class="max-w-sm"
+              :label="{ text: 'Pick your favorite Movie', type: 'floating' }"
               icon="tabler:movie"
               :options="options"
     />

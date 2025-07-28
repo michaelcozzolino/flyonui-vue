@@ -1,10 +1,12 @@
 <template>
     <FoSelect v-model="selectedOption"
+              class="max-w-sm"
               :label="{ text: 'Pick your favorite Movie', isHidden: true }"
               :options="options"
     />
 
     <FoSelect v-model="selectedOption"
+              class="max-w-sm"
               :label="{ text: 'Pick your favorite Movie', type: 'floating', isHidden: true }"
               :options="options"
     />

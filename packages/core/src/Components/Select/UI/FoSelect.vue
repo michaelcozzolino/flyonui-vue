@@ -1,7 +1,10 @@
 <template>
     <!--    todo: multiple options  -->
     <div v-if="options.length"
-         :class="[icon && useIcon && 'select', defaultLabel?.type === 'floating' && floatingLabelClass]"
+         :class="[
+             icon && useIcon && 'select',
+             icon === undefined && defaultLabel?.type === 'floating' && floatingLabelClass,
+         ]"
     >
         <FoIcon v-if="icon && useIcon"
                 class="text-base-content/80 my-auto shrink-0"
@@ -21,7 +24,12 @@
         <select :id="id"
                 v-model="selectedOption"
                 class="select"
-                :class="[shapeClass, sizeClass, validityClass]"
+                :class="[
+                    icon === undefined && defaultLabel?.type === 'floating' && floatingLabelClass,
+                    shapeClass,
+                    sizeClass,
+                    validityClass,
+                ]"
                 :disabled="isDisabled"
                 aria-label="select"
         >
@@ -69,6 +77,7 @@
 </template>
 
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
+import type { LabelType }                          from '@/Components';
 import type { SelectOption, SelectProps }          from '@/Components/Select';
 import type { ComponentName }                      from '@/Shared/Utils/Internal';
 import { FoIcon }                                  from '@/Components';
@@ -109,7 +118,9 @@ const selectHelperText = usePositionableHelperText(
     () => props.helperText,
 );
 
-const useIcon = computed((): boolean => (defaultLabel.value?.type === 'inline'));
+const useIcon = computed((): boolean => {
+    return (['inline', 'floating'] as (LabelType | undefined)[]).includes(defaultLabel.value?.type);
+});
 
 const [
     floatingLabelClass,

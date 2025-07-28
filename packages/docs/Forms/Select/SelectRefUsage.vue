@@ -1,13 +1,19 @@
 <template>
     <FoSelect v-model="favoriteMovie"
+              class="max-w-sm"
               :label="{ text: 'Pick your favorite Movie', type: 'inline' }"
               :options="movies"
     />
 
+    Favorite movie id: {{ JSON.stringify(favoriteMovieId) }}
+
     <FoSelect v-model="favoriteSeries"
+              class="max-w-sm"
               :label="{ text: 'Pick your favorite Series', type: 'inline' }"
               :options="series"
     />
+
+    {{ user }}
 </template>
 
 <script setup lang="ts">

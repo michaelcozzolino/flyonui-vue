@@ -1,5 +1,6 @@
 <template>
     <FoDatalist v-model="selectedOption"
+                class="max-w-sm"
                 label="Select your city"
                 placeholder="Type to search..."
                 :options="options"
