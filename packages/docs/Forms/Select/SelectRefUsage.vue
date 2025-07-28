@@ -5,11 +5,15 @@
               :options="movies"
     />
 
+    Favorite movie id: {{ JSON.stringify(favoriteMovieId) }}
+
     <FoSelect v-model="favoriteSeries"
               class="max-w-sm"
               :label="{ text: 'Pick your favorite Series', type: 'inline' }"
               :options="series"
     />
+
+    {{ user }}
 </template>
 
 <script setup lang="ts">
