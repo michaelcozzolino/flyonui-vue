@@ -10,7 +10,7 @@
             <DocsSidebarNode v-for="item in items"
                              :key="item.id"
                              :item="item"
-                             :navigation="{ navigate, activePath: router.route.path + activeHash }"
+                             :navigation="{ navigate, activePath }"
                              is-parent
             />
         </FoMenu>
@@ -23,7 +23,7 @@ import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Featu
 import DocsSidebarNode               from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebarNode.vue';
 import { FoMenu, FoMenuParentTitle } from 'flyonui-vue';
 import { useRouter }                 from 'vitepress';
-import { ref }                       from 'vue';
+import { computed, watch }           from 'vue';
 
 interface Props {
     items: DocsSidebarItem[];
@@ -33,9 +33,13 @@ defineProps<Props>();
 
 const router = useRouter();
 
-const activeHash = ref('');
+const activePath = computed((): string => router.route.path + router.route.hash);
 
-async function navigate(to: string) {
-    await router.go(to).then(() => activeHash.value = to.slice(to.indexOf('#')));
+watch(() => router.route.path, () => {
+    navigate(activePath.value);
+}, { immediate: true });
+
+async function navigate(to: string): Promise<void> {
+    return router.go(to);
 }
 </script>
