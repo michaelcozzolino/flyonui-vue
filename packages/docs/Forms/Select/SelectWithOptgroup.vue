@@ -1,5 +1,6 @@
 <template>
     <FoSelect v-model="selectedOption"
+              class="max-w-sm"
               label="Choose a technology"
               :options="options"
     />

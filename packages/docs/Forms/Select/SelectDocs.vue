@@ -2,6 +2,7 @@
     <CodeSnippet v-if="section === 'default'"
                  id="default"
                  :code="DefaultSelectRaw"
+                 :preview="{ columns: 1, rows: 2 }"
                  :component="DefaultSelect"
     />
 
@@ -27,18 +28,21 @@
 
     <CodeSnippet v-else-if="section === 'with-icon'"
                  id="with-icon"
+                 :preview="{ columns: 1, rows: 2 }"
                  :code="SelectWithIconRaw"
                  :component="SelectWithIcon"
     />
 
     <CodeSnippet v-else-if="section === 'validation-state'"
                  id="validation-state"
+                 :preview="{ columns: 1, rows: 4 }"
                  :code="SelectValidationStateRaw"
                  :component="SelectValidationState"
     />
 
     <CodeSnippet v-else-if="section === 'shape'"
                  id="shape"
+                 :preview="{ columns: 1, rows: 4 }"
                  :code="SelectShapeRaw"
                  :component="SelectShape"
     />
@@ -51,12 +55,14 @@
 
     <CodeSnippet v-else-if="section === 'hidden-label'"
                  id="hidden-label"
+                 :preview="{ columns: 1, rows: 2 }"
                  :code="SelectHiddenLabelRaw"
                  :component="SelectHiddenLabel"
     />
 
     <CodeSnippet v-else-if="section === 'disabled'"
                  id="disabled"
+                 :preview="{ columns: 1, rows: 2 }"
                  :code="DisabledSelectRaw"
                  :component="DisabledSelect"
     />
@@ -75,6 +81,7 @@
 
     <CodeSnippet v-else-if="section === 'ref-usage'"
                  id="ref-usage"
+                 :preview="{ columns: 1, rows: 2 }"
                  :code="SelectRefUsageRaw"
                  :component="SelectRefUsage"
     />

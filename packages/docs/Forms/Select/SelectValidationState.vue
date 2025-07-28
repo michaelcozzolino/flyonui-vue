@@ -1,23 +1,27 @@
 <template>
     <FoSelect v-model="selectedOption"
+              class="max-w-sm"
               label="Pick your favorite Movie"
               :options="options"
               is-valid
     />
 
     <FoSelect v-model="selectedOptionFloating"
+              class="max-w-sm"
               :label="{ text: 'Pick your favorite Movie', type: 'floating' }"
               :options="options"
               is-valid
     />
 
     <FoSelect v-model="selectedOption"
+              class="max-w-sm"
               label="Pick your favorite Movie"
               :options="options"
               :is-valid="false"
     />
 
     <FoSelect v-model="selectedOptionFloating"
+              class="max-w-sm"
               :label="{ text: 'Pick your favorite Movie', type: 'floating' }"
               :options="options"
               :is-valid="false"
