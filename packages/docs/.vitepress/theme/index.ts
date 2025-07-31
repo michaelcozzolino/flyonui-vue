@@ -26,6 +26,7 @@ import PopoverDocs                        from '@/Overlays/Popover/PopoverDocs.v
 import TooltipDocs                        from '@/Overlays/Tooltip/TooltipDocs.vue';
 import Playground                         from '@/Playground/Playground.vue';
 import CreateFlyonUiVueAppDocs            from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
+import TableDocs                          from '@/Tables/Table/TableDocs.vue';
 import { FoSelectThemeController, vMask } from 'flyonui-vue';
 import { createPinia }                    from 'pinia';
 import DefaultTheme                       from 'vitepress/theme';
@@ -82,6 +83,7 @@ export default {
             { name: 'StatsDocs', instance: StatsDocs },
             { name: 'SwapDocs', instance: SwapDocs },
             { name: 'SelectDocs', instance: SelectDocs },
+            { name: 'TableDocs', instance: TableDocs },
             { name: 'TextareaDocs', instance: TextareaDocs },
             { name: 'TooltipDocs', instance: TooltipDocs },
             { name: 'SelectThemeController', instance: FoSelectThemeController },

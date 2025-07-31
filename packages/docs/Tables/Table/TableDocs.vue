@@ -1,0 +1,164 @@
+<template>
+    <CodeSnippet v-if="section === 'default'"
+                 id="default"
+                 :code="DefaultTableRaw"
+                 :component="DefaultTable"
+    />
+
+    <CodeSnippet v-else-if="section === 'with-border'"
+                 id="with-border"
+                 :code="TableWithBorderRaw"
+                 :component="TableWithBorder"
+    />
+
+    <CodeSnippet v-else-if="section === 'without-border'"
+                 id="without-border"
+                 :code="TableWithoutBorderRaw"
+                 :component="TableWithoutBorder"
+    />
+
+    <CodeSnippet v-else-if="section === 'with-hover'"
+                 id="with-hover"
+                 :code="TableWithHoverRaw"
+                 :component="TableWithHover"
+    />
+
+    <CodeSnippet v-else-if="section === 'with-highlight'"
+                 id="with-highlight"
+                 :code="TableWithHighlightRaw"
+                 :component="TableWithHighlight"
+    />
+
+    <CodeSnippet v-else-if="section === 'striped-rows'"
+                 id="striped-rows"
+                 :code="StripedTableRowsRaw"
+                 :component="StripedTableRows"
+    />
+
+    <CodeSnippet v-else-if="section === 'striped-columns'"
+                 id="striped-columns"
+                 :code="StripedTableColumnsRaw"
+                 :component="StripedTableColumns"
+    />
+
+    <CodeSnippet v-else-if="section === 'rounded'"
+                 id="rounded"
+                 :code="RoundedTableRaw"
+                 :component="RoundedTable"
+    />
+
+    <CodeSnippet v-else-if="section === 'size'"
+                 id="size"
+                 :code="TableSizeRaw"
+                 :component="TableSize"
+    />
+
+    <CodeSnippet v-else-if="section === 'pinned-rows'"
+                 id="pinned-rows"
+                 :code="PinnedRowsTableRaw"
+                 :component="PinnedRowsTable"
+    />
+
+    <CodeSnippet v-else-if="section === 'pinned-columns'"
+                 id="pinned-columns"
+                 :code="PinnedColumnsTableRaw"
+                 :component="PinnedColumnsTable"
+    />
+
+    <CodeSnippet v-else-if="section === 'headless'"
+                 id="headless"
+                 :code="HeadlessTableRaw"
+                 :component="HeadlessTable"
+    />
+
+    <CodeSnippet v-else-if="section === 'with-caption'"
+                 id="with-caption"
+                 :code="TableWithCaptionRaw"
+                 :component="TableWithCaption"
+    />
+
+    <CodeSnippet v-else-if="section === 'with-footer'"
+                 id="with-footer"
+                 :code="TableWithFooterRaw"
+                 :component="TableWithFooter"
+    />
+
+    <CodeSnippet v-else-if="section === 'responsive'"
+                 id="responsive"
+                 :code="ResponsiveTableRaw"
+                 :component="ResponsiveTable"
+    />
+
+    <CodeSnippet v-else-if="section === 'with-shadow'"
+                 id="with-shadow"
+                 :code="TableWithShadowRaw"
+                 :component="TableWithShadow"
+    />
+
+    <CodeSnippet v-else-if="section === 'with-styled-header'"
+                 :id="section"
+                 :code="TableWithStyledHeaderRaw"
+                 :component="TableWithStyledHeader"
+    />
+</template>
+
+<script setup lang="ts">
+import type { Default }         from 'flyonui-vue';
+import CodeSnippet              from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import DefaultTable             from '@/Tables/Table/DefaultTable.vue';
+import DefaultTableRaw          from '@/Tables/Table/DefaultTable.vue?raw';
+import HeadlessTable            from '@/Tables/Table/HeadlessTable.vue';
+import HeadlessTableRaw         from '@/Tables/Table/HeadlessTable.vue?raw';
+import PinnedColumnsTable       from '@/Tables/Table/PinnedColumnsTable.vue';
+import PinnedColumnsTableRaw    from '@/Tables/Table/PinnedColumnsTable.vue?raw';
+import PinnedRowsTable          from '@/Tables/Table/PinnedRowsTable.vue';
+import PinnedRowsTableRaw       from '@/Tables/Table/PinnedRowsTable.vue?raw';
+import ResponsiveTable          from '@/Tables/Table/ResponsiveTable.vue';
+import ResponsiveTableRaw       from '@/Tables/Table/ResponsiveTable.vue?raw';
+import RoundedTable             from '@/Tables/Table/RoundedTable.vue';
+import RoundedTableRaw          from '@/Tables/Table/RoundedTable.vue?raw';
+import StripedTableColumns      from '@/Tables/Table/StripedTableColumns.vue';
+import StripedTableColumnsRaw   from '@/Tables/Table/StripedTableColumns.vue?raw';
+import StripedTableRows         from '@/Tables/Table/StripedTableRows.vue';
+import StripedTableRowsRaw      from '@/Tables/Table/StripedTableRows.vue?raw';
+import TableSize                from '@/Tables/Table/TableSize.vue';
+import TableSizeRaw             from '@/Tables/Table/TableSize.vue?raw';
+import TableWithBorder          from '@/Tables/Table/TableWithBorder.vue';
+import TableWithBorderRaw       from '@/Tables/Table/TableWithBorder.vue?raw';
+import TableWithCaption         from '@/Tables/Table/TableWithCaption.vue';
+import TableWithCaptionRaw      from '@/Tables/Table/TableWithCaption.vue?raw';
+import TableWithFooter          from '@/Tables/Table/TableWithFooter.vue';
+import TableWithFooterRaw       from '@/Tables/Table/TableWithFooter.vue?raw';
+import TableWithHighlight       from '@/Tables/Table/TableWithHighlight.vue';
+import TableWithHighlightRaw    from '@/Tables/Table/TableWithHighlight.vue?raw';
+import TableWithHover           from '@/Tables/Table/TableWithHover.vue';
+import TableWithHoverRaw        from '@/Tables/Table/TableWithHover.vue?raw';
+import TableWithoutBorder       from '@/Tables/Table/TableWithoutBorder.vue';
+import TableWithoutBorderRaw    from '@/Tables/Table/TableWithoutBorder.vue?raw';
+import TableWithShadow          from '@/Tables/Table/TableWithShadow.vue';
+import TableWithShadowRaw       from '@/Tables/Table/TableWithShadow.vue?raw';
+import TableWithStyledHeader    from '@/Tables/Table/TableWithStyledHeader.vue';
+import TableWithStyledHeaderRaw from '@/Tables/Table/TableWithStyledHeader.vue?raw';
+
+interface Props {
+    section: Default
+        | 'with-border'
+        | 'without-border'
+        | 'with-hover'
+        | 'with-highlight'
+        | 'striped-rows'
+        | 'striped-columns'
+        | 'rounded'
+        | 'size'
+        | 'pinned-rows'
+        | 'pinned-columns'
+        | 'headless'
+        | 'with-caption'
+        | 'with-footer'
+        | 'responsive'
+        | 'with-shadow'
+        | 'with-styled-header';
+}
+
+defineProps<Props>();
+</script>

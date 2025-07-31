@@ -15,6 +15,7 @@
             <!-- todo: make another code snippet to fulfill all my needs -->
             <VueCodeHighlighter v-for="codeSnippet in codeSnippets"
                                 :key="codeSnippet.title"
+                                class="max-h-96 overflow-y-auto"
                                 :title="codeSnippet.title"
                                 :lang="codeSnippet.lang"
                                 :code="codeSnippet.code"

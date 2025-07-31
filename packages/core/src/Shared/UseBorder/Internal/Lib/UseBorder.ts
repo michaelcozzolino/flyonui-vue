@@ -5,11 +5,12 @@ import { toValue }                            from 'vue';
 
 export function useBorder(
     componentName: MaybeRefOrGetter<BorderableComponentName>,
-    isBordered: MaybeRefOrGetter<boolean>,
+    isBordered: MaybeRefOrGetter<boolean | undefined>,
 ): ComputedRef<string> {
-    const availableClasses: Record<BorderableComponentName, string> = {
-        FoStats: 'stats-border shadow-none',
+    const classes: Record<BorderableComponentName, ComputedRef<string>> = {
+        FoStats: useClass(isBordered, 'stats-border shadow-none'),
+        FoTable: useClass(isBordered, 'border border-base-content/25', 'table-borderless'),
     };
 
-    return useClass(isBordered, availableClasses[toValue(componentName)]);
+    return classes[toValue(componentName)];
 }

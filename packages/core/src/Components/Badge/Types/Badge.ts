@@ -4,8 +4,10 @@ import type { Preset }               from '@/Shared/UsePreset';
 import type { Shapeable }            from '@/Shared/UseShape';
 import type { Size }                 from '@/Shared/UseSize';
 
+export type BadgePreset = Exclude<Preset, 'gradient' | 'text'>;
+
 export interface BadgeProps extends Colorable, Shapeable, WithConfigurableIcon {
-    preset?:        Exclude<Preset, 'gradient' | 'text'>;
+    preset?:        BadgePreset;
     size?:          Size;
     isDismissible?: boolean;
 }
