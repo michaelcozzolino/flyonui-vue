@@ -11,7 +11,11 @@ type NonConfigurableComponentName = 'FoJoin'
     | 'FoStats'
     | 'FoStatTitle'
     | 'FoStatValue'
-    | 'FoSwap';
+    | 'FoSwap'
+    | 'FoTableBody'
+    | 'FoTableColumn'
+    | 'FoTableHead'
+    | 'FoTableRow';
 
 export type ConfigurableComponentName = keyof ConfigurableComponentProps;
 export type ComponentName = ConfigurableComponentName | NonConfigurableComponentName;

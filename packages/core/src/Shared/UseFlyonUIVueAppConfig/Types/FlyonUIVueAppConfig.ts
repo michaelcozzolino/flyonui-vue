@@ -10,9 +10,10 @@ import type {
     LoadingProps,
     MenuProps,
     SelectProps,
+    TableProps,
     TextareaProps,
     TooltipProps,
-}                                                                         from '@/Components';
+} from '@/Components';
 import type { Color, Direction, HorizontalPosition, Preset, Shape, Size } from '@/Shared';
 import type { ConfigurableComponentName, PickIfExists, Prettify }         from '@/Shared/Utils/Internal';
 
@@ -75,6 +76,7 @@ export interface ConfigurableComponentProps {
     FoMenu:     ConfigurableProps<MenuProps>;
     FoRadio:    ConfigurableProps<ButtonProps>; // todo: temporary
     FoSelect:   ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
+    FoTable:    ConfigurableProps<TableProps>;
     FoTextarea: ConfigurableProps<
         TextareaProps
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>

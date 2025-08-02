@@ -1,5 +1,3 @@
-import type { Orientable } from '@/Shared/UseOrientation';
+import type { Borderable, Orientable  } from '@/Shared';
 
-export interface StatsProps extends Orientable {
-    isBordered?: boolean;
-}
+export type StatsProps = Orientable & Borderable;

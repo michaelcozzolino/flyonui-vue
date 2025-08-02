@@ -80,6 +80,13 @@ export function useSize(
                 large:      'select-lg',
                 extraLarge: 'select-xl',
             },
+            FoTable: {
+                extraSmall: 'table-xs',
+                small:      'table-sm',
+                medium:     '',
+                large:      'table-lg',
+                extraLarge: '',
+            },
             FoTextarea: {
                 extraSmall: 'textarea-xs',
                 small:      'textarea-sm',

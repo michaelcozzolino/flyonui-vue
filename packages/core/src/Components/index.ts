@@ -17,6 +17,7 @@ export * from '@/Components/Popover';
 export * from '@/Components/Select';
 export * from '@/Components/Stats';
 export * from '@/Components/Swap';
+export * from '@/Components/Table';
 export * from '@/Components/Textarea';
 export * from '@/Components/ThemeController';
 export * from '@/Components/Tooltip';

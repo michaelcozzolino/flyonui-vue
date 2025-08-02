@@ -25,8 +25,9 @@
 </template>
 
 <script setup lang="ts">
-import type { SidebarItem }    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar.ts';
-import SidebarNode             from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
+import type { SidebarBadge, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar.ts';
+import SidebarNode
+    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
 import { useLayoutStore }      from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore.ts';
 import { onClickOutside }      from '@vueuse/core';
 import { FoMenu }              from 'flyonui-vue';
@@ -36,6 +37,11 @@ import { ref, useTemplateRef } from 'vue';
 const sidebarElement = useTemplateRef<HTMLElement>('sidebar');
 
 const { isSidebarCollapsed: isCollapsed, isPageSizeSmallerThanSm } = storeToRefs(useLayoutStore());
+
+const unreleasedBadge: SidebarBadge = {
+    color: 'warning',
+    text:  'Unreleased',
+};
 
 const items = ref<SidebarItem[]>([
     {
@@ -70,14 +76,11 @@ const items = ref<SidebarItem[]>([
                 children: [],
             },
             {
-                id:    6,
-                text:  'Keyboard',
-                to:    '/content/keyboard',
-                icon:  'mdi:keyboard-outline',
-                badge: {
-                    color: 'warning',
-                    text:  'Unreleased',
-                },
+                id:       6,
+                text:     'Keyboard',
+                to:       '/content/keyboard',
+                icon:     'mdi:keyboard-outline',
+                badge:    unreleasedBadge,
                 children: [],
             },
             {
@@ -203,10 +206,24 @@ const items = ref<SidebarItem[]>([
     },
     {
         id:       24,
-        text:     'Extra',
+        text:     'Tables',
         children: [
             {
                 id:       25,
+                text:     'Table',
+                to:       '/tables/table',
+                icon:     'mdi:table',
+                badge:    unreleasedBadge,
+                children: [],
+            },
+        ],
+    },
+    {
+        id:       26,
+        text:     'Extra',
+        children: [
+            {
+                id:       27,
                 text:     'Build Size Visualizer',
                 to:       '/extra/build-size-visualizer',
                 icon:     'mdi:chart-pie',
