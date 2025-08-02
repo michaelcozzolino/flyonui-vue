@@ -4,17 +4,17 @@
 
 <TableDocs section="default" />
 
-### With border
+### Bordered
 
-<TableDocs section="with-border" />
+<TableDocs section="bordered" />
 
-### Without border
+### Borderless
 
-<TableDocs section="without-border" />
+<TableDocs section="borderless" />
 
-### With hover
+### Hoverable
 
-<TableDocs section="with-hover" />
+<TableDocs section="hoverable" />
 
 ### With highlight
 
