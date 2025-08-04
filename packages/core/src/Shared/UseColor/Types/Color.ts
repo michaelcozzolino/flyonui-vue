@@ -9,7 +9,11 @@ export type ColorableTextComponentName = Extract<ComponentName, 'FoLink' | 'FoLo
 
 export type Color = 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
 
-// todo: replace all
 export interface Colorable {
+    /**
+     * The component's color
+     *
+     * @values 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
+     */
     color?: Color;
 }

@@ -18,6 +18,11 @@ export type SizableComponentName = Extract<
 export type Size = 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge';
 
 export interface Sizable<T extends Size = Size> {
+    /**
+     * The component's size
+     *
+     * @values 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'
+     */
     size?: T;
 }
 

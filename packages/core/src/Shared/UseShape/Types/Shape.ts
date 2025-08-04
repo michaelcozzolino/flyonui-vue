@@ -5,5 +5,10 @@ export type ShapeableComponentName = Extract<ComponentName, 'FoBadge' | 'FoButto
 export type Shape = 'rounded' | 'pilled' | 'square' | 'circle';
 
 export interface Shapeable {
+    /**
+     * The component's shape
+     *
+     * @values 'rounded' | 'pilled' | 'square' | 'circle'
+     */
     shape?: Shape;
 }
