@@ -25,7 +25,8 @@ import NavbarDocs                         from '@/Navigations/Navbar/NavbarDocs.
 import PopoverDocs                        from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                        from '@/Overlays/Tooltip/TooltipDocs.vue';
 import Playground                         from '@/Playground/Playground.vue';
-import CreateFlyonUiVueAppDocs            from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
+import CreateFlyonUIVueAppDocs            from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
+import PropsApiDocs                       from '@/Shared/Components/Docs/PropsApiDocs.vue';
 import TableDocs                          from '@/Tables/Table/TableDocs.vue';
 import { FoSelectThemeController, vMask } from 'flyonui-vue';
 import { createPinia }                    from 'pinia';
@@ -90,7 +91,8 @@ export default {
             { name: 'Playground', instance: Playground },
             { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
             { name: 'VueCodeHighlighter', instance: VueCodeHighlighter },
-            { name: 'CreateFlyonUIVueAppDocs', instance: CreateFlyonUiVueAppDocs },
+            { name: 'CreateFlyonUIVueAppDocs', instance: CreateFlyonUIVueAppDocs },
+            { name: 'PropsApiDocs', instance: PropsApiDocs },
         ]);
     },
 } satisfies Theme;

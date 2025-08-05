@@ -1,0 +1,2276 @@
+[
+  {
+    "exportName": "default",
+    "displayName": "FoBadge",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "icon",
+        "description": "Icon value or configuration",
+        "required": false,
+        "type": {
+          "name": "ConfigurableIcon"
+        }
+      },
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "shape",
+        "description": "The component's shape",
+        "tags": {
+          "values": [
+            {
+              "description": "'rounded' | 'pilled' | 'square' | 'circle'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Shape"
+        }
+      },
+      {
+        "name": "preset",
+        "description": "The component's preset",
+        "tags": {
+          "values": [
+            {
+              "description": "'solid' | 'gradient' | 'text' | 'soft' | 'outline' | 'dash'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "color",
+        "description": "The component's color",
+        "tags": {
+          "values": [
+            {
+              "description": "'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Color"
+        }
+      },
+      {
+        "name": "isDismissible",
+        "description": "Show dismiss button",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Badge/UI/FoBadge.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoDotStyleBadge",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "icon",
+        "description": "Icon value or configuration",
+        "required": false,
+        "type": {
+          "name": "ConfigurableIcon"
+        }
+      },
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "shape",
+        "description": "The component's shape",
+        "tags": {
+          "values": [
+            {
+              "description": "'rounded' | 'pilled' | 'square' | 'circle'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Shape"
+        }
+      },
+      {
+        "name": "preset",
+        "description": "The component's preset",
+        "tags": {
+          "values": [
+            {
+              "description": "'solid' | 'gradient' | 'text' | 'soft' | 'outline' | 'dash'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "color",
+        "description": "The component's color",
+        "tags": {
+          "values": [
+            {
+              "description": "'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Color"
+        }
+      },
+      {
+        "name": "isDismissible",
+        "description": "Show dismiss button",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Badge/UI/FoDotStyleBadge.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoButton",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "icon",
+        "description": "Icon value or configuration",
+        "required": false,
+        "type": {
+          "name": "ConfigurableIcon"
+        }
+      },
+      {
+        "name": "withGlass",
+        "description": "Renders with glass style",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "shape",
+        "description": "The component's shape",
+        "tags": {
+          "values": [
+            {
+              "description": "'rounded' | 'pilled' | 'square' | 'circle'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Shape"
+        }
+      },
+      {
+        "name": "isResponsive",
+        "description": "Enable responsive layout",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "preset",
+        "description": "The component's preset",
+        "tags": {
+          "values": [
+            {
+              "description": "'solid' | 'gradient' | 'text' | 'soft' | 'outline' | 'dash'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "isDisabled",
+        "description": "The button's disabled state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      {
+        "name": "color",
+        "description": "The component's color",
+        "tags": {
+          "values": [
+            {
+              "description": "'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Color"
+        }
+      },
+      {
+        "name": "to",
+        "description": "Navigation target route",
+        "required": false,
+        "type": {
+          "name": "RouteRecordRaw"
+        }
+      },
+      {
+        "name": "layout",
+        "description": "The button's layout",
+        "tags": {
+          "values": [
+            {
+              "description": "'default' | 'wide' | 'block'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Layout"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'default'"
+        }
+      },
+      {
+        "name": "isActive",
+        "description": "The button's active state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "prepend"
+      },
+      {
+        "name": "default"
+      },
+      {
+        "name": "append"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Button/UI/FoButton.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoLoadingButton",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "isLoading",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "true"
+        }
+      },
+      {
+        "name": "icon",
+        "required": false,
+        "type": {
+          "name": "intersection",
+          "elements": [
+            {
+              "name": "{\n    position?: HorizontalPosition;\n}"
+            },
+            {
+              "name": "LoadingProps"
+            }
+          ]
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "() => {\n    return { animation: 'spinner' };\n}"
+        }
+      },
+      {
+        "name": "text",
+        "required": false,
+        "type": {
+          "name": "{\n    loading:    string;\n    notLoading: string;\n}"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "loading"
+      },
+      {
+        "name": "notLoading"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Button/UI/FoLoadingButton.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoSocialButton",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "social",
+        "description": "The button's social platform\n'Facebook' | 'Twitter' | 'Linkedin' | 'Github'",
+        "required": true,
+        "type": {
+          "name": "Social"
+        }
+      },
+      {
+        "name": "preset",
+        "description": "Style preset",
+        "required": false,
+        "type": {
+          "name": "SocialButtonPreset"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'solid'"
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Button/UI/FoSocialButton.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoCheckbox",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "isValid",
+        "description": "Whether the value is valid",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      },
+      {
+        "name": "isDisabled",
+        "description": "The button's disabled state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "color",
+        "description": "The component's color",
+        "tags": {
+          "values": [
+            {
+              "description": "'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Color"
+        }
+      },
+      {
+        "name": "label",
+        "description": "Label text",
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      {
+        "name": "helperText",
+        "description": "Helper message below the checkbox",
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Checkbox/UI/FoCheckbox.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoCheckboxGroup",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "orientation",
+        "description": "Layout direction of the component",
+        "required": false,
+        "type": {
+          "name": "Orientation"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'horizontal'"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Checkbox/UI/FoCheckboxGroup.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoHeading",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "level",
+        "required": true,
+        "type": {
+          "name": "HeadingLevel"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Heading/UI/FoHeading.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoIcon",
+    "description": "",
+    "tags": {},
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Icon/UI/FoIcon.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoInputText",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "icon",
+        "description": "Icon value or configuration",
+        "required": false,
+        "type": {
+          "name": "ConfigurableIcon"
+        }
+      },
+      {
+        "name": "helperText",
+        "description": "Helper text content",
+        "required": false,
+        "type": {
+          "name": "ConfigurableHelperText"
+        }
+      },
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "isValid",
+        "description": "Whether the value is valid",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      },
+      {
+        "name": "isDisabled",
+        "description": "The button's disabled state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "type",
+        "description": "Input type",
+        "tags": {
+          "values": [
+            {
+              "description": "'text', 'email'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "union",
+          "elements": [
+            {
+              "name": "\"text\""
+            },
+            {
+              "name": "\"email\""
+            }
+          ]
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'text'"
+        }
+      },
+      {
+        "name": "label",
+        "description": "Input label text",
+        "required": false,
+        "type": {
+          "name": "union",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "InputLabel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "placeholder",
+        "description": "Placeholder text",
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      {
+        "name": "shape",
+        "description": "Input shape style",
+        "required": false,
+        "type": {
+          "name": "Extract",
+          "elements": [
+            {
+              "name": "Shape"
+            },
+            {
+              "name": "union",
+              "elements": [
+                {
+                  "name": "\"rounded\""
+                },
+                {
+                  "name": "\"pilled\""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "withoutFocus",
+        "description": "Disable focus styleedd",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "isReadonly",
+        "description": "Read-only state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "list",
+        "description": "Associated datalist id",
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "prepend"
+      },
+      {
+        "name": "append"
+      },
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/InputText/UI/FoInputText.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoJoin",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "isResponsive",
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "orientation",
+        "defaultValue": {
+          "func": false,
+          "value": "'horizontal'"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Join/UI/FoJoin.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoKeyboard",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Keyboard/UI/FoKeyboard.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoInlineLabel",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Label/UI/FoInlineLabel.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoLink",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "color",
+        "description": "The component's color",
+        "tags": {
+          "values": [
+            {
+              "description": "'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Color"
+        }
+      },
+      {
+        "name": "to",
+        "description": "Link target",
+        "required": true,
+        "type": {
+          "name": "To"
+        }
+      },
+      {
+        "name": "navigation",
+        "description": "Custom navigation handler",
+        "required": false,
+        "type": {
+          "name": "Navigation"
+        }
+      },
+      {
+        "name": "underlineEffect",
+        "description": "Underline style effect",
+        "required": false,
+        "type": {
+          "name": "UnderlineLinkEffect"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "click:link"
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Link/UI/FoLink.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoListGroup",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "orientation",
+        "description": "Layout direction of the component",
+        "required": false,
+        "type": {
+          "name": "Orientation"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'vertical'"
+        }
+      },
+      {
+        "name": "isStriped",
+        "description": "Apply stripes",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "isFlushed",
+        "description": "Remove rounded corners",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "withoutGutters",
+        "description": "Remove gutters",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/ListGroup/UI/FoListGroup.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoListGroupItem",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "isStriped",
+        "description": "Apply stripes",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/ListGroup/UI/FoListGroupItem.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoLoading",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "color",
+        "description": "The component's color",
+        "tags": {
+          "values": [
+            {
+              "description": "'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Color"
+        }
+      },
+      {
+        "name": "animation",
+        "description": "Loading animation style",
+        "required": false,
+        "type": {
+          "name": "Animation"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'spinner'"
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Loading/UI/FoLoading.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoMenu",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "orientation",
+        "description": "Layout direction of the component",
+        "required": false,
+        "type": {
+          "name": "Orientation"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'vertical'"
+        }
+      },
+      {
+        "name": "textAsTooltip",
+        "description": "Show item text as tooltip",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "hideText",
+        "description": "Hide menu item text",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "size",
+        "description": "Size of the menu",
+        "required": false,
+        "type": {
+          "name": "Size"
+        }
+      },
+      {
+        "name": "isFlushed",
+        "description": "Remove rounded corners",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Menu/UI/FoMenu.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoMenuItem",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "item",
+        "required": true,
+        "type": {
+          "name": "MenuItem"
+        }
+      },
+      {
+        "name": "navigation",
+        "required": false,
+        "type": {
+          "name": "Navigation"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "click:item"
+      }
+    ],
+    "slots": [
+      {
+        "name": "prepend"
+      },
+      {
+        "name": "append"
+      },
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Menu/UI/FoMenuItem.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoMenuParentTitle",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Menu/UI/FoMenuParentTitle.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoMenuTitle",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "isParent",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Menu/UI/FoMenuTitle.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoNavbar",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "links",
+        "required": false,
+        "type": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "NavbarLink"
+            }
+          ]
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "(): NavbarLink[] => []"
+        }
+      },
+      {
+        "name": "linkType",
+        "required": false,
+        "type": {
+          "name": "union",
+          "elements": [
+            {
+              "name": "\"vue\""
+            },
+            {
+              "name": "\"js\""
+            }
+          ]
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'vue'"
+        }
+      },
+      {
+        "name": "isRounded",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "start"
+      },
+      {
+        "name": "end"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Navbar/UI/FoNavbar.vue"
+    ]
+  },
+  {
+    "displayName": "FoNavbarBrand",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Navbar/UI/FoNavbarBrand.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoNavbarHamburgerMenuToggler",
+    "description": "",
+    "tags": {},
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Navbar/UI/FoNavbarHamburgerMenuToggler.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoNavbarLinkList",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "links",
+        "required": false,
+        "type": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "NavbarLink"
+            }
+          ]
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "() => []"
+        }
+      },
+      {
+        "name": "linkType",
+        "required": false,
+        "type": {
+          "name": "union",
+          "elements": [
+            {
+              "name": "\"vue\""
+            },
+            {
+              "name": "\"js\""
+            }
+          ]
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'vue'"
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Navbar/UI/FoNavbarLinkList.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoPopover",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "color",
+        "description": "The component's color",
+        "tags": {
+          "values": [
+            {
+              "description": "'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Color"
+        }
+      },
+      {
+        "name": "placement",
+        "description": "Placement of the tooltip",
+        "required": false,
+        "type": {
+          "name": "Placement"
+        }
+      },
+      {
+        "name": "size",
+        "description": "Size of the tooltip",
+        "required": false,
+        "type": {
+          "name": "Size"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      },
+      {
+        "name": "body"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Popover/UI/FoPopover.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoDatalist",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "options",
+        "description": "Available select options",
+        "required": true,
+        "type": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "V"
+            }
+          ]
+        }
+      },
+      {
+        "name": "shape",
+        "description": "Shape of the select field",
+        "required": false,
+        "type": {
+          "name": "Extract",
+          "elements": [
+            {
+              "name": "Shape"
+            },
+            {
+              "name": "union",
+              "elements": [
+                {
+                  "name": "\"rounded\""
+                },
+                {
+                  "name": "\"pilled\""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "isDisabled",
+        "description": "The button's disabled state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      },
+      {
+        "name": "isValid",
+        "description": "Whether the value is valid",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      },
+      {
+        "name": "helperText",
+        "description": "Helper text content",
+        "required": false,
+        "type": {
+          "name": "ConfigurableHelperText"
+        }
+      },
+      {
+        "name": "label",
+        "description": "Field label",
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      {
+        "name": "placeholder",
+        "description": "Placeholder text",
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Select/UI/FoDatalist.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoSelect",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "options",
+        "description": "Available select options",
+        "required": true,
+        "type": {
+          "name": "Array",
+          "elements": [
+            {
+              "name": "V"
+            }
+          ]
+        }
+      },
+      {
+        "name": "shape",
+        "description": "Shape of the select field",
+        "required": false,
+        "type": {
+          "name": "Extract",
+          "elements": [
+            {
+              "name": "Shape"
+            },
+            {
+              "name": "union",
+              "elements": [
+                {
+                  "name": "\"rounded\""
+                },
+                {
+                  "name": "\"pilled\""
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "isDisabled",
+        "description": "The button's disabled state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      },
+      {
+        "name": "isValid",
+        "description": "Whether the value is valid",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      },
+      {
+        "name": "helperText",
+        "description": "Helper text content",
+        "required": false,
+        "type": {
+          "name": "ConfigurableHelperText"
+        }
+      },
+      {
+        "name": "icon",
+        "description": "Left icon of the field",
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      {
+        "name": "label",
+        "description": "Field label",
+        "required": false,
+        "type": {
+          "name": "union",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "InputLabel"
+            }
+          ]
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Select/UI/FoSelect.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoStat",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Stats/UI/FoStat.vue"
+    ]
+  },
+  {
+    "displayName": "FoStatActions",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Stats/UI/FoStatActions.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoStatDescription",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Stats/UI/FoStatDescription.vue"
+    ]
+  },
+  {
+    "displayName": "FoStatFigure",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Stats/UI/FoStatFigure.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoStatTitle",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Stats/UI/FoStatTitle.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoStatValue",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Stats/UI/FoStatValue.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoStats",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "orientation",
+        "defaultValue": {
+          "func": false,
+          "value": "'horizontal'"
+        }
+      },
+      {
+        "name": "isBordered",
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Stats/UI/FoStats.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoSwap",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "animation",
+        "description": "The component's swap animation",
+        "tags": {
+          "values": [
+            {
+              "description": "'flip' 'rotation'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "SwapAnimation"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "on"
+      },
+      {
+        "name": "off"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Swap/UI/FoSwap.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoTable",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "isStriped",
+        "description": "Stripe orientation",
+        "required": false,
+        "type": {
+          "name": "RowsOrColumns"
+        }
+      },
+      {
+        "name": "isResponsive",
+        "description": "Enable responsive layout",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      {
+        "name": "isBordered",
+        "description": "Display component borders",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      },
+      {
+        "name": "isPinned",
+        "description": "Pin rows or columns",
+        "required": false,
+        "type": {
+          "name": "RowsOrColumns"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "caption"
+      },
+      {
+        "name": "head"
+      },
+      {
+        "name": "default"
+      },
+      {
+        "name": "body"
+      },
+      {
+        "name": "footer"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Table/UI/FoTable.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoTableBody",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Table/UI/FoTableBody.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoTableColumn",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Table/UI/FoTableColumn.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoTableHead",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Table/UI/FoTableHead.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoTableHeader",
+    "description": "",
+    "tags": {},
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Table/UI/FoTableHeader.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoTableRow",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "isHoverable",
+        "description": "Highlight row on hover",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Table/UI/FoTableRow.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoTextarea",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "icon",
+        "description": "Icon value or configuration",
+        "required": false,
+        "type": {
+          "name": "ConfigurableIcon"
+        }
+      },
+      {
+        "name": "helperText",
+        "description": "Helper text content",
+        "required": false,
+        "type": {
+          "name": "ConfigurableHelperText"
+        }
+      },
+      {
+        "name": "size",
+        "description": "The component's size",
+        "tags": {
+          "values": [
+            {
+              "description": "'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "T"
+        }
+      },
+      {
+        "name": "isValid",
+        "description": "Whether the value is valid",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "undefined"
+        }
+      },
+      {
+        "name": "isDisabled",
+        "description": "The button's disabled state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      },
+      {
+        "name": "placeholder",
+        "description": "Placeholder text",
+        "required": false,
+        "type": {
+          "name": "string"
+        }
+      },
+      {
+        "name": "label",
+        "description": "Input label text",
+        "required": false,
+        "type": {
+          "name": "union",
+          "elements": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "TextareaLabel"
+            }
+          ]
+        }
+      },
+      {
+        "name": "isReadonly",
+        "description": "Read-only state",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      },
+      {
+        "name": "readonly",
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Textarea/UI/FoTextarea.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoSelectThemeController",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "initialValue",
+        "defaultValue": {
+          "func": false,
+          "value": "'dark'"
+        }
+      },
+      {
+        "name": "attribute",
+        "defaultValue": {
+          "func": false,
+          "value": "'data-theme'"
+        }
+      },
+      {
+        "name": "modes",
+        "defaultValue": {
+          "func": false,
+          "value": "(): Record<FlyonUITheme, FlyonUITheme> => {\n    return {\n        light:     'light',\n        dark:      'dark',\n        gourmet:   'gourmet',\n        corporate: 'corporate',\n        ghibli:    'ghibli',\n        luxury:    'luxury',\n        mintlify:  'mintlify',\n        shadcn:    'shadcn',\n        slack:     'slack',\n        soft:      'soft',\n        valorant:  'valorant',\n    };\n}"
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/ThemeController/UI/FoSelectThemeController.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoTooltip",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "color",
+        "description": "The component's color",
+        "tags": {
+          "values": [
+            {
+              "description": "'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'",
+              "title": "values"
+            }
+          ]
+        },
+        "required": false,
+        "type": {
+          "name": "Color"
+        }
+      },
+      {
+        "name": "placement",
+        "description": "Placement of the tooltip",
+        "required": false,
+        "type": {
+          "name": "Placement"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'top'"
+        }
+      },
+      {
+        "name": "size",
+        "description": "Size of the tooltip",
+        "required": false,
+        "type": {
+          "name": "Size"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      },
+      {
+        "name": "body"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Tooltip/UI/FoTooltip.vue"
+    ]
+  },
+  {
+    "description": "When used in conditional wrappers, it may receive attributes or props, such as \"class\",\nthat are not needed here.",
+    "tags": {},
+    "exportName": "default",
+    "displayName": "FoFragment",
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Fragment/Internal/UI/FoFragment.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoHelperText",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "position",
+        "required": false,
+        "type": {
+          "name": "HorizontalPosition"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'left'"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/HelperText/Internal/UI/FoHelperText.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoLabel",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "componentName",
+        "description": "Component using the label",
+        "required": false,
+        "type": {
+          "name": "FloatingLabelComponentName"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "'FoInputText'"
+        }
+      },
+      {
+        "name": "type",
+        "description": "Label style",
+        "required": false,
+        "type": {
+          "name": "LabelType"
+        }
+      },
+      {
+        "name": "isHidden",
+        "description": "Hide label",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        },
+        "defaultValue": {
+          "func": false,
+          "value": "false"
+        }
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Label/Internal/UI/FoLabel.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoRouterLink",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "navigation",
+        "description": "Custom navigation handler",
+        "required": false,
+        "type": {
+          "name": "Navigation"
+        }
+      },
+      {
+        "name": "to",
+        "description": "Link target",
+        "required": true,
+        "type": {
+          "name": "To"
+        }
+      }
+    ],
+    "events": [
+      {
+        "name": "click:link"
+      }
+    ],
+    "slots": [
+      {
+        "name": "default"
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Link/Internal/UI/FoRouterLink.vue"
+    ]
+  },
+  {
+    "exportName": "default",
+    "displayName": "FoSelectOption",
+    "description": "",
+    "tags": {},
+    "props": [
+      {
+        "name": "option",
+        "description": "Select option data",
+        "required": true,
+        "type": {
+          "name": "SelectOption",
+          "elements": [
+            {
+              "name": "T"
+            }
+          ]
+        }
+      },
+      {
+        "name": "valueAsText",
+        "description": "Display option value instead of text",
+        "required": false,
+        "type": {
+          "name": "boolean"
+        }
+      }
+    ],
+    "sourceFiles": [
+      "/home/michael/Desktop/personalprojects/flyonui-vue/packages/core/src/Components/Select/Internal/UI/FoSelectOption.vue"
+    ]
+  }
+]
