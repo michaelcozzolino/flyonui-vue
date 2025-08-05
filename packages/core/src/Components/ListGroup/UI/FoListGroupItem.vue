@@ -6,8 +6,8 @@
 
 <script setup lang="ts">
 import type { ListGroupItemProps }          from '@/Components/ListGroup';
+import type { ComponentName }               from '@/Shared';
 import type { Orientation }                 from '@/Shared/UseOrientation';
-import type { ComponentName }               from '@/Shared/Utils/Internal';
 import { listGroupOrientationInjectionKey } from '@/Components/ListGroup/Internal';
 import { useOrientation }                   from '@/Shared/UseOrientation/Internal';
 import { useStripes }                       from '@/Shared/UseStripes/Internal';

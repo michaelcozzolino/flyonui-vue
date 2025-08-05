@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import type { JoinProps }         from '@/Components/Join';
-import type { ComponentName }     from '@/Shared/Utils/Internal';
+import type { ComponentName }     from '@/Shared';
 import type { VNode }             from 'vue';
 import { isInJoinInjectionKey }   from '@/Components/Join/Internal';
 import { useOrientation }         from '@/Shared/UseOrientation/Internal';

@@ -46,7 +46,7 @@
 <script setup lang="ts">
 import type { Navigation }                                                    from '@/Components/Link';
 import type { MenuItem }                                                      from '@/Components/Menu';
-import type { ComponentName }                                                 from '@/Shared/Utils/Internal';
+import type { ComponentName }                                                 from '@/Shared';
 import { FoIcon }                                                             from '@/Components/Icon';
 import { FoLink }                                                             from '@/Components/Link';
 import { isInMenuItemInjectionKey, menuTextPropsInjectionKey }                from '@/Components/Menu/Internal';

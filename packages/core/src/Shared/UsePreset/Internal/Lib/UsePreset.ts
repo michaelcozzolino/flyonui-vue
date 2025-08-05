@@ -1,12 +1,12 @@
 import type { FlyonUIVueAppDefaultConfig }         from '@/Shared/UseFlyonUIVueAppConfig';
-import type { Preset, PresetComponentName }        from '@/Shared/UsePreset';
+import type { Preset, PresettableComponentName }   from '@/Shared/UsePreset';
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { useElementClass }                         from '@/Shared/UseClass/Internal';
 import { computed, toValue }                       from 'vue';
 
 export function usePreset(
     config: Ref<FlyonUIVueAppDefaultConfig>,
-    componentName: MaybeRefOrGetter<PresetComponentName>,
+    componentName: MaybeRefOrGetter<PresettableComponentName>,
     preset: MaybeRefOrGetter<Preset | undefined>,
 ): ComputedRef<string> {
     const _preset = computed(() => {
@@ -15,7 +15,7 @@ export function usePreset(
         return components?.[toValue(componentName)]?.preset ?? toValue(preset) ?? global.preset;
     });
 
-    return useElementClass<PresetComponentName, Preset>(
+    return useElementClass<PresettableComponentName, Preset>(
         componentName,
         {
             FoButton: {

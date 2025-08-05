@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 import type { TableProps }        from '@/Components/Table';
-import type { ComponentName }     from '@/Shared/Utils/Internal';
+import type { ComponentName }     from '@/Shared';
 import type { VNode }             from 'vue';
 import { FoTableHead }            from '@/Components';
 import { useFlyonUIVueAppConfig } from '@/Shared';

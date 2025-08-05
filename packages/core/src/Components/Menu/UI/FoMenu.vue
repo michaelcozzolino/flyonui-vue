@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import type { MenuProps }            from '@/Components/Menu';
-import type { ComponentName }        from '@/Shared/Utils/Internal';
+import type { ComponentName }        from '@/Shared';
 import type { VNode }                from 'vue';
 import { menuTextPropsInjectionKey } from '@/Components/Menu/Internal';
 import { useClass }                  from '@/Shared/UseClass/Internal';

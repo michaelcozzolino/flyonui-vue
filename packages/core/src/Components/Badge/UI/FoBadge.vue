@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import type { BadgeProps }                 from '@/Components/Badge';
-import type { ComponentName }              from '@/Shared/Utils/Internal';
+import type { ComponentName }              from '@/Shared';
 import { FoIcon }                          from '@/Components/Icon';
 import { usePositionableIcon }             from '@/Components/Icon/Internal';
 import { useColor }                        from '@/Shared/UseColor/Internal';
