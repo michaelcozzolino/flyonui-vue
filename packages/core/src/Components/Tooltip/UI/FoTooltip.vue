@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import type { TooltipProps }           from '@/Components/Tooltip';
-import type { ComponentName }          from '@/Shared/Utils/Internal';
+import type { ComponentName }          from '@/Shared';
 import { tooltipAsPopover }            from '@/Components/Tooltip/Internal';
 import { useColor }                    from '@/Shared/UseColor/Internal';
 import { useFlyonUIVueAppConfig }      from '@/Shared/UseFlyonUIVueAppConfig';

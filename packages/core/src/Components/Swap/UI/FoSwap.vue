@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import type { SwapAnimation, SwapProps } from '@/Components/Swap';
-import type { ComponentName }            from '@/Shared/Utils/Internal';
+import type { ComponentName }            from '@/Shared';
 import type { VNode }                    from 'vue';
 import { useRequiredSlotMessage }        from '@/Shared/Utils/Internal';
 import { computed }                      from 'vue';

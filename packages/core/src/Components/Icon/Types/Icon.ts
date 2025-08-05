@@ -1,6 +1,6 @@
+import type { ComponentName }      from '@/Shared';
 import type { IconSize }           from '@/Shared/UseSize';
 import type { HorizontalPosition } from '@/Shared/Utils';
-import type { ComponentName }      from '@/Shared/Utils/Internal';
 import type { Component }          from 'vue';
 
 export type PositionableIconComponentName = Extract<ComponentName, 'FoBadge' | 'FoButton' | 'FoInputText' | 'FoTextarea'>;

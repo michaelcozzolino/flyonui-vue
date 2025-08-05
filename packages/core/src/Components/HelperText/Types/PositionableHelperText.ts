@@ -1,5 +1,5 @@
+import type { ComponentName }      from '@/Shared';
 import type { HorizontalPosition } from '@/Shared/Utils';
-import type { ComponentName }      from '@/Shared/Utils/Internal';
 
 export type PositionableHelperTextComponentName = Extract<ComponentName, 'FoInputText' | 'FoSelect' | 'FoTextarea'>;
 

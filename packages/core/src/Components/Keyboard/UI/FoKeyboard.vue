@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import type { KeyboardProps }     from '@/Components';
-import type { ComponentName }     from '@/Shared/Utils/Internal';
+import type { ComponentName }     from '@/Shared';
 import type { VNode }             from 'vue';
 import { useFlyonUIVueAppConfig } from '@/Shared';
 import { useSize }                from '@/Shared/UseSize/Internal';

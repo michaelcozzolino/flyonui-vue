@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import type { StatsProps }    from '@/Components/Stats';
-import type { ComponentName } from '@/Shared/Utils/Internal';
+import type { ComponentName } from '@/Shared';
 import { useBorder }          from '@/Shared/UseBorder/Internal';
 import { useOrientation }     from '@/Shared/UseOrientation/Internal';
 

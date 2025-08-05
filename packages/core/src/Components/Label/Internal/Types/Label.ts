@@ -1,6 +1,6 @@
 import type { LabelType }                  from '@/Components/Label';
+import type { ComponentName }              from '@/Shared';
 import type { FloatingLabelComponentName } from '@/Shared/UseFloatingLabel';
-import type { ComponentName }              from '@/Shared/Utils/Internal';
 
 export type ConfigurableLabelComponentName = Extract<ComponentName, 'FoInputText' | 'FoSelect' | 'FoTextarea'>;
 

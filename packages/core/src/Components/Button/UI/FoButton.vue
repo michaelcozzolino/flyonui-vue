@@ -33,9 +33,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { ButtonProps }   from '@/Components/Button';
-import type { ComponentName } from '@/Shared/Utils/Internal';
+import type { ButtonProps } from '@/Components';
 
+import type { ComponentName }                from '@/Shared';
 import { FoIcon }                            from '@/Components/Icon';
 import { usePositionableIcon }               from '@/Components/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';

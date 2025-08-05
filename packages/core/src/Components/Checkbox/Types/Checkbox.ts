@@ -1,4 +1,4 @@
-import type { Color }         from '@/Shared/UseColor';
+import type { Colorable }     from '@/Shared/UseColor';
 import type { MaybeStringId } from '@/Shared/UseIdentifiable';
 import type { Orientable }    from '@/Shared/UseOrientation';
 import type { Sizable }       from '@/Shared/UseSize';
