@@ -1,6 +1,5 @@
 <template>
-    <FoTable v-if="propsApi !== undefined"
-             class="vp-raw rounded-lg my-4"
+    <FoTable class="vp-raw rounded-lg my-4"
              is-bordered
              is-responsive
              is-striped="rows"
@@ -16,7 +15,7 @@
         </template>
 
         <template #body>
-            <FoTableRow v-for="prop in propsApi"
+            <FoTableRow v-for="prop in api"
                         :key="prop.name"
                         class="text-center"
             >
@@ -45,25 +44,12 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }                                    from 'flyonui-vue';
-import type { BlockTag, ComponentDoc, ParamTag, PropDescriptor } from 'vue-docgen-api';
-import { useArrayFind }                                          from '@vueuse/core';
+import type { Api } from '@/Shared/Components/Api/Types/Api.ts';
 
-import { ComponentsApi, FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
-import { computed }                                                         from 'vue';
+import type { BlockTag, ParamTag, PropDescriptor }           from 'vue-docgen-api';
+import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
 
-interface Props {
-    componentName: ComponentName;
-}
-
-const props = defineProps<Props>();
-
-const componentDocs = useArrayFind(
-    (): ComponentDoc[] => ComponentsApi as ComponentDoc[],
-    (component): boolean => component.displayName === props.componentName,
-);
-
-const propsApi = computed((): PropDescriptor[] | undefined => componentDocs.value?.props);
+defineProps<Api<PropDescriptor>>();
 
 function isParamTag(tag: BlockTag | undefined): tag is ParamTag {
     return tag !== undefined && 'title' in tag && 'description' in tag;
