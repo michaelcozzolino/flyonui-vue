@@ -11,10 +11,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ApiProps }     from '@/Shared/Components/Api/Types/Api.ts';
+import type { ApiProps }     from '@/Api/Types/Api.ts';
 import type { ComponentDoc } from 'vue-docgen-api';
-import PropsApi              from '@/Shared/Components/Api/UI/PropsApi.vue';
-import SlotsApi              from '@/Shared/Components/Api/UI/SlotsApi.vue';
+import PropsApi              from '@/Api/UI/PropsApi.vue';
+import SlotsApi              from '@/Api/UI/SlotsApi.vue';
 import { useArrayFind }      from '@vueuse/core';
 import { componentsApi }     from 'flyonui-vue';
 

@@ -3,6 +3,7 @@ import type { App, Component, DefineComponent } from 'vue';
 import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
 import Layout                                   from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 
+import ComponentsApi                      from '@/Api/UI/ComponentsApi.vue';
 import BadgeDocs                          from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                         from '@/Components/Button/ButtonDocs.vue';
 import ListGroupDocs                      from '@/Components/ListGroup/ListGroupDocs.vue';
@@ -26,7 +27,6 @@ import PopoverDocs                        from '@/Overlays/Popover/PopoverDocs.v
 import TooltipDocs                        from '@/Overlays/Tooltip/TooltipDocs.vue';
 import Playground                         from '@/Playground/Playground.vue';
 import CreateFlyonUIVueAppDocs            from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
-import ComponentsApi                      from '@/Shared/Components/Api/UI/ComponentsApi.vue';
 import TableDocs                          from '@/Tables/Table/TableDocs.vue';
 import { FoSelectThemeController, vMask } from 'flyonui-vue';
 import { createPinia }                    from 'pinia';

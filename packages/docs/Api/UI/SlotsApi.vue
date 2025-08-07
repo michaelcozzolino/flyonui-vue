@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Api } from '@/Shared/Components/Api/Types/Api.ts';
+import type { Api } from '@/Api/Types/Api.ts';
 
 import type { SlotDescriptor }                               from 'vue-docgen-api';
 import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
