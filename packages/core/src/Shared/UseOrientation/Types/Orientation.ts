@@ -8,5 +8,6 @@ export type OrientableComponentName = Extract<
 export type Orientation = 'horizontal' | 'vertical';
 
 export interface Orientable {
+    /** The component's orientation */
     orientation?: Orientation;
 }

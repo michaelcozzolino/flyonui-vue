@@ -6,5 +6,6 @@ export type StatefulComponentName = Extract<ComponentName, 'FoButton' | 'FoMenuI
 export type State = Default | 'active' | 'disabled';
 
 export interface Disableable {
+    /** If true, the component will be disabled without allowing more interactions */
     isDisabled?: boolean;
 }
