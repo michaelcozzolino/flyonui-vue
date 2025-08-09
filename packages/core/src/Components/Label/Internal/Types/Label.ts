@@ -4,8 +4,12 @@ import type { FloatingLabelComponentName } from '@/Shared/UseFloatingLabel';
 
 export type ConfigurableLabelComponentName = Extract<ComponentName, 'FoInputText' | 'FoSelect' | 'FoTextarea'>;
 
-export interface LabelProps {
+export interface LabelProps<T extends LabelType = LabelType> {
     componentName?: FloatingLabelComponentName;
-    type?:          LabelType;
-    isHidden?:      boolean;
+
+    /** The Label's type */
+    type?: T;
+
+    /** Hides the component visually */
+    isHidden?: boolean;
 }
