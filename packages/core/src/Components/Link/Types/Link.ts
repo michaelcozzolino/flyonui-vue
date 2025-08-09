@@ -1,5 +1,5 @@
 import type { FoRouterLinkProps } from '@/Components/Link/Internal';
-import type { Color }             from '@/Shared/UseColor';
+import type { Colorable }         from '@/Shared/UseColor';
 import type { RouteLocationRaw }  from 'vue-router';
 
 export type To = string | RouteLocationRaw;
