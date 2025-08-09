@@ -1,7 +1,10 @@
+import type { Id }             from '@/Shared';
 import type { RouteRecordRaw } from 'vue-router';
 
-export interface NavbarLink {
-    id:   number;
+export interface NavbarLink extends Id {
+    /** The link's text */
     text: string;
-    to:   RouteRecordRaw | string;
+
+    /** The navigation target route or url */
+    to: RouteRecordRaw | string;
 }

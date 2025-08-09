@@ -11,6 +11,7 @@ export type Identifiable<
 export type Id<T extends number | string = number> = Identifiable<'id', T>;
 
 interface StringId {
+    /** The component's id, if not given, a random one might be assigned */
     readonly id: string;
 }
 

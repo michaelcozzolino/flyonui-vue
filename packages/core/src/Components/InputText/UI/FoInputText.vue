@@ -81,8 +81,7 @@
 import type { InputTextProps } from '@/Components/InputText';
 import type { LabelType }      from '@/Components/Label';
 
-import type { IconSize }                           from '@/Shared';
-import type { ComponentName }                      from '@/Shared/Utils/Internal';
+import type { ComponentName, IconSize }            from '@/Shared';
 import type { VNode }                              from 'vue';
 import { FoFragment }                              from '@/Components/Fragment/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';

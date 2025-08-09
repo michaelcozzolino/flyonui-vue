@@ -10,10 +10,6 @@ export type ColorableTextComponentName = Extract<ComponentName, 'FoLink' | 'FoLo
 export type Color = 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
 
 export interface Colorable {
-    /**
-     * The component's color
-     *
-     * @values 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error'
-     */
+    /** The component's color */
     color?: Color;
 }
