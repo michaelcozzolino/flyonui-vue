@@ -67,3 +67,13 @@
 ## Join
 
 <InputTextDocs section="join" />
+
+## Api
+
+### Props
+
+<InputTextDocs section="props" />
+
+### Slots
+
+<InputTextDocs section="slots" />
