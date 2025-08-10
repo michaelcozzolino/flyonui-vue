@@ -7,10 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import type { VNode }             from 'vue';
-import { useRequiredSlotMessage } from '@/Shared/Utils/Internal';
+import type { WithRequiredDefaultSlot } from '@/Shared/Utils/Types/Slots.ts';
+import { useRequiredSlotMessage }       from '@/Shared/Utils/Internal';
 
-defineSlots<{
-    default: () => VNode[];
-}>();
+defineSlots<WithRequiredDefaultSlot>();
 </script>

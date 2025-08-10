@@ -46,11 +46,18 @@
                  :code="BorderedStatsRaw"
                  :component="BorderedStats"
     />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       :component-names="['FoStats', 'FoStat', 'FoStatTitle', 'FoStatDescription', 'FoStatValue']"
+    />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }          from '@/Api/Types/Api.ts';
 import type { Default }          from 'flyonui-vue';
 import CodeSnippet               from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs         from '@/Api/UI/ComponentsApiDocs.vue';
 import BorderedStats             from '@/Components/Stat/BorderedStats.vue';
 import BorderedStatsRaw          from '@/Components/Stat/BorderedStats.vue?raw';
 import CenteredItemStats         from '@/Components/Stat/CenteredItemStats.vue';
@@ -69,7 +76,15 @@ import VerticalStats             from '@/Components/Stat/VerticalStats.vue';
 import VerticalStatsRaw          from '@/Components/Stat/VerticalStats.vue?raw';
 
 interface Props {
-    section: Default | 'with-avatar' | 'with-icons-and-image' | 'centered-item' | 'vertical' | 'with-progress-bar' | 'with-actions-button' | 'bordered';
+    section: Default
+        | 'with-avatar'
+        | 'with-icons-and-image'
+        | 'centered-item'
+        | 'vertical'
+        | 'with-progress-bar'
+        | 'with-actions-button'
+        | 'bordered'
+        | ApiType;
 }
 
 defineProps<Props>();
