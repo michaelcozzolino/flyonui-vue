@@ -80,6 +80,7 @@ function getValues(schema: PropertyMetaSchema): string {
             }
         }
     }
+
     return values.length ? values.join(' | ') : noValue;
 }
 </script>

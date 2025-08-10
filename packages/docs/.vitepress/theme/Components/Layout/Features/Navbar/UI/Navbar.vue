@@ -48,12 +48,11 @@
                     </template>
                 </FoPopover>
 
-                <FoLink to="https://github.com/michaelcozzolino/flyonui-vue">
-                    <FoSocialButton class="place-self-center"
-                                    social="Github"
-                                    shape="square"
-                    />
-                </FoLink>
+                <FoSocialButton class="place-self-center"
+                                social="Github"
+                                shape="square"
+                                to="https://github.com/michaelcozzolino/flyonui-vue"
+                />
             </template>
         </FoNavbar>
     </ClientOnly>
@@ -63,13 +62,12 @@
 import type { FlyonUITheme, NavbarLink } from 'flyonui-vue';
 import ConfigurationSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
-import { useLayoutStore }           from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore.ts';
+import { useLayoutStore }           from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
 import { loadIcons }                from '@iconify/vue';
 import { useColorMode, useStorage } from '@vueuse/core';
 import {
     FoButton,
     FoIcon,
-    FoLink,
     FoNavbar,
     FoNavbarBrand,
     FoPopover,

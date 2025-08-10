@@ -1,7 +1,6 @@
 export * from '@/Components/Badge';
 export * from '@/Components/Button';
 export * from '@/Components/Checkbox';
-export { default as ComponentsApi } from '@/Components/ComponentsApi.json';
 export * from '@/Components/Heading';
 export * from '@/Components/Icon';
 export * from '@/Components/InputText';
