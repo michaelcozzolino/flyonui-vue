@@ -5,10 +5,6 @@ export type PresettableComponentName = Extract<ComponentName, 'FoBadge' | 'FoBut
 export type Preset = 'solid' | 'gradient' | 'text' | 'soft' | 'outline' | 'dash';
 
 export interface Presettable<T extends Preset = Preset> {
-    /**
-     * The component's preset
-     *
-     * @values 'solid' | 'gradient' | 'text' | 'soft' | 'outline' | 'dash'
-     */
+    /** The component's preset */
     preset?: T;
 }

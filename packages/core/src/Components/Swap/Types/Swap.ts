@@ -1,9 +1,6 @@
 export type SwapAnimation = 'flip' | 'rotation';
 
 export interface SwapProps {
-    /**
-     * The component's swap animation
-     * @values 'flip' 'rotation'
-     */
+    /** The component's swap animation */
     animation?: SwapAnimation;
 }

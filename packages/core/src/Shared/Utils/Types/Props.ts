@@ -13,7 +13,9 @@ export interface WithPlaceholder {
     placeholder?: string;
 }
 
+export type WithRequiredText = Required<WithText>;
+
 export interface WithText {
     /** The component's text */
-    text: string;
+    text?: string;
 }
