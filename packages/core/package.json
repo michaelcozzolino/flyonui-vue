@@ -27,8 +27,8 @@
         "./*.css": "./dist-vue/*.css"
     },
     "files": [
-        "dist-vue",
-        "dist-ce.vue"
+        "dist-ce.vue",
+        "dist-vue"
     ],
     "scripts": {
         "build": "yarn build:vue && yarn build:ce.vue",
