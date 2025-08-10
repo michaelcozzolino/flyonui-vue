@@ -9,23 +9,21 @@
 </template>
 
 <script setup lang="ts">
-import type { JoinProps }         from '@/Components/Join';
-import type { ComponentName }     from '@/Shared';
-import type { VNode }             from 'vue';
-import { isInJoinInjectionKey }   from '@/Components/Join/Internal';
-import { useOrientation }         from '@/Shared/UseOrientation/Internal';
-import { useResponsitivity }      from '@/Shared/UseResponsitivity/Internal';
-import { useRequiredSlotMessage } from '@/Shared/Utils/Internal';
-import { provide }                from 'vue';
+import type { JoinProps }               from '@/Components/Join';
+import type { ComponentName }           from '@/Shared';
+import type { WithRequiredDefaultSlot } from '@/Shared/Utils/Types/Slots.ts';
+import { isInJoinInjectionKey }         from '@/Components/Join/Internal';
+import { useOrientation }               from '@/Shared/UseOrientation/Internal';
+import { useResponsitivity }            from '@/Shared/UseResponsitivity/Internal';
+import { useRequiredSlotMessage }       from '@/Shared/Utils/Internal';
+import { provide }                      from 'vue';
 
 const props = withDefaults(defineProps<JoinProps>(), {
     isResponsive: false,
     orientation:  'horizontal',
 });
 
-defineSlots<{
-    default?: () => VNode[];
-}>();
+defineSlots<WithRequiredDefaultSlot>();
 
 provide(isInJoinInjectionKey, true);
 

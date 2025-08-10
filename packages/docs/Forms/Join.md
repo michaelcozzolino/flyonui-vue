@@ -33,3 +33,13 @@ We suggest the usage of the alias only when the group contains non-mixed compone
 ### Pilled
 
 <JoinDocs section="pilled" />
+
+## Api
+
+### Props
+
+<JoinDocs section="props" />
+
+### Slots
+
+<JoinDocs section="slots" />
