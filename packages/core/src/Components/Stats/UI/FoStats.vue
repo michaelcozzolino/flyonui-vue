@@ -2,7 +2,9 @@
     <div class="stats"
          :class="[orientationClass, borderClass]"
     >
-        {{ useRequiredSlotMessage(componentName) }}
+        <slot>
+            {{ useRequiredSlotMessage(componentName) }}
+        </slot>
     </div>
 </template>
 

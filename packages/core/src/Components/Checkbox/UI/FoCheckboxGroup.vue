@@ -2,7 +2,9 @@
     <div class="flex"
          :class="orientationClass"
     >
-        {{ useRequiredSlotMessage('FoCheckboxGroup') }}
+        <slot>
+            {{ useRequiredSlotMessage('FoCheckboxGroup') }}
+        </slot>
     </div>
 </template>
 

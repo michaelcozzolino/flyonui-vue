@@ -17,3 +17,14 @@
 <LinkDocs section="color" />
 
 [//]: # (todo: many other docs are missing)
+
+## Api
+
+### Props
+
+<LinkDocs section="props" />
+
+### Slots
+
+<LinkDocs section="slots" />
+
