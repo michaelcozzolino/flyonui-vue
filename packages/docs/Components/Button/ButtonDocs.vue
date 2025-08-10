@@ -94,10 +94,18 @@
                  :code="GlassButtonRaw"
                  :component="GlassButton"
     />
+
+    <template v-else>
+        <ComponentsApiDocs :section="section"
+                           :component-names="['FoButton', 'FoLoadingButton', 'FoSocialButton']"
+        />
+    </template>
 </template>
 
 <script setup lang="ts">
+import type { ApiType }      from '@/Api/Types/Api.ts';
 import CodeSnippet           from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs     from '@/Api/UI/ComponentsApiDocs.vue';
 import ButtonLayout          from '@/Components/Button/ButtonLayout.vue';
 import ButtonLayoutRaw       from '@/Components/Button/ButtonLayout.vue?raw';
 import ButtonSize            from '@/Components/Button/ButtonSize.vue';
@@ -132,7 +140,23 @@ import TextButton            from '@/Components/Button/TextButton.vue';
 import TextButtonRaw         from '@/Components/Button/TextButton.vue?raw';
 
 interface Props {
-    section: 'solid' | 'soft' | 'outline' | 'dash' | 'text' | 'gradient' | 'pilled' | 'validation-state' | 'size' | 'layout' | 'icon' | 'icon-position' | 'social' | 'social-shape' | 'loading' | 'glass';
+    section: 'solid'
+        | 'soft'
+        | 'outline'
+        | 'dash'
+        | 'text'
+        | 'gradient'
+        | 'pilled'
+        | 'validation-state'
+        | 'size'
+        | 'layout'
+        | 'icon'
+        | 'icon-position'
+        | 'social'
+        | 'social-shape'
+        | 'loading'
+        | 'glass'
+        | ApiType;
 }
 
 defineProps<Props>();

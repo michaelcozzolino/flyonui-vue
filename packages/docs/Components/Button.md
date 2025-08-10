@@ -73,3 +73,13 @@
 ### Glass
 
 <ButtonDocs section="glass" />
+
+## Api
+
+### Props
+
+<ButtonDocs section="props" />
+
+### Slots
+
+<ButtonDocs section="slots" />
