@@ -13,3 +13,9 @@ FlyonUI Vue can either work with [Iconify](https://iconify.design) [icons](https
 ### Sizes
 
 <IconsDocs section="size" />
+
+## Api
+
+### Props
+
+<IconsDocs section="props" />
