@@ -65,3 +65,8 @@ the initial selected value for the component and the selected option will be the
 
 <SelectDocs section="ref-usage" />
 
+## Api
+
+### Props
+
+<SelectDocs section="props" />
