@@ -1,3 +1,4 @@
+import type { WithTo }               from '@/Components';
 import type { WithConfigurableIcon } from '@/Components/Icon';
 import type { Default }              from '@/Shared';
 import type { Colorable }            from '@/Shared/UseColor';
@@ -8,7 +9,6 @@ import type { Responsive }           from '@/Shared/UseResponsitivity';
 import type { Shapeable }            from '@/Shared/UseShape';
 import type { Sizable }              from '@/Shared/UseSize';
 import type { Disableable }          from '@/Shared/UseState';
-import type { RouteRecordRaw }       from 'vue-router';
 
 // todo: in case it is used by other components, just move it to shared
 export type Layout = Default | 'wide' | 'block';
@@ -21,14 +21,12 @@ export interface ButtonProps extends MaybeStringId,
     Shapeable,
     Sizable,
     WithGlass,
-    WithConfigurableIcon {
-    /** Navigation target route, when given the button will act as a link */
-    to?: RouteRecordRaw;
-
+    WithConfigurableIcon,
+    WithTo {
     /** The button's layout */
     layout?: Layout;
 
-    /** The button's active state */
+    /** The button's active state, when undefined it is neither active nor inactive */
     isActive?: boolean;
 }
 

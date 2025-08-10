@@ -13,6 +13,7 @@
                    glassClass,
                    isDisabled && 'btn-disabled',
                ]"
+               :to="to"
     >
         <slot name="prepend">
             <FoIcon v-if="buttonIcon?.left"
@@ -39,6 +40,7 @@ import type { ComponentName }                from '@/Shared';
 import { FoIcon }                            from '@/Components/Icon';
 import { usePositionableIcon }               from '@/Components/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
+import { FoRouterLink }                      from '@/Components/Link/Internal';
 import { useColor }                          from '@/Shared/UseColor/Internal';
 import { useFlyonUIVueAppConfig }            from '@/Shared/UseFlyonUIVueAppConfig';
 import { useGlass }                          from '@/Shared/UseGlass/Internal';
@@ -48,7 +50,6 @@ import { isTextAllowedForShape, useShape }   from '@/Shared/UseShape/Internal';
 import { useSize }                           from '@/Shared/UseSize/Internal';
 import { useState }                          from '@/Shared/UseState/Internal';
 import { computed, inject }                  from 'vue';
-import { RouterLink }                        from 'vue-router';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
     isActive:     false,
@@ -66,7 +67,7 @@ const buttonTag = computed(() => {
         return 'button';
     }
 
-    return RouterLink;
+    return FoRouterLink;
 });
 
 const buttonIcon = usePositionableIcon(

@@ -7,6 +7,8 @@ export type PositionableIconComponentName = Extract<ComponentName, 'FoBadge' | '
 
 export type IconType = string | Component;
 
+export type Icon = string;
+
 /**
  * This does not need to be IconType, because it is mainly used by components using FoIcon, such as FoButton, FoBadge
  * and these already have slots to enter custom content instead of the icon directly
@@ -20,9 +22,9 @@ export interface Dimension2D {
     width:  number;
 }
 
-export type IconProps = {
-    icon:  string;
+export type IconProps = Required<WithIcon> & {
     /**
+     * todo: bug this is not shown in the generated components api
      * The size of the icon that will be applied only to an iconify icon.
      * If the icon is a custom component you should define the size in that component itself.
      */
@@ -34,4 +36,9 @@ export type IconProps = {
 
 export interface WithConfigurableIcon {
     icon?: ConfigurableIcon;
+}
+
+export interface WithIcon {
+    /** The Iconify icon's name */
+    icon?: Icon;
 }
