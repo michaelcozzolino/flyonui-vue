@@ -18,8 +18,11 @@ export type PositionableIcon = Partial<Record<HorizontalPosition, string>>;
 export type ConfigurableIcon = string | PositionableIcon;
 
 export interface Dimension2D {
+    /** The icon's height */
     height: number;
-    width:  number;
+
+    /** The icon's width */
+    width: number;
 }
 
 export type IconProps = Required<WithIcon> & {
@@ -30,7 +33,7 @@ export type IconProps = Required<WithIcon> & {
      */
     size?: IconSize | Dimension2D;
 } | {
-    // It can be used if you have a custom icon that is not an iconify one, such as a custom svg or component.
+    /** If a custom icon is needed, it can also be a custom svg or component. */
     icon: Component;
 };
 
