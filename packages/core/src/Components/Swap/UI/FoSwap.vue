@@ -20,15 +20,18 @@
 <script setup lang="ts">
 import type { SwapAnimation, SwapProps } from '@/Components/Swap';
 import type { ComponentName }            from '@/Shared';
-import type { VNode }                    from 'vue';
+import type { Slot }                     from 'vue';
 import { useRequiredSlotMessage }        from '@/Shared/Utils/Internal';
 import { computed }                      from 'vue';
 
 const props = defineProps<SwapProps>();
 
 defineSlots<{
-    on:  () => VNode[];
-    off: () => VNode[];
+    /** The content to be shown when the swap is on */
+    on: Slot;
+
+    /** The content to be shown when the swap is off */
+    off: Slot;
 }>();
 
 const componentName: ComponentName = 'FoSwap';
