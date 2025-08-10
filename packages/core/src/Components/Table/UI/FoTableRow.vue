@@ -7,13 +7,11 @@
 </template>
 
 <script setup lang="ts">
-import type { TableRowProps }     from '@/Components/Table';
-import type { VNode }             from 'vue';
-import { useRequiredSlotMessage } from '@/Shared/Utils/Internal';
+import type { TableRowProps }           from '@/Components/Table';
+import type { WithRequiredDefaultSlot } from '@/Shared/Utils/Types/Slots.ts';
+import { useRequiredSlotMessage }       from '@/Shared/Utils/Internal';
 
 defineProps<TableRowProps>();
 
-defineSlots<{
-    default: () => VNode[];
-}>();
+defineSlots<WithRequiredDefaultSlot>();
 </script>

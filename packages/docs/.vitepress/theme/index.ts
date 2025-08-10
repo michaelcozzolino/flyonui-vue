@@ -8,7 +8,7 @@ import BadgeDocs                          from '@/Components/Badge/BadgeDocs.vue
 import ButtonDocs                         from '@/Components/Button/ButtonDocs.vue';
 import ListGroupDocs                      from '@/Components/ListGroup/ListGroupDocs.vue';
 import LoadingDocs                        from '@/Components/Loading/LoadingDocs.vue';
-import StatsDocs                          from '@/Components/Stat/StatsDocs.vue';
+import StatsDocs                          from '@/Components/Stats/StatsDocs.vue';
 import SwapDocs                           from '@/Components/Swap/SwapDocs.vue';
 import HeadingDocs                        from '@/Content/Heading/HeadingDocs.vue';
 import KeyboardDocs                       from '@/Content/Keyboard/KeyboardDocs.vue';
