@@ -79,7 +79,7 @@
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { LabelType }                          from '@/Components';
 import type { SelectOption, SelectProps }          from '@/Components/Select';
-import type { ComponentName }                      from '@/Shared/Utils/Internal';
+import type { ComponentName }                      from '@/Shared';
 import { FoIcon }                                  from '@/Components';
 import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';
 import { FoLabel, useLabel }                       from '@/Components/Label/Internal';
