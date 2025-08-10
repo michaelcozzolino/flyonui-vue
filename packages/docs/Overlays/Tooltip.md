@@ -12,3 +12,11 @@
 
 <TooltipDocs section="placement" />
 
+### Props
+
+<TooltipDocs section="props" />
+
+### Slots
+
+<TooltipDocs section="slots" />
+

@@ -25,19 +25,21 @@
 </template>
 
 <script setup lang="ts">
-import type { TooltipProps }           from '@/Components/Tooltip';
-import type { ComponentName }          from '@/Shared';
-import { tooltipAsPopover }            from '@/Components/Tooltip/Internal';
-import { useColor }                    from '@/Shared/UseColor/Internal';
-import { useFlyonUIVueAppConfig }      from '@/Shared/UseFlyonUIVueAppConfig';
-import { useSize }                     from '@/Shared/UseSize/Internal';
-import { offset, useFloating }         from '@floating-ui/vue';
-import { onClickOutside }              from '@vueuse/core';
-import { inject, ref, useTemplateRef } from 'vue';
+import type { TooltipProps, TooltipSlots } from '@/Components/Tooltip';
+import type { ComponentName }              from '@/Shared';
+import { tooltipAsPopover }                from '@/Components/Tooltip/Internal';
+import { useColor }                        from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }          from '@/Shared/UseFlyonUIVueAppConfig';
+import { useSize }                         from '@/Shared/UseSize/Internal';
+import { offset, useFloating }             from '@floating-ui/vue';
+import { onClickOutside }                  from '@vueuse/core';
+import { inject, ref, useTemplateRef }     from 'vue';
 
 const props = withDefaults(defineProps<TooltipProps>(), {
     placement: 'top',
 });
+
+defineSlots<TooltipSlots>();
 
 const componentName: ComponentName = 'FoTooltip';
 
@@ -65,6 +67,6 @@ const [
 ];
 
 // todo: on resize
-// todo: document maxSize and different placements for both tooltip and popover
+// todo: document maxSize for both tooltip and popover
 onClickOutside(tooltipElement, () => isPopover && (showTooltip.value = false));
 </script>

@@ -5,22 +5,29 @@
                  :component="DefaultTooltip"
     />
 
-    <CodeSnippet v-if="section === 'color'"
+    <CodeSnippet v-else-if="section === 'color'"
                  id="color"
                  :code="TooltipColorRaw"
                  :component="TooltipColor"
     />
 
-    <CodeSnippet v-if="section === 'placement'"
+    <CodeSnippet v-else-if="section === 'placement'"
                  id="placement"
                  :code="TooltipPlacementRaw"
                  :component="TooltipPlacement"
     />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       component-names="FoTooltip"
+    />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }    from '@/Api/Types/Api.ts';
 import type { Default }    from 'flyonui-vue';
 import CodeSnippet         from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs   from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultTooltip      from '@/Overlays/Tooltip/DefaultTooltip.vue';
 import DefaultTooltipRaw   from '@/Overlays/Tooltip/DefaultTooltip.vue?raw';
 import TooltipColor        from '@/Overlays/Tooltip/TooltipColor.vue';
@@ -29,7 +36,7 @@ import TooltipPlacement    from '@/Overlays/Tooltip/TooltipPlacement.vue';
 import TooltipPlacementRaw from '@/Overlays/Tooltip/TooltipPlacement.vue?raw';
 
 interface Props {
-    section: Default | 'color' | 'placement';
+    section: Default | 'color' | 'placement' | ApiType;
 }
 
 defineProps<Props>();
