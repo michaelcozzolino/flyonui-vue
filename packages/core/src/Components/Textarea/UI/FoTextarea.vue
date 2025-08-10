@@ -76,7 +76,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<TextareaProps>(), {
     isDisabled: false,
-    readonly:   false,
+    isReadonly: false,
     isValid:    undefined,
 });
 

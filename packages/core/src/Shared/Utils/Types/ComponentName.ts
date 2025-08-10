@@ -18,6 +18,7 @@ type NonConfigurableComponentName = 'FoJoin'
     | 'FoTableBody'
     | 'FoTableColumn'
     | 'FoTableHead'
+    | 'FoTableHeader'
     | 'FoTableRow';
 
 export type ConfigurableComponentName = keyof ConfigurableComponentProps;
