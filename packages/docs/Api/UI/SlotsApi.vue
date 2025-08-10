@@ -1,10 +1,19 @@
 <template>
-    <FoTable class="vp-raw rounded-lg my-4"
+    <FoTable v-if="api.length"
+             :id="`${componentName}-slots`"
+             class="vp-raw rounded-lg my-4 w-1/2!"
              is-bordered
              is-responsive
              is-striped="rows"
+             data-test="slots-api"
     >
         <template #head>
+            <FoTableRow class="text-center text-primary normal-case italic">
+                <FoTableHeader :colspan="2">
+                    {{ componentName }}
+                </FoTableHeader>
+            </FoTableRow>
+
             <FoTableRow class="text-center text-primary">
                 <FoTableHeader>Name</FoTableHeader>
                 <FoTableHeader>Description</FoTableHeader>
@@ -29,10 +38,10 @@
 </template>
 
 <script setup lang="ts">
-import type { Api } from '@/Api/Types/Api.ts';
+import type { Api }      from '@/Api/Types/Api.ts';
+import type { SlotMeta } from 'vue-component-meta';
 
-import type { SlotDescriptor }                               from 'vue-docgen-api';
 import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
 
-defineProps<Api<SlotDescriptor>>();
+defineProps<Api<SlotMeta>>();
 </script>
