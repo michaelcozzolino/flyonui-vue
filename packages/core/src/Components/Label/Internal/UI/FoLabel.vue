@@ -12,7 +12,7 @@
 import type { LabelType }                  from '@/Components/Label';
 import type { LabelProps }                 from '@/Components/Label/Internal/Types/Label';
 import type { FloatingLabelComponentName } from '@/Shared/UseFloatingLabel';
-import type { VNode }                      from 'vue';
+import type { WithRequiredDefaultSlot }    from '@/Shared/Utils/Types/Slots';
 import { useRequiredSlotMessage }          from '@/Shared/Utils/Internal';
 import { computed }                        from 'vue';
 
@@ -25,9 +25,7 @@ const props = withDefaults(defineProps<LabelProps>(), {
     isHidden:      false,
 });
 
-defineSlots<{
-    default: () => VNode[];
-}>();
+defineSlots<WithRequiredDefaultSlot>();
 
 const labelClass = computed(() => {
     if (props.type === undefined) {
