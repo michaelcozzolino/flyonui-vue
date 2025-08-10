@@ -1,174 +1,33 @@
 {
-  "FoBadge": {
+  "FoHeading": {
     "type": 1,
     "props": [
       {
-        "name": "isDismissible",
+        "name": "level",
         "global": false,
         "description": "",
         "tags": [],
-        "required": false,
-        "type": "boolean | undefined",
+        "required": true,
+        "type": "HeadingLevel",
         "declarations": [
           {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Badge/Types/Badge.ts",
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Heading/UI/FoHeading.vue",
             "range": [
-              528,
-              552
+              311,
+              331
             ]
           }
         ],
         "schema": {
           "kind": "enum",
-          "type": "boolean | undefined",
+          "type": "HeadingLevel",
           "schema": [
-            "undefined",
-            "false",
-            "true"
-          ]
-        },
-        "default": "false"
-      },
-      {
-        "name": "color",
-        "global": false,
-        "description": "The component's color",
-        "tags": [],
-        "required": false,
-        "type": "Color | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
-            "range": [
-              482,
-              496
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Color | undefined",
-          "schema": [
-            "undefined",
-            "\"neutral\"",
-            "\"primary\"",
-            "\"secondary\"",
-            "\"accent\"",
-            "\"info\"",
-            "\"success\"",
-            "\"warning\"",
-            "\"error\""
-          ]
-        }
-      },
-      {
-        "name": "preset",
-        "global": false,
-        "description": "The component's preset",
-        "tags": [],
-        "required": false,
-        "type": "BadgePreset | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
-            "range": [
-              315,
-              326
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "BadgePreset | undefined",
-          "schema": [
-            "undefined",
-            "\"solid\"",
-            "\"soft\"",
-            "\"outline\"",
-            "\"dash\""
-          ]
-        }
-      },
-      {
-        "name": "shape",
-        "global": false,
-        "description": "The component's shape",
-        "tags": [],
-        "required": false,
-        "type": "Shape | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
-            "range": [
-              319,
-              329
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Shape | undefined",
-          "schema": [
-            "undefined",
-            "\"rounded\"",
-            "\"pilled\"",
-            "\"square\"",
-            "\"circle\""
-          ]
-        }
-      },
-      {
-        "name": "size",
-        "global": false,
-        "description": "The component's size",
-        "tags": [],
-        "required": false,
-        "type": "Size | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
-            "range": [
-              473,
-              482
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Size | undefined",
-          "schema": [
-            "undefined",
-            "\"extraSmall\"",
-            "\"small\"",
-            "\"medium\"",
-            "\"large\"",
-            "\"extraLarge\""
-          ]
-        }
-      },
-      {
-        "name": "icon",
-        "global": false,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "ConfigurableIcon | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
-            "range": [
-              1381,
-              1405
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "ConfigurableIcon | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "Partial<Record<HorizontalPosition, string>>"
+            "\"1\"",
+            "\"2\"",
+            "\"3\"",
+            "\"4\"",
+            "\"5\"",
+            "\"6\""
           ]
         }
       },
@@ -375,679 +234,28 @@
         }
       },
       {
-        "name": "isDismissible",
-        "type": "boolean",
+        "name": "level",
+        "type": "HeadingLevel",
         "description": "",
         "declarations": [
           {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Badge/Types/Badge.ts",
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Heading/UI/FoHeading.vue",
             "range": [
-              528,
-              552
+              311,
+              331
             ]
           }
         ],
         "schema": {
           "kind": "enum",
-          "type": "boolean",
+          "type": "HeadingLevel",
           "schema": [
-            "false",
-            "true"
-          ]
-        }
-      },
-      {
-        "name": "color",
-        "type": "Color | undefined",
-        "description": "The component's color",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
-            "range": [
-              482,
-              496
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Color | undefined",
-          "schema": [
-            "undefined",
-            "\"neutral\"",
-            "\"primary\"",
-            "\"secondary\"",
-            "\"accent\"",
-            "\"info\"",
-            "\"success\"",
-            "\"warning\"",
-            "\"error\""
-          ]
-        }
-      },
-      {
-        "name": "preset",
-        "type": "BadgePreset | undefined",
-        "description": "The component's preset",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
-            "range": [
-              315,
-              326
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "BadgePreset | undefined",
-          "schema": [
-            "undefined",
-            "\"solid\"",
-            "\"soft\"",
-            "\"outline\"",
-            "\"dash\""
-          ]
-        }
-      },
-      {
-        "name": "shape",
-        "type": "Shape | undefined",
-        "description": "The component's shape",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
-            "range": [
-              319,
-              329
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Shape | undefined",
-          "schema": [
-            "undefined",
-            "\"rounded\"",
-            "\"pilled\"",
-            "\"square\"",
-            "\"circle\""
-          ]
-        }
-      },
-      {
-        "name": "size",
-        "type": "Size | undefined",
-        "description": "The component's size",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
-            "range": [
-              473,
-              482
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Size | undefined",
-          "schema": [
-            "undefined",
-            "\"extraSmall\"",
-            "\"small\"",
-            "\"medium\"",
-            "\"large\"",
-            "\"extraLarge\""
-          ]
-        }
-      },
-      {
-        "name": "icon",
-        "type": "ConfigurableIcon | undefined",
-        "description": "",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
-            "range": [
-              1381,
-              1405
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "ConfigurableIcon | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "Partial<Record<HorizontalPosition, string>>"
-          ]
-        }
-      }
-    ]
-  },
-  "FoDotStyleBadge": {
-    "type": 1,
-    "props": [
-      {
-        "name": "isDismissible",
-        "global": false,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "boolean | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Badge/Types/Badge.ts",
-            "range": [
-              528,
-              552
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "boolean | undefined",
-          "schema": [
-            "undefined",
-            "false",
-            "true"
-          ]
-        }
-      },
-      {
-        "name": "color",
-        "global": false,
-        "description": "The component's color",
-        "tags": [],
-        "required": false,
-        "type": "Color | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
-            "range": [
-              482,
-              496
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Color | undefined",
-          "schema": [
-            "undefined",
-            "\"neutral\"",
-            "\"primary\"",
-            "\"secondary\"",
-            "\"accent\"",
-            "\"info\"",
-            "\"success\"",
-            "\"warning\"",
-            "\"error\""
-          ]
-        }
-      },
-      {
-        "name": "preset",
-        "global": false,
-        "description": "The component's preset",
-        "tags": [],
-        "required": false,
-        "type": "BadgePreset | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
-            "range": [
-              315,
-              326
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "BadgePreset | undefined",
-          "schema": [
-            "undefined",
-            "\"solid\"",
-            "\"soft\"",
-            "\"outline\"",
-            "\"dash\""
-          ]
-        }
-      },
-      {
-        "name": "shape",
-        "global": false,
-        "description": "The component's shape",
-        "tags": [],
-        "required": false,
-        "type": "Shape | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
-            "range": [
-              319,
-              329
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Shape | undefined",
-          "schema": [
-            "undefined",
-            "\"rounded\"",
-            "\"pilled\"",
-            "\"square\"",
-            "\"circle\""
-          ]
-        }
-      },
-      {
-        "name": "size",
-        "global": false,
-        "description": "The component's size",
-        "tags": [],
-        "required": false,
-        "type": "Size | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
-            "range": [
-              473,
-              482
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Size | undefined",
-          "schema": [
-            "undefined",
-            "\"extraSmall\"",
-            "\"small\"",
-            "\"medium\"",
-            "\"large\"",
-            "\"extraLarge\""
-          ]
-        }
-      },
-      {
-        "name": "icon",
-        "global": false,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "ConfigurableIcon | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
-            "range": [
-              1381,
-              1405
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "ConfigurableIcon | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "Partial<Record<HorizontalPosition, string>>"
-          ]
-        }
-      },
-      {
-        "name": "key",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "PropertyKey | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              65161,
-              65179
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "PropertyKey | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "number",
-            "symbol"
-          ]
-        }
-      },
-      {
-        "name": "ref",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "VNodeRef | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              65184,
-              65199
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "VNodeRef | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "Ref<any, any>",
-            {
-              "kind": "event",
-              "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
-              "schema": []
-            }
-          ]
-        }
-      },
-      {
-        "name": "ref_for",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "boolean | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              65204,
-              65222
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "boolean | undefined",
-          "schema": [
-            "undefined",
-            "false",
-            "true"
-          ]
-        }
-      },
-      {
-        "name": "ref_key",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "string | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              65227,
-              65244
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "string | undefined",
-          "schema": [
-            "undefined",
-            "string"
-          ]
-        }
-      },
-      {
-        "name": "class",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "unknown",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              72286,
-              72302
-            ]
-          }
-        ],
-        "schema": "unknown"
-      },
-      {
-        "name": "style",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "unknown",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              72307,
-              72323
-            ]
-          }
-        ],
-        "schema": "unknown"
-      }
-    ],
-    "events": [],
-    "slots": [
-      {
-        "name": "default",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
-        "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
-        }
-      }
-    ],
-    "exposed": [
-      {
-        "name": "$slots",
-        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
-        "description": "",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              26359,
-              26386
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "object",
-          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
-          "schema": {
-            "default": {
-              "name": "default",
-              "global": false,
-              "description": "",
-              "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
-              "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
-                "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
-                ]
-              }
-            }
-          }
-        }
-      },
-      {
-        "name": "isDismissible",
-        "type": "boolean | undefined",
-        "description": "",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Badge/Types/Badge.ts",
-            "range": [
-              528,
-              552
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "boolean | undefined",
-          "schema": [
-            "undefined",
-            "false",
-            "true"
-          ]
-        }
-      },
-      {
-        "name": "color",
-        "type": "Color | undefined",
-        "description": "The component's color",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
-            "range": [
-              482,
-              496
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Color | undefined",
-          "schema": [
-            "undefined",
-            "\"neutral\"",
-            "\"primary\"",
-            "\"secondary\"",
-            "\"accent\"",
-            "\"info\"",
-            "\"success\"",
-            "\"warning\"",
-            "\"error\""
-          ]
-        }
-      },
-      {
-        "name": "preset",
-        "type": "BadgePreset | undefined",
-        "description": "The component's preset",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
-            "range": [
-              315,
-              326
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "BadgePreset | undefined",
-          "schema": [
-            "undefined",
-            "\"solid\"",
-            "\"soft\"",
-            "\"outline\"",
-            "\"dash\""
-          ]
-        }
-      },
-      {
-        "name": "shape",
-        "type": "Shape | undefined",
-        "description": "The component's shape",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
-            "range": [
-              319,
-              329
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Shape | undefined",
-          "schema": [
-            "undefined",
-            "\"rounded\"",
-            "\"pilled\"",
-            "\"square\"",
-            "\"circle\""
-          ]
-        }
-      },
-      {
-        "name": "size",
-        "type": "Size | undefined",
-        "description": "The component's size",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
-            "range": [
-              473,
-              482
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Size | undefined",
-          "schema": [
-            "undefined",
-            "\"extraSmall\"",
-            "\"small\"",
-            "\"medium\"",
-            "\"large\"",
-            "\"extraLarge\""
-          ]
-        }
-      },
-      {
-        "name": "icon",
-        "type": "ConfigurableIcon | undefined",
-        "description": "",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
-            "range": [
-              1381,
-              1405
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "ConfigurableIcon | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "Partial<Record<HorizontalPosition, string>>"
+            "\"1\"",
+            "\"2\"",
+            "\"3\"",
+            "\"4\"",
+            "\"5\"",
+            "\"6\""
           ]
         }
       }
@@ -2065,6 +1273,28 @@
         }
       },
       {
+        "name": "id",
+        "type": "string | undefined",
+        "description": "The component's id, if not given, a random one might be assigned",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
+            "range": [
+              468,
+              488
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "string | undefined",
+          "schema": [
+            "undefined",
+            "string"
+          ]
+        }
+      },
+      {
         "name": "color",
         "type": "Color | undefined",
         "description": "The component's color",
@@ -2090,6 +1320,29 @@
             "\"success\"",
             "\"warning\"",
             "\"error\""
+          ]
+        }
+      },
+      {
+        "name": "isDisabled",
+        "type": "boolean | undefined",
+        "description": "If true, the component will be disabled without allowing more interactions",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseState/Types/State.ts",
+            "range": [
+              364,
+              385
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean | undefined",
+          "schema": [
+            "undefined",
+            "false",
+            "true"
           ]
         }
       },
@@ -2172,74 +1425,6 @@
         }
       },
       {
-        "name": "icon",
-        "type": "ConfigurableIcon | undefined",
-        "description": "",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
-            "range": [
-              1381,
-              1405
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "ConfigurableIcon | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "Partial<Record<HorizontalPosition, string>>"
-          ]
-        }
-      },
-      {
-        "name": "id",
-        "type": "string | undefined",
-        "description": "The component's id, if not given, a random one might be assigned",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
-            "range": [
-              468,
-              488
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "string | undefined",
-          "schema": [
-            "undefined",
-            "string"
-          ]
-        }
-      },
-      {
-        "name": "isDisabled",
-        "type": "boolean | undefined",
-        "description": "If true, the component will be disabled without allowing more interactions",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseState/Types/State.ts",
-            "range": [
-              364,
-              385
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "boolean | undefined",
-          "schema": [
-            "undefined",
-            "false",
-            "true"
-          ]
-        }
-      },
-      {
         "name": "withGlass",
         "type": "boolean | undefined",
         "description": "Renders with glass style",
@@ -2259,6 +1444,29 @@
             "undefined",
             "false",
             "true"
+          ]
+        }
+      },
+      {
+        "name": "icon",
+        "type": "ConfigurableIcon | undefined",
+        "description": "",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
+            "range": [
+              1381,
+              1405
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "ConfigurableIcon | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "Partial<Record<HorizontalPosition, string>>"
           ]
         }
       },
@@ -2604,7 +1812,7 @@
       {
         "name": "isLoading",
         "global": false,
-        "description": "",
+        "description": "True if the component is in loading state",
         "tags": [],
         "required": false,
         "type": "boolean | undefined",
@@ -2612,8 +1820,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Button/Types/Button.ts",
             "range": [
-              1337,
-              1357
+              1390,
+              1410
             ]
           }
         ],
@@ -2639,8 +1847,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Button/Types/Button.ts",
             "range": [
-              1362,
-              1431
+              1415,
+              1484
             ]
           }
         ],
@@ -2664,8 +1872,8 @@
                     {
                       "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Button/Types/Button.ts",
                       "range": [
-                        1379,
-                        1409
+                        1432,
+                        1462
                       ]
                     }
                   ],
@@ -2777,125 +1985,6 @@
         "default": "() => {\n    return { animation: \"spinner\" };\n}"
       },
       {
-        "name": "color",
-        "global": false,
-        "description": "The component's color",
-        "tags": [],
-        "required": false,
-        "type": "Color | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
-            "range": [
-              482,
-              496
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Color | undefined",
-          "schema": [
-            "undefined",
-            "\"neutral\"",
-            "\"primary\"",
-            "\"secondary\"",
-            "\"accent\"",
-            "\"info\"",
-            "\"success\"",
-            "\"warning\"",
-            "\"error\""
-          ]
-        }
-      },
-      {
-        "name": "preset",
-        "global": false,
-        "description": "The component's preset",
-        "tags": [],
-        "required": false,
-        "type": "Preset | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
-            "range": [
-              315,
-              326
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Preset | undefined",
-          "schema": [
-            "undefined",
-            "\"solid\"",
-            "\"gradient\"",
-            "\"text\"",
-            "\"soft\"",
-            "\"outline\"",
-            "\"dash\""
-          ]
-        }
-      },
-      {
-        "name": "shape",
-        "global": false,
-        "description": "The component's shape",
-        "tags": [],
-        "required": false,
-        "type": "Shape | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
-            "range": [
-              319,
-              329
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Shape | undefined",
-          "schema": [
-            "undefined",
-            "\"rounded\"",
-            "\"pilled\"",
-            "\"square\"",
-            "\"circle\""
-          ]
-        }
-      },
-      {
-        "name": "size",
-        "global": false,
-        "description": "The component's size",
-        "tags": [],
-        "required": false,
-        "type": "Size | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
-            "range": [
-              473,
-              482
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Size | undefined",
-          "schema": [
-            "undefined",
-            "\"extraSmall\"",
-            "\"small\"",
-            "\"medium\"",
-            "\"large\"",
-            "\"extraLarge\""
-          ]
-        }
-      },
-      {
         "name": "id",
         "global": false,
         "description": "The component's id, if not given, a random one might be assigned",
@@ -2974,6 +2063,38 @@
         }
       },
       {
+        "name": "color",
+        "global": false,
+        "description": "The component's color",
+        "tags": [],
+        "required": false,
+        "type": "Color | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
+            "range": [
+              482,
+              496
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Color | undefined",
+          "schema": [
+            "undefined",
+            "\"neutral\"",
+            "\"primary\"",
+            "\"secondary\"",
+            "\"accent\"",
+            "\"info\"",
+            "\"success\"",
+            "\"warning\"",
+            "\"error\""
+          ]
+        }
+      },
+      {
         "name": "isDisabled",
         "global": false,
         "description": "If true, the component will be disabled without allowing more interactions",
@@ -3000,6 +2121,36 @@
         }
       },
       {
+        "name": "preset",
+        "global": false,
+        "description": "The component's preset",
+        "tags": [],
+        "required": false,
+        "type": "Preset | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
+            "range": [
+              315,
+              326
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Preset | undefined",
+          "schema": [
+            "undefined",
+            "\"solid\"",
+            "\"gradient\"",
+            "\"text\"",
+            "\"soft\"",
+            "\"outline\"",
+            "\"dash\""
+          ]
+        }
+      },
+      {
         "name": "isResponsive",
         "global": false,
         "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
@@ -3022,6 +2173,63 @@
             "undefined",
             "false",
             "true"
+          ]
+        }
+      },
+      {
+        "name": "shape",
+        "global": false,
+        "description": "The component's shape",
+        "tags": [],
+        "required": false,
+        "type": "Shape | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
+            "range": [
+              319,
+              329
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Shape | undefined",
+          "schema": [
+            "undefined",
+            "\"rounded\"",
+            "\"pilled\"",
+            "\"square\"",
+            "\"circle\""
+          ]
+        }
+      },
+      {
+        "name": "size",
+        "global": false,
+        "description": "The component's size",
+        "tags": [],
+        "required": false,
+        "type": "Size | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
+            "range": [
+              473,
+              482
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Size | undefined",
+          "schema": [
+            "undefined",
+            "\"extraSmall\"",
+            "\"small\"",
+            "\"medium\"",
+            "\"large\"",
+            "\"extraLarge\""
           ]
         }
       },
@@ -3657,8 +2865,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Button/Types/Button.ts",
             "range": [
-              1362,
-              1431
+              1415,
+              1484
             ]
           }
         ],
@@ -3677,8 +2885,8 @@
                 {
                   "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Button/Types/Button.ts",
                   "range": [
-                    1379,
-                    1409
+                    1432,
+                    1462
                   ]
                 }
               ],
@@ -3789,13 +2997,13 @@
       {
         "name": "isLoading",
         "type": "boolean",
-        "description": "",
+        "description": "True if the component is in loading state",
         "declarations": [
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Button/Types/Button.ts",
             "range": [
-              1337,
-              1357
+              1390,
+              1410
             ]
           }
         ],
@@ -3805,113 +3013,6 @@
           "schema": [
             "false",
             "true"
-          ]
-        }
-      },
-      {
-        "name": "color",
-        "type": "Color | undefined",
-        "description": "The component's color",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
-            "range": [
-              482,
-              496
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Color | undefined",
-          "schema": [
-            "undefined",
-            "\"neutral\"",
-            "\"primary\"",
-            "\"secondary\"",
-            "\"accent\"",
-            "\"info\"",
-            "\"success\"",
-            "\"warning\"",
-            "\"error\""
-          ]
-        }
-      },
-      {
-        "name": "preset",
-        "type": "Preset | undefined",
-        "description": "The component's preset",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
-            "range": [
-              315,
-              326
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Preset | undefined",
-          "schema": [
-            "undefined",
-            "\"solid\"",
-            "\"gradient\"",
-            "\"text\"",
-            "\"soft\"",
-            "\"outline\"",
-            "\"dash\""
-          ]
-        }
-      },
-      {
-        "name": "shape",
-        "type": "Shape | undefined",
-        "description": "The component's shape",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
-            "range": [
-              319,
-              329
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Shape | undefined",
-          "schema": [
-            "undefined",
-            "\"rounded\"",
-            "\"pilled\"",
-            "\"square\"",
-            "\"circle\""
-          ]
-        }
-      },
-      {
-        "name": "size",
-        "type": "Size | undefined",
-        "description": "The component's size",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
-            "range": [
-              473,
-              482
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "Size | undefined",
-          "schema": [
-            "undefined",
-            "\"extraSmall\"",
-            "\"small\"",
-            "\"medium\"",
-            "\"large\"",
-            "\"extraLarge\""
           ]
         }
       },
@@ -3985,6 +3086,35 @@
         }
       },
       {
+        "name": "color",
+        "type": "Color | undefined",
+        "description": "The component's color",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
+            "range": [
+              482,
+              496
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Color | undefined",
+          "schema": [
+            "undefined",
+            "\"neutral\"",
+            "\"primary\"",
+            "\"secondary\"",
+            "\"accent\"",
+            "\"info\"",
+            "\"success\"",
+            "\"warning\"",
+            "\"error\""
+          ]
+        }
+      },
+      {
         "name": "isDisabled",
         "type": "boolean | undefined",
         "description": "If true, the component will be disabled without allowing more interactions",
@@ -4008,6 +3138,33 @@
         }
       },
       {
+        "name": "preset",
+        "type": "Preset | undefined",
+        "description": "The component's preset",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
+            "range": [
+              315,
+              326
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Preset | undefined",
+          "schema": [
+            "undefined",
+            "\"solid\"",
+            "\"gradient\"",
+            "\"text\"",
+            "\"soft\"",
+            "\"outline\"",
+            "\"dash\""
+          ]
+        }
+      },
+      {
         "name": "isResponsive",
         "type": "boolean | undefined",
         "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
@@ -4027,6 +3184,57 @@
             "undefined",
             "false",
             "true"
+          ]
+        }
+      },
+      {
+        "name": "shape",
+        "type": "Shape | undefined",
+        "description": "The component's shape",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
+            "range": [
+              319,
+              329
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Shape | undefined",
+          "schema": [
+            "undefined",
+            "\"rounded\"",
+            "\"pilled\"",
+            "\"square\"",
+            "\"circle\""
+          ]
+        }
+      },
+      {
+        "name": "size",
+        "type": "Size | undefined",
+        "description": "The component's size",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
+            "range": [
+              473,
+              482
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Size | undefined",
+          "schema": [
+            "undefined",
+            "\"extraSmall\"",
+            "\"small\"",
+            "\"medium\"",
+            "\"large\"",
+            "\"extraLarge\""
           ]
         }
       },
@@ -4403,8 +3611,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Button/Types/Button.ts",
             "range": [
-              1706,
-              1721
+              1759,
+              1774
             ]
           }
         ],
@@ -4627,8 +3835,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Button/Types/Button.ts",
             "range": [
-              1706,
-              1721
+              1759,
+              1774
             ]
           }
         ],
@@ -4640,6 +3848,1060 @@
             "\"Twitter\"",
             "\"Linkedin\"",
             "\"Github\""
+          ]
+        }
+      }
+    ]
+  },
+  "FoBadge": {
+    "type": 1,
+    "props": [
+      {
+        "name": "isDismissible",
+        "global": false,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "boolean | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Badge/Types/Badge.ts",
+            "range": [
+              528,
+              552
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean | undefined",
+          "schema": [
+            "undefined",
+            "false",
+            "true"
+          ]
+        },
+        "default": "false"
+      },
+      {
+        "name": "color",
+        "global": false,
+        "description": "The component's color",
+        "tags": [],
+        "required": false,
+        "type": "Color | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
+            "range": [
+              482,
+              496
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Color | undefined",
+          "schema": [
+            "undefined",
+            "\"neutral\"",
+            "\"primary\"",
+            "\"secondary\"",
+            "\"accent\"",
+            "\"info\"",
+            "\"success\"",
+            "\"warning\"",
+            "\"error\""
+          ]
+        }
+      },
+      {
+        "name": "preset",
+        "global": false,
+        "description": "The component's preset",
+        "tags": [],
+        "required": false,
+        "type": "BadgePreset | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
+            "range": [
+              315,
+              326
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "BadgePreset | undefined",
+          "schema": [
+            "undefined",
+            "\"solid\"",
+            "\"soft\"",
+            "\"outline\"",
+            "\"dash\""
+          ]
+        }
+      },
+      {
+        "name": "shape",
+        "global": false,
+        "description": "The component's shape",
+        "tags": [],
+        "required": false,
+        "type": "Shape | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
+            "range": [
+              319,
+              329
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Shape | undefined",
+          "schema": [
+            "undefined",
+            "\"rounded\"",
+            "\"pilled\"",
+            "\"square\"",
+            "\"circle\""
+          ]
+        }
+      },
+      {
+        "name": "size",
+        "global": false,
+        "description": "The component's size",
+        "tags": [],
+        "required": false,
+        "type": "Size | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
+            "range": [
+              473,
+              482
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Size | undefined",
+          "schema": [
+            "undefined",
+            "\"extraSmall\"",
+            "\"small\"",
+            "\"medium\"",
+            "\"large\"",
+            "\"extraLarge\""
+          ]
+        }
+      },
+      {
+        "name": "icon",
+        "global": false,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "ConfigurableIcon | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
+            "range": [
+              1381,
+              1405
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "ConfigurableIcon | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "Partial<Record<HorizontalPosition, string>>"
+          ]
+        }
+      },
+      {
+        "name": "key",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "PropertyKey | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              65161,
+              65179
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "PropertyKey | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "number",
+            "symbol"
+          ]
+        }
+      },
+      {
+        "name": "ref",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "VNodeRef | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              65184,
+              65199
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "VNodeRef | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "Ref<any, any>",
+            {
+              "kind": "event",
+              "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+              "schema": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "ref_for",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "boolean | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              65204,
+              65222
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean | undefined",
+          "schema": [
+            "undefined",
+            "false",
+            "true"
+          ]
+        }
+      },
+      {
+        "name": "ref_key",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "string | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              65227,
+              65244
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "string | undefined",
+          "schema": [
+            "undefined",
+            "string"
+          ]
+        }
+      },
+      {
+        "name": "class",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "unknown",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              72286,
+              72302
+            ]
+          }
+        ],
+        "schema": "unknown"
+      },
+      {
+        "name": "style",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "unknown",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              72307,
+              72323
+            ]
+          }
+        ],
+        "schema": "unknown"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "default",
+        "type": "{}",
+        "description": "",
+        "declarations": [],
+        "schema": {
+          "kind": "object",
+          "type": "{}",
+          "schema": {}
+        }
+      }
+    ],
+    "exposed": [
+      {
+        "name": "$slots",
+        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+        "description": "",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              26359,
+              26386
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "object",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "schema": {
+            "default": {
+              "name": "default",
+              "global": false,
+              "description": "",
+              "tags": [],
+              "required": false,
+              "type": "((props: {}) => any) | undefined",
+              "declarations": [],
+              "schema": {
+                "kind": "enum",
+                "type": "((props: {}) => any) | undefined",
+                "schema": [
+                  "undefined",
+                  {
+                    "kind": "event",
+                    "type": "(props: {}): any",
+                    "schema": []
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "isDismissible",
+        "type": "boolean",
+        "description": "",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Badge/Types/Badge.ts",
+            "range": [
+              528,
+              552
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean",
+          "schema": [
+            "false",
+            "true"
+          ]
+        }
+      },
+      {
+        "name": "color",
+        "type": "Color | undefined",
+        "description": "The component's color",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
+            "range": [
+              482,
+              496
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Color | undefined",
+          "schema": [
+            "undefined",
+            "\"neutral\"",
+            "\"primary\"",
+            "\"secondary\"",
+            "\"accent\"",
+            "\"info\"",
+            "\"success\"",
+            "\"warning\"",
+            "\"error\""
+          ]
+        }
+      },
+      {
+        "name": "preset",
+        "type": "BadgePreset | undefined",
+        "description": "The component's preset",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
+            "range": [
+              315,
+              326
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "BadgePreset | undefined",
+          "schema": [
+            "undefined",
+            "\"solid\"",
+            "\"soft\"",
+            "\"outline\"",
+            "\"dash\""
+          ]
+        }
+      },
+      {
+        "name": "shape",
+        "type": "Shape | undefined",
+        "description": "The component's shape",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
+            "range": [
+              319,
+              329
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Shape | undefined",
+          "schema": [
+            "undefined",
+            "\"rounded\"",
+            "\"pilled\"",
+            "\"square\"",
+            "\"circle\""
+          ]
+        }
+      },
+      {
+        "name": "size",
+        "type": "Size | undefined",
+        "description": "The component's size",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
+            "range": [
+              473,
+              482
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Size | undefined",
+          "schema": [
+            "undefined",
+            "\"extraSmall\"",
+            "\"small\"",
+            "\"medium\"",
+            "\"large\"",
+            "\"extraLarge\""
+          ]
+        }
+      },
+      {
+        "name": "icon",
+        "type": "ConfigurableIcon | undefined",
+        "description": "",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
+            "range": [
+              1381,
+              1405
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "ConfigurableIcon | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "Partial<Record<HorizontalPosition, string>>"
+          ]
+        }
+      }
+    ]
+  },
+  "FoDotStyleBadge": {
+    "type": 1,
+    "props": [
+      {
+        "name": "isDismissible",
+        "global": false,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "boolean | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Badge/Types/Badge.ts",
+            "range": [
+              528,
+              552
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean | undefined",
+          "schema": [
+            "undefined",
+            "false",
+            "true"
+          ]
+        }
+      },
+      {
+        "name": "color",
+        "global": false,
+        "description": "The component's color",
+        "tags": [],
+        "required": false,
+        "type": "Color | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
+            "range": [
+              482,
+              496
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Color | undefined",
+          "schema": [
+            "undefined",
+            "\"neutral\"",
+            "\"primary\"",
+            "\"secondary\"",
+            "\"accent\"",
+            "\"info\"",
+            "\"success\"",
+            "\"warning\"",
+            "\"error\""
+          ]
+        }
+      },
+      {
+        "name": "preset",
+        "global": false,
+        "description": "The component's preset",
+        "tags": [],
+        "required": false,
+        "type": "BadgePreset | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
+            "range": [
+              315,
+              326
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "BadgePreset | undefined",
+          "schema": [
+            "undefined",
+            "\"solid\"",
+            "\"soft\"",
+            "\"outline\"",
+            "\"dash\""
+          ]
+        }
+      },
+      {
+        "name": "shape",
+        "global": false,
+        "description": "The component's shape",
+        "tags": [],
+        "required": false,
+        "type": "Shape | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
+            "range": [
+              319,
+              329
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Shape | undefined",
+          "schema": [
+            "undefined",
+            "\"rounded\"",
+            "\"pilled\"",
+            "\"square\"",
+            "\"circle\""
+          ]
+        }
+      },
+      {
+        "name": "size",
+        "global": false,
+        "description": "The component's size",
+        "tags": [],
+        "required": false,
+        "type": "Size | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
+            "range": [
+              473,
+              482
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Size | undefined",
+          "schema": [
+            "undefined",
+            "\"extraSmall\"",
+            "\"small\"",
+            "\"medium\"",
+            "\"large\"",
+            "\"extraLarge\""
+          ]
+        }
+      },
+      {
+        "name": "icon",
+        "global": false,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "ConfigurableIcon | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
+            "range": [
+              1381,
+              1405
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "ConfigurableIcon | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "Partial<Record<HorizontalPosition, string>>"
+          ]
+        }
+      },
+      {
+        "name": "key",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "PropertyKey | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              65161,
+              65179
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "PropertyKey | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "number",
+            "symbol"
+          ]
+        }
+      },
+      {
+        "name": "ref",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "VNodeRef | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              65184,
+              65199
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "VNodeRef | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "Ref<any, any>",
+            {
+              "kind": "event",
+              "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+              "schema": []
+            }
+          ]
+        }
+      },
+      {
+        "name": "ref_for",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "boolean | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              65204,
+              65222
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean | undefined",
+          "schema": [
+            "undefined",
+            "false",
+            "true"
+          ]
+        }
+      },
+      {
+        "name": "ref_key",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "string | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              65227,
+              65244
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "string | undefined",
+          "schema": [
+            "undefined",
+            "string"
+          ]
+        }
+      },
+      {
+        "name": "class",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "unknown",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              72286,
+              72302
+            ]
+          }
+        ],
+        "schema": "unknown"
+      },
+      {
+        "name": "style",
+        "global": true,
+        "description": "",
+        "tags": [],
+        "required": false,
+        "type": "unknown",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              72307,
+              72323
+            ]
+          }
+        ],
+        "schema": "unknown"
+      }
+    ],
+    "events": [],
+    "slots": [
+      {
+        "name": "default",
+        "type": "{}",
+        "description": "",
+        "declarations": [],
+        "schema": {
+          "kind": "object",
+          "type": "{}",
+          "schema": {}
+        }
+      }
+    ],
+    "exposed": [
+      {
+        "name": "$slots",
+        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+        "description": "",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
+            "range": [
+              26359,
+              26386
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "object",
+          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "schema": {
+            "default": {
+              "name": "default",
+              "global": false,
+              "description": "",
+              "tags": [],
+              "required": false,
+              "type": "((props: {}) => any) | undefined",
+              "declarations": [],
+              "schema": {
+                "kind": "enum",
+                "type": "((props: {}) => any) | undefined",
+                "schema": [
+                  "undefined",
+                  {
+                    "kind": "event",
+                    "type": "(props: {}): any",
+                    "schema": []
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "color",
+        "type": "Color | undefined",
+        "description": "The component's color",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseColor/Types/Color.ts",
+            "range": [
+              482,
+              496
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Color | undefined",
+          "schema": [
+            "undefined",
+            "\"neutral\"",
+            "\"primary\"",
+            "\"secondary\"",
+            "\"accent\"",
+            "\"info\"",
+            "\"success\"",
+            "\"warning\"",
+            "\"error\""
+          ]
+        }
+      },
+      {
+        "name": "preset",
+        "type": "BadgePreset | undefined",
+        "description": "The component's preset",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UsePreset/Types/Preset.ts",
+            "range": [
+              315,
+              326
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "BadgePreset | undefined",
+          "schema": [
+            "undefined",
+            "\"solid\"",
+            "\"soft\"",
+            "\"outline\"",
+            "\"dash\""
+          ]
+        }
+      },
+      {
+        "name": "shape",
+        "type": "Shape | undefined",
+        "description": "The component's shape",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseShape/Types/Shape.ts",
+            "range": [
+              319,
+              329
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Shape | undefined",
+          "schema": [
+            "undefined",
+            "\"rounded\"",
+            "\"pilled\"",
+            "\"square\"",
+            "\"circle\""
+          ]
+        }
+      },
+      {
+        "name": "size",
+        "type": "Size | undefined",
+        "description": "The component's size",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
+            "range": [
+              473,
+              482
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "Size | undefined",
+          "schema": [
+            "undefined",
+            "\"extraSmall\"",
+            "\"small\"",
+            "\"medium\"",
+            "\"large\"",
+            "\"extraLarge\""
+          ]
+        }
+      },
+      {
+        "name": "icon",
+        "type": "ConfigurableIcon | undefined",
+        "description": "",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Icon/Types/Icon.ts",
+            "range": [
+              1381,
+              1405
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "ConfigurableIcon | undefined",
+          "schema": [
+            "undefined",
+            "string",
+            "Partial<Record<HorizontalPosition, string>>"
+          ]
+        }
+      },
+      {
+        "name": "isDismissible",
+        "type": "boolean | undefined",
+        "description": "",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Badge/Types/Badge.ts",
+            "range": [
+              528,
+              552
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean | undefined",
+          "schema": [
+            "undefined",
+            "false",
+            "true"
           ]
         }
       }
@@ -5121,6 +5383,28 @@
         }
       },
       {
+        "name": "id",
+        "type": "string | undefined",
+        "description": "The component's id, if not given, a random one might be assigned",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
+            "range": [
+              468,
+              488
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "string | undefined",
+          "schema": [
+            "undefined",
+            "string"
+          ]
+        }
+      },
+      {
         "name": "color",
         "type": "Color | undefined",
         "description": "The component's color",
@@ -5172,28 +5456,6 @@
             "\"medium\"",
             "\"large\"",
             "\"extraLarge\""
-          ]
-        }
-      },
-      {
-        "name": "id",
-        "type": "string | undefined",
-        "description": "The component's id, if not given, a random one might be assigned",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
-            "range": [
-              468,
-              488
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "string | undefined",
-          "schema": [
-            "undefined",
-            "string"
           ]
         }
       },
@@ -5507,20 +5769,30 @@
     "slots": [
       {
         "name": "default",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
+        "type": "any[]",
+        "description": "The content to be shown on the component by default",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+            "range": [
+              136,
+              151
+            ]
+          }
+        ],
         "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
+          "kind": "array",
+          "type": "any[]",
+          "schema": [
+            "any"
+          ]
         }
       }
     ],
     "exposed": [
       {
         "name": "$slots",
-        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+        "type": "Readonly<InternalSlots> & Required<WithDefaultSlot>",
         "description": "",
         "declarations": [
           {
@@ -5533,26 +5805,29 @@
         ],
         "schema": {
           "kind": "object",
-          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "type": "Readonly<InternalSlots> & Required<WithDefaultSlot>",
           "schema": {
             "default": {
               "name": "default",
               "global": false,
-              "description": "",
+              "description": "The content to be shown on the component by default",
               "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
+              "required": true,
+              "type": "Slot",
+              "declarations": [
+                {
+                  "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+                  "range": [
+                    136,
+                    151
+                  ]
+                }
+              ],
               "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
+                "kind": "event",
+                "type": "(...args: any[]): VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
+                  "any"
                 ]
               }
             }
@@ -5578,268 +5853,6 @@
           "schema": [
             "\"horizontal\"",
             "\"vertical\""
-          ]
-        }
-      }
-    ]
-  },
-  "FoHeading": {
-    "type": 1,
-    "props": [
-      {
-        "name": "level",
-        "global": false,
-        "description": "",
-        "tags": [],
-        "required": true,
-        "type": "HeadingLevel",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Heading/UI/FoHeading.vue",
-            "range": [
-              311,
-              331
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "HeadingLevel",
-          "schema": [
-            "\"1\"",
-            "\"2\"",
-            "\"3\"",
-            "\"4\"",
-            "\"5\"",
-            "\"6\""
-          ]
-        }
-      },
-      {
-        "name": "key",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "PropertyKey | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              65161,
-              65179
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "PropertyKey | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "number",
-            "symbol"
-          ]
-        }
-      },
-      {
-        "name": "ref",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "VNodeRef | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              65184,
-              65199
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "VNodeRef | undefined",
-          "schema": [
-            "undefined",
-            "string",
-            "Ref<any, any>",
-            {
-              "kind": "event",
-              "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
-              "schema": []
-            }
-          ]
-        }
-      },
-      {
-        "name": "ref_for",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "boolean | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              65204,
-              65222
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "boolean | undefined",
-          "schema": [
-            "undefined",
-            "false",
-            "true"
-          ]
-        }
-      },
-      {
-        "name": "ref_key",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "string | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              65227,
-              65244
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "string | undefined",
-          "schema": [
-            "undefined",
-            "string"
-          ]
-        }
-      },
-      {
-        "name": "class",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "unknown",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              72286,
-              72302
-            ]
-          }
-        ],
-        "schema": "unknown"
-      },
-      {
-        "name": "style",
-        "global": true,
-        "description": "",
-        "tags": [],
-        "required": false,
-        "type": "unknown",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              72307,
-              72323
-            ]
-          }
-        ],
-        "schema": "unknown"
-      }
-    ],
-    "events": [],
-    "slots": [
-      {
-        "name": "default",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
-        "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
-        }
-      }
-    ],
-    "exposed": [
-      {
-        "name": "$slots",
-        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
-        "description": "",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/node_modules/@vue/runtime-core/dist/runtime-core.d.ts",
-            "range": [
-              26359,
-              26386
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "object",
-          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
-          "schema": {
-            "default": {
-              "name": "default",
-              "global": false,
-              "description": "",
-              "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
-              "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
-                "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
-                ]
-              }
-            }
-          }
-        }
-      },
-      {
-        "name": "level",
-        "type": "HeadingLevel",
-        "description": "",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Heading/UI/FoHeading.vue",
-            "range": [
-              311,
-              331
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "HeadingLevel",
-          "schema": [
-            "\"1\"",
-            "\"2\"",
-            "\"3\"",
-            "\"4\"",
-            "\"5\"",
-            "\"6\""
           ]
         }
       }
@@ -6189,8 +6202,8 @@
                             ],
                             "schema": "string"
                           },
-                          "__@hasInstance@1514": {
-                            "name": "__@hasInstance@1514",
+                          "__@hasInstance@1429": {
+                            "name": "__@hasInstance@1429",
                             "global": false,
                             "description": "Determines whether the given value inherits from this function if this function was used\nas a constructor function.\n\nA constructor function can control which objects are recognized as its instances by\n'instanceof' by overriding this method.",
                             "tags": [],
@@ -8558,8 +8571,8 @@
                             ],
                             "schema": "string"
                           },
-                          "__@hasInstance@1514": {
-                            "name": "__@hasInstance@1514",
+                          "__@hasInstance@1429": {
+                            "name": "__@hasInstance@1429",
                             "global": false,
                             "description": "Determines whether the given value inherits from this function if this function was used\nas a constructor function.\n\nA constructor function can control which objects are recognized as its instances by\n'instanceof' by overriding this method.",
                             "tags": [],
@@ -11203,28 +11216,6 @@
         }
       },
       {
-        "name": "type",
-        "type": "\"text\" | \"email\"",
-        "description": "The input's type",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/InputText/Types/InputText.ts",
-            "range": [
-              1104,
-              1128
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "\"text\" | \"email\"",
-          "schema": [
-            "\"text\"",
-            "\"email\""
-          ]
-        }
-      },
-      {
         "name": "isDisabled",
         "type": "boolean",
         "description": "If true, the component will be disabled without allowing more interactions",
@@ -11243,6 +11234,28 @@
           "schema": [
             "false",
             "true"
+          ]
+        }
+      },
+      {
+        "name": "type",
+        "type": "\"text\" | \"email\"",
+        "description": "The input's type",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/InputText/Types/InputText.ts",
+            "range": [
+              1104,
+              1128
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "\"text\" | \"email\"",
+          "schema": [
+            "\"text\"",
+            "\"email\""
           ]
         }
       },
@@ -11309,6 +11322,28 @@
           "schema": [
             "false",
             "true"
+          ]
+        }
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "description": "The component's id, if not given, a random one might be assigned",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
+            "range": [
+              468,
+              488
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "string | undefined",
+          "schema": [
+            "undefined",
+            "string"
           ]
         }
       },
@@ -11381,28 +11416,6 @@
             "undefined",
             "string",
             "Partial<Record<HorizontalPosition, string>>"
-          ]
-        }
-      },
-      {
-        "name": "id",
-        "type": "string | undefined",
-        "description": "The component's id, if not given, a random one might be assigned",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
-            "range": [
-              468,
-              488
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "string | undefined",
-          "schema": [
-            "undefined",
-            "string"
           ]
         }
       },
@@ -13302,20 +13315,30 @@
     "slots": [
       {
         "name": "default",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
+        "type": "any[]",
+        "description": "The content to be shown on the component by default",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+            "range": [
+              136,
+              151
+            ]
+          }
+        ],
         "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
+          "kind": "array",
+          "type": "any[]",
+          "schema": [
+            "any"
+          ]
         }
       }
     ],
     "exposed": [
       {
         "name": "$slots",
-        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+        "type": "Readonly<InternalSlots> & Required<WithDefaultSlot>",
         "description": "",
         "declarations": [
           {
@@ -13328,26 +13351,29 @@
         ],
         "schema": {
           "kind": "object",
-          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "type": "Readonly<InternalSlots> & Required<WithDefaultSlot>",
           "schema": {
             "default": {
               "name": "default",
               "global": false,
-              "description": "",
+              "description": "The content to be shown on the component by default",
               "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
+              "required": true,
+              "type": "Slot",
+              "declarations": [
+                {
+                  "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+                  "range": [
+                    136,
+                    151
+                  ]
+                }
+              ],
               "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
+                "kind": "event",
+                "type": "(...args: any[]): VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
+                  "any"
                 ]
               }
             }
@@ -19773,8 +19799,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Tooltip/Types/Tooltip.ts",
             "range": [
-              255,
-              277
+              427,
+              449
             ]
           }
         ],
@@ -20008,32 +20034,52 @@
     "events": [],
     "slots": [
       {
-        "name": "default",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
+        "name": "body",
+        "type": "any[]",
+        "description": "The tooltip/popover's body that will appear on hover/click",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Tooltip/Types/Tooltip.ts",
+            "range": [
+              591,
+              602
+            ]
+          }
+        ],
         "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
+          "kind": "array",
+          "type": "any[]",
+          "schema": [
+            "any"
+          ]
         }
       },
       {
-        "name": "body",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
+        "name": "default",
+        "type": "any[]",
+        "description": "The content to be shown on the component by default",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+            "range": [
+              136,
+              151
+            ]
+          }
+        ],
         "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
+          "kind": "array",
+          "type": "any[]",
+          "schema": [
+            "any"
+          ]
         }
       }
     ],
     "exposed": [
       {
         "name": "$slots",
-        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; } & { body?: ((props: {}) => any) | undefined; }",
+        "type": "Readonly<InternalSlots> & TooltipSlots",
         "description": "",
         "declarations": [
           {
@@ -20046,49 +20092,49 @@
         ],
         "schema": {
           "kind": "object",
-          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; } & { body?: ((props: {}) => any) | undefined; }",
+          "type": "Readonly<InternalSlots> & TooltipSlots",
           "schema": {
-            "default": {
-              "name": "default",
-              "global": false,
-              "description": "",
-              "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
-              "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
-                "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
-                ]
-              }
-            },
             "body": {
               "name": "body",
               "global": false,
-              "description": "",
+              "description": "The tooltip/popover's body that will appear on hover/click",
               "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
+              "required": true,
+              "type": "Slot",
+              "declarations": [
+                {
+                  "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Tooltip/Types/Tooltip.ts",
+                  "range": [
+                    591,
+                    602
+                  ]
+                }
+              ],
               "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
+                "kind": "event",
+                "type": "(...args: any[]): VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
+                  "any"
                 ]
               }
+            },
+            "default": {
+              "name": "default",
+              "global": false,
+              "description": "The content to be shown on the component by default",
+              "tags": [],
+              "required": true,
+              "type": "Slot",
+              "declarations": [
+                {
+                  "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+                  "range": [
+                    136,
+                    151
+                  ]
+                }
+              ],
+              "schema": "Slot"
             }
           }
         }
@@ -20156,8 +20202,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Tooltip/Types/Tooltip.ts",
             "range": [
-              255,
-              277
+              427,
+              449
             ]
           }
         ],
@@ -23019,20 +23065,30 @@
     "slots": [
       {
         "name": "default",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
+        "type": "any[]",
+        "description": "The content to be shown on the component by default",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+            "range": [
+              136,
+              151
+            ]
+          }
+        ],
         "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
+          "kind": "array",
+          "type": "any[]",
+          "schema": [
+            "any"
+          ]
         }
       }
     ],
     "exposed": [
       {
         "name": "$slots",
-        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+        "type": "Readonly<InternalSlots> & Required<WithDefaultSlot>",
         "description": "",
         "declarations": [
           {
@@ -23045,26 +23101,29 @@
         ],
         "schema": {
           "kind": "object",
-          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; }",
+          "type": "Readonly<InternalSlots> & Required<WithDefaultSlot>",
           "schema": {
             "default": {
               "name": "default",
               "global": false,
-              "description": "",
+              "description": "The content to be shown on the component by default",
               "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
+              "required": true,
+              "type": "Slot",
+              "declarations": [
+                {
+                  "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+                  "range": [
+                    136,
+                    151
+                  ]
+                }
+              ],
               "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
+                "kind": "event",
+                "type": "(...args: any[]): VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
+                  "any"
                 ]
               }
             }
@@ -24095,31 +24154,6 @@
         }
       },
       {
-        "name": "size",
-        "type": "\"extraSmall\" | \"small\" | \"medium\" | \"large\" | undefined",
-        "description": "The component's size",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
-            "range": [
-              473,
-              482
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "\"extraSmall\" | \"small\" | \"medium\" | \"large\" | undefined",
-          "schema": [
-            "undefined",
-            "\"extraSmall\"",
-            "\"small\"",
-            "\"medium\"",
-            "\"large\""
-          ]
-        }
-      },
-      {
         "name": "id",
         "type": "string | undefined",
         "description": "The component's id, if not given, a random one might be assigned",
@@ -24161,6 +24195,31 @@
             "undefined",
             "false",
             "true"
+          ]
+        }
+      },
+      {
+        "name": "size",
+        "type": "\"extraSmall\" | \"small\" | \"medium\" | \"large\" | undefined",
+        "description": "The component's size",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseSize/Types/Size.ts",
+            "range": [
+              473,
+              482
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "\"extraSmall\" | \"small\" | \"medium\" | \"large\" | undefined",
+          "schema": [
+            "undefined",
+            "\"extraSmall\"",
+            "\"small\"",
+            "\"medium\"",
+            "\"large\""
           ]
         }
       },
@@ -25478,7 +25537,8 @@
             "false",
             "true"
           ]
-        }
+        },
+        "default": "false"
       },
       {
         "name": "isValid",
@@ -25912,6 +25972,50 @@
         }
       },
       {
+        "name": "isReadonly",
+        "type": "boolean",
+        "description": "If true the component cannot be updated",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Props.ts",
+            "range": [
+              84,
+              105
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean",
+          "schema": [
+            "false",
+            "true"
+          ]
+        }
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "description": "The component's id, if not given, a random one might be assigned",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
+            "range": [
+              468,
+              488
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "string | undefined",
+          "schema": [
+            "undefined",
+            "string"
+          ]
+        }
+      },
+      {
         "name": "size",
         "type": "Size | undefined",
         "description": "The component's size",
@@ -25957,28 +26061,6 @@
             "undefined",
             "string",
             "Partial<Record<HorizontalPosition, string>>"
-          ]
-        }
-      },
-      {
-        "name": "id",
-        "type": "string | undefined",
-        "description": "The component's id, if not given, a random one might be assigned",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
-            "range": [
-              468,
-              488
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "string | undefined",
-          "schema": [
-            "undefined",
-            "string"
           ]
         }
       },
@@ -26125,29 +26207,6 @@
             "string"
           ]
         }
-      },
-      {
-        "name": "isReadonly",
-        "type": "boolean | undefined",
-        "description": "If true the component cannot be updated",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Props.ts",
-            "range": [
-              84,
-              105
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "boolean | undefined",
-          "schema": [
-            "undefined",
-            "false",
-            "true"
-          ]
-        }
       }
     ]
   },
@@ -26242,8 +26301,8 @@
                   ],
                   "schema": "string"
                 },
-                "__@RefSymbol@783": {
-                  "name": "__@RefSymbol@783",
+                "__@RefSymbol@698": {
+                  "name": "__@RefSymbol@698",
                   "global": false,
                   "description": "Type differentiator only.\nWe need this to be in public d.ts but don't want it to show up in IDE\nautocomplete, so we use a private Symbol instead.",
                   "tags": [],
@@ -26260,8 +26319,8 @@
                   ],
                   "schema": "true"
                 },
-                "__@ShallowRefMarker@4097": {
-                  "name": "__@ShallowRefMarker@4097",
+                "__@ShallowRefMarker@4094": {
+                  "name": "__@ShallowRefMarker@4094",
                   "global": false,
                   "description": "",
                   "tags": [],
@@ -26355,6 +26414,57 @@
         "default": "(): Record<FlyonUITheme, FlyonUITheme> => {\n    return {\n        light: \"light\",\n        dark: \"dark\",\n        gourmet: \"gourmet\",\n        corporate: \"corporate\",\n        ghibli: \"ghibli\",\n        luxury: \"luxury\",\n        mintlify: \"mintlify\",\n        shadcn: \"shadcn\",\n        slack: \"slack\",\n        soft: \"soft\",\n        valorant: \"valorant\",\n    };\n}"
       },
       {
+        "name": "id",
+        "global": false,
+        "description": "The component's id, if not given, a random one might be assigned",
+        "tags": [],
+        "required": false,
+        "type": "string | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
+            "range": [
+              468,
+              488
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "string | undefined",
+          "schema": [
+            "undefined",
+            "string"
+          ]
+        }
+      },
+      {
+        "name": "isDisabled",
+        "global": false,
+        "description": "If true, the component will be disabled without allowing more interactions",
+        "tags": [],
+        "required": false,
+        "type": "boolean | undefined",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseState/Types/State.ts",
+            "range": [
+              364,
+              385
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean | undefined",
+          "schema": [
+            "undefined",
+            "false",
+            "true"
+          ]
+        }
+      },
+      {
         "name": "shape",
         "global": false,
         "description": "The component's shape",
@@ -26431,57 +26541,6 @@
           "schema": [
             "undefined",
             "string"
-          ]
-        }
-      },
-      {
-        "name": "id",
-        "global": false,
-        "description": "The component's id, if not given, a random one might be assigned",
-        "tags": [],
-        "required": false,
-        "type": "string | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
-            "range": [
-              468,
-              488
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "string | undefined",
-          "schema": [
-            "undefined",
-            "string"
-          ]
-        }
-      },
-      {
-        "name": "isDisabled",
-        "global": false,
-        "description": "If true, the component will be disabled without allowing more interactions",
-        "tags": [],
-        "required": false,
-        "type": "boolean | undefined",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseState/Types/State.ts",
-            "range": [
-              364,
-              385
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "boolean | undefined",
-          "schema": [
-            "undefined",
-            "false",
-            "true"
           ]
         }
       },
@@ -26798,8 +26857,8 @@
                   ],
                   "schema": "string"
                 },
-                "__@RefSymbol@783": {
-                  "name": "__@RefSymbol@783",
+                "__@RefSymbol@698": {
+                  "name": "__@RefSymbol@698",
                   "global": false,
                   "description": "Type differentiator only.\nWe need this to be in public d.ts but don't want it to show up in IDE\nautocomplete, so we use a private Symbol instead.",
                   "tags": [],
@@ -26816,8 +26875,8 @@
                   ],
                   "schema": "true"
                 },
-                "__@ShallowRefMarker@4097": {
-                  "name": "__@ShallowRefMarker@4097",
+                "__@ShallowRefMarker@4094": {
+                  "name": "__@ShallowRefMarker@4094",
                   "global": false,
                   "description": "",
                   "tags": [],
@@ -26866,6 +26925,51 @@
           }
         ],
         "schema": "FlyonUIThemeModes"
+      },
+      {
+        "name": "id",
+        "type": "string | undefined",
+        "description": "The component's id, if not given, a random one might be assigned",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
+            "range": [
+              468,
+              488
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "string | undefined",
+          "schema": [
+            "undefined",
+            "string"
+          ]
+        }
+      },
+      {
+        "name": "isDisabled",
+        "type": "boolean | undefined",
+        "description": "If true, the component will be disabled without allowing more interactions",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseState/Types/State.ts",
+            "range": [
+              364,
+              385
+            ]
+          }
+        ],
+        "schema": {
+          "kind": "enum",
+          "type": "boolean | undefined",
+          "schema": [
+            "undefined",
+            "false",
+            "true"
+          ]
+        }
       },
       {
         "name": "shape",
@@ -26935,51 +27039,6 @@
           "schema": [
             "undefined",
             "string"
-          ]
-        }
-      },
-      {
-        "name": "id",
-        "type": "string | undefined",
-        "description": "The component's id, if not given, a random one might be assigned",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseIdentifiable/Types/Identifiable.ts",
-            "range": [
-              468,
-              488
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "string | undefined",
-          "schema": [
-            "undefined",
-            "string"
-          ]
-        }
-      },
-      {
-        "name": "isDisabled",
-        "type": "boolean | undefined",
-        "description": "If true, the component will be disabled without allowing more interactions",
-        "declarations": [
-          {
-            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseState/Types/State.ts",
-            "range": [
-              364,
-              385
-            ]
-          }
-        ],
-        "schema": {
-          "kind": "enum",
-          "type": "boolean | undefined",
-          "schema": [
-            "undefined",
-            "false",
-            "true"
           ]
         }
       },
@@ -27117,8 +27176,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Tooltip/Types/Tooltip.ts",
             "range": [
-              255,
-              277
+              427,
+              449
             ]
           }
         ],
@@ -27353,32 +27412,52 @@
     "events": [],
     "slots": [
       {
-        "name": "default",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
+        "name": "body",
+        "type": "any[]",
+        "description": "The tooltip/popover's body that will appear on hover/click",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Tooltip/Types/Tooltip.ts",
+            "range": [
+              591,
+              602
+            ]
+          }
+        ],
         "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
+          "kind": "array",
+          "type": "any[]",
+          "schema": [
+            "any"
+          ]
         }
       },
       {
-        "name": "body",
-        "type": "{}",
-        "description": "",
-        "declarations": [],
+        "name": "default",
+        "type": "any[]",
+        "description": "The content to be shown on the component by default",
+        "declarations": [
+          {
+            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+            "range": [
+              136,
+              151
+            ]
+          }
+        ],
         "schema": {
-          "kind": "object",
-          "type": "{}",
-          "schema": {}
+          "kind": "array",
+          "type": "any[]",
+          "schema": [
+            "any"
+          ]
         }
       }
     ],
     "exposed": [
       {
         "name": "$slots",
-        "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; } & { body?: ((props: {}) => any) | undefined; }",
+        "type": "Readonly<InternalSlots> & TooltipSlots",
         "description": "",
         "declarations": [
           {
@@ -27391,49 +27470,49 @@
         ],
         "schema": {
           "kind": "object",
-          "type": "Readonly<InternalSlots> & { default?: ((props: {}) => any) | undefined; } & { body?: ((props: {}) => any) | undefined; }",
+          "type": "Readonly<InternalSlots> & TooltipSlots",
           "schema": {
-            "default": {
-              "name": "default",
-              "global": false,
-              "description": "",
-              "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
-              "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
-                "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
-                ]
-              }
-            },
             "body": {
               "name": "body",
               "global": false,
-              "description": "",
+              "description": "The tooltip/popover's body that will appear on hover/click",
               "tags": [],
-              "required": false,
-              "type": "((props: {}) => any) | undefined",
-              "declarations": [],
+              "required": true,
+              "type": "Slot",
+              "declarations": [
+                {
+                  "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Tooltip/Types/Tooltip.ts",
+                  "range": [
+                    591,
+                    602
+                  ]
+                }
+              ],
               "schema": {
-                "kind": "enum",
-                "type": "((props: {}) => any) | undefined",
+                "kind": "event",
+                "type": "(...args: any[]): VNode<RendererNode, RendererElement, { [key: string]: any; }>[]",
                 "schema": [
-                  "undefined",
-                  {
-                    "kind": "event",
-                    "type": "(props: {}): any",
-                    "schema": []
-                  }
+                  "any"
                 ]
               }
+            },
+            "default": {
+              "name": "default",
+              "global": false,
+              "description": "The content to be shown on the component by default",
+              "tags": [],
+              "required": true,
+              "type": "Slot",
+              "declarations": [
+                {
+                  "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/Utils/Types/Slots.ts",
+                  "range": [
+                    136,
+                    151
+                  ]
+                }
+              ],
+              "schema": "Slot"
             }
           }
         }
@@ -27446,8 +27525,8 @@
           {
             "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Components/Tooltip/Types/Tooltip.ts",
             "range": [
-              255,
-              277
+              427,
+              449
             ]
           }
         ],
