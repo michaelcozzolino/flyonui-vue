@@ -33,3 +33,13 @@
 ### Number keys
 
 <KeyboardDocs section="number-keys" />
+
+## Api
+
+### Props
+
+<KeyboardDocs section="props" />
+
+### Slots
+
+<KeyboardDocs section="slots" />
