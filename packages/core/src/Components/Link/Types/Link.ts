@@ -13,6 +13,8 @@ export interface LinkProps extends FoRouterLinkProps, Colorable {
     underlineEffect?: UnderlineLinkEffect;
 }
 
+export type WithRequiredTo = Required<WithTo>;
+
 export interface WithTo {
     /** Target navigation url, if string, it is a standard url, else a Vue Router location */
     to?: To;
