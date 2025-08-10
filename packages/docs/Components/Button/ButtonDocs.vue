@@ -95,11 +95,10 @@
                  :component="GlassButton"
     />
 
-    <template v-else>
-        <ComponentsApiDocs :section="section"
-                           :component-names="['FoButton', 'FoLoadingButton', 'FoSocialButton']"
-        />
-    </template>
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       :component-names="['FoButton', 'FoLoadingButton', 'FoSocialButton']"
+    />
 </template>
 
 <script setup lang="ts">
