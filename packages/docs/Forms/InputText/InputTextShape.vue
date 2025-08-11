@@ -1,11 +1,13 @@
 <template>
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name' }"
                  placeholder="John doe"
                  shape="pilled"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John doe"
                  shape="pilled"

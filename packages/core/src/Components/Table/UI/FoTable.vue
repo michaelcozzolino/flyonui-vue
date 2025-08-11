@@ -1,5 +1,6 @@
 <template>
-    <div class="w-full"
+    <div :id="id"
+         class="w-full"
          :class="[isBordered && borderClass, responsiveClass]"
     >
         <table class="table"

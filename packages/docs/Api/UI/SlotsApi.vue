@@ -1,7 +1,7 @@
 <template>
     <FoTable v-if="api.length"
              :id="`${componentName}-slots`"
-             class="vp-raw rounded-lg my-4 w-1/2!"
+             class="vp-raw rounded-lg my-4 max-w-xl"
              is-bordered
              is-responsive
              is-striped="rows"

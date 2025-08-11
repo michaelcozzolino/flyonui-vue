@@ -38,6 +38,8 @@
         "vue-component-type-helpers": "3.0.1"
     },
     "resolutions": {
+        "@playwright/test": "~1.47.2",
+        "playwright": "~1.47.2",
         "vite": "6.3.5",
         "vue": "3.5.18",
         "typescript": "5.8.2"

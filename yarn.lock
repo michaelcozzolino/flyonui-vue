@@ -4633,6 +4633,7 @@ __metadata:
   resolution: "flyonui-vue-docs@workspace:packages/docs"
   dependencies:
     "@iconify/vue": "npm:^4.3.0"
+    "@playwright/test": "npm:*"
     "@stackblitz/sdk": "npm:^1.11.0"
     "@tailwindcss/postcss": "npm:^4.0.17"
     "@types/node": "npm:^22.13.13"
@@ -4644,6 +4645,7 @@ __metadata:
     highlight.js: "npm:^10.7.3"
     jsdom: "npm:^26.0.0"
     pinia: "npm:^3.0.3"
+    playwright: "npm:*"
     postcss: "npm:^8.5.3"
     sass-embedded: "npm:^1.86.0"
     tailwindcss: "npm:^4.0.17"
@@ -7040,7 +7042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:1.47.2, playwright@npm:~1.47.2":
+"playwright@npm:~1.47.2":
   version: 1.47.2
   resolution: "playwright@npm:1.47.2"
   dependencies:

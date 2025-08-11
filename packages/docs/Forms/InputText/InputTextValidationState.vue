@@ -1,5 +1,6 @@
 <template>
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name' }"
                  placeholder="John Doe"
                  :helper-text="{ text: 'Helper text' }"
@@ -7,6 +8,7 @@
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
                  :helper-text="{ text: 'Helper text' }"
@@ -14,6 +16,7 @@
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name' }"
                  placeholder="John Doe"
                  :helper-text="{ text: 'Helper text' }"
@@ -21,6 +24,7 @@
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
                  :helper-text="{ text: 'Helper text' }"
