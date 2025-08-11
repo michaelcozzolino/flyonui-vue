@@ -8,7 +8,7 @@
              data-test="props-api"
     >
         <template #head>
-            <FoTableRow class="text-center text-primary normal-case italic">
+            <FoTableRow class="text-center text-primary normal-case italic bg-base-300/20">
                 <FoTableHeader :colspan="4">
                     {{ componentName }}
                 </FoTableHeader>
