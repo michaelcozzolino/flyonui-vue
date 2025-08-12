@@ -21,6 +21,7 @@ import type {
 } from '@/Shared/Utils/Internal';
 
 /**
+ * todo: docs here should be checked and put in vitepress
  * Default configuration for the library
  */
 export interface FlyonUIVueAppDefaultConfig {
@@ -55,7 +56,7 @@ interface HorizontalHelperTextPositionConfig {
 type HorizontalPositionGlobalConfig = HorizontalIconPositionConfig & HorizontalHelperTextPositionConfig;
 
 /** Allows overriding element positions */
-interface HorizontalPositionComponentConfig<T> {
+interface HorizontalPositionComponentConfig<T extends object> {
     /** Positions to override */
     horizontalPosition?: Prettify<Partial<T>>;
 }

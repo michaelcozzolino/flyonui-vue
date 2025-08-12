@@ -9,7 +9,11 @@ export type To = Link | RouteLocationRaw;
 export type UnderlineLinkEffect = 'hover' | 'hover-animated' | 'no-underline';
 
 export interface LinkProps extends FoRouterLinkProps, Colorable {
-    /** If true, when the link is hovered it will be underlined */
+    /**
+     * If "hover", the link will be underlined when hovered
+     * If "hover-animated", the link will be underlined with an underline animation when hovered
+     * If "no-underline, the link will not be underlined at all when hovered
+     */
     underlineEffect?: UnderlineLinkEffect;
 }
 
