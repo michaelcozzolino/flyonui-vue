@@ -39,19 +39,19 @@
         "type-check": "vue-tsc --noEmit -p tsconfig.json"
     },
     "dependencies": {
-        "flyonui": "^2.2.0",
+        "flyonui": "^2.4.0",
         "flyonui-vue": "workspace:*"
     },
     "devDependencies": {
-        "@types/node": "^22.13.13",
+        "@types/node": "^22.17.1",
         "@vue/test-utils": "^2.4.6",
         "@vue/tsconfig": "^0.7.0",
-        "concurrently": "^9.1.2",
-        "jsdom": "^26.0.0",
-        "tsc-alias": "^1.8.11",
-        "typescript": "^5.8.2",
-        "vite": "^6.3.4",
-        "vue": "^3.5.13",
-        "vue-tsc": "^2.2.8"
+        "concurrently": "^9.2.0",
+        "jsdom": "^26.1.0",
+        "tsc-alias": "^1.8.16",
+        "typescript": "^5.9.2",
+        "vite": "^6.3.5",
+        "vue": "^3.5.18",
+        "vue-tsc": "^3.0.5"
     }
 }

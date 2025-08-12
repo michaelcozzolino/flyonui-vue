@@ -15,33 +15,35 @@
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all",
-        "generate-components-api": "node scripts/GenerateComponentsApi.mts"
+        "generate-components-api": "node scripts/GenerateComponentsApi.mts",
+        "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
+        "upgrade:dependencies": "yarn workspaces foreach -Apt npx npm-check-updates -u -t latest"
     },
     "dependencies": {
         "change-case": "^5.4.4"
     },
     "devDependencies": {
         "@michaelcozzolino/eslint-config": "^1.1.2",
-        "@playwright/test": "~1.47.2",
-        "@vitejs/plugin-vue": "^5.2.4",
-        "@vitest/browser": "^3.1.4",
-        "@vitest/coverage-v8": "^3.1.4",
+        "@playwright/test": "~1.54.2",
+        "@vitest/browser": "^3.2.4",
+        "@vitest/coverage-v8": "^3.2.4",
         "@vue/test-utils": "^2.4.6",
-        "concurrently": "^9.1.2",
-        "eslint": "^9.23.0",
-        "playwright": "~1.47.2",
-        "typescript": "^5.8.2",
-        "vite": "^6.3.5",
-        "vitest": "^3.1.4",
-        "vue": "^3.5.18",
+        "concurrently": "^9.2.0",
+        "eslint": "^9.33.0",
+        "playwright": "~1.54.2",
+        "typescript": "^5.9.2",
+        "vitest": "^3.2.4",
         "vue-component-meta": "^3.0.5",
         "vue-component-type-helpers": "3.0.1"
     },
     "resolutions": {
-        "@playwright/test": "~1.47.2",
-        "playwright": "~1.47.2",
-        "vite": "6.3.5",
-        "vue": "3.5.18",
-        "typescript": "5.8.2"
+        "@playwright/test": "~1.54.2",
+        "@vitejs/plugin-vue": "^5.2.4",
+        "jsdom": "^26.1.0",
+        "playwright": "~1.54.2",
+        "typescript": "^5.9.2",
+        "vite": "^6.3.5",
+        "vue": "^3.5.18",
+        "vue-tsc": "^3.0.5"
     }
 }
