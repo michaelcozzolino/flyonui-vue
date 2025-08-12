@@ -9,12 +9,14 @@
 </template>
 
 <script setup lang="ts">
-import type { TooltipProps } from '@/Components/Tooltip';
-import { FoTooltip }         from '@/Components/Tooltip';
-import { tooltipAsPopover }  from '@/Components/Tooltip/Internal';
-import { provide }           from 'vue';
+import type { TooltipProps, TooltipSlots } from '@/Components/Tooltip';
+import { FoTooltip }                       from '@/Components/Tooltip';
+import { tooltipAsPopover }                from '@/Components/Tooltip/Internal';
+import { provide }                         from 'vue';
 
 defineProps<TooltipProps>();
+
+defineSlots<TooltipSlots>();
 
 provide(tooltipAsPopover, true);
 </script>

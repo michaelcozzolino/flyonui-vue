@@ -1,4 +1,4 @@
-import type { ComponentName } from '@/Shared/Utils/Internal';
+import type { ComponentName } from '@/Shared';
 
 export type ColorableComponentName = Extract<
     ComponentName,
@@ -9,7 +9,7 @@ export type ColorableTextComponentName = Extract<ComponentName, 'FoLink' | 'FoLo
 
 export type Color = 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
 
-// todo: replace all
 export interface Colorable {
+    /** The component's color */
     color?: Color;
 }

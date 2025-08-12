@@ -1,7 +1,7 @@
-import type { RouteRecordRaw } from 'vue-router';
+import type { WithRequiredTo }   from '@/Components';
+import type { Id }               from '@/Shared';
+import type { WithRequiredText } from '@/Shared/Utils/Types/Props.ts';
 
-export interface NavbarLink {
-    id:   number;
-    text: string;
-    to:   RouteRecordRaw | string;
-}
+export type NavbarLink = Id
+    & WithRequiredText
+    & WithRequiredTo;

@@ -52,11 +52,18 @@
                  :code="VerticalCheckboxGroupRaw"
                  :component="VerticalCheckboxGroup"
     />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       :component-names="['FoCheckbox', 'FoCheckboxGroup']"
+    />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }           from '@/Api/Types/Api';
 import type { Default }           from 'flyonui-vue';
 import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs          from '@/Api/UI/ComponentsApiDocs.vue';
 import CheckboxColor              from '@/Forms/Checkbox/CheckboxColor.vue';
 import CheckboxColorRaw           from '@/Forms/Checkbox/CheckboxColor.vue?raw';
 import CheckboxSize               from '@/Forms/Checkbox/CheckboxSize.vue';
@@ -77,7 +84,16 @@ import VerticalCheckboxGroup      from '@/Forms/Checkbox/VerticalCheckboxGroup.v
 import VerticalCheckboxGroupRaw   from '@/Forms/Checkbox/VerticalCheckboxGroup.vue?raw';
 
 interface Props {
-    section: Default | 'with-helper-text' | 'color' | 'with-custom-color' | 'size' | 'validation-state' | 'state' | 'inline-group' | 'vertical-group';
+    section: Default
+        | 'with-helper-text'
+        | 'color'
+        | 'with-custom-color'
+        | 'size'
+        | 'validation-state'
+        | 'state'
+        | 'inline-group'
+        | 'vertical-group'
+        | ApiType;
 }
 
 defineProps<Props>();

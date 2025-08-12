@@ -1,9 +1,15 @@
-import type { Color }     from '@/Shared/UseColor';
-import type { Size }      from '@/Shared/UseSize';
-import type { Placement } from '@floating-ui/vue';
+import type { Colorable }               from '@/Shared/UseColor';
+import type { Sizable }                 from '@/Shared/UseSize';
+import type { WithRequiredDefaultSlot } from '@/Shared/Utils/Types/Slots.ts';
+import type { Placement }               from '@floating-ui/vue';
+import type { Slot }                    from 'vue';
 
-export interface TooltipProps {
-    color?:     Color;
+export interface TooltipProps extends Colorable, Sizable {
+    /** The component's placement */
     placement?: Placement;
-    size?:      Size;
+}
+
+export interface TooltipSlots extends WithRequiredDefaultSlot {
+    /** The tooltip/popover's body that will appear on hover/click */
+    body: Slot;
 }

@@ -33,3 +33,13 @@
 ### Bordered
 
 <StatsDocs section="bordered" />
+
+## Api
+
+### Props
+
+<StatsDocs section="props" />
+
+### Slots
+
+<StatsDocs section="slots" />

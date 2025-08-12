@@ -1,5 +1,6 @@
 <template>
-    <div class="w-full"
+    <div :id="id"
+         class="w-full"
          :class="[isBordered && borderClass, responsiveClass]"
     >
         <table class="table"
@@ -36,8 +37,9 @@
 
 <script setup lang="ts">
 import type { TableProps }        from '@/Components/Table';
-import type { ComponentName }     from '@/Shared/Utils/Internal';
-import type { VNode }             from 'vue';
+import type { ComponentName }     from '@/Shared';
+import type { WithDefaultSlot }   from '@/Shared/Utils/Types/Slots.ts';
+import type { Slot }              from 'vue';
 import { FoTableHead }            from '@/Components';
 import { useFlyonUIVueAppConfig } from '@/Shared';
 import { useBorder }              from '@/Shared/UseBorder/Internal';
@@ -51,12 +53,18 @@ const props = withDefaults(defineProps<TableProps>(), {
     isPinned:   undefined,
 });
 
-defineSlots<{
-    caption?: () => VNode[];
-    head?:    () => VNode[];
-    default?: () => VNode[];
-    body?:    () => VNode[];
-    footer?:  () => VNode[];
+defineSlots<WithDefaultSlot & {
+    /** The table's <caption /> */
+    caption?: Slot;
+
+    /** The table's <thead /> */
+    head?: Slot;
+
+    /** The table's <tbody /> */
+    body?: Slot;
+
+    /** The table's <tfoot /> */
+    footer?: Slot;
 }>();
 
 const componentName: ComponentName = 'FoTable';

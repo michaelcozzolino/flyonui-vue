@@ -9,16 +9,16 @@
 </template>
 
 <script setup lang="ts">
-import type { MenuProps }            from '@/Components/Menu';
-import type { ComponentName }        from '@/Shared/Utils/Internal';
-import type { VNode }                from 'vue';
-import { menuTextPropsInjectionKey } from '@/Components/Menu/Internal';
-import { useClass }                  from '@/Shared/UseClass/Internal';
-import { useFlyonUIVueAppConfig }    from '@/Shared/UseFlyonUIVueAppConfig';
-import { useOrientation }            from '@/Shared/UseOrientation/Internal';
-import { useSize }                   from '@/Shared/UseSize/Internal';
-import { useRequiredSlotMessage }    from '@/Shared/Utils/Internal';
-import { computed, provide }         from 'vue';
+import type { MenuProps }               from '@/Components/Menu';
+import type { ComponentName }           from '@/Shared';
+import type { WithRequiredDefaultSlot } from '@/Shared/Utils/Types/Slots';
+import { menuTextPropsInjectionKey }    from '@/Components/Menu/Internal';
+import { useClass }                     from '@/Shared/UseClass/Internal';
+import { useFlyonUIVueAppConfig }       from '@/Shared/UseFlyonUIVueAppConfig';
+import { useOrientation }               from '@/Shared/UseOrientation/Internal';
+import { useSize }                      from '@/Shared/UseSize/Internal';
+import { useRequiredSlotMessage }       from '@/Shared/Utils/Internal';
+import { computed, provide }            from 'vue';
 
 const props = withDefaults(defineProps<MenuProps>(), {
     hideText:      false,
@@ -27,9 +27,7 @@ const props = withDefaults(defineProps<MenuProps>(), {
     isFlushed:     false,
 });
 
-defineSlots<{
-    default: () => VNode[];
-}>();
+defineSlots<WithRequiredDefaultSlot>();
 
 provide(menuTextPropsInjectionKey, computed(() => (
     { hideText: props.hideText, textAsTooltip: props.textAsTooltip }

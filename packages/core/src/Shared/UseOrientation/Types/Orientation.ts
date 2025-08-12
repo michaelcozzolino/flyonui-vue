@@ -1,4 +1,4 @@
-import type { ComponentName } from '@/Shared/Utils/Internal';
+import type { ComponentName } from '@/Shared';
 
 export type OrientableComponentName = Extract<
     ComponentName,
@@ -8,5 +8,6 @@ export type OrientableComponentName = Extract<
 export type Orientation = 'horizontal' | 'vertical';
 
 export interface Orientable {
+    /** The component's orientation */
     orientation?: Orientation;
 }

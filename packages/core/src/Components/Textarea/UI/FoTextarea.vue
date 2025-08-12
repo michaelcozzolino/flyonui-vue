@@ -58,8 +58,7 @@
 
 <script setup lang="ts">
 import type { TextareaLabelType, TextareaProps }   from '@/Components/Textarea';
-import type { IconSize }                           from '@/Shared';
-import type { ComponentName }                      from '@/Shared/Utils/Internal';
+import type { ComponentName, IconSize  }           from '@/Shared';
 import { FoFragment }                              from '@/Components/Fragment/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';
 import { FoIcon }                                  from '@/Components/Icon';
@@ -77,7 +76,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<TextareaProps>(), {
     isDisabled: false,
-    readonly:   false,
+    isReadonly: false,
     isValid:    undefined,
 });
 

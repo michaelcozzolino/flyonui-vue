@@ -47,3 +47,9 @@
 ### Readonly
 
 <TextareaDocs section="readonly" />
+
+## Api
+
+### Props
+
+<TextareaDocs section="props" />

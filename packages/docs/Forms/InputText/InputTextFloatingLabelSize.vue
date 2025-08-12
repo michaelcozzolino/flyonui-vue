@@ -1,28 +1,33 @@
 <template>
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
                  size="extraSmall"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
                  size="small"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
                  size="large"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  :label="{ text: 'Full Name', type: 'floating' }"
                  placeholder="John Doe"
                  size="extraLarge"

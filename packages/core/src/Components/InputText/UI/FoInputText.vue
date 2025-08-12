@@ -81,17 +81,16 @@
 import type { InputTextProps } from '@/Components/InputText';
 import type { LabelType }      from '@/Components/Label';
 
-import type { IconSize }                           from '@/Shared';
-import type { ComponentName }                      from '@/Shared/Utils/Internal';
-import type { VNode }                              from 'vue';
+import type { ComponentName, IconSize }            from '@/Shared';
+import type { WithAddonSlots, WithDefaultSlot }    from '@/Shared/Utils/Types/Slots.ts';
 import { FoFragment }                              from '@/Components/Fragment/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/Components/HelperText/Internal';
 import { FoIcon }                                  from '@/Components/Icon';
 import { usePositionableIcon }                     from '@/Components/Icon/Internal';
-import { isInJoinInjectionKey, useJoinItem }       from '@/Components/Join/Internal';
 
-import { FoLabel, useLabel } from '@/Components/Label/Internal';
+import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
 
+import { FoLabel, useLabel }       from '@/Components/Label/Internal';
 import { useFloatingLabel }        from '@/Shared/UseFloatingLabel/Internal';
 import { useFlyonUIVueAppConfig }  from '@/Shared/UseFlyonUIVueAppConfig';
 import { useShape }                from '@/Shared/UseShape/Internal';
@@ -107,11 +106,7 @@ const props = withDefaults(defineProps<InputTextProps>(), {
     withoutFocus: false,
 });
 
-const slots = defineSlots<{
-    default?: () => VNode[];
-    prepend?: () => VNode[];
-    append?:  () => VNode[];
-}>();
+const slots = defineSlots<WithDefaultSlot & WithAddonSlots>();
 
 const id                           = useId();
 const componentName: ComponentName = 'FoInputText';

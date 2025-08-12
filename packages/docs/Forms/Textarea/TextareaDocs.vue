@@ -75,11 +75,18 @@
                  :component="ReadonlyTextarea"
                  :preview="{ columns: 1, rows: 1 }"
     />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       component-names="FoTextarea"
+    />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }                   from '@/Api/Types/Api.ts';
 import type { Default }                   from 'flyonui-vue';
 import CodeSnippet                        from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs                  from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultTextarea                    from '@/Forms/Textarea/DefaultTextarea.vue';
 import DefaultTextareaRaw                 from '@/Forms/Textarea/DefaultTextarea.vue?raw';
 import DisabledTextarea                   from '@/Forms/Textarea/DisabledTextarea.vue';
@@ -114,7 +121,8 @@ interface Props {
         | 'with-helper-text'
         | 'validation-state'
         | 'disabled'
-        | 'readonly';
+        | 'readonly'
+        | ApiType;
 }
 
 defineProps<Props>();

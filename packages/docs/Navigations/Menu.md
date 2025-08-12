@@ -72,3 +72,13 @@ These docs are an use case to this, where the Vitepress router is used.
 ### Mega menu with submenu
 
 <MenuDocs section="mega-with-submenu" />
+
+## Api
+
+### Props
+
+<MenuDocs section="props" />
+
+### Slots
+
+<MenuDocs section="slots" />

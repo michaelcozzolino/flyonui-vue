@@ -2,7 +2,10 @@
     <FoSocialButton social="Facebook" />
     <FoSocialButton social="Twitter" />
     <FoSocialButton social="Linkedin" />
-    <FoSocialButton social="Github" />
+
+    <FoSocialButton social="Github"
+                    to="https://github.com/michaelcozzolino/flyonui-vue"
+    />
 
     <FoSocialButton preset="soft"
                     social="Facebook"

@@ -133,10 +133,17 @@
                  ]"
                  :component="MegaMenuWithSubmenu"
     />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       :component-names="['FoMenu', 'FoMenuItem']"
+    />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }                from '@/Api/Types/Api.ts';
 import CodeSnippet                     from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs               from '@/Api/UI/ComponentsApiDocs.vue';
 import ActiveItemMenuExternalRouter    from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue';
 import ActiveItemMenuExternalRouterRaw from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue?raw';
 import ActiveItemMenuVueRouterRaw      from '@/Navigations/Menu/ActiveItemMenuVueRouter.vue?raw';
@@ -187,7 +194,8 @@ interface Props {
         | 'with-title-as-parent'
         | 'with-submenu'
         | 'with-horizontal-submenu'
-        | 'mega-with-submenu';
+        | 'mega-with-submenu'
+        | ApiType;
 }
 
 defineProps<Props>();

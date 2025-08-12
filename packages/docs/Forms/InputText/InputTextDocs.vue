@@ -94,11 +94,19 @@
                  :code="JoinInputTextRaw"
                  :component="JoinInputText"
     />
+
+    <template v-else>
+        <ComponentsApiDocs :section="section"
+                           component-names="FoInputText"
+        />
+    </template>
 </template>
 
 <script setup lang="ts">
+import type { ApiType }                   from '@/Api/Types/Api.ts';
 import type { Default }                   from 'flyonui-vue';
 import CodeSnippet                        from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs                  from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultInputText                   from '@/Forms/InputText/DefaultInputText.vue';
 import DefaultInputTextRaw                from '@/Forms/InputText/DefaultInputText.vue?raw';
 import DisabledInputText                  from '@/Forms/InputText/DisabledInputText.vue';
@@ -145,7 +153,8 @@ interface Props {
         | 'without-focus'
         | 'disabled'
         | 'readonly'
-        | 'join';
+        | 'join'
+        | ApiType;
 }
 
 defineProps<Props>();

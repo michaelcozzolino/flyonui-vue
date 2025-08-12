@@ -1,10 +1,12 @@
 <template>
     <FoInputText v-model="name"
+                 class="max-w-sm"
                  :label="{ text: 'Name', type: 'inline' }"
                  placeholder="FlyonUI"
     />
 
     <FoInputText v-model="email"
+                 class="max-w-sm"
                  :label="{ text: 'Email', type: 'inline' }"
                  placeholder="admin@site.com"
     />

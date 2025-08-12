@@ -1,29 +1,34 @@
 <template>
     <FoInputText v-model="name"
+                 class="max-w-sm"
                  :label="{ text: 'Name', type: 'inline' }"
                  icon="tabler:user"
                  placeholder="John Doe"
     />
 
     <FoInputText v-model="email"
+                 class="max-w-sm"
                  :label="{ text: 'Email', type: 'floating' }"
                  :icon="{ left: 'tabler:brand-mailgun' }"
                  placeholder="admin@site.com"
     />
 
     <FoInputText v-model="cardNumber"
+                 class="max-w-sm"
                  :label="{ text: 'Card Number', type: 'inline' }"
                  :icon="{ right: 'tabler:brand-mastercard' }"
                  placeholder="xxxx-xxxx-xxxx-xxxx"
     />
 
     <FoInputText v-model="cardNumber"
+                 class="max-w-sm"
                  :label="{ text: 'Card Number', type: 'floating' }"
                  :icon="{ right: 'tabler:brand-mastercard' }"
                  placeholder="xxxx-xxxx-xxxx-xxxx"
     />
 
     <FoInputText v-model="customDomain"
+                 class="max-w-sm"
                  :label="{ text: 'Domain', type: 'floating' }"
                  :icon="{ left: 'gridicons:domains' }"
                  placeholder="My custom domain"
@@ -36,6 +41,7 @@
     </FoInputText>
 
     <FoInputText v-model="customDomain"
+                 class="max-w-sm"
                  :label="{ text: 'Domain', type: 'floating' }"
                  placeholder="My custom domain"
     >
@@ -54,6 +60,7 @@
     <!--    todo: add kbd -->
 
     <FoInputText v-model="customDomain"
+                 class="max-w-sm"
                  placeholder="John Doe"
     >
         <template #prepend>

@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import type { ListGroupProps }              from '@/Components/ListGroup';
-import type { ComponentName }               from '@/Shared/Utils/Internal';
+import type { ComponentName }               from '@/Shared';
 import { FoFragment }                       from '@/Components/Fragment/Internal';
 import { listGroupOrientationInjectionKey } from '@/Components/ListGroup/Internal';
 import { useClass }                         from '@/Shared/UseClass/Internal';

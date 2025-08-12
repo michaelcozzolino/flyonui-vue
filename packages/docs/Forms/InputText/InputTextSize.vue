@@ -1,24 +1,29 @@
 <template>
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  placeholder="John doe"
                  size="extraSmall"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  placeholder="John doe"
                  size="small"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  placeholder="John doe"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  placeholder="John doe"
                  size="large"
     />
 
     <FoInputText v-model="input"
+                 class="max-w-sm"
                  placeholder="John doe"
                  size="extraLarge"
     />

@@ -1,4 +1,4 @@
-import type { ComponentName } from '@/Shared/Utils/Internal';
+import type { ComponentName } from '@/Shared';
 
 export type SizableComponentName = Extract<
     ComponentName,
@@ -18,6 +18,7 @@ export type SizableComponentName = Extract<
 export type Size = 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge';
 
 export interface Sizable<T extends Size = Size> {
+    /** The component's size */
     size?: T;
 }
 

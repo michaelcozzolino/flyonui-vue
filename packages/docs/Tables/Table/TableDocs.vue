@@ -100,11 +100,18 @@
                  :code="TableWithStyledHeaderRaw"
                  :component="TableWithStyledHeader"
     />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       :component-names="['FoTable', 'FoTableHead', 'FoTableHeader', 'FoTableBody', 'FoTableRow', 'FoTableColumn']"
+    />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }         from '@/Api/Types/Api.ts';
 import type { Default }         from 'flyonui-vue';
 import CodeSnippet              from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs        from '@/Api/UI/ComponentsApiDocs.vue';
 import BorderedTable            from '@/Tables/Table/BorderedTable.vue';
 import BorderedTableRaw         from '@/Tables/Table/BorderedTable.vue?raw';
 import BorderlessTable          from '@/Tables/Table/BorderlessTable.vue';
@@ -157,7 +164,8 @@ interface Props {
         | 'with-footer'
         | 'responsive'
         | 'with-shadow'
-        | 'with-styled-header';
+        | 'with-styled-header'
+        | ApiType;
 }
 
 defineProps<Props>();

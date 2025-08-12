@@ -46,7 +46,8 @@
 <script setup lang="ts">
 import type { Navigation }                                                    from '@/Components/Link';
 import type { MenuItem }                                                      from '@/Components/Menu';
-import type { ComponentName }                                                 from '@/Shared/Utils/Internal';
+import type { ComponentName }                                                 from '@/Shared';
+import type { WithAddonSlots, WithDefaultSlot }                               from '@/Shared/Utils/Types/Slots.ts';
 import { FoIcon }                                                             from '@/Components/Icon';
 import { FoLink }                                                             from '@/Components/Link';
 import { isInMenuItemInjectionKey, menuTextPropsInjectionKey }                from '@/Components/Menu/Internal';
@@ -64,6 +65,8 @@ const props = defineProps<Props>();
 const emit = defineEmits<{
     (e: 'click:item'): void;
 }>();
+
+defineSlots<WithDefaultSlot & WithAddonSlots>();
 
 const componentName: ComponentName = 'FoMenuItem';
 

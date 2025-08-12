@@ -1,13 +1,19 @@
 <template>
-    <th>
+    <th :colspan="colspan">
         <slot />
     </th>
 </template>
 
 <script setup lang="ts">
-import type { VNode } from 'vue';
+import type { WithDefaultSlot } from '@/Shared/Utils/Types/Slots.ts';
 
-defineSlots<{
-    default?: () => VNode[];
-}>();
+// todo: add rowspan too and also for td
+interface Props {
+    /** The number of columns for which a cell should span over */
+    colspan?: number;
+}
+
+defineProps<Props>();
+
+defineSlots<WithDefaultSlot>();
 </script>

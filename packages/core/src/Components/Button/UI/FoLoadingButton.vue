@@ -23,28 +23,17 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps }        from '@/Components/Button/Types/Button';
+import type { LoadingButtonProps } from '@/Components/Button/Types/Button';
 import type { LoadingProps }       from '@/Components/Loading/Types/Loading';
 import type { HorizontalPosition } from '@/Shared/Utils';
-import type { VNode }              from 'vue';
+import type { Slot }               from 'vue';
 import { FoButton }                from '@/Components/Button';
 import { FoLoading }               from '@/Components/Loading';
 import { useFlyonUIVueAppConfig }  from '@/Shared/UseFlyonUIVueAppConfig';
 import { reactiveOmit }            from '@vueuse/core';
-import { computed }                from 'vue';
+import { computed  }               from 'vue';
 
-interface Props extends Omit<ButtonProps, 'icon'> {
-    isLoading?: boolean;
-    icon?: {
-        position?: HorizontalPosition;
-    } & LoadingProps;
-    text?: {
-        loading:    string;
-        notLoading: string;
-    };
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<LoadingButtonProps>(), {
     isLoading: true,
     icon:      () => {
         return { animation: 'spinner' };
@@ -52,8 +41,11 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 defineSlots<{
-    loading?:    () => VNode[];
-    notLoading?: () => VNode[];
+    /** The content to be shown when the loading state is true */
+    loading?: Slot;
+
+    /** The content to be shown when the loading state is false */
+    notLoading?: Slot;
 }>();
 
 const { config } = useFlyonUIVueAppConfig();

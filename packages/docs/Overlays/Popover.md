@@ -12,3 +12,10 @@
 
 <PopoverDocs section="placement" />
 
+### Props
+
+<PopoverDocs section="props" />
+
+### Slots
+
+<PopoverDocs section="slots" />

@@ -2,10 +2,13 @@ import type { ConfigurableComponentProps } from '@/Shared/UseFlyonUIVueAppConfig
 
 type NonConfigurableComponentName = 'FoJoin'
     | 'FoCheckboxGroup'
+    | 'FoDatalist'
     | 'FoLabel'
     | 'FoListGroup'
     | 'FoListGroupItem'
+    | 'FoLoadingButton'
     | 'FoMenuItem'
+    | 'FoSocialButton'
     | 'FoStat'
     | 'FoStatDescription'
     | 'FoStats'
@@ -15,6 +18,7 @@ type NonConfigurableComponentName = 'FoJoin'
     | 'FoTableBody'
     | 'FoTableColumn'
     | 'FoTableHead'
+    | 'FoTableHeader'
     | 'FoTableRow';
 
 export type ConfigurableComponentName = keyof ConfigurableComponentProps;

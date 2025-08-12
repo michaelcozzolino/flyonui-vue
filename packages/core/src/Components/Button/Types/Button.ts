@@ -1,29 +1,47 @@
-import type { WithConfigurableIcon } from '@/Components/Icon';
-import type { Colorable }            from '@/Shared/UseColor';
-import type { WithGlass }            from '@/Shared/UseGlass';
-import type { MaybeStringId }        from '@/Shared/UseIdentifiable';
-import type { Preset }               from '@/Shared/UsePreset';
-import type { Responsive }           from '@/Shared/UseResponsitivity';
-import type { Shapeable }            from '@/Shared/UseShape';
-import type { Sizable }              from '@/Shared/UseSize';
-import type { Disableable }          from '@/Shared/UseState';
-import type { Default }              from '@/Shared/Utils';
-import type { RouteRecordRaw }       from 'vue-router';
+import type { LoadingProps, WithTo }        from '@/Components';
+import type { WithConfigurableIcon }        from '@/Components/Icon';
+import type { Default, HorizontalPosition } from '@/Shared';
+import type { Colorable }                   from '@/Shared/UseColor';
+import type { WithGlass }                   from '@/Shared/UseGlass';
+import type { MaybeStringId }               from '@/Shared/UseIdentifiable';
+import type { Preset, Presettable }         from '@/Shared/UsePreset';
+import type { Responsive }                  from '@/Shared/UseResponsitivity';
+import type { Shapeable }                   from '@/Shared/UseShape';
+import type { Sizable }                     from '@/Shared/UseSize';
+import type { Disableable }                 from '@/Shared/UseState';
 
 // todo: in case it is used by other components, just move it to shared
 export type Layout = Default | 'wide' | 'block';
 
-export interface ButtonProps extends MaybeStringId, Colorable, Disableable, Responsive, Shapeable, Sizable, WithGlass, WithConfigurableIcon {
-    to?:       RouteRecordRaw;
-    layout?:   Layout;
+export interface ButtonProps extends MaybeStringId,
+    Colorable,
+    Disableable,
+    Presettable,
+    Responsive,
+    Shapeable,
+    Sizable,
+    WithGlass,
+    WithConfigurableIcon,
+    WithTo {
+    /** The button's layout */
+    layout?: Layout;
+
+    /** The button's active state, when undefined it is neither active nor inactive */
     isActive?: boolean;
-    preset?:   Preset;
+}
+
+export interface LoadingButtonProps extends Omit<ButtonProps, 'icon'> {
+    /** True if the component is in loading state */
+    isLoading?: boolean;
+    icon?: {
+        position?: HorizontalPosition;
+    } & LoadingProps;
 }
 
 export type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
 export type SocialButtonPreset = Extract<Preset, 'solid' | 'soft' | 'outline'>;
 
-export interface SocialButtonProps extends Omit<ButtonProps, 'preset'> {
-    social:  Social;
-    preset?: SocialButtonPreset;
+export interface SocialButtonProps extends Presettable<SocialButtonPreset> {
+    /** The button's social platform */
+    social: Social;
 }

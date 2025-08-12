@@ -85,11 +85,18 @@
                  :code="SelectRefUsageRaw"
                  :component="SelectRefUsage"
     />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       :component-names="['FoSelect', 'FoDatalist']"
+    />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }                from '@/Api/Types/Api.ts';
 import type { Default }                from 'flyonui-vue';
 import CodeSnippet                     from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs               from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultSelect                   from '@/Forms/Select/DefaultSelect.vue';
 import DefaultSelectRaw                from '@/Forms/Select/DefaultSelect.vue?raw';
 import DefaultSelectSize               from '@/Forms/Select/DefaultSelectSize.vue';
@@ -130,7 +137,8 @@ interface Props {
         | 'disabled'
         | 'datalist'
         | 'optgroup'
-        | 'ref-usage';
+        | 'ref-usage'
+        | ApiType;
 }
 
 defineProps<Props>();

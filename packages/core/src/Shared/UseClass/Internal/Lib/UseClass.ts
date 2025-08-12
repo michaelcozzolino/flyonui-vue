@@ -1,4 +1,4 @@
-import type { ComponentName }                 from '@/Shared/Utils/Internal';
+import type { ComponentName }                 from '@/Shared';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import { computed, toValue }                  from 'vue';
 

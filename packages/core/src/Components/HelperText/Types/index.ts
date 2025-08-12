@@ -1,1 +1,1 @@
-export * from '@/Components/HelperText/Types/PositionableHelperText';
+export * from '@/Components/HelperText/Types/HelperText.ts';

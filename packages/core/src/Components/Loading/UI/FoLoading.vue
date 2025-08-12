@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import type { Animation, LoadingProps } from '@/Components/Loading/';
-import type { ComponentName }           from '@/Shared/Utils/Internal';
+import type { ComponentName }           from '@/Shared';
 import { useTextColor }                 from '@/Shared/UseColor/Internal';
 import { useFlyonUIVueAppConfig }       from '@/Shared/UseFlyonUIVueAppConfig';
 import { useSize }                      from '@/Shared/UseSize/Internal';

@@ -1,4 +1,4 @@
-import type { ComponentName } from '@/Shared/Utils/Internal';
+import type { ComponentName } from '@/Shared';
 
 // todo: check everywhere it needs to be used
 export function useRequiredSlotMessage(

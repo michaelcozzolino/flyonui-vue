@@ -1,33 +1,30 @@
 <template>
-    <div :id="id"
-         data-test="code-snippet"
-         class="vp-raw"
+    <section :id="id"
+             data-test="code-snippet"
+             class="vp-raw gap-4 border-neutral/10 rounded-box flex flex-col border p-3 sm:p-6 md:my-8"
     >
-        <section class="gap-4 border-neutral/10 rounded-box flex flex-col border p-3 sm:p-6 md:my-8">
-            <div class="gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6"
-                 data-test="flyonui-vue-preview"
-                 :class="previewGridClass"
-            >
-                <ClientOnly>
-                    <component :is="component" />
-                </ClientOnly>
-            </div>
-            <!-- todo: make another code snippet to fulfill all my needs -->
-            <VueCodeHighlighter v-for="codeSnippet in codeSnippets"
-                                :key="codeSnippet.title"
-                                class="max-h-96 overflow-y-auto"
-                                :title="codeSnippet.title"
-                                :lang="codeSnippet.lang"
-                                :code="codeSnippet.code"
-            />
-        </section>
-    </div>
+        <div class="gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6"
+             data-test="flyonui-vue-preview"
+             :class="previewGridClass"
+        >
+            <ClientOnly>
+                <component :is="component" />
+            </ClientOnly>
+        </div>
+        <!-- todo: make another code snippet to fulfill all my needs -->
+        <VueCodeHighlighter v-for="codeSnippet in codeSnippets"
+                            :key="codeSnippet.title"
+                            class="max-h-96 overflow-y-auto"
+                            :title="codeSnippet.title"
+                            :lang="codeSnippet.lang"
+                            :code="codeSnippet.code"
+        />
+    </section>
 </template>
 
 <script setup lang="ts">
-import type { Component }     from 'vue';
-import { VueCodeHighlighter } from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
-import { computed }           from 'vue';
+import type { Component } from 'vue';
+import { computed }       from 'vue';
 
 interface Props {
     /**

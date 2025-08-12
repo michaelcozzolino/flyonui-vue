@@ -5,9 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import type { VNode } from 'vue';
+import type { WithDefaultSlot } from '@/Shared/Utils/Types/Slots.ts';
 
-defineSlots<{
-    default?: () => VNode[];
-}>();
+defineSlots<WithDefaultSlot>();
 </script>

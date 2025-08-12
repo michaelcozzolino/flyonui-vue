@@ -1,11 +1,15 @@
 import type { LabelType }                  from '@/Components/Label';
+import type { ComponentName }              from '@/Shared';
 import type { FloatingLabelComponentName } from '@/Shared/UseFloatingLabel';
-import type { ComponentName }              from '@/Shared/Utils/Internal';
 
 export type ConfigurableLabelComponentName = Extract<ComponentName, 'FoInputText' | 'FoSelect' | 'FoTextarea'>;
 
-export interface LabelProps {
+export interface LabelProps<T extends LabelType = LabelType> {
     componentName?: FloatingLabelComponentName;
-    type?:          LabelType;
-    isHidden?:      boolean;
+
+    /** The Label's type */
+    type?: T;
+
+    /** Hides the component visually */
+    isHidden?: boolean;
 }

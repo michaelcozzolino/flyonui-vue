@@ -13,6 +13,7 @@
                    glassClass,
                    isDisabled && 'btn-disabled',
                ]"
+               :to="to"
     >
         <slot name="prepend">
             <FoIcon v-if="buttonIcon?.left"
@@ -33,28 +34,31 @@
 </template>
 
 <script lang="ts" setup>
-import type { ButtonProps }   from '@/Components/Button';
-import type { ComponentName } from '@/Shared/Utils/Internal';
+import type { ButtonProps } from '@/Components';
 
-import { FoIcon }                            from '@/Components/Icon';
-import { usePositionableIcon }               from '@/Components/Icon/Internal';
-import { isInJoinInjectionKey, useJoinItem } from '@/Components/Join/Internal';
-import { useColor }                          from '@/Shared/UseColor/Internal';
-import { useFlyonUIVueAppConfig }            from '@/Shared/UseFlyonUIVueAppConfig';
-import { useGlass }                          from '@/Shared/UseGlass/Internal';
-import { usePreset }                         from '@/Shared/UsePreset/Internal';
-import { useResponsitivity }                 from '@/Shared/UseResponsitivity/Internal';
-import { isTextAllowedForShape, useShape }   from '@/Shared/UseShape/Internal';
-import { useSize }                           from '@/Shared/UseSize/Internal';
-import { useState }                          from '@/Shared/UseState/Internal';
-import { computed, inject }                  from 'vue';
-import { RouterLink }                        from 'vue-router';
+import type { ComponentName }                   from '@/Shared';
+import type { WithAddonSlots, WithDefaultSlot } from '@/Shared/Utils/Types/Slots.ts';
+import { FoIcon }                               from '@/Components/Icon';
+import { usePositionableIcon }                  from '@/Components/Icon/Internal';
+import { isInJoinInjectionKey, useJoinItem }    from '@/Components/Join/Internal';
+import { FoRouterLink }                         from '@/Components/Link/Internal';
+import { useColor }                             from '@/Shared/UseColor/Internal';
+import { useFlyonUIVueAppConfig }               from '@/Shared/UseFlyonUIVueAppConfig';
+import { useGlass }                             from '@/Shared/UseGlass/Internal';
+import { usePreset }                            from '@/Shared/UsePreset/Internal';
+import { useResponsitivity }                    from '@/Shared/UseResponsitivity/Internal';
+import { isTextAllowedForShape, useShape }      from '@/Shared/UseShape/Internal';
+import { useSize }                              from '@/Shared/UseSize/Internal';
+import { useState }                             from '@/Shared/UseState/Internal';
+import { computed, inject }                     from 'vue';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
     isActive:     false,
     layout:       'default',
     isResponsive: false,
 });
+
+defineSlots<WithDefaultSlot & WithAddonSlots>();
 
 const componentName: ComponentName = 'FoButton';
 const { config }                   = useFlyonUIVueAppConfig();
@@ -66,7 +70,7 @@ const buttonTag = computed(() => {
         return 'button';
     }
 
-    return RouterLink;
+    return FoRouterLink;
 });
 
 const buttonIcon = usePositionableIcon(

@@ -45,7 +45,7 @@
 
 <script lang="ts" setup>
 import type { CheckboxProps }             from '@/Components/Checkbox/Types/Checkbox';
-import type { ComponentName }             from '@/Shared/Utils/Internal';
+import type { ComponentName }             from '@/Shared';
 import { isInCheckboxGroupInjectionKey }  from '@/Components/Checkbox/Internal';
 import { FoLabel }                        from '@/Components/Label/Internal';
 import { useColor }                       from '@/Shared/UseColor/Internal';

@@ -5,52 +5,59 @@
                  :component="DefaultKeyboard"
     />
 
-    <CodeSnippet v-if="section === 'size'"
+    <CodeSnippet v-else-if="section === 'size'"
                  :id="section"
                  :code="KeyboardSizeRaw"
                  :component="KeyboardSize"
     />
 
-    <CodeSnippet v-if="section === 'in-text'"
+    <CodeSnippet v-else-if="section === 'in-text'"
                  :id="section"
                  :code="InTextKeyboardRaw"
                  :component="InTextKeyboard"
     />
 
-    <CodeSnippet v-if="section === 'key-combinations'"
+    <CodeSnippet v-else-if="section === 'key-combinations'"
                  :id="section"
                  :code="KeyCombinationsKeyboardRaw"
                  :component="KeyCombinationsKeyboard"
     />
 
-    <CodeSnippet v-if="section === 'function-keys'"
+    <CodeSnippet v-else-if="section === 'function-keys'"
                  :id="section"
                  :code="FunctionKeysKeyboardRaw"
                  :component="FunctionKeysKeyboard"
     />
 
-    <CodeSnippet v-if="section === 'full-keyboard'"
+    <CodeSnippet v-else-if="section === 'full-keyboard'"
                  :id="section"
                  :code="FullKeyboardRaw"
                  :component="FullKeyboard"
     />
 
-    <CodeSnippet v-if="section === 'arrow-keys'"
+    <CodeSnippet v-else-if="section === 'arrow-keys'"
                  :id="section"
                  :code="ArrowKeysKeyboardRaw"
                  :component="ArrowKeysKeyboard"
     />
 
-    <CodeSnippet v-if="section === 'number-keys'"
+    <CodeSnippet v-else-if="section === 'number-keys'"
                  :id="section"
                  :code="NumberKeysKeyboardRaw"
                  :component="NumberKeysKeyboard"
     />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       component-names="FoKeyboard"
+    />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }           from '@/Api/Types/Api.ts';
 import type { Default }           from 'flyonui-vue';
 import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs          from '@/Api/UI/ComponentsApiDocs.vue';
 import ArrowKeysKeyboard          from '@/Content/Keyboard/ArrowKeysKeyboard.vue';
 import ArrowKeysKeyboardRaw       from '@/Content/Keyboard/ArrowKeysKeyboard.vue?raw';
 import DefaultKeyboard            from '@/Content/Keyboard/DefaultKeyboard.vue';
@@ -69,7 +76,15 @@ import NumberKeysKeyboard         from '@/Content/Keyboard/NumberKeysKeyboard.vu
 import NumberKeysKeyboardRaw      from '@/Content/Keyboard/NumberKeysKeyboard.vue?raw';
 
 interface Props {
-    section: Default | 'size' | 'in-text' | 'key-combinations' | 'function-keys' | 'full-keyboard' | 'arrow-keys' | 'number-keys';
+    section: Default
+        | 'size'
+        | 'in-text'
+        | 'key-combinations'
+        | 'function-keys'
+        | 'full-keyboard'
+        | 'arrow-keys'
+        | 'number-keys'
+        | ApiType;
 }
 
 defineProps<Props>();

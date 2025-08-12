@@ -77,3 +77,14 @@
 <TableDocs section="with-styled-header" />
 
 [//]: # (todo: product table, table with card)
+
+## Api
+
+### Props
+
+<TableDocs section="props" />
+
+### Slots
+
+<TableDocs section="slots" />
+

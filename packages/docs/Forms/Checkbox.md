@@ -35,3 +35,13 @@
 ### Vertical checkbox group
 
 <CheckboxDocs section="vertical-group" />
+
+## Api
+
+### Props
+
+<CheckboxDocs section="props" />
+
+### Slots
+
+<CheckboxDocs section="slots" />

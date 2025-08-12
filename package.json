@@ -14,7 +14,8 @@
         "lint": "yarn workspaces foreach -Apt run lint",
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
-        "audit": "yarn npm audit --all"
+        "audit": "yarn npm audit --all",
+        "generate-components-api": "node scripts/GenerateComponentsApi.mts"
     },
     "dependencies": {
         "change-case": "^5.4.4"
@@ -29,6 +30,18 @@
         "concurrently": "^9.1.2",
         "eslint": "^9.23.0",
         "playwright": "~1.47.2",
-        "vitest": "^3.1.4"
+        "typescript": "^5.8.2",
+        "vite": "^6.3.5",
+        "vitest": "^3.1.4",
+        "vue": "^3.5.18",
+        "vue-component-meta": "^3.0.5",
+        "vue-component-type-helpers": "3.0.1"
+    },
+    "resolutions": {
+        "@playwright/test": "~1.47.2",
+        "playwright": "~1.47.2",
+        "vite": "6.3.5",
+        "vue": "3.5.18",
+        "typescript": "5.8.2"
     }
 }

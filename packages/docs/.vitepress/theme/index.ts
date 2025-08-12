@@ -3,11 +3,12 @@ import type { App, Component, DefineComponent } from 'vue';
 import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
 import Layout                                   from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 
+import ComponentsApi                      from '@/Api/UI/ComponentsApi.vue';
 import BadgeDocs                          from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                         from '@/Components/Button/ButtonDocs.vue';
 import ListGroupDocs                      from '@/Components/ListGroup/ListGroupDocs.vue';
 import LoadingDocs                        from '@/Components/Loading/LoadingDocs.vue';
-import StatsDocs                          from '@/Components/Stat/StatsDocs.vue';
+import StatsDocs                          from '@/Components/Stats/StatsDocs.vue';
 import SwapDocs                           from '@/Components/Swap/SwapDocs.vue';
 import HeadingDocs                        from '@/Content/Heading/HeadingDocs.vue';
 import KeyboardDocs                       from '@/Content/Keyboard/KeyboardDocs.vue';
@@ -25,7 +26,7 @@ import NavbarDocs                         from '@/Navigations/Navbar/NavbarDocs.
 import PopoverDocs                        from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                        from '@/Overlays/Tooltip/TooltipDocs.vue';
 import Playground                         from '@/Playground/Playground.vue';
-import CreateFlyonUiVueAppDocs            from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
+import CreateFlyonUIVueAppDocs            from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
 import TableDocs                          from '@/Tables/Table/TableDocs.vue';
 import { FoSelectThemeController, vMask } from 'flyonui-vue';
 import { createPinia }                    from 'pinia';
@@ -90,7 +91,8 @@ export default {
             { name: 'Playground', instance: Playground },
             { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
             { name: 'VueCodeHighlighter', instance: VueCodeHighlighter },
-            { name: 'CreateFlyonUIVueAppDocs', instance: CreateFlyonUiVueAppDocs },
+            { name: 'CreateFlyonUIVueAppDocs', instance: CreateFlyonUIVueAppDocs },
+            { name: 'ComponentsApi', instance: ComponentsApi },
         ]);
     },
 } satisfies Theme;

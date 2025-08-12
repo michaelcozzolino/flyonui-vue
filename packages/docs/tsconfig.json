@@ -19,7 +19,8 @@
         "./**/*.ts",
         "./**/*.d.ts",
         "./**/*.tsx",
-        "./**/*.vue"
+        "./**/*.vue",
+        "./Api/Lib/ComponentsApi.json"
     ],
     "exclude": [
         "node_modules",
