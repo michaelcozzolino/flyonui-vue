@@ -7747,6 +7747,8 @@ __metadata:
     change-case: "npm:^5.4.4"
     concurrently: "npm:^9.2.0"
     eslint: "npm:^9.33.0"
+    flyonui: "npm:^2.4.0"
+    flyonui-vue: "workspace:*"
     playwright: "npm:~1.54.2"
     typescript: "npm:^5.9.2"
     vitest: "npm:^3.2.4"
