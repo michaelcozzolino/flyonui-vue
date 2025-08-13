@@ -21,7 +21,8 @@
         "type-check": "vue-tsc --noEmit -p tsconfig.json"
     },
     "dependencies": {
-        "change-case": "^5.4.4"
+        "change-case": "^5.4.4",
+        "flyonui-vue": "workspace:*"
     },
     "devDependencies": {
         "@michaelcozzolino/eslint-config": "^1.1.2",
@@ -32,7 +33,6 @@
         "concurrently": "^9.2.0",
         "eslint": "^9.33.0",
         "flyonui": "^2.4.0",
-        "flyonui-vue": "workspace:*",
         "playwright": "~1.54.2",
         "typescript": "^5.9.2",
         "vitest": "^3.2.4",
