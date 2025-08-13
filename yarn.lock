@@ -2203,15 +2203,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 22.14.1
-  resolution: "@types/node@npm:22.14.1"
-  dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10c0/d49c4d00403b1c2348cf0701b505fd636d80aabe18102105998dc62fdd36dcaf911e73c7a868c48c21c1022b825c67b475b65b1222d84b704d8244d152bb7f86
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:^22.17.1":
   version: 22.17.1
   resolution: "@types/node@npm:22.17.1"
@@ -2993,7 +2984,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:13.6.0, @vueuse/core@npm:^13.1.0, @vueuse/core@npm:^13.6.0":
+"@vueuse/core@npm:^13.6.0":
   version: 13.6.0
   resolution: "@vueuse/core@npm:13.6.0"
   dependencies:
@@ -3003,19 +2994,6 @@ __metadata:
   peerDependencies:
     vue: ^3.5.0
   checksum: 10c0/c9f7b4c95b7bbca5c0b168fb1f238a4db5a0d7b3e7dc89b5f35dc4812c5a8efa9b441af7f5a79b20829942e06e66e7298c3d10809c9ea104500317556b791e75
-  languageName: node
-  linkType: hard
-
-"@vueuse/core@npm:^13.0.0":
-  version: 13.0.0
-  resolution: "@vueuse/core@npm:13.0.0"
-  dependencies:
-    "@types/web-bluetooth": "npm:^0.0.21"
-    "@vueuse/metadata": "npm:13.0.0"
-    "@vueuse/shared": "npm:13.0.0"
-  peerDependencies:
-    vue: ^3.5.0
-  checksum: 10c0/1ec663fb17870b43d176180f114b46a235564276ca38e87b487685c6e44f6d1a5cec5569ca73f0641b8e5aa2acb874e36f5ad0e8c241a1505e9b5d79d83629ec
   languageName: node
   linkType: hard
 
@@ -3082,13 +3060,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:13.0.0":
-  version: 13.0.0
-  resolution: "@vueuse/metadata@npm:13.0.0"
-  checksum: 10c0/335d09b15088b47c52487a74316f4298dc5323c261d9d17aba30cf5e21a3cb8b623134cf10fa538cf29952bb77dcdc4a25b6ed92db1633218125eb6c7b64a053
-  languageName: node
-  linkType: hard
-
 "@vueuse/metadata@npm:13.6.0":
   version: 13.6.0
   resolution: "@vueuse/metadata@npm:13.6.0"
@@ -3116,21 +3087,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:13.0.0, @vueuse/shared@npm:^13.0.0":
-  version: 13.0.0
-  resolution: "@vueuse/shared@npm:13.0.0"
-  peerDependencies:
-    vue: ^3.5.0
-  checksum: 10c0/d7730ed05f90a421763f9b5e6e5ac64f0e085fade6090724f09990018106bca8dd63ed6070f2f471a472b84eaf98e0fc8307c282ec0ecb798eaf4035cb195cee
-  languageName: node
-  linkType: hard
-
 "@vueuse/shared@npm:13.6.0":
   version: 13.6.0
   resolution: "@vueuse/shared@npm:13.6.0"
   peerDependencies:
     vue: ^3.5.0
   checksum: 10c0/378e8158ea13225a33e6fafb91a2e94c2720a7f93b9227d6e3277e22d081d92f59b1a4a946692bc47f5d4a5d7f32bf1bbeab3a941a7b68fec2aa04df8ec8aa19
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "@vueuse/shared@npm:13.0.0"
+  peerDependencies:
+    vue: ^3.5.0
+  checksum: 10c0/d7730ed05f90a421763f9b5e6e5ac64f0e085fade6090724f09990018106bca8dd63ed6070f2f471a472b84eaf98e0fc8307c282ec0ecb798eaf4035cb195cee
   languageName: node
   linkType: hard
 
@@ -8536,7 +8507,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.1.11, tailwindcss@npm:^4.1.11":
+"tailwindcss@npm:^4.1.11":
   version: 4.1.11
   resolution: "tailwindcss@npm:4.1.11"
   checksum: 10c0/e23eed0a0d6557b3aff8ba320b82758988ca67c351ee9b33dfc646e83a64f6eaeca6183dfc97e931f7b2fab46e925090066edd697d2ede3f396c9fdeb4af24c1
@@ -9083,7 +9054,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.3.5":
+"vite@npm:^6.2.6":
   version: 6.3.5
   resolution: "vite@npm:6.3.5"
   dependencies:

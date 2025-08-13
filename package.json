@@ -37,13 +37,25 @@
         "vue-component-type-helpers": "3.0.1"
     },
     "resolutions": {
+        "@iconify/vue": "^4.3.0",
         "@playwright/test": "~1.54.2",
+        "@types/node": "^22.17.1",
         "@vitejs/plugin-vue": "^5.2.4",
+        "@vue/test-utils": "^2.4.6",
+        "@vue/tsconfig": "^0.7.0",
+        "@vueuse/core": "^13.6.0",
+        "concurrently": "^9.2.0",
+        "flyonui": "^2.4.0",
+        "flyonui-vue": "workspace:*",
         "jsdom": "^26.1.0",
         "playwright": "~1.54.2",
+        "sass-embedded": "^1.90.0",
+        "tailwindcss": "^4.1.11",
+        "tsc-alias": "^1.8.16",
         "typescript": "^5.9.2",
-        "vite": "^6.3.5",
+        "vite": "^6.2.6",
         "vue": "^3.5.18",
+        "vue-router": "^4.5.1",
         "vue-tsc": "^3.0.5"
     }
 }

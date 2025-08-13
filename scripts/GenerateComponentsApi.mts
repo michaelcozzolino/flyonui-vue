@@ -38,14 +38,14 @@ async function generateComponentsApi(): Promise<void> {
 
         writeFile(
             join(componentApiDocsPath, 'ComponentsApi.json'),
-            JSON.stringify(componentsApi, null, 2).replaceAll(
+            `${JSON.stringify(componentsApi, null, 4).replaceAll(
                 // Replaces the absolute path of the file with the GitHub url
                 /(?<="file":\s*")(?:[A-Za-z]:)?(?:(?:\/|\\\\)[^"\\/]+)*(?:\/|\\\\)flyonui-vue(?=\/|\\\\|")/g,
                 'https://github.com/michaelcozzolino/flyonui-vue/blob/2.x', // todo: the 2.x must be dynamic
-            ),
+            )}\n`,
             'utf-8',
         );
     }).catch((e: unknown) => console.error(e));
 }
 
-generateComponentsApi();
+await generateComponentsApi().catch((e: unknown) => console.error(e));
