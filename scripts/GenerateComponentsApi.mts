@@ -1,4 +1,4 @@
-import type { ComponentName }                     from 'flyonui-vue/dist-vue/Shared';
+import type { ComponentName }                     from 'flyonui-vue';
 import type { ComponentMeta, MetaCheckerOptions } from 'vue-component-meta';
 import { writeFile }                              from 'node:fs/promises';
 import * as path                                  from 'node:path';
@@ -31,7 +31,7 @@ async function generateComponentsApi(): Promise<void> {
         for (const componentPath of componentsPaths) {
             const { name } = path.parse(componentPath);
 
-            componentsApi[name] = tsconfigChecker.getComponentMeta(componentPath);
+            componentsApi[name as ComponentName] = tsconfigChecker.getComponentMeta(componentPath);
         }
 
         const componentApiDocsPath = resolve(packagesPath, 'docs/Api/Lib');
