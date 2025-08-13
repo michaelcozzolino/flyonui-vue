@@ -22,7 +22,7 @@
     },
     "dependencies": {
         "change-case": "^5.4.4",
-        "flyonui-vue": "workspace:*"
+        "flyonui-vue": "2.0.0"
     },
     "devDependencies": {
         "@michaelcozzolino/eslint-config": "^1.1.2",
