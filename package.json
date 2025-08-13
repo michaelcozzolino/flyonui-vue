@@ -15,7 +15,7 @@
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all",
-        "generate-components-api": "node scripts/GenerateComponentsApi.mts",
+        "generate-components-api": "node packages/scripts/GenerateComponentsApi.mts",
         "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
         "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest",
         "type-check": "vue-tsc --noEmit -p tsconfig.json"

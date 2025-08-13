@@ -5,5 +5,7 @@
         "module": "ESNext",
         "target": "ESNext",
     },
-    "include": ["scripts"]
+    "include": [
+        "packages/scripts"
+    ]
 }
