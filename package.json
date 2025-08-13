@@ -35,7 +35,8 @@
         "typescript": "^5.9.2",
         "vitest": "^3.2.4",
         "vue-component-meta": "^3.0.5",
-        "vue-component-type-helpers": "3.0.1"
+        "vue-component-type-helpers": "3.0.1",
+        "vue-tsc": "^3.0.5"
     },
     "resolutions": {
         "@iconify/vue": "^4.3.0",

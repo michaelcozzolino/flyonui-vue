@@ -7752,6 +7752,7 @@ __metadata:
     vitest: "npm:^3.2.4"
     vue-component-meta: "npm:^3.0.5"
     vue-component-type-helpers: "npm:3.0.1"
+    vue-tsc: "npm:^3.0.5"
   languageName: unknown
   linkType: soft
 
