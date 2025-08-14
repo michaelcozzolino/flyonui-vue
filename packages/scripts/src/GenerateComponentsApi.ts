@@ -4,13 +4,13 @@ import { writeFile }                              from 'node:fs/promises';
 import * as path                                  from 'node:path';
 import { join, resolve }                          from 'node:path';
 import process                                    from 'node:process';
-import { fileURLToPath }                          from 'node:url';
 import glob                                       from 'fast-glob';
 import { createChecker }                          from 'vue-component-meta';
+import MonorepoPathResolver                       from './MonorepoPathResolver.ts';
 
 async function generateComponentsApi(): Promise<void> {
-    const packagesPath      = resolve(fileURLToPath(import.meta.url), '../../packages');
-    const corePath          = resolve(packagesPath, 'core');
+    const packagesPath      = MonorepoPathResolver.resolvePackagesPath();
+    const corePath          = MonorepoPathResolver.resolvePackagePath('core');
     const vueComponentsPath = resolve(corePath, 'src/Components');
 
     const checkerOptions: MetaCheckerOptions = {
