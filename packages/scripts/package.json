@@ -1,9 +1,11 @@
 {
     "name": "scripts",
     "type": "module",
-    "devDependencies": {
+    "dependencies": {
         "flyonui": "^2.4.0",
-        "flyonui-vue": "workspace:*",
+        "flyonui-vue": "workspace:*"
+    },
+    "devDependencies": {
         "typescript": "^5.9.2",
         "vue-component-meta": "^3.0.5",
         "vue-component-type-helpers": "3.0.1",
