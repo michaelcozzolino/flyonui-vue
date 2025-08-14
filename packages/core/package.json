@@ -73,7 +73,7 @@
     },
     "devDependencies": {
         "@iconify/vue": "^4.3.0",
-        "@tailwindcss/vite": "^4.1.11",
+        "@tailwindcss/vite": "^4.1.12",
         "@types/node": "^22.17.1",
         "@vitejs/plugin-vue": "^5.2.4",
         "@vue/test-utils": "^2.4.6",
@@ -82,7 +82,7 @@
         "jsdom": "^26.1.0",
         "rollup-plugin-visualizer": "^5.14.0",
         "sass-embedded": "^1.90.0",
-        "tailwindcss": "^4.1.11",
+        "tailwindcss": "^4.1.12",
         "tsc-alias": "^1.8.16",
         "typescript": "^5.9.2",
         "vite": "^6.3.5",
