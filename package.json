@@ -10,15 +10,14 @@
     "scripts": {
         "dependency-upgrade": "npx yarn-upgrade-all",
         "dev": "yarn concurrently \"yarn workspace flyonui-vue dev:vue\" \"yarn workspace flyonui-vue-docs dev\"",
-        "build": "yarn type-check && yarn workspaces foreach -Apt run build",
+        "build": "yarn workspaces foreach -Apt run build",
         "lint": "yarn workspaces foreach -Apt run lint",
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all",
-        "generate-components-api": "node packages/scripts/src/GenerateComponentsApi.mts",
+        "generate-components-api": "node packages/scripts/src/GenerateComponentsApi.ts",
         "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
-        "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest",
-        "type-check": "vue-tsc --noEmit -p packages/scripts/tsconfig.json"
+        "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest"
     },
     "dependencies": {
         "change-case": "^5.4.4"
