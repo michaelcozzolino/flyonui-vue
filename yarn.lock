@@ -7747,13 +7747,9 @@ __metadata:
     change-case: "npm:^5.4.4"
     concurrently: "npm:^9.2.0"
     eslint: "npm:^9.33.0"
-    flyonui: "npm:^2.4.0"
-    flyonui-vue: "npm:2.0.0"
     playwright: "npm:~1.54.2"
     typescript: "npm:^5.9.2"
     vitest: "npm:^3.2.4"
-    vue-component-meta: "npm:^3.0.5"
-    vue-component-type-helpers: "npm:3.0.1"
     vue-tsc: "npm:^3.0.5"
   languageName: unknown
   linkType: soft
@@ -8060,6 +8056,19 @@ __metadata:
   checksum: 10c0/3847b839f060ef3476eb8623d099aa502ad658f5c40fd60c105ebce86d244389b0d76fcae30f4d0c728d7705ceb2f7e9b34bb54717b6a7dbedaf5dad2d9a4b74
   languageName: node
   linkType: hard
+
+"scripts@workspace:packages/scripts":
+  version: 0.0.0-use.local
+  resolution: "scripts@workspace:packages/scripts"
+  dependencies:
+    flyonui: "npm:^2.4.0"
+    flyonui-vue: "workspace:*"
+    typescript: "npm:^5.9.2"
+    vue-component-meta: "npm:^3.0.5"
+    vue-component-type-helpers: "npm:3.0.1"
+    vue-tsc: "npm:^3.0.5"
+  languageName: unknown
+  linkType: soft
 
 "scslre@npm:^0.3.0":
   version: 0.3.0

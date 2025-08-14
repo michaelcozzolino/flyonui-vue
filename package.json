@@ -15,14 +15,13 @@
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all",
-        "generate-components-api": "node packages/scripts/GenerateComponentsApi.mts",
+        "generate-components-api": "node packages/scripts/src/GenerateComponentsApi.mts",
         "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
         "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest",
-        "type-check": "vue-tsc --noEmit -p tsconfig.json"
+        "type-check": "vue-tsc --noEmit -p packages/scripts/tsconfig.json"
     },
     "dependencies": {
-        "change-case": "^5.4.4",
-        "flyonui-vue": "2.0.0"
+        "change-case": "^5.4.4"
     },
     "devDependencies": {
         "@michaelcozzolino/eslint-config": "^1.1.2",
@@ -32,12 +31,9 @@
         "@vue/test-utils": "^2.4.6",
         "concurrently": "^9.2.0",
         "eslint": "^9.33.0",
-        "flyonui": "^2.4.0",
         "playwright": "~1.54.2",
         "typescript": "^5.9.2",
         "vitest": "^3.2.4",
-        "vue-component-meta": "^3.0.5",
-        "vue-component-type-helpers": "3.0.1",
         "vue-tsc": "^3.0.5"
     },
     "resolutions": {
