@@ -1,12 +1,12 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultNavbarRaw"
                  :component="DefaultNavbar"
     />
 
     <CodeSnippet v-else-if="section === 'with-logo'"
-                 id="with-logo"
+                 :data-test-screenshot="section"
                  :code="NavbarWithLogoRaw"
                  :component="NavbarWithLogo"
     />

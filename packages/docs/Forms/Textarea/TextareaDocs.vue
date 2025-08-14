@@ -1,76 +1,76 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultTextareaRaw"
                  :component="DefaultTextarea"
                  :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'with-label-and-placeholder'"
-                 id="with-label-and-placeholder"
+                 :data-test-screenshot="section"
                  :code="TextareaWithLabelAndPlaceholderRaw"
                  :component="TextareaWithLabelAndPlaceholder"
                  :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'hidden-label'"
-                 id="hidden-label"
+                 :data-test-screenshot="section"
                  :code="TextareaHiddenLabelRaw"
                  :component="TextareaHiddenLabel"
                  :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'floating-label'"
-                 id="floating-label"
+                 :data-test-screenshot="section"
                  :code="TextareaFloatingLabelRaw"
                  :component="TextareaFloatingLabel"
                  :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'default-size'"
-                 id="default-size"
+                 :data-test-screenshot="section"
                  :code="TextareaDefaultSizeRaw"
                  :component="TextareaDefaultSize"
                  :preview="{ columns: 1, rows: 5 }"
     />
 
     <CodeSnippet v-else-if="section === 'floating-label-size'"
-                 id="floating-label-size"
+                 :data-test-screenshot="section"
                  :code="TextareaFloatingLabelSizeRaw"
                  :component="TextareaFloatingLabelSize"
                  :preview="{ columns: 1, rows: 5 }"
     />
 
     <CodeSnippet v-else-if="section === 'with-icon'"
-                 id="with-icon"
+                 :data-test-screenshot="section"
                  :code="TextareaWithIconRaw"
                  :component="TextareaWithIcon"
                  :preview="{ columns: 1, rows: 6 }"
     />
 
     <CodeSnippet v-else-if="section === 'with-helper-text'"
-                 id="with-helper-text"
+                 :data-test-screenshot="section"
                  :code="TextareaWithHelperTextRaw"
                  :component="TextareaWithHelperText"
                  :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'validation-state'"
-                 id="validation-state"
+                 :data-test-screenshot="section"
                  :code="TextareaValidationStateRaw"
                  :component="TextareaValidationState"
                  :preview="{ columns: 1, rows: 4 }"
     />
 
     <CodeSnippet v-else-if="section === 'disabled'"
-                 id="disabled"
+                 :data-test-screenshot="section"
                  :code="DisabledTextareaRaw"
                  :component="DisabledTextarea"
                  :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'readonly'"
-                 id="readonly"
+                 :data-test-screenshot="section"
                  :code="ReadonlyTextareaRaw"
                  :component="ReadonlyTextarea"
                  :preview="{ columns: 1, rows: 1 }"

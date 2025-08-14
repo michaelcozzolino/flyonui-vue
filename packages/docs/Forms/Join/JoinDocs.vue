@@ -1,30 +1,30 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultJoinRaw"
                  :component="DefaultJoin"
     />
 
     <CodeSnippet v-else-if="section === 'icon'"
-                 id="icon"
+                 :data-test-screenshot="section"
                  :code="JoinIconRaw"
                  :component="JoinIcon"
     />
 
     <CodeSnippet v-else-if="section === 'vertical'"
-                 id="vertical"
+                 :data-test-screenshot="section"
                  :code="VerticalJoinRaw"
                  :component="VerticalJoin"
     />
 
     <CodeSnippet v-else-if="section === 'responsive'"
-                 id="responsive"
+                 :data-test-screenshot="section"
                  :code="ResponsiveJoinRaw"
                  :component="ResponsiveJoin"
     />
 
     <CodeSnippet v-else-if="section === 'pilled'"
-                 id="pilled"
+                 :data-test-screenshot="section"
                  :code="PilledJoinRaw"
                  :component="PilledJoin"
     />

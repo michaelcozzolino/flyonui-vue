@@ -1,18 +1,18 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultSwapRaw"
                  :component="DefaultSwap"
     />
 
     <CodeSnippet v-else-if="section === 'rotation'"
-                 id="rotation"
+                 :data-test-screenshot="section"
                  :code="SwapRotationRaw"
                  :component="SwapRotation"
     />
 
     <CodeSnippet v-else-if="section === 'flip'"
-                 id="flip"
+                 :data-test-screenshot="section"
                  :code="SwapFlipRaw"
                  :component="SwapFlip"
     />

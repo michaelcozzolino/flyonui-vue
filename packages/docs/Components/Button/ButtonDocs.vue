@@ -1,84 +1,84 @@
 <template>
     <CodeSnippet v-if="section === 'solid'"
-                 id="solid"
+                 :data-test-screenshot="section"
                  :code="DefaultButtonRaw"
                  :component="DefaultButton"
     />
 
     <CodeSnippet v-else-if="section === 'soft'"
-                 id="soft"
+                 :data-test-screenshot="section"
                  :code="SoftButtonRaw"
                  :component="SoftButton"
     />
 
     <CodeSnippet v-else-if="section === 'outline'"
-                 id="outline"
+                 :data-test-screenshot="section"
                  :code="OutlineButtonRaw"
                  :component="OutlineButton"
     />
 
     <CodeSnippet v-else-if="section === 'dash'"
-                 id="dash"
+                 :data-test-screenshot="section"
                  :code="DashedButtonRaw"
                  :component="DashedButton"
     />
 
     <CodeSnippet v-else-if="section === 'text'"
-                 id="text"
+                 :data-test-screenshot="section"
                  :code="TextButtonRaw"
                  :component="TextButton"
     />
 
     <CodeSnippet v-else-if="section === 'gradient'"
-                 id="gradient"
+                 :data-test-screenshot="section"
                  :code="GradientButtonRaw"
                  :component="GradientButton"
     />
 
     <CodeSnippet v-else-if="section === 'pilled'"
-                 id="pilled"
+                 :data-test-screenshot="section"
                  :code="PilledButtonRaw"
                  :component="PilledButton"
     />
 
     <CodeSnippet v-else-if="section === 'validation-state'"
-                 id="state"
+                 :data-test-screenshot="section"
                  :code="ButtonStateRaw"
                  :component="ButtonState"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
-                 id="size"
+                 :data-test-screenshot="section"
                  :code="ButtonSizeRaw"
                  :component="ButtonSize"
     />
 
     <CodeSnippet v-else-if="section === 'layout'"
-                 id="layout"
+                 :data-test-screenshot="section"
                  :code="ButtonLayoutRaw"
                  :component="ButtonLayout"
     />
 
     <CodeSnippet v-else-if="section === 'icon'"
-                 id="icon"
+                 :data-test-screenshot="section"
                  :code="IconButtonRaw"
                  :component="IconButton"
     />
 
     <CodeSnippet v-else-if="section === 'icon-position'"
-                 id="icon-position"
+                 :data-test-screenshot="section"
                  :code="IconPositionButtonRaw"
                  :component="IconPositionButton"
     />
 
     <CodeSnippet v-else-if="section === 'social'"
-                 id="social"
+                 :data-test-screenshot="section"
                  :code="SocialButtonRaw"
                  :component="SocialButton"
     />
 
     <CodeSnippet v-else-if="section === 'social-shape'"
-                 id="social-shape"
+                 :data-test-screenshot="section"
                  :preview="{ columns: 4, rows: 3 }"
                  :code="SocialButtonShapeRaw"
                  :component="SocialButtonShape"
@@ -90,7 +90,7 @@
     />
 
     <CodeSnippet v-else-if="section === 'glass'"
-                 id="glass"
+                 :data-test-screenshot="section"
                  :code="GlassButtonRaw"
                  :component="GlassButton"
     />

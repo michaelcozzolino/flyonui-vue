@@ -1,84 +1,84 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultMenuRaw"
                  :component="DefaultMenu"
     />
 
     <CodeSnippet v-else-if="section === 'icon'"
-                 id="icon"
+                 :data-test-screenshot="section"
                  :code="IconMenuRaw"
                  :component="IconMenu"
     />
 
     <CodeSnippet v-else-if="section === 'only-icon'"
-                 id="only-icon"
+                 :data-test-screenshot="section"
                  :code="OnlyIconMenuRaw"
                  :component="OnlyIconMenu"
     />
 
     <CodeSnippet v-else-if="section === 'orientation'"
-                 id="orientation"
+                 :data-test-screenshot="section"
                  :code="MenuOrientationRaw"
                  :component="MenuOrientation"
     />
 
     <CodeSnippet v-else-if="section === 'with-tooltip'"
-                 id="with-tooltip"
+                 :data-test-screenshot="section"
                  :code="MenuWithTooltipRaw"
                  :component="MenuWithTooltip"
     />
 
     <CodeSnippet v-else-if="section === 'with-disabled-item'"
-                 id="with-disabled-item"
+                 :data-test-screenshot="section"
                  :code="DisabledItemMenuRaw"
                  :component="DisabledItemMenu"
     />
 
     <CodeSnippet v-else-if="section === 'with-badge'"
-                 id="with-badge"
+                 :data-test-screenshot="section"
                  :code="MenuWithBadgeRaw"
                  :component="MenuWithBadge"
     />
 
     <CodeSnippet v-else-if="section === 'with-active-item-vue-router'"
-                 id="with-active-item-vue-router"
+                 :data-test-screenshot="section"
                  :code="ActiveItemMenuVueRouterRaw"
                  :component="ActiveItemMenuExternalRouter"
     />
 
     <CodeSnippet v-else-if="section === 'with-active-item-external-router'"
-                 id="with-active-item-external-router"
+                 :data-test-screenshot="section"
                  :code="ActiveItemMenuExternalRouterRaw"
                  :component="ActiveItemMenuExternalRouter"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
-                 id="size"
+                 :data-test-screenshot="section"
                  :code="MenuSizeRaw"
                  :component="MenuSize"
     />
 
     <CodeSnippet v-else-if="section === 'flushed'"
-                 id="flushed"
+                 :data-test-screenshot="section"
                  :code="FlushedMenuRaw"
                  :component="FlushedMenu"
     />
 
     <CodeSnippet v-else-if="section === 'with-title'"
-                 id="with-title"
+                 :data-test-screenshot="section"
                  :code="MenuWithTitleRaw"
                  :component="MenuWithTitle"
     />
 
     <CodeSnippet v-else-if="section === 'with-title-as-parent'"
-                 id="with-title-as-parent"
+                 :data-test-screenshot="section"
                  :code="MenuWithTitleAsParentRaw"
                  :component="MenuWithTitleAsParent"
     />
 
     <CodeSnippet v-else-if="section === 'with-submenu'"
-                 id="with-submenu"
+                 :data-test-screenshot="section"
                  :code="[
                      {
                          title: 'Item.ts',
@@ -97,7 +97,7 @@
     />
 
     <CodeSnippet v-else-if="section === 'with-horizontal-submenu'"
-                 id="with-horizontal-submenu"
+                 :data-test-screenshot="section"
                  :code="[
                      {
                          title: 'Item.ts',
@@ -116,7 +116,7 @@
     />
 
     <CodeSnippet v-else-if="section === 'mega-with-submenu'"
-                 id="mega-with-submenu"
+                 :data-test-screenshot="section"
                  :code="[
                      {
                          title: 'Item.ts',

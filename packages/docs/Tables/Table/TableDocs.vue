@@ -1,102 +1,102 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="DefaultTableRaw"
                  :component="DefaultTable"
     />
 
     <CodeSnippet v-else-if="section === 'bordered'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="BorderedTableRaw"
                  :component="BorderedTable"
     />
 
     <CodeSnippet v-else-if="section === 'borderless'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="BorderlessTableRaw"
                  :component="BorderlessTable"
     />
 
     <CodeSnippet v-else-if="section === 'hoverable'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="HoverableTableRaw"
                  :component="HoverableTable"
     />
 
     <CodeSnippet v-else-if="section === 'with-highlight'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="TableWithHighlightRaw"
                  :component="TableWithHighlight"
     />
 
     <CodeSnippet v-else-if="section === 'striped-rows'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="StripedTableRowsRaw"
                  :component="StripedTableRows"
     />
 
     <CodeSnippet v-else-if="section === 'striped-columns'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="StripedTableColumnsRaw"
                  :component="StripedTableColumns"
     />
 
     <CodeSnippet v-else-if="section === 'rounded'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="RoundedTableRaw"
                  :component="RoundedTable"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="TableSizeRaw"
                  :component="TableSize"
     />
 
     <CodeSnippet v-else-if="section === 'pinned-rows'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="PinnedRowsTableRaw"
                  :component="PinnedRowsTable"
     />
 
     <CodeSnippet v-else-if="section === 'pinned-columns'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="PinnedColumnsTableRaw"
                  :component="PinnedColumnsTable"
     />
 
     <CodeSnippet v-else-if="section === 'headless'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="HeadlessTableRaw"
                  :component="HeadlessTable"
     />
 
     <CodeSnippet v-else-if="section === 'with-caption'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="TableWithCaptionRaw"
                  :component="TableWithCaption"
     />
 
     <CodeSnippet v-else-if="section === 'with-footer'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="TableWithFooterRaw"
                  :component="TableWithFooter"
     />
 
     <CodeSnippet v-else-if="section === 'responsive'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="ResponsiveTableRaw"
                  :component="ResponsiveTable"
     />
 
     <CodeSnippet v-else-if="section === 'with-shadow'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="TableWithShadowRaw"
                  :component="TableWithShadow"
     />
 
     <CodeSnippet v-else-if="section === 'with-styled-header'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="TableWithStyledHeaderRaw"
                  :component="TableWithStyledHeader"
     />
