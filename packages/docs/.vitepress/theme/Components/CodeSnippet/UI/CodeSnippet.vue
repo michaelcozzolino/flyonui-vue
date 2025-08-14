@@ -1,5 +1,5 @@
 <template>
-    <section :id="id"
+    <section :id="dataTestScreenshot"
              data-test="code-snippet"
              class="vp-raw gap-4 border-neutral/10 rounded-box flex flex-col border p-3 sm:p-6 md:my-8"
     >
@@ -31,7 +31,7 @@ interface Props {
      * Used mainly as name of the screenshot preview for visual tests, In case it is undefined, it means that it
      * is by purpose as not everything can be tested through screenshots, such as animations.
      */
-    id?:      string;
+    dataTestScreenshot?: string;
     preview?: {
         columns: number;
         rows:    number;
