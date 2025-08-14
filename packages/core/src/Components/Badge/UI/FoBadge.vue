@@ -29,6 +29,7 @@
 <script setup lang="ts">
 import type { BadgeProps }                 from '@/Components/Badge';
 import type { ComponentName }              from '@/Shared';
+import type { WithDefaultSlot }            from '@/Shared/Utils/Types/Slots.ts';
 import { FoIcon }                          from '@/Components/Icon';
 import { usePositionableIcon }             from '@/Components/Icon/Internal';
 import { useColor }                        from '@/Shared/UseColor/Internal';
@@ -40,6 +41,8 @@ import { useSize }                         from '@/Shared/UseSize/Internal';
 const props = withDefaults(defineProps<BadgeProps>(), {
     isDismissible: false,
 });
+
+defineSlots<WithDefaultSlot>();
 
 const componentName: ComponentName = 'FoBadge';
 

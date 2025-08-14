@@ -47,3 +47,13 @@
 ### In a button
 
 <BadgeDocs section="in-a-button" />
+
+## Api
+
+### Props
+
+<BadgeDocs section="props" />
+
+### Slots
+
+<BadgeDocs section="slots" />

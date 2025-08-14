@@ -1,68 +1,75 @@
 <template>
     <CodeSnippet v-if="section === 'solid'"
-                 id="solid"
+                 :data-test-screenshot="section"
                  :code="SolidBadgeRaw"
                  :component="SolidBadge"
     />
 
     <CodeSnippet v-else-if="section === 'soft'"
-                 id="soft"
+                 :data-test-screenshot="section"
                  :code="SoftBadgeRaw"
                  :component="SoftBadge"
     />
 
     <CodeSnippet v-else-if="section === 'outline'"
-                 id="outline"
+                 :data-test-screenshot="section"
                  :code="OutlineBadgeRaw"
                  :component="OutlineBadge"
     />
 
     <CodeSnippet v-else-if="section === 'dash'"
-                 id="dash"
+                 :data-test-screenshot="section"
                  :code="DashedBadgeRaw"
                  :component="DashedBadge"
     />
 
     <CodeSnippet v-else-if="section === 'pilled'"
-                 id="pilled"
+                 :data-test-screenshot="section"
                  :code="PilledBadgeRaw"
                  :component="PilledBadge"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
-                 id="size"
+                 :data-test-screenshot="section"
                  :code="BadgeSizeRaw"
                  :component="BadgeSize"
     />
 
     <CodeSnippet v-else-if="section === 'dot-style'"
-                 id="dot-style"
+                 :data-test-screenshot="section"
                  :code="DotStyleBadgeRaw"
                  :component="DotStyleBadge"
     />
 
     <CodeSnippet v-else-if="section === 'icon'"
-                 id="icon"
+                 :data-test-screenshot="section"
                  :code="IconBadgeRaw"
                  :component="IconBadge"
                  :preview="{ columns: 8, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'icon-position'"
-                 id="icon-position"
+                 :data-test-screenshot="section"
                  :code="IconPositionBadgeRaw"
                  :component="IconPositionBadge"
     />
 
     <CodeSnippet v-else-if="section === 'in-a-button'"
-                 id="in-a-button"
+                 :data-test-screenshot="section"
                  :code="BadgeInAButtonRaw"
                  :component="BadgeInAButton"
+    />
+
+    <ComponentsApiDocs v-else
+                       :section="section"
+                       :component-names="['FoBadge', 'FoDotStyleBadge']"
     />
 </template>
 
 <script setup lang="ts">
+import type { ApiType }     from '@/Api/Types/Api.ts';
 import CodeSnippet          from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentsApiDocs    from '@/Api/UI/ComponentsApiDocs.vue';
 import BadgeInAButton       from '@/Components/Badge/BadgeInAButton.vue';
 import BadgeInAButtonRaw    from '@/Components/Badge/BadgeInAButton.vue?raw';
 import BadgeSize            from '@/Components/Badge/BadgeSize.vue';
@@ -86,7 +93,17 @@ import SolidBadgeRaw        from '@/Components/Badge/SolidBadge.vue?raw';
 
 // todo: dismissible badges
 interface Props {
-    section: 'solid' | 'soft' | 'outline' | 'dash' | 'pilled' | 'size' | 'dot-style' | 'icon' | 'icon-position' | 'in-a-button';
+    section: 'solid'
+        | 'soft'
+        | 'outline'
+        | 'dash'
+        | 'pilled'
+        | 'size'
+        | 'dot-style'
+        | 'icon'
+        | 'icon-position'
+        | 'in-a-button'
+        | ApiType;
 }
 
 defineProps<Props>();
