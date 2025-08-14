@@ -1,18 +1,18 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultTooltipRaw"
                  :component="DefaultTooltip"
     />
 
     <CodeSnippet v-else-if="section === 'color'"
-                 id="color"
+                 :data-test-screenshot="section"
                  :code="TooltipColorRaw"
                  :component="TooltipColor"
     />
 
     <CodeSnippet v-else-if="section === 'placement'"
-                 id="placement"
+                 :data-test-screenshot="section"
                  :code="TooltipPlacementRaw"
                  :component="TooltipPlacement"
     />

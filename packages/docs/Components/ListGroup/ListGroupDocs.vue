@@ -1,55 +1,55 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultListGroupRaw"
                  :component="DefaultListGroup"
     />
 
     <CodeSnippet v-else-if="section === 'with-icons'"
-                 id="with-icons"
+                 :data-test-screenshot="section"
                  :code="ListGroupWithIconsRaw"
                  :component="ListGroupWithIcons"
     />
 
     <CodeSnippet v-else-if="section === 'with-badges'"
-                 id="with-badges"
+                 :data-test-screenshot="section"
                  :code="ListGroupWithBadgesRaw"
                  :component="ListGroupWithBadges"
     />
 
     <CodeSnippet v-else-if="section === 'horizontal'"
-                 id="horizontal"
+                 :data-test-screenshot="section"
                  :code="HorizontalListGroupRaw"
                  :component="HorizontalListGroup"
     />
 
     <CodeSnippet v-else-if="section === 'flushed'"
-                 id="flushed"
+                 :data-test-screenshot="section"
                  :code="FlushedListGroupRaw"
                  :component="FlushedListGroup"
     />
 
     <CodeSnippet v-else-if="section === 'without-gutters'"
-                 id="without-gutters"
+                 :data-test-screenshot="section"
                  :code="ListGroupWithoutGuttersRaw"
                  :component="ListGroupWithoutGutters"
     />
 
     <CodeSnippet v-else-if="section === 'striped'"
-                 id="striped"
+                 :data-test-screenshot="section"
                  :code="StripedListGroupRaw"
                  :component="StripedListGroup"
     />
 
     <CodeSnippet v-else-if="section === 'with-checkbox'"
-                 id="with-checkbox"
+                 :data-test-screenshot="section"
                  :code="ListGroupWithCheckboxRaw"
                  :component="ListGroupWithCheckbox"
                  :preview="{ columns: 1, rows: 1 }"
     />
 
     <CodeSnippet v-else-if="section === 'invoice'"
-                 id="invoice"
+                 :data-test-screenshot="section"
                  :code="InvoiceListGroupRaw"
                  :component="InvoiceListGroup"
     />

@@ -1,54 +1,54 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultCheckboxRaw"
                  :component="DefaultCheckbox"
     />
 
     <CodeSnippet v-else-if="section === 'with-helper-text'"
-                 id="with-helper-text"
+                 :data-test-screenshot="section"
                  :code="CheckboxWithHelperTextRaw"
                  :component="CheckboxWithHelperText"
     />
 
     <CodeSnippet v-else-if="section === 'color'"
-                 id="color"
+                 :data-test-screenshot="section"
                  :code="CheckboxColorRaw"
                  :component="CheckboxColor"
     />
 
     <CodeSnippet v-else-if="section === 'with-custom-color'"
-                 id="with-custom-color"
+                 :data-test-screenshot="section"
                  :code="CheckboxWithCustomColorRaw"
                  :component="CheckboxWithCustomColor"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
-                 id="size"
+                 :data-test-screenshot="section"
                  :code="CheckboxSizeRaw"
                  :component="CheckboxSize"
     />
 
     <CodeSnippet v-else-if="section === 'validation-state'"
-                 id="validation-state"
+                 :data-test-screenshot="section"
                  :code="CheckboxValidationStateRaw"
                  :component="CheckboxValidationState"
     />
 
     <CodeSnippet v-else-if="section === 'state'"
-                 id="state"
+                 :data-test-screenshot="section"
                  :code="CheckboxStateRaw"
                  :component="CheckboxState"
     />
 
     <CodeSnippet v-else-if="section === 'inline-group'"
-                 id="inline-group"
+                 :data-test-screenshot="section"
                  :code="InlineCheckboxGroupRaw"
                  :component="InlineCheckboxGroup"
     />
 
     <CodeSnippet v-else-if="section === 'vertical-group'"
-                 id="vertical-group"
+                 :data-test-screenshot="section"
                  :code="VerticalCheckboxGroupRaw"
                  :component="VerticalCheckboxGroup"
     />

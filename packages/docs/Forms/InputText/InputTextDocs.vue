@@ -1,96 +1,96 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultInputTextRaw"
                  :component="DefaultInputText"
     />
 
     <CodeSnippet v-else-if="section === 'with-placeholder'"
-                 id="with-placeholder"
+                 :data-test-screenshot="section"
                  :code="InputTextWithPlaceholderRaw"
                  :component="InputTextWithPlaceholder"
     />
 
     <CodeSnippet v-else-if="section === 'with-label-and-helper-text'"
-                 id="with-label-and-helper-text"
+                 :data-test-screenshot="section"
                  :code="InputTextWithLabelAndHelperTextRaw"
                  :component="InputTextWithLabelAndHelperText"
                  :preview="{ columns: 1, rows: 4 }"
     />
 
     <CodeSnippet v-else-if="section === 'hidden-label'"
-                 id="hidden-label"
+                 :data-test-screenshot="section"
                  :code="InputTextHiddenLabelRaw"
                  :component="InputTextHiddenLabel"
     />
 
     <CodeSnippet v-else-if="section === 'floating-label'"
-                 id="floating-label"
+                 :data-test-screenshot="section"
                  :code="InputTextFloatingLabelRaw"
                  :component="InputTextFloatingLabel"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
-                 id="size"
+                 :data-test-screenshot="section"
                  :code="InputTextSizeRaw"
                  :component="InputTextSize"
                  :preview="{ columns: 1, rows: 4 }"
     />
 
     <CodeSnippet v-else-if="section === 'floating-label-size'"
-                 id="floating-label-size"
+                 :data-test-screenshot="section"
                  :code="InputTextFloatingLabelSizeRaw"
                  :component="InputTextFloatingLabelSize"
                  :preview="{ columns: 1, rows: 3 }"
     />
 
     <CodeSnippet v-else-if="section === 'validation-state'"
-                 id="validation-state"
+                 :data-test-screenshot="section"
                  :code="InputTextValidationStateRaw"
                  :component="InputTextValidationState"
                  :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'inline-label'"
-                 id="inline-label"
+                 :data-test-screenshot="section"
                  :code="InputTextInlineLabelRaw"
                  :component="InputTextInlineLabel"
     />
 
     <CodeSnippet v-else-if="section === 'with-icon'"
-                 id="with-icon"
+                 :data-test-screenshot="section"
                  :code="InputTextWithIconRaw"
                  :component="InputTextWithIcon"
     />
 
     <CodeSnippet v-else-if="section === 'shape'"
-                 id="shape"
+                 :data-test-screenshot="section"
                  :code="InputTextShapeRaw"
                  :component="InputTextShape"
                  :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'without-focus'"
-                 id="without-focus"
+                 :data-test-screenshot="section"
                  :code="InputTextWithoutFocusRaw"
                  :component="InputTextWithoutFocus"
     />
 
     <CodeSnippet v-else-if="section === 'disabled'"
-                 id="disabled"
+                 :data-test-screenshot="section"
                  :code="DisabledInputTextRaw"
                  :component="DisabledInputText"
                  :preview="{ columns: 1, rows: 2 }"
     />
 
     <CodeSnippet v-else-if="section === 'readonly'"
-                 id="readonly"
+                 :data-test-screenshot="section"
                  :code="ReadonlyInputTextRaw"
                  :component="ReadonlyInputText"
     />
 
     <CodeSnippet v-else-if="section === 'join'"
-                 id="join"
+                 :data-test-screenshot="section"
                  :code="JoinInputTextRaw"
                  :component="JoinInputText"
     />

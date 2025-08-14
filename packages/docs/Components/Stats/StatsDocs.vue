@@ -1,48 +1,48 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultStatsRaw"
                  :component="DefaultStats"
     />
 
     <CodeSnippet v-else-if="section === 'with-avatar'"
-                 id="with-avatar"
+                 :data-test-screenshot="section"
                  :code="StatsWithAvatarRaw"
                  :component="StatsWithAvatar"
     />
 
     <CodeSnippet v-else-if="section === 'with-icons-and-image'"
-                 id="with-icons-and-image"
+                 :data-test-screenshot="section"
                  :code="StatsWithIconsAndImageRaw"
                  :component="StatsWithIconsAndImage"
     />
 
     <CodeSnippet v-else-if="section === 'centered-item'"
-                 id="centered-item"
+                 :data-test-screenshot="section"
                  :code="CenteredItemStatsRaw"
                  :component="CenteredItemStats"
     />
 
     <CodeSnippet v-else-if="section === 'vertical'"
-                 id="vertical"
+                 :data-test-screenshot="section"
                  :code="VerticalStatsRaw"
                  :component="VerticalStats"
     />
 
     <CodeSnippet v-else-if="section === 'with-progress-bar'"
-                 id="with-progress-bar"
+                 :data-test-screenshot="section"
                  :code="StatsWithProgressBarRaw"
                  :component="StatsWithProgressBar"
     />
 
     <CodeSnippet v-else-if="section === 'with-actions-button'"
-                 id="with-actions-button"
+                 :data-test-screenshot="section"
                  :code="StatsWithActionsButtonRaw"
                  :component="StatsWithActionsButton"
     />
 
     <CodeSnippet v-else-if="section === 'bordered'"
-                 id="bordered"
+                 :data-test-screenshot="section"
                  :code="BorderedStatsRaw"
                  :component="BorderedStats"
     />

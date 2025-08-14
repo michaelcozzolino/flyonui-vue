@@ -1,18 +1,18 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultPopoverRaw"
                  :component="DefaultPopover"
     />
 
     <CodeSnippet v-else-if="section === 'color'"
-                 id="color"
+                 :data-test-screenshot="section"
                  :code="PopoverColorRaw"
                  :component="PopoverColor"
     />
 
     <CodeSnippet v-else-if="section === 'placement'"
-                 id="placement"
+                 :data-test-screenshot="section"
                  :code="PopoverPlacementRaw"
                  :component="PopoverPlacement"
     />

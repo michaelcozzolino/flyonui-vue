@@ -1,24 +1,24 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 id="default"
+                 :data-test-screenshot="section"
                  :code="DefaultLinkRaw"
                  :component="DefaultLink"
     />
 
     <CodeSnippet v-else-if="section === 'underline-on-hover'"
-                 id="underline-on-hover"
+                 :data-test-screenshot="section"
                  :code="UnderlineOnHoverLinkRaw"
                  :component="UnderlineOnHoverLink"
     />
 
     <CodeSnippet v-else-if="section === 'animated-underline'"
-                 id="animated-underline"
+                 :data-test-screenshot="section"
                  :code="AnimatedUnderlineLinkRaw"
                  :component="AnimatedUnderlineLink"
     />
 
     <CodeSnippet v-else-if="section === 'color'"
-                 id="color"
+                 :data-test-screenshot="section"
                  :code="LinkColorRaw"
                  :component="LinkColor"
     />

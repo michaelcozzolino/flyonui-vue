@@ -1,6 +1,6 @@
 <template>
     <CodeSnippet v-if="section === 'level'"
-                 id="level"
+                 :data-test-screenshot="section"
                  :code="HeadingLevelRaw"
                  :component="HeadingLevel"
                  :preview="{ columns: 1, rows: 6 }"

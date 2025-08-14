@@ -1,13 +1,13 @@
 <template>
     <CodeSnippet v-if="section === 'shape'"
-                 id="shape"
+                 :data-test-screenshot="section"
                  :code="MaskShapeRaw"
                  :component="MaskShape"
                  :preview="{ columns: 4, rows: 6 }"
     />
 
     <CodeSnippet v-else-if="section === 'v-mask'"
-                 id="v-mask"
+                 :data-test-screenshot="section"
                  :code="VMaskRaw"
                  :component="VMask"
                  :preview="{ columns: 4, rows: 6 }"

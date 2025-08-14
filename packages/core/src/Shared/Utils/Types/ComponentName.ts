@@ -3,6 +3,7 @@ import type { ConfigurableComponentProps } from '@/Shared/UseFlyonUIVueAppConfig
 type NonConfigurableComponentName = 'FoJoin'
     | 'FoCheckboxGroup'
     | 'FoDatalist'
+    | 'FoDotStyleBadge'
     | 'FoLabel'
     | 'FoListGroup'
     | 'FoListGroupItem'

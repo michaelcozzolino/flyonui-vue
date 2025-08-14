@@ -1,48 +1,48 @@
 <template>
     <CodeSnippet v-if="section === 'default'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="DefaultKeyboardRaw"
                  :component="DefaultKeyboard"
     />
 
     <CodeSnippet v-else-if="section === 'size'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="KeyboardSizeRaw"
                  :component="KeyboardSize"
     />
 
     <CodeSnippet v-else-if="section === 'in-text'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="InTextKeyboardRaw"
                  :component="InTextKeyboard"
     />
 
     <CodeSnippet v-else-if="section === 'key-combinations'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="KeyCombinationsKeyboardRaw"
                  :component="KeyCombinationsKeyboard"
     />
 
     <CodeSnippet v-else-if="section === 'function-keys'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="FunctionKeysKeyboardRaw"
                  :component="FunctionKeysKeyboard"
     />
 
     <CodeSnippet v-else-if="section === 'full-keyboard'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="FullKeyboardRaw"
                  :component="FullKeyboard"
     />
 
     <CodeSnippet v-else-if="section === 'arrow-keys'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="ArrowKeysKeyboardRaw"
                  :component="ArrowKeysKeyboard"
     />
 
     <CodeSnippet v-else-if="section === 'number-keys'"
-                 :id="section"
+                 :data-test-screenshot="section"
                  :code="NumberKeysKeyboardRaw"
                  :component="NumberKeysKeyboard"
     />
