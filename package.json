@@ -15,9 +15,8 @@
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all",
-        "generate-components-api": "node scripts/GenerateComponentsApi.mts",
         "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
-        "upgrade:dependencies": "yarn workspaces foreach -Apt npx npm-check-updates -u -t latest"
+        "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest"
     },
     "dependencies": {
         "change-case": "^5.4.4"
@@ -33,17 +32,28 @@
         "playwright": "~1.54.2",
         "typescript": "^5.9.2",
         "vitest": "^3.2.4",
-        "vue-component-meta": "^3.0.5",
-        "vue-component-type-helpers": "3.0.1"
+        "vue-tsc": "^3.0.5"
     },
     "resolutions": {
+        "@iconify/vue": "^4.3.0",
         "@playwright/test": "~1.54.2",
+        "@types/node": "^22.17.1",
         "@vitejs/plugin-vue": "^5.2.4",
+        "@vue/test-utils": "^2.4.6",
+        "@vue/tsconfig": "^0.7.0",
+        "@vueuse/core": "^13.6.0",
+        "concurrently": "^9.2.0",
+        "flyonui": "^2.4.0",
+        "flyonui-vue": "workspace:*",
         "jsdom": "^26.1.0",
         "playwright": "~1.54.2",
+        "sass-embedded": "^1.90.0",
+        "tailwindcss": "^4.1.12",
+        "tsc-alias": "^1.8.16",
         "typescript": "^5.9.2",
         "vite": "^6.3.5",
         "vue": "^3.5.18",
+        "vue-router": "^4.5.1",
         "vue-tsc": "^3.0.5"
     }
 }

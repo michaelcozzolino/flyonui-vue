@@ -1,8 +1,9 @@
-import type { ComponentName }                     from 'flyonui-vue/dist-vue/Shared';
+import type { ComponentName }                     from 'flyonui-vue';
 import type { ComponentMeta, MetaCheckerOptions } from 'vue-component-meta';
 import { writeFile }                              from 'node:fs/promises';
 import * as path                                  from 'node:path';
 import { join, resolve }                          from 'node:path';
+import process                                    from 'node:process';
 import { fileURLToPath }                          from 'node:url';
 import glob                                       from 'fast-glob';
 import { createChecker }                          from 'vue-component-meta';
@@ -31,21 +32,25 @@ async function generateComponentsApi(): Promise<void> {
         for (const componentPath of componentsPaths) {
             const { name } = path.parse(componentPath);
 
-            componentsApi[name] = tsconfigChecker.getComponentMeta(componentPath);
+            componentsApi[name as ComponentName] = tsconfigChecker.getComponentMeta(componentPath);
         }
 
         const componentApiDocsPath = resolve(packagesPath, 'docs/Api/Lib');
 
         writeFile(
             join(componentApiDocsPath, 'ComponentsApi.json'),
-            JSON.stringify(componentsApi, null, 2).replaceAll(
+            `${JSON.stringify(componentsApi, null, 4).replaceAll(
                 // Replaces the absolute path of the file with the GitHub url
                 /(?<="file":\s*")(?:[A-Za-z]:)?(?:(?:\/|\\\\)[^"\\/]+)*(?:\/|\\\\)flyonui-vue(?=\/|\\\\|")/g,
                 'https://github.com/michaelcozzolino/flyonui-vue/blob/2.x', // todo: the 2.x must be dynamic
-            ),
+            )}\n`,
             'utf-8',
         );
-    }).catch((e: unknown) => console.error(e));
+    });
 }
 
-generateComponentsApi();
+await generateComponentsApi().catch((e: unknown) => {
+    console.error(e);
+
+    process.exit(1);
+});
