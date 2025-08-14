@@ -53,7 +53,7 @@ async function collectDependencies(packagePath: string, dependenciesMap: Map<str
             const dependency = dependenciesMap.get(name) ?? { count: 0, version: '0.0.0' };
             dependency.count += 1;
 
-            if (version.startsWith('workspace:')) {
+            if (version.startsWith('workspace:*')) {
                 dependency.version = version;
             } else if (isVersionGreater(version, dependency.version)) {
                 dependency.version = version;
