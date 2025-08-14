@@ -248,12 +248,12 @@ onClickOutside(
 @reference "tailwindcss";
 
 .sidebar-mobile {
-    height: 100%;
-    width: 250px;
     position: fixed;
-    z-index: 1;
+    width: 250px;
     overflow-x: hidden;
     transition: 0.5s;
+    z-index: 1;
+    background-color: var(--color-base-100);
 
     /* due to the search input becoming an icon that is higher than the input */
     @apply top-20;
