@@ -43,11 +43,7 @@ async function collectDependencies(packagePath: string, dependenciesMap: Map<str
     const packageJson = JSON.parse(await readFile(packagePath, 'utf8'));
 
     for (const dependencyType of ['dependencies', 'devDependencies'] as const) {
-        const dependencies: Record<string, string> = packageJson[dependencyType] ?? null;
-
-        if (dependencies === null) {
-            continue;
-        }
+        const dependencies: Record<string, string> = packageJson[dependencyType] ?? {};
 
         for (const [name, version] of Object.entries(dependencies)) {
             const dependency = dependenciesMap.get(name) ?? { count: 0, version: '0.0.0' };
