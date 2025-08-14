@@ -2,6 +2,7 @@
     "name": "scripts",
     "type": "module",
     "devDependencies": {
+        "fast-glob": "^3.3.3",
         "flyonui": "^2.4.0",
         "flyonui-vue": "workspace:*",
         "typescript": "^5.9.2",
