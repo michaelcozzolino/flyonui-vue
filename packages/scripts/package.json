@@ -1,13 +1,16 @@
 {
     "name": "scripts",
     "type": "module",
-    "private": "true",
     "devDependencies": {
+        "flyonui": "^2.4.0",
+        "flyonui-vue": "workspace:*",
         "typescript": "^5.9.2",
         "vue-component-meta": "^3.0.5",
         "vue-component-type-helpers": "3.0.1",
-        "vue-tsc": "^3.0.5",
-        "flyonui": "^2.4.0",
-        "flyonui-vue": "workspace:*"
+        "vue-tsc": "^3.0.5"
+    },
+    "scripts": {
+        "generate:resolutions": "node ./src/GenerateResolutions.ts",
+        "generate:components-api": "node ./src/GenerateComponentsApi.ts"
     }
 }

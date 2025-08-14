@@ -15,7 +15,6 @@
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all",
-        "generate-components-api": "node packages/scripts/src/GenerateComponentsApi.ts",
         "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
         "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest"
     },
@@ -52,9 +51,8 @@
         "tailwindcss": "^4.1.11",
         "tsc-alias": "^1.8.16",
         "typescript": "^5.9.2",
-        "vite": "^6.2.6",
+        "vite": "^6.3.5",
         "vue": "^3.5.18",
-        "vue-router": "^4.5.1",
-        "vue-tsc": "^3.0.5"
+        "vue-router": "^4.5.1"
     }
 }

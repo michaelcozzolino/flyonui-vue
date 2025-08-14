@@ -5,7 +5,7 @@ export type PackageName = 'core' | 'create-flyonui-vue' | 'docs' | 'web-componen
 
 class MonorepoPathResolver {
     public resolveRootPath() {
-        return resolve(fileURLToPath(import.meta.url), '../../');
+        return resolve(fileURLToPath(import.meta.url), '../../../../');
     };
 
     public resolvePackagesPath() {
