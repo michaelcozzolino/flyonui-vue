@@ -3,6 +3,7 @@ import type { ComponentMeta, MetaCheckerOptions } from 'vue-component-meta';
 import { writeFile }                              from 'node:fs/promises';
 import * as path                                  from 'node:path';
 import { join, resolve }                          from 'node:path';
+import process                                    from 'node:process';
 import { fileURLToPath }                          from 'node:url';
 import glob                                       from 'fast-glob';
 import { createChecker }                          from 'vue-component-meta';
@@ -45,7 +46,11 @@ async function generateComponentsApi(): Promise<void> {
             )}\n`,
             'utf-8',
         );
-    }).catch((e: unknown) => console.error(e));
+    });
 }
 
-await generateComponentsApi().catch((e: unknown) => console.error(e));
+await generateComponentsApi().catch((e: unknown) => {
+    console.error(e);
+
+    process.exit(1);
+});

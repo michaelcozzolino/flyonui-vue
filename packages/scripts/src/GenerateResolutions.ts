@@ -1,5 +1,6 @@
 import type { PackageName }             from './MonorepoPathResolver.ts';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
+import process                          from 'node:process';
 import MonorepoPathResolver             from './MonorepoPathResolver.ts';
 
 interface DependencyInfo {
@@ -100,4 +101,8 @@ function parseVersion(version: string): number[] {
     return match ? match[0].split('.').map(Number) : [0];
 }
 
-await generateResolutions().catch((e: unknown) => console.error(e));
+await generateResolutions().catch((e: unknown) => {
+    console.error(e);
+
+    process.exit(1);
+});
