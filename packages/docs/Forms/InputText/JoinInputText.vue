@@ -123,16 +123,16 @@
         />
 
         <FoSelect v-model="selectedFilter"
-                  :label="{ text: 'Filter' }"
+                  :label="{ text: 'Filter', type: 'floating' }"
                   :options="filters"
         />
     </FoJoin>
 </template>
 
 <script setup lang="ts">
-import type { SelectOption }                       from 'flyonui-vue';
-import { FoButton, FoInputText, FoJoin, FoSelect } from 'flyonui-vue';
-import { ref }                                     from 'vue';
+import type { SelectOption }                                            from 'flyonui-vue';
+import {  FoButton, FoInputText, FoJoin, FoSelect, useSelectedOption  } from 'flyonui-vue';
+import { ref }                                                          from 'vue';
 
 const search = ref<string>('');
 
@@ -142,5 +142,5 @@ const filters = ref<SelectOption[]>([
     { id: 3, text: 'Actions' },
 ]);
 
-const selectedFilter = ref<SelectOption | null>(null);
+const selectedFilter = useSelectedOption(filters, filters.value[0].id);
 </script>
