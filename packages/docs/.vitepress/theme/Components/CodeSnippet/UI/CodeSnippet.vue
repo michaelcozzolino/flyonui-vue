@@ -1,5 +1,5 @@
 <template>
-    <section :id="dataTestScreenshot"
+    <section :data-test-screenshot="dataTestScreenshot"
              data-test="code-snippet"
              class="vp-raw gap-4 border-neutral/10 rounded-box flex flex-col border p-3 sm:p-6 md:my-8"
     >
@@ -23,8 +23,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Component } from 'vue';
-import { computed }       from 'vue';
+import type { Component }     from 'vue';
+import { VueCodeHighlighter } from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
+import { computed }           from 'vue';
 
 interface Props {
     /**
