@@ -20,7 +20,7 @@ jobs:
 
             -   run: yarn install
             -   run: yarn build
-            -   run: npx playwright install --with-deps && yarn e2e:test
+            -   run: npx playwright install --with-deps && yarn test:e2e
 
             -   uses: actions/upload-artifact@v4
                 if: ${{ !cancelled() }}
