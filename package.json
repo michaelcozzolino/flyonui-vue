@@ -12,7 +12,7 @@
         "dev": "yarn concurrently \"yarn workspace flyonui-vue dev:vue\" \"yarn workspace flyonui-vue-docs dev\"",
         "build": "yarn workspaces foreach -Apt run build",
         "lint": "yarn workspaces foreach -Apt run lint",
-        "test": "vitest run && yarn test:e2e",
+        "test": "vitest run",
         "test:e2e": "yarn workspace flyonui-vue-docs test:e2e",
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all",

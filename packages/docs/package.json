@@ -13,7 +13,7 @@
         "build": "yarn type-check && vitepress build && cp -r assets/* ./.vitepress/dist/assets/",
         "lint": "eslint . --fix",
         "test": "vitest run",
-        "test:e2e": "yarn playwright install --with-deps && npx playwright test EndToEnd",
+        "test:e2e": "yarn playwright install && npx playwright test EndToEnd",
         "test:e2e:update:snapshots": "yarn test:e2e -u",
         "test-coverage": "vitest run --coverage",
         "type-check": "vue-tsc --noEmit -p tsconfig.json"
