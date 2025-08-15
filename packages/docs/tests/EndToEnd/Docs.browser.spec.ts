@@ -23,7 +23,7 @@ test('components previews', async ({ page }) => {
                 const itemName = childChildItem.link;
 
                 // todo: check how to do it through github action
-                const url = `http://localhost:5173${categoryPath}${itemName}`;
+                const url = `${categoryPath}${itemName}`;
 
                 await page.goto(url);
 
