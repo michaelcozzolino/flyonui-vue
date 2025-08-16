@@ -1,7 +1,7 @@
 import { getSidebarItems } from '@/.vitepress/theme/Shared/Config/Lib/getSidebarItems';
 import { expect, test }    from '@playwright/test';
 
-test('docs preview screenshots snapshots', async ({ page }) => {
+test('components previews', async ({ page }) => {
     test.slow();
 
     const body = page.locator('body').first();
@@ -15,20 +15,51 @@ test('docs preview screenshots snapshots', async ({ page }) => {
         for (const childItem of childItems) {
             for (const childChildItem of childItem.items ?? []) {
                 const categoryPath = childItem.base; // E.G: /content/
-                const itemName     = childChildItem.link;
+
+                if (categoryPath === undefined) {
+                    throw new Error('The category path cannot be undefined.');
+                }
+
+                const itemName = childChildItem.link;
 
                 // todo: check how to do it through github action
-                const url          = `http://localhost:5173${categoryPath}${itemName}`;
+                const url = `${categoryPath}${itemName}`;
 
                 await page.goto(url);
 
+                // Hides navbar and sidebars in
+                await page.addStyleTag({
+                    content: `
+                        #flyonui-vue-docs-navbar,
+                        #flyonui-vue-docs-sidebar,
+                        #flyonui-vue-docs-docs-sidebar {
+                          display: none !important;
+                        }
+                        
+                        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=block');
+                        
+                        html,
+                        body,
+                        * {
+                          font-family: 'Inter', system-ui, sans-serif !important;
+                        }
+                        
+                        body {
+                          -webkit-font-smoothing: antialiased;
+                          -moz-osx-font-smoothing: grayscale;
+                        }
+                    `,
+                });
+
                 const codeSnippets = await page.locator('[data-test="code-snippet"]').all();
 
-                for (const codeSnippet of codeSnippets) {
-                    const id = await codeSnippet.getAttribute('id');
+                const pathPrefix = categoryPath.slice(1);
 
-                    // snippets without id are probably components with animations that cannot be tested through screenshots
-                    if (id === null) {
+                for (const codeSnippet of codeSnippets) {
+                    const screenshotId = await codeSnippet.getAttribute('data-test-screenshot');
+
+                    // snippets without screenshotId are probably components with animations that cannot be tested through screenshots
+                    if (screenshotId === null) {
                         continue;
                     }
 
@@ -38,11 +69,24 @@ test('docs preview screenshots snapshots', async ({ page }) => {
 
                     const screenshot = await preview.screenshot({ animations: 'disabled' });
 
-                    if (categoryPath === undefined) {
-                        throw new Error('The category path cannot be undefined.');
+                    expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}${itemName}/${screenshotId}.png`);
+                }
+
+                const propsApis    = await page.locator('[data-test="props-api"]').all();
+                const slotsApis    = await page.locator('[data-test="slots-api"]').all();
+
+                const apis = [...propsApis, ...slotsApis];
+
+                for (const api of apis) {
+                    const id = await api.getAttribute('id');
+
+                    if (id === null) {
+                        throw new Error('Api must have an id.');
                     }
 
-                    expect.soft(screenshot).toMatchSnapshot(`${categoryPath.slice(1)}${itemName}/${id}.png`);
+                    const screenshot = await api.screenshot();
+
+                    expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}${itemName}/${id}.png`);
                 }
             }
         }

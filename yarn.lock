@@ -4870,7 +4870,7 @@ __metadata:
   resolution: "flyonui-vue-docs@workspace:packages/docs"
   dependencies:
     "@iconify/vue": "npm:^4.3.0"
-    "@playwright/test": "npm:*"
+    "@playwright/test": "npm:~1.54.2"
     "@stackblitz/sdk": "npm:^1.11.0"
     "@tailwindcss/postcss": "npm:^4.1.12"
     "@types/node": "npm:^22.17.1"
@@ -4883,7 +4883,7 @@ __metadata:
     highlight.js: "npm:^10.7.3"
     jsdom: "npm:^26.1.0"
     pinia: "npm:^3.0.3"
-    playwright: "npm:*"
+    playwright: "npm:~1.54.2"
     postcss: "npm:^8.5.6"
     sass-embedded: "npm:^1.90.0"
     tailwindcss: "npm:^4.1.12"
@@ -7278,7 +7278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:~1.54.2":
+"playwright@npm:1.54.2, playwright@npm:~1.54.2":
   version: 1.54.2
   resolution: "playwright@npm:1.54.2"
   dependencies:
@@ -7769,14 +7769,12 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@michaelcozzolino/eslint-config": "npm:^1.1.2"
-    "@playwright/test": "npm:~1.54.2"
     "@vitest/browser": "npm:^3.2.4"
     "@vitest/coverage-v8": "npm:^3.2.4"
     "@vue/test-utils": "npm:^2.4.6"
     change-case: "npm:^5.4.4"
     concurrently: "npm:^9.2.0"
     eslint: "npm:^9.33.0"
-    playwright: "npm:~1.54.2"
     typescript: "npm:^5.9.2"
     vitest: "npm:^3.2.4"
     vue-tsc: "npm:^3.0.5"

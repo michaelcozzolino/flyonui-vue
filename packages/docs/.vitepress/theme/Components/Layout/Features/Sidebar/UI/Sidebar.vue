@@ -1,6 +1,7 @@
 <template>
     <ClientOnly>
-        <aside ref="sidebar"
+        <aside id="flyonui-vue-docs-sidebar"
+               ref="sidebar"
                class="sticky top-16 overflow-x-hidden overflow-y-auto h-[calc(100vh-4.25rem)] shrink-0"
                :class="[
                    isCollapsed ? 'w-24' : 'w-64',
