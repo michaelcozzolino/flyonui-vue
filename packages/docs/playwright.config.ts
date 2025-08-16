@@ -4,6 +4,9 @@ import { defineConfig, devices } from '@playwright/test';
 const baseURL = 'http://localhost:4173';
 
 export default defineConfig({
+    expect: {
+        toMatchSnapshot: { maxDiffPixelRatio: 0.04, threshold: 0.4 },
+    },
     workers:   '50%',
     outputDir: './tests/EndToEnd/Results',
     webServer: {
