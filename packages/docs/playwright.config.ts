@@ -4,6 +4,7 @@ import { defineConfig, devices } from '@playwright/test';
 const baseURL = 'http://localhost:4173';
 
 export default defineConfig({
+    workers:   '50%',
     outputDir: './tests/EndToEnd/Results',
     webServer: {
         command:             'yarn workspace flyonui-vue-docs preview',
@@ -16,6 +17,11 @@ export default defineConfig({
             name: 'chromium',
             use:  {
                 ...devices['Desktop Chrome'],
+                launchOptions: {
+                    args: [
+                        '--disable-font-subpixel-positioning',
+                    ],
+                },
                 baseURL,
             },
         },
