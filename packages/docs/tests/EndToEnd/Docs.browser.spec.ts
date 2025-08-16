@@ -28,7 +28,13 @@ test('components previews', async ({ page }) => {
                 await page.goto(url);
 
                 await page.addStyleTag({
-                    content: ` #flyonui-vue-docs-navbar { display: none !important; }`,
+                    content: `
+                    #flyonui-vue-docs-navbar { display: none !important; }
+                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=block');
+html, body, * { font-family: 'Inter', system-ui, sans-serif !important; }
+body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+                    `,
+
                 });
 
                 const codeSnippets = await page.locator('[data-test="code-snippet"]').all();
