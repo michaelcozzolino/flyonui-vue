@@ -20,7 +20,6 @@ export default defineConfig({
             name: 'chromium',
             use:  {
                 ...devices['Desktop Chrome'],
-                viewport:      { width: 1280, height: 720 },
                 launchOptions: {
                     args: [
                         '--disable-font-subpixel-positioning',
