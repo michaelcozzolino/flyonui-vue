@@ -27,6 +27,10 @@ test('components previews', async ({ page }) => {
 
                 await page.goto(url);
 
+                await page.addStyleTag({
+                    content: ` #flyonui-vue-docs-navbar { display: none !important; }`,
+                });
+
                 const codeSnippets = await page.locator('[data-test="code-snippet"]').all();
 
                 const pathPrefix = categoryPath.slice(1);

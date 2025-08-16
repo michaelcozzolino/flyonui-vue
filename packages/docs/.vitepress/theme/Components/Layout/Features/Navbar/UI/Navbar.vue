@@ -1,6 +1,7 @@
 <template>
     <ClientOnly>
-        <FoNavbar class="vp-raw sticky top-0 z-100"
+        <FoNavbar id="flyonui-vue-docs-navbar"
+                  class="vp-raw sticky top-0 z-100"
                   :links="links"
                   link-type="js"
         >
