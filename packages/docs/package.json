@@ -9,7 +9,7 @@
     },
     "scripts": {
         "dev": "vitepress",
-        "preview": "yarn build && vitepress preview",
+        "preview": "vitepress preview",
         "build": "yarn type-check && vitepress build && cp -r assets/* ./.vitepress/dist/assets/",
         "lint": "eslint . --fix",
         "test": "vitest run",
