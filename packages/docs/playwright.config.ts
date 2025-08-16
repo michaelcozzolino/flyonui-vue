@@ -30,6 +30,12 @@ export default defineConfig({
         },
     ],
     reporter: [
-        ['html', { outputFolder: 'playwright-report', open: 'never' }],
+        [
+            'html',
+            {
+                outputFolder: 'tests/EndToEnd/Report',
+                open:         process.env.CI ? 'never' : 'always',
+            },
+        ],
     ],
 });

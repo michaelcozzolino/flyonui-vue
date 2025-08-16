@@ -85,3 +85,4 @@ packages/create-flyonui-vue/src/Templates/*/yarn.lock
 .npmrc
 
 packages/docs/tests/EndToEnd/Results
+packages/docs/tests/EndToEnd/Report
