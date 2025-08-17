@@ -11,7 +11,7 @@ import MonorepoPathResolver                       from './MonorepoPathResolver.t
 async function generateComponentsApi(): Promise<void> {
     const packagesPath      = MonorepoPathResolver.resolvePackagesPath();
     const corePath          = MonorepoPathResolver.resolvePackagePath('core');
-    const vueComponentsPath = resolve(corePath, 'src/Components');
+    const vueComponentsPath = resolve(corePath, 'src/UI');
 
     const checkerOptions: MetaCheckerOptions = {
         forceUseTs: true,
@@ -19,7 +19,7 @@ async function generateComponentsApi(): Promise<void> {
     };
 
     const tsconfigChecker = createChecker(
-        resolve(corePath, 'tsconfig.json'),
+        resolve(corePath, 'tsconfig.build.json'),
         checkerOptions,
     );
 
