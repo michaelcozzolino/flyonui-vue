@@ -18,7 +18,8 @@
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
-        "src/**/*.vue"
+        "src/**/*.vue",
+        "tests/**/*.spec.ts"
     ],
     "exclude": [
         "node_modules",
@@ -26,7 +27,6 @@
         "dist-ce.vue",
         "vite.config.vue.mts",
         "vite.config.ce.vue.mts",
-        "tests/**/*.ts",
         "src/Scripts/**/*.ts"
     ]
 }
