@@ -7,3 +7,4 @@ export * from '@/UI/Content';
 export * from '@/UI/Customization';
 export * from '@/UI/Forms';
 export * from '@/UI/Overlays';
+export * from '@/UI/Tables';
