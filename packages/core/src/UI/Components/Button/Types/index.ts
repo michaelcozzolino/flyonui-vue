@@ -1,1 +1,1 @@
-export * from '@/UI/Components/Button/Types/Button.ts';
+export * from '@/UI/Components/Button/Types/Button';

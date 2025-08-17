@@ -1,1 +1,1 @@
-export * from '@/UI/Components/Label/Types/Label.ts';
+export * from '@/UI/Components/Label/Types/Label';

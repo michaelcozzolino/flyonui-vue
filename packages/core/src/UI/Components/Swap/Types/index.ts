@@ -1,1 +1,1 @@
-export * from '@/UI/Components/Swap/Types/Swap.ts';
+export * from '@/UI/Components/Swap/Types/Swap';

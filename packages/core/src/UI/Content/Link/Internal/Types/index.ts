@@ -1,1 +1,1 @@
-export * from '@/UI/Content/Link/Internal/Types/RouterLink.ts';
+export * from '@/UI/Content/Link/Internal/Types/RouterLink';

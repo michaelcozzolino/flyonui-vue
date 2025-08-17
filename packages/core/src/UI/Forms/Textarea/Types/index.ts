@@ -1,1 +1,1 @@
-export * from '@/UI/Forms/Textarea/Types/Textarea.ts';
+export * from '@/UI/Forms/Textarea/Types/Textarea';

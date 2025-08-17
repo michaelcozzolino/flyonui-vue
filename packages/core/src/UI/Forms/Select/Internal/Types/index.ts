@@ -1,1 +1,1 @@
-export * from '@/UI/Forms/Select/Internal/Types/Select.ts';
+export * from '@/UI/Forms/Select/Internal/Types/Select';

@@ -1,1 +1,1 @@
-export * from '@/UI/Content/Heading/Types/Heading.ts';
+export * from '@/UI/Content/Heading/Types/Heading';

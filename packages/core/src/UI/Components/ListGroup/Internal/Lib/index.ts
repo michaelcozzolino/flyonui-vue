@@ -1,1 +1,1 @@
-export * from '@/UI/Components/ListGroup/Internal/Lib/InjectionKeys.ts';
+export * from '@/UI/Components/ListGroup/Internal/Lib/InjectionKeys';

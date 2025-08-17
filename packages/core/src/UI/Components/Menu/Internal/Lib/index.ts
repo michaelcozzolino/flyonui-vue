@@ -1,1 +1,1 @@
-export * from '@/UI/Components/Menu/Internal/Lib/InjectionKeys.ts';
+export * from '@/UI/Components/Menu/Internal/Lib/InjectionKeys';

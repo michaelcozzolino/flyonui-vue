@@ -1,1 +1,1 @@
-export * from '@/UI/Components/Loading/Types/Loading.ts';
+export * from '@/UI/Components/Loading/Types/Loading';

@@ -1,1 +1,1 @@
-export * from '@/UI/Forms/Join/Types/Join.ts';
+export * from '@/UI/Forms/Join/Types/Join';

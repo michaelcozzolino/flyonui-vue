@@ -1,1 +1,1 @@
-export * from '@/UI/Components/Stats/Types/Stats.ts';
+export * from '@/UI/Components/Stats/Types/Stats';

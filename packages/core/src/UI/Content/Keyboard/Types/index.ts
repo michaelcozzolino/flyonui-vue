@@ -1,1 +1,1 @@
-export * from '@/UI/Content/Keyboard/Types/Keyboard.ts';
+export * from '@/UI/Content/Keyboard/Types/Keyboard';

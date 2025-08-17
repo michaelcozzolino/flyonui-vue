@@ -1,1 +1,1 @@
-export * from '@/UI/Forms/InputText/Types/InputText.ts';
+export * from '@/UI/Forms/InputText/Types/InputText';

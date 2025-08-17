@@ -1,1 +1,1 @@
-export * from '@/UI/Components/ThemeController/Types/ThemeController.ts';
+export * from '@/UI/Components/ThemeController/Types/ThemeController';

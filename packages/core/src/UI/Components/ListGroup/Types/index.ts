@@ -1,1 +1,1 @@
-export * from '@/UI/Components/ListGroup/Types/ListGroup.ts';
+export * from '@/UI/Components/ListGroup/Types/ListGroup';

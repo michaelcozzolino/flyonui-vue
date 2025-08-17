@@ -1,1 +1,1 @@
-export * from '@/UI/Components/Navbar/Types/Navbar.ts';
+export * from '@/UI/Components/Navbar/Types/Navbar';

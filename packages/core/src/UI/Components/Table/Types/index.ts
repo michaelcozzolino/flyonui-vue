@@ -1,1 +1,1 @@
-export * from '@/UI/Components/Table/Types/Table.ts';
+export * from '@/UI/Components/Table/Types/Table';
