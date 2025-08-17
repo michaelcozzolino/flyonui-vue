@@ -25,12 +25,12 @@
 </template>
 
 <script setup lang="ts">
-import type { TooltipProps, TooltipSlots } from '@/Components/Tooltip';
-import type { ComponentName }              from '@/Shared';
-import { tooltipAsPopover }                from '@/Components/Tooltip/Internal';
-import { useColor }                        from '@/Shared/UseColor/Internal';
-import { useFlyonUIVueAppConfig }          from '@/Shared/UseFlyonUIVueAppConfig';
-import { useSize }                         from '@/Shared/UseSize/Internal';
+import type { ComponentName }              from '@/Lib';
+import type { TooltipProps, TooltipSlots } from '@/UI/Overlays';
+import { useColor }                        from '@/Lib/UseColor/Internal';
+import { useFlyonUIVueAppConfig }          from '@/Lib/UseFlyonUIVueAppConfig';
+import { useSize }                         from '@/Lib/UseSize/Internal';
+import { tooltipAsPopover }                from '@/UI/Overlays/Tooltip/Internal';
 import { offset, useFloating }             from '@floating-ui/vue';
 import { onClickOutside }                  from '@vueuse/core';
 import { inject, ref, useTemplateRef }     from 'vue';

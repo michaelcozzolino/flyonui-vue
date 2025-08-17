@@ -1,6 +1,6 @@
-import type { Colorable }               from '@/Shared/UseColor';
-import type { Sizable }                 from '@/Shared/UseSize';
-import type { WithRequiredDefaultSlot } from '@/Shared/Utils/Types/Slots.ts';
+import type { Colorable, Sizable  } from '@/Lib';
+
+import type { WithRequiredDefaultSlot } from '@/Types';
 import type { Placement }               from '@floating-ui/vue';
 import type { Slot }                    from 'vue';
 
