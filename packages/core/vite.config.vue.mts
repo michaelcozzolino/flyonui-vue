@@ -4,13 +4,11 @@ import tailwindcss      from '@tailwindcss/vite';
 import vue              from '@vitejs/plugin-vue';
 import { visualizer }   from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
-import tsconfigPaths    from 'vite-tsconfig-paths';
 
 export default defineConfig({
     plugins: [
         vue(),
         tailwindcss(),
-        tsconfigPaths(),
         // todo: understand why not working in local
         ...process.env.GENERATE_BUILD_SIZE_VISUALIZER
             ? [visualizer({
