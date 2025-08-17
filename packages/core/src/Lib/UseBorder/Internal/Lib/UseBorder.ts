@@ -1,6 +1,6 @@
-import type { BorderableComponentName }       from '@/Shared/UseBorder';
+import type { BorderableComponentName }       from '@/Lib/UseBorder';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useClass }                           from '@/Shared/UseClass/Internal';
+import { useClass }                           from '@/Lib/UseClass/Internal';
 import { toValue }                            from 'vue';
 
 export function useBorder(

@@ -1,4 +1,4 @@
-import type { ComponentName } from '@/Shared';
+import type { ComponentName } from '@/Lib';
 
 export type BorderableComponentName = Extract<ComponentName, 'FoStats' | 'FoTable'>;
 
