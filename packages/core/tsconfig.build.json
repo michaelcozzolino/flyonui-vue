@@ -1,0 +1,25 @@
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "composite": true,
+        "rootDir": "./src",
+        "declarationMap": true,
+        "noEmit": false,
+        "outDir": "dist-vue"
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist-vue",
+        "dist-ce.vue",
+        "vite.config.vue.mts",
+        "vite.config.ce.vue.mts",
+        "src/Scripts/**/*.ts",
+        "tests/**"
+    ]
+}

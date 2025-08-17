@@ -1,5 +1,5 @@
-import type { FlyonUIVueComponent, FlyonUIWebComponent } from '@/Types/WebComponent.ts';
-import StyleSheetHelper                                  from '@/Lib/StyleSheetHelper.ts';
+import type { FlyonUIVueComponent, FlyonUIWebComponent } from '@/Types/WebComponent';
+import StyleSheetHelper                                  from '@/Lib/StyleSheetHelper';
 
 import { kebabCase } from 'change-case';
 import {

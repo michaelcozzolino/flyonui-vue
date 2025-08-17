@@ -30,7 +30,7 @@ const coverageThresholds = testablePackages.map((testablePackage: TestablePackag
     return { [`packages/${name}${name === 'docs' ? '/src' : ''}/**/*`]: testablePackage.coverageThresholds };
 });
 
-const workspace: TestProjectConfiguration[] = testablePackages.map((testablePackage: TestablePackage) => {
+const projects: TestProjectConfiguration[] = testablePackages.map((testablePackage: TestablePackage) => {
     const name = testablePackage.name;
 
     return {
@@ -54,7 +54,7 @@ const workspace: TestProjectConfiguration[] = testablePackages.map((testablePack
 
 export default defineConfig({
     test: {
-        workspace,
+        projects,
         clearMocks:   true,
         mockReset:    true,
         restoreMocks: true,
