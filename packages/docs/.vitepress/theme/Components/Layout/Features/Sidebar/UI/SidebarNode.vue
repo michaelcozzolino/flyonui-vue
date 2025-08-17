@@ -15,11 +15,11 @@
             </FoBadge>
         </template>
 
-        <template v-if="isCollapsed === false && item.to === undefined">
-            <FoMenuParentTitle class="font-bold! text-primary">
-                {{ item.text }}
-            </FoMenuParentTitle>
-        </template>
+        <FoMenuParentTitle v-if="isCollapsed === false && item.to === undefined"
+                           class="font-bold! text-primary"
+        >
+            {{ item.text }}
+        </FoMenuParentTitle>
 
         <FoMenu v-if="item.children.length"
                 :hide-text="isCollapsed"
