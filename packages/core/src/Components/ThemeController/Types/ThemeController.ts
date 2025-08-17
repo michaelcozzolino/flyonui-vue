@@ -2,15 +2,21 @@ import type { UseColorModeOptions } from '@vueuse/core';
 
 export type FlyonUITheme = 'light'
     | 'dark'
-    | 'gourmet'
+    | 'black'
+    | 'claude'
     | 'corporate'
     | 'ghibli'
+    | 'gourmet'
     | 'luxury'
     | 'mintlify'
+    | 'pastel'
+    | 'perplexity'
     | 'shadcn'
     | 'slack'
     | 'soft'
+    | 'spotify'
     | 'valorant'
+    | 'vscode'
     | string;
 
 export type FlyonUIThemeModes = Record<FlyonUITheme, FlyonUITheme>;
