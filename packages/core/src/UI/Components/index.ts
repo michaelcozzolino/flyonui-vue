@@ -8,6 +8,6 @@ export * from '@/UI/Components/Menu';
 export * from '@/UI/Components/Navbar';
 export * from '@/UI/Components/Stats';
 export * from '@/UI/Components/Swap';
-export * from '@/UI/Components/Table';
+
 export * from '@/UI/Components/ThemeController';
 // export * from '@/Components/Radio';

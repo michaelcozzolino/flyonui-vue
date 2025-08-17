@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import type { WithRequiredDefaultSlot } from '@/Types';
-import type { TableRowProps }           from '@/UI/Components';
+import type { TableRowProps }           from '@/UI/Tables';
 import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
 
 defineProps<TableRowProps>();
