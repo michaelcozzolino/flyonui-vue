@@ -1,7 +1,7 @@
-import type { Shape }                 from '@/Shared/UseShape';
+import type { Shape }                 from '@/Lib';
 import type { MaybeRefOrGetter }      from 'vue';
-import { flyonUIVueAppDefaultConfig } from '@/Shared/UseFlyonUIVueAppConfig';
-import { isTextAllowedForShape }      from '@/Shared/UseShape/Internal';
+import { flyonUIVueAppDefaultConfig } from '@/Lib';
+import { isTextAllowedForShape }      from '@/Lib/UseShape/Internal';
 import { describe, expect, it }       from 'vitest';
 import { computed, ref }              from 'vue';
 
