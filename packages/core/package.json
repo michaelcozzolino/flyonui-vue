@@ -46,7 +46,7 @@
         "publish": "yarn npm publish --access public",
         "test": "vitest run",
         "test-coverage": "vitest run --coverage",
-        "type-check": "vue-tsc --noEmit -p tsconfig.build.json"
+        "type-check": "vue-tsc --noEmit -p tsconfig.build.json && vue-tsc --noEmit -p tsconfig.test.json"
     },
     "peerDependencies": {
         "@iconify/vue": "^4",
