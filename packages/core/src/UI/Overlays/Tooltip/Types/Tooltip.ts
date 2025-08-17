@@ -1,5 +1,4 @@
-import type { Colorable, Sizable  } from '@/Lib';
-
+import type { Colorable, Sizable }      from '@/Lib';
 import type { WithRequiredDefaultSlot } from '@/Types';
 import type { Placement }               from '@floating-ui/vue';
 import type { Slot }                    from 'vue';

@@ -27,8 +27,8 @@
 <script setup lang="ts">
 import type { ComponentName }              from '@/Lib';
 import type { TooltipProps, TooltipSlots } from '@/UI/Overlays';
+import { useFlyonUIVueAppConfig }          from '@/Lib';
 import { useColor }                        from '@/Lib/UseColor/Internal';
-import { useFlyonUIVueAppConfig }          from '@/Lib/UseFlyonUIVueAppConfig';
 import { useSize }                         from '@/Lib/UseSize/Internal';
 import { tooltipAsPopover }                from '@/UI/Overlays/Tooltip/Internal';
 import { offset, useFloating }             from '@floating-ui/vue';
