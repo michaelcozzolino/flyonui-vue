@@ -18,8 +18,7 @@
         "src/**/*.ts",
         "src/**/*.d.ts",
         "src/**/*.tsx",
-        "src/**/*.vue",
-        "src/Components/ComponentsApi.json"
+        "src/**/*.vue"
     ],
     "exclude": [
         "node_modules",
