@@ -1,32 +1,11 @@
 {
-    "extends": "@vue/tsconfig/tsconfig.dom.json",
-    "compilerOptions": {
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
-        "composite": true,
-        "rootDir": "./src",
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ]
+    "files": [],
+    "references": [
+        {
+            "path": "./tsconfig.build.json"
         },
-        "declarationMap": true,
-        "noEmit": false,
-        "outDir": "dist-vue"
-    },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.d.ts",
-        "src/**/*.tsx",
-        "src/**/*.vue",
-        "tests/**/*.spec.ts"
-    ],
-    "exclude": [
-        "node_modules",
-        "dist-vue",
-        "dist-ce.vue",
-        "vite.config.vue.mts",
-        "vite.config.ce.vue.mts",
-        "src/Scripts/**/*.ts"
+        {
+            "path": "./tsconfig.test.json"
+        }
     ]
 }
