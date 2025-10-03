@@ -5,10 +5,11 @@ import type {
     Preset,
     Presettable,
     Responsive,
+    Shape,
     Shapeable,
     Sizable,
     WithGlass,
-}                                           from '@/Lib';
+} from '@/Lib';
 import type { Default, HorizontalPosition } from '@/Types';
 import type { LoadingProps }                from '@/UI/Components';
 import type { WithTo }                      from '@/UI/Content';
@@ -44,8 +45,9 @@ export interface LoadingButtonProps extends Omit<ButtonProps, 'icon'> {
 
 export type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
 export type SocialButtonPreset = Extract<Preset, 'solid' | 'soft' | 'outline'>;
+export type SocialButtonShape = Extract<Shape, 'square' | 'circle'>;
 
-export interface SocialButtonProps extends Presettable<SocialButtonPreset> {
+export interface SocialButtonProps extends Presettable<SocialButtonPreset>, Shapeable<SocialButtonShape> {
     /** The button's social platform */
     social: Social;
 }
