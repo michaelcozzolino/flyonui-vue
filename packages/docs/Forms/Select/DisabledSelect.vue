@@ -28,5 +28,5 @@ const options = ref<SelectOption[]>([
 ]);
 
 const selectedOption         = useSelectedOption(options, null);
-const selectedOptionFloating = useSelectedOption(options, options.value[0].id, false);
+const selectedOptionFloating = useSelectedOption<number, SelectOption>(options, 1, false);
 </script>

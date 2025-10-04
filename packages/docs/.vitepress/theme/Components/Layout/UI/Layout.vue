@@ -77,13 +77,13 @@ const items = computed((): DocsSidebarItem[] => {
         if (lastHeadingLevel === null || headingLevel < lastHeadingLevel) {
             docsSidebarItems.push(item);
         } else if (headingLevel === lastHeadingLevel) {
-            const itemsLength = docsSidebarItems.length;
+            const lastItem = docsSidebarItems.at(-1);
 
-            if (itemsLength === 0) {
+            if (lastItem === undefined) {
                 continue;
             }
 
-            docsSidebarItems[docsSidebarItems.length - 1].children.push(item);
+            lastItem.children.push(item);
         } else {
             if (lastDocsSidebarItem === null) {
                 continue;

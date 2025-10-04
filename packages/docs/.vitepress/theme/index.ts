@@ -23,6 +23,7 @@ import SelectDocs                         from '@/Forms/Select/SelectDocs.vue';
 import TextareaDocs                       from '@/Forms/Textarea/TextareaDocs.vue';
 import MenuDocs                           from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                         from '@/Navigations/Navbar/NavbarDocs.vue';
+import PaginationDocs                     from '@/Navigations/Pagination/PaginationDocs.vue';
 import PopoverDocs                        from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                        from '@/Overlays/Tooltip/TooltipDocs.vue';
 import Playground                         from '@/Playground/Playground.vue';
@@ -80,6 +81,7 @@ export default {
             { name: 'HeadingDocs', instance: HeadingDocs },
             { name: 'MenuDocs', instance: MenuDocs },
             { name: 'NavbarDocs', instance: NavbarDocs },
+            { name: 'PaginationDocs', instance: PaginationDocs },
             { name: 'PopoverDocs', instance: PopoverDocs },
             { name: 'StatsDocs', instance: StatsDocs },
             { name: 'SwapDocs', instance: SwapDocs },
