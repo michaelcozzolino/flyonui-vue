@@ -26,6 +26,9 @@ jobs:
                 with:
                     node-version: ${{ matrix.node-version }}
                     cache: yarn
+            -   uses: actions/checkout@v4
+            - name: Setup tmate session
+              uses: mxschmitt/action-tmate@v3
             -   run: yarn install
             -   run: yarn audit
             -   run: yarn build
