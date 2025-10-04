@@ -2,7 +2,7 @@
     <div :class="[
         $attrs?.class,
         inputGroupContainerClass,
-        isGroup === false && floatingClass,
+        isGroup ? sizeClass : floatingClass,
     ]"
     >
         <slot v-if="$slots.prepend !== undefined || inputIcon?.left"
@@ -38,7 +38,7 @@
                        isGroup && 'pb-1 placeholder:pb-1', // todo: temporary because the padding doesn't seem to be correct even with the same flyonui code
                        paddingClass,
                        shapeClass,
-                       sizeClass,
+                       isGroup === false && sizeClass,
                        validityClass,
                        withoutFocus && 'no-focus border-0',
                    ]"
