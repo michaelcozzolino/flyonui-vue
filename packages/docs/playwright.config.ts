@@ -1,7 +1,9 @@
 import * as process              from 'node:process';
 import { defineConfig, devices } from '@playwright/test';
 
-const baseURL = 'http://localhost:4173';
+const baseURL          = 'http://localhost:4173';
+const workspaceCommand = 'yarn workspace flyonui-vue-docs';
+const previewCommand   = `${workspaceCommand} preview`;
 
 export default defineConfig({
     expect: {
@@ -10,7 +12,8 @@ export default defineConfig({
     workers:   '50%',
     outputDir: './tests/EndToEnd/Results',
     webServer: {
-        command:             'yarn workspace flyonui-vue-docs preview',
+        // In the GitHub action the docs are built before the execution of the tests, in local they might not be.
+        command:             process.env.CI ? previewCommand : `${workspaceCommand} build && ${previewCommand}`,
         url:                 baseURL,
         timeout:             120 * 1000,
         reuseExistingServer: !process.env.CI,
