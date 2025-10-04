@@ -3,19 +3,23 @@
               v-bind="props"
               :icon="icon"
     >
-        {{ social }}
+        {{ isTextAllowedForShape(config, 'FoButton', shape) ? social : '' }}
     </FoButton>
 </template>
 
 <script setup lang="ts">
 import type { Preset }                    from '@/Lib';
 import type { Social, SocialButtonProps } from '@/UI/Components';
+import { useFlyonUIVueAppConfig }         from '@/Lib';
+import { isTextAllowedForShape }          from '@/Lib/UseShape/Internal';
 import { FoButton }                       from '@/UI/Components';
 import { computed }                       from 'vue';
 
 const props = withDefaults(defineProps<SocialButtonProps>(), {
     preset: 'solid',
 });
+
+const { config } = useFlyonUIVueAppConfig();
 
 const icon = computed((): string => {
     const icons: Record<Social, string> = {
