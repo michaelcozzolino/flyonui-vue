@@ -16,7 +16,7 @@
                         :hide-text="isCollapsed"
                 >
                     <SidebarNode v-for="item in items"
-                                 :key="item.id"
+                                 :key="item.text"
                                  :item="item"
                     />
                 </FoMenu>
@@ -46,11 +46,9 @@ const unreleasedBadge: SidebarBadge = {
 
 const items = ref<SidebarItem[]>([
     {
-        id:       1,
         text:     'Getting Started',
         children: [
             {
-                id:       2,
                 text:     'Quick Start',
                 to:       '/quick-start',
                 icon:     'tabler:rocket',
@@ -59,11 +57,9 @@ const items = ref<SidebarItem[]>([
         ],
     },
     {
-        id:       3,
         text:     'Customization',
         children: [
             {
-                id:       4,
                 text:     'Icons',
                 to:       '/customisation/icons',
                 icon:     'uil:icons',
@@ -72,18 +68,15 @@ const items = ref<SidebarItem[]>([
         ],
     },
     {
-        id:       5,
         text:     'Content',
         children: [
             {
-                id:       6,
                 text:     'Link',
                 to:       '/content/link',
                 icon:     'ic:round-link',
                 children: [],
             },
             {
-                id:       7,
                 text:     'Keyboard',
                 to:       '/content/keyboard',
                 icon:     'mdi:keyboard-outline',
@@ -91,14 +84,12 @@ const items = ref<SidebarItem[]>([
                 children: [],
             },
             {
-                id:       8,
                 text:     'Mask',
                 to:       '/content/mask',
                 icon:     'mdi:face-mask',
                 children: [],
             },
             {
-                id:       9,
                 text:     'Heading',
                 to:       '/content/heading',
                 icon:     'mdi:format-header-1',
@@ -107,46 +98,39 @@ const items = ref<SidebarItem[]>([
         ],
     },
     {
-        id:       10,
         text:     'Components',
         children: [
             {
-                id:       11,
                 text:     'Badge',
                 to:       '/components/badge',
                 icon:     'mdi:badge-account-outline',
                 children: [],
             },
             {
-                id:       12,
                 text:     'Button',
                 to:       '/components/button',
                 icon:     'mdi:gesture-tap-button',
                 children: [],
             },
             {
-                id:       13,
                 text:     'List Group',
                 to:       '/components/list-group',
                 icon:     'mdi:format-list-bulleted',
                 children: [],
             },
             {
-                id:       14,
                 text:     'Loading',
                 to:       '/components/loading',
                 icon:     'line-md:loading-twotone-loop',
                 children: [],
             },
             {
-                id:       15,
                 text:     'Stats',
                 to:       '/components/stats',
                 icon:     'mdi:chart-bar',
                 children: [],
             },
             {
-                id:       16,
                 text:     'Swap',
                 to:       '/components/swap',
                 icon:     'mdi:swap-horizontal',
@@ -155,38 +139,39 @@ const items = ref<SidebarItem[]>([
         ],
     },
     {
-        id:       17,
         text:     'Navigations',
         children: [
             {
-                id:       18,
                 text:     'Menu',
                 to:       '/navigations/menu',
                 icon:     'mdi:menu',
                 children: [],
             },
             {
-                id:       19,
                 text:     'Navbar',
                 to:       '/navigations/navbar',
                 icon:     'mdi:view-sequential',
                 children: [],
             },
+            {
+                text:     'Pagination',
+                to:       '/navigations/pagination',
+                icon:     'carbon:insert-page',
+                badge:    unreleasedBadge,
+                children: [],
+            },
         ],
     },
     {
-        id:       20,
         text:     'Overlays',
         children: [
             {
-                id:       21,
                 text:     'Popover',
                 to:       '/overlays/popover',
                 icon:     'mdi:tooltip-outline',
                 children: [],
             },
             {
-                id:       22,
                 text:     'Tooltip',
                 to:       '/overlays/tooltip',
                 icon:     'mdi:tooltip-text',
@@ -195,39 +180,33 @@ const items = ref<SidebarItem[]>([
         ],
     },
     {
-        id:       23,
         text:     'Forms',
         children: [
             {
-                id:       24,
                 text:     'Checkbox',
                 to:       '/forms/checkbox',
                 icon:     'mdi:checkbox-marked',
                 children: [],
             },
             {
-                id:       25,
                 text:     'Input Text',
                 to:       '/forms/input-text',
                 icon:     'mdi:form-textbox',
                 children: [],
             },
             {
-                id:       26,
                 text:     'Join',
                 to:       '/forms/join',
                 icon:     'mdi:account-plus',
                 children: [],
             },
             {
-                id:       27,
                 text:     'Select',
                 to:       '/forms/select',
                 icon:     'mdi:chevron-down-box',
                 children: [],
             },
             {
-                id:       28,
                 text:     'Textarea',
                 to:       '/forms/textarea',
                 icon:     'mdi:textarea',
@@ -236,11 +215,9 @@ const items = ref<SidebarItem[]>([
         ],
     },
     {
-        id:       29,
         text:     'Tables',
         children: [
             {
-                id:       30,
                 text:     'Table',
                 to:       '/tables/table',
                 icon:     'mdi:table',
@@ -250,11 +227,9 @@ const items = ref<SidebarItem[]>([
         ],
     },
     {
-        id:       31,
         text:     'Extra',
         children: [
             {
-                id:       32,
                 text:     'Build Size Visualizer',
                 to:       '/extra/build-size-visualizer',
                 icon:     'mdi:chart-pie',

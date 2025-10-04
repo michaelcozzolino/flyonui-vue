@@ -1,8 +1,8 @@
-import type { BadgeProps, Id, MenuItem  } from 'flyonui-vue';
+import type { BadgeProps, MenuItem  } from 'flyonui-vue';
 
 export type SidebarBadge = BadgeProps & { text: string };
 
-export interface SidebarItem extends Id, MenuItem {
+export interface SidebarItem extends MenuItem {
     badge?:   SidebarBadge;
     children: SidebarItem[];
 }

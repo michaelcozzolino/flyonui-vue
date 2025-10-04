@@ -41,7 +41,6 @@
                     <FoButton icon="tabler:settings-bolt"
                               color="info"
                               shape="square"
-                              @click="showSettings = !showSettings"
                     />
 
                     <template #body>
@@ -77,7 +76,7 @@ import {
 import { storeToRefs }                  from 'pinia';
 import { useData, useRouter, withBase } from 'vitepress';
 import { VPNavBarSearch }               from 'vitepress/theme';
-import { computed, onMounted, ref }     from 'vue';
+import { computed, onMounted }          from 'vue';
 
 const router = useRouter();
 
@@ -95,7 +94,6 @@ const links = computed((): NavbarLink[] => {
     ];
 });
 
-const showSettings    = ref<boolean>(false);
 const themeStorageKey = 'vitepress-theme-appearance';
 
 onMounted(() => {
