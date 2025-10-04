@@ -78,15 +78,15 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName, IconSize }         from '@/Lib';
+import type { ComponentName, IconSize, Size }   from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot } from '@/Types';
+import type { LabelType }                       from '@/UI/Components';
 
-import type { LabelType }         from '@/UI/Components';
 import type { InputTextProps }    from '@/UI/Forms/InputText';
 import { useFlyonUIVueAppConfig } from '@/Lib';
 import { useFloatingLabel }       from '@/Lib/UseFloatingLabel/Internal';
 import { useShape }               from '@/Lib/UseShape/Internal';
-import { useSize }                from '@/Lib/UseSize/Internal';
+import { getSize, useSize }       from '@/Lib/UseSize/Internal';
 
 import { useValidity } from '@/Lib/UseValidity/Internal';
 
@@ -128,7 +128,17 @@ const [input, modifiers] = defineModel<InputTextValue, 'trim' | 'null'>({
     },
 });
 
-const iconSize: IconSize = 'small';
+const iconSize = computed((): IconSize => {
+    const sizes: Record<Size, IconSize> = {
+        extraSmall: 'doubleExtraSmall',
+        small:      'extraSmall',
+        medium:     'small',
+        large:      'medium',
+        extraLarge: 'large',
+    };
+
+    return sizes[getSize(config, componentName, props.size).value];
+});
 
 const inputIcon = usePositionableIcon(
     config,
