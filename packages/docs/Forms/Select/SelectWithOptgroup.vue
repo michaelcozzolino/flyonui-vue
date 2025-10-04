@@ -7,9 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import type { SelectOptionType }       from 'flyonui-vue';
-import { FoSelect, useSelectedOption } from 'flyonui-vue';
-import { ref }                         from 'vue';
+import type { SelectOption, SelectOptionType } from 'flyonui-vue';
+import { FoSelect, useSelectedOption }         from 'flyonui-vue';
+import { ref }                                 from 'vue';
 
 const options = ref<SelectOptionType[]>([
     {
@@ -30,5 +30,5 @@ const options = ref<SelectOptionType[]>([
     },
 ]);
 
-const selectedOption = useSelectedOption(options, 1, false);
+const selectedOption = useSelectedOption<number, SelectOption>(options, 1);
 </script>

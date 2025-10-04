@@ -47,5 +47,5 @@ const options = ref<SelectOption[]>([
     { id: 5, text: `Schindler's List` },
 ]);
 
-const selectedOption = useSelectedOption(options, null);
+const selectedOption = useSelectedOption<number | null, SelectOption>(options, null);
 </script>
