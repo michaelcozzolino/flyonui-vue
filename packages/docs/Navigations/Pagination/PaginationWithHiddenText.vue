@@ -37,13 +37,6 @@
                   :length="totalPages"
                   preset="soft"
                   :icon="{ previous: 'tabler:chevron-left', next: 'tabler:chevron-right' }"
-                  hide-text="lg"
-    />
-
-    <FoPagination v-model="page"
-                  :length="totalPages"
-                  preset="soft"
-                  :icon="{ previous: 'tabler:chevron-left', next: 'tabler:chevron-right' }"
                   hide-text="xl"
     />
 
