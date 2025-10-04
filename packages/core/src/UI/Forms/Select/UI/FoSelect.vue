@@ -145,21 +145,25 @@ watchEffect(() => {
      * way to automatically select the null option, it will still get one option back that is the first one.
      */
     if (selectedOption.value === null && defaultLabel.value?.type !== 'inline') {
-        const option = props.options[0];
+        const firstOption = props.options.at(0);
 
-        if (isSelectOptionGroup(option)) {
-            const optionsByGroup = option.options;
+        if (firstOption === undefined) {
+            throw new Error(`No option given.`);
+        }
 
-            if (optionsByGroup.length === 0) {
-                throw new Error(`No option given for group ${option.label}.`);
+        if (isSelectOptionGroup(firstOption)) {
+            const firstOptionByGroup = firstOption.options.at(0);
+
+            if (firstOptionByGroup === undefined) {
+                throw new Error(`No option given for group ${firstOption.label}.`);
             }
 
-            selectedOption.value = optionsByGroup[0];
+            selectedOption.value = firstOptionByGroup;
 
             return;
         }
 
-        selectedOption.value = option;
+        selectedOption.value = firstOption;
     }
 });
 </script>

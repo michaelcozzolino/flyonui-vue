@@ -136,7 +136,7 @@ const pageItems = computed<PageItem[]>(() => {
     pages.push(...startPages);
 
     // Left ellipsis if there is a gap between start and middle
-    if (middle.length && middle[0] > (startPages.at(-1)! + 1)) {
+    if (0 in middle && middle[0] > (startPages.at(-1)! + 1)) {
         pages.push('left-ellipsis');
     }
 
@@ -144,7 +144,7 @@ const pageItems = computed<PageItem[]>(() => {
     pages.push(...middle);
 
     // Right ellipsis if there is a gap between middle and end
-    if (middle.length && endPages[0] > (middle.at(-1)! + 1)) {
+    if (middle.length && 0 in endPages && endPages[0] > (middle.at(-1)! + 1)) {
         pages.push('right-ellipsis');
     }
 
