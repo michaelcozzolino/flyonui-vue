@@ -94,3 +94,11 @@ All you need to do is to use the composable:
                     lang="js"
                     code="const config = useFlyonUIVueAppConfig();"
 />
+
+if you want to be able to manipulate the configuration, where the initial one is the default one, you will still have to 
+use the plugin:
+
+<VueCodeHighlighter title="Vue"
+                    lang="js"
+                    code="app.use(createFlyonUIVueApp, {});"
+/>
