@@ -25,7 +25,7 @@
                 :hide-text="isCollapsed"
         >
             <SidebarNode v-for="childItem in item.children"
-                         :key="childItem.id"
+                         :key="childItem.text"
                          :item="childItem"
                          :is-collapsed="isCollapsed"
                          :title="childItem.text"
