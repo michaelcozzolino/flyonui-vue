@@ -1,8 +1,8 @@
-import type { SelectOption, SelectOptionType }                 from '@/UI/Forms/Select';
-import type { MaybeRefOrGetter, Ref, UnwrapRef } from 'vue';
-import { useIdentifiable }                       from '@/Lib/UseIdentifiable/Internal';
-import { isSelectOptionGroup }                   from '@/UI/Forms/Select/Internal';
-import { isReadonly, isRef, ref, toValue, watch, watchEffect } from 'vue';
+import type { SelectOption, SelectOptionType }                                from '@/UI/Forms/Select';
+import type { ComputedRef, MaybeRefOrGetter, Ref, UnwrapRef }                 from 'vue';
+import { useIdentifiable }                                                    from '@/Lib/UseIdentifiable/Internal';
+import { isSelectOptionGroup }                                                from '@/UI/Forms/Select/Internal';
+import { computed, isReadonly, isRef, ref, toValue, watch, watchEffect      } from 'vue';
 
 export function useSelectedOption<T extends number | string, K extends SelectOption<T>>(
     options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
@@ -108,18 +108,20 @@ function getSelectedOptionIfExists<T extends string | number, K extends SelectOp
 
 function getFlatOptions<T extends number | string, K extends SelectOption<T>>(
     options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
-): K[] {
-    const maybeGroupedOptions = toValue(options).map(toValue);
+): ComputedRef<K[]> {
+    return computed(() => {
+        const maybeGroupedOptions = toValue(options).map(toValue);
 
-    let flatOptions: K[] = [];
+        let flatOptions: K[] = [];
 
-    for (const maybeGroupedOption of maybeGroupedOptions) {
-        if (isSelectOptionGroup(maybeGroupedOption)) {
-            flatOptions = flatOptions.concat(maybeGroupedOption.options);
-        } else {
-            flatOptions.push(maybeGroupedOption);
+        for (const maybeGroupedOption of maybeGroupedOptions) {
+            if (isSelectOptionGroup(maybeGroupedOption)) {
+                flatOptions = flatOptions.concat(maybeGroupedOption.options);
+            } else {
+                flatOptions.push(maybeGroupedOption);
+            }
         }
-    }
 
-    return flatOptions;
+        return flatOptions;
+    });
 }
