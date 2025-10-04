@@ -39,6 +39,6 @@ const options = ref<SelectOption[]>([
     { id: 5, text: `Schindler's List` },
 ]);
 
-const selectedOption         = useSelectedOption(options, null);
-const selectedOptionFloating = useSelectedOption<number, SelectOption>(options, 1, false);
+const selectedOption         = useSelectedOption<number | null, SelectOption>(options, null);
+const selectedOptionFloating = useSelectedOption<number, SelectOption>(options, 1);
 </script>

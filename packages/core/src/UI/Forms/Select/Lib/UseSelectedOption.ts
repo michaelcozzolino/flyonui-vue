@@ -1,109 +1,57 @@
 import type { SelectOption, SelectOptionType }                                from '@/UI/Forms/Select';
-import type { ComputedRef, MaybeRefOrGetter, Ref, UnwrapRef }                 from 'vue';
+import type { ComputedRef, MaybeRefOrGetter, Ref }                            from 'vue';
 import { useIdentifiable }                                                    from '@/Lib/UseIdentifiable/Internal';
 import { isSelectOptionGroup }                                                from '@/UI/Forms/Select/Internal';
 import { computed, isReadonly, isRef, ref, toValue, watch, watchEffect      } from 'vue';
 
-export function useSelectedOption<T extends number | string, K extends SelectOption<T>>(
-    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
-    id: MaybeRefOrGetter<T | null>,
-): Ref<K | null>;
-
-export function useSelectedOption<T extends number | string, K extends SelectOption<T>>(
-    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
-    id: MaybeRefOrGetter<T>,
-    allowNull: false,
-): Ref<K>;
-
 /**
  * Retrieves the select option of a select field.
  *
+ * Inferred behavior:
+ * - If T includes `null` (e.g., Ref<number | null>), returns Ref<K | null>.
+ * - If T excludes `null` (e.g., Ref<number>), returns Ref<K> and throws if the id doesn't exist.
+ *
  * @param options
- * @param id The initial id of the option to retrieve, if it is a writable ref, the id will automatically be
- *           overridden with the selected option id when a new one is selected.
- * @param allowNull true if there can be a non-selected option, false otherwise.
+ * @param id The id of the option to retrieve; if it is a writable ref, it will be kept in sync
+ *           with the selected option id when a new one is selected.
  */
-export function useSelectedOption<T extends number | string, K extends SelectOption<T>>(
-    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
-    id: MaybeRefOrGetter<T | null> | MaybeRefOrGetter<T>,
-    allowNull: boolean = true,
-): Ref<K | null> | Ref<K> {
-    return isNullAllowed(id, allowNull)
-        ? useSelectedNullableOption(options, id)
-        : useSelectedNonNullableOption(options, id);
-}
-
-export function useSelectedNullableOption<T extends number | string, K extends SelectOption<T>>(
-    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
-    id: MaybeRefOrGetter<T | null>,
-): Ref<K | null> {
-    const flatOptions = getFlatOptions(options);
-
-    const selectedOption = useIdentifiable<'id', T, K>(flatOptions, id, 'id');
-
-    const option = ref<K | null>(null);
-
-    watch(selectedOption, () => option.value = selectedOption.value, { immediate: true });
-
-    watchEffect(() => {
-        if (isReadonly(id) === false && isRef(id)) {
-            (id as Ref<T | null>).value = option.value?.id ?? null;
-        }
-    });
-
-    return option as Ref<K | null>;
-}
-
-export function useSelectedNonNullableOption<T extends number | string, K extends SelectOption<T>>(
-    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
+export function useSelectedOption<
+    T extends number | string | null,
+    K extends SelectOption<NonNullable<T>>,
+>(
+    options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<NonNullable<T>, K>>[]>,
     id: MaybeRefOrGetter<T>,
-): Ref<K> {
-    const flatOptions = getFlatOptions(options);
+): null extends T ? Ref<K | null> : Ref<K> {
+    const flatOptions = getFlatOptions<NonNullable<T>, K>(options);
 
-    const selectedOption = useIdentifiable<'id', T, K>(flatOptions, id, 'id');
+    const selectedOption = useIdentifiable<'id', NonNullable<T>, K>(
+        flatOptions,
+        id as MaybeRefOrGetter<NonNullable<T> | null>,
+        'id',
+    );
 
     const option = ref<K | null>(null);
 
     watch(
         selectedOption,
         () => {
-            option.value = getSelectedOptionIfExists(id, selectedOption).value;
+            // Non-nullable usage: id != null but option not found -> throw
+            if (selectedOption.value === null && toValue(id) !== null) {
+                throw new Error(`Selected option ${toValue(id)} does not exist.`);
+            }
+
+            option.value = selectedOption.value;
         },
         { immediate: true },
     );
 
     watchEffect(() => {
         if (isReadonly(id) === false && isRef(id)) {
-            (id as Ref<UnwrapRef<T>>).value = getSelectedOptionIfExists(id, option).value.id;
+            (id as Ref<NonNullable<T> | null>).value = option.value?.id ?? null;
         }
     });
 
-    return getSelectedOptionIfExists(id, option) as Ref<K>;
-}
-
-function isNullAllowed<T extends number | string>(
-    id: MaybeRefOrGetter<T | null> | MaybeRefOrGetter<T>,
-    allowNull: boolean,
-): id is MaybeRefOrGetter<T | null> {
-    return allowNull;
-}
-
-function guardAgainstNonExistingSelectedOption<T extends string | number>(
-    id: MaybeRefOrGetter<T>,
-    selectedOption: Ref<SelectOption<T> | null>,
-): asserts selectedOption is Ref<SelectOption<T>> {
-    if (selectedOption.value === null) {
-        throw new Error(`Selected option ${toValue(id)} does not exist.`);
-    }
-}
-
-function getSelectedOptionIfExists<T extends string | number, K extends SelectOption<T>>(
-    id: MaybeRefOrGetter<T>,
-    selectedOption: Ref<K | null>,
-): Ref<K> {
-    guardAgainstNonExistingSelectedOption(id, selectedOption);
-
-    return selectedOption;
+    return option as unknown as (null extends T ? Ref<K | null> : Ref<K>);
 }
 
 function getFlatOptions<T extends number | string, K extends SelectOption<T>>(
