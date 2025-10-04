@@ -3,12 +3,12 @@
     "type": "module",
     "devDependencies": {
         "fast-glob": "^3.3.3",
-        "flyonui": "^2.4.0",
+        "flyonui": "^2.4.1",
         "flyonui-vue": "workspace:*",
-        "typescript": "^5.9.2",
-        "vue-component-meta": "^3.0.5",
-        "vue-component-type-helpers": "^3.0.5",
-        "vue-tsc": "^3.0.5"
+        "typescript": "^5.9.3",
+        "vue-component-meta": "^3.1.0",
+        "vue-component-type-helpers": "^3.1.0",
+        "vue-tsc": "^3.1.0"
     },
     "scripts": {
         "generate:resolutions": "node ./src/GenerateResolutions.ts",

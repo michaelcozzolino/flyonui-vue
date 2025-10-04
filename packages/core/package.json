@@ -64,30 +64,30 @@
         }
     },
     "dependencies": {
-        "@floating-ui/vue": "^1.1.8",
-        "@vueuse/components": "^13.6.0",
-        "@vueuse/core": "^13.6.0",
+        "@floating-ui/vue": "^1.1.9",
+        "@vueuse/components": "^13.9.0",
+        "@vueuse/core": "^13.9.0",
         "@vueuse/head": "^2.0.0",
         "@vueuse/motion": "^3.0.3",
         "deepmerge": "^4.3.1"
     },
     "devDependencies": {
         "@iconify/vue": "^4.3.0",
-        "@tailwindcss/vite": "^4.1.12",
-        "@types/node": "^22.17.1",
+        "@tailwindcss/vite": "^4.1.14",
+        "@types/node": "^22.18.8",
         "@vitejs/plugin-vue": "^5.2.4",
         "@vue/test-utils": "^2.4.6",
-        "@vue/tsconfig": "^0.7.0",
-        "concurrently": "^9.2.0",
+        "@vue/tsconfig": "^0.8.1",
+        "concurrently": "^9.2.1",
         "jsdom": "^26.1.0",
         "rollup-plugin-visualizer": "^5.14.0",
-        "sass-embedded": "^1.90.0",
-        "tailwindcss": "^4.1.12",
+        "sass-embedded": "^1.93.2",
+        "tailwindcss": "^4.1.14",
         "tsc-alias": "^1.8.16",
-        "typescript": "^5.9.2",
-        "vite": "^6.3.5",
-        "vue": "^3.5.18",
+        "typescript": "^5.9.3",
+        "vite": "^6.3.6",
+        "vue": "^3.5.22",
         "vue-router": "^4.5.1",
-        "vue-tsc": "^3.0.5"
+        "vue-tsc": "^3.1.0"
     }
 }
