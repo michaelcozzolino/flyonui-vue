@@ -22,7 +22,7 @@
             />
         </slot>
 
-        <slot v-if="isTextAllowedForShape(config, componentName, shape)" />
+        <slot />
 
         <slot name="append">
             <FoIcon v-if="buttonIcon?.right"
@@ -43,7 +43,7 @@ import { useColor }                             from '@/Lib/UseColor/Internal';
 import { useGlass }                             from '@/Lib/UseGlass/Internal';
 import { usePreset }                            from '@/Lib/UsePreset/Internal';
 import { useResponsitivity }                    from '@/Lib/UseResponsitivity/Internal';
-import { isTextAllowedForShape, useShape }      from '@/Lib/UseShape/Internal';
+import { useShape }                             from '@/Lib/UseShape/Internal';
 import { useSize }                              from '@/Lib/UseSize/Internal';
 import { useState }                             from '@/Lib/UseState/Internal';
 import { FoRouterLink }                         from '@/UI/Content/Link/Internal';
