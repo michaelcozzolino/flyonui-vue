@@ -127,6 +127,7 @@ onMounted(() => {
         'ep:select',
         'tabler:chevron-left',
         'tabler:chevron-right',
+        'tabler:dots',
     ]);
 });
 </script>
