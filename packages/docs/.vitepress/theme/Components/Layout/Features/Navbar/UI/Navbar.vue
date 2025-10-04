@@ -125,6 +125,8 @@ onMounted(() => {
         'fluent:text-direction-horizontal-ltr-20-regular',
         'fluent:text-direction-horizontal-rtl-20-regular',
         'ep:select',
+        'tabler:chevron-left',
+        'tabler:chevron-right',
     ]);
 });
 </script>
