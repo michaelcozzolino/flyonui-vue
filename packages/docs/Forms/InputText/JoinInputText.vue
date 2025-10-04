@@ -142,5 +142,5 @@ const filters = ref<SelectOption[]>([
     { id: 3, text: 'Actions' },
 ]);
 
-const selectedFilter = useSelectedOption(filters, filters.value[0].id);
+const selectedFilter = useSelectedOption<number, SelectOption>(filters, 1);
 </script>
