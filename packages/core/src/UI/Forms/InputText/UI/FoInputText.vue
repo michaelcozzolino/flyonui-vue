@@ -35,7 +35,6 @@
                    :class="[
                        joinItemClass,
                        isGroup ? 'grow' : 'input',
-                       isGroup && 'pb-1 placeholder:pb-1', // todo: temporary because the padding doesn't seem to be correct even with the same flyonui code
                        paddingClass,
                        shapeClass,
                        isGroup === false && sizeClass,
