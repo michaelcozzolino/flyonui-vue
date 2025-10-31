@@ -84,7 +84,9 @@
 
 <script setup lang="ts">
 import type { ComponentName }                                    from '@/Lib';
+import type { WithDefaultSlot }                                  from '@/Types';
 import type { ModalPlacement, ModalProps }                       from '@/UI/Overlays';
+import type { Slot }                                             from 'vue';
 import { useFlyonUIVueAppConfig }                                from '@/Lib';
 import { useColor }                                              from '@/Lib/UseColor/Internal';
 import { useSize }                                               from '@/Lib/UseSize/Internal';
@@ -104,6 +106,21 @@ const props = withDefaults(defineProps<ModalProps>(), {
 
 const emit = defineEmits<{
     (e: 'close'): void;
+}>();
+
+defineSlots<WithDefaultSlot & {
+    /** The content to be put at the top of the component, such as title */
+    header?: Slot;
+
+    /**
+     * The content to be put at the middle of the component, such as content.
+     * Note that this is an alias for the default slot.
+     * It means that you can use the default slot instead of this and viceversa
+     */
+    body?: Slot;
+
+    /** The content to be put at the bottom of the component, such as action buttons */
+    footer?: Slot;
 }>();
 
 const isOpen = defineModel<boolean>({ required: true });
