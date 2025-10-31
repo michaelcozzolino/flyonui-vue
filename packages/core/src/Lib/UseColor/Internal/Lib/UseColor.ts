@@ -59,6 +59,16 @@ export function useColor(
                 warning:   'link-warning',
                 error:     'link-error',
             },
+            FoModal: {
+                neutral:   'bg-base-300/60',
+                primary:   'bg-primary/30',
+                secondary: 'bg-secondary/30',
+                accent:    'bg-accent/30',
+                info:      'bg-info/30',
+                success:   'bg-success/30',
+                warning:   'bg-warning/30',
+                error:     'bg-error/30',
+            },
             FoLoading: {
                 neutral:   'text-neutral',
                 primary:   'text-primary',

@@ -1,12 +1,12 @@
-import type { Color, ConfigurableComponentName, Preset, Shape, Size }       from '@/Lib';
-import type { PickIfExists, Prettify }                                      from '@/Lib/Utils/Internal';
-import type { Direction, HorizontalPosition }                               from '@/Types';
-import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps } from '@/UI/Components';
-import type { KeyboardProps, LinkProps }                                    from '@/UI/Content';
-import type { IconProps }                                                   from '@/UI/Customization';
-import type { CheckboxProps, InputTextProps, SelectProps, TextareaProps }   from '@/UI/Forms';
-import type { TooltipProps }                                                from '@/UI/Overlays';
-import type { TableProps }                                                  from '@/UI/Tables';
+import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size } from '@/Lib';
+import type { PickIfExists, Prettify }                                           from '@/Lib/Utils/Internal';
+import type { Direction, HorizontalPosition }                                    from '@/Types';
+import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }      from '@/UI/Components';
+import type { KeyboardProps, LinkProps }                                         from '@/UI/Content';
+import type { IconProps }                                                        from '@/UI/Customization';
+import type { CheckboxProps, InputTextProps, SelectProps, TextareaProps }        from '@/UI/Forms';
+import type { ModalProps, TooltipProps }                                         from '@/UI/Overlays';
+import type { TableProps }                                                       from '@/UI/Tables';
 
 /**
  * todo: docs here should be checked and put in vitepress
@@ -94,6 +94,7 @@ export interface ConfigurableComponentProps {
     FoLoading:  ConfigurableProps<LoadingProps>;
     /** Menu defaults */
     FoMenu:     ConfigurableProps<MenuProps>;
+    FoModal:    ConfigurableProps<Omit<ModalProps, 'backdrop'> & Colorable>;
     /** Radio defaults */
     FoRadio:    ConfigurableProps<ButtonProps>; // todo: temporary
     /** Select defaults */
