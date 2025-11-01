@@ -32,11 +32,11 @@ The following component might have changes in future releases
 
 <MenuDocs section="with-badge" />
 
-### With active item (Vue Router) (Unreleased)
+### With active item (Vue Router)
 
 <MenuDocs section="with-active-item-vue-router" />
 
-### With active item (External Router) (Unreleased)
+### With active item (External Router)
 
 In case of external router, you need to pass a navigation props that contains a function to navigate to the item route
 and an active path that will be used to highlight the active item. 

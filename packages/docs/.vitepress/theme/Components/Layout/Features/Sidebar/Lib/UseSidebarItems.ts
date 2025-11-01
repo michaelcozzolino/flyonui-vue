@@ -1,10 +1,10 @@
 import type { SidebarBadge, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
 import type { ComputedRef }               from 'vue';
-import { computed  }                      from 'vue';
+import { computed }                       from 'vue';
 
 export function useSidebarItems(): ComputedRef<SidebarItem[]> {
     return computed((): SidebarItem[] => {
-        const unreleasedBadge: SidebarBadge = {
+        const _unreleasedBadge: SidebarBadge = {
             color: 'warning',
             text:  'Unreleased',
         };
@@ -45,7 +45,6 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         text:     'Keyboard',
                         to:       '/content/keyboard',
                         icon:     'mdi:keyboard-outline',
-                        badge:    unreleasedBadge,
                         children: [],
                     },
                     {
@@ -122,7 +121,6 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         text:     'Pagination',
                         to:       '/navigations/pagination',
                         icon:     'carbon:insert-page',
-                        badge:    unreleasedBadge,
                         children: [],
                     },
                 ],
@@ -192,7 +190,6 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         text:     'Table',
                         to:       '/tables/table',
                         icon:     'mdi:table',
-                        badge:    unreleasedBadge,
                         children: [],
                     },
                 ],

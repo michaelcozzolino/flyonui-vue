@@ -29,6 +29,7 @@ This monorepo contains the following:
 
 ### Private packages
 1) [docs](https://github.com/michaelcozzolino/flyonui-vue/tree/2.x/packages/docs): The documentation of the `Public Packages` built with `Vitepress`.
+2) [scripts](https://github.com/michaelcozzolino/flyonui-vue/tree/2.x/packages/scripts): A set of useful scripts for development.
 
 ## Credits 🤘
 
