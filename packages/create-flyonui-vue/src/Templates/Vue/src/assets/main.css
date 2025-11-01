@@ -2,6 +2,12 @@
 @import 'tailwindcss';
 @import 'flyonui-vue/index.css';
 
+@source '../../node_modules/flyonui-vue';
+
+@plugin 'flyonui' {
+    themes: all;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;

@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import 'flyonui-vue/index.css';
 
+@source '../../../../node_modules/flyonui-vue';
+
 @plugin 'flyonui' {
     themes: all;
 }
