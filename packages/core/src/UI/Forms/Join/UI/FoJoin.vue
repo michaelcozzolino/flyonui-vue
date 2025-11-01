@@ -39,15 +39,15 @@ const [
 </script>
 
 <style lang="scss" scoped>
-@reference "tailwindcss";
-
 .join > :first-child :deep(.input.rounded-full),
 .join > :slotted(.btn.rounded-full:first-child) {
-    @apply rounded-e-none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .join > :last-child :deep(.input.rounded-full),
 .join > :slotted(.btn.rounded-full:last-child) {
-    @apply rounded-s-none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 </style>

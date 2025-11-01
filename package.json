@@ -46,7 +46,7 @@
         "flyonui-vue": "workspace:*",
         "jsdom": "^26.1.0",
         "sass-embedded": "^1.93.2",
-        "tailwindcss": "^4.1.14",
+        "tailwindcss": "^4.1.16",
         "tsc-alias": "^1.8.16",
         "typescript": "^5.9.3",
         "vite": "^6.4.1",

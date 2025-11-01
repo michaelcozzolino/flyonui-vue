@@ -45,7 +45,14 @@ in order to use icons, `@iconify/vue` is required:
                     code="@import 'flyonui-vue/index.css';"
 />
 
-3. Now you can use `flyonui-vue` anywhere in your project by importing the components you need.
+3. source the tailwind components' classes:
+
+<VueCodeHighlighter title="Bash"
+                    lang="css"
+                    code="@source '../../node_modules/flyonui-vue';"
+/>
+
+4. Now you can use `flyonui-vue` anywhere in your project by importing the components you need.
 
 ## Configuration (Optional)
 

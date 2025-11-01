@@ -1,5 +1,3 @@
-import '@/index.css';
-
 export * from '@/Lib';
 export * from '@/Types';
 export * from '@/UI/Components';

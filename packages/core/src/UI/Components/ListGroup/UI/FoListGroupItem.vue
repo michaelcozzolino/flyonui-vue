@@ -30,11 +30,9 @@ const [
 </script>
 
 <style lang="postcss" scoped>
-@reference "tailwindcss";
-
 /* noinspection CssUnusedSymbol */
 :slotted(.fo-icon) {
     color: var(--color-base-content);
-    @apply me-3;
+    margin-inline-end: 0.75rem;
 }
 </style>
