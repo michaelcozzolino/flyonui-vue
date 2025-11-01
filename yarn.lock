@@ -1147,17 +1147,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/dom@npm:^1.7.1":
-  version: 1.7.3
-  resolution: "@floating-ui/dom@npm:1.7.3"
-  dependencies:
-    "@floating-ui/core": "npm:^1.7.3"
-    "@floating-ui/utils": "npm:^0.2.10"
-  checksum: 10c0/cba30e9af1a52fb7cb443ae516d7aec032b33da2fa50914dcb18fc834dc31c71922f5c7653431e70d493f347018b2ce6435c98b3f154d92082345689b4458e59
-  languageName: node
-  linkType: hard
-
-"@floating-ui/dom@npm:^1.7.4":
+"@floating-ui/dom@npm:^1.7.1, @floating-ui/dom@npm:^1.7.4":
   version: 1.7.4
   resolution: "@floating-ui/dom@npm:1.7.4"
   dependencies:
@@ -1224,11 +1214,11 @@ __metadata:
   linkType: hard
 
 "@iconify-json/simple-icons@npm:^1.2.32":
-  version: 1.2.53
-  resolution: "@iconify-json/simple-icons@npm:1.2.53"
+  version: 1.2.55
+  resolution: "@iconify-json/simple-icons@npm:1.2.55"
   dependencies:
     "@iconify/types": "npm:*"
-  checksum: 10c0/67d02580e684519c3dc7b205ce63acac1e2bee9efa165f64a1c5bbb1da9e6e74b1ba786862ed5ca266f458baab003be65df460e98eb27ffbb32c9f997d7bc7ed
+  checksum: 10c0/ef91d30bc439857736fb574347930f1df7ae2c4325e8afd831971b16cbfc4eee4f39de6b8a51473f5c98d4499c2fd0253b87eb5936ea2eece6d7e5a0d9e3dadd
   languageName: node
   linkType: hard
 
@@ -4899,7 +4889,7 @@ __metadata:
     sass-embedded: "npm:^1.93.2"
     tailwindcss: "npm:^4.1.14"
     typescript: "npm:^5.9.3"
-    vite: "npm:^6.3.6"
+    vite: "npm:^6.4.1"
     vitepress: "npm:2.0.0-alpha.5"
     vue: "npm:^3.5.22"
     vue-code-highlighter: "npm:^1.1.3"
@@ -4931,7 +4921,7 @@ __metadata:
     tailwindcss: "npm:^4.1.14"
     tsc-alias: "npm:^1.8.16"
     typescript: "npm:^5.9.3"
-    vite: "npm:^6.3.6"
+    vite: "npm:^6.4.1"
     vue: "npm:^3.5.22"
     vue-router: "npm:^4.5.1"
     vue-tsc: "npm:^3.1.0"
@@ -4962,7 +4952,7 @@ __metadata:
     jsdom: "npm:^26.1.0"
     tsc-alias: "npm:^1.8.16"
     typescript: "npm:^5.9.3"
-    vite: "npm:^6.3.6"
+    vite: "npm:^6.4.1"
     vue: "npm:^3.5.22"
     vue-tsc: "npm:^3.1.0"
   languageName: unknown
@@ -6721,9 +6711,9 @@ __metadata:
   linkType: hard
 
 "minisearch@npm:^7.1.2":
-  version: 7.1.2
-  resolution: "minisearch@npm:7.1.2"
-  checksum: 10c0/039f494927a4a932c168654ba8ff434d2be6af8e3393b29577d54da64cd64d6ae9bfbf33b7cd7bdc1783cb354d67c5dc99bac1305599d8d653933676f2d1a355
+  version: 7.2.0
+  resolution: "minisearch@npm:7.2.0"
+  checksum: 10c0/64efaf30ead2acb19eb8be49c78352c527812dd2927a0981c9d666339d5d206d132b83038d2bfa756f5161cae5d98f15b07cc7e7b7be6b8278d35d2ecdc2628c
   languageName: node
   linkType: hard
 
@@ -9136,9 +9126,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.3.6":
-  version: 6.3.6
-  resolution: "vite@npm:6.3.6"
+"vite@npm:^6.4.1":
+  version: 6.4.1
+  resolution: "vite@npm:6.4.1"
   dependencies:
     esbuild: "npm:^0.25.0"
     fdir: "npm:^6.4.4"
@@ -9187,7 +9177,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/add701f1e72596c002275782e38d0389ab400c1be330c93a3009804d62db68097a936ca1c53c3301df3aaacfe5e328eab547060f31ef9c49a277ae50df6ad4fb
+  checksum: 10c0/77bb4c5b10f2a185e7859cc9a81c789021bc18009b02900347d1583b453b58e4b19ff07a5e5a5b522b68fc88728460bb45a63b104d969e8c6a6152aea3b849f7
   languageName: node
   linkType: hard
 
