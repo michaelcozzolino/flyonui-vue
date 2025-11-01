@@ -166,6 +166,12 @@ const items = ref<SidebarItem[]>([
         text:     'Overlays',
         children: [
             {
+                text:     'Modal',
+                to:       '/overlays/modal',
+                icon:     'mdi-window-maximize',
+                children: [],
+            },
+            {
                 text:     'Popover',
                 to:       '/overlays/popover',
                 icon:     'mdi:tooltip-outline',
