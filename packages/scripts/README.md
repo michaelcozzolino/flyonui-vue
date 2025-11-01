@@ -1,4 +1,4 @@
-# flyonui-scrips
+# flyonui-vue-scripts
 
 Useful scripts to simplify the development workflow:
 
