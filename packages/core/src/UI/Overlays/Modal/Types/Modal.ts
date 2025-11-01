@@ -16,23 +16,23 @@ export type ModalScrollingType = 'body' | 'document-body' | 'modal-body' | 'view
 export type ModalBackdropType = 'static' | 'disabled';
 
 export interface ModalProps extends Sizable<ModalSize> {
-    /** Custom classes that can be inferred in the specific component's slot */
+    /** Custom classes that can be inferred in the specific modal's slot */
     classes?: {
         header?: VueClass;
         body?:   VueClass;
         footer?: VueClass;
     };
 
-    /** If true, the component can be closed by pressing the key "esc" on the keyboard  */
+    /** If true, the modal can be closed by pressing the key "esc" on the keyboard  */
     closeOnEscape?: boolean;
 
-    /** If true, the component will take the whole screen */
+    /** If true, the modal will take the whole screen */
     isFullscreen?: boolean;
 
-    /** If true, the component's background color won't be shown */
+    /** If true, the modal's background color won't be shown */
     isTransparent?: boolean;
 
-    /** The transition that the component will perform when shown */
+    /** The transition that the modal will perform when shown */
     transition?: ModalTransition;
 
     /**
@@ -41,7 +41,7 @@ export interface ModalProps extends Sizable<ModalSize> {
      */
     scrollingType?: ModalScrollingType;
 
-    /** The position where the component will be placed in the page */
+    /** The position where the modal will be placed in the page */
     placement?: ModalPlacement;
 
     /** Backdrop options such as color and the type that can either be static or disabled */
