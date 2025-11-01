@@ -1,4 +1,4 @@
-import { getSidebarItems } from '@/.vitepress/theme/Shared/Config/Lib/getSidebarItems';
+import { useSidebarItems } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems.ts';
 import { expect, test }    from '@playwright/test';
 
 test('components previews', async ({ page }) => {
@@ -7,29 +7,21 @@ test('components previews', async ({ page }) => {
     const body = page.locator('body').first();
     await body.waitFor();
 
-    const sidebarItems = getSidebarItems();
+    const sidebarItems = useSidebarItems();
 
-    for (const parentItem of sidebarItems) {
-        const childItems = parentItem.items ?? [];
+    for (const sidebarItem of sidebarItems.value) {
+        for (const childSidebarItem of sidebarItem.children) {
+            const childSidebarItemPath = childSidebarItem.to; // E.G: /content/link
 
-        for (const childItem of childItems) {
-            for (const childChildItem of childItem.items ?? []) {
-                const categoryPath = childItem.base; // E.G: /content/
+            if (typeof childSidebarItemPath !== 'string') {
+                throw new TypeError('The child sidebar item path must be a string.');
+            }
 
-                if (categoryPath === undefined) {
-                    throw new Error('The category path cannot be undefined.');
-                }
+            await page.goto(childSidebarItemPath);
 
-                const itemName = childChildItem.link;
-
-                // todo: check how to do it through github action
-                const url = `${categoryPath}${itemName}`;
-
-                await page.goto(url);
-
-                // Hides navbar and sidebars in
-                await page.addStyleTag({
-                    content: `
+            // Hides navbar and sidebars
+            await page.addStyleTag({
+                content: `
                         #flyonui-vue-docs-navbar,
                         #flyonui-vue-docs-sidebar,
                         #flyonui-vue-docs-docs-sidebar {
@@ -49,45 +41,44 @@ test('components previews', async ({ page }) => {
                           -moz-osx-font-smoothing: grayscale;
                         }
                     `,
-                });
+            });
 
-                const codeSnippets = await page.locator('[data-test="code-snippet"]').all();
+            const codeSnippets = await page.locator('[data-test="code-snippet"]').all();
 
-                const pathPrefix = categoryPath.slice(1);
+            const pathPrefix = childSidebarItemPath.slice(1); // /content/link -> content/link
 
-                for (const codeSnippet of codeSnippets) {
-                    const screenshotId = await codeSnippet.getAttribute('data-test-screenshot');
+            for (const codeSnippet of codeSnippets) {
+                const screenshotId = await codeSnippet.getAttribute('data-test-screenshot');
 
-                    // snippets without screenshotId are probably components with animations that cannot be tested through screenshots
-                    if (screenshotId === null) {
-                        continue;
-                    }
-
-                    const preview = codeSnippet.locator('[data-test="flyonui-vue-preview"]').first();
-                    await preview.waitFor();
-                    await preview.scrollIntoViewIfNeeded();
-
-                    const screenshot = await preview.screenshot({ animations: 'disabled' });
-
-                    expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}${itemName}/${screenshotId}.png`);
+                // snippets without screenshotId are probably components with animations that cannot be tested through screenshots
+                if (screenshotId === null) {
+                    continue;
                 }
 
-                const propsApis    = await page.locator('[data-test="props-api"]').all();
-                const slotsApis    = await page.locator('[data-test="slots-api"]').all();
+                const preview = codeSnippet.locator('[data-test="flyonui-vue-preview"]').first();
+                await preview.waitFor();
+                await preview.scrollIntoViewIfNeeded();
 
-                const apis = [...propsApis, ...slotsApis];
+                const screenshot = await preview.screenshot({ animations: 'disabled' });
 
-                for (const api of apis) {
-                    const id = await api.getAttribute('id');
+                expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}/${screenshotId}.png`.replaceAll('/', '-'));
+            }
 
-                    if (id === null) {
-                        throw new Error('Api must have an id.');
-                    }
+            const propsApis = await page.locator('[data-test="props-api"]').all();
+            const slotsApis = await page.locator('[data-test="slots-api"]').all();
 
-                    const screenshot = await api.screenshot();
+            const apis = [...propsApis, ...slotsApis];
 
-                    expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}${itemName}/${id}.png`);
+            for (const api of apis) {
+                const id = await api.getAttribute('id');
+
+                if (id === null) {
+                    throw new Error('Api must have an id.');
                 }
+
+                const screenshot = await api.screenshot();
+
+                expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}/${id}.png`.replaceAll('/', '-'));
             }
         }
     }

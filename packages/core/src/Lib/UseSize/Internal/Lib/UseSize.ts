@@ -73,6 +73,13 @@ export function useSize(
                 large:      'menu-lg',
                 extraLarge: 'menu-xl',
             },
+            FoModal: {
+                extraSmall: '',
+                small:      'modal-dialog-sm',
+                medium:     '',
+                large:      'modal-dialog-lg',
+                extraLarge: 'modal-dialog-xl',
+            },
             FoSelect: {
                 extraSmall: 'select-xs',
                 small:      'select-sm',

@@ -1,6 +1,5 @@
-import { kebabCase }       from 'change-case';
-import { defineConfig }    from 'vitepress';
-import { getSidebarItems } from './theme/Shared/Config/Lib/getSidebarItems';
+import { kebabCase }    from 'change-case';
+import { defineConfig } from 'vitepress';
 
 export default defineConfig({
     rewrites: (id) => {
@@ -35,7 +34,6 @@ export default defineConfig({
     ],
     themeConfig: {
         outline: 'deep',
-        sidebar: getSidebarItems(),
         logo:    '/assets/logo.svg',
         search:  {
             provider: 'local',

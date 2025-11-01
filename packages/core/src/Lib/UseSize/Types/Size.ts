@@ -9,6 +9,7 @@ export type SizableComponentName = Extract<
     | 'FoKeyboard'
     | 'FoLoading'
     | 'FoMenu'
+    | 'FoModal'
     | 'FoSelect'
     | 'FoTable'
     | 'FoTextarea'
