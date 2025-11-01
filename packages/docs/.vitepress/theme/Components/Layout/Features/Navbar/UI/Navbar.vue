@@ -15,7 +15,7 @@
 
                     <!--                    todo: this should be fetched through npm -->
                     <p class="text-sm text-primary select-none">
-                        v2.0.0
+                        v2.1.0
                     </p>
 
                     <FoNavbarBrand :class="!isSidebarCollapsed && 'sm:ms-40'"
