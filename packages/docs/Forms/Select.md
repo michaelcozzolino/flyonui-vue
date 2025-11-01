@@ -20,43 +20,43 @@
 
 ## Illustrations
 
-### Icon <Badge type="warning" text="Unreleased" />
+### Icon
 
 <SelectDocs section="with-icon" />
 
-### Validation states <Badge type="warning" text="Unreleased" />
+### Validation states
 
 <SelectDocs section="validation-state" />
 
-### Shapes <Badge type="warning" text="Unreleased" />
+### Shapes
 
 <SelectDocs section="shape" />
 
-### Label and helper text <Badge type="warning" text="Unreleased" />
+### Label and helper text
 
 <SelectDocs section="with-label-and-helper-text" />
 
-### Hidden label <Badge type="warning" text="Unreleased" />
+### Hidden label
 
 <SelectDocs section="hidden-label" />
 
-### Disabled <Badge type="warning" text="Unreleased" />
+### Disabled
 
 <SelectDocs section="disabled" />
 
-### Datalist <Badge type="warning" text="Unreleased" />
+### Datalist
 
 When the input field is empty the selected option will automatically be null.
 
 <SelectDocs section="datalist" />
 
-### Optgroup <Badge type="warning" text="Unreleased" />
+### Optgroup
 
 <SelectDocs section="optgroup" />
 
-## Advanced usage <Badge type="warning" text="Unreleased" />
+## Advanced usage
 
-### Ref usage <Badge type="warning" text="Unreleased" />
+### Ref usage
 
 The `useSelectedOption` composables can take as second argument a `MaybeRefOrGetter<number|string>`, in most of the cases
 the id of the selected option might come from an object ref or an id ref, in that case passing the writable ref

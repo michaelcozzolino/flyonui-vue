@@ -4898,6 +4898,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"flyonui-vue-scripts@workspace:packages/scripts":
+  version: 0.0.0-use.local
+  resolution: "flyonui-vue-scripts@workspace:packages/scripts"
+  dependencies:
+    fast-glob: "npm:^3.3.3"
+    flyonui: "npm:^2.4.1"
+    flyonui-vue: "workspace:*"
+    typescript: "npm:^5.9.3"
+    vue-component-meta: "npm:^3.1.0"
+    vue-component-type-helpers: "npm:^3.1.0"
+    vue-tsc: "npm:^3.1.0"
+  languageName: unknown
+  linkType: soft
+
 "flyonui-vue@workspace:*, flyonui-vue@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "flyonui-vue@workspace:packages/core"
@@ -8102,20 +8116,6 @@ __metadata:
   checksum: 10c0/3847b839f060ef3476eb8623d099aa502ad658f5c40fd60c105ebce86d244389b0d76fcae30f4d0c728d7705ceb2f7e9b34bb54717b6a7dbedaf5dad2d9a4b74
   languageName: node
   linkType: hard
-
-"scripts@workspace:packages/scripts":
-  version: 0.0.0-use.local
-  resolution: "scripts@workspace:packages/scripts"
-  dependencies:
-    fast-glob: "npm:^3.3.3"
-    flyonui: "npm:^2.4.1"
-    flyonui-vue: "workspace:*"
-    typescript: "npm:^5.9.3"
-    vue-component-meta: "npm:^3.1.0"
-    vue-component-type-helpers: "npm:^3.1.0"
-    vue-tsc: "npm:^3.1.0"
-  languageName: unknown
-  linkType: soft
 
 "scslre@npm:^0.3.0":
   version: 0.3.0

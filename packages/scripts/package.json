@@ -1,5 +1,5 @@
 {
-    "name": "scripts",
+    "name": "flyonui-vue-scripts",
     "type": "module",
     "devDependencies": {
         "fast-glob": "^3.3.3",
