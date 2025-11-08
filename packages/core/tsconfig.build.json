@@ -5,7 +5,8 @@
         "rootDir": "./src",
         "declarationMap": true,
         "noEmit": false,
-        "outDir": "dist-vue"
+        "outDir": "dist-vue",
+        "allowImportingTsExtensions": false,
     },
     "include": [
         "src/**/*.ts",

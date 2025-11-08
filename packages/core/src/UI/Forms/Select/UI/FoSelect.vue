@@ -91,7 +91,7 @@ import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperT
 import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
 import { FoIcon }                                  from '@/UI/Customization';
 import { isSelectOptionGroup }                     from '@/UI/Forms/Select/Internal';
-import { onEmptyOptions }                          from '@/UI/Forms/Select/Internal/Lib/OnEmptyOptions.ts';
+import { onEmptyOptions }                          from '@/UI/Forms/Select/Internal/Lib/OnEmptyOptions';
 import FoSelectOption                              from '@/UI/Forms/Select/Internal/UI/FoSelectOption.vue';
 import { computed, useId, watchEffect }            from 'vue';
 

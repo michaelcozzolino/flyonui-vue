@@ -3,8 +3,9 @@ import type { Direction }                                       from '@/Types';
 import type { App, FunctionPlugin }                             from 'vue';
 import { useFlyonUIVueAppConfigInjectionKey }                   from '@/Lib';
 import { useLocalStorage }                                      from '@vueuse/core';
-import { createHead, useHead }                                  from '@vueuse/head';
 import deepMerge                                                from 'deepmerge';
+import { useHead }                                              from 'unhead';
+import { createHead }                                           from 'unhead/client';
 import { watch }                                                from 'vue';
 
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
@@ -40,12 +41,11 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
     };
 
     watch(() => config.value.global.direction, (newDirection: Direction) => {
-        useHead({
+        useHead(createHead(), {
             htmlAttrs: { dir: newDirection },
         });
     }, { immediate: true });
 
-    app.use(createHead());
     app.provide(
         useFlyonUIVueAppConfigInjectionKey,
         { config, resetConfig },

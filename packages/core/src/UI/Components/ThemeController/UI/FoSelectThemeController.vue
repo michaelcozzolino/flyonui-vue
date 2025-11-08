@@ -9,10 +9,10 @@
 <script setup lang="ts">
 import type { FlyonUITheme, ThemeControllerProps } from '@/UI/Components';
 import type { SelectProps }                        from '@/UI/Forms';
-
-import { FoSelect, useSelectedOption } from '@/UI/Forms';
-import { useArrayMap, useColorMode }   from '@vueuse/core';
-import { onMounted, toValue }          from 'vue';
+import { useFlyonUIThemeFont }                     from '@/UI/Components/ThemeController/Lib/UseFlyonUIThemeFont';
+import {  useSelectedOption }                      from '@/UI/Forms';
+import { useArrayMap, useColorMode }               from '@vueuse/core';
+import { onMounted, toValue, watch }               from 'vue';
 
 const props = withDefaults(defineProps<ThemeControllerProps & Omit<SelectProps<FlyonUITheme>, 'label' | 'options'>>(), {
     initialValue: 'dark',
@@ -45,11 +45,17 @@ const themeOptions = useArrayMap(() => Object.values(props.modes), (mode: FlyonU
     text: mode,
 }));
 
-const selectedTheme = useSelectedOption(themeOptions, useColorMode<FlyonUITheme>(props));
+const selectedTheme = useSelectedOption(themeOptions, useColorMode<FlyonUITheme>({ ...props }));
 
 onMounted(() => {
     if (toValue(props.initialValue) in props.modes === false) {
         throw new Error(`The initial theme ${props.initialValue} is not available.`);
     }
 });
+
+watch(
+    selectedTheme,
+    () => useFlyonUIThemeFont(selectedTheme.value.id),
+    { immediate: true },
+);
 </script>

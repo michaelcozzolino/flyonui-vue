@@ -67,9 +67,9 @@
         "@floating-ui/vue": "^1.1.9",
         "@vueuse/components": "^13.9.0",
         "@vueuse/core": "^13.9.0",
-        "@vueuse/head": "^2.0.0",
         "@vueuse/motion": "^3.0.3",
-        "deepmerge": "^4.3.1"
+        "deepmerge": "^4.3.1",
+        "unhead": "^2.0.19"
     },
     "devDependencies": {
         "@iconify/vue": "^4.3.0",
