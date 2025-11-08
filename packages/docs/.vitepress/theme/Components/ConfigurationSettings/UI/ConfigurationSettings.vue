@@ -1,6 +1,6 @@
 <template>
     <ClientOnly>
-        <FoListGroup v-show="showSettings"
+        <FoListGroup v-if="showSettings"
                      class="bg-base-100"
         >
             <ConfigurationSettingsHeader v-model="showSettings"
