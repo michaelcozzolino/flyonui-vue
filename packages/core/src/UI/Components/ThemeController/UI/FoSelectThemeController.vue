@@ -10,7 +10,7 @@
 import type { FlyonUITheme, ThemeControllerProps } from '@/UI/Components';
 import type { SelectProps }                        from '@/UI/Forms';
 import { useFlyonUIThemeFont }                     from '@/UI/Components/ThemeController/Lib/UseFlyonUIThemeFont';
-import {  useSelectedOption }                      from '@/UI/Forms';
+import { FoSelect, useSelectedOption }             from '@/UI/Forms';
 import { useArrayMap, useColorMode }               from '@vueuse/core';
 import { onMounted, toValue, watch }               from 'vue';
 

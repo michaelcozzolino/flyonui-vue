@@ -1,11 +1,9 @@
 <template>
     <div class="flex gap-4">
-        <ClientOnly>
-            <FoSelectThemeController class="!w-48 mt-1"
-                                     :storage-key="themeStorageKey"
-                                     size="medium"
-            />
-        </ClientOnly>
+        <FoSelectThemeController class="!w-48 mt-1"
+                                 :storage-key="themeStorageKey"
+                                 size="medium"
+        />
 
         <FoSwap v-model="isLtr"
                 class="text-base-content"
