@@ -6,6 +6,7 @@ import { useLocalStorage }                                      from '@vueuse/co
 import deepMerge                                                from 'deepmerge';
 import { useHead }                                              from 'unhead';
 import { createHead }                                           from 'unhead/client';
+import { getActiveHead }                                        from 'unhead/legacy';
 import { watch }                                                from 'vue';
 
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
@@ -41,7 +42,7 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
     };
 
     watch(() => config.value.global.direction, (newDirection: Direction) => {
-        useHead(createHead(), {
+        useHead(getActiveHead() ?? createHead(), {
             htmlAttrs: { dir: newDirection },
         });
     }, { immediate: true });

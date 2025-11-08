@@ -3,7 +3,9 @@ import type { MaybeRefOrGetter }               from 'vue';
 import { useCssVar }                           from '@vueuse/core';
 import { useHead }                             from 'unhead';
 import { createHead }                          from 'unhead/client';
-import { toValue }                             from 'vue';
+// todo: replace wih injectHead when i will be able to find how to import it
+import { getActiveHead } from 'unhead/legacy';
+import { toValue }       from 'vue';
 
 export function useFlyonUIThemeFont(selectedTheme: MaybeRefOrGetter<FlyonUITheme>): void {
     const fonts: Record<FlyonUITheme, FlyonUIThemeFont> = {
@@ -62,7 +64,7 @@ export function useFlyonUIThemeFont(selectedTheme: MaybeRefOrGetter<FlyonUITheme
         return;
     }
 
-    const head = useHead(createHead());
+    const head = useHead(getActiveHead() ?? createHead());
 
     head.patch({
         link: [{ href: font.url, rel: 'stylesheet' }],
