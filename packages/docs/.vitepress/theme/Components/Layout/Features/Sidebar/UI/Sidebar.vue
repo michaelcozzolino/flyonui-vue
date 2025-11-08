@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import { useSidebarItems } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
 import SidebarNode         from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
-import { useLayoutStore }  from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore.ts';
+import { useLayoutStore }  from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
 import { onClickOutside }  from '@vueuse/core';
 import { FoMenu }          from 'flyonui-vue';
 import { storeToRefs }     from 'pinia';

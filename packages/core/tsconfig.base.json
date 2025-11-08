@@ -10,6 +10,7 @@
         "resolveJsonModule": true,
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "allowImportingTsExtensions": false
     }
 }

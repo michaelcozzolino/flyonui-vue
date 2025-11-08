@@ -12,6 +12,7 @@
                 "./*"
             ]
         },
+        "allowImportingTsExtensions": false,
         "composite": true,
         "declarationMap": true,
         "outDir": "dist"

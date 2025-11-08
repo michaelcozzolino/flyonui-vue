@@ -35,10 +35,10 @@
 </template>
 
 <script setup lang="ts">
-import type { SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar.ts';
+import type { SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
 import {
     useLayoutStore,
-}                                                         from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore.ts';
+}                                                         from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
 import { FoBadge, FoMenu, FoMenuItem, FoMenuParentTitle } from 'flyonui-vue';
 import { storeToRefs }                                    from 'pinia';
 import { useRouter }                                      from 'vitepress';

@@ -1,4 +1,4 @@
-import { useSidebarItems } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems.ts';
+import { useSidebarItems } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
 import { expect, test }    from '@playwright/test';
 
 test('components previews', async ({ page }) => {

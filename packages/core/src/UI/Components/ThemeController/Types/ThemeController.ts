@@ -1,5 +1,10 @@
 import type { UseColorModeOptions } from '@vueuse/core';
 
+export interface FlyonUIThemeFont {
+    url:    string;
+    family: string;
+}
+
 export type FlyonUITheme = 'light'
     | 'dark'
     | 'black'
