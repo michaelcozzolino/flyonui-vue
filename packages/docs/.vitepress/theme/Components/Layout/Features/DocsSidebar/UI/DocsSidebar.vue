@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar.ts';
+import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar';
 
 import DocsSidebarNode               from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebarNode.vue';
 import { FoMenu, FoMenuParentTitle } from 'flyonui-vue';

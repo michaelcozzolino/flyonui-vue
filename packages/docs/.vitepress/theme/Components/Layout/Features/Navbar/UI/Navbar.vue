@@ -35,18 +35,17 @@
             </template>
 
             <template #end>
-                <FoPopover size="large"
-                           placement="bottom-end"
-                >
-                    <FoButton icon="tabler:settings-bolt"
-                              color="info"
-                              shape="square"
-                    />
+                <FoButton icon="tabler:settings-bolt"
+                          color="info"
+                          shape="square"
+                          @click.prevent="show = !show"
+                />
 
-                    <template #body>
-                        <ConfigurationSettings theme-storage-key="vitepress-theme-appearance" />
-                    </template>
-                </FoPopover>
+                <FoModal v-model="show"
+                         placement="middle-center"
+                >
+                    <ConfigurationSettings :theme-storage-key="vitepressThemeLocalStorageKey" />
+                </FoModal>
 
                 <FoSocialButton class="place-self-center"
                                 social="Github"
@@ -60,29 +59,22 @@
 
 <script setup lang="ts">
 import type { FlyonUITheme, NavbarLink } from 'flyonui-vue';
-import ConfigurationSettings
-    from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
-import { useLayoutStore }           from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { loadIcons }                from '@iconify/vue';
-import { useColorMode, useStorage } from '@vueuse/core';
-import {
-    FoButton,
-    FoIcon,
-    FoNavbar,
-    FoNavbarBrand,
-    FoPopover,
-    FoSocialButton,
-}                                        from 'flyonui-vue';
-import { storeToRefs }                  from 'pinia';
-import { useData, useRouter, withBase } from 'vitepress';
-import { VPNavBarSearch }               from 'vitepress/theme';
-import { computed, onMounted }          from 'vue';
+import ConfigurationSettings             from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
+
+import { useLayoutStore }                                                     from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import { loadIcons }                                                          from '@iconify/vue';
+import { useColorMode, useStorage }                                           from '@vueuse/core';
+import { FoButton, FoIcon, FoModal, FoNavbar, FoNavbarBrand, FoSocialButton } from 'flyonui-vue';
+import { storeToRefs }                                                        from 'pinia';
+import { useData, useRouter, withBase }                                       from 'vitepress';
+import { VPNavBarSearch }                                                     from 'vitepress/theme';
+import { computed, onMounted, ref }                                           from 'vue';
 
 const router = useRouter();
 
-const { page }               = useData();
-const { isNotHomepage }      = useLayoutStore();
-const { isSidebarCollapsed } = storeToRefs(useLayoutStore());
+const { page }                                         = useData();
+const { isNotHomepage, vitepressThemeLocalStorageKey } = useLayoutStore();
+const { isSidebarCollapsed }                           = storeToRefs(useLayoutStore());
 
 const links = computed((): NavbarLink[] => {
     return [
@@ -95,6 +87,8 @@ const links = computed((): NavbarLink[] => {
 });
 
 const themeStorageKey = 'vitepress-theme-appearance';
+
+const show = ref<boolean>(false);
 
 onMounted(() => {
     /**

@@ -4,6 +4,8 @@ import { useRoute }                            from 'vitepress';
 import { computed, ref, watch }                from 'vue';
 
 export const useLayoutStore = defineStore('UseLayoutStore', () => {
+    const vitepressThemeLocalStorageKey = 'vitepress-theme-appearance';
+
     const isSidebarCollapsed = ref<boolean>(false);
 
     const isPageSizeSmallerThanSm = computed(() => {
@@ -28,5 +30,11 @@ export const useLayoutStore = defineStore('UseLayoutStore', () => {
         return isHomepage() === false;
     }
 
-    return { isSidebarCollapsed, isPageSizeSmallerThanSm, isHomepage, isNotHomepage };
+    return {
+        vitepressThemeLocalStorageKey,
+        isSidebarCollapsed,
+        isPageSizeSmallerThanSm,
+        isHomepage,
+        isNotHomepage,
+    };
 });

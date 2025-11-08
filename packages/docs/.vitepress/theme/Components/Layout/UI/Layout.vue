@@ -26,22 +26,24 @@
 <script setup lang="ts">
 import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar.ts';
 
-import DocsSidebar from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebar.vue';
-import Home        from '@/.vitepress/theme/Components/Layout/Features/Home/UI/Home.vue';
-import Navbar      from '@/.vitepress/theme/Components/Layout/Features/Navbar/UI/Navbar.vue';
+import type { FlyonUITheme } from 'flyonui-vue';
+import DocsSidebar           from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebar.vue';
+import Home                  from '@/.vitepress/theme/Components/Layout/Features/Home/UI/Home.vue';
 
+import Navbar   from '@/.vitepress/theme/Components/Layout/Features/Navbar/UI/Navbar.vue';
 import NotFound from '@/.vitepress/theme/Components/Layout/Features/NotFound/UI/NotFound.vue';
 import Sidebar
     from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Sidebar.vue';
 import { useLayoutStore }                     from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import { useColorMode }                       from '@vueuse/core';
+import { useFlyonUIThemeFont }                from 'flyonui-vue';
 import { Content, onContentUpdated, useData } from 'vitepress';
-import { computed, ref }                      from 'vue';
+import { computed, onMounted, ref }           from 'vue';
 
-const { isHomepage }        = useLayoutStore();
+const { isHomepage, vitepressThemeLocalStorageKey }        = useLayoutStore();
 const { frontmatter, page } = useData();
 
 const docsHeadings = ref<NodeListOf<Element> | null>(null);
-
 const items = computed((): DocsSidebarItem[] => {
     if (docsHeadings.value === null) {
         return [];
@@ -102,4 +104,6 @@ const items = computed((): DocsSidebarItem[] => {
 onContentUpdated(() => {
     docsHeadings.value = document.querySelectorAll('.VPDoc :where(h1,h2,h3,h4,h5,h6)');
 });
+
+onMounted(() => useFlyonUIThemeFont(useColorMode<FlyonUITheme>({ storageKey: vitepressThemeLocalStorageKey })));
 </script>
