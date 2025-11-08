@@ -90,7 +90,6 @@ import type { Slot }                                             from 'vue';
 import { useFlyonUIVueAppConfig }                                from '@/Lib';
 import { useColor }                                              from '@/Lib/UseColor/Internal';
 import { useSize }                                               from '@/Lib/UseSize/Internal';
-import { FoButton }                                              from '@/UI/Components';
 import { isModalTransparentInjectionKey }                        from '@/UI/Overlays/Modal/Internal';
 import { onClickOutside, useFocus, useScrollLock }               from '@vueuse/core';
 import { computed, provide, useTemplateRef, watch, watchEffect } from 'vue';

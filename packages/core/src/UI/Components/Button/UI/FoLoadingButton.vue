@@ -28,7 +28,6 @@ import type { LoadingButtonProps } from '@/UI/Components/Button/Types/Button.ts'
 import type { LoadingProps }       from '@/UI/Components/Loading/Types/Loading.ts';
 import type { Slot }               from 'vue';
 import { useFlyonUIVueAppConfig }  from '@/Lib';
-import { FoButton, FoLoading }     from '@/UI/Components';
 import { reactiveOmit }            from '@vueuse/core';
 import { computed }                from 'vue';
 

@@ -57,7 +57,6 @@
 import type { ComponentName }                  from '@/Lib';
 import type { PaginationProps }                from '@/UI/Navigations';
 import { useAlignment }                        from '@/Lib/UseAlignment/Internal';
-import { FoButton }                            from '@/UI/Components';
 import { useRoundedNone }                      from '@/UI/Navigations/Pagination/Internal';
 import FoPaginationButton                      from '@/UI/Navigations/Pagination/Internal/UI/FoPaginationButton.vue';
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';

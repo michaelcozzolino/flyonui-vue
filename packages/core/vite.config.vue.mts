@@ -1,4 +1,3 @@
-import type { Plugin }  from 'vite';
 import { exec }         from 'node:child_process';
 import * as fs          from 'node:fs';
 import { resolve }      from 'node:path';
@@ -6,6 +5,7 @@ import process          from 'node:process';
 import tailwindcss      from '@tailwindcss/vite';
 import vue              from '@vitejs/plugin-vue';
 import { visualizer }   from 'rollup-plugin-visualizer';
+import Components       from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 
 /**
@@ -36,6 +36,7 @@ function rebuildOnMaybePropsUpdate(): Plugin {
 export default defineConfig({
     plugins: [
         vue(),
+        Components({ dirs: 'src/UI' }),
         tailwindcss(),
         // todo: understand why not working in local
         ...process.env.GENERATE_BUILD_SIZE_VISUALIZER

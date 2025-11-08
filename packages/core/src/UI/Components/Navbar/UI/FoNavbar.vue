@@ -38,11 +38,10 @@
 </template>
 
 <script setup lang="ts">
-import type { NavbarLink }                                from '@/UI/Components';
-import type { ComputedRef, MaybeRefOrGetter }             from 'vue';
-import { useClass }                                       from '@/Lib/UseClass/Internal';
-import { FoNavbarHamburgerMenuToggler, FoNavbarLinkList } from '@/UI/Components';
-import { ref }                                            from 'vue';
+import type { NavbarLink }                    from '@/UI/Components';
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import { useClass }                           from '@/Lib/UseClass/Internal';
+import { ref }                                from 'vue';
 
 interface Props {
     links?:     NavbarLink[];

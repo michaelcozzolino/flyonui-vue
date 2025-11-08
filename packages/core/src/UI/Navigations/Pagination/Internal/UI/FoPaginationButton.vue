@@ -13,7 +13,6 @@
 import type { Shapeable }       from '@/Lib';
 import type { ButtonProps }     from '@/UI/Components';
 import type { PaginationShape } from '@/UI/Navigations';
-import { FoButton }             from '@/UI/Components';
 import { useRoundedNone }       from '@/UI/Navigations/Pagination/Internal';
 
 const props = defineProps<Omit<ButtonProps, 'shape'> & Required<Shapeable<PaginationShape>>>();
