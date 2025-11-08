@@ -36,7 +36,12 @@ function rebuildOnMaybePropsUpdate(): Plugin {
 export default defineConfig({
     plugins: [
         vue(),
-        Components({ dirs: 'src/UI' }),
+        Components({
+            dirs:       'src/UI',
+            include:    [/\.vue$/, /\.vue\?vue/, /\.vue\.[tj]sx?\?vue/],
+            exclude:    [/\.ts/],
+            extensions: ['vue'],
+        }),
         tailwindcss(),
         // todo: understand why not working in local
         ...process.env.GENERATE_BUILD_SIZE_VISUALIZER
