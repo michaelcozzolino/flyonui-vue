@@ -16,7 +16,7 @@ export interface FlyonUIVueAppDefaultConfig {
     /** Global settings */
     global:      FlyonUIVueAppGlobalConfig;
     /** Per-component overrides */
-    components?: FlyonUIVueAppComponentsConfig;
+    components?: Partial<FlyonUIVueAppComponentsConfig>;
 }
 
 export type GlobalLabelType = Exclude<LabelType, 'inline'>;
@@ -109,6 +109,11 @@ export interface ConfigurableComponentProps {
     /** Tooltip defaults */
     FoTooltip: ConfigurableProps<TooltipProps>;
 }
+
+type ConfigurableComponentProperty<T extends ConfigurableComponentName> = keyof FlyonUIVueAppComponentsConfig[T];
+type ConfigurableGlobalProperty = keyof FlyonUIVueAppGlobalConfig;
+export type ConfigurableProperty<T extends ConfigurableComponentName> = ConfigurableComponentProperty<T>
+    & ConfigurableGlobalProperty;
 
 /** Default config for components */
 export type FlyonUIVueAppComponentsConfig = {

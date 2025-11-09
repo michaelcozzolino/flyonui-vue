@@ -1,21 +1,14 @@
-import type { Color, ColorableComponentName, ColorableTextComponentName, FlyonUIVueAppDefaultConfig  } from '@/Lib';
+import type { Color, ColorableComponentName, FlyonUIVueAppDefaultConfig } from '@/Lib';
 
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { useElementClass }                         from '@/Lib/UseClass/Internal';
-import { isDefined }                               from '@/Lib/Utils/Internal';
-import { computed, toValue }                       from 'vue';
+import { useFlyonUIVueAppConfigProperty }          from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export function useColor(
     config: Ref<FlyonUIVueAppDefaultConfig>,
     componentName: MaybeRefOrGetter<ColorableComponentName>,
     color: MaybeRefOrGetter<Color | undefined>,
 ): ComputedRef<string> {
-    const _color = computed(() => {
-        const { components, global } = config.value;
-
-        return components?.[toValue(componentName)]?.color ?? toValue(color) ?? global.color;
-    });
-
     return useElementClass<ColorableComponentName, Color>(
         componentName,
         {
@@ -100,20 +93,6 @@ export function useColor(
                 error:     'tooltip-error',
             },
         },
-        _color,
+        useFlyonUIVueAppConfigProperty(config, componentName, 'color', color),
     );
-}
-
-export function useTextColor(
-    config: Ref<FlyonUIVueAppDefaultConfig>,
-    componentName: MaybeRefOrGetter<ColorableTextComponentName>,
-    color: MaybeRefOrGetter<Color | undefined>,
-): ComputedRef<string> {
-    return computed((): string => {
-        if (isDefined(color)) {
-            return useColor(config, componentName, color).value;
-        }
-
-        return '';
-    });
 }

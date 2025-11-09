@@ -2,19 +2,7 @@ import type { FlyonUIVueAppDefaultConfig }         from '@/Lib';
 import type { SizableComponentName, Size }         from '@/Lib/UseSize/Types';
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { useElementClass }                         from '@/Lib/UseClass/Internal';
-import { computed, toValue }                       from 'vue';
-
-export function getSize(
-    config: Ref<FlyonUIVueAppDefaultConfig>,
-    componentName: MaybeRefOrGetter<SizableComponentName>,
-    size: MaybeRefOrGetter<Size | undefined>,
-): ComputedRef<Size> {
-    return computed(() => {
-        const { components, global } = config.value;
-
-        return components?.[toValue(componentName)]?.size ?? toValue(size) ?? global.size;
-    });
-}
+import { useFlyonUIVueAppConfigProperty }          from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export function useSize(
     config: Ref<FlyonUIVueAppDefaultConfig>,
@@ -109,6 +97,6 @@ export function useSize(
                 extraLarge: 'max-w-xl',
             },
         },
-        getSize(config, componentName, size),
+        useFlyonUIVueAppConfigProperty(config, componentName, 'size', size),
     );
 }
