@@ -4,9 +4,9 @@ import { useArrayFind }                       from '@vueuse/core';
 import { computed, toValue }                  from 'vue';
 
 export function useIdentifiable<
-    Name extends string = 'id',
-    Value extends number | string = number,
-    T extends Identifiable<Name, Value> = Identifiable<Name, Value>,
+    Name extends string,
+    Value extends number | string,
+    T extends Identifiable<Name, Value>,
 >(
     identifiables: MaybeRefOrGetter<MaybeRefOrGetter<T>[]>,
     id: MaybeRefOrGetter<Value | null>,

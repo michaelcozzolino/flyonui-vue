@@ -1,7 +1,7 @@
 import type { FlyonUIVueAppDefaultConfig }         from '@/Lib';
 import type { SizableComponentName, Size }         from '@/Lib/UseSize/Types';
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
-import { useElementClass }                         from '@/Lib/UseClass/Internal';
+import { useComponentClass }                       from '@/Lib/UseClass/Internal';
 import { useFlyonUIVueAppConfigProperty }          from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export function useSize(
@@ -9,7 +9,7 @@ export function useSize(
     componentName: MaybeRefOrGetter<SizableComponentName>,
     size: MaybeRefOrGetter<Size | undefined>,
 ): ComputedRef<string> {
-    return useElementClass<SizableComponentName, Size>(
+    return useComponentClass<SizableComponentName, Size>(
         componentName,
         {
             FoButton: {

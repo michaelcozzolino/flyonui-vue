@@ -1,12 +1,12 @@
 import type { OrientableComponentName, Orientation } from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter }        from 'vue';
-import { useElementClass }                           from '@/Lib/UseClass/Internal';
+import { useComponentClass }                         from '@/Lib/UseClass/Internal';
 
 export function useOrientation(
     componentName: MaybeRefOrGetter<OrientableComponentName>,
     orientation: MaybeRefOrGetter<Orientation>,
 ): ComputedRef<string> {
-    return useElementClass<OrientableComponentName, Orientation>(
+    return useComponentClass<OrientableComponentName, Orientation>(
         componentName,
         {
             FoCheckboxGroup: {

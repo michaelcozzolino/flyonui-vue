@@ -1,6 +1,6 @@
 import type { FlyonUIVueAppDefaultConfig, Shape, ShapeableComponentName } from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter, Ref }                        from 'vue';
-import { useElementClass }                                                from '@/Lib/UseClass/Internal';
+import { useComponentClass }                                              from '@/Lib/UseClass/Internal';
 import { useFlyonUIVueAppConfigProperty }                                 from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export function useShape(
@@ -8,7 +8,7 @@ export function useShape(
     componentName: MaybeRefOrGetter<ShapeableComponentName>,
     shape: MaybeRefOrGetter<Shape | undefined>,
 ): ComputedRef<string> {
-    return useElementClass<ShapeableComponentName, Shape>(
+    return useComponentClass<ShapeableComponentName, Shape>(
         componentName,
         {
             FoBadge: {

@@ -1,16 +1,16 @@
-import type { FlyonUIVueAppDefaultConfig, Preset, PresettableComponentName  } from '@/Lib';
-import type { ComputedRef, MaybeRefOrGetter, Ref }                            from 'vue';
-import { useElementClass }                                                    from '@/Lib/UseClass/Internal';
+import type { FlyonUIVueAppDefaultConfig, Preset, PresettableComponentName } from '@/Lib';
+import type { ComputedRef, MaybeRefOrGetter, Ref }                           from 'vue';
+import { useComponentClass }                                                 from '@/Lib/UseClass/Internal';
 import {
     useFlyonUIVueAppConfigProperty,
-}                                                                             from '@/Lib/UseFlyonUIVueAppConfig/Internal';
+}                                                                            from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export function usePreset(
     config: Ref<FlyonUIVueAppDefaultConfig>,
     componentName: MaybeRefOrGetter<PresettableComponentName>,
     preset: MaybeRefOrGetter<Preset | undefined>,
 ): ComputedRef<string> {
-    return useElementClass<PresettableComponentName, Preset>(
+    return useComponentClass<PresettableComponentName, Preset>(
         componentName,
         {
             FoButton: {

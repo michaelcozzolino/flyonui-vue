@@ -1,7 +1,7 @@
 import type { Color, ColorableComponentName, FlyonUIVueAppDefaultConfig } from '@/Lib';
 
 import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
-import { useElementClass }                         from '@/Lib/UseClass/Internal';
+import { useComponentClass }                       from '@/Lib/UseClass/Internal';
 import { useFlyonUIVueAppConfigProperty }          from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export function useColor(
@@ -9,7 +9,7 @@ export function useColor(
     componentName: MaybeRefOrGetter<ColorableComponentName>,
     color: MaybeRefOrGetter<Color | undefined>,
 ): ComputedRef<string> {
-    return useElementClass<ColorableComponentName, Color>(
+    return useComponentClass<ColorableComponentName, Color>(
         componentName,
         {
             FoBadge: {

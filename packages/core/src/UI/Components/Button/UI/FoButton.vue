@@ -11,7 +11,6 @@
                    responsiveClass,
                    layoutClass,
                    glassClass,
-                   isDisabled && 'btn-disabled',
                ]"
                :to="to"
     >
