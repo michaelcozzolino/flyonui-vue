@@ -7,16 +7,25 @@ import type { IconProps }                                                       
 import type { CheckboxProps, InputTextProps, SelectProps, TextareaProps }        from '@/UI/Forms';
 import type { ModalProps, TooltipProps }                                         from '@/UI/Overlays';
 import type { TableProps }                                                       from '@/UI/Tables';
+import type { Ref }                                                              from 'vue';
 
 /**
  * todo: docs here should be checked and put in vitepress
  * Default configuration for the library
  */
 export interface FlyonUIVueAppDefaultConfig {
-    /** Global settings */
-    global:      FlyonUIVueAppGlobalConfig;
-    /** Per-component overrides */
-    components?: Partial<FlyonUIVueAppComponentsConfig>;
+    global:     FlyonUIVueAppGlobalConfig;
+    components: Partial<FlyonUIVueAppComponentsConfig>;
+}
+
+export type FlyonUIVueAppConfig = Partial<{
+    global:     Partial<FlyonUIVueAppGlobalConfig>;
+    components: Partial<FlyonUIVueAppComponentsConfig>;
+}>;
+
+export interface FlyonUIVueAppInjection {
+    config:      Ref<FlyonUIVueAppDefaultConfig>;
+    resetConfig: () => void;
 }
 
 export type GlobalLabelType = Exclude<LabelType, 'inline'>;
@@ -119,11 +128,3 @@ export type ConfigurableProperty<T extends ConfigurableComponentName> = Configur
 export type FlyonUIVueAppComponentsConfig = {
     [K in ConfigurableComponentName]: Partial<ConfigurableComponentProps[K]>;
 };
-
-/** Runtime FlyonUI config */
-export type FlyonUIVueAppConfig = Partial<{
-    /** Global overrides */
-    global:     Partial<FlyonUIVueAppGlobalConfig>;
-    /** Component overrides */
-    components: Partial<FlyonUIVueAppComponentsConfig>;
-}>;

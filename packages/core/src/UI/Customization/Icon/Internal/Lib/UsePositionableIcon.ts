@@ -25,7 +25,7 @@ export function usePositionableIcon(
         }
 
         const [position, globalPosition] = [
-            config.value.components?.[toValue(componentName)]?.horizontalPosition?.icon,
+            config.value.components[toValue(componentName)]?.horizontalPosition?.icon,
             config.value.global.horizontalPosition.icon,
         ];
 

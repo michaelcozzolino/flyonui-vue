@@ -17,7 +17,7 @@ export function useLabel<T extends LabelType>(
         }
 
         const [labelType, globalLabelType] = [
-            config.value.components?.[toValue(componentName)]?.labelType,
+            config.value.components[toValue(componentName)]?.labelType,
             config.value.global.labelType,
         ];
 

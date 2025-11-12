@@ -44,6 +44,8 @@ const projects: TestProjectConfiguration[] = testablePackages.map((testablePacka
             vue(),
         ],
         test: {
+            mockReset:     true,
+            clearMocks:    true,
             name,
             environment:   'jsdom',
             include:       [`packages/${name}/tests/**/*.spec.ts`],
