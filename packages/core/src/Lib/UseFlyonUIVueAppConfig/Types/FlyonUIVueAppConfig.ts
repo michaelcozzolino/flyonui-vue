@@ -23,7 +23,7 @@ export type FlyonUIVueAppConfig = Partial<{
     components: Partial<FlyonUIVueAppComponentsConfig>;
 }>;
 
-export interface FlyonUIVueAppInjection {
+export interface FlyonUIVueAppInjectionContext {
     config:      Ref<FlyonUIVueAppDefaultConfig>;
     resetConfig: () => void;
 }

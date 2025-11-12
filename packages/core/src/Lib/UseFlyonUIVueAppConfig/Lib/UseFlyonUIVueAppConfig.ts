@@ -1,27 +1,23 @@
-import type { FlyonUIVueAppDefaultConfig } from '@/Lib';
-import type { InjectionKey, Ref }          from 'vue';
-import { flyonUIVueAppDefaultConfig }      from '@/Lib';
-import { inject, ref }                     from 'vue';
+import type { FlyonUIVueAppDefaultConfig, FlyonUIVueAppInjectionContext } from '@/Lib';
+import { flyonUIVueAppDefaultConfig  }                                    from '@/Lib';
+import { resetFlyonUIVueAppConfig, useFlyonUIVueAppConfigInjectionKey }   from '@/Lib/UseFlyonUIVueAppConfig/Internal';
+import { inject, ref }                                                    from 'vue';
 
-interface FlyonUIVueAppInjectedConfig {
-    config:      Ref<FlyonUIVueAppDefaultConfig>;
-    resetConfig: () => void;
-}
+export function useFlyonUIVueAppConfig(): FlyonUIVueAppInjectionContext {
+    /**
+     * This fallback config allows to work with default values on every component by taking the predefined config without
+     * using the plugin, if there is the need of the config manipulation, the plugin's usage is required.
+     */
+    const fallbackConfig = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
 
-export const useFlyonUIVueAppConfigInjectionKey: InjectionKey<FlyonUIVueAppInjectedConfig> = Symbol('Create FlyonUI Vue App');
-
-const config = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
-
-export function useFlyonUIVueAppConfig(): FlyonUIVueAppInjectedConfig {
-    const defaultValue: FlyonUIVueAppInjectedConfig = {
-        config,
-        resetConfig: () => {
-            config.value = { ...flyonUIVueAppDefaultConfig };
-        },
-    };
+    const fallbackInjection = (): FlyonUIVueAppInjectionContext => ({
+        config:      fallbackConfig,
+        resetConfig: (): void => resetFlyonUIVueAppConfig(fallbackConfig, { ...flyonUIVueAppDefaultConfig }),
+    });
 
     return inject(
         useFlyonUIVueAppConfigInjectionKey,
-        defaultValue,
+        fallbackInjection,
+        true,
     );
 }

@@ -1,4 +1,4 @@
-import type { FlyonUIVueAppInjection } from '@/Lib';
-import type { InjectionKey }           from 'vue';
+import type { FlyonUIVueAppInjectionContext } from '@/Lib';
+import type { InjectionKey }                  from 'vue';
 
-export const useFlyonUIVueAppConfigInjectionKey: InjectionKey<FlyonUIVueAppInjection> = Symbol('Create FlyonUI Vue App');
+export const useFlyonUIVueAppConfigInjectionKey: InjectionKey<FlyonUIVueAppInjectionContext> = Symbol('Create FlyonUI Vue App');

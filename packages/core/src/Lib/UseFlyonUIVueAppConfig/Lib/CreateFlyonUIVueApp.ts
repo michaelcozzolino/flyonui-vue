@@ -1,16 +1,27 @@
 import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig } from '@/Lib';
-import type { Direction }                                       from '@/Types';
-import type { App, FunctionPlugin }                             from 'vue';
+import type {
+    Direction,
+}                                                               from '@/Types';
+import type { App, FunctionPlugin }       from 'vue';
 import {
     flyonUIVueAppConfigLocalStorageKey,
+    resetFlyonUIVueAppConfig,
     useFlyonUIVueAppConfigInjectionKey,
 }                                                               from '@/Lib/UseFlyonUIVueAppConfig/Internal';
-import { useLocalStorage } from '@vueuse/core';
-import deepMerge           from 'deepmerge';
-import { useHead }         from 'unhead';
-import { createHead }      from 'unhead/client';
-import { getActiveHead }   from 'unhead/legacy';
-import { watch }           from 'vue';
+import {
+    useLocalStorage,
+}                                                               from '@vueuse/core';
+import deepMerge from 'deepmerge';
+import {
+    useHead,
+}                                                               from 'unhead';
+import {
+    createHead,
+}                                                               from 'unhead/client';
+import {
+    getActiveHead,
+}                                                               from 'unhead/legacy';
+import { ref, watch } from 'vue';
 
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     global: {
@@ -47,11 +58,15 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
         },
     );
 
-    const resetConfig = (): void => {
-        config.value = initialConfig();
-    };
+    const oldDirection = ref<Direction | null>(null);
 
     watch(() => config.value.global.direction, (newDirection: Direction) => {
+        if (newDirection === oldDirection.value) {
+            return;
+        }
+
+        oldDirection.value = newDirection;
+
         useHead(getActiveHead() ?? createHead(), {
             htmlAttrs: { dir: newDirection },
         });
@@ -59,6 +74,6 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
 
     app.provide(
         useFlyonUIVueAppConfigInjectionKey,
-        { config, resetConfig },
+        { config, resetConfig: () => resetFlyonUIVueAppConfig(config, initialConfig) },
     );
 };
