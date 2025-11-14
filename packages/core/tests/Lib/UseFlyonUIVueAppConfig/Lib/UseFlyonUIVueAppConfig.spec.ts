@@ -37,4 +37,29 @@ describe('useFlyonUIVueAppConfig', () => {
 
         expect(wrapper.vm.config).toStrictEqual(flyonUIVueAppDefaultConfig);
     });
+
+    it('resets the config when the resetConfig function is called', async () => {
+        const TestApp = defineComponent({
+            template: '<div />',
+            setup:    (_props, _ctx) => {
+                const { config, resetConfig } = useFlyonUIVueAppConfig();
+
+                return { config, resetConfig };
+            },
+        });
+
+        const wrapper = mount(TestApp);
+
+        await flushPromises();
+
+        expect(wrapper.vm.config).toStrictEqual(flyonUIVueAppDefaultConfig);
+
+        wrapper.vm.config.global.color = 'error';
+
+        expect(wrapper.vm.config).not.toStrictEqual(flyonUIVueAppDefaultConfig);
+
+        wrapper.vm.resetConfig();
+
+        expect(wrapper.vm.config).toStrictEqual(flyonUIVueAppDefaultConfig);
+    });
 });

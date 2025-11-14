@@ -8,11 +8,11 @@ export function useFlyonUIVueAppConfig(): FlyonUIVueAppInjectionContext {
      * This fallback config allows to work with default values on every component by taking the predefined config without
      * using the plugin, if there is the need of the config manipulation, the plugin's usage is required.
      */
-    const fallbackConfig = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
+    const fallbackConfig = ref<FlyonUIVueAppDefaultConfig>(structuredClone(flyonUIVueAppDefaultConfig));
 
     const fallbackInjection = (): FlyonUIVueAppInjectionContext => ({
         config:      fallbackConfig,
-        resetConfig: (): void => resetFlyonUIVueAppConfig(fallbackConfig, { ...flyonUIVueAppDefaultConfig }),
+        resetConfig: (): void => resetFlyonUIVueAppConfig(fallbackConfig, structuredClone(flyonUIVueAppDefaultConfig)),
     });
 
     return inject(
