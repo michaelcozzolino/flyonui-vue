@@ -21,7 +21,7 @@ import {
 import {
     getActiveHead,
 }                                                               from 'unhead/legacy';
-import { ref, watch } from 'vue';
+import { watch } from 'vue';
 
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     global: {
@@ -52,21 +52,13 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
         {
             deep:          true,
             writeDefaults: true,
-            mergeDefaults: (storageValue, defaults): FlyonUIVueAppDefaultConfig => {
-                return deepMerge(storageValue, defaults);
+            mergeDefaults: (storageValue: FlyonUIVueAppDefaultConfig, defaults: FlyonUIVueAppDefaultConfig): FlyonUIVueAppDefaultConfig => {
+                return deepMerge(defaults, storageValue);
             },
         },
     );
 
-    const oldDirection = ref<Direction | null>(null);
-
     watch(() => config.value.global.direction, (newDirection: Direction) => {
-        if (newDirection === oldDirection.value) {
-            return;
-        }
-
-        oldDirection.value = newDirection;
-
         useHead(getActiveHead() ?? createHead(), {
             htmlAttrs: { dir: newDirection },
         });

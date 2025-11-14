@@ -1,9 +1,9 @@
-import type { FlyonUIVueAppConfig }                                                from '@/Lib';
+import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig }                    from '@/Lib';
 import type { Direction }                                                          from '@/Types';
 import { createFlyonUIVueApp, flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig } from '@/Lib';
 import { flyonUIVueAppConfigLocalStorageKey }                                      from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 import { flushPromises, mount }                                                    from '@vue/test-utils';
-import { useLocalStorage }                                                         from '@vueuse/core';
+import { noop, useLocalStorage }                                                   from '@vueuse/core';
 import deepmerge                                                                   from 'deepmerge';
 import { useHead }                                                                 from 'unhead';
 import { beforeEach, describe, expect, it, vi }                                    from 'vitest';
@@ -100,6 +100,51 @@ describe('createFlyonUIVueApp', () => {
         expect(localStorage.getItem(flyonUIVueAppConfigLocalStorageKey)).toBe(JSON.stringify(expectedConfig));
 
         expect(useHead).toHaveBeenCalledTimes(1);
+    });
+
+    it('merges the already existing config from the local storage with the new config', async () => {
+        const existingConfig: FlyonUIVueAppDefaultConfig = {
+            ...flyonUIVueAppDefaultConfig,
+            components: { FoButton: { size: 'large' } },
+        };
+
+        localStorage.setItem(flyonUIVueAppConfigLocalStorageKey, JSON.stringify(existingConfig));
+
+        const TestApp = defineComponent({
+            template: '<div />',
+        });
+
+        const userConfig: FlyonUIVueAppConfig = {
+            global: {
+                color: 'primary',
+            },
+            components: {
+                FoButton: {
+                    color: 'accent',
+                },
+            },
+        };
+
+        mount(TestApp, {
+            global: {
+                plugins: [
+                    [createFlyonUIVueApp, userConfig],
+                ],
+            },
+        });
+
+        await flushPromises();
+
+        const expectedConfig = deepmerge(userConfig, existingConfig);
+
+        expect(vi.mocked(useLocalStorage).mock.results[0]?.value.value).toStrictEqual(expectedConfig);
+        expect(localStorage.getItem(flyonUIVueAppConfigLocalStorageKey)).toBe(JSON.stringify(expectedConfig));
+
+        const mergeDefaults = vi.mocked(useLocalStorage).mock.calls[0]?.[2]?.mergeDefaults;
+
+        expect(
+            typeof mergeDefaults === 'function' ? mergeDefaults(expectedConfig, userConfig) : noop(),
+        ).toStrictEqual(expectedConfig);
     });
 
     it('resets successfully the config to the default one after it has been changed', async () => {
