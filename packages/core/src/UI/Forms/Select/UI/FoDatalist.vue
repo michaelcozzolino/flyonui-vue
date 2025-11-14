@@ -24,7 +24,7 @@
 
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { DatalistProps, SelectOption } from '@/UI/Forms';
-import { useId }                            from '@/Lib/UseIdentifiable/Internal';
+import { useElementId }                     from '@/Lib/UseIdentifiable/Internal';
 import { FoLabel }                          from '@/UI/Components/Label/Internal';
 import { FoInputText }                      from '@/UI/Forms';
 import { FoSelectOption, onEmptyOptions }   from '@/UI/Forms/Select/Internal';
@@ -37,7 +37,7 @@ const props = withDefaults(defineProps<DatalistProps<T, K>>(), {
 
 const selectedOption = defineModel<K | null>({ required: true });
 
-const id = useId(() => props.id);
+const id = useElementId(() => props.id);
 
 const input = computed({
     get: (): string | null => selectedOption.value?.text ?? null,

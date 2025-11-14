@@ -21,7 +21,7 @@ export function usePositionableHelperText(
 
         if (typeof configurableHelperText === 'string') {
             const [position, globalPosition] = [
-                config.value.components?.[toValue(componentName)]?.horizontalPosition?.helperText,
+                config.value.components[toValue(componentName)]?.horizontalPosition?.helperText,
                 config.value.global.horizontalPosition.helperText,
             ];
 

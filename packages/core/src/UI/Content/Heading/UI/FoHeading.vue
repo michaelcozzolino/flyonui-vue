@@ -3,19 +3,25 @@
                class="text-base-content"
                :class="textClass"
     >
-        <slot />
+        <slot>
+            {{ useRequiredSlotMessage('FoHeading') }}
+        </slot>
     </component>
 </template>
 
 <script setup lang="ts">
-import type { HeadingLevel } from '@/UI/Content/Heading';
-import { computed }          from 'vue';
+import type { WithRequiredDefaultSlot } from '@/Types';
+import type { HeadingLevel }            from '@/UI/Content/Heading';
+import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
+import { computed }                     from 'vue';
 
 interface Props {
     level: HeadingLevel;
 }
 
 const props = defineProps<Props>();
+
+defineSlots<WithRequiredDefaultSlot>();
 
 const tag = computed(() => {
     return `h${props.level}`;

@@ -77,18 +77,16 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName, IconSize, Size }   from '@/Lib';
-import type { WithAddonSlots, WithDefaultSlot } from '@/Types';
-import type { LabelType }                       from '@/UI/Components';
-
-import type { InputTextProps }    from '@/UI/Forms/InputText';
-import { useFlyonUIVueAppConfig } from '@/Lib';
-import { useFloatingLabel }       from '@/Lib/UseFloatingLabel/Internal';
-import { useShape }               from '@/Lib/UseShape/Internal';
-import { getSize, useSize }       from '@/Lib/UseSize/Internal';
-
-import { useValidity } from '@/Lib/UseValidity/Internal';
-
+import type { ComponentName, IconSize, Size }      from '@/Lib';
+import type { WithAddonSlots, WithDefaultSlot }    from '@/Types';
+import type { LabelType }                          from '@/UI/Components';
+import type { InputTextProps }                     from '@/UI/Forms/InputText';
+import { useFlyonUIVueAppConfig }                  from '@/Lib';
+import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
+import { useFlyonUIVueAppConfigProperty }          from '@/Lib/UseFlyonUIVueAppConfig/Internal';
+import { useShape }                                from '@/Lib/UseShape/Internal';
+import { useSize }                                 from '@/Lib/UseSize/Internal';
+import { useValidity }                             from '@/Lib/UseValidity/Internal';
 import { FoFragment }                              from '@/UI/Components/Fragment/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperText/Internal';
 import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
@@ -136,7 +134,7 @@ const iconSize = computed((): IconSize => {
         extraLarge: 'large',
     };
 
-    return sizes[getSize(config, componentName, props.size).value];
+    return sizes[useFlyonUIVueAppConfigProperty(config, componentName, 'size', props.size).value];
 });
 
 const inputIcon = usePositionableIcon(

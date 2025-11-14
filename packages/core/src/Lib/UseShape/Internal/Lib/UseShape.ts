@@ -1,26 +1,14 @@
-import type { FlyonUIVueAppDefaultConfig, Shape, ShapeableComponentName  } from '@/Lib';
-import type { ComputedRef, MaybeRefOrGetter, Ref }                         from 'vue';
-import { useElementClass }                                                 from '@/Lib/UseClass/Internal';
-import { computed, toValue }                                               from 'vue';
-
-export function getShape(
-    config: MaybeRefOrGetter<FlyonUIVueAppDefaultConfig>,
-    componentName: MaybeRefOrGetter<ShapeableComponentName>,
-    shape: MaybeRefOrGetter<Shape | undefined>,
-): ComputedRef<Shape> {
-    return computed(() => {
-        const { components, global } = toValue(config);
-
-        return components?.[toValue(componentName)]?.shape ?? toValue(shape) ?? global.shape;
-    });
-}
+import type { FlyonUIVueAppDefaultConfig, Shape, ShapeableComponentName } from '@/Lib';
+import type { ComputedRef, MaybeRefOrGetter, Ref }                        from 'vue';
+import { useComponentClass }                                              from '@/Lib/UseClass/Internal';
+import { useFlyonUIVueAppConfigProperty }                                 from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export function useShape(
     config: Ref<FlyonUIVueAppDefaultConfig>,
     componentName: MaybeRefOrGetter<ShapeableComponentName>,
     shape: MaybeRefOrGetter<Shape | undefined>,
 ): ComputedRef<string> {
-    return useElementClass<ShapeableComponentName, Shape>(
+    return useComponentClass<ShapeableComponentName, Shape>(
         componentName,
         {
             FoBadge: {
@@ -48,6 +36,6 @@ export function useShape(
                 square:  '',
             },
         },
-        getShape(config, componentName, shape),
+        useFlyonUIVueAppConfigProperty(config, componentName, 'shape', shape),
     );
 }

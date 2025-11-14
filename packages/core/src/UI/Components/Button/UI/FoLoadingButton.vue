@@ -56,7 +56,7 @@ const loadingIcon = computed((): Partial<Record<HorizontalPosition, LoadingProps
 
     if (position === undefined) {
         const [_position, globalPosition] = [
-            config.value.components?.FoButton?.horizontalPosition?.icon,
+            config.value.components.FoButton?.horizontalPosition?.icon,
             config.value.global.horizontalPosition.icon,
         ];
 
