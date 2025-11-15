@@ -13,9 +13,8 @@
                             @click="isSidebarCollapsed = !isSidebarCollapsed"
                     />
 
-                    <!--                    todo: this should be fetched through npm -->
                     <p class="text-sm text-primary select-none">
-                        v2.1.1
+                        {{ flyonUIVueVersion }}
                     </p>
 
                     <FoNavbarBrand :class="!isSidebarCollapsed && 'sm:ms-40'"
@@ -69,6 +68,8 @@ import { storeToRefs }                                                        fr
 import { useData, useRouter, withBase }                                       from 'vitepress';
 import { VPNavBarSearch }                                                     from 'vitepress/theme';
 import { computed, onMounted, ref }                                           from 'vue';
+
+const flyonUIVueVersion = FLYONUI_VUE_VERSION;
 
 const router = useRouter();
 
