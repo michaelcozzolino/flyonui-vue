@@ -11,7 +11,8 @@
         "vue-tsc": "^3.1.0"
     },
     "scripts": {
-        "generate:resolutions": "node ./src/GenerateResolutions.ts",
-        "generate:components-api": "node ./src/GenerateComponentsApi.ts"
+        "generate:resolutions": "tsx ./src/GenerateResolutions.ts",
+        "generate:components-api": "tsx ./src/GenerateComponentsApi.ts",
+        "get:core:version": "tsx ./src/getFlyonUIVueVersion.ts"
     }
 }
