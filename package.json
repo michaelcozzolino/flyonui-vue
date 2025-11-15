@@ -18,7 +18,8 @@
         "test-coverage": "vitest run --coverage",
         "audit": "yarn npm audit --all",
         "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
-        "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest"
+        "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest",
+        "core:version": "yarn workspace flyonui-vue-scripts get:core:version"
     },
     "dependencies": {
         "change-case": "^5.4.4"
@@ -30,6 +31,7 @@
         "@vue/test-utils": "^2.4.6",
         "concurrently": "^9.2.1",
         "eslint": "^9.37.0",
+        "tsx": "^4.20.6",
         "typescript": "^5.9.3",
         "vitest": "^3.2.4",
         "vue-tsc": "^3.1.0"

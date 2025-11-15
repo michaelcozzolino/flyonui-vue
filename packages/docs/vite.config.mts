@@ -1,7 +1,11 @@
+import { execSync }     from 'node:child_process';
 import { resolve }      from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    define: {
+        FLYONUI_VUE_VERSION: JSON.stringify(execSync('yarn core:version').toString().trim()),
+    },
     resolve: {
         alias: [
             {
