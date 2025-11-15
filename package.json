@@ -19,7 +19,7 @@
         "audit": "yarn npm audit --all",
         "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
         "upgrade:dependencies": "yarn workspaces foreach -Apt exec npm-check-updates -u -t latest",
-        "get:core:version": "yarn workspace flyonui-vue-scripts get:core:version"
+        "core:version": "yarn workspace flyonui-vue-scripts get:core:version"
     },
     "dependencies": {
         "change-case": "^5.4.4"

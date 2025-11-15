@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     define: {
-        FLYONUI_VUE_VERSION: JSON.stringify(execSync('yarn get:core:version').toString()),
+        FLYONUI_VUE_VERSION: JSON.stringify(execSync('yarn core:version').toString()),
     },
     resolve: {
         alias: [
