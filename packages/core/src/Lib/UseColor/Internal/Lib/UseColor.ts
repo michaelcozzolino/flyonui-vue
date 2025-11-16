@@ -82,6 +82,16 @@ export function useColor(
                 warning:   'radio-warning',
                 error:     'radio-error',
             },
+            FoSwitch: {
+                neutral:   '',
+                primary:   'switch-primary',
+                secondary: 'switch-secondary',
+                accent:    'switch-accent',
+                info:      'switch-info',
+                success:   'switch-success',
+                warning:   'switch-warning',
+                error:     'switch-error',
+            },
             FoTooltip: {
                 neutral:   '',
                 primary:   'tooltip-primary',

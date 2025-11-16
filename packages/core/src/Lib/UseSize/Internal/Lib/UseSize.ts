@@ -75,6 +75,13 @@ export function useSize(
                 large:      'select-lg',
                 extraLarge: 'select-xl',
             },
+            FoSwitch: {
+                extraSmall: 'switch-xs',
+                small:      'switch-sm',
+                medium:     '',
+                large:      'switch-lg',
+                extraLarge: 'switch-xl',
+            },
             FoTable: {
                 extraSmall: 'table-xs',
                 small:      'table-sm',

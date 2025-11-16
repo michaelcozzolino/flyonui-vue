@@ -33,6 +33,10 @@ export function useOrientation(
                 horizontal: 'stats-horizontal',
                 vertical:   'stats-vertical',
             },
+            FoSwitchGroup: {
+                horizontal: 'gap-4 sm:flex-row',
+                vertical:   '',
+            },
         },
         orientation,
     );

@@ -29,6 +29,14 @@ export function usePreset(
                 gradient: '',
                 text:     '',
             },
+            FoSwitch: {
+                solid:    '',
+                outline:  'switch-outline',
+                dash:     '',
+                soft:     '',
+                gradient: '',
+                text:     '',
+            },
         },
         useFlyonUIVueAppConfigProperty(config, componentName, 'preset', preset),
     );

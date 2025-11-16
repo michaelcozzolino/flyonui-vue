@@ -7,7 +7,7 @@ export type Label = string;
 export type ConfigurableLabel<T extends LabelType = LabelType> = Label | InputLabel<T>;
 
 // It can be used for inputs like input and textarea
-export interface InputLabel<T extends LabelType = LabelType> extends Omit<LabelProps<T>, 'componentName'> {
+export interface InputLabel<T extends LabelType = LabelType> extends Omit<LabelProps<T>, 'componentName' | 'id'> {
     /** The input label's text */
     text: string;
 }
