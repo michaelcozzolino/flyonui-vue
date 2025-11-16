@@ -9,12 +9,12 @@
 </template>
 
 <script setup lang="ts">
-import type { WithRequiredDefaultSlot }  from '@/Types';
-import type { CheckboxGroupProps }       from '@/UI/Forms/Checkbox';
-import { useOrientation }                from '@/Lib/UseOrientation/Internal';
-import { useRequiredSlotMessage }        from '@/Lib/Utils/Internal';
-import { isInCheckboxGroupInjectionKey } from '@/UI/Forms/Checkbox/Internal';
-import { provide }                       from 'vue';
+import type { WithRequiredDefaultSlot }   from '@/Types';
+import type { CheckboxGroupProps }        from '@/UI/Forms/Checkbox';
+import { useOrientation }                 from '@/Lib/UseOrientation/Internal';
+import { useRequiredSlotMessage }         from '@/Lib/Utils/Internal';
+import { isCheckableInGroupInjectionKey } from '@/UI/Forms/Checkbox/Internal';
+import { provide }                        from 'vue';
 
 const props = withDefaults(defineProps<CheckboxGroupProps>(), {
     orientation: 'horizontal',
@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<CheckboxGroupProps>(), {
 
 defineSlots<WithRequiredDefaultSlot>();
 
-provide(isInCheckboxGroupInjectionKey, true);
+provide(isCheckableInGroupInjectionKey, true);
 
 const orientationClass = useOrientation('FoCheckboxGroup', () => props.orientation);
 </script>

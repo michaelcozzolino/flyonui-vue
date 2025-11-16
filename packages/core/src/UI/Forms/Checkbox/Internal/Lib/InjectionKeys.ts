@@ -1,3 +1,5 @@
 import type { InjectionKey } from 'vue';
 
-export const isInCheckboxGroupInjectionKey: InjectionKey<boolean> = Symbol('isInCheckboxGroup');
+// The switch uses a checkbox under the hood
+export const isCheckableInGroupInjectionKey: InjectionKey<boolean> = Symbol('isCheckableInGroupInjectionKey');
+export const isSwitchInjectionKey: InjectionKey<boolean>           = Symbol('isSwitch');

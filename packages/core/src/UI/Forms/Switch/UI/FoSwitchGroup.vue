@@ -9,12 +9,12 @@
 </template>
 
 <script setup lang="ts">
-import type { WithRequiredDefaultSlot } from '@/Types';
-import type { SwitchGroupProps }        from '@/UI/Forms';
-import { useOrientation }               from '@/Lib/UseOrientation/Internal';
-import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
-import { isInGroupInjectionKey }        from '@/UI/Forms/Checkbox/Internal';
-import { provide }                      from 'vue';
+import type { WithRequiredDefaultSlot }   from '@/Types';
+import type { SwitchGroupProps }          from '@/UI/Forms';
+import { useOrientation }                 from '@/Lib/UseOrientation/Internal';
+import { useRequiredSlotMessage }         from '@/Lib/Utils/Internal';
+import { isCheckableInGroupInjectionKey } from '@/UI/Forms/Checkbox/Internal';
+import { provide }                        from 'vue';
 
 const props = withDefaults(defineProps<SwitchGroupProps>(), {
     orientation: 'horizontal',
@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<SwitchGroupProps>(), {
 
 defineSlots<WithRequiredDefaultSlot>();
 
-provide(isInGroupInjectionKey, true);
+provide(isCheckableInGroupInjectionKey, true);
 
 const orientationClass = useOrientation('FoSwitchGroup', () => props.orientation);
 </script>

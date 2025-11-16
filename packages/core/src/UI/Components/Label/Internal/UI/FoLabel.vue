@@ -16,7 +16,7 @@ import type { LabelType }                      from '@/UI/Components';
 import type { LabelProps }                     from '@/UI/Components/Label/Internal/Types/Label';
 import { useElementId }                        from '@/Lib/UseIdentifiable/Internal';
 import { useRequiredSlotMessage }              from '@/Lib/Utils/Internal';
-import { isLabelUsedAsSwitchIconInjectionKey } from '@/UI/Components/Label/Internal/Lib/InjectionKeys';
+import { isLabelUsedAsSwitchIconInjectionKey } from '@/UI/Components/Label/Internal/Lib';
 import { computed, inject }                    from 'vue';
 
 defineOptions({
