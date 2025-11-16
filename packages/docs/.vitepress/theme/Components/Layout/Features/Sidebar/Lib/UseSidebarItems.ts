@@ -176,6 +176,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Switch',
+                        to:       '/next/forms/switch',
+                        icon:     'mdi:toggle-switch',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Textarea',
                         to:       '/forms/textarea',
                         icon:     'mdi:textarea',
