@@ -77,23 +77,23 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName, IconSize, Size }      from '@/Lib';
-import type { WithAddonSlots, WithDefaultSlot }    from '@/Types';
-import type { LabelType }                          from '@/UI/Components';
-import type { InputTextProps }                     from '@/UI/Forms/InputText';
-import { useFlyonUIVueAppConfig }                  from '@/Lib';
-import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
-import { useFlyonUIVueAppConfigProperty }          from '@/Lib/UseFlyonUIVueAppConfig/Internal';
-import { useShape }                                from '@/Lib/UseShape/Internal';
-import { useSize }                                 from '@/Lib/UseSize/Internal';
-import { useValidity }                             from '@/Lib/UseValidity/Internal';
-import { FoFragment }                              from '@/UI/Components/Fragment/Internal';
-import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperText/Internal';
-import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
-import { FoIcon }                                  from '@/UI/Customization/Icon';
-import { usePositionableIcon }                     from '@/UI/Customization/Icon/Internal';
-import { isInJoinInjectionKey, useJoinItem }       from '@/UI/Forms/Join/Internal';
-import { computed, inject, useId }                 from 'vue';
+import type { ComponentName, IconSize, Size }          from '@/Lib';
+import type { WithAddonSlots, WithDefaultSlot }        from '@/Types';
+import type { LabelType }                              from '@/UI/Components';
+import type { InputTextProps }                         from '@/UI/Forms/InputText';
+import { useFlyonUIVueAppConfig }                      from '@/Lib';
+import { useFloatingLabel }                            from '@/Lib/UseFloatingLabel/Internal';
+import { useFlyonUIVueAppConfigProperty }              from '@/Lib/UseFlyonUIVueAppConfig/Internal';
+import { useShape }                                    from '@/Lib/UseShape/Internal';
+import { useSize }                                     from '@/Lib/UseSize/Internal';
+import { useValidity }                                 from '@/Lib/UseValidity/Internal';
+import { FoFragment }                                  from '@/UI/Components/Fragment/Internal';
+import { FoHelperText, usePositionableHelperText }     from '@/UI/Components/HelperText/Internal';
+import { FoLabel, useLabel }                           from '@/UI/Components/Label/Internal';
+import { FoIcon }                                      from '@/UI/Customization/Icon';
+import { useHasPositionableIcon, usePositionableIcon } from '@/UI/Customization/Icon/Internal';
+import { isInJoinInjectionKey, useJoinItem }           from '@/UI/Forms/Join/Internal';
+import { computed, inject, useId }                     from 'vue';
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
@@ -155,9 +155,7 @@ const defaultLabel = useLabel(
     () => props.label,
 );
 
-const hasIcon = computed(() => {
-    return inputIcon.value?.left !== undefined || inputIcon.value?.right !== undefined;
-});
+const hasIcon = computed((): boolean => useHasPositionableIcon(inputIcon));
 
 const isGroup = computed(() => {
     return hasIcon.value || slots.append !== undefined || slots.prepend !== undefined || defaultLabel.value?.type === 'inline';
