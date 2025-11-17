@@ -86,7 +86,7 @@ const slots = defineSlots<{
 }>();
 
 const id         = useElementId(() => props.id);
-const labelId    = computed((): string => `label-${id}`);
+const labelId    = computed((): string => `label-${id.value}`);
 const { config } = useFlyonUIVueAppConfig();
 
 const isInCheckboxGroup = inject(isCheckableInGroupInjectionKey, false);
