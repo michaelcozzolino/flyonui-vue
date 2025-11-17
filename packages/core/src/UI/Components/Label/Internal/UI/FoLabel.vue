@@ -1,5 +1,6 @@
 <template>
-    <label :class="[labelClass, isHidden && 'sr-only']"
+    <label :id="labelId"
+           :class="[labelClass, isHidden && 'sr-only']"
            v-bind="$attrs"
     >
         <slot>
@@ -13,8 +14,10 @@ import type { FloatingLabelComponentName } from '@/Lib';
 import type { WithRequiredDefaultSlot }    from '@/Types';
 import type { LabelType }                  from '@/UI/Components';
 import type { LabelProps }                 from '@/UI/Components/Label/Internal/Types/Label';
+import { useElementId }                    from '@/Lib/UseIdentifiable/Internal';
 import { useRequiredSlotMessage }          from '@/Lib/Utils/Internal';
-import { computed }                        from 'vue';
+import { switchOptionsInjectionKey }       from '@/UI/Forms/Checkbox/Internal';
+import { computed, inject }                from 'vue';
 
 defineOptions({
     inheritAttrs: false,
@@ -27,7 +30,17 @@ const props = withDefaults(defineProps<LabelProps>(), {
 
 defineSlots<WithRequiredDefaultSlot>();
 
-const labelClass = computed(() => {
+const switchOptions = inject(switchOptionsInjectionKey, computed((): undefined => undefined));
+
+const isLabelUsedAsSwitchIcon = computed(() => switchOptions.value?.labelAsIcon === true);
+
+const labelId = useElementId(() => props.id);
+
+const labelClass = computed((): string => {
+    if (isLabelUsedAsSwitchIcon.value) {
+        return '';
+    }
+
     if (props.type === undefined) {
         return 'label-text';
     }

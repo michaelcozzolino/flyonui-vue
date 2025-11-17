@@ -1,5 +1,6 @@
 import type { SidebarBadge, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
 import type { ComputedRef }               from 'vue';
+import { flyonUIVueNextPath }             from '@/Next/Lib/Next';
 import { computed }                       from 'vue';
 
 export function useSidebarItems(): ComputedRef<SidebarItem[]> {
@@ -174,6 +175,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/forms/select',
                         icon:     'mdi:chevron-down-box',
                         children: [],
+                    },
+                    {
+                        text:     'Switch',
+                        to:       `${flyonUIVueNextPath}/forms/switch`,
+                        icon:     'mdi:toggle-switch',
+                        children: [],
+                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Textarea',

@@ -1,5 +1,6 @@
-import { useSidebarItems } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
-import { expect, test }    from '@playwright/test';
+import { useSidebarItems }    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
+import { flyonUIVueNextPath } from '@/Next/Lib/Next';
+import { expect, test }       from '@playwright/test';
 
 test('components previews', async ({ page }) => {
     test.slow();
@@ -45,7 +46,12 @@ test('components previews', async ({ page }) => {
 
             const codeSnippets = await page.locator('[data-test="code-snippet"]').all();
 
-            const pathPrefix = childSidebarItemPath.slice(1); // /content/link -> content/link
+            /**
+             * /content/link -> content/link
+             * /next/content/link -> content/link for unreleased features snapshots will still use the standard naming
+             *                                    so that it will be easier to test them when a new release is done.
+             */
+            const pathPrefix = childSidebarItemPath.replace(flyonUIVueNextPath, '').slice(1);
 
             for (const codeSnippet of codeSnippets) {
                 const screenshotId = await codeSnippet.getAttribute('data-test-screenshot');

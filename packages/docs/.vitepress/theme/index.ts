@@ -1,8 +1,8 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
-import Layout                                   from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 
+import Layout                                         from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 import ComponentsApi                                  from '@/Api/UI/ComponentsApi.vue';
 import BadgeDocs                                      from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                                     from '@/Components/Button/ButtonDocs.vue';
@@ -24,6 +24,7 @@ import TextareaDocs                                   from '@/Forms/Textarea/Tex
 import MenuDocs                                       from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                                     from '@/Navigations/Navbar/NavbarDocs.vue';
 import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
+import SwitchDocs                                     from '@/Next/Forms/Switch/SwitchDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
 import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                                    from '@/Overlays/Tooltip/TooltipDocs.vue';
@@ -88,6 +89,7 @@ export default {
             { name: 'StatsDocs', instance: StatsDocs },
             { name: 'SwapDocs', instance: SwapDocs },
             { name: 'SelectDocs', instance: SelectDocs },
+            { name: 'SwitchDocs', instance: SwitchDocs },
             { name: 'TableDocs', instance: TableDocs },
             { name: 'TextareaDocs', instance: TextareaDocs },
             { name: 'TooltipDocs', instance: TooltipDocs },
