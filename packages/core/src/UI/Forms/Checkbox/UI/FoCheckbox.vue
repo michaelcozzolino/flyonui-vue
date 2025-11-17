@@ -54,16 +54,17 @@
 </template>
 
 <script lang="ts" setup>
-import type { ConfigurableComponentName }                       from '@/Lib';
-import type { CheckboxProps }                                   from '@/UI/Forms/Checkbox/Types/Checkbox.ts';
-import type { VNode }                                           from 'vue';
-import { useFlyonUIVueAppConfig }                               from '@/Lib';
-import { useColor }                                             from '@/Lib/UseColor/Internal';
-import { useSize }                                              from '@/Lib/UseSize/Internal/Lib';
-import { useValidity }                                          from '@/Lib/UseValidity/Internal';
-import { FoLabel }                                              from '@/UI/Components/Label/Internal';
-import { isCheckableInGroupInjectionKey, isSwitchInjectionKey } from '@/UI/Forms/Checkbox/Internal';
-import { computed, inject, useId,  watch   }                    from 'vue';
+import type { ConfigurableComponentName }                            from '@/Lib';
+import type { CheckboxProps }                                        from '@/UI/Forms/Checkbox/Types/Checkbox.ts';
+import type { VNode }                                                from 'vue';
+import { useFlyonUIVueAppConfig }                                    from '@/Lib';
+import { useColor }                                                  from '@/Lib/UseColor/Internal';
+import { useElementId }                                              from '@/Lib/UseIdentifiable/Internal';
+import { useSize }                                                   from '@/Lib/UseSize/Internal/Lib';
+import { useValidity }                                               from '@/Lib/UseValidity/Internal';
+import { FoLabel }                                                   from '@/UI/Components/Label/Internal';
+import { isCheckableInGroupInjectionKey, switchOptionsInjectionKey } from '@/UI/Forms/Checkbox/Internal';
+import { computed, inject, watch }                                   from 'vue';
 
 defineOptions({
     inheritAttrs: false,
@@ -79,27 +80,28 @@ const slots = defineSlots<{
      * @internal
      * Default component's slot, to be used only for the icon of a switch. This is only for internal usage and must never
      * be used externally. Check the switch docs instead.
+     * todo: must be removed from api
      */
     default?: () => VNode[];
 }>();
 
-const id                           = useId(); // todo: check
-const labelId = computed((): string => `label-${id}`);
-const { config }                   = useFlyonUIVueAppConfig();
+const id         = useElementId(() => props.id);
+const labelId    = computed((): string => `label-${id}`);
+const { config } = useFlyonUIVueAppConfig();
 
-const isInCheckboxGroup            = inject(isCheckableInGroupInjectionKey, false);
-// todo: maybe i can try an object with is switch and label in the injection key directly
-const isSwitch            = inject(isSwitchInjectionKey, false);
+const isInCheckboxGroup = inject(isCheckableInGroupInjectionKey, false);
+const switchOptions     = inject(switchOptionsInjectionKey, computed((): undefined => undefined));
+
+const isSwitch = computed((): boolean => switchOptions.value !== undefined);
 
 const checked         = defineModel({ required: true, type: Boolean });
 const isIndeterminate = defineModel('isIndeterminate', { type: Boolean });
 
 const componentName = computed(
-    (): Extract<ConfigurableComponentName, 'FoSwitch' | 'FoCheckbox'> => isSwitch ? 'FoSwitch' : 'FoCheckbox',
+    (): Extract<ConfigurableComponentName, 'FoSwitch' | 'FoCheckbox'> => isSwitch.value ? 'FoSwitch' : 'FoCheckbox',
 );
 
-// todo: maybe this can be calculated from the injection key related to the label
-const switchHasIcon = computed((): boolean => isSwitch && slots.default !== undefined);
+const switchHasIcon = computed((): boolean => isSwitch.value && slots.default !== undefined);
 
 const [
     colorClass,

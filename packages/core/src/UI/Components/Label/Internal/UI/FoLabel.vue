@@ -10,14 +10,14 @@
 </template>
 
 <script setup lang="ts">
-import type { FloatingLabelComponentName }     from '@/Lib';
-import type { WithRequiredDefaultSlot }        from '@/Types';
-import type { LabelType }                      from '@/UI/Components';
-import type { LabelProps }                     from '@/UI/Components/Label/Internal/Types/Label';
-import { useElementId }                        from '@/Lib/UseIdentifiable/Internal';
-import { useRequiredSlotMessage }              from '@/Lib/Utils/Internal';
-import { isLabelUsedAsSwitchIconInjectionKey } from '@/UI/Components/Label/Internal/Lib';
-import { computed, inject }                    from 'vue';
+import type { FloatingLabelComponentName } from '@/Lib';
+import type { WithRequiredDefaultSlot }    from '@/Types';
+import type { LabelType }                  from '@/UI/Components';
+import type { LabelProps }                 from '@/UI/Components/Label/Internal/Types/Label';
+import { useElementId }                    from '@/Lib/UseIdentifiable/Internal';
+import { useRequiredSlotMessage }          from '@/Lib/Utils/Internal';
+import { switchOptionsInjectionKey }       from '@/UI/Forms/Checkbox/Internal';
+import { computed, inject }                from 'vue';
 
 defineOptions({
     inheritAttrs: false,
@@ -30,7 +30,9 @@ const props = withDefaults(defineProps<LabelProps>(), {
 
 defineSlots<WithRequiredDefaultSlot>();
 
-const isLabelUsedAsSwitchIcon = inject(isLabelUsedAsSwitchIconInjectionKey, computed(() => false));
+const switchOptions = inject(switchOptionsInjectionKey, computed((): undefined => undefined));
+
+const isLabelUsedAsSwitchIcon = computed(() => switchOptions.value?.labelAsIcon === true);
 
 const labelId = useElementId(() => props.id);
 

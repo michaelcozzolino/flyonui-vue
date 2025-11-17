@@ -29,11 +29,10 @@ import type { ComponentName }                          from '@/Lib';
 import type { SwitchProps }                            from '@/UI/Forms/Switch';
 import {  useFlyonUIVueAppConfig }                     from '@/Lib';
 import { usePreset }                                   from '@/Lib/UsePreset/Internal';
-import { isLabelUsedAsSwitchIconInjectionKey }         from '@/UI/Components/Label/Internal/Lib';
 import { FoIcon }                                      from '@/UI/Customization';
 import { useHasPositionableIcon, usePositionableIcon } from '@/UI/Customization/Icon/Internal';
 import { FoCheckbox }                                  from '@/UI/Forms';
-import { isSwitchInjectionKey }                        from '@/UI/Forms/Checkbox/Internal';
+import { switchOptionsInjectionKey }                   from '@/UI/Forms/Checkbox/Internal';
 import { reactiveOmit }                                from '@vueuse/core';
 import { computed, provide }                           from 'vue';
 
@@ -41,8 +40,6 @@ const props = withDefaults(defineProps<SwitchProps>(), {
     isDisabled: false,
     isValid:    undefined,
 });
-
-provide(isSwitchInjectionKey, true);
 
 const componentName: ComponentName = 'FoSwitch';
 const { config }                   = useFlyonUIVueAppConfig();
@@ -57,7 +54,7 @@ const switchIcon = usePositionableIcon(
 
 const hasIcon = computed((): boolean => useHasPositionableIcon(switchIcon));
 
-provide(isLabelUsedAsSwitchIconInjectionKey, hasIcon);
+provide(switchOptionsInjectionKey, computed(() => ({ labelAsIcon: hasIcon.value })));
 
 const presetClass = usePreset(config, componentName, () => props.preset);
 
