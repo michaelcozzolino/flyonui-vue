@@ -1,7 +1,8 @@
 <template>
     <component :is="buttonTag"
-               class="btn"
+               :id="id"
                :class="[
+                   isTabButton ? (shape !== undefined && 'btn') : 'btn',
                    colorClass,
                    joinItemClass,
                    presetClass,
@@ -12,10 +13,14 @@
                    layoutClass,
                    glassClass,
                ]"
+               :type="isPureButton ? type : undefined"
                :to="to"
+               :navigation="isPureButton ? undefined : navigation"
+               :disabled="isPureButton ? isDisabled : undefined"
     >
         <slot name="prepend">
             <FoIcon v-if="buttonIcon?.left"
+                    :class="isTabButton && 'me-3'"
                     :icon="buttonIcon.left"
                     :size="iconSize"
             />
@@ -25,6 +30,7 @@
 
         <slot name="append">
             <FoIcon v-if="buttonIcon?.right"
+                    :class="isTabButton && 'ms-3'"
                     :icon="buttonIcon.right"
                     :size="iconSize"
             />
@@ -33,25 +39,27 @@
 </template>
 
 <script lang="ts" setup>
-import type { ComponentName } from '@/Lib';
-
+import type { ComponentName }                   from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot } from '@/Types';
-import type { ButtonProps }                     from '@/UI/Components';
-import { useFlyonUIVueAppConfig }               from '@/Lib';
-import { useColor }                             from '@/Lib/UseColor/Internal';
-import { useGlass }                             from '@/Lib/UseGlass/Internal';
-import { usePreset }                            from '@/Lib/UsePreset/Internal';
-import { useResponsitivity }                    from '@/Lib/UseResponsitivity/Internal';
-import { useShape }                             from '@/Lib/UseShape/Internal';
-import { useSize }                              from '@/Lib/UseSize/Internal';
-import { useState }                             from '@/Lib/UseState/Internal';
-import { FoRouterLink }                         from '@/UI/Content/Link/Internal';
-import { FoIcon }                               from '@/UI/Customization';
-import { usePositionableIcon }                  from '@/UI/Customization/Icon/Internal';
-import { isInJoinInjectionKey, useJoinItem }    from '@/UI/Forms/Join/Internal';
-import { computed, inject }                     from 'vue';
+
+import type { ButtonProps }                  from '@/UI/Components';
+import type { CustomIconSize }               from '@/UI/Customization';
+import { useFlyonUIVueAppConfig }            from '@/Lib';
+import { useColor }                          from '@/Lib/UseColor/Internal';
+import { useGlass }                          from '@/Lib/UseGlass/Internal';
+import { usePreset }                         from '@/Lib/UsePreset/Internal';
+import { useResponsitivity }                 from '@/Lib/UseResponsitivity/Internal';
+import { useShape }                          from '@/Lib/UseShape/Internal';
+import { useSize }                           from '@/Lib/UseSize/Internal';
+import { useState }                          from '@/Lib/UseState/Internal';
+import { FoLink }                            from '@/UI/Content';
+import { FoIcon }                            from '@/UI/Customization';
+import { usePositionableIcon }               from '@/UI/Customization/Icon/Internal';
+import { isInJoinInjectionKey, useJoinItem } from '@/UI/Forms/Join/Internal';
+import { computed, inject, useAttrs }        from 'vue';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
+    type:         'button',
     isActive:     false,
     layout:       'default',
     isResponsive: false,
@@ -59,18 +67,23 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 
 defineSlots<WithDefaultSlot & WithAddonSlots>();
 
+const attrs = useAttrs();
+
 const componentName: ComponentName = 'FoButton';
 const { config }                   = useFlyonUIVueAppConfig();
 
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
+const isTabButton       = computed((): boolean => attrs.role === 'tab');
 
 const buttonTag = computed(() => {
     if (props.to === undefined) {
         return 'button';
     }
 
-    return FoRouterLink;
+    return FoLink;
 });
+
+const isPureButton = computed((): boolean => buttonTag.value === 'button');
 
 const buttonIcon = usePositionableIcon(
     config,
@@ -96,7 +109,9 @@ const [
     useResponsitivity(componentName, () => props.isResponsive),
 ];
 
-const iconSize = { width: 18, height: 18 };
+const iconSize = computed(
+    (): CustomIconSize => isTabButton.value ? 'small' : { width: 18, height: 18 },
+);
 
 const stateClass = computed(() => {
     return [

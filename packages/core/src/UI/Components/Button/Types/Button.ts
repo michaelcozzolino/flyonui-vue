@@ -9,10 +9,10 @@ import type {
     Shapeable,
     Sizable,
     WithGlass,
-} from '@/Lib';
+}                                           from '@/Lib';
 import type { Default, HorizontalPosition } from '@/Types';
 import type { LoadingProps }                from '@/UI/Components';
-import type { WithTo }                      from '@/UI/Content';
+import type { CustomNavigatable, WithTo }   from '@/UI/Content';
 import type { WithConfigurableIcon }        from '@/UI/Customization/Icon';
 
 // todo: in case it is used by other components, just move it to shared
@@ -20,6 +20,7 @@ export type Layout = Default | 'wide' | 'block';
 
 export interface ButtonProps extends MaybeStringId,
     Colorable,
+    CustomNavigatable,
     Disableable,
     Presettable,
     Responsive,
@@ -28,6 +29,9 @@ export interface ButtonProps extends MaybeStringId,
     WithGlass,
     WithConfigurableIcon,
     WithTo {
+    /** The button's type */
+    type?: 'button' | 'submit';
+
     /** The button's layout */
     layout?: Layout;
 
