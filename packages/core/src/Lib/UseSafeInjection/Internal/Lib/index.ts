@@ -1,1 +1,1 @@
-export * from '@/Lib/UseSafeInjection/Internal/Lib';
+export * from '@/Lib/UseSafeInjection/Internal/Lib/UseSafeInjection';
