@@ -11,6 +11,7 @@ export function useResponsitivity(
         FoButton: useClass(isResponsive, 'max-sm:btn-sm lg:btn-lg'),
         FoJoin:   useClass(isResponsive, 'max-sm:join-vertical'),
         FoTable:  useClass(isResponsive, 'overflow-x-auto'),
+        FoTabs:   useClass(isResponsive, 'overflow-x-auto'),
     };
 
     return classes[toValue(componentName)];
