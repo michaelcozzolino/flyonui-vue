@@ -10,7 +10,7 @@ export type Identifiable<
 // todo: vue might not recognize this properly
 export type Id<T extends number | string = number> = Identifiable<'id', T>;
 
-interface StringId {
+export interface StringId {
     /** The component's id, if not given, a random one might be assigned */
     readonly id: string;
 }
