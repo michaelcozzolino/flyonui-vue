@@ -85,17 +85,17 @@ const slots = defineSlots<{
     default?: () => VNode[];
 }>();
 
+const checked         = defineModel({ required: true, type: Boolean });
+const isIndeterminate = defineModel('isIndeterminate', { type: Boolean });
+
 const id         = useElementId(() => props.id);
 const labelId    = computed((): string => `label-${id.value}`);
 const { config } = useFlyonUIVueAppConfig();
 
-const isInCheckboxGroup = inject(isCheckableInGroupInjectionKey, false);
-const switchOptions     = inject(switchOptionsInjectionKey, computed((): undefined => undefined));
+const isCheckableInGroup = inject(isCheckableInGroupInjectionKey, false);
+const switchOptions      = inject(switchOptionsInjectionKey, computed((): undefined => undefined));
 
 const isSwitch = computed((): boolean => switchOptions.value !== undefined);
-
-const checked         = defineModel({ required: true, type: Boolean });
-const isIndeterminate = defineModel('isIndeterminate', { type: Boolean });
 
 const componentName = computed(
     (): Extract<ConfigurableComponentName, 'FoSwitch' | 'FoCheckbox'> => isSwitch.value ? 'FoSwitch' : 'FoCheckbox',
@@ -114,7 +114,7 @@ const [
 ];
 
 const gapClass = computed(() => {
-    if (isInCheckboxGroup || props.helperText !== undefined) {
+    if (isCheckableInGroup || props.helperText !== undefined) {
         return 'gap-2';
     }
 
