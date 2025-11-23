@@ -124,6 +124,12 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         icon:     'carbon:insert-page',
                         children: [],
                     },
+                    {
+                        text:     'Tabs',
+                        to:       `${flyonUIVueNextPath}/navigations/tabs`,
+                        icon:     'mdi:tab',
+                        children: [],
+                    },
                 ],
             },
             {
