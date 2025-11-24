@@ -10,7 +10,7 @@
     >
         <div v-if="isOpen"
              ref="backdrop"
-             class="grid p-4 fixed inset-0 z-1000 h-full w-full"
+             class="grid p-4 fixed inset-0 z-1000 h-full w-full outline-0"
              :class="[
                  isDisabledBackdrop === false && backdropColorClass,
                  placementClass,
