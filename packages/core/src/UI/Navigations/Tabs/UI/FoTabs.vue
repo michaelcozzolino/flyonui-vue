@@ -1,9 +1,13 @@
 <template>
-    <!--    todo: user must be able to move tabs with keyboard -->
-    <div :class="[
-        isFilled && 'w-full',
-        orientation === 'vertical' && 'flex',
-    ]"
+    <div ref="tabs"
+         tabindex="0"
+         class="outline-0"
+         :class="[
+             isFilled && 'w-full',
+             orientation === 'vertical' && 'flex',
+
+         ]"
+         @click.prevent="focused = true"
     >
         <nav class="tabs"
              :class="[
@@ -27,15 +31,16 @@
 </template>
 
 <script setup lang="ts" generic="T extends TabProps">
-import type { ComponentName }                           from '@/Lib';
-import type { TabProps, TabsProps }                     from '@/UI/Navigations';
-import { useFlyonUIVueAppConfig }                       from '@/Lib';
-import { useAlignment }                                 from '@/Lib/UseAlignment/Internal';
-import { useOrientation }                               from '@/Lib/UseOrientation/Internal';
-import { useResponsitivity }                            from '@/Lib/UseResponsitivity/Internal';
-import { useSize }                                      from '@/Lib/UseSize/Internal';
-import { activeTabInjectionKey, tabsPropsInjectionKey } from '@/UI/Navigations/Tabs/Internal';
-import { computed, provide }                            from 'vue';
+import type { ComponentName }                                  from '@/Lib';
+import type { TabProps, TabsProps }                            from '@/UI/Navigations';
+import { useFlyonUIVueAppConfig }                              from '@/Lib';
+import { useAlignment }                                        from '@/Lib/UseAlignment/Internal';
+import { useOrientation }                                      from '@/Lib/UseOrientation/Internal';
+import { useResponsitivity }                                   from '@/Lib/UseResponsitivity/Internal';
+import { useSize }                                             from '@/Lib/UseSize/Internal';
+import { activeTabInjectionKey, tabsPropsInjectionKey }        from '@/UI/Navigations/Tabs/Internal';
+import { useArrayFindIndex, useFocus, useMagicKeys, whenever } from '@vueuse/core';
+import { computed, provide, useTemplateRef }                   from 'vue';
 
 const props = withDefaults(defineProps<TabsProps<T>>(), {
     alignment:    'left',
@@ -63,4 +68,47 @@ const [
     useResponsitivity(componentName, () => props.isResponsive),
     useSize(config, componentName, () => props.size),
 ];
+
+const tabsElement    = useTemplateRef('tabs');
+const { focused }    = useFocus(tabsElement);
+const activeTabIndex = useArrayFindIndex((): T[] => props.tabs, (tab: T): boolean => tab.id === activeTab.value.id);
+
+const { arrowLeft, arrowRight, arrowUp, arrowDown } = useMagicKeys({
+    passive:      false,
+    onEventFired: (e: KeyboardEvent): void => {
+        if (focused.value && ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) {
+            e.preventDefault();
+        }
+    },
+});
+
+whenever(() => [arrowLeft, arrowRight, arrowUp, arrowDown], () => {
+    if (focused.value === false) {
+        return;
+    }
+
+    if (props.orientation === 'horizontal') {
+        return switchTab(arrowLeft?.value ? -1 : (arrowRight?.value ? 1 : 0));
+    }
+
+    return switchTab(arrowUp?.value ? -1 : (arrowDown?.value ? 1 : 0));
+}, { deep: true });
+
+function switchTab(delta: 1 | -1 | 0): void {
+    if (delta === 0) {
+        return;
+    }
+
+    const index      = activeTabIndex.value + delta;
+    const tabsLength = props.tabs.length;
+
+    const newIndex     = index >= tabsLength ? 0 : (index < 0 ? props.tabs.length - 1 : index);
+    const newActiveTab = props.tabs[newIndex];
+
+    if (newActiveTab === undefined) {
+        throw new Error(`Index ${newIndex} not found.`);
+    }
+
+    activeTab.value = newActiveTab;
+}
 </script>
