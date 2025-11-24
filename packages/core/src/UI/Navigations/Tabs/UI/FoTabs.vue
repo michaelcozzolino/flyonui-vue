@@ -35,18 +35,18 @@
 </template>
 
 <script setup lang="ts" generic="T extends TabProps">
-import type { ComponentName }                                  from '@/Lib';
-import type { TabProps, TabsProps }                            from '@/UI/Navigations';
-import type { Slot }                                           from 'vue';
-import { useFlyonUIVueAppConfig }                              from '@/Lib';
-import { useAlignment }                                        from '@/Lib/UseAlignment/Internal';
-import { useOrientation }                                      from '@/Lib/UseOrientation/Internal';
-import { useResponsitivity }                                   from '@/Lib/UseResponsitivity/Internal';
-import { useSize }                                             from '@/Lib/UseSize/Internal';
-import { useRequiredSlotMessage }                              from '@/Lib/Utils/Internal';
-import { activeTabInjectionKey, tabsPropsInjectionKey }        from '@/UI/Navigations/Tabs/Internal';
-import { useArrayFindIndex, useFocus, useMagicKeys, whenever } from '@vueuse/core';
-import { computed, provide,  useTemplateRef }                  from 'vue';
+import type { ComponentName }                                                 from '@/Lib';
+import type { TabProps, TabsProps }                                           from '@/UI/Navigations';
+import type { Slot }                                                          from 'vue';
+import { useFlyonUIVueAppConfig }                                             from '@/Lib';
+import { useAlignment }                                                       from '@/Lib/UseAlignment/Internal';
+import { useOrientation }                                                     from '@/Lib/UseOrientation/Internal';
+import { useResponsitivity }                                                  from '@/Lib/UseResponsitivity/Internal';
+import { useSize }                                                            from '@/Lib/UseSize/Internal';
+import { useArrayLength, useRequiredSlotMessage }                             from '@/Lib/Utils/Internal';
+import { activeTabInjectionKey, tabsPropsInjectionKey }                       from '@/UI/Navigations/Tabs/Internal';
+import { useArrayEvery, useArrayFindIndex, useFocus, useMagicKeys, whenever } from '@vueuse/core';
+import { computed, provide, useTemplateRef, watch }                           from 'vue';
 
 const props = withDefaults(defineProps<TabsProps<T>>(), {
     alignment:    'left',
@@ -87,6 +87,11 @@ const tabsElement    = useTemplateRef('tabs');
 const { focused }    = useFocus(tabsElement);
 const activeTabIndex = useArrayFindIndex((): T[] => props.tabs, (tab: T): boolean => tab.id === activeTab.value.id);
 
+const areAllTabsDisabled = useArrayEvery(
+    () => props.tabs,
+    (tab: T) => tab.isDisabled === true,
+);
+
 const { arrowLeft, arrowRight, arrowUp, arrowDown } = useMagicKeys({
     passive:      false,
     onEventFired: (e: KeyboardEvent): void => {
@@ -96,8 +101,14 @@ const { arrowLeft, arrowRight, arrowUp, arrowDown } = useMagicKeys({
     },
 });
 
+watch(useArrayLength(() => props.tabs), (length: number) => {
+    if (length === 0) {
+        throw new Error('No tabs found.');
+    }
+});
+
 whenever(() => [arrowLeft, arrowRight, arrowUp, arrowDown], () => {
-    if (focused.value === false) {
+    if (areAllTabsDisabled.value || focused.value === false) {
         return;
     }
 
@@ -122,6 +133,8 @@ function switchTab(delta: 1 | -1 | 0): void {
     if (newActiveTab === undefined) {
         throw new Error(`Index ${newIndex} not found.`);
     }
+
+    // todo: disabled tabs cannot be selected with the keyboard
 
     activeTab.value = newActiveTab;
 }
