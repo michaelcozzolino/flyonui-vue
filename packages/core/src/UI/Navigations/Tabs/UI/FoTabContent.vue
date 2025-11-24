@@ -4,19 +4,25 @@
          role="tabpanel"
          :aria-labelledby="tabId"
     >
-        <slot />
+        <slot>
+            {{ useRequiredSlotMessage('FoTabContent') }}
+        </slot>
     </div>
 </template>
 
 <script setup lang="ts">
+import type { WithRequiredDefaultSlot }                                 from '@/Types';
 import type { TabContentProps }                                         from '@/UI/Navigations/Tabs/Types/Tabs';
 import { useFlyonUIVueAppConfig }                                       from '@/Lib';
 import { useFlyonUIVueAppConfigProperty }                               from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 import { useSafeInjection }                                             from '@/Lib/UseSafeInjection/Internal';
+import { useRequiredSlotMessage }                                       from '@/Lib/Utils/Internal';
 import { activeTabInjectionKey, tabsPropsInjectionKey, useIsActiveTab } from '@/UI/Navigations/Tabs/Internal';
 import { computed }                                                     from 'vue';
 
 const props = defineProps<TabContentProps>();
+
+defineSlots<WithRequiredDefaultSlot>();
 
 const { config } = useFlyonUIVueAppConfig();
 

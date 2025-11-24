@@ -17,7 +17,7 @@
             </FoTab>
         </template>
 
-        <template #tab-contents>
+        <template #contents>
             <FoTabContent :tab-id="homeTab.id">
                 <p class="text-base-content/80">
                     Welcome to the
@@ -61,7 +61,7 @@
             </FoTab>
         </template>
 
-        <template #tab-contents>
+        <template #contents>
             <FoTabContent :tab-id="homeTab.id">
                 <p class="text-base-content/80">
                     Welcome to the
@@ -104,7 +104,7 @@
             </FoTab>
         </template>
 
-        <template #tab-contents>
+        <template #contents>
             <FoTabContent :tab-id="homeTab.id">
                 <p class="text-base-content/80">
                     Welcome to the
@@ -148,7 +148,7 @@
             </FoTab>
         </template>
 
-        <template #tab-contents>
+        <template #contents>
             <FoTabContent :tab-id="homeTab.id">
                 <p class="text-base-content/80">
                     Welcome to the
@@ -192,7 +192,7 @@
             </FoTab>
         </template>
 
-        <template #tab-contents>
+        <template #contents>
             <FoTabContent :tab-id="homeTab.id">
                 <p class="text-base-content/80">
                     Welcome to the

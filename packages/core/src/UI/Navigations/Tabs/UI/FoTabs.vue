@@ -21,11 +21,15 @@
              role="tablist"
              :aria-orientation="orientation"
         >
-            <slot name="tabs" />
+            <slot name="tabs">
+                {{ useRequiredSlotMessage(componentName, '', 'tabs') }}
+            </slot>
         </nav>
 
         <div :class="orientation === 'horizontal' ? 'mt-3' : 'ms-3'">
-            <slot name="tab-contents" />
+            <slot name="contents">
+                {{ useRequiredSlotMessage(componentName, '', 'contents') }}
+            </slot>
         </div>
     </div>
 </template>
@@ -33,20 +37,30 @@
 <script setup lang="ts" generic="T extends TabProps">
 import type { ComponentName }                                  from '@/Lib';
 import type { TabProps, TabsProps }                            from '@/UI/Navigations';
+import type { Slot }                                           from 'vue';
 import { useFlyonUIVueAppConfig }                              from '@/Lib';
 import { useAlignment }                                        from '@/Lib/UseAlignment/Internal';
 import { useOrientation }                                      from '@/Lib/UseOrientation/Internal';
 import { useResponsitivity }                                   from '@/Lib/UseResponsitivity/Internal';
 import { useSize }                                             from '@/Lib/UseSize/Internal';
+import { useRequiredSlotMessage }                              from '@/Lib/Utils/Internal';
 import { activeTabInjectionKey, tabsPropsInjectionKey }        from '@/UI/Navigations/Tabs/Internal';
 import { useArrayFindIndex, useFocus, useMagicKeys, whenever } from '@vueuse/core';
-import { computed, provide, useTemplateRef }                   from 'vue';
+import { computed, provide,  useTemplateRef }                  from 'vue';
 
 const props = withDefaults(defineProps<TabsProps<T>>(), {
     alignment:    'left',
     orientation:  'horizontal',
     isResponsive: false,
 });
+
+defineSlots<{
+    /** The FoTab components */
+    tabs: Slot;
+
+    /** The FoTabContent components */
+    contents: Slot;
+}>();
 
 const activeTab = defineModel<T>({ required: true });
 
