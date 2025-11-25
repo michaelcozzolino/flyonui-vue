@@ -131,7 +131,9 @@ function switchTab(delta: 1 | -1 | 0): void {
     let newActiveTab = props.tabs[newIndex];
 
     if (newActiveTab?.isDisabled) {
-        newActiveTab = props.tabs[findFirstNonDisabledTabIndex(newIndex + delta)];
+        const start = newIndex + delta;
+
+        newActiveTab = props.tabs[findFirstNonDisabledTabIndex(start < 0 || start > tabsLength ? 0 : start)];
     }
 
     if (newActiveTab === undefined) {
