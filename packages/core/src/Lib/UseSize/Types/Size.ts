@@ -13,6 +13,7 @@ export type SizableComponentName = Extract<
     | 'FoSelect'
     | 'FoSwitch'
     | 'FoTable'
+    | 'FoTabs'
     | 'FoTextarea'
     | 'FoTooltip'
 >;

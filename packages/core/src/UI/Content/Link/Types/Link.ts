@@ -32,3 +32,7 @@ export interface Navigation {
     /** Currently active path */
     activePath: string;
 }
+
+export interface CustomNavigatable {
+    navigation?: Navigation;
+}

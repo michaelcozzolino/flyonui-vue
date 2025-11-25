@@ -89,6 +89,13 @@ export function useSize(
                 large:      'table-lg',
                 extraLarge: '',
             },
+            FoTabs: {
+                extraSmall: 'tabs-xs',
+                small:      'tabs-sm',
+                medium:     '',
+                large:      'tabs-lg',
+                extraLarge: 'tabs-xl',
+            },
             FoTextarea: {
                 extraSmall: 'textarea-xs',
                 small:      'textarea-sm',

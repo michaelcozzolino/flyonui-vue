@@ -5,6 +5,7 @@ import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }     
 import type { KeyboardProps, LinkProps }                                               from '@/UI/Content';
 import type { IconProps }                                                              from '@/UI/Customization';
 import type { CheckboxProps, InputTextProps, SelectProps, SwitchProps, TextareaProps } from '@/UI/Forms';
+import type { TabProps, TabsProps }                                                    from '@/UI/Navigations';
 import type { ModalProps, TooltipProps }                                               from '@/UI/Overlays';
 import type { TableProps }                                                             from '@/UI/Tables';
 import type { Ref }                                                                    from 'vue';
@@ -111,6 +112,7 @@ export interface ConfigurableComponentProps {
     FoSwitch:   ConfigurableProps<SwitchProps> & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>;
     /** Table defaults */
     FoTable:    ConfigurableProps<TableProps>;
+    FoTabs:     ConfigurableProps<TabsProps<TabProps>>;
     FoTextarea: ConfigurableProps<
         TextareaProps
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>

@@ -25,6 +25,7 @@ import MenuDocs                                       from '@/Navigations/Menu/M
 import NavbarDocs                                     from '@/Navigations/Navbar/NavbarDocs.vue';
 import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
 import SwitchDocs                                     from '@/Next/Forms/Switch/SwitchDocs.vue';
+import TabsDocs                                       from '@/Next/Navigations/Tabs/TabsDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
 import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                                    from '@/Overlays/Tooltip/TooltipDocs.vue';
@@ -90,6 +91,7 @@ export default {
             { name: 'SwapDocs', instance: SwapDocs },
             { name: 'SelectDocs', instance: SelectDocs },
             { name: 'SwitchDocs', instance: SwitchDocs },
+            { name: 'TabsDocs', instance: TabsDocs },
             { name: 'TableDocs', instance: TableDocs },
             { name: 'TextareaDocs', instance: TextareaDocs },
             { name: 'TooltipDocs', instance: TooltipDocs },

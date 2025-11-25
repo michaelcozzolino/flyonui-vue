@@ -1,6 +1,6 @@
 import type { ComponentName } from '@/Lib';
 
-export type AlignableComponentName = Extract<ComponentName, 'FoPagination'>;
+export type AlignableComponentName = Extract<ComponentName, 'FoPagination' | 'FoTabs'>;
 
 export type Alignment = 'left' | 'center' | 'right';
 

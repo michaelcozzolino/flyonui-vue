@@ -6,14 +6,17 @@ export function useAlignment(
     componentName: MaybeRefOrGetter<AlignableComponentName>,
     alignment: MaybeRefOrGetter<Alignment>,
 ): ComputedRef<string> {
+    const standardAlignmentClasses: Record<Alignment, string> = {
+        left:   '',
+        center: 'justify-center',
+        right:  'justify-end',
+    };
+
     return useComponentClass<AlignableComponentName, Alignment>(
         componentName,
         {
-            FoPagination: {
-                left:   '',
-                center: 'justify-center',
-                right:  'justify-end',
-            },
+            FoPagination: standardAlignmentClasses,
+            FoTabs:       standardAlignmentClasses,
         },
         alignment,
     );

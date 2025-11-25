@@ -37,6 +37,10 @@ export function useOrientation(
                 horizontal: 'gap-4 sm:flex-row',
                 vertical:   '',
             },
+            FoTabs: {
+                horizontal: '',
+                vertical:   'tabs-vertical',
+            },
         },
         orientation,
     );

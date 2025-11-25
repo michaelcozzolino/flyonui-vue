@@ -24,13 +24,15 @@ export interface Dimension2D {
     width: number;
 }
 
+export type CustomIconSize = IconSize | Dimension2D;
+
 export type IconProps = Required<WithIcon> & {
     /**
      * todo: bug this is not shown in the generated components api
      * The size of the icon that will be applied only to an iconify icon.
      * If the icon is a custom component you should define the size in that component itself.
      */
-    size?: IconSize | Dimension2D;
+    size?: CustomIconSize;
 } | {
     /** If a custom icon is needed, it can also be a custom svg or component. */
     icon: Component;
