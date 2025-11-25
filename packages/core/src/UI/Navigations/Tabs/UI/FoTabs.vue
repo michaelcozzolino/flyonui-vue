@@ -127,15 +127,33 @@ function switchTab(delta: 1 | -1 | 0): void {
     const index      = activeTabIndex.value + delta;
     const tabsLength = props.tabs.length;
 
-    const newIndex     = index >= tabsLength ? 0 : (index < 0 ? props.tabs.length - 1 : index);
-    const newActiveTab = props.tabs[newIndex];
+    const newIndex   = index >= tabsLength ? 0 : (index < 0 ? props.tabs.length - 1 : index);
+    let newActiveTab = props.tabs[newIndex];
+
+    if (newActiveTab?.isDisabled) {
+        newActiveTab = props.tabs[findFirstNonDisabledTabIndex(newIndex + delta)];
+    }
 
     if (newActiveTab === undefined) {
         throw new Error(`Index ${newIndex} not found.`);
     }
 
-    // todo: disabled tabs cannot be selected with the keyboard
-
     activeTab.value = newActiveTab;
+}
+
+function findFirstNonDisabledTabIndex(start: number): number {
+    for (let i = start; i < props.tabs.length; i++) {
+        if (!props.tabs[i]?.isDisabled) {
+            return i;
+        }
+    }
+
+    for (let i = 0; i < start; i++) {
+        if (!props.tabs[i]?.isDisabled) {
+            return i;
+        }
+    }
+
+    throw new Error('No enabled tab exists.');
 }
 </script>
