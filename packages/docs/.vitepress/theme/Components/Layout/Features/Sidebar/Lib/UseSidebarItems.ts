@@ -129,6 +129,7 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       `${flyonUIVueNextPath}/navigations/tabs`,
                         icon:     'mdi:tab',
                         children: [],
+                        badge:    _unreleasedBadge,
                     },
                 ],
             },
