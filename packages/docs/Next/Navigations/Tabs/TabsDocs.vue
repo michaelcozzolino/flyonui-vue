@@ -65,6 +65,12 @@
                  :component="TabsShape"
     />
 
+    <CodeSnippet v-else-if="section === 'full-control'"
+                 :data-test-screenshot="section"
+                 :code="FullControlTabsRaw"
+                 :component="FullControlTabs"
+    />
+
     <ComponentsApiDocs v-else
                        :section="section"
                        :component-names="['FoTabs', 'FoTab', 'FoTabContent']"
@@ -84,6 +90,8 @@ import DisabledTabs           from '@/Next/Navigations/Tabs/DisabledTabs.vue';
 import DisabledTabsRaw        from '@/Next/Navigations/Tabs/DisabledTabs.vue?raw';
 import FilledTabs             from '@/Next/Navigations/Tabs/FilledTabs.vue';
 import FilledTabsRaw          from '@/Next/Navigations/Tabs/FilledTabs.vue?raw';
+import FullControlTabs        from '@/Next/Navigations/Tabs/FullControlTabs.vue';
+import FullControlTabsRaw     from '@/Next/Navigations/Tabs/FullControlTabs.vue?raw';
 import ResponsiveTabs         from '@/Next/Navigations/Tabs/ResponsiveTabs.vue';
 import ResponsiveTabsRaw      from '@/Next/Navigations/Tabs/ResponsiveTabs.vue?raw';
 import TabsAlignment          from '@/Next/Navigations/Tabs/TabsAlignment.vue';
@@ -111,6 +119,7 @@ interface Props {
         | 'responsive'
         | 'activate-on-hover'
         | 'shape'
+        | 'full-control'
         | ApiType;
 }
 

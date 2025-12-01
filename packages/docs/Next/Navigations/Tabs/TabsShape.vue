@@ -3,43 +3,39 @@
             :tabs="tabs"
             shape="rounded"
     >
-        <template #tabs>
-            <FoTab :id="homeTab.id">
-                Home
-            </FoTab>
-
-            <FoTab :id="profileTab.id">
-                Profile
-            </FoTab>
-
-            <FoTab :id="messagesTab.id">
-                Messages
-            </FoTab>
+        <template #[homeTab.id]>
+            Home
         </template>
 
-        <template #contents>
-            <FoTabContent :tab-id="homeTab.id">
-                <p class="text-base-content/80">
-                    Welcome to the
-                    <span class="text-base-content font-semibold">Home tab!</span>
-                    Explore the latest updates and news here.
-                </p>
-            </FoTabContent>
+        <template #[`content-${homeTab.id}`]>
+            <p class="text-base-content/80">
+                Welcome to the
+                <span class="text-base-content font-semibold">Home tab!</span>
+                Explore the latest updates and news here.
+            </p>
+        </template>
 
-            <FoTabContent :tab-id="profileTab.id">
-                <p class="text-base-content/80">
-                    This is your
-                    <span class="text-base-content font-semibold">Profile</span> tab,
-                    where you can update your personal information and manage your account details.
-                </p>
-            </FoTabContent>
+        <template #[profileTab.id]>
+            Profile
+        </template>
 
-            <FoTabContent :tab-id="messagesTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Messages:</span>
-                    View your recent messages, chat with friends, and manage your conversations.
-                </p>
-            </FoTabContent>
+        <template #[`content-${profileTab.id}`]>
+            <p class="text-base-content/80">
+                This is your
+                <span class="text-base-content font-semibold">Profile</span> tab,
+                where you can update your personal information and manage your account details.
+            </p>
+        </template>
+
+        <template #[messagesTab.id]>
+            Messages
+        </template>
+
+        <template #[`content-${messagesTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Messages:</span>
+                View your recent messages, chat with friends, and manage your conversations.
+            </p>
         </template>
     </FoTabs>
 
@@ -48,43 +44,39 @@
             shape="rounded"
             orientation="vertical"
     >
-        <template #tabs>
-            <FoTab :id="homeTab.id">
-                Home
-            </FoTab>
-
-            <FoTab :id="profileTab.id">
-                Profile
-            </FoTab>
-
-            <FoTab :id="messagesTab.id">
-                Messages
-            </FoTab>
+        <template #[homeTab.id]>
+            Home
         </template>
 
-        <template #contents>
-            <FoTabContent :tab-id="homeTab.id">
-                <p class="text-base-content/80">
-                    Welcome to the
-                    <span class="text-base-content font-semibold">Home tab!</span>
-                    Explore the latest updates and news here.
-                </p>
-            </FoTabContent>
+        <template #[`content-${homeTab.id}`]>
+            <p class="text-base-content/80">
+                Welcome to the
+                <span class="text-base-content font-semibold">Home tab!</span>
+                Explore the latest updates and news here.
+            </p>
+        </template>
 
-            <FoTabContent :tab-id="profileTab.id">
-                <p class="text-base-content/80">
-                    This is your
-                    <span class="text-base-content font-semibold">Profile</span> tab,
-                    where you can update your personal information and manage your account details.
-                </p>
-            </FoTabContent>
+        <template #[profileTab.id]>
+            Profile
+        </template>
 
-            <FoTabContent :tab-id="messagesTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Messages:</span>
-                    View your recent messages, chat with friends, and manage your conversations.
-                </p>
-            </FoTabContent>
+        <template #[`content-${profileTab.id}`]>
+            <p class="text-base-content/80">
+                This is your
+                <span class="text-base-content font-semibold">Profile</span> tab,
+                where you can update your personal information and manage your account details.
+            </p>
+        </template>
+
+        <template #[messagesTab.id]>
+            Messages
+        </template>
+
+        <template #[`content-${messagesTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Messages:</span>
+                View your recent messages, chat with friends, and manage your conversations.
+            </p>
         </template>
     </FoTabs>
 
@@ -92,43 +84,39 @@
             :tabs="tabs"
             shape="pilled"
     >
-        <template #tabs>
-            <FoTab :id="homeTab.id">
-                Home
-            </FoTab>
-
-            <FoTab :id="profileTab.id">
-                Profile
-            </FoTab>
-
-            <FoTab :id="messagesTab.id">
-                Messages
-            </FoTab>
+        <template #[homeTab.id]>
+            Home
         </template>
 
-        <template #contents>
-            <FoTabContent :tab-id="homeTab.id">
-                <p class="text-base-content/80">
-                    Welcome to the
-                    <span class="text-base-content font-semibold">Home tab!</span>
-                    Explore the latest updates and news here.
-                </p>
-            </FoTabContent>
+        <template #[`content-${homeTab.id}`]>
+            <p class="text-base-content/80">
+                Welcome to the
+                <span class="text-base-content font-semibold">Home tab!</span>
+                Explore the latest updates and news here.
+            </p>
+        </template>
 
-            <FoTabContent :tab-id="profileTab.id">
-                <p class="text-base-content/80">
-                    This is your
-                    <span class="text-base-content font-semibold">Profile</span> tab,
-                    where you can update your personal information and manage your account details.
-                </p>
-            </FoTabContent>
+        <template #[profileTab.id]>
+            Profile
+        </template>
 
-            <FoTabContent :tab-id="messagesTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Messages:</span>
-                    View your recent messages, chat with friends, and manage your conversations.
-                </p>
-            </FoTabContent>
+        <template #[`content-${profileTab.id}`]>
+            <p class="text-base-content/80">
+                This is your
+                <span class="text-base-content font-semibold">Profile</span> tab,
+                where you can update your personal information and manage your account details.
+            </p>
+        </template>
+
+        <template #[messagesTab.id]>
+            Messages
+        </template>
+
+        <template #[`content-${messagesTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Messages:</span>
+                View your recent messages, chat with friends, and manage your conversations.
+            </p>
         </template>
     </FoTabs>
 
@@ -137,61 +125,57 @@
             shape="pilled"
             orientation="vertical"
     >
-        <template #tabs>
-            <FoTab :id="homeTab.id">
-                Home
-            </FoTab>
-
-            <FoTab :id="profileTab.id">
-                Profile
-            </FoTab>
-
-            <FoTab :id="messagesTab.id">
-                Messages
-            </FoTab>
+        <template #[homeTab.id]>
+            Home
         </template>
 
-        <template #contents>
-            <FoTabContent :tab-id="homeTab.id">
-                <p class="text-base-content/80">
-                    Welcome to the
-                    <span class="text-base-content font-semibold">Home tab!</span>
-                    Explore the latest updates and news here.
-                </p>
-            </FoTabContent>
+        <template #[`content-${homeTab.id}`]>
+            <p class="text-base-content/80">
+                Welcome to the
+                <span class="text-base-content font-semibold">Home tab!</span>
+                Explore the latest updates and news here.
+            </p>
+        </template>
 
-            <FoTabContent :tab-id="profileTab.id">
-                <p class="text-base-content/80">
-                    This is your
-                    <span class="text-base-content font-semibold">Profile</span> tab,
-                    where you can update your personal information and manage your account details.
-                </p>
-            </FoTabContent>
+        <template #[profileTab.id]>
+            Profile
+        </template>
 
-            <FoTabContent :tab-id="messagesTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Messages:</span>
-                    View your recent messages, chat with friends, and manage your conversations.
-                </p>
-            </FoTabContent>
+        <template #[`content-${profileTab.id}`]>
+            <p class="text-base-content/80">
+                This is your
+                <span class="text-base-content font-semibold">Profile</span> tab,
+                where you can update your personal information and manage your account details.
+            </p>
+        </template>
+
+        <template #[messagesTab.id]>
+            Messages
+        </template>
+
+        <template #[`content-${messagesTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Messages:</span>
+                View your recent messages, chat with friends, and manage your conversations.
+            </p>
         </template>
     </FoTabs>
 </template>
 
 <script setup lang="ts">
-import type { TabProps }                       from 'flyonui-vue';
-import { FoTab, FoTabContent, FoTabs, useTab } from 'flyonui-vue';
-import { ref }                                 from 'vue';
+import type { TabProps } from 'flyonui-vue';
+import { FoTabs }        from 'flyonui-vue';
+import { reactive, ref } from 'vue';
+
+const homeTab     = reactive<TabProps>({ id: 'home' });
+const profileTab  = reactive<TabProps>({ id: 'profile' });
+const messagesTab = reactive<TabProps>({ id: 'messages' });
 
 const tabs = ref<TabProps[]>([
-    { id: 'home' },
-    { id: 'profile' },
-    { id: 'messages' },
+    homeTab,
+    profileTab,
+    messagesTab,
 ]);
 
-const homeTab     = useTab(tabs, 0);
-const profileTab  = useTab(tabs, 1);
-const messagesTab = useTab(tabs, 2);
-
-const activeTab = ref<Readonly<TabProps>>(homeTab.value);
+const activeTab = ref<Readonly<TabProps>>(homeTab);
 </script>
