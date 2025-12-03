@@ -2,15 +2,17 @@
     <FoButton :icon="copied ? 'tabler:copy-check' : 'tabler:copy'"
               color="info"
               size="medium"
+              :is-disabled="isDisabled"
               @click.prevent="copy(text)"
     />
 </template>
 
 <script setup lang="ts">
-import { useClipboard } from '@vueuse/core';
-import { FoButton }     from 'flyonui-vue';
+import type { ButtonProps } from 'flyonui-vue';
+import { useClipboard }     from '@vueuse/core';
+import { FoButton }         from 'flyonui-vue';
 
-interface Props {
+interface Props extends Pick<ButtonProps, 'isDisabled'> {
     text: string;
 }
 
