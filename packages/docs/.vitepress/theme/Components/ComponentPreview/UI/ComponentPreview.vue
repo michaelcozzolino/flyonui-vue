@@ -65,10 +65,12 @@
 import type {
     CodePreviewProps,
     ComponentPreviewProps,
-} from '@/.vitepress/theme/Components/ComponentPreview/Lib/ComponentPreview';
-import type { Direction, TabProps }               from 'flyonui-vue';
-import CodePreview                                from '@/.vitepress/theme/Components/ComponentPreview/UI/CodePreview.vue';
-import CopyButton                                 from '@/.vitepress/theme/Components/ComponentPreview/UI/CopyButton.vue';
+}                                   from '@/.vitepress/theme/Components/ComponentPreview/Type/ComponentPreview';
+import type { Direction, TabProps } from 'flyonui-vue';
+import CodePreview
+    from '@/.vitepress/theme/Components/ComponentPreview/UI/CodePreview.vue';
+import CopyButton
+    from '@/.vitepress/theme/Components/ComponentPreview/UI/CopyButton.vue';
 import { FoButton, FoButtonGroup, FoTab, FoTabs } from 'flyonui-vue';
 import { computed, reactive, ref, useId }         from 'vue';
 
@@ -79,7 +81,7 @@ const props = withDefaults(defineProps<ComponentPreviewProps>(), {
 const id = useId();
 
 const previewTab = reactive<TabProps>({ id: `preview${id}` });
-const codeTab = reactive<TabProps>({ id: `code${id}` });
+const codeTab    = reactive<TabProps>({ id: `code${id}` });
 
 const activeTab = ref<Readonly<TabProps>>(previewTab);
 
