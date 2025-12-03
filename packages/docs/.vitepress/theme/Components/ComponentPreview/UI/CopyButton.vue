@@ -8,11 +8,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps } from 'flyonui-vue';
+import type { Disableable } from 'flyonui-vue';
 import { useClipboard }     from '@vueuse/core';
 import { FoButton }         from 'flyonui-vue';
 
-interface Props extends Pick<ButtonProps, 'isDisabled'> {
+interface Props extends Disableable {
     text: string;
 }
 

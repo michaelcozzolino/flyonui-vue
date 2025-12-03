@@ -33,6 +33,6 @@ const CodeSnippet = plugin.component;
 @reference "tailwindcss";
 
 .hljs {
-    @apply text-[16px]! max-h-[500px];
+    @apply rounded-b-lg text-[16px]! max-h-[500px];
 }
 </style>
