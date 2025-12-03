@@ -23,6 +23,7 @@
 
         <FoMenu v-if="item.children.length"
                 :hide-text="isCollapsed"
+                size="small"
         >
             <SidebarNode v-for="childItem in item.children"
                          :key="childItem.text"
