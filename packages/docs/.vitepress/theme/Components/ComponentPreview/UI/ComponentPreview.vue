@@ -21,7 +21,7 @@
                 </FoTab>
 
                 <FoButtonGroup v-if="0 in codePreviews"
-                               class="ml-auto"
+                               class="ms-auto"
                 >
                     <CopyButton :text="codePreviews[0].code"
                                 :is-disabled="codePreviews.length > 1"
@@ -71,14 +71,15 @@ import CodePreview
     from '@/.vitepress/theme/Components/ComponentPreview/UI/CodePreview.vue';
 import CopyButton
     from '@/.vitepress/theme/Components/ComponentPreview/UI/CopyButton.vue';
-import { FoButton, FoButtonGroup, FoTab, FoTabs } from 'flyonui-vue';
-import { computed, reactive, ref, useId }         from 'vue';
+import { FoButton, FoButtonGroup, FoTab, FoTabs, useFlyonUIVueAppConfig } from 'flyonui-vue';
+import { computed, reactive, ref, useId, watch }                          from 'vue';
 
 const props = withDefaults(defineProps<ComponentPreviewProps>(), {
     grid: () => ({ columns: 0, rows: 0 }),
 });
 
-const id = useId();
+const id         = useId();
+const { config } = useFlyonUIVueAppConfig();
 
 const previewTab = reactive<TabProps>({ id: `preview${id}` });
 const codeTab    = reactive<TabProps>({ id: `code${id}` });
@@ -92,10 +93,7 @@ const tabs = ref<TabProps[]>([
 
 const direction = ref<Direction>('ltr');
 
-const isLtr = computed({
-    get: (): boolean => direction.value === 'ltr',
-    set: (isLtr: boolean) => direction.value = isLtr ? 'ltr' : 'rtl',
-});
+const isLtr = computed(() => direction.value === 'ltr');
 
 const codePreviews = computed((): CodePreviewProps[] => {
     if (typeof props.code === 'string') {
@@ -144,4 +142,10 @@ const gridClass = computed(() => {
 
     return `grid ${columnsClass} ${rowsClass}`.trim();
 });
+
+watch(
+    () => config.value.global.direction,
+    (newDirection: Direction) => direction.value = newDirection,
+    { immediate: true },
+);
 </script>
