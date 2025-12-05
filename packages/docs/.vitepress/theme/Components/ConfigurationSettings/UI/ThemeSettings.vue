@@ -3,6 +3,7 @@
         <FoSelectThemeController class="!w-48 mt-1"
                                  :storage-key="themeStorageKey"
                                  size="medium"
+                                 font-family-var="--vp-font-family-base"
         />
 
         <FoSwap v-model="isLtr"

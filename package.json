@@ -34,7 +34,7 @@
         "tsx": "^4.20.6",
         "typescript": "^5.9.3",
         "vitest": "^3.2.4",
-        "vue-tsc": "^3.1.0"
+        "vue-tsc": "^3.1.1"
     },
     "resolutions": {
         "@iconify/vue": "^4.3.0",
@@ -42,7 +42,7 @@
         "@vitejs/plugin-vue": "^5.2.4",
         "@vue/test-utils": "^2.4.6",
         "@vue/tsconfig": "^0.8.1",
-        "@vueuse/core": "^13.9.0",
+        "@vueuse/core": "^14.1.0",
         "concurrently": "^9.2.1",
         "flyonui": "^2.4.1",
         "flyonui-vue": "workspace:*",
@@ -55,6 +55,6 @@
         "vitest": "^3.2.4",
         "vue": "^3.5.22",
         "vue-router": "^4.5.1",
-        "vue-tsc": "^3.1.0"
+        "vue-tsc": "^3.1.1"
     }
 }

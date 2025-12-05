@@ -7,9 +7,8 @@
 If you are starting a new `Vite` + `Vue` project you can use our automatic flyonui-vue installation tool 
 [create-flyonui-vue](https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/create-flyonui-vue/README.md):
 
-<VueCodeHighlighter title="Bash"
-                    lang="bash"
-                    code="yarn create flyonui-vue"
+<CodePreview lang="bash"
+             code="yarn create flyonui-vue"
 />
 
 ### Already existing Projects
@@ -19,37 +18,32 @@ and [Tailwind CSS](https://tailwindcss.com/) installed.
 
 1. Install `flyonui-vue` as a dependency using NPM or Yarn by running the following command:
 
-<VueCodeHighlighter title="Bash"
-                    lang="bash"
-                    code="npm i flyonui-vue"
+<CodePreview lang="bash" 
+             code="npm i flyonui-vue"
 />
 
 or
 
-<VueCodeHighlighter title="Bash"
-                    lang="bash"
-                    code="yarn add flyonui-vue"
+<CodePreview lang="bash"
+             code="yarn add flyonui-vue"
 />
 
 in order to use icons, `@iconify/vue` is required:
 
-<VueCodeHighlighter title="Bash"
-                    lang="bash"
-                    code="yarn add @iconify/vue"
+<CodePreview lang="bash"
+             code="yarn add @iconify/vue"
 />
 
 2. Import styles:
 
-<VueCodeHighlighter title="Bash"
-                    lang="css"
-                    code="@import 'flyonui-vue/index.css';"
+<CodePreview lang="css"
+             code="@import 'flyonui-vue/index.css';"
 />
 
 3. source the tailwind components' classes:
 
-<VueCodeHighlighter title="Bash"
-                    lang="css"
-                    code="@source '../../node_modules/flyonui-vue';"
+<CodePreview lang="css"
+             code="@source '../../node_modules/flyonui-vue';"
 />
 
 4. Now you can use `flyonui-vue` anywhere in your project by importing the components you need.
@@ -70,16 +64,16 @@ components supporting them, except that the `FoButton.vue` will have a `large` s
 `info` color as defaults. By doing this you will be able to use your vue components without specifying those props, 
 for example:
 
-<VueCodeHighlighter title="CustomButton.vue"
-                           lang="js"
-                           code="<FoButton>Large Accent Button</FoButton>"
+<CodePreview title="CustomButton.vue"
+             lang="js"
+             code="<FoButton>Large Accent Button</FoButton>"
 />
 
 <br>
 
-<VueCodeHighlighter title="CustomBadge.vue"
-                           lang="js"
-                           code="<FoBadge>Small Info Badge</FoBadge>"
+<CodePreview title="CustomBadge.vue"
+             lang="js"
+             code="<FoBadge>Small Info Badge</FoBadge>"
 />
 
 A common use case is with icons and helper text, some components supports those to be positioned, so that you can either have 
@@ -97,15 +91,15 @@ The configuration is saved into the local storage under the `flyonui-vue-config`
 A Vue Ref is exposed and can be manipulated on demand based on your desired behaviour if a dynamic configuration is needed.
 All you need to do is to use the composable:
 
-<VueCodeHighlighter title="Vue"
-                    lang="js"
-                    code="const config = useFlyonUIVueAppConfig();"
+<CodePreview title="Vue"
+             lang="js"
+             code="const config = useFlyonUIVueAppConfig();"
 />
 
 if you want to be able to manipulate the configuration, where the initial one is the default one, you will still have to 
 use the plugin:
 
-<VueCodeHighlighter title="Vue"
-                    lang="js"
-                    code="app.use(createFlyonUIVueApp, {});"
+<CodePreview title="App.ts"
+             lang="js"
+             code="app.use(createFlyonUIVueApp, {});"
 />

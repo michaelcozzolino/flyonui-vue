@@ -1,7 +1,10 @@
 <template>
-    <div>
-        <FoButtonGroup class="w-full rounded-t-lg bg-[#334155] justify-between">
-            <FoButton color="primary"
+    <div class="vp-raw">
+        <FoButtonGroup class="w-full rounded-t-lg bg-[#334155]"
+                       :class="title === undefined ? 'justify-end' : 'justify-between'"
+        >
+            <FoButton v-if="title !== undefined"
+                      color="primary"
                       class="rounded-none rounded-tl-lg"
             >
                 {{ title }}
