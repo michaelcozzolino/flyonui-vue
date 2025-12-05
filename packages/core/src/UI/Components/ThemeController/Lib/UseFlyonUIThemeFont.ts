@@ -7,7 +7,10 @@ import { createHead }                          from 'unhead/client';
 import { getActiveHead } from 'unhead/legacy';
 import { toValue }       from 'vue';
 
-export function useFlyonUIThemeFont(selectedTheme: MaybeRefOrGetter<FlyonUITheme>): void {
+export function useFlyonUIThemeFont(
+    selectedTheme: MaybeRefOrGetter<FlyonUITheme>,
+    fontFamilyVar: MaybeRefOrGetter<`--${string}`>,
+): void {
     const fonts: Record<FlyonUITheme, FlyonUIThemeFont> = {
         claude: {
             url:    'https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap',
@@ -57,10 +60,11 @@ export function useFlyonUIThemeFont(selectedTheme: MaybeRefOrGetter<FlyonUITheme
 
     const font = fonts[toValue(selectedTheme)];
 
-    const fontFamily = useCssVar('font-family');
+    const fontFamily = useCssVar(toValue(fontFamilyVar));
 
     if (font === undefined) {
         fontFamily.value = undefined;
+
         return;
     }
 

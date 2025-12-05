@@ -29,4 +29,7 @@ export type FlyonUIThemeModes = Record<FlyonUITheme, FlyonUITheme>;
 export type ThemeControllerProps = Pick<
     UseColorModeOptions<FlyonUITheme>,
     'attribute' | 'initialValue' | 'storageKey'
-> & { modes?: FlyonUIThemeModes };
+> & {
+    modes?:        FlyonUIThemeModes;
+    fontFamilyVar: `--${string}`;
+};

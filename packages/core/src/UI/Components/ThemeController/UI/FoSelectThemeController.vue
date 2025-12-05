@@ -55,7 +55,7 @@ onMounted(() => {
 
 watch(
     selectedTheme,
-    () => useFlyonUIThemeFont(selectedTheme.value.id),
+    () => useFlyonUIThemeFont(selectedTheme.value.id, () => props.fontFamilyVar),
     { immediate: true },
 );
 </script>
