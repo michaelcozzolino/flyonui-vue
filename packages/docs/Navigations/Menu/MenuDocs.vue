@@ -123,6 +123,7 @@ const previews = computed(() => {
             'with-active-item-vue-router',
             {
                 code:      ActiveItemMenuVueRouterRaw,
+                // we have to use this to show that the link is active as Vitepress does not use Vue Router
                 component: ActiveItemMenuExternalRouter,
             },
         ],

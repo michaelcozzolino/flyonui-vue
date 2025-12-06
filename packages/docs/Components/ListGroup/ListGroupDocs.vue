@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
+import type { ApiType }              from '@/Api/Types/Api';
 import type { Default }              from 'flyonui-vue';
 import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DefaultListGroup              from '@/Components/ListGroup/DefaultListGroup.vue';
@@ -37,7 +38,8 @@ type Section = Default
     | 'without-gutters'
     | 'striped'
     | 'with-checkbox'
-    | 'invoice';
+    | 'invoice'
+    | ApiType;
 
 interface Props {
     section: Section;

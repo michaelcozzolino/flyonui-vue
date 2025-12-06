@@ -1,7 +1,7 @@
 <template>
     <ComponentDocs :previews="previews"
                    :section="section"
-                   api-docs-component-names="FoTextarea&quot;"
+                   api-docs-component-names="FoTextarea"
     />
 </template>
 

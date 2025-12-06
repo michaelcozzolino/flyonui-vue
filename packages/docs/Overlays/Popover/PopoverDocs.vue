@@ -1,7 +1,7 @@
 <template>
     <ComponentDocs :previews="previews"
                    :section="section"
-                   api-docs-component-names="FoTooltip"
+                   api-docs-component-names="FoPopover"
     />
 </template>
 
