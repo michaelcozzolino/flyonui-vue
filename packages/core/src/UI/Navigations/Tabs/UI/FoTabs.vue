@@ -22,13 +22,26 @@
              :aria-orientation="orientation"
         >
             <slot name="tabs">
-                {{ useRequiredSlotMessage(componentName, '', 'tabs') }}
+                <FoTab v-for="tab in tabs"
+                       :id="tab.id"
+                       :key="tab.id"
+                       :size="size"
+                       :icon="tab.icon"
+                       :is-disabled="tab.isDisabled"
+                >
+                    <slot :name="tab.id" />
+                </FoTab>
             </slot>
         </nav>
 
         <div :class="orientation === 'horizontal' ? 'mt-3' : 'ms-3'">
             <slot name="contents">
-                {{ useRequiredSlotMessage(componentName, '', 'contents') }}
+                <FoTabContent v-for="tab in tabs"
+                              :key="tab.id"
+                              :tab-id="tab.id"
+                >
+                    <slot :name="`content-${tab.id}`" />
+                </FoTabContent>
             </slot>
         </div>
     </div>
@@ -43,7 +56,8 @@ import { useAlignment }                                                       fr
 import { useOrientation }                                                     from '@/Lib/UseOrientation/Internal';
 import { useResponsitivity }                                                  from '@/Lib/UseResponsitivity/Internal';
 import { useSize }                                                            from '@/Lib/UseSize/Internal';
-import { useArrayLength, useRequiredSlotMessage }                             from '@/Lib/Utils/Internal';
+import { useArrayLength }                                                     from '@/Lib/Utils/Internal';
+import { FoTab, FoTabContent }                                                from '@/UI/Navigations';
 import { activeTabInjectionKey, tabsPropsInjectionKey }                       from '@/UI/Navigations/Tabs/Internal';
 import { useArrayEvery, useArrayFindIndex, useFocus, useMagicKeys, whenever } from '@vueuse/core';
 import { computed, provide, useTemplateRef, watch }                           from 'vue';
@@ -54,13 +68,23 @@ const props = withDefaults(defineProps<TabsProps<T>>(), {
     isResponsive: false,
 });
 
-defineSlots<{
-    /** The FoTab components */
-    tabs: Slot;
+defineSlots<
+    {
+        /** It can contain the tab info such as the name */
+        [key: string]: Slot;
+    }
+    & {
+        /** It can contain the tab content info */
+        [key: `content-${string}`]: Slot;
+    }
+    & {
+        /** The FoTab components, to be used only if you want to fully customise the tab */
+        tabs: Slot;
 
-    /** The FoTabContent components */
-    contents: Slot;
-}>();
+        /** The FoTabContent components, to be used only if you want to fully customise the tab content */
+        contents: Slot;
+    }
+>();
 
 const activeTab = defineModel<T>({ required: true });
 
@@ -92,6 +116,7 @@ const areAllTabsDisabled = useArrayEvery(
     (tab: T) => tab.isDisabled === true,
 );
 
+// todo: check why these can be undefined, as in the docs is not shown
 const { arrowLeft, arrowRight, arrowUp, arrowDown } = useMagicKeys({
     passive:      false,
     onEventFired: (e: KeyboardEvent): void => {

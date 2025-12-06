@@ -4,112 +4,109 @@
             class="w-sm"
             is-responsive
     >
-        <template #tabs>
-            <FoTab :id="homeTab.id">
-                Home
-            </FoTab>
-
-            <FoTab :id="profileTab.id">
-                Profile
-            </FoTab>
-
-            <FoTab :id="messagesTab.id">
-                Messages
-            </FoTab>
-
-            <FoTab :id="settingsTab.id">
-                Settings
-            </FoTab>
-
-            <FoTab :id="helpTab.id">
-                Help
-            </FoTab>
-
-            <FoTab :id="notificationsTab.id">
-                Notifications
-            </FoTab>
-
-            <FoTab :id="feedbackTab.id">
-                Feedback
-            </FoTab>
+        <template #[homeTab.id]>
+            Home
         </template>
 
-        <template #contents>
-            <FoTabContent :tab-id="homeTab.id">
-                <p class="text-base-content/80">
-                    Welcome to the
-                    <span class="text-base-content font-semibold">Home tab!</span>
-                    Explore the latest updates and news here.
-                </p>
-            </FoTabContent>
+        <template #[`content-${homeTab.id}`]>
+            <p class="text-base-content/80">
+                Welcome to the
+                <span class="text-base-content font-semibold">Home tab!</span>
+                Explore the latest updates and news here.
+            </p>
+        </template>
 
-            <FoTabContent :tab-id="profileTab.id">
-                <p class="text-base-content/80">
-                    This is your
-                    <span class="text-base-content font-semibold">Profile</span> tab,
-                    where you can update your personal information and manage your account details.
-                </p>
-            </FoTabContent>
+        <template #[profileTab.id]>
+            Profile
+        </template>
 
-            <FoTabContent :tab-id="messagesTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Messages:</span>
-                    View your recent messages, chat with friends, and manage your conversations.
-                </p>
-            </FoTabContent>
+        <template #[`content-${profileTab.id}`]>
+            <p class="text-base-content/80">
+                This is your
+                <span class="text-base-content font-semibold">Profile</span> tab,
+                where you can update your personal information and manage your account details.
+            </p>
+        </template>
 
-            <FoTabContent :tab-id="settingsTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Settings:</span>
-                    Adjust your preferences, manage your account, and configure your privacy settings here.
-                </p>
-            </FoTabContent>
+        <template #[messagesTab.id]>
+            Messages
+        </template>
 
-            <FoTabContent :tab-id="helpTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Help:</span>
-                    Find answers to frequently asked questions, get in touch with support, or read through user guides.
-                </p>
-            </FoTabContent>
+        <template #[`content-${messagesTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Messages:</span>
+                View your recent messages, chat with friends, and manage your conversations.
+            </p>
+        </template>
 
-            <FoTabContent :tab-id="notificationsTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Notifications:</span>
-                    Manage your notifications, set preferences, and view your notification history.
-                </p>
-            </FoTabContent>
+        <template #[settingsTab.id]>
+            Settings
+        </template>
 
-            <FoTabContent :tab-id="feedbackTab.id">
-                <p class="text-base-content/80">
-                    <span class="text-base-content font-semibold">Feedback:</span> Share your thoughts, report issues, or suggest new features to improve the platform.
-                </p>
-            </FoTabContent>
+        <template #[`content-${settingsTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Settings:</span>
+                Adjust your preferences, manage your account, and configure your privacy settings here.
+            </p>
+        </template>
+
+        <template #[helpTab.id]>
+            Help
+        </template>
+
+        <template #[`content-${helpTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Help:</span>
+                Find answers to frequently asked questions, get in touch with support, or read through user guides.
+            </p>
+        </template>
+
+        <template #[notificationsTab.id]>
+            Notifications
+        </template>
+
+        <template #[`content-${notificationsTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Notifications:</span> Manage your notifications, set
+                preferences, and view your notification history.
+            </p>
+        </template>
+
+        <template #[feedbackTab.id]>
+            Feedback
+        </template>
+
+        <template #[`content-${feedbackTab.id}`]>
+            <p class="text-base-content/80">
+                <span class="text-base-content font-semibold">Feedback:</span> Share your thoughts, report issues, or
+                suggest new features to improve the platform.
+            </p>
         </template>
     </FoTabs>
 </template>
 
 <script setup lang="ts">
-import type { TabProps }                       from 'flyonui-vue';
-import { FoTab, FoTabContent, FoTabs, useTab } from 'flyonui-vue';
-import { ref }                                 from 'vue';
+import type { TabProps } from 'flyonui-vue';
+import { FoTabs }        from 'flyonui-vue';
+import { reactive, ref } from 'vue';
+
+const homeTab          = reactive<TabProps>({ id: 'home' });
+const profileTab       = reactive<TabProps>({ id: 'profile' });
+const messagesTab      = reactive<TabProps>({ id: 'messages' });
+const settingsTab      = reactive<TabProps>({ id: 'settings' });
+const helpTab          = reactive<TabProps>({ id: 'help' });
+const notificationsTab = reactive<TabProps>({ id: 'notifications' });
+const feedbackTab      = reactive<TabProps>({ id: 'feedback' });
 
 const tabs = ref<TabProps[]>([
-    { id: 'home' },
-    { id: 'profile' },
-    { id: 'messages' },
-    { id: 'settings' },
-    { id: 'help' },
-    { id: 'notifications' },
-    { id: 'feedback' },
+    homeTab,
+    profileTab,
+    messagesTab,
+    settingsTab,
+    helpTab,
+    notificationsTab,
+    feedbackTab,
 ]);
 
-const homeTab          = useTab(tabs, 0);
-const profileTab       = useTab(tabs, 1);
-const messagesTab      = useTab(tabs, 2);
-const settingsTab      = useTab(tabs, 3);
-const helpTab          = useTab(tabs, 4);
-const notificationsTab = useTab(tabs, 5);
-const feedbackTab      = useTab(tabs, 6);
-
-const activeTab = ref<Readonly<TabProps>>(homeTab.value);
+const activeTab = ref<Readonly<TabProps>>(homeTab);
 </script>

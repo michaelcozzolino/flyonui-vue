@@ -8,6 +8,7 @@
               ]"
               :color="isActiveTab && tabsProps.shape !== undefined ? 'primary' : undefined"
               :preset="isActiveTab ? undefined : 'text'"
+              :size="size"
               :shape="tabsProps.shape"
               :icon="icon"
               :aria-controls="`tab-content-${id}`"

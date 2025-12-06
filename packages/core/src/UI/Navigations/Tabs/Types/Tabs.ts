@@ -16,7 +16,7 @@ export interface TabsProps<T extends TabProps> extends Alignable, Orientable, Re
     isFilled?: boolean;
 }
 
-export type TabProps = StringId & Pick<ButtonProps, 'icon' | 'isDisabled'>;
+export type TabProps = StringId & Pick<ButtonProps, 'icon' | 'isDisabled' | 'size'>;
 
 export interface TabContentProps {
     /** The tab id that will be used for the tab content as "tab-content-{tabId}" */
