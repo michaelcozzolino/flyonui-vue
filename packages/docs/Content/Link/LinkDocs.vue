@@ -1,26 +1,26 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultLinkRaw"
-                 :component="DefaultLink"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultLinkRaw"
+                      :component="DefaultLink"
     />
 
-    <CodeSnippet v-else-if="section === 'underline-on-hover'"
-                 :data-test-screenshot="section"
-                 :code="UnderlineOnHoverLinkRaw"
-                 :component="UnderlineOnHoverLink"
+    <ComponentPreview v-else-if="section === 'underline-on-hover'"
+                      :data-test-screenshot="section"
+                      :code="UnderlineOnHoverLinkRaw"
+                      :component="UnderlineOnHoverLink"
     />
 
-    <CodeSnippet v-else-if="section === 'animated-underline'"
-                 :data-test-screenshot="section"
-                 :code="AnimatedUnderlineLinkRaw"
-                 :component="AnimatedUnderlineLink"
+    <ComponentPreview v-else-if="section === 'animated-underline'"
+                      :data-test-screenshot="section"
+                      :code="AnimatedUnderlineLinkRaw"
+                      :component="AnimatedUnderlineLink"
     />
 
-    <CodeSnippet v-else-if="section === 'color'"
-                 :data-test-screenshot="section"
-                 :code="LinkColorRaw"
-                 :component="LinkColor"
+    <ComponentPreview v-else-if="section === 'color'"
+                      :data-test-screenshot="section"
+                      :code="LinkColorRaw"
+                      :component="LinkColor"
     />
 
     <ComponentsApiDocs v-else
@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 import type { ApiType }         from '@/Api/Types/Api.ts';
-import CodeSnippet              from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview         from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs        from '@/Api/UI/ComponentsApiDocs.vue';
 import AnimatedUnderlineLink    from '@/Content/Link/AnimatedUnderlineLink.vue';
 import AnimatedUnderlineLinkRaw from '@/Content/Link/AnimatedUnderlineLink.vue?raw';

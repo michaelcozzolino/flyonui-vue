@@ -1,50 +1,50 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultKeyboardRaw"
-                 :component="DefaultKeyboard"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultKeyboardRaw"
+                      :component="DefaultKeyboard"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="KeyboardSizeRaw"
-                 :component="KeyboardSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="KeyboardSizeRaw"
+                      :component="KeyboardSize"
     />
 
-    <CodeSnippet v-else-if="section === 'in-text'"
-                 :data-test-screenshot="section"
-                 :code="InTextKeyboardRaw"
-                 :component="InTextKeyboard"
+    <ComponentPreview v-else-if="section === 'in-text'"
+                      :data-test-screenshot="section"
+                      :code="InTextKeyboardRaw"
+                      :component="InTextKeyboard"
     />
 
-    <CodeSnippet v-else-if="section === 'key-combinations'"
-                 :data-test-screenshot="section"
-                 :code="KeyCombinationsKeyboardRaw"
-                 :component="KeyCombinationsKeyboard"
+    <ComponentPreview v-else-if="section === 'key-combinations'"
+                      :data-test-screenshot="section"
+                      :code="KeyCombinationsKeyboardRaw"
+                      :component="KeyCombinationsKeyboard"
     />
 
-    <CodeSnippet v-else-if="section === 'function-keys'"
-                 :data-test-screenshot="section"
-                 :code="FunctionKeysKeyboardRaw"
-                 :component="FunctionKeysKeyboard"
+    <ComponentPreview v-else-if="section === 'function-keys'"
+                      :data-test-screenshot="section"
+                      :code="FunctionKeysKeyboardRaw"
+                      :component="FunctionKeysKeyboard"
     />
 
-    <CodeSnippet v-else-if="section === 'full-keyboard'"
-                 :data-test-screenshot="section"
-                 :code="FullKeyboardRaw"
-                 :component="FullKeyboard"
+    <ComponentPreview v-else-if="section === 'full-keyboard'"
+                      :data-test-screenshot="section"
+                      :code="FullKeyboardRaw"
+                      :component="FullKeyboard"
     />
 
-    <CodeSnippet v-else-if="section === 'arrow-keys'"
-                 :data-test-screenshot="section"
-                 :code="ArrowKeysKeyboardRaw"
-                 :component="ArrowKeysKeyboard"
+    <ComponentPreview v-else-if="section === 'arrow-keys'"
+                      :data-test-screenshot="section"
+                      :code="ArrowKeysKeyboardRaw"
+                      :component="ArrowKeysKeyboard"
     />
 
-    <CodeSnippet v-else-if="section === 'number-keys'"
-                 :data-test-screenshot="section"
-                 :code="NumberKeysKeyboardRaw"
-                 :component="NumberKeysKeyboard"
+    <ComponentPreview v-else-if="section === 'number-keys'"
+                      :data-test-screenshot="section"
+                      :code="NumberKeysKeyboardRaw"
+                      :component="NumberKeysKeyboard"
     />
 
     <ComponentsApiDocs v-else
@@ -56,7 +56,7 @@
 <script setup lang="ts">
 import type { ApiType }           from '@/Api/Types/Api.ts';
 import type { Default }           from 'flyonui-vue';
-import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview           from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs          from '@/Api/UI/ComponentsApiDocs.vue';
 import ArrowKeysKeyboard          from '@/Content/Keyboard/ArrowKeysKeyboard.vue';
 import ArrowKeysKeyboardRaw       from '@/Content/Keyboard/ArrowKeysKeyboard.vue?raw';
