@@ -1,112 +1,15 @@
 <template>
-    <ComponentPreview v-if="section === 'default'"
-                      :data-test-screenshot="section"
-                      :code="DefaultInputTextRaw"
-                      :component="DefaultInputText"
+    <ComponentDocs :previews="previews"
+                   :section="section"
+                   api-docs-component-names="FoInputText"
     />
-
-    <ComponentPreview v-else-if="section === 'with-placeholder'"
-                      :data-test-screenshot="section"
-                      :code="InputTextWithPlaceholderRaw"
-                      :component="InputTextWithPlaceholder"
-    />
-
-    <ComponentPreview v-else-if="section === 'with-label-and-helper-text'"
-                      :data-test-screenshot="section"
-                      :code="InputTextWithLabelAndHelperTextRaw"
-                      :component="InputTextWithLabelAndHelperText"
-                      :grid="{ columns: 1, rows: 4 }"
-    />
-
-    <ComponentPreview v-else-if="section === 'hidden-label'"
-                      :data-test-screenshot="section"
-                      :code="InputTextHiddenLabelRaw"
-                      :component="InputTextHiddenLabel"
-    />
-
-    <ComponentPreview v-else-if="section === 'floating-label'"
-                      :data-test-screenshot="section"
-                      :code="InputTextFloatingLabelRaw"
-                      :component="InputTextFloatingLabel"
-    />
-
-    <ComponentPreview v-else-if="section === 'size'"
-                      :data-test-screenshot="section"
-                      :code="InputTextSizeRaw"
-                      :component="InputTextSize"
-                      :grid="{ columns: 1, rows: 4 }"
-    />
-
-    <ComponentPreview v-else-if="section === 'floating-label-size'"
-                      :data-test-screenshot="section"
-                      :code="InputTextFloatingLabelSizeRaw"
-                      :component="InputTextFloatingLabelSize"
-                      :grid="{ columns: 1, rows: 3 }"
-    />
-
-    <ComponentPreview v-else-if="section === 'validation-state'"
-                      :data-test-screenshot="section"
-                      :code="InputTextValidationStateRaw"
-                      :component="InputTextValidationState"
-                      :grid="{ columns: 1, rows: 2 }"
-    />
-
-    <ComponentPreview v-else-if="section === 'inline-label'"
-                      :data-test-screenshot="section"
-                      :code="InputTextInlineLabelRaw"
-                      :component="InputTextInlineLabel"
-    />
-
-    <ComponentPreview v-else-if="section === 'with-icon'"
-                      :data-test-screenshot="section"
-                      :code="InputTextWithIconRaw"
-                      :component="InputTextWithIcon"
-    />
-
-    <ComponentPreview v-else-if="section === 'shape'"
-                      :data-test-screenshot="section"
-                      :code="InputTextShapeRaw"
-                      :component="InputTextShape"
-                      :grid="{ columns: 1, rows: 2 }"
-    />
-
-    <ComponentPreview v-else-if="section === 'without-focus'"
-                      :data-test-screenshot="section"
-                      :code="InputTextWithoutFocusRaw"
-                      :component="InputTextWithoutFocus"
-    />
-
-    <ComponentPreview v-else-if="section === 'disabled'"
-                      :data-test-screenshot="section"
-                      :code="DisabledInputTextRaw"
-                      :component="DisabledInputText"
-                      :grid="{ columns: 1, rows: 2 }"
-    />
-
-    <ComponentPreview v-else-if="section === 'readonly'"
-                      :data-test-screenshot="section"
-                      :code="ReadonlyInputTextRaw"
-                      :component="ReadonlyInputText"
-    />
-
-    <ComponentPreview v-else-if="section === 'join'"
-                      :data-test-screenshot="section"
-                      :code="JoinInputTextRaw"
-                      :component="JoinInputText"
-    />
-
-    <template v-else>
-        <ComponentsApiDocs :section="section"
-                           component-names="FoInputText"
-        />
-    </template>
 </template>
 
 <script setup lang="ts">
+import type { ComponentDocsPreview }      from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
 import type { ApiType }                   from '@/Api/Types/Api.ts';
 import type { Default }                   from 'flyonui-vue';
-import ComponentPreview                   from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
-import ComponentsApiDocs                  from '@/Api/UI/ComponentsApiDocs.vue';
+import ComponentDocs                      from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DefaultInputText                   from '@/Forms/InputText/DefaultInputText.vue';
 import DefaultInputTextRaw                from '@/Forms/InputText/DefaultInputText.vue?raw';
 import DisabledInputText                  from '@/Forms/InputText/DisabledInputText.vue';
@@ -137,25 +40,144 @@ import JoinInputText                      from '@/Forms/InputText/JoinInputText.
 import JoinInputTextRaw                   from '@/Forms/InputText/JoinInputText.vue?raw';
 import ReadonlyInputText                  from '@/Forms/InputText/ReadonlyInputText.vue';
 import ReadonlyInputTextRaw               from '@/Forms/InputText/ReadonlyInputText.vue?raw';
+import { computed }                       from 'vue';
+
+type Section = Default
+    | 'with-placeholder'
+    | 'with-label-and-helper-text'
+    | 'hidden-label'
+    | 'floating-label'
+    | 'size'
+    | 'floating-label-size'
+    | 'validation-state'
+    | 'inline-label'
+    | 'with-icon'
+    | 'shape'
+    | 'without-focus'
+    | 'disabled'
+    | 'readonly'
+    | 'join'
+    | ApiType;
 
 interface Props {
-    section: Default
-        | 'with-placeholder'
-        | 'with-label-and-helper-text'
-        | 'hidden-label'
-        | 'floating-label'
-        | 'size'
-        | 'floating-label-size'
-        | 'validation-state'
-        | 'inline-label'
-        | 'with-icon'
-        | 'shape'
-        | 'without-focus'
-        | 'disabled'
-        | 'readonly'
-        | 'join'
-        | ApiType;
+    section: Section;
 }
 
 defineProps<Props>();
+
+const previews = computed(() => {
+    return new Map<Section, ComponentDocsPreview>([
+        [
+            'default',
+            {
+                code:      DefaultInputTextRaw,
+                component: DefaultInputText,
+            },
+        ],
+        [
+            'with-placeholder',
+            {
+                code:      InputTextWithPlaceholderRaw,
+                component: InputTextWithPlaceholder,
+            },
+        ],
+        [
+            'with-label-and-helper-text',
+            {
+                grid:      { columns: 1, rows: 4 },
+                code:      InputTextWithLabelAndHelperTextRaw,
+                component: InputTextWithLabelAndHelperText,
+            },
+        ],
+        [
+            'hidden-label',
+            {
+                code:      InputTextHiddenLabelRaw,
+                component: InputTextHiddenLabel,
+            },
+        ],
+        [
+            'floating-label',
+            {
+                code:      InputTextFloatingLabelRaw,
+                component: InputTextFloatingLabel,
+            },
+        ],
+        [
+            'size',
+            {
+                grid:      { columns: 1, rows: 4 },
+                code:      InputTextSizeRaw,
+                component: InputTextSize,
+            },
+        ],
+        [
+            'floating-label-size',
+            {
+                grid:      { columns: 1, rows: 3 },
+                code:      InputTextFloatingLabelSizeRaw,
+                component: InputTextFloatingLabelSize,
+            },
+        ],
+        [
+            'validation-state',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      InputTextValidationStateRaw,
+                component: InputTextValidationState,
+            },
+        ],
+        [
+            'inline-label',
+            {
+                code:      InputTextInlineLabelRaw,
+                component: InputTextInlineLabel,
+            },
+        ],
+        [
+            'with-icon',
+            {
+                code:      InputTextWithIconRaw,
+                component: InputTextWithIcon,
+            },
+        ],
+        [
+            'shape',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      InputTextShapeRaw,
+                component: InputTextShape,
+            },
+        ],
+        [
+            'without-focus',
+            {
+                code:      InputTextWithoutFocusRaw,
+                component: InputTextWithoutFocus,
+            },
+        ],
+        [
+            'disabled',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      DisabledInputTextRaw,
+                component: DisabledInputText,
+            },
+        ],
+        [
+            'readonly',
+            {
+                code:      ReadonlyInputTextRaw,
+                component: ReadonlyInputText,
+            },
+        ],
+        [
+            'join',
+            {
+                code:      JoinInputTextRaw,
+                component: JoinInputText,
+            },
+        ],
+    ]);
+});
 </script>
