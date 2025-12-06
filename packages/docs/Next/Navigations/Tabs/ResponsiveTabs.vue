@@ -96,7 +96,7 @@ const messagesTab      = reactive<TabProps>({ id: 'messages' });
 const settingsTab      = reactive<TabProps>({ id: 'settings' });
 const helpTab          = reactive<TabProps>({ id: 'help' });
 const notificationsTab = reactive<TabProps>({ id: 'notifications' });
-const feedbackTab      = reactive<TabProps>({ id: 'feedbacks' });
+const feedbackTab      = reactive<TabProps>({ id: 'feedback' });
 
 const tabs = ref<TabProps[]>([
     homeTab,
