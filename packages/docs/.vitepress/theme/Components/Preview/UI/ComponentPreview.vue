@@ -29,6 +29,7 @@
 
                     <FoButton :icon="isLtr ? 'fluent:text-direction-horizontal-ltr-20-regular' : 'fluent:text-direction-horizontal-rtl-20-regular'"
                               color="neutral"
+                              preset="gradient"
                               size="medium"
                               @click.prevent="isLtr ? direction = 'rtl' : direction = 'ltr'; activeTab = previewTab;"
                     />

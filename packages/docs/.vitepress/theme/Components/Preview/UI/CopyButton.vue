@@ -1,6 +1,7 @@
 <template>
     <FoButton :icon="copied ? 'tabler:copy-check' : 'tabler:copy'"
               color="info"
+              preset="gradient"
               size="medium"
               :is-disabled="isDisabled"
               @click.prevent="copy(text)"

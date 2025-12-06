@@ -7,15 +7,19 @@
         >
             <template #start>
                 <div class="flex place-items-center gap-4">
+                    <!--                    todo: the hover:text-info can be done through color prop of iconify -->
                     <FoIcon v-show="isNotHomepage() && !page.isNotFound"
-                            class="flyonui-vue-navbar-collapse ms-2 cursor-pointer"
+                            class="flyonui-vue-navbar-collapse ms-2 cursor-pointer hover:text-info"
                             :icon="isSidebarCollapsed ? 'tabler:layout-sidebar-right-collapse-filled' : 'tabler:layout-sidebar-left-collapse-filled'"
                             @click="isSidebarCollapsed = !isSidebarCollapsed"
                     />
 
-                    <p class="text-sm text-primary select-none">
+                    <FoLink to="https://www.npmjs.com/package/flyonui-vue"
+                            color="info"
+                            underline-effect="hover-animated"
+                    >
                         {{ flyonUIVueVersion }}
-                    </p>
+                    </FoLink>
 
                     <FoNavbarBrand :class="!isSidebarCollapsed && 'sm:ms-40'"
                                    @click="router.go('/')"
@@ -36,6 +40,7 @@
             <template #end>
                 <FoButton icon="tabler:settings-bolt"
                           color="info"
+                          preset="gradient"
                           shape="square"
                           @click.prevent="show = !show"
                 />
@@ -58,16 +63,17 @@
 
 <script setup lang="ts">
 import type { FlyonUITheme, NavbarLink } from 'flyonui-vue';
-import ConfigurationSettings             from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
+import ConfigurationSettings
+    from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
+import { useLayoutStore } from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
 
-import { useLayoutStore }                                                     from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { loadIcons }                                                          from '@iconify/vue';
-import { useColorMode, useStorage }                                           from '@vueuse/core';
-import { FoButton, FoIcon, FoModal, FoNavbar, FoNavbarBrand, FoSocialButton } from 'flyonui-vue';
-import { storeToRefs }                                                        from 'pinia';
-import { useData, useRouter, withBase }                                       from 'vitepress';
-import { VPNavBarSearch }                                                     from 'vitepress/theme';
-import { computed, onMounted, ref }                                           from 'vue';
+import { loadIcons }                                                                  from '@iconify/vue';
+import { useColorMode, useStorage }                                                   from '@vueuse/core';
+import { FoButton, FoIcon, FoLink, FoModal, FoNavbar, FoNavbarBrand, FoSocialButton } from 'flyonui-vue';
+import { storeToRefs }                                                                from 'pinia';
+import { useData, useRouter, withBase }                                               from 'vitepress';
+import { VPNavBarSearch }                                                             from 'vitepress/theme';
+import { computed, onMounted, ref }                                                   from 'vue';
 
 const flyonUIVueVersion = FLYONUI_VUE_VERSION;
 

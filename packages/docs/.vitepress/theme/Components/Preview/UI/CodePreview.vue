@@ -4,8 +4,9 @@
                        :class="title === undefined ? 'justify-end' : 'justify-between'"
         >
             <FoButton v-if="title !== undefined"
-                      color="primary"
                       class="rounded-none rounded-tl-lg"
+                      color="primary"
+                      preset="gradient"
             >
                 {{ title }}
             </FoButton>
