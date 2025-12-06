@@ -1,30 +1,44 @@
 <template>
-    <ComponentPreview v-if="section === 'shape'"
-                      :data-test-screenshot="section"
-                      :code="MaskShapeRaw"
-                      :component="MaskShape"
-                      :grid="{ columns: 4, rows: 6 }"
-    />
-
-    <ComponentPreview v-else-if="section === 'v-mask'"
-                      :data-test-screenshot="section"
-                      :code="VMaskRaw"
-                      :component="VMask"
-                      :grid="{ columns: 4, rows: 6 }"
+    <ComponentDocs :previews="previews"
+                   :section="section"
     />
 </template>
 
 <script setup lang="ts">
-import ComponentPreview from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
+import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
+import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import MaskShape                     from '@/Content/Mask/MaskShape.vue';
+import MaskShapeRaw                  from '@/Content/Mask/MaskShape.vue?raw';
+import VMask                         from '@/Content/Mask/VMask.vue';
+import VMaskRaw                      from '@/Content/Mask/VMask.vue?raw';
+import { computed }                  from 'vue';
 
-import MaskShape    from '@/Content/Mask/MaskShape.vue';
-import MaskShapeRaw from '@/Content/Mask/MaskShape.vue?raw';
-import VMask        from '@/Content/Mask/VMask.vue';
-import VMaskRaw     from '@/Content/Mask/VMask.vue?raw';
+type Section = 'shape' | 'v-mask';
 
 interface Props {
-    section: 'shape' | 'v-mask';
+    section: Section;
 }
 
 defineProps<Props>();
+
+const previews = computed(() => {
+    return new Map<Section, ComponentDocsPreview>([
+        [
+            'shape',
+            {
+                grid:      { columns: 4, rows: 6 },
+                code:      MaskShapeRaw,
+                component: MaskShape,
+            },
+        ],
+        [
+            'v-mask',
+            {
+                grid:      { columns: 4, rows: 6 },
+                code:      VMaskRaw,
+                component: VMask,
+            },
+        ],
+    ]);
+});
 </script>

@@ -78,8 +78,8 @@ const props = withDefaults(defineProps<ComponentPreviewProps>(), {
 const id         = useId();
 const { config } = useFlyonUIVueAppConfig();
 
-const previewTab = reactive<TabProps>({ id: `preview${id}` });
-const codeTab    = reactive<TabProps>({ id: `code${id}` });
+const previewTab = reactive<TabProps>({ id: `preview-${id}` });
+const codeTab    = reactive<TabProps>({ id: `code-${id}` });
 
 const activeTab = ref<Readonly<TabProps>>(previewTab);
 
@@ -102,7 +102,7 @@ const codePreviews = computed((): CodePreviewProps[] => {
 
 const gridClass = computed(() => {
     const columns = props.grid.columns;
-    const rows    = props.grid.columns;
+    const rows    = props.grid.rows;
 
     if (columns === 0 || rows === 0) {
         return 'flex flex-wrap';
