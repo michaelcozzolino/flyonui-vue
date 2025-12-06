@@ -7,7 +7,7 @@ const previewCommand   = `${workspaceCommand} preview`;
 
 export default defineConfig({
     expect: {
-        toMatchSnapshot: { maxDiffPixelRatio: 0.04, threshold: 0.2 },
+        toMatchSnapshot: { maxDiffPixelRatio: 0.04, threshold: 0.1 },
     },
     workers:   '50%',
     outputDir: './tests/EndToEnd/Results',
