@@ -62,15 +62,12 @@
 </template>
 
 <script setup lang="ts">
-import type {
-    CodePreviewProps,
-    ComponentPreviewProps,
-}                                   from '@/.vitepress/theme/Components/ComponentPreview/Type/ComponentPreview';
-import type { Direction, TabProps } from 'flyonui-vue';
+import type { CodePreviewProps, ComponentPreviewProps } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { Direction, TabProps }                     from 'flyonui-vue';
 import CodePreview
-    from '@/.vitepress/theme/Components/ComponentPreview/UI/CodePreview.vue';
+    from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import CopyButton
-    from '@/.vitepress/theme/Components/ComponentPreview/UI/CopyButton.vue';
+    from '@/.vitepress/theme/Components/Preview/UI/CopyButton.vue';
 import { FoButton, FoButtonGroup, FoTab, FoTabs, useFlyonUIVueAppConfig } from 'flyonui-vue';
 import { computed, reactive, ref, useId, watch }                          from 'vue';
 

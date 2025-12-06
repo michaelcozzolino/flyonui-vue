@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts" generic="S extends string, C extends ComponentDocsPreview">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Type/ComponentDocs';
+import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
 import type { ApiType }              from '@/Api/Types/Api';
 import type { ComponentName }        from 'flyonui-vue';
-import ComponentPreview              from '@/.vitepress/theme/Components/ComponentPreview/UI/ComponentPreview.vue';
+import ComponentPreview              from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs             from '@/Api/UI/ComponentsApiDocs.vue';
 import { computed }                  from 'vue';
 

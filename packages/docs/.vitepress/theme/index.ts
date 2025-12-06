@@ -1,9 +1,8 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 
-import CodePreview
-    from '@/.vitepress/theme/Components/ComponentPreview/UI/CodePreview.vue';
 import Layout                                         from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
+import CodePreview                                    from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import ComponentsApi                                  from '@/Api/UI/ComponentsApi.vue';
 import BadgeDocs                                      from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                                     from '@/Components/Button/ButtonDocs.vue';
