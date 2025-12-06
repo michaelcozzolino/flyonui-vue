@@ -1,27 +1,42 @@
 <template>
-    <ComponentPreview v-if="section === 'default'"
-                      :data-test-screenshot="section"
-                      :code="DefaultNavbarRaw"
-                      :component="DefaultNavbar"
-    />
-
-    <ComponentPreview v-else-if="section === 'with-logo'"
-                      :data-test-screenshot="section"
-                      :code="NavbarWithLogoRaw"
-                      :component="NavbarWithLogo"
+    <ComponentDocs :previews="previews"
+                   :section="section"
     />
 </template>
 
 <script setup lang="ts">
-import ComponentPreview  from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
-import DefaultNavbar     from '@/Navigations/Navbar/DefaultNavbar.vue';
-import DefaultNavbarRaw  from '@/Navigations/Navbar/DefaultNavbar.vue?raw';
-import NavbarWithLogo    from '@/Navigations/Navbar/NavbarWithLogo.vue';
-import NavbarWithLogoRaw from '@/Navigations/Navbar/NavbarWithLogo.vue?raw';
+import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
+import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import DefaultNavbar                 from '@/Navigations/Navbar/DefaultNavbar.vue';
+import DefaultNavbarRaw              from '@/Navigations/Navbar/DefaultNavbar.vue?raw';
+import NavbarWithLogo                from '@/Navigations/Navbar/NavbarWithLogo.vue';
+import NavbarWithLogoRaw             from '@/Navigations/Navbar/NavbarWithLogo.vue?raw';
+import { computed }                  from 'vue';
+
+type Section = 'default' | 'with-logo';
 
 interface Props {
-    section: 'default' | 'with-logo';
+    section: Section;
 }
 
 defineProps<Props>();
+
+const previews = computed(() => {
+    return new Map<Section, ComponentDocsPreview>([
+        [
+            'default',
+            {
+                code:      DefaultNavbarRaw,
+                component: DefaultNavbar,
+            },
+        ],
+        [
+            'with-logo',
+            {
+                code:      NavbarWithLogoRaw,
+                component: NavbarWithLogo,
+            },
+        ],
+    ]);
+});
 </script>

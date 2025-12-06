@@ -6,3 +6,9 @@
 
 ### Colors
 <LoadingDocs section="color" />
+
+## Api
+
+### Props
+
+<LoadingDocs section="props" />

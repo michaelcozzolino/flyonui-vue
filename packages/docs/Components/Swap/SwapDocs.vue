@@ -1,44 +1,54 @@
 <template>
-    <ComponentPreview v-if="section === 'default'"
-                      :data-test-screenshot="section"
-                      :code="DefaultSwapRaw"
-                      :component="DefaultSwap"
-    />
-
-    <ComponentPreview v-else-if="section === 'rotation'"
-                      :data-test-screenshot="section"
-                      :code="SwapRotationRaw"
-                      :component="SwapRotation"
-    />
-
-    <ComponentPreview v-else-if="section === 'flip'"
-                      :data-test-screenshot="section"
-                      :code="SwapFlipRaw"
-                      :component="SwapFlip"
-    />
-
-    <ComponentsApiDocs v-else
-                       :section="section"
-                       component-names="FoSwap"
+    <ComponentDocs :previews="previews"
+                   :section="section"
+                   api-docs-component-names="FoSwap"
     />
 </template>
 
 <script setup lang="ts">
-import type { ApiType } from '@/Api/Types/Api.ts';
-import type { Default } from 'flyonui-vue';
+import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
+import type { ApiType }              from '@/Api/Types/Api.ts';
+import type { Default }              from 'flyonui-vue';
+import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import DefaultSwap                   from '@/Components/Swap/DefaultSwap.vue';
+import DefaultSwapRaw                from '@/Components/Swap/DefaultSwap.vue?raw';
+import SwapFlip                      from '@/Components/Swap/SwapFlip.vue';
+import SwapFlipRaw                   from '@/Components/Swap/SwapFlip.vue?raw';
+import SwapRotation                  from '@/Components/Swap/SwapRotation.vue';
+import SwapRotationRaw               from '@/Components/Swap/SwapRotation.vue?raw';
+import { computed }                  from 'vue';
 
-import ComponentPreview  from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
-import ComponentsApiDocs from '@/Api/UI/ComponentsApiDocs.vue';
-import DefaultSwap       from '@/Components/Swap/DefaultSwap.vue';
-import DefaultSwapRaw    from '@/Components/Swap/DefaultSwap.vue?raw';
-import SwapFlip          from '@/Components/Swap/SwapFlip.vue';
-import SwapFlipRaw       from '@/Components/Swap/SwapFlip.vue?raw';
-import SwapRotation      from '@/Components/Swap/SwapRotation.vue';
-import SwapRotationRaw   from '@/Components/Swap/SwapRotation.vue?raw';
+type Section = Default | 'rotation' | 'flip' | ApiType;
 
 interface Props {
-    section: Default | 'rotation' | 'flip' | ApiType;
+    section: Section;
 }
 
 defineProps<Props>();
+
+const previews = computed(() => {
+    return new Map<Section, ComponentDocsPreview>([
+        [
+            'default',
+            {
+                code:      DefaultSwapRaw,
+                component: DefaultSwap,
+            },
+        ],
+        [
+            'rotation',
+            {
+                code:      SwapRotationRaw,
+                component: SwapRotation,
+            },
+        ],
+        [
+            'flip',
+            {
+                code:      SwapFlipRaw,
+                component: SwapFlip,
+            },
+        ],
+    ]);
+});
 </script>
