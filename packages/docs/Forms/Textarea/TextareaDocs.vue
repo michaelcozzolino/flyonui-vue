@@ -1,92 +1,15 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultTextareaRaw"
-                 :component="DefaultTextarea"
-                 :preview="{ columns: 1, rows: 1 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'with-label-and-placeholder'"
-                 :data-test-screenshot="section"
-                 :code="TextareaWithLabelAndPlaceholderRaw"
-                 :component="TextareaWithLabelAndPlaceholder"
-                 :preview="{ columns: 1, rows: 1 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'hidden-label'"
-                 :data-test-screenshot="section"
-                 :code="TextareaHiddenLabelRaw"
-                 :component="TextareaHiddenLabel"
-                 :preview="{ columns: 1, rows: 1 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'floating-label'"
-                 :data-test-screenshot="section"
-                 :code="TextareaFloatingLabelRaw"
-                 :component="TextareaFloatingLabel"
-                 :preview="{ columns: 1, rows: 1 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'default-size'"
-                 :data-test-screenshot="section"
-                 :code="TextareaDefaultSizeRaw"
-                 :component="TextareaDefaultSize"
-                 :preview="{ columns: 1, rows: 5 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'floating-label-size'"
-                 :data-test-screenshot="section"
-                 :code="TextareaFloatingLabelSizeRaw"
-                 :component="TextareaFloatingLabelSize"
-                 :preview="{ columns: 1, rows: 5 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'with-icon'"
-                 :data-test-screenshot="section"
-                 :code="TextareaWithIconRaw"
-                 :component="TextareaWithIcon"
-                 :preview="{ columns: 1, rows: 6 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'with-helper-text'"
-                 :data-test-screenshot="section"
-                 :code="TextareaWithHelperTextRaw"
-                 :component="TextareaWithHelperText"
-                 :preview="{ columns: 1, rows: 2 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'validation-state'"
-                 :data-test-screenshot="section"
-                 :code="TextareaValidationStateRaw"
-                 :component="TextareaValidationState"
-                 :preview="{ columns: 1, rows: 4 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'disabled'"
-                 :data-test-screenshot="section"
-                 :code="DisabledTextareaRaw"
-                 :component="DisabledTextarea"
-                 :preview="{ columns: 1, rows: 2 }"
-    />
-
-    <CodeSnippet v-else-if="section === 'readonly'"
-                 :data-test-screenshot="section"
-                 :code="ReadonlyTextareaRaw"
-                 :component="ReadonlyTextarea"
-                 :preview="{ columns: 1, rows: 1 }"
-    />
-
-    <ComponentsApiDocs v-else
-                       :section="section"
-                       component-names="FoTextarea"
+    <ComponentDocs :previews="previews"
+                   :section="section"
+                   api-docs-component-names="FoTextarea"
     />
 </template>
 
 <script setup lang="ts">
+import type { ComponentDocsPreview }      from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
 import type { ApiType }                   from '@/Api/Types/Api.ts';
 import type { Default }                   from 'flyonui-vue';
-import CodeSnippet                        from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
-import ComponentsApiDocs                  from '@/Api/UI/ComponentsApiDocs.vue';
+import ComponentDocs                      from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DefaultTextarea                    from '@/Forms/Textarea/DefaultTextarea.vue';
 import DefaultTextareaRaw                 from '@/Forms/Textarea/DefaultTextarea.vue?raw';
 import DisabledTextarea                   from '@/Forms/Textarea/DisabledTextarea.vue';
@@ -109,21 +32,117 @@ import TextareaWithIcon                   from '@/Forms/Textarea/TextareaWithIco
 import TextareaWithIconRaw                from '@/Forms/Textarea/TextareaWithIcon.vue?raw';
 import TextareaWithLabelAndPlaceholder    from '@/Forms/Textarea/TextareaWithLabelAndPlaceholder.vue';
 import TextareaWithLabelAndPlaceholderRaw from '@/Forms/Textarea/TextareaWithLabelAndPlaceholder.vue?raw';
+import { computed }                       from 'vue';
+
+type Section = Default
+    | 'with-label-and-placeholder'
+    | 'hidden-label'
+    | 'floating-label'
+    | 'default-size'
+    | 'floating-label-size'
+    | 'with-icon'
+    | 'with-helper-text'
+    | 'validation-state'
+    | 'disabled'
+    | 'readonly'
+    | ApiType;
 
 interface Props {
-    section: Default
-        | 'with-label-and-placeholder'
-        | 'hidden-label'
-        | 'floating-label'
-        | 'default-size'
-        | 'floating-label-size'
-        | 'with-icon'
-        | 'with-helper-text'
-        | 'validation-state'
-        | 'disabled'
-        | 'readonly'
-        | ApiType;
+    section: Section;
 }
 
 defineProps<Props>();
+
+const previews = computed(() => {
+    return new Map<Section, ComponentDocsPreview>([
+        [
+            'default',
+            {
+                grid:      { columns: 1, rows: 1 },
+                code:      DefaultTextareaRaw,
+                component: DefaultTextarea,
+            },
+        ],
+        [
+            'with-label-and-placeholder',
+            {
+                grid:      { columns: 1, rows: 1 },
+                code:      TextareaWithLabelAndPlaceholderRaw,
+                component: TextareaWithLabelAndPlaceholder,
+            },
+        ],
+        [
+            'hidden-label',
+            {
+                grid:      { columns: 1, rows: 1 },
+                code:      TextareaHiddenLabelRaw,
+                component: TextareaHiddenLabel,
+            },
+        ],
+        [
+            'floating-label',
+            {
+                grid:      { columns: 1, rows: 1 },
+                code:      TextareaFloatingLabelRaw,
+                component: TextareaFloatingLabel,
+            },
+        ],
+        [
+            'default-size',
+            {
+                grid:      { columns: 1, rows: 5 },
+                code:      TextareaDefaultSizeRaw,
+                component: TextareaDefaultSize,
+            },
+        ],
+        [
+            'floating-label-size',
+            {
+                grid:      { columns: 1, rows: 5 },
+                code:      TextareaFloatingLabelSizeRaw,
+                component: TextareaFloatingLabelSize,
+            },
+        ],
+        [
+            'with-icon',
+            {
+                grid:      { columns: 1, rows: 6 },
+                code:      TextareaWithIconRaw,
+                component: TextareaWithIcon,
+            },
+        ],
+        [
+            'with-helper-text',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      TextareaWithHelperTextRaw,
+                component: TextareaWithHelperText,
+            },
+        ],
+        [
+            'validation-state',
+            {
+                grid:      { columns: 1, rows: 4 },
+                code:      TextareaValidationStateRaw,
+                component: TextareaValidationState,
+            },
+        ],
+        [
+            'disabled',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      DisabledTextareaRaw,
+                component: DisabledTextarea,
+            },
+        ],
+        [
+            'readonly',
+            {
+                grid:      { columns: 1, rows: 1 },
+                code:      ReadonlyTextareaRaw,
+                component: ReadonlyTextarea,
+            },
+        ],
+    ]);
+});
 </script>

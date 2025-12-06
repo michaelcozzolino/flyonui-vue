@@ -66,7 +66,7 @@
     "dependencies": {
         "@floating-ui/vue": "^1.1.9",
         "@vueuse/components": "^13.9.0",
-        "@vueuse/core": "^13.9.0",
+        "@vueuse/core": "^14.1.0",
         "@vueuse/motion": "^3.0.3",
         "deepmerge": "^4.3.1",
         "unhead": "^2.0.19"
@@ -88,6 +88,6 @@
         "vite": "^6.4.1",
         "vue": "^3.5.22",
         "vue-router": "^4.5.1",
-        "vue-tsc": "^3.1.0"
+        "vue-tsc": "^3.1.1"
     }
 }

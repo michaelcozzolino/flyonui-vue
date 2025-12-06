@@ -28,15 +28,7 @@ test('components previews', async ({ page }) => {
                         #flyonui-vue-docs-docs-sidebar {
                           display: none !important;
                         }
-                        
-                        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=block');
-                        
-                        html,
-                        body,
-                        * {
-                          font-family: 'Inter', system-ui, sans-serif !important;
-                        }
-                        
+
                         body {
                           -webkit-font-smoothing: antialiased;
                           -moz-osx-font-smoothing: grayscale;

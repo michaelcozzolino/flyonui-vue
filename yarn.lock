@@ -1364,6 +1364,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@highlightjs/vue-plugin@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@highlightjs/vue-plugin@npm:2.1.2"
+  peerDependencies:
+    highlight.js: ^11.0.1
+    vue: ^3
+  checksum: 10c0/418b5142398aaf187a85e4f23f5ffaceee210b4a72678a77d841e973963e5791fc927c412153bf0cacfcdbc35e04d2b7c7eedf17d241295306e956697ae9c675
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -3042,6 +3052,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/language-core@npm:3.1.5":
+  version: 3.1.5
+  resolution: "@vue/language-core@npm:3.1.5"
+  dependencies:
+    "@volar/language-core": "npm:2.4.23"
+    "@vue/compiler-dom": "npm:^3.5.0"
+    "@vue/shared": "npm:^3.5.0"
+    alien-signals: "npm:^3.0.0"
+    muggle-string: "npm:^0.4.1"
+    path-browserify: "npm:^1.0.1"
+    picomatch: "npm:^4.0.2"
+  peerDependencies:
+    typescript: "*"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/10e960d85c06edff0d5217cc4e54dd59ad2308ce0d6202720cd4d56fc2237f01f1f51cf04bdb0ea80796b40beecffa8f9428eaaceaa5642d4a8a0ae60bd5bc15
+  languageName: node
+  linkType: hard
+
 "@vue/reactivity@npm:3.5.24":
   version: 3.5.24
   resolution: "@vue/reactivity@npm:3.5.24"
@@ -3143,16 +3173,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:^13.9.0":
-  version: 13.9.0
-  resolution: "@vueuse/core@npm:13.9.0"
+"@vueuse/core@npm:^14.1.0":
+  version: 14.1.0
+  resolution: "@vueuse/core@npm:14.1.0"
   dependencies:
     "@types/web-bluetooth": "npm:^0.0.21"
-    "@vueuse/metadata": "npm:13.9.0"
-    "@vueuse/shared": "npm:13.9.0"
+    "@vueuse/metadata": "npm:14.1.0"
+    "@vueuse/shared": "npm:14.1.0"
   peerDependencies:
     vue: ^3.5.0
-  checksum: 10c0/f1e6c5e02584e018e53e0e5f93844afbcd33742c5a2454e57aaa3433e9068efbe84b7b423f34628738e28e3ba4bfe7d648f2edaae39706a236ae48bc1a22709b
+  checksum: 10c0/e1ed368c832f2836ae62f3969cd46691fcef40a34a3909898012e6143395cb8e31d9ebb6ccfd9b0b9fb7493b073282ce226e4fb62ab84fc2f9557d59f232b6f0
   languageName: node
   linkType: hard
 
@@ -3205,10 +3235,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/metadata@npm:13.9.0":
-  version: 13.9.0
-  resolution: "@vueuse/metadata@npm:13.9.0"
-  checksum: 10c0/7e4620c6e5acbf8f2e5eba0db80a8de887f4816221b383e5d829ee833139d262b8a89e9709d58d7aacb263927ce2c55e262eb29372f784aa9138c8fa7a86506a
+"@vueuse/metadata@npm:14.1.0":
+  version: 14.1.0
+  resolution: "@vueuse/metadata@npm:14.1.0"
+  checksum: 10c0/983296b13dc979e8a18831315631e0d08934e655edd0d12073c06512228a5a5140af0671eb28b20068ef42c55312a58287a7d51314427d2edcbbf0c38f5994c8
   languageName: node
   linkType: hard
 
@@ -3238,6 +3268,15 @@ __metadata:
   peerDependencies:
     vue: ^3.5.0
   checksum: 10c0/4820f71caab3c94bc88343270bb4408d8818baa9c0223e6f7499aeb05f9227a87724c15b792f2aaf308137ac996cccd93c0cbe338f7cf3ae50045981abc223a3
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:14.1.0":
+  version: 14.1.0
+  resolution: "@vueuse/shared@npm:14.1.0"
+  peerDependencies:
+    vue: ^3.5.0
+  checksum: 10c0/642ca681ffea7bf24de970bed6580fafc01bd66a4a185f8eb05ddc2450265f1ede86b79b2d8660d22d39ec3f498658f9fedadf2606dfd94d730d443bb0b10f2a
   languageName: node
   linkType: hard
 
@@ -5078,6 +5117,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "flyonui-vue-docs@workspace:packages/docs"
   dependencies:
+    "@highlightjs/vue-plugin": "npm:^2.1.2"
     "@iconify/vue": "npm:^4.3.0"
     "@playwright/test": "npm:~1.55.1"
     "@stackblitz/sdk": "npm:^1.11.0"
@@ -5086,10 +5126,10 @@ __metadata:
     "@vitejs/plugin-vue": "npm:^5.2.4"
     "@vue/test-utils": "npm:^2.4.6"
     "@vue/tsconfig": "npm:^0.8.1"
-    "@vueuse/core": "npm:^13.9.0"
+    "@vueuse/core": "npm:^14.1.0"
     flyonui: "npm:^2.4.1"
     flyonui-vue: "workspace:*"
-    highlight.js: "npm:^10.7.3"
+    highlight.js: "npm:^11.11.1"
     jsdom: "npm:^26.1.0"
     pinia: "npm:^3.0.3"
     playwright: "npm:~1.55.1"
@@ -5100,9 +5140,8 @@ __metadata:
     vite: "npm:^6.4.1"
     vitepress: "npm:2.0.0-alpha.5"
     vue: "npm:^3.5.22"
-    vue-code-highlighter: "npm:^1.1.3"
     vue-router: "npm:^4.5.1"
-    vue-tsc: "npm:^3.1.0"
+    vue-tsc: "npm:^3.1.1"
   languageName: unknown
   linkType: soft
 
@@ -5116,7 +5155,7 @@ __metadata:
     typescript: "npm:^5.9.3"
     vue-component-meta: "npm:^3.1.0"
     vue-component-type-helpers: "npm:^3.1.0"
-    vue-tsc: "npm:^3.1.0"
+    vue-tsc: "npm:^3.1.1"
   languageName: unknown
   linkType: soft
 
@@ -5132,7 +5171,7 @@ __metadata:
     "@vue/test-utils": "npm:^2.4.6"
     "@vue/tsconfig": "npm:^0.8.1"
     "@vueuse/components": "npm:^13.9.0"
-    "@vueuse/core": "npm:^13.9.0"
+    "@vueuse/core": "npm:^14.1.0"
     "@vueuse/motion": "npm:^3.0.3"
     concurrently: "npm:^9.2.1"
     deepmerge: "npm:^4.3.1"
@@ -5146,7 +5185,7 @@ __metadata:
     vite: "npm:^6.4.1"
     vue: "npm:^3.5.22"
     vue-router: "npm:^4.5.1"
-    vue-tsc: "npm:^3.1.0"
+    vue-tsc: "npm:^3.1.1"
   peerDependencies:
     "@iconify/vue": ^4
     flyonui: ^2
@@ -5176,7 +5215,7 @@ __metadata:
     typescript: "npm:^5.9.3"
     vite: "npm:^6.4.1"
     vue: "npm:^3.5.22"
-    vue-tsc: "npm:^3.1.0"
+    vue-tsc: "npm:^3.1.1"
   languageName: unknown
   linkType: soft
 
@@ -5496,14 +5535,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"highlight.js@npm:^10.7.3":
-  version: 10.7.3
-  resolution: "highlight.js@npm:10.7.3"
-  checksum: 10c0/073837eaf816922427a9005c56c42ad8786473dc042332dfe7901aa065e92bc3d94ebf704975257526482066abb2c8677cc0326559bb8621e046c21c5991c434
-  languageName: node
-  linkType: hard
-
-"highlight.js@npm:^11.9.0":
+"highlight.js@npm:^11.11.1":
   version: 11.11.1
   resolution: "highlight.js@npm:11.11.1"
   checksum: 10c0/40f53ac19dac079891fcefd5bd8a21cf2e8931fd47da5bd1dca73b7e4375c1defed0636fc39120c639b9c44119b7d110f7f0c15aa899557a5a1c8910f3c0144c
@@ -8022,7 +8054,7 @@ __metadata:
     tsx: "npm:^4.20.6"
     typescript: "npm:^5.9.3"
     vitest: "npm:^3.2.4"
-    vue-tsc: "npm:^3.1.0"
+    vue-tsc: "npm:^3.1.1"
   languageName: unknown
   linkType: soft
 
@@ -9500,18 +9532,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-code-highlighter@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "vue-code-highlighter@npm:1.1.3"
-  dependencies:
-    highlight.js: "npm:^11.9.0"
-  peerDependencies:
-    highlight.js: ^10.0.0
-    vue: ^3.0.0
-  checksum: 10c0/efc40babbd907eef06600ac8d3410699a7ad729178dcded98d6ac6400e567e9cae7554a2d1b800cbe3f5158af23290e043f8c7f649686a1e285f13f3e79abc2a
-  languageName: node
-  linkType: hard
-
 "vue-component-meta@npm:^3.1.0":
   version: 3.1.0
   resolution: "vue-component-meta@npm:3.1.0"
@@ -9584,17 +9604,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-tsc@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "vue-tsc@npm:3.1.0"
+"vue-tsc@npm:^3.1.1":
+  version: 3.1.5
+  resolution: "vue-tsc@npm:3.1.5"
   dependencies:
     "@volar/typescript": "npm:2.4.23"
-    "@vue/language-core": "npm:3.1.0"
+    "@vue/language-core": "npm:3.1.5"
   peerDependencies:
     typescript: ">=5.0.0"
   bin:
     vue-tsc: ./bin/vue-tsc.js
-  checksum: 10c0/32a676f5c349948b1fc5bf9de4af7ebfe94efa8baba6f402f42abca9bc461d26e3b798854cf851121ac03e5a2beeace93d42d590f2fddd9aeaacd9e9c62b70c9
+  checksum: 10c0/f8125efe95208d70d9c52c3a0481514fac44bda0957ff9a4b19635874adcad97b4f25a05ac7fd4ae07cfe25bfd44d22c836d36cfc3d08c3ed093878cd0b555e4
   languageName: node
   linkType: hard
 

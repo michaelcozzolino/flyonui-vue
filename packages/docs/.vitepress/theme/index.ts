@@ -1,8 +1,8 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
-import { VueCodeHighlighter }                   from '@/.vitepress/theme/Components/CodeSnippet/Lib/VueCodeHighlighter';
 
 import Layout                                         from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
+import CodePreview                                    from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import ComponentsApi                                  from '@/Api/UI/ComponentsApi.vue';
 import BadgeDocs                                      from '@/Components/Badge/BadgeDocs.vue';
 import ButtonDocs                                     from '@/Components/Button/ButtonDocs.vue';
@@ -32,10 +32,13 @@ import TooltipDocs                                    from '@/Overlays/Tooltip/T
 import Playground                                     from '@/Playground/Playground.vue';
 import CreateFlyonUIVueAppDocs                        from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
 import TableDocs                                      from '@/Tables/Table/TableDocs.vue';
+import hljsVuePlugin                                  from '@highlightjs/vue-plugin';
 import { FoKeyboard, FoSelectThemeController, vMask } from 'flyonui-vue';
 import { createPinia }                                from 'pinia';
 import DefaultTheme                                   from 'vitepress/theme';
 import './index.css';
+import 'highlight.js/styles/github-dark-dimmed.css';
+import 'highlight.js/lib/common';
 
 export default {
     extends:    DefaultTheme,
@@ -67,7 +70,7 @@ export default {
             app.use(createFlyonUIVueApp, {});
         }
 
-        app.use(createPinia());
+        app.use(createPinia()).use(hljsVuePlugin);
 
         registerDocComponents(app, [
             { name: 'KeyboardDocs', instance: KeyboardDocs },
@@ -98,7 +101,7 @@ export default {
             { name: 'SelectThemeController', instance: FoSelectThemeController },
             { name: 'Playground', instance: Playground },
             { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
-            { name: 'VueCodeHighlighter', instance: VueCodeHighlighter },
+            { name: 'CodePreview', instance: CodePreview },
             { name: 'CreateFlyonUIVueAppDocs', instance: CreateFlyonUIVueAppDocs },
             { name: 'ComponentsApi', instance: ComponentsApi },
             { name: 'FoKeyboard', instance: FoKeyboard },

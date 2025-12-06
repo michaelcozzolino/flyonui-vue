@@ -1,102 +1,15 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultSelectRaw"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :component="DefaultSelect"
-    />
-
-    <CodeSnippet v-else-if="section === 'floating-label'"
-                 :data-test-screenshot="section"
-                 :code="SelectFloatingLabelRaw"
-                 :component="SelectFloatingLabel"
-    />
-
-    <CodeSnippet v-else-if="section === 'default-size'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 4 }"
-                 :code="DefaultSelectSizeRaw"
-                 :component="DefaultSelectSize"
-    />
-
-    <CodeSnippet v-else-if="section === 'floating-label-size'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 3 }"
-                 :code="SelectFloatingLabelSizeRaw"
-                 :component="SelectFloatingLabelSize"
-    />
-
-    <CodeSnippet v-else-if="section === 'with-icon'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :code="SelectWithIconRaw"
-                 :component="SelectWithIcon"
-    />
-
-    <CodeSnippet v-else-if="section === 'validation-state'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 4 }"
-                 :code="SelectValidationStateRaw"
-                 :component="SelectValidationState"
-    />
-
-    <CodeSnippet v-else-if="section === 'shape'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 4 }"
-                 :code="SelectShapeRaw"
-                 :component="SelectShape"
-    />
-
-    <CodeSnippet v-else-if="section === 'with-label-and-helper-text'"
-                 :data-test-screenshot="section"
-                 :code="SelectWithLabelAndHelperTextRaw"
-                 :component="SelectWithLabelAndHelperText"
-    />
-
-    <CodeSnippet v-else-if="section === 'hidden-label'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :code="SelectHiddenLabelRaw"
-                 :component="SelectHiddenLabel"
-    />
-
-    <CodeSnippet v-else-if="section === 'disabled'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :code="DisabledSelectRaw"
-                 :component="DisabledSelect"
-    />
-
-    <CodeSnippet v-else-if="section === 'datalist'"
-                 :data-test-screenshot="section"
-                 :code="SelectAsDatalistRaw"
-                 :component="SelectAsDatalist"
-    />
-
-    <CodeSnippet v-else-if="section === 'optgroup'"
-                 :data-test-screenshot="section"
-                 :code="SelectWithOptgroupRaw"
-                 :component="SelectWithOptgroup"
-    />
-
-    <CodeSnippet v-else-if="section === 'ref-usage'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :code="SelectRefUsageRaw"
-                 :component="SelectRefUsage"
-    />
-
-    <ComponentsApiDocs v-else
-                       :section="section"
-                       :component-names="['FoSelect', 'FoDatalist']"
+    <ComponentDocs :previews="previews"
+                   :section="section"
+                   :api-docs-component-names="['FoSelect', 'FoDatalist']"
     />
 </template>
 
 <script setup lang="ts">
+import type { ComponentDocsPreview }   from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
 import type { ApiType }                from '@/Api/Types/Api.ts';
 import type { Default }                from 'flyonui-vue';
-import CodeSnippet                     from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
-import ComponentsApiDocs               from '@/Api/UI/ComponentsApiDocs.vue';
+import ComponentDocs                   from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DefaultSelect                   from '@/Forms/Select/DefaultSelect.vue';
 import DefaultSelectRaw                from '@/Forms/Select/DefaultSelect.vue?raw';
 import DefaultSelectSize               from '@/Forms/Select/DefaultSelectSize.vue';
@@ -123,23 +36,131 @@ import SelectWithLabelAndHelperText    from '@/Forms/Select/SelectWithLabelAndHe
 import SelectWithLabelAndHelperTextRaw from '@/Forms/Select/SelectWithLabelAndHelperText.vue?raw';
 import SelectWithOptgroup              from '@/Forms/Select/SelectWithOptgroup.vue';
 import SelectWithOptgroupRaw           from '@/Forms/Select/SelectWithOptgroup.vue?raw';
+import { computed }                    from 'vue';
+
+type Section = Default
+    | 'floating-label'
+    | 'default-size'
+    | 'floating-label-size'
+    | 'with-icon'
+    | 'validation-state'
+    | 'shape'
+    | 'with-label-and-helper-text'
+    | 'hidden-label'
+    | 'disabled'
+    | 'datalist'
+    | 'optgroup'
+    | 'ref-usage'
+    | ApiType;
 
 interface Props {
-    section: Default
-        | 'floating-label'
-        | 'default-size'
-        | 'floating-label-size'
-        | 'with-icon'
-        | 'validation-state'
-        | 'shape'
-        | 'with-label-and-helper-text'
-        | 'hidden-label'
-        | 'disabled'
-        | 'datalist'
-        | 'optgroup'
-        | 'ref-usage'
-        | ApiType;
+    section: Section;
 }
 
 defineProps<Props>();
+
+const previews = computed(() => {
+    return new Map<Section, ComponentDocsPreview>([
+        [
+            'default',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      DefaultSelectRaw,
+                component: DefaultSelect,
+            },
+        ],
+        [
+            'floating-label',
+            {
+                code:      SelectFloatingLabelRaw,
+                component: SelectFloatingLabel,
+            },
+        ],
+        [
+            'default-size',
+            {
+                grid:      { columns: 1, rows: 4 },
+                code:      DefaultSelectSizeRaw,
+                component: DefaultSelectSize,
+            },
+        ],
+        [
+            'floating-label-size',
+            {
+                grid:      { columns: 1, rows: 3 },
+                code:      SelectFloatingLabelSizeRaw,
+                component: SelectFloatingLabelSize,
+            },
+        ],
+        [
+            'with-icon',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      SelectWithIconRaw,
+                component: SelectWithIcon,
+            },
+        ],
+        [
+            'validation-state',
+            {
+                grid:      { columns: 1, rows: 4 },
+                code:      SelectValidationStateRaw,
+                component: SelectValidationState,
+            },
+        ],
+        [
+            'shape',
+            {
+                grid:      { columns: 1, rows: 4 },
+                code:      SelectShapeRaw,
+                component: SelectShape,
+            },
+        ],
+        [
+            'with-label-and-helper-text',
+            {
+                code:      SelectWithLabelAndHelperTextRaw,
+                component: SelectWithLabelAndHelperText,
+            },
+        ],
+        [
+            'hidden-label',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      SelectHiddenLabelRaw,
+                component: SelectHiddenLabel,
+            },
+        ],
+        [
+            'disabled',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      DisabledSelectRaw,
+                component: DisabledSelect,
+            },
+        ],
+        [
+            'datalist',
+            {
+                code:      SelectAsDatalistRaw,
+                component: SelectAsDatalist,
+            },
+        ],
+        [
+            'optgroup',
+            {
+                code:      SelectWithOptgroupRaw,
+                component: SelectWithOptgroup,
+            },
+        ],
+        [
+            'ref-usage',
+            {
+                grid:      { columns: 1, rows: 2 },
+                code:      SelectRefUsageRaw,
+                component: SelectRefUsage,
+            },
+        ],
+    ]);
+});
 </script>

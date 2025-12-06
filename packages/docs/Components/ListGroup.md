@@ -39,3 +39,13 @@
 ### Invoice
 
 <ListGroupDocs section="invoice" />
+
+## Api
+
+### Props
+
+<ListGroupDocs section="props" />
+
+### Slots
+
+<ListGroupDocs section="slots" />

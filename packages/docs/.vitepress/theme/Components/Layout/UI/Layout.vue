@@ -105,5 +105,8 @@ onContentUpdated(() => {
     docsHeadings.value = document.querySelectorAll('.VPDoc :where(h1,h2,h3,h4,h5,h6)');
 });
 
-onMounted(() => useFlyonUIThemeFont(useColorMode<FlyonUITheme>({ storageKey: vitepressThemeLocalStorageKey })));
+onMounted(() => useFlyonUIThemeFont(
+    useColorMode<FlyonUITheme>({ storageKey: vitepressThemeLocalStorageKey }),
+    '--vp-font-family-base',
+));
 </script>
