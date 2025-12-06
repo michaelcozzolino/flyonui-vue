@@ -48,7 +48,7 @@
 ### Full control
 
 If you want full control over both tabs and contents you can use the `FoTab` and `FoTabContent` components allowing 
-you to customize each tab and content according to your stile
+you to customize each tab and content according to your style
 
 <TabsDocs section="full-control" />
 
