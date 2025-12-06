@@ -1,20 +1,20 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultSwapRaw"
-                 :component="DefaultSwap"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultSwapRaw"
+                      :component="DefaultSwap"
     />
 
-    <CodeSnippet v-else-if="section === 'rotation'"
-                 :data-test-screenshot="section"
-                 :code="SwapRotationRaw"
-                 :component="SwapRotation"
+    <ComponentPreview v-else-if="section === 'rotation'"
+                      :data-test-screenshot="section"
+                      :code="SwapRotationRaw"
+                      :component="SwapRotation"
     />
 
-    <CodeSnippet v-else-if="section === 'flip'"
-                 :data-test-screenshot="section"
-                 :code="SwapFlipRaw"
-                 :component="SwapFlip"
+    <ComponentPreview v-else-if="section === 'flip'"
+                      :data-test-screenshot="section"
+                      :code="SwapFlipRaw"
+                      :component="SwapFlip"
     />
 
     <ComponentsApiDocs v-else
@@ -27,7 +27,7 @@
 import type { ApiType } from '@/Api/Types/Api.ts';
 import type { Default } from 'flyonui-vue';
 
-import CodeSnippet       from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview  from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultSwap       from '@/Components/Swap/DefaultSwap.vue';
 import DefaultSwapRaw    from '@/Components/Swap/DefaultSwap.vue?raw';

@@ -1,64 +1,64 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultPaginationRaw"
-                 :component="DefaultPagination"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultPaginationRaw"
+                      :component="DefaultPagination"
     />
 
-    <CodeSnippet v-else-if="section === 'soft'"
-                 :data-test-screenshot="section"
-                 :code="SoftPaginationRaw"
-                 :component="SoftPagination"
+    <ComponentPreview v-else-if="section === 'soft'"
+                      :data-test-screenshot="section"
+                      :code="SoftPaginationRaw"
+                      :component="SoftPagination"
     />
 
-    <CodeSnippet v-else-if="section === 'outline'"
-                 :data-test-screenshot="section"
-                 :code="OutlinePaginationRaw"
-                 :component="OutlinePagination"
+    <ComponentPreview v-else-if="section === 'outline'"
+                      :data-test-screenshot="section"
+                      :code="OutlinePaginationRaw"
+                      :component="OutlinePagination"
     />
 
-    <CodeSnippet v-else-if="section === 'shape'"
-                 :data-test-screenshot="section"
-                 :code="PaginationShapeRaw"
-                 :component="PaginationShape"
+    <ComponentPreview v-else-if="section === 'shape'"
+                      :data-test-screenshot="section"
+                      :code="PaginationShapeRaw"
+                      :component="PaginationShape"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="PaginationSizeRaw"
-                 :component="PaginationSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="PaginationSizeRaw"
+                      :component="PaginationSize"
     />
 
-    <CodeSnippet v-else-if="section === 'alignment'"
-                 :data-test-screenshot="section"
-                 :code="PaginationAlignmentRaw"
-                 :component="PaginationAlignment"
-                 :preview="{ columns: 1, rows: 3 }"
+    <ComponentPreview v-else-if="section === 'alignment'"
+                      :data-test-screenshot="section"
+                      :code="PaginationAlignmentRaw"
+                      :component="PaginationAlignment"
+                      :grid="{ columns: 1, rows: 3 }"
     />
 
-    <CodeSnippet v-else-if="section === 'disabled-button'"
-                 :data-test-screenshot="section"
-                 :code="DisabledButtonPaginationRaw"
-                 :component="DisabledButtonPagination"
+    <ComponentPreview v-else-if="section === 'disabled-button'"
+                      :data-test-screenshot="section"
+                      :code="DisabledButtonPaginationRaw"
+                      :component="DisabledButtonPagination"
     />
 
-    <CodeSnippet v-else-if="section === 'with-icon'"
-                 :data-test-screenshot="section"
-                 :code="PaginationWithIconRaw"
-                 :component="PaginationWithIcon"
+    <ComponentPreview v-else-if="section === 'with-icon'"
+                      :data-test-screenshot="section"
+                      :code="PaginationWithIconRaw"
+                      :component="PaginationWithIcon"
     />
 
-    <CodeSnippet v-else-if="section === 'with-hidden-text'"
-                 :data-test-screenshot="section"
-                 :code="PaginationWithHiddenTextRaw"
-                 :component="PaginationWithHiddenText"
-                 :preview="{ columns: 1, rows: 6 }"
+    <ComponentPreview v-else-if="section === 'with-hidden-text'"
+                      :data-test-screenshot="section"
+                      :code="PaginationWithHiddenTextRaw"
+                      :component="PaginationWithHiddenText"
+                      :grid="{ columns: 1, rows: 6 }"
     />
 
-    <CodeSnippet v-else-if="section === 'ellipsis'"
-                 :data-test-screenshot="section"
-                 :code="PaginationEllipsisRaw"
-                 :component="PaginationEllipsis"
+    <ComponentPreview v-else-if="section === 'ellipsis'"
+                      :data-test-screenshot="section"
+                      :code="PaginationEllipsisRaw"
+                      :component="PaginationEllipsis"
     />
 
     <ComponentsApiDocs v-else
@@ -70,7 +70,7 @@
 <script setup lang="ts">
 import type { ApiType }            from '@/Api/Types/Api.ts';
 import type { Default }            from 'flyonui-vue';
-import CodeSnippet                 from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview            from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs           from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultPagination           from '@/Navigations/Pagination/DefaultPagination.vue';
 import DefaultPaginationRaw        from '@/Navigations/Pagination/DefaultPagination.vue?raw';

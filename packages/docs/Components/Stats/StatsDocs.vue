@@ -1,50 +1,50 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultStatsRaw"
-                 :component="DefaultStats"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultStatsRaw"
+                      :component="DefaultStats"
     />
 
-    <CodeSnippet v-else-if="section === 'with-avatar'"
-                 :data-test-screenshot="section"
-                 :code="StatsWithAvatarRaw"
-                 :component="StatsWithAvatar"
+    <ComponentPreview v-else-if="section === 'with-avatar'"
+                      :data-test-screenshot="section"
+                      :code="StatsWithAvatarRaw"
+                      :component="StatsWithAvatar"
     />
 
-    <CodeSnippet v-else-if="section === 'with-icons-and-image'"
-                 :data-test-screenshot="section"
-                 :code="StatsWithIconsAndImageRaw"
-                 :component="StatsWithIconsAndImage"
+    <ComponentPreview v-else-if="section === 'with-icons-and-image'"
+                      :data-test-screenshot="section"
+                      :code="StatsWithIconsAndImageRaw"
+                      :component="StatsWithIconsAndImage"
     />
 
-    <CodeSnippet v-else-if="section === 'centered-item'"
-                 :data-test-screenshot="section"
-                 :code="CenteredItemStatsRaw"
-                 :component="CenteredItemStats"
+    <ComponentPreview v-else-if="section === 'centered-item'"
+                      :data-test-screenshot="section"
+                      :code="CenteredItemStatsRaw"
+                      :component="CenteredItemStats"
     />
 
-    <CodeSnippet v-else-if="section === 'vertical'"
-                 :data-test-screenshot="section"
-                 :code="VerticalStatsRaw"
-                 :component="VerticalStats"
+    <ComponentPreview v-else-if="section === 'vertical'"
+                      :data-test-screenshot="section"
+                      :code="VerticalStatsRaw"
+                      :component="VerticalStats"
     />
 
-    <CodeSnippet v-else-if="section === 'with-progress-bar'"
-                 :data-test-screenshot="section"
-                 :code="StatsWithProgressBarRaw"
-                 :component="StatsWithProgressBar"
+    <ComponentPreview v-else-if="section === 'with-progress-bar'"
+                      :data-test-screenshot="section"
+                      :code="StatsWithProgressBarRaw"
+                      :component="StatsWithProgressBar"
     />
 
-    <CodeSnippet v-else-if="section === 'with-actions-button'"
-                 :data-test-screenshot="section"
-                 :code="StatsWithActionsButtonRaw"
-                 :component="StatsWithActionsButton"
+    <ComponentPreview v-else-if="section === 'with-actions-button'"
+                      :data-test-screenshot="section"
+                      :code="StatsWithActionsButtonRaw"
+                      :component="StatsWithActionsButton"
     />
 
-    <CodeSnippet v-else-if="section === 'bordered'"
-                 :data-test-screenshot="section"
-                 :code="BorderedStatsRaw"
-                 :component="BorderedStats"
+    <ComponentPreview v-else-if="section === 'bordered'"
+                      :data-test-screenshot="section"
+                      :code="BorderedStatsRaw"
+                      :component="BorderedStats"
     />
 
     <ComponentsApiDocs v-else
@@ -56,7 +56,7 @@
 <script setup lang="ts">
 import type { ApiType }          from '@/Api/Types/Api.ts';
 import type { Default }          from 'flyonui-vue';
-import CodeSnippet               from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview          from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs         from '@/Api/UI/ComponentsApiDocs.vue';
 import BorderedStats             from '@/Components/Stats/BorderedStats.vue';
 import BorderedStatsRaw          from '@/Components/Stats/BorderedStats.vue?raw';

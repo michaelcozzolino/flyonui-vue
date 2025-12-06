@@ -1,137 +1,137 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultMenuRaw"
-                 :component="DefaultMenu"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultMenuRaw"
+                      :component="DefaultMenu"
     />
 
-    <CodeSnippet v-else-if="section === 'icon'"
-                 :data-test-screenshot="section"
-                 :code="IconMenuRaw"
-                 :component="IconMenu"
+    <ComponentPreview v-else-if="section === 'icon'"
+                      :data-test-screenshot="section"
+                      :code="IconMenuRaw"
+                      :component="IconMenu"
     />
 
-    <CodeSnippet v-else-if="section === 'only-icon'"
-                 :data-test-screenshot="section"
-                 :code="OnlyIconMenuRaw"
-                 :component="OnlyIconMenu"
+    <ComponentPreview v-else-if="section === 'only-icon'"
+                      :data-test-screenshot="section"
+                      :code="OnlyIconMenuRaw"
+                      :component="OnlyIconMenu"
     />
 
-    <CodeSnippet v-else-if="section === 'orientation'"
-                 :data-test-screenshot="section"
-                 :code="MenuOrientationRaw"
-                 :component="MenuOrientation"
+    <ComponentPreview v-else-if="section === 'orientation'"
+                      :data-test-screenshot="section"
+                      :code="MenuOrientationRaw"
+                      :component="MenuOrientation"
     />
 
-    <CodeSnippet v-else-if="section === 'with-tooltip'"
-                 :data-test-screenshot="section"
-                 :code="MenuWithTooltipRaw"
-                 :component="MenuWithTooltip"
+    <ComponentPreview v-else-if="section === 'with-tooltip'"
+                      :data-test-screenshot="section"
+                      :code="MenuWithTooltipRaw"
+                      :component="MenuWithTooltip"
     />
 
-    <CodeSnippet v-else-if="section === 'with-disabled-item'"
-                 :data-test-screenshot="section"
-                 :code="DisabledItemMenuRaw"
-                 :component="DisabledItemMenu"
+    <ComponentPreview v-else-if="section === 'with-disabled-item'"
+                      :data-test-screenshot="section"
+                      :code="DisabledItemMenuRaw"
+                      :component="DisabledItemMenu"
     />
 
-    <CodeSnippet v-else-if="section === 'with-badge'"
-                 :data-test-screenshot="section"
-                 :code="MenuWithBadgeRaw"
-                 :component="MenuWithBadge"
+    <ComponentPreview v-else-if="section === 'with-badge'"
+                      :data-test-screenshot="section"
+                      :code="MenuWithBadgeRaw"
+                      :component="MenuWithBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'with-active-item-vue-router'"
-                 :data-test-screenshot="section"
-                 :code="ActiveItemMenuVueRouterRaw"
-                 :component="ActiveItemMenuExternalRouter"
+    <ComponentPreview v-else-if="section === 'with-active-item-vue-router'"
+                      :data-test-screenshot="section"
+                      :code="ActiveItemMenuVueRouterRaw"
+                      :component="ActiveItemMenuExternalRouter"
     />
 
-    <CodeSnippet v-else-if="section === 'with-active-item-external-router'"
-                 :data-test-screenshot="section"
-                 :code="ActiveItemMenuExternalRouterRaw"
-                 :component="ActiveItemMenuExternalRouter"
+    <ComponentPreview v-else-if="section === 'with-active-item-external-router'"
+                      :data-test-screenshot="section"
+                      :code="ActiveItemMenuExternalRouterRaw"
+                      :component="ActiveItemMenuExternalRouter"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="MenuSizeRaw"
-                 :component="MenuSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="MenuSizeRaw"
+                      :component="MenuSize"
     />
 
-    <CodeSnippet v-else-if="section === 'flushed'"
-                 :data-test-screenshot="section"
-                 :code="FlushedMenuRaw"
-                 :component="FlushedMenu"
+    <ComponentPreview v-else-if="section === 'flushed'"
+                      :data-test-screenshot="section"
+                      :code="FlushedMenuRaw"
+                      :component="FlushedMenu"
     />
 
-    <CodeSnippet v-else-if="section === 'with-title'"
-                 :data-test-screenshot="section"
-                 :code="MenuWithTitleRaw"
-                 :component="MenuWithTitle"
+    <ComponentPreview v-else-if="section === 'with-title'"
+                      :data-test-screenshot="section"
+                      :code="MenuWithTitleRaw"
+                      :component="MenuWithTitle"
     />
 
-    <CodeSnippet v-else-if="section === 'with-title-as-parent'"
-                 :data-test-screenshot="section"
-                 :code="MenuWithTitleAsParentRaw"
-                 :component="MenuWithTitleAsParent"
+    <ComponentPreview v-else-if="section === 'with-title-as-parent'"
+                      :data-test-screenshot="section"
+                      :code="MenuWithTitleAsParentRaw"
+                      :component="MenuWithTitleAsParent"
     />
 
-    <CodeSnippet v-else-if="section === 'with-submenu'"
-                 :data-test-screenshot="section"
-                 :code="[
-                     {
-                         title: 'Item.ts',
-                         code: ItemRaw,
-                     },
-                     {
-                         title: 'MenuWithSubmenu.vue',
-                         code: MenuWithSubmenuRaw,
-                     },
-                     {
-                         title: 'MenuWithSubmenuNode.vue',
-                         code: MenuWithSubmenuNodeRaw,
-                     },
-                 ]"
-                 :component="MenuWithSubmenu"
+    <ComponentPreview v-else-if="section === 'with-submenu'"
+                      :data-test-screenshot="section"
+                      :code="[
+                          {
+                              title: 'Item.ts',
+                              code: ItemRaw,
+                          },
+                          {
+                              title: 'MenuWithSubmenu.vue',
+                              code: MenuWithSubmenuRaw,
+                          },
+                          {
+                              title: 'MenuWithSubmenuNode.vue',
+                              code: MenuWithSubmenuNodeRaw,
+                          },
+                      ]"
+                      :component="MenuWithSubmenu"
     />
 
-    <CodeSnippet v-else-if="section === 'with-horizontal-submenu'"
-                 :data-test-screenshot="section"
-                 :code="[
-                     {
-                         title: 'Item.ts',
-                         code: ItemRaw,
-                     },
-                     {
-                         title: 'MenuWithHorizontalSubmenu.vue',
-                         code: MenuWithHorizontalSubmenuRaw,
-                     },
-                     {
-                         title: 'MenuWithSubmenuNode.vue',
-                         code: MenuWithSubmenuNodeRaw,
-                     },
-                 ]"
-                 :component="MenuWithHorizontalSubmenu"
+    <ComponentPreview v-else-if="section === 'with-horizontal-submenu'"
+                      :data-test-screenshot="section"
+                      :code="[
+                          {
+                              title: 'Item.ts',
+                              code: ItemRaw,
+                          },
+                          {
+                              title: 'MenuWithHorizontalSubmenu.vue',
+                              code: MenuWithHorizontalSubmenuRaw,
+                          },
+                          {
+                              title: 'MenuWithSubmenuNode.vue',
+                              code: MenuWithSubmenuNodeRaw,
+                          },
+                      ]"
+                      :component="MenuWithHorizontalSubmenu"
     />
 
-    <CodeSnippet v-else-if="section === 'mega-with-submenu'"
-                 :data-test-screenshot="section"
-                 :code="[
-                     {
-                         title: 'Item.ts',
-                         code: ItemRaw,
-                     },
-                     {
-                         title: 'MegaMenuWithSubmenu.vue',
-                         code: MegaMenuWithSubmenuRaw,
-                     },
-                     {
-                         title: 'MenuWithSubmenuNode.vue',
-                         code: MenuWithSubmenuNodeRaw,
-                     },
-                 ]"
-                 :component="MegaMenuWithSubmenu"
+    <ComponentPreview v-else-if="section === 'mega-with-submenu'"
+                      :data-test-screenshot="section"
+                      :code="[
+                          {
+                              title: 'Item.ts',
+                              code: ItemRaw,
+                          },
+                          {
+                              title: 'MegaMenuWithSubmenu.vue',
+                              code: MegaMenuWithSubmenuRaw,
+                          },
+                          {
+                              title: 'MenuWithSubmenuNode.vue',
+                              code: MenuWithSubmenuNodeRaw,
+                          },
+                      ]"
+                      :component="MegaMenuWithSubmenu"
     />
 
     <ComponentsApiDocs v-else
@@ -142,7 +142,7 @@
 
 <script setup lang="ts">
 import type { ApiType }                from '@/Api/Types/Api.ts';
-import CodeSnippet                     from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview                from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs               from '@/Api/UI/ComponentsApiDocs.vue';
 import ActiveItemMenuExternalRouter    from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue';
 import ActiveItemMenuExternalRouterRaw from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue?raw';

@@ -1,19 +1,19 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultNavbarRaw"
-                 :component="DefaultNavbar"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultNavbarRaw"
+                      :component="DefaultNavbar"
     />
 
-    <CodeSnippet v-else-if="section === 'with-logo'"
-                 :data-test-screenshot="section"
-                 :code="NavbarWithLogoRaw"
-                 :component="NavbarWithLogo"
+    <ComponentPreview v-else-if="section === 'with-logo'"
+                      :data-test-screenshot="section"
+                      :code="NavbarWithLogoRaw"
+                      :component="NavbarWithLogo"
     />
 </template>
 
 <script setup lang="ts">
-import CodeSnippet       from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview  from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import DefaultNavbar     from '@/Navigations/Navbar/DefaultNavbar.vue';
 import DefaultNavbarRaw  from '@/Navigations/Navbar/DefaultNavbar.vue?raw';
 import NavbarWithLogo    from '@/Navigations/Navbar/NavbarWithLogo.vue';

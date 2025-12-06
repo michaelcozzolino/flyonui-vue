@@ -1,63 +1,63 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultListGroupRaw"
-                 :component="DefaultListGroup"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultListGroupRaw"
+                      :component="DefaultListGroup"
     />
 
-    <CodeSnippet v-else-if="section === 'with-icons'"
-                 :data-test-screenshot="section"
-                 :code="ListGroupWithIconsRaw"
-                 :component="ListGroupWithIcons"
+    <ComponentPreview v-else-if="section === 'with-icons'"
+                      :data-test-screenshot="section"
+                      :code="ListGroupWithIconsRaw"
+                      :component="ListGroupWithIcons"
     />
 
-    <CodeSnippet v-else-if="section === 'with-badges'"
-                 :data-test-screenshot="section"
-                 :code="ListGroupWithBadgesRaw"
-                 :component="ListGroupWithBadges"
+    <ComponentPreview v-else-if="section === 'with-badges'"
+                      :data-test-screenshot="section"
+                      :code="ListGroupWithBadgesRaw"
+                      :component="ListGroupWithBadges"
     />
 
-    <CodeSnippet v-else-if="section === 'horizontal'"
-                 :data-test-screenshot="section"
-                 :code="HorizontalListGroupRaw"
-                 :component="HorizontalListGroup"
+    <ComponentPreview v-else-if="section === 'horizontal'"
+                      :data-test-screenshot="section"
+                      :code="HorizontalListGroupRaw"
+                      :component="HorizontalListGroup"
     />
 
-    <CodeSnippet v-else-if="section === 'flushed'"
-                 :data-test-screenshot="section"
-                 :code="FlushedListGroupRaw"
-                 :component="FlushedListGroup"
+    <ComponentPreview v-else-if="section === 'flushed'"
+                      :data-test-screenshot="section"
+                      :code="FlushedListGroupRaw"
+                      :component="FlushedListGroup"
     />
 
-    <CodeSnippet v-else-if="section === 'without-gutters'"
-                 :data-test-screenshot="section"
-                 :code="ListGroupWithoutGuttersRaw"
-                 :component="ListGroupWithoutGutters"
+    <ComponentPreview v-else-if="section === 'without-gutters'"
+                      :data-test-screenshot="section"
+                      :code="ListGroupWithoutGuttersRaw"
+                      :component="ListGroupWithoutGutters"
     />
 
-    <CodeSnippet v-else-if="section === 'striped'"
-                 :data-test-screenshot="section"
-                 :code="StripedListGroupRaw"
-                 :component="StripedListGroup"
+    <ComponentPreview v-else-if="section === 'striped'"
+                      :data-test-screenshot="section"
+                      :code="StripedListGroupRaw"
+                      :component="StripedListGroup"
     />
 
-    <CodeSnippet v-else-if="section === 'with-checkbox'"
-                 :data-test-screenshot="section"
-                 :code="ListGroupWithCheckboxRaw"
-                 :component="ListGroupWithCheckbox"
-                 :preview="{ columns: 1, rows: 1 }"
+    <ComponentPreview v-else-if="section === 'with-checkbox'"
+                      :data-test-screenshot="section"
+                      :code="ListGroupWithCheckboxRaw"
+                      :component="ListGroupWithCheckbox"
+                      :grid="{ columns: 1, rows: 1 }"
     />
 
-    <CodeSnippet v-else-if="section === 'invoice'"
-                 :data-test-screenshot="section"
-                 :code="InvoiceListGroupRaw"
-                 :component="InvoiceListGroup"
+    <ComponentPreview v-else-if="section === 'invoice'"
+                      :data-test-screenshot="section"
+                      :code="InvoiceListGroupRaw"
+                      :component="InvoiceListGroup"
     />
 </template>
 
 <script setup lang="ts">
 import type { Default }           from 'flyonui-vue';
-import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview           from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import DefaultListGroup           from '@/Components/ListGroup/DefaultListGroup.vue';
 import DefaultListGroupRaw        from '@/Components/ListGroup/DefaultListGroup.vue?raw';
 import FlushedListGroup           from '@/Components/ListGroup/FlushedListGroup.vue';

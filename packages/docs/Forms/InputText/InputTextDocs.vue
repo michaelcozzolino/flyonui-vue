@@ -1,98 +1,98 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultInputTextRaw"
-                 :component="DefaultInputText"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultInputTextRaw"
+                      :component="DefaultInputText"
     />
 
-    <CodeSnippet v-else-if="section === 'with-placeholder'"
-                 :data-test-screenshot="section"
-                 :code="InputTextWithPlaceholderRaw"
-                 :component="InputTextWithPlaceholder"
+    <ComponentPreview v-else-if="section === 'with-placeholder'"
+                      :data-test-screenshot="section"
+                      :code="InputTextWithPlaceholderRaw"
+                      :component="InputTextWithPlaceholder"
     />
 
-    <CodeSnippet v-else-if="section === 'with-label-and-helper-text'"
-                 :data-test-screenshot="section"
-                 :code="InputTextWithLabelAndHelperTextRaw"
-                 :component="InputTextWithLabelAndHelperText"
-                 :preview="{ columns: 1, rows: 4 }"
+    <ComponentPreview v-else-if="section === 'with-label-and-helper-text'"
+                      :data-test-screenshot="section"
+                      :code="InputTextWithLabelAndHelperTextRaw"
+                      :component="InputTextWithLabelAndHelperText"
+                      :grid="{ columns: 1, rows: 4 }"
     />
 
-    <CodeSnippet v-else-if="section === 'hidden-label'"
-                 :data-test-screenshot="section"
-                 :code="InputTextHiddenLabelRaw"
-                 :component="InputTextHiddenLabel"
+    <ComponentPreview v-else-if="section === 'hidden-label'"
+                      :data-test-screenshot="section"
+                      :code="InputTextHiddenLabelRaw"
+                      :component="InputTextHiddenLabel"
     />
 
-    <CodeSnippet v-else-if="section === 'floating-label'"
-                 :data-test-screenshot="section"
-                 :code="InputTextFloatingLabelRaw"
-                 :component="InputTextFloatingLabel"
+    <ComponentPreview v-else-if="section === 'floating-label'"
+                      :data-test-screenshot="section"
+                      :code="InputTextFloatingLabelRaw"
+                      :component="InputTextFloatingLabel"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="InputTextSizeRaw"
-                 :component="InputTextSize"
-                 :preview="{ columns: 1, rows: 4 }"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="InputTextSizeRaw"
+                      :component="InputTextSize"
+                      :grid="{ columns: 1, rows: 4 }"
     />
 
-    <CodeSnippet v-else-if="section === 'floating-label-size'"
-                 :data-test-screenshot="section"
-                 :code="InputTextFloatingLabelSizeRaw"
-                 :component="InputTextFloatingLabelSize"
-                 :preview="{ columns: 1, rows: 3 }"
+    <ComponentPreview v-else-if="section === 'floating-label-size'"
+                      :data-test-screenshot="section"
+                      :code="InputTextFloatingLabelSizeRaw"
+                      :component="InputTextFloatingLabelSize"
+                      :grid="{ columns: 1, rows: 3 }"
     />
 
-    <CodeSnippet v-else-if="section === 'validation-state'"
-                 :data-test-screenshot="section"
-                 :code="InputTextValidationStateRaw"
-                 :component="InputTextValidationState"
-                 :preview="{ columns: 1, rows: 2 }"
+    <ComponentPreview v-else-if="section === 'validation-state'"
+                      :data-test-screenshot="section"
+                      :code="InputTextValidationStateRaw"
+                      :component="InputTextValidationState"
+                      :grid="{ columns: 1, rows: 2 }"
     />
 
-    <CodeSnippet v-else-if="section === 'inline-label'"
-                 :data-test-screenshot="section"
-                 :code="InputTextInlineLabelRaw"
-                 :component="InputTextInlineLabel"
+    <ComponentPreview v-else-if="section === 'inline-label'"
+                      :data-test-screenshot="section"
+                      :code="InputTextInlineLabelRaw"
+                      :component="InputTextInlineLabel"
     />
 
-    <CodeSnippet v-else-if="section === 'with-icon'"
-                 :data-test-screenshot="section"
-                 :code="InputTextWithIconRaw"
-                 :component="InputTextWithIcon"
+    <ComponentPreview v-else-if="section === 'with-icon'"
+                      :data-test-screenshot="section"
+                      :code="InputTextWithIconRaw"
+                      :component="InputTextWithIcon"
     />
 
-    <CodeSnippet v-else-if="section === 'shape'"
-                 :data-test-screenshot="section"
-                 :code="InputTextShapeRaw"
-                 :component="InputTextShape"
-                 :preview="{ columns: 1, rows: 2 }"
+    <ComponentPreview v-else-if="section === 'shape'"
+                      :data-test-screenshot="section"
+                      :code="InputTextShapeRaw"
+                      :component="InputTextShape"
+                      :grid="{ columns: 1, rows: 2 }"
     />
 
-    <CodeSnippet v-else-if="section === 'without-focus'"
-                 :data-test-screenshot="section"
-                 :code="InputTextWithoutFocusRaw"
-                 :component="InputTextWithoutFocus"
+    <ComponentPreview v-else-if="section === 'without-focus'"
+                      :data-test-screenshot="section"
+                      :code="InputTextWithoutFocusRaw"
+                      :component="InputTextWithoutFocus"
     />
 
-    <CodeSnippet v-else-if="section === 'disabled'"
-                 :data-test-screenshot="section"
-                 :code="DisabledInputTextRaw"
-                 :component="DisabledInputText"
-                 :preview="{ columns: 1, rows: 2 }"
+    <ComponentPreview v-else-if="section === 'disabled'"
+                      :data-test-screenshot="section"
+                      :code="DisabledInputTextRaw"
+                      :component="DisabledInputText"
+                      :grid="{ columns: 1, rows: 2 }"
     />
 
-    <CodeSnippet v-else-if="section === 'readonly'"
-                 :data-test-screenshot="section"
-                 :code="ReadonlyInputTextRaw"
-                 :component="ReadonlyInputText"
+    <ComponentPreview v-else-if="section === 'readonly'"
+                      :data-test-screenshot="section"
+                      :code="ReadonlyInputTextRaw"
+                      :component="ReadonlyInputText"
     />
 
-    <CodeSnippet v-else-if="section === 'join'"
-                 :data-test-screenshot="section"
-                 :code="JoinInputTextRaw"
-                 :component="JoinInputText"
+    <ComponentPreview v-else-if="section === 'join'"
+                      :data-test-screenshot="section"
+                      :code="JoinInputTextRaw"
+                      :component="JoinInputText"
     />
 
     <template v-else>
@@ -105,7 +105,7 @@
 <script setup lang="ts">
 import type { ApiType }                   from '@/Api/Types/Api.ts';
 import type { Default }                   from 'flyonui-vue';
-import CodeSnippet                        from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview                   from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs                  from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultInputText                   from '@/Forms/InputText/DefaultInputText.vue';
 import DefaultInputTextRaw                from '@/Forms/InputText/DefaultInputText.vue?raw';

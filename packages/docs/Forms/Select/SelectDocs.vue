@@ -1,89 +1,89 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultSelectRaw"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :component="DefaultSelect"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultSelectRaw"
+                      :grid="{ columns: 1, rows: 2 }"
+                      :component="DefaultSelect"
     />
 
-    <CodeSnippet v-else-if="section === 'floating-label'"
-                 :data-test-screenshot="section"
-                 :code="SelectFloatingLabelRaw"
-                 :component="SelectFloatingLabel"
+    <ComponentPreview v-else-if="section === 'floating-label'"
+                      :data-test-screenshot="section"
+                      :code="SelectFloatingLabelRaw"
+                      :component="SelectFloatingLabel"
     />
 
-    <CodeSnippet v-else-if="section === 'default-size'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 4 }"
-                 :code="DefaultSelectSizeRaw"
-                 :component="DefaultSelectSize"
+    <ComponentPreview v-else-if="section === 'default-size'"
+                      :data-test-screenshot="section"
+                      :grid="{ columns: 1, rows: 4 }"
+                      :code="DefaultSelectSizeRaw"
+                      :component="DefaultSelectSize"
     />
 
-    <CodeSnippet v-else-if="section === 'floating-label-size'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 3 }"
-                 :code="SelectFloatingLabelSizeRaw"
-                 :component="SelectFloatingLabelSize"
+    <ComponentPreview v-else-if="section === 'floating-label-size'"
+                      :data-test-screenshot="section"
+                      :grid="{ columns: 1, rows: 3 }"
+                      :code="SelectFloatingLabelSizeRaw"
+                      :component="SelectFloatingLabelSize"
     />
 
-    <CodeSnippet v-else-if="section === 'with-icon'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :code="SelectWithIconRaw"
-                 :component="SelectWithIcon"
+    <ComponentPreview v-else-if="section === 'with-icon'"
+                      :data-test-screenshot="section"
+                      :grid="{ columns: 1, rows: 2 }"
+                      :code="SelectWithIconRaw"
+                      :component="SelectWithIcon"
     />
 
-    <CodeSnippet v-else-if="section === 'validation-state'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 4 }"
-                 :code="SelectValidationStateRaw"
-                 :component="SelectValidationState"
+    <ComponentPreview v-else-if="section === 'validation-state'"
+                      :data-test-screenshot="section"
+                      :grid="{ columns: 1, rows: 4 }"
+                      :code="SelectValidationStateRaw"
+                      :component="SelectValidationState"
     />
 
-    <CodeSnippet v-else-if="section === 'shape'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 4 }"
-                 :code="SelectShapeRaw"
-                 :component="SelectShape"
+    <ComponentPreview v-else-if="section === 'shape'"
+                      :data-test-screenshot="section"
+                      :grid="{ columns: 1, rows: 4 }"
+                      :code="SelectShapeRaw"
+                      :component="SelectShape"
     />
 
-    <CodeSnippet v-else-if="section === 'with-label-and-helper-text'"
-                 :data-test-screenshot="section"
-                 :code="SelectWithLabelAndHelperTextRaw"
-                 :component="SelectWithLabelAndHelperText"
+    <ComponentPreview v-else-if="section === 'with-label-and-helper-text'"
+                      :data-test-screenshot="section"
+                      :code="SelectWithLabelAndHelperTextRaw"
+                      :component="SelectWithLabelAndHelperText"
     />
 
-    <CodeSnippet v-else-if="section === 'hidden-label'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :code="SelectHiddenLabelRaw"
-                 :component="SelectHiddenLabel"
+    <ComponentPreview v-else-if="section === 'hidden-label'"
+                      :data-test-screenshot="section"
+                      :grid="{ columns: 1, rows: 2 }"
+                      :code="SelectHiddenLabelRaw"
+                      :component="SelectHiddenLabel"
     />
 
-    <CodeSnippet v-else-if="section === 'disabled'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :code="DisabledSelectRaw"
-                 :component="DisabledSelect"
+    <ComponentPreview v-else-if="section === 'disabled'"
+                      :data-test-screenshot="section"
+                      :grid="{ columns: 1, rows: 2 }"
+                      :code="DisabledSelectRaw"
+                      :component="DisabledSelect"
     />
 
-    <CodeSnippet v-else-if="section === 'datalist'"
-                 :data-test-screenshot="section"
-                 :code="SelectAsDatalistRaw"
-                 :component="SelectAsDatalist"
+    <ComponentPreview v-else-if="section === 'datalist'"
+                      :data-test-screenshot="section"
+                      :code="SelectAsDatalistRaw"
+                      :component="SelectAsDatalist"
     />
 
-    <CodeSnippet v-else-if="section === 'optgroup'"
-                 :data-test-screenshot="section"
-                 :code="SelectWithOptgroupRaw"
-                 :component="SelectWithOptgroup"
+    <ComponentPreview v-else-if="section === 'optgroup'"
+                      :data-test-screenshot="section"
+                      :code="SelectWithOptgroupRaw"
+                      :component="SelectWithOptgroup"
     />
 
-    <CodeSnippet v-else-if="section === 'ref-usage'"
-                 :data-test-screenshot="section"
-                 :preview="{ columns: 1, rows: 2 }"
-                 :code="SelectRefUsageRaw"
-                 :component="SelectRefUsage"
+    <ComponentPreview v-else-if="section === 'ref-usage'"
+                      :data-test-screenshot="section"
+                      :grid="{ columns: 1, rows: 2 }"
+                      :code="SelectRefUsageRaw"
+                      :component="SelectRefUsage"
     />
 
     <ComponentsApiDocs v-else
@@ -95,7 +95,7 @@
 <script setup lang="ts">
 import type { ApiType }                from '@/Api/Types/Api.ts';
 import type { Default }                from 'flyonui-vue';
-import CodeSnippet                     from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview                from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs               from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultSelect                   from '@/Forms/Select/DefaultSelect.vue';
 import DefaultSelectRaw                from '@/Forms/Select/DefaultSelect.vue?raw';

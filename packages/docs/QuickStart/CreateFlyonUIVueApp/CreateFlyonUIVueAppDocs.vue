@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import CodePreview             from '@/.vitepress/theme/Components/ComponentPreview/UI/CodePreview.vue';
+import CodePreview             from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import ConfigurationExampleRaw from './ConfigurationExample.ts?raw';
 </script>

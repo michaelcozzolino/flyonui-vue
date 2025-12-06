@@ -1,74 +1,74 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultSwitchRaw"
-                 :component="DefaultSwitch"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultSwitchRaw"
+                      :component="DefaultSwitch"
     />
 
-    <CodeSnippet v-else-if="section === 'color'"
-                 :data-test-screenshot="section"
-                 :code="SwitchColorRaw"
-                 :component="SwitchColor"
+    <ComponentPreview v-else-if="section === 'color'"
+                      :data-test-screenshot="section"
+                      :code="SwitchColorRaw"
+                      :component="SwitchColor"
     />
 
-    <CodeSnippet v-else-if="section === 'outline'"
-                 :data-test-screenshot="section"
-                 :code="OutlineSwitchRaw"
-                 :component="OutlineSwitch"
+    <ComponentPreview v-else-if="section === 'outline'"
+                      :data-test-screenshot="section"
+                      :code="OutlineSwitchRaw"
+                      :component="OutlineSwitch"
     />
 
-    <CodeSnippet v-else-if="section === 'custom-color'"
-                 :data-test-screenshot="section"
-                 :code="SwitchCustomColorRaw"
-                 :component="SwitchCustomColor"
+    <ComponentPreview v-else-if="section === 'custom-color'"
+                      :data-test-screenshot="section"
+                      :code="SwitchCustomColorRaw"
+                      :component="SwitchCustomColor"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="SwitchSizeRaw"
-                 :component="SwitchSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="SwitchSizeRaw"
+                      :component="SwitchSize"
     />
 
-    <CodeSnippet v-else-if="section === 'validation-state'"
-                 :data-test-screenshot="section"
-                 :code="SwitchValidationStateRaw"
-                 :component="SwitchValidationState"
+    <ComponentPreview v-else-if="section === 'validation-state'"
+                      :data-test-screenshot="section"
+                      :code="SwitchValidationStateRaw"
+                      :component="SwitchValidationState"
     />
 
-    <CodeSnippet v-else-if="section === 'icon'"
-                 :data-test-screenshot="section"
-                 :code="SwitchWithIconRaw"
-                 :component="SwitchWithIcon"
+    <ComponentPreview v-else-if="section === 'icon'"
+                      :data-test-screenshot="section"
+                      :code="SwitchWithIconRaw"
+                      :component="SwitchWithIcon"
     />
 
-    <CodeSnippet v-else-if="section === 'state'"
-                 :data-test-screenshot="section"
-                 :code="SwitchStateRaw"
-                 :component="SwitchState"
+    <ComponentPreview v-else-if="section === 'state'"
+                      :data-test-screenshot="section"
+                      :code="SwitchStateRaw"
+                      :component="SwitchState"
     />
 
-    <CodeSnippet v-else-if="section === 'inline-group'"
-                 :data-test-screenshot="section"
-                 :code="InlineSwitchGroupRaw"
-                 :component="InlineSwitchGroup"
+    <ComponentPreview v-else-if="section === 'inline-group'"
+                      :data-test-screenshot="section"
+                      :code="InlineSwitchGroupRaw"
+                      :component="InlineSwitchGroup"
     />
 
-    <CodeSnippet v-else-if="section === 'vertical-group'"
-                 :data-test-screenshot="section"
-                 :code="VerticalSwitchGroupRaw"
-                 :component="VerticalSwitchGroup"
+    <ComponentPreview v-else-if="section === 'vertical-group'"
+                      :data-test-screenshot="section"
+                      :code="VerticalSwitchGroupRaw"
+                      :component="VerticalSwitchGroup"
     />
 
-    <CodeSnippet v-else-if="section === 'list-group'"
-                 :data-test-screenshot="section"
-                 :code="SwitchListGroupRaw"
-                 :component="SwitchListGroup"
+    <ComponentPreview v-else-if="section === 'list-group'"
+                      :data-test-screenshot="section"
+                      :code="SwitchListGroupRaw"
+                      :component="SwitchListGroup"
     />
 
-    <CodeSnippet v-else-if="section === 'horizontal-list-group'"
-                 :data-test-screenshot="section"
-                 :code="SwitchHorizontalListGroupRaw"
-                 :component="SwitchHorizontalListGroup"
+    <ComponentPreview v-else-if="section === 'horizontal-list-group'"
+                      :data-test-screenshot="section"
+                      :code="SwitchHorizontalListGroupRaw"
+                      :component="SwitchHorizontalListGroup"
     />
 
     <ComponentsApiDocs v-else
@@ -80,7 +80,7 @@
 <script setup lang="ts">
 import type { ApiType }             from '@/Api/Types/Api';
 import type { Default }             from 'flyonui-vue';
-import CodeSnippet                  from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview             from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs            from '@/Api/UI/ComponentsApiDocs.vue';
 import DefaultSwitch                from '@/Next/Forms/Switch/DefaultSwitch.vue';
 import DefaultSwitchRaw             from '@/Next/Forms/Switch/DefaultSwitch.vue?raw';

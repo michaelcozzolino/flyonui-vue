@@ -1,22 +1,22 @@
 <template>
-    <CodeSnippet v-if="section === 'iconify'"
-                 :code="IconifyIconRaw"
-                 :component="IconifyIcon"
+    <ComponentPreview v-if="section === 'iconify'"
+                      :code="IconifyIconRaw"
+                      :component="IconifyIcon"
     />
 
-    <CodeSnippet v-else-if="section === 'custom'"
-                 :data-test-screenshot="section"
-                 :code="[
-                     { title: 'Vue', code: CustomIconRaw },
-                     { title: 'SvgIcon.vue', code: SvgIconRaw },
-                 ]"
-                 :component="CustomIcon"
+    <ComponentPreview v-else-if="section === 'custom'"
+                      :data-test-screenshot="section"
+                      :code="[
+                          { title: 'Vue', code: CustomIconRaw },
+                          { title: 'SvgIcon.vue', code: SvgIconRaw },
+                      ]"
+                      :component="CustomIcon"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="IconSizeRaw"
-                 :component="IconSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="IconSizeRaw"
+                      :component="IconSize"
     />
 
     <ComponentsApiDocs v-else
@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import type { ApiType }  from '@/Api/Types/Api.ts';
-import CodeSnippet       from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview  from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs from '@/Api/UI/ComponentsApiDocs.vue';
 import CustomIcon        from '@/Customisation/Icons/CustomIcon.vue';
 import CustomIconRaw     from '@/Customisation/Icons/CustomIcon.vue?raw';

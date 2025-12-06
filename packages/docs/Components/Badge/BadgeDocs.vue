@@ -1,63 +1,63 @@
 <template>
-    <CodeSnippet v-if="section === 'solid'"
-                 :data-test-screenshot="section"
-                 :code="SolidBadgeRaw"
-                 :component="SolidBadge"
+    <ComponentPreview v-if="section === 'solid'"
+                      :data-test-screenshot="section"
+                      :code="SolidBadgeRaw"
+                      :component="SolidBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'soft'"
-                 :data-test-screenshot="section"
-                 :code="SoftBadgeRaw"
-                 :component="SoftBadge"
+    <ComponentPreview v-else-if="section === 'soft'"
+                      :data-test-screenshot="section"
+                      :code="SoftBadgeRaw"
+                      :component="SoftBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'outline'"
-                 :data-test-screenshot="section"
-                 :code="OutlineBadgeRaw"
-                 :component="OutlineBadge"
+    <ComponentPreview v-else-if="section === 'outline'"
+                      :data-test-screenshot="section"
+                      :code="OutlineBadgeRaw"
+                      :component="OutlineBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'dash'"
-                 :data-test-screenshot="section"
-                 :code="DashedBadgeRaw"
-                 :component="DashedBadge"
+    <ComponentPreview v-else-if="section === 'dash'"
+                      :data-test-screenshot="section"
+                      :code="DashedBadgeRaw"
+                      :component="DashedBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'pilled'"
-                 :data-test-screenshot="section"
-                 :code="PilledBadgeRaw"
-                 :component="PilledBadge"
+    <ComponentPreview v-else-if="section === 'pilled'"
+                      :data-test-screenshot="section"
+                      :code="PilledBadgeRaw"
+                      :component="PilledBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="BadgeSizeRaw"
-                 :component="BadgeSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="BadgeSizeRaw"
+                      :component="BadgeSize"
     />
 
-    <CodeSnippet v-else-if="section === 'dot-style'"
-                 :data-test-screenshot="section"
-                 :code="DotStyleBadgeRaw"
-                 :component="DotStyleBadge"
+    <ComponentPreview v-else-if="section === 'dot-style'"
+                      :data-test-screenshot="section"
+                      :code="DotStyleBadgeRaw"
+                      :component="DotStyleBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'icon'"
-                 :data-test-screenshot="section"
-                 :code="IconBadgeRaw"
-                 :component="IconBadge"
-                 :preview="{ columns: 8, rows: 2 }"
+    <ComponentPreview v-else-if="section === 'icon'"
+                      :data-test-screenshot="section"
+                      :code="IconBadgeRaw"
+                      :component="IconBadge"
+                      :grid="{ columns: 8, rows: 2 }"
     />
 
-    <CodeSnippet v-else-if="section === 'icon-position'"
-                 :data-test-screenshot="section"
-                 :code="IconPositionBadgeRaw"
-                 :component="IconPositionBadge"
+    <ComponentPreview v-else-if="section === 'icon-position'"
+                      :data-test-screenshot="section"
+                      :code="IconPositionBadgeRaw"
+                      :component="IconPositionBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'in-a-button'"
-                 :data-test-screenshot="section"
-                 :code="BadgeInAButtonRaw"
-                 :component="BadgeInAButton"
+    <ComponentPreview v-else-if="section === 'in-a-button'"
+                      :data-test-screenshot="section"
+                      :code="BadgeInAButtonRaw"
+                      :component="BadgeInAButton"
     />
 
     <ComponentsApiDocs v-else
@@ -68,7 +68,7 @@
 
 <script setup lang="ts">
 import type { ApiType }     from '@/Api/Types/Api.ts';
-import CodeSnippet          from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview     from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs    from '@/Api/UI/ComponentsApiDocs.vue';
 import BadgeInAButton       from '@/Components/Badge/BadgeInAButton.vue';
 import BadgeInAButtonRaw    from '@/Components/Badge/BadgeInAButton.vue?raw';

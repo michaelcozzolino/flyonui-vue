@@ -1,74 +1,74 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultTabsRaw"
-                 :component="DefaultTabs"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultTabsRaw"
+                      :component="DefaultTabs"
     />
 
-    <CodeSnippet v-else-if="section === 'disabled'"
-                 :data-test-screenshot="section"
-                 :code="DisabledTabsRaw"
-                 :component="DisabledTabs"
+    <ComponentPreview v-else-if="section === 'disabled'"
+                      :data-test-screenshot="section"
+                      :code="DisabledTabsRaw"
+                      :component="DisabledTabs"
     />
 
-    <CodeSnippet v-else-if="section === 'filled'"
-                 :data-test-screenshot="section"
-                 :code="FilledTabsRaw"
-                 :component="FilledTabs"
+    <ComponentPreview v-else-if="section === 'filled'"
+                      :data-test-screenshot="section"
+                      :code="FilledTabsRaw"
+                      :component="FilledTabs"
     />
 
-    <CodeSnippet v-else-if="section === 'vertical'"
-                 :data-test-screenshot="section"
-                 :code="VerticalTabsRaw"
-                 :component="VerticalTabs"
+    <ComponentPreview v-else-if="section === 'vertical'"
+                      :data-test-screenshot="section"
+                      :code="VerticalTabsRaw"
+                      :component="VerticalTabs"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="TabsSizeRaw"
-                 :component="TabsSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="TabsSizeRaw"
+                      :component="TabsSize"
     />
 
-    <CodeSnippet v-else-if="section === 'alignment'"
-                 :data-test-screenshot="section"
-                 :code="TabsAlignmentRaw"
-                 :component="TabsAlignment"
+    <ComponentPreview v-else-if="section === 'alignment'"
+                      :data-test-screenshot="section"
+                      :code="TabsAlignmentRaw"
+                      :component="TabsAlignment"
     />
 
-    <CodeSnippet v-else-if="section === 'with-icon'"
-                 :data-test-screenshot="section"
-                 :code="TabsWithIconRaw"
-                 :component="TabsWithIcon"
+    <ComponentPreview v-else-if="section === 'with-icon'"
+                      :data-test-screenshot="section"
+                      :code="TabsWithIconRaw"
+                      :component="TabsWithIcon"
     />
 
-    <CodeSnippet v-else-if="section === 'with-badge'"
-                 :data-test-screenshot="section"
-                 :code="TabsWithBadgeRaw"
-                 :component="TabsWithBadge"
+    <ComponentPreview v-else-if="section === 'with-badge'"
+                      :data-test-screenshot="section"
+                      :code="TabsWithBadgeRaw"
+                      :component="TabsWithBadge"
     />
 
-    <CodeSnippet v-else-if="section === 'responsive'"
-                 :data-test-screenshot="section"
-                 :code="ResponsiveTabsRaw"
-                 :component="ResponsiveTabs"
+    <ComponentPreview v-else-if="section === 'responsive'"
+                      :data-test-screenshot="section"
+                      :code="ResponsiveTabsRaw"
+                      :component="ResponsiveTabs"
     />
 
-    <CodeSnippet v-else-if="section === 'activate-on-hover'"
-                 :data-test-screenshot="section"
-                 :code="ActivateOnHoverTabsRaw"
-                 :component="ActivateOnHoverTabs"
+    <ComponentPreview v-else-if="section === 'activate-on-hover'"
+                      :data-test-screenshot="section"
+                      :code="ActivateOnHoverTabsRaw"
+                      :component="ActivateOnHoverTabs"
     />
 
-    <CodeSnippet v-else-if="section === 'shape'"
-                 :data-test-screenshot="section"
-                 :code="TabsShapeRaw"
-                 :component="TabsShape"
+    <ComponentPreview v-else-if="section === 'shape'"
+                      :data-test-screenshot="section"
+                      :code="TabsShapeRaw"
+                      :component="TabsShape"
     />
 
-    <CodeSnippet v-else-if="section === 'full-control'"
-                 :data-test-screenshot="section"
-                 :code="FullControlTabsRaw"
-                 :component="FullControlTabs"
+    <ComponentPreview v-else-if="section === 'full-control'"
+                      :data-test-screenshot="section"
+                      :code="FullControlTabsRaw"
+                      :component="FullControlTabs"
     />
 
     <ComponentsApiDocs v-else
@@ -80,7 +80,7 @@
 <script setup lang="ts">
 import type { ApiType }       from '@/Api/Types/Api';
 import type { Default }       from 'flyonui-vue';
-import CodeSnippet            from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview       from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs      from '@/Api/UI/ComponentsApiDocs.vue';
 import ActivateOnHoverTabs    from '@/Next/Navigations/Tabs/ActivateOnHoverTabs.vue';
 import ActivateOnHoverTabsRaw from '@/Next/Navigations/Tabs/ActivateOnHoverTabs.vue?raw';

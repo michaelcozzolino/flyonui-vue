@@ -1,56 +1,56 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultCheckboxRaw"
-                 :component="DefaultCheckbox"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultCheckboxRaw"
+                      :component="DefaultCheckbox"
     />
 
-    <CodeSnippet v-else-if="section === 'with-helper-text'"
-                 :data-test-screenshot="section"
-                 :code="CheckboxWithHelperTextRaw"
-                 :component="CheckboxWithHelperText"
+    <ComponentPreview v-else-if="section === 'with-helper-text'"
+                      :data-test-screenshot="section"
+                      :code="CheckboxWithHelperTextRaw"
+                      :component="CheckboxWithHelperText"
     />
 
-    <CodeSnippet v-else-if="section === 'color'"
-                 :data-test-screenshot="section"
-                 :code="CheckboxColorRaw"
-                 :component="CheckboxColor"
+    <ComponentPreview v-else-if="section === 'color'"
+                      :data-test-screenshot="section"
+                      :code="CheckboxColorRaw"
+                      :component="CheckboxColor"
     />
 
-    <CodeSnippet v-else-if="section === 'with-custom-color'"
-                 :data-test-screenshot="section"
-                 :code="CheckboxWithCustomColorRaw"
-                 :component="CheckboxWithCustomColor"
+    <ComponentPreview v-else-if="section === 'with-custom-color'"
+                      :data-test-screenshot="section"
+                      :code="CheckboxWithCustomColorRaw"
+                      :component="CheckboxWithCustomColor"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="CheckboxSizeRaw"
-                 :component="CheckboxSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="CheckboxSizeRaw"
+                      :component="CheckboxSize"
     />
 
-    <CodeSnippet v-else-if="section === 'validation-state'"
-                 :data-test-screenshot="section"
-                 :code="CheckboxValidationStateRaw"
-                 :component="CheckboxValidationState"
+    <ComponentPreview v-else-if="section === 'validation-state'"
+                      :data-test-screenshot="section"
+                      :code="CheckboxValidationStateRaw"
+                      :component="CheckboxValidationState"
     />
 
-    <CodeSnippet v-else-if="section === 'state'"
-                 :data-test-screenshot="section"
-                 :code="CheckboxStateRaw"
-                 :component="CheckboxState"
+    <ComponentPreview v-else-if="section === 'state'"
+                      :data-test-screenshot="section"
+                      :code="CheckboxStateRaw"
+                      :component="CheckboxState"
     />
 
-    <CodeSnippet v-else-if="section === 'inline-group'"
-                 :data-test-screenshot="section"
-                 :code="InlineCheckboxGroupRaw"
-                 :component="InlineCheckboxGroup"
+    <ComponentPreview v-else-if="section === 'inline-group'"
+                      :data-test-screenshot="section"
+                      :code="InlineCheckboxGroupRaw"
+                      :component="InlineCheckboxGroup"
     />
 
-    <CodeSnippet v-else-if="section === 'vertical-group'"
-                 :data-test-screenshot="section"
-                 :code="VerticalCheckboxGroupRaw"
-                 :component="VerticalCheckboxGroup"
+    <ComponentPreview v-else-if="section === 'vertical-group'"
+                      :data-test-screenshot="section"
+                      :code="VerticalCheckboxGroupRaw"
+                      :component="VerticalCheckboxGroup"
     />
 
     <ComponentsApiDocs v-else
@@ -62,7 +62,7 @@
 <script setup lang="ts">
 import type { ApiType }           from '@/Api/Types/Api';
 import type { Default }           from 'flyonui-vue';
-import CodeSnippet                from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview           from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs          from '@/Api/UI/ComponentsApiDocs.vue';
 import CheckboxColor              from '@/Forms/Checkbox/CheckboxColor.vue';
 import CheckboxColorRaw           from '@/Forms/Checkbox/CheckboxColor.vue?raw';

@@ -1,63 +1,63 @@
 <template>
     <!--    todo: screenshot tests in some ways -->
-    <CodeSnippet v-if="section === 'default'"
-                 :code="DefaultModalRaw"
-                 :component="DefaultModal"
+    <ComponentPreview v-if="section === 'default'"
+                      :code="DefaultModalRaw"
+                      :component="DefaultModal"
     />
 
-    <CodeSnippet v-else-if="section === 'fullscreen'"
-                 :code="FullscreenModalRaw"
-                 :component="FullscreenModal"
+    <ComponentPreview v-else-if="section === 'fullscreen'"
+                      :code="FullscreenModalRaw"
+                      :component="FullscreenModal"
     />
 
-    <CodeSnippet v-else-if="section === 'transparent'"
-                 :code="TransparentModalRaw"
-                 :component="TransparentModal"
+    <ComponentPreview v-else-if="section === 'transparent'"
+                      :code="TransparentModalRaw"
+                      :component="TransparentModal"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :code="ModalSizeRaw"
-                 :component="ModalSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :code="ModalSizeRaw"
+                      :component="ModalSize"
     />
 
-    <CodeSnippet v-else-if="section === 'transition'"
-                 :code="ModalTransitionRaw"
-                 :component="ModalTransition"
+    <ComponentPreview v-else-if="section === 'transition'"
+                      :code="ModalTransitionRaw"
+                      :component="ModalTransition"
     />
 
-    <CodeSnippet v-else-if="section === 'scrolling'"
-                 :code="ModalScrollingRaw"
-                 :component="ModalScrolling"
+    <ComponentPreview v-else-if="section === 'scrolling'"
+                      :code="ModalScrollingRaw"
+                      :component="ModalScrolling"
     />
 
-    <CodeSnippet v-else-if="section === 'placement'"
-                 :code="ModalPlacementRaw"
-                 :component="ModalPlacement"
+    <ComponentPreview v-else-if="section === 'placement'"
+                      :code="ModalPlacementRaw"
+                      :component="ModalPlacement"
     />
 
-    <CodeSnippet v-else-if="section === 'video'"
-                 :code="VideoModalRaw"
-                 :component="VideoModal"
+    <ComponentPreview v-else-if="section === 'video'"
+                      :code="VideoModalRaw"
+                      :component="VideoModal"
     />
 
-    <CodeSnippet v-else-if="section === 'backdrop-color'"
-                 :code="ModalBackdropColorRaw"
-                 :component="ModalBackdropColor"
+    <ComponentPreview v-else-if="section === 'backdrop-color'"
+                      :code="ModalBackdropColorRaw"
+                      :component="ModalBackdropColor"
     />
 
-    <CodeSnippet v-else-if="section === 'custom-backdrop-color'"
-                 :code="CustomModalBackdropColorRaw"
-                 :component="CustomModalBackdropColor"
+    <ComponentPreview v-else-if="section === 'custom-backdrop-color'"
+                      :code="CustomModalBackdropColorRaw"
+                      :component="CustomModalBackdropColor"
     />
 
-    <CodeSnippet v-else-if="section === 'backdrop'"
-                 :code="ModalBackdropRaw"
-                 :component="ModalBackdrop"
+    <ComponentPreview v-else-if="section === 'backdrop'"
+                      :code="ModalBackdropRaw"
+                      :component="ModalBackdrop"
     />
 
-    <CodeSnippet v-else-if="section === 'close-on-escape'"
-                 :code="CloseOnEscapeModalRaw"
-                 :component="CloseOnEscapeModal"
+    <ComponentPreview v-else-if="section === 'close-on-escape'"
+                      :code="CloseOnEscapeModalRaw"
+                      :component="CloseOnEscapeModal"
     />
 
     <ComponentsApiDocs v-else
@@ -69,7 +69,7 @@
 <script setup lang="ts">
 import type { ApiType }            from '@/Api/Types/Api.ts';
 import type { Default }            from 'flyonui-vue';
-import CodeSnippet                 from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview            from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs           from '@/Api/UI/ComponentsApiDocs.vue';
 import CloseOnEscapeModal          from '@/Overlays/Modal/CloseOnEscapeModal.vue';
 import CloseOnEscapeModalRaw       from '@/Overlays/Modal/CloseOnEscapeModal.vue?raw';

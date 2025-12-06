@@ -1,104 +1,104 @@
 <template>
-    <CodeSnippet v-if="section === 'default'"
-                 :data-test-screenshot="section"
-                 :code="DefaultTableRaw"
-                 :component="DefaultTable"
+    <ComponentPreview v-if="section === 'default'"
+                      :data-test-screenshot="section"
+                      :code="DefaultTableRaw"
+                      :component="DefaultTable"
     />
 
-    <CodeSnippet v-else-if="section === 'bordered'"
-                 :data-test-screenshot="section"
-                 :code="BorderedTableRaw"
-                 :component="BorderedTable"
+    <ComponentPreview v-else-if="section === 'bordered'"
+                      :data-test-screenshot="section"
+                      :code="BorderedTableRaw"
+                      :component="BorderedTable"
     />
 
-    <CodeSnippet v-else-if="section === 'borderless'"
-                 :data-test-screenshot="section"
-                 :code="BorderlessTableRaw"
-                 :component="BorderlessTable"
+    <ComponentPreview v-else-if="section === 'borderless'"
+                      :data-test-screenshot="section"
+                      :code="BorderlessTableRaw"
+                      :component="BorderlessTable"
     />
 
-    <CodeSnippet v-else-if="section === 'hoverable'"
-                 :data-test-screenshot="section"
-                 :code="HoverableTableRaw"
-                 :component="HoverableTable"
+    <ComponentPreview v-else-if="section === 'hoverable'"
+                      :data-test-screenshot="section"
+                      :code="HoverableTableRaw"
+                      :component="HoverableTable"
     />
 
-    <CodeSnippet v-else-if="section === 'with-highlight'"
-                 :data-test-screenshot="section"
-                 :code="TableWithHighlightRaw"
-                 :component="TableWithHighlight"
+    <ComponentPreview v-else-if="section === 'with-highlight'"
+                      :data-test-screenshot="section"
+                      :code="TableWithHighlightRaw"
+                      :component="TableWithHighlight"
     />
 
-    <CodeSnippet v-else-if="section === 'striped-rows'"
-                 :data-test-screenshot="section"
-                 :code="StripedTableRowsRaw"
-                 :component="StripedTableRows"
+    <ComponentPreview v-else-if="section === 'striped-rows'"
+                      :data-test-screenshot="section"
+                      :code="StripedTableRowsRaw"
+                      :component="StripedTableRows"
     />
 
-    <CodeSnippet v-else-if="section === 'striped-columns'"
-                 :data-test-screenshot="section"
-                 :code="StripedTableColumnsRaw"
-                 :component="StripedTableColumns"
+    <ComponentPreview v-else-if="section === 'striped-columns'"
+                      :data-test-screenshot="section"
+                      :code="StripedTableColumnsRaw"
+                      :component="StripedTableColumns"
     />
 
-    <CodeSnippet v-else-if="section === 'rounded'"
-                 :data-test-screenshot="section"
-                 :code="RoundedTableRaw"
-                 :component="RoundedTable"
+    <ComponentPreview v-else-if="section === 'rounded'"
+                      :data-test-screenshot="section"
+                      :code="RoundedTableRaw"
+                      :component="RoundedTable"
     />
 
-    <CodeSnippet v-else-if="section === 'size'"
-                 :data-test-screenshot="section"
-                 :code="TableSizeRaw"
-                 :component="TableSize"
+    <ComponentPreview v-else-if="section === 'size'"
+                      :data-test-screenshot="section"
+                      :code="TableSizeRaw"
+                      :component="TableSize"
     />
 
-    <CodeSnippet v-else-if="section === 'pinned-rows'"
-                 :data-test-screenshot="section"
-                 :code="PinnedRowsTableRaw"
-                 :component="PinnedRowsTable"
+    <ComponentPreview v-else-if="section === 'pinned-rows'"
+                      :data-test-screenshot="section"
+                      :code="PinnedRowsTableRaw"
+                      :component="PinnedRowsTable"
     />
 
-    <CodeSnippet v-else-if="section === 'pinned-columns'"
-                 :data-test-screenshot="section"
-                 :code="PinnedColumnsTableRaw"
-                 :component="PinnedColumnsTable"
+    <ComponentPreview v-else-if="section === 'pinned-columns'"
+                      :data-test-screenshot="section"
+                      :code="PinnedColumnsTableRaw"
+                      :component="PinnedColumnsTable"
     />
 
-    <CodeSnippet v-else-if="section === 'headless'"
-                 :data-test-screenshot="section"
-                 :code="HeadlessTableRaw"
-                 :component="HeadlessTable"
+    <ComponentPreview v-else-if="section === 'headless'"
+                      :data-test-screenshot="section"
+                      :code="HeadlessTableRaw"
+                      :component="HeadlessTable"
     />
 
-    <CodeSnippet v-else-if="section === 'with-caption'"
-                 :data-test-screenshot="section"
-                 :code="TableWithCaptionRaw"
-                 :component="TableWithCaption"
+    <ComponentPreview v-else-if="section === 'with-caption'"
+                      :data-test-screenshot="section"
+                      :code="TableWithCaptionRaw"
+                      :component="TableWithCaption"
     />
 
-    <CodeSnippet v-else-if="section === 'with-footer'"
-                 :data-test-screenshot="section"
-                 :code="TableWithFooterRaw"
-                 :component="TableWithFooter"
+    <ComponentPreview v-else-if="section === 'with-footer'"
+                      :data-test-screenshot="section"
+                      :code="TableWithFooterRaw"
+                      :component="TableWithFooter"
     />
 
-    <CodeSnippet v-else-if="section === 'responsive'"
-                 :data-test-screenshot="section"
-                 :code="ResponsiveTableRaw"
-                 :component="ResponsiveTable"
+    <ComponentPreview v-else-if="section === 'responsive'"
+                      :data-test-screenshot="section"
+                      :code="ResponsiveTableRaw"
+                      :component="ResponsiveTable"
     />
 
-    <CodeSnippet v-else-if="section === 'with-shadow'"
-                 :data-test-screenshot="section"
-                 :code="TableWithShadowRaw"
-                 :component="TableWithShadow"
+    <ComponentPreview v-else-if="section === 'with-shadow'"
+                      :data-test-screenshot="section"
+                      :code="TableWithShadowRaw"
+                      :component="TableWithShadow"
     />
 
-    <CodeSnippet v-else-if="section === 'with-styled-header'"
-                 :data-test-screenshot="section"
-                 :code="TableWithStyledHeaderRaw"
-                 :component="TableWithStyledHeader"
+    <ComponentPreview v-else-if="section === 'with-styled-header'"
+                      :data-test-screenshot="section"
+                      :code="TableWithStyledHeaderRaw"
+                      :component="TableWithStyledHeader"
     />
 
     <ComponentsApiDocs v-else
@@ -110,7 +110,7 @@
 <script setup lang="ts">
 import type { ApiType }         from '@/Api/Types/Api.ts';
 import type { Default }         from 'flyonui-vue';
-import CodeSnippet              from '@/.vitepress/theme/Components/CodeSnippet/UI/CodeSnippet.vue';
+import ComponentPreview         from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 import ComponentsApiDocs        from '@/Api/UI/ComponentsApiDocs.vue';
 import BorderedTable            from '@/Tables/Table/BorderedTable.vue';
 import BorderedTableRaw         from '@/Tables/Table/BorderedTable.vue?raw';
