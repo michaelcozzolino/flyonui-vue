@@ -11,17 +11,21 @@
                 orientation !== 'horizontal' && $attrs?.class,
             ]"
         >
-            <slot />
+            <slot>
+                {{ useRequiredSlotMessage(componentName) }}
+            </slot>
         </ul>
     </component>
 </template>
 
 <script setup lang="ts">
 import type { ComponentName }               from '@/Lib';
+import type { WithRequiredDefaultSlot }     from '@/Types';
 import type { ListGroupProps }              from '@/UI/Components';
 import { useClass }                         from '@/Lib/UseClass/Internal';
 import { useOrientation }                   from '@/Lib/UseOrientation/Internal';
 import { useStripes }                       from '@/Lib/UseStripes/Internal';
+import { useRequiredSlotMessage }           from '@/Lib/Utils/Internal';
 import { FoFragment }                       from '@/UI/Components/Fragment/Internal';
 import { listGroupOrientationInjectionKey } from '@/UI/Components/ListGroup/Internal';
 import { computed, provide }                from 'vue';
@@ -32,6 +36,8 @@ const props = withDefaults(defineProps<ListGroupProps>(), {
     withoutGutters: false,
     isStriped:      false,
 });
+
+defineSlots<WithRequiredDefaultSlot>();
 
 const componentName: ComponentName = 'FoListGroup';
 
