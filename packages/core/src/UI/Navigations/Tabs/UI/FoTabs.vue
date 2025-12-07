@@ -7,7 +7,7 @@
              orientation === 'vertical' && 'flex',
 
          ]"
-         @click.prevent="focused = true"
+         @click.self.prevent="focused = true"
     >
         <nav class="tabs"
              :class="[
