@@ -85,8 +85,8 @@ const slots = defineSlots<{
     default?: () => VNode[];
 }>();
 
-const checked         = defineModel({ required: true, type: Boolean });
-const isIndeterminate = defineModel('isIndeterminate', { type: Boolean });
+const checked         = defineModel<boolean>({ required: true });
+const isIndeterminate = defineModel<boolean>('isIndeterminate');
 
 const id         = useElementId(() => props.id);
 const labelId    = computed((): string => `label-${id.value}`);
