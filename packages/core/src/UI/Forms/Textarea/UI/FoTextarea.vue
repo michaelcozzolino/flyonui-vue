@@ -1,5 +1,7 @@
 <template>
-    <div :class="hasIcon ? 'textarea' : defaultLabel?.type === 'floating' && 'textarea-floating'">
+    <div :class="[hasIcon ? 'textarea' : defaultLabel?.type === 'floating' && 'textarea-floating']"
+         :style="$attrs.style as StyleValue"
+    >
         <FoLabel v-if="defaultLabel?.type === 'text'"
                  :for="id"
                  :component-name="componentName"
@@ -15,21 +17,22 @@
                 :size="iconSize"
         />
 
-        <component :is="hasIcon && defaultLabel?.type === 'floating' ? 'div' : FoFragment"
-                   :class="[floatingClass, hasIcon && 'grow']"
+        <component :is="wrapperTag"
+                   :class="wrapperTag === 'div' && [floatingClass, hasIcon && 'grow']"
         >
             <textarea :id="id"
                       v-model="input"
-                      v-bind="$attrs"
                       :placeholder="placeholder"
                       :class="[
                           hasIcon ? 'grow' : 'textarea',
                           textareaIcon?.right && 'resize-none',
                           sizeClass,
                           validityClass,
+                          $attrs.class,
                       ]"
                       :disabled="isDisabled"
                       :readonly="isReadonly"
+                      v-on="useListeners($attrs).value"
             />
 
             <FoLabel v-if="defaultLabel?.type === 'floating'"
@@ -59,8 +62,10 @@
 <script setup lang="ts">
 import type { ComponentName, IconSize  }           from '@/Lib';
 import type { TextareaLabelType, TextareaProps }   from '@/UI/Forms/Textarea';
+import type { StyleValue }                         from 'vue';
 import { useFlyonUIVueAppConfig }                  from '@/Lib';
 import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
+import { useListeners }                            from '@/Lib/UseListeners/Internal/Lib';
 import { useSize }                                 from '@/Lib/UseSize/Internal';
 import { useValidity }                             from '@/Lib/UseValidity/Internal';
 import { FoFragment }                              from '@/UI/Components/Fragment/Internal';
@@ -68,7 +73,7 @@ import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperT
 import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
 import { FoIcon }                                  from '@/UI/Customization/Icon';
 import { usePositionableIcon }                     from '@/UI/Customization/Icon/Internal';
-import { computed, useId }                         from 'vue';
+import { computed,  useId }                        from 'vue';
 
 defineOptions({
     inheritAttrs: false,
@@ -107,6 +112,16 @@ const defaultLabel = useLabel<TextareaLabelType>(
     () => props.label,
 );
 
+const iconClass = computed(() => 'text-base-content/80 mt-2 mx-4 shrink-0');
+
+const hasIcon = computed((): boolean => {
+    return textareaIcon.value?.left !== undefined || textareaIcon.value?.right !== undefined;
+});
+
+const wrapperTag = computed((): 'div' | typeof FoFragment => {
+    return hasIcon.value && defaultLabel.value?.type === 'floating' ? 'div' : FoFragment;
+});
+
 const [
     floatingClass,
     sizeClass,
@@ -116,10 +131,4 @@ const [
     useSize(config, componentName, () => props.size),
     useValidity(() => props.isValid),
 ];
-
-const iconClass = computed(() => 'text-base-content/80 mt-2 mx-4 shrink-0');
-
-const hasIcon = computed((): boolean => {
-    return textareaIcon.value?.left !== undefined || textareaIcon.value?.right !== undefined;
-});
 </script>

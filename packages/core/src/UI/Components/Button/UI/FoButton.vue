@@ -75,7 +75,7 @@ const { config }                   = useFlyonUIVueAppConfig();
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 const isTabButton       = computed((): boolean => attrs.role === 'tab');
 
-const buttonTag = computed(() => {
+const buttonTag = computed((): 'button' | typeof FoLink => {
     if (props.to === undefined) {
         return 'button';
     }

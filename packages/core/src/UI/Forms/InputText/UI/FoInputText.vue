@@ -1,9 +1,9 @@
 <template>
     <div :class="[
-        $attrs?.class,
-        inputGroupContainerClass,
-        isGroup ? sizeClass : floatingClass,
-    ]"
+             inputGroupContainerClass,
+             isGroup ? sizeClass : floatingClass,
+         ]"
+         :style="$attrs.style as StyleValue"
     >
         <slot v-if="$slots.prepend !== undefined || inputIcon?.left"
               name="prepend"
@@ -40,11 +40,13 @@
                        isGroup === false && sizeClass,
                        validityClass,
                        withoutFocus && 'no-focus border-0',
+                       $attrs.class,
                    ]"
                    :placeholder="placeholder"
                    :disabled="isDisabled"
                    :readonly="isReadonly"
                    :list="list"
+                   v-on="useListeners($attrs).value"
             >
 
             <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
@@ -81,9 +83,11 @@ import type { ComponentName, IconSize, Size }          from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot }        from '@/Types';
 import type { LabelType }                              from '@/UI/Components';
 import type { InputTextProps }                         from '@/UI/Forms/InputText';
+import type { StyleValue }                             from 'vue';
 import { useFlyonUIVueAppConfig }                      from '@/Lib';
 import { useFloatingLabel }                            from '@/Lib/UseFloatingLabel/Internal';
 import { useFlyonUIVueAppConfigProperty }              from '@/Lib/UseFlyonUIVueAppConfig/Internal';
+import { useListeners }                                from '@/Lib/UseListeners/Internal/Lib';
 import { useShape }                                    from '@/Lib/UseShape/Internal';
 import { useSize }                                     from '@/Lib/UseSize/Internal';
 import { useValidity }                                 from '@/Lib/UseValidity/Internal';
@@ -94,6 +98,10 @@ import { FoIcon }                                      from '@/UI/Customization/
 import { useHasPositionableIcon, usePositionableIcon } from '@/UI/Customization/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem }           from '@/UI/Forms/Join/Internal';
 import { computed, inject, useId }                     from 'vue';
+
+defineOptions({
+    inheritAttrs: false,
+});
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
