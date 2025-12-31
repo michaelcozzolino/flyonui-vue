@@ -27,7 +27,7 @@
                        :key="tab.id"
                        :size="size"
                        :icon="tab.icon"
-                       :is-disabled="tab.isDisabled"
+                       :disabled="tab.disabled"
                 >
                     <slot :name="tab.id" />
                 </FoTab>
@@ -113,7 +113,7 @@ const activeTabIndex = useArrayFindIndex((): T[] => props.tabs, (tab: T): boolea
 
 const areAllTabsDisabled = useArrayEvery(
     () => props.tabs,
-    (tab: T) => tab.isDisabled === true,
+    (tab: T) => tab.disabled === true,
 );
 
 // todo: check why these can be undefined, as in the docs is not shown
@@ -155,7 +155,7 @@ function switchTab(delta: 1 | -1 | 0): void {
     const newIndex   = index >= tabsLength ? 0 : (index < 0 ? props.tabs.length - 1 : index);
     let newActiveTab = props.tabs[newIndex];
 
-    if (newActiveTab?.isDisabled) {
+    if (newActiveTab?.disabled) {
         const start = newIndex + delta;
 
         newActiveTab = props.tabs[findFirstNonDisabledTabIndex(start < 0 || start > tabsLength ? 0 : start)];
@@ -170,13 +170,13 @@ function switchTab(delta: 1 | -1 | 0): void {
 
 function findFirstNonDisabledTabIndex(start: number): number {
     for (let i = start; i < props.tabs.length; i++) {
-        if (!props.tabs[i]?.isDisabled) {
+        if (!props.tabs[i]?.disabled) {
             return i;
         }
     }
 
     for (let i = 0; i < start; i++) {
-        if (!props.tabs[i]?.isDisabled) {
+        if (!props.tabs[i]?.disabled) {
             return i;
         }
     }

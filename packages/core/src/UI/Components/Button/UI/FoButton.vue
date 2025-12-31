@@ -16,7 +16,7 @@
                :type="isPureButton ? type : undefined"
                :to="to"
                :navigation="isPureButton ? undefined : navigation"
-               :disabled="isPureButton ? isDisabled : undefined"
+               :disabled="isPureButton ? disabled : undefined"
     >
         <slot name="prepend">
             <FoIcon v-if="buttonIcon?.left"
@@ -116,7 +116,7 @@ const iconSize = computed(
 const stateClass = computed(() => {
     return [
         useState(componentName, props.isActive ? 'active' : 'default').value,
-        useState(componentName, () => props.isDisabled ? 'disabled' : 'default').value,
+        useState(componentName, () => props.disabled ? 'disabled' : 'default').value,
     ];
 });
 

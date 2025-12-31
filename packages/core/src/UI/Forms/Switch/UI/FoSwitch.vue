@@ -37,8 +37,8 @@ import { reactiveOmit }                                from '@vueuse/core';
 import { computed, provide }                           from 'vue';
 
 const props = withDefaults(defineProps<SwitchProps>(), {
-    isDisabled: false,
-    isValid:    undefined,
+    disabled: false,
+    isValid:  undefined,
 });
 
 const componentName: ComponentName = 'FoSwitch';

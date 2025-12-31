@@ -78,7 +78,7 @@ const menuTextProps = inject(menuTextPropsInjectionKey, computed(() => ({
 })));
 
 const activeClass   = useState(componentName, 'active');
-const disabledClass = useState(componentName, () => props.item.isDisabled ? 'disabled' : 'default');
+const disabledClass = useState(componentName, () => props.item.disabled ? 'disabled' : 'default');
 
 const tooltipElement = useTemplateRef('tooltip');
 const showTooltip    = ref<boolean>(false);

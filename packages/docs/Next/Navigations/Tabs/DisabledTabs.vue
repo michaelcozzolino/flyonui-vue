@@ -45,7 +45,7 @@ import { FoTabs }        from 'flyonui-vue';
 import { reactive, ref } from 'vue';
 
 const homeTab     = reactive<TabProps>({ id: 'home' });
-const profileTab  = reactive<TabProps>({ id: 'profile', isDisabled: true });
+const profileTab  = reactive<TabProps>({ id: 'profile', disabled: true });
 const messagesTab = reactive<TabProps>({ id: 'messages' });
 
 const tabs = ref<TabProps[]>([

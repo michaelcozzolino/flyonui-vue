@@ -14,7 +14,7 @@
               :aria-controls="`tab-content-${id}`"
               role="tab"
               :aria-selected="isActiveTab"
-              :is-disabled="isDisabled"
+              :disabled="disabled"
               @click.prevent="!tabsProps.activateOnHover && (activeTab = { ...props })"
               @mouseover="tabsProps.activateOnHover && (activeTab = { ...props })"
     >

@@ -30,8 +30,9 @@
                           validityClass,
                           $attrs.class,
                       ]"
-                      :disabled="isDisabled"
-                      :readonly="isReadonly"
+                      :disabled="disabled"
+                      :readonly="readonly"
+                      v-bind="useNativeAttributes($attrs).value"
                       v-on="useListeners($attrs).value"
             />
 
@@ -66,6 +67,7 @@ import type { StyleValue }                         from 'vue';
 import { useFlyonUIVueAppConfig }                  from '@/Lib';
 import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
 import { useListeners }                            from '@/Lib/UseListeners/Internal/Lib';
+import { useNativeAttributes }                     from '@/Lib/UseNativeAttributes/Internal/Lib';
 import { useSize }                                 from '@/Lib/UseSize/Internal';
 import { useValidity }                             from '@/Lib/UseValidity/Internal';
 import { FoFragment }                              from '@/UI/Components/Fragment/Internal';
@@ -80,9 +82,9 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<TextareaProps>(), {
-    isDisabled: false,
-    isReadonly: false,
-    isValid:    undefined,
+    disabled: false,
+    readonly: false,
+    isValid:  undefined,
 });
 
 const id                           = useId();

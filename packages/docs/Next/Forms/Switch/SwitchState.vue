@@ -1,10 +1,10 @@
 <template>
     <FoSwitch v-model="disabledChecked"
-              is-disabled
+              disabled
     />
 
     <FoSwitch v-model="disabledUnchecked"
-              is-disabled
+              disabled
     />
 
     <FoSwitch v-model="isIndeterminateChecked"

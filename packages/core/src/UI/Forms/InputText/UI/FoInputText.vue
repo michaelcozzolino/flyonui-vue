@@ -43,9 +43,10 @@
                        $attrs.class,
                    ]"
                    :placeholder="placeholder"
-                   :disabled="isDisabled"
-                   :readonly="isReadonly"
+                   :disabled="disabled"
+                   :readonly="readonly"
                    :list="list"
+                   v-bind="useNativeAttributes($attrs).value"
                    v-on="useListeners($attrs).value"
             >
 
@@ -88,6 +89,7 @@ import { useFlyonUIVueAppConfig }                      from '@/Lib';
 import { useFloatingLabel }                            from '@/Lib/UseFloatingLabel/Internal';
 import { useFlyonUIVueAppConfigProperty }              from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 import { useListeners }                                from '@/Lib/UseListeners/Internal/Lib';
+import { useNativeAttributes }                         from '@/Lib/UseNativeAttributes/Internal/Lib';
 import { useShape }                                    from '@/Lib/UseShape/Internal';
 import { useSize }                                     from '@/Lib/UseSize/Internal';
 import { useValidity }                                 from '@/Lib/UseValidity/Internal';
@@ -105,8 +107,8 @@ defineOptions({
 
 const props = withDefaults(defineProps<InputTextProps>(), {
     type:         'text',
-    isDisabled:   false,
-    isReadonly:   false,
+    disabled:     false,
+    readonly:     false,
     isValid:      undefined,
     withoutFocus: false,
 });
