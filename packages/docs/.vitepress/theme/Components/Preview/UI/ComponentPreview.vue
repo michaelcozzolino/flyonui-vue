@@ -24,7 +24,7 @@
                                class="ms-auto"
                 >
                     <CopyButton :text="codePreviews[0].code"
-                                :is-disabled="codePreviews.length > 1"
+                                :disabled="codePreviews.length > 1"
                     />
 
                     <FoButton :icon="isLtr ? 'fluent:text-direction-horizontal-ltr-20-regular' : 'fluent:text-direction-horizontal-rtl-20-regular'"
