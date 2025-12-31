@@ -14,6 +14,7 @@ import HeadingDocs                                    from '@/Content/Heading/He
 import KeyboardDocs                                   from '@/Content/Keyboard/KeyboardDocs.vue';
 import LinkDocs                                       from '@/Content/Link/LinkDocs.vue';
 import MaskDocs                                       from '@/Content/Mask/MaskDocs.vue';
+import ClassAndStyleDocs                              from '@/Customisation/ClassAndStyle/ClassAndStyleDocs.vue';
 import IconsDocs                                      from '@/Customisation/Icons/IconsDocs.vue';
 import BuildSizeVisualizer                            from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                                   from '@/Forms/Checkbox/CheckboxDocs.vue';
@@ -73,6 +74,7 @@ export default {
         app.use(createPinia()).use(hljsVuePlugin);
 
         registerDocComponents(app, [
+            { name: 'ClassAndStyleDocs', instance: ClassAndStyleDocs },
             { name: 'KeyboardDocs', instance: KeyboardDocs },
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
