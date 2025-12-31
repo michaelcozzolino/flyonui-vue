@@ -103,7 +103,7 @@
         />
     </FoJoin>
 
-    <FoJoin>
+    <FoJoin class="max-w-sm">
         <FoInputText v-model="search"
                      placeholder="Search"
                      :icon="{ left: 'tabler:user' }"
@@ -117,7 +117,7 @@
     </FoJoin>
 
     <!--    todo: fix style in join for select -->
-    <FoJoin>
+    <FoJoin class="max-w-sm">
         <FoInputText v-model="search"
                      placeholder="Search"
         />

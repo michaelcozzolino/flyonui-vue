@@ -137,6 +137,7 @@ const previews = computed(() => {
         [
             'with-icon',
             {
+                grid:      { columns: 1, rows: 7 },
                 code:      InputTextWithIconRaw,
                 component: InputTextWithIcon,
             },
@@ -174,6 +175,7 @@ const previews = computed(() => {
         [
             'join',
             {
+                grid:      { columns: 1, rows: 10 },
                 code:      JoinInputTextRaw,
                 component: JoinInputText,
             },

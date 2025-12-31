@@ -1,15 +1,17 @@
 <template>
-    <FoInputText v-model="name"
-                 class="max-w-sm"
-                 :label="{ text: 'Name', type: 'inline' }"
-                 placeholder="FlyonUI"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="name"
+                     :label="{ text: 'Name', type: 'inline' }"
+                     placeholder="FlyonUI"
+        />
+    </div>
 
-    <FoInputText v-model="email"
-                 class="max-w-sm"
-                 :label="{ text: 'Email', type: 'inline' }"
-                 placeholder="admin@site.com"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="email"
+                     :label="{ text: 'Email', type: 'inline' }"
+                     placeholder="admin@site.com"
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

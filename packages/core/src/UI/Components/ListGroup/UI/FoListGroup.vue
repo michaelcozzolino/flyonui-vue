@@ -12,6 +12,7 @@
                 $attrs.class,
             ]"
             :style="orientation !== 'horizontal' && $attrs.style as StyleValue"
+            v-bind="useNativeAttributes($attrs).value"
             v-on="useListeners($attrs).value"
         >
             <slot>
@@ -28,6 +29,7 @@ import type { ListGroupProps }              from '@/UI/Components';
 import type { StyleValue }                  from 'vue';
 import { useClass }                         from '@/Lib/UseClass/Internal';
 import { useListeners }                     from '@/Lib/UseListeners/Internal/Lib';
+import { useNativeAttributes }              from '@/Lib/UseNativeAttributes/Internal/Lib';
 import { useOrientation }                   from '@/Lib/UseOrientation/Internal';
 import { useStripes }                       from '@/Lib/UseStripes/Internal';
 import { useRequiredSlotMessage }           from '@/Lib/Utils/Internal';
