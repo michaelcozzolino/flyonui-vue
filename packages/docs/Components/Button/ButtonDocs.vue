@@ -50,7 +50,7 @@ type Section = 'solid'
     | 'text'
     | 'gradient'
     | 'pilled'
-    | 'validation-state'
+    | 'state'
     | 'size'
     | 'layout'
     | 'icon'
@@ -119,7 +119,7 @@ const previews = computed(() => {
             },
         ],
         [
-            'validation-state',
+            'state',
             {
                 code:      ButtonStateRaw,
                 component: ButtonState,

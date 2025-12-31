@@ -36,7 +36,7 @@
 
 ### Validation states
 
-<ButtonDocs section="validation-state" />
+<ButtonDocs section="state" />
 
 ## Sizes
 
