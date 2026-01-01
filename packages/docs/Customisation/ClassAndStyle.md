@@ -14,7 +14,7 @@ Apply the custom classes directly to the component
 
 ## Style to component
 
-Use the style attribute to style the outest wrapper contained in the component
+Use the style attribute to style the outermost wrapper contained in the component
 
 <ClassAndStyleDocs section="style-to-component" />
 
