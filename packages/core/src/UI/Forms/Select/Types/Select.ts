@@ -45,7 +45,7 @@ export type SelectProps<
     & WithConfigurableInputLabel
     & WithIcon;
 
-export type DatalistOption<T extends number | string> = Omit<SelectOption<T>, 'isDisabled'>;
+export type DatalistOption<T extends number | string> = Omit<SelectOption<T>, 'disabled'>;
 
 export type DatalistProps<
     T extends string | number = number,
