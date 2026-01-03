@@ -70,7 +70,7 @@ export function useAnchorScrollSpy(
     }
 
     /**
-     * It computes the vertical positon of an element relative to the entire document, not the viewport.
+     * It computes the vertical position of an element relative to the entire document, not the viewport.
      */
     function getAbsoluteTop(element: HTMLElement): number {
         let offsetTop                       = 0;
