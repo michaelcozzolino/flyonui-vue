@@ -64,7 +64,7 @@ const items = computed((): DocsSidebarItem[] => {
     for (let i = 0; i < docsHeadings.value.length; i++) {
         const heading = docsHeadings.value.item(i);
 
-        if (heading === undefined) {
+        if (heading === null) {
             continue;
         }
 
