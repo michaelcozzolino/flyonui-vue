@@ -5,10 +5,6 @@
         <FoMenu class="vp-raw p-0!"
                 size="extraSmall"
         >
-            <FoMenuParentTitle>
-                <b>On This page</b>
-            </FoMenuParentTitle>
-
             <DocsSidebarNode v-for="item in items"
                              :key="item.id"
                              :item="item"
@@ -22,10 +18,12 @@
 <script setup lang="ts">
 import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar';
 
-import DocsSidebarNode               from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebarNode.vue';
-import { FoMenu, FoMenuParentTitle } from 'flyonui-vue';
-import { useRouter }                 from 'vitepress';
-import { computed, watch }           from 'vue';
+import DocsSidebarNode           from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebarNode.vue';
+import { enableAnchorScrollSpy } from '@/.vitepress/theme/Components/Layout/Lib/UseAnchorScrollSpy';
+import { useEventListener }      from '@vueuse/core';
+import { FoMenu }                from 'flyonui-vue';
+import { useRouter }             from 'vitepress';
+import { computed, watch }       from 'vue';
 
 interface Props {
     items: DocsSidebarItem[];
@@ -41,7 +39,16 @@ watch(() => router.route.path, () => {
     navigate(activePath.value);
 }, { immediate: true });
 
-async function navigate(to: string): Promise<void> {
-    return router.go(to);
+function navigate(to: string): Promise<void> {
+    enableAnchorScrollSpy.value = false;
+
+    return router.go(to, { smoothScroll: true });
 }
+
+/**
+ * The scrollend will, at least, be fired after that a manual click with scroll on the sidebar will be performed and,
+ * according to the navigate function above, the scroll spy that was disabled will be enabled again. This is to avoid
+ * conflicts with the manual scroll.
+ */
+useEventListener('scrollend', () => enableAnchorScrollSpy.value = true);
 </script>
