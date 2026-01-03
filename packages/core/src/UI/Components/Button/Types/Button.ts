@@ -47,7 +47,7 @@ export interface LoadingButtonProps extends Omit<ButtonProps, 'icon'> {
     } & LoadingProps;
 }
 
-export type Social = 'Facebook' | 'Twitter' | 'Linkedin' | 'Github';
+export type Social = 'facebook' | 'x' | 'linkedin' | 'github';
 export type SocialButtonPreset = Extract<Preset, 'solid' | 'soft' | 'outline'>;
 export type SocialButtonShape = Extract<Shape, 'square' | 'circle'>;
 

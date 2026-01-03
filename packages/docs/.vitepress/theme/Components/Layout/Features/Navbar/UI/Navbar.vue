@@ -52,7 +52,7 @@
                 </FoModal>
 
                 <FoSocialButton class="place-self-center"
-                                social="Github"
+                                social="github"
                                 shape="square"
                                 to="https://github.com/michaelcozzolino/flyonui-vue"
                 />

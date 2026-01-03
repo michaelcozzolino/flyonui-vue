@@ -1,43 +1,49 @@
 <template>
-    <FoSocialButton social="Facebook" />
-    <FoSocialButton social="Twitter" />
-    <FoSocialButton social="Linkedin" />
+    <FoSocialButton social="facebook" />
+    <FoSocialButton social="x" />
+    <FoSocialButton social="linkedin" />
 
-    <FoSocialButton social="Github"
+    <FoSocialButton social="github"
                     to="https://github.com/michaelcozzolino/flyonui-vue"
     />
 
     <FoSocialButton preset="soft"
-                    social="Facebook"
+                    social="facebook"
     />
 
     <FoSocialButton preset="soft"
-                    social="Twitter"
+                    social="x"
     />
 
     <FoSocialButton preset="soft"
-                    social="Linkedin"
+                    social="linkedin"
     />
 
     <FoSocialButton preset="soft"
-                    social="Github"
+                    social="github"
     />
 
     <FoSocialButton preset="outline"
-                    social="Facebook"
+                    social="facebook"
     />
 
     <FoSocialButton preset="outline"
-                    social="Twitter"
+                    social="x"
     />
 
     <FoSocialButton preset="outline"
-                    social="Linkedin"
+                    social="linkedin"
     />
 
     <FoSocialButton preset="outline"
-                    social="Github"
+                    social="github"
     />
+
+    <FoSocialButton preset="outline"
+                    social="github"
+    >
+        Star us on GitHub!
+    </FoSocialButton>
 </template>
 
 <script setup lang="ts">
