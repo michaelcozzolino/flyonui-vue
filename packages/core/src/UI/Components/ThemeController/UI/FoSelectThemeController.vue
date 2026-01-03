@@ -42,7 +42,7 @@ const props = withDefaults(defineProps<ThemeControllerProps & Omit<SelectProps<F
 
 const themeOptions = useArrayMap(() => Object.values(props.modes), (mode: FlyonUITheme) => ({
     id:   mode,
-    text: mode,
+    text: `${mode[0]?.toUpperCase()}${mode.slice(1)}`,
 }));
 
 const selectedTheme = useSelectedOption(themeOptions, useColorMode<FlyonUITheme>({ ...props }));
