@@ -19,12 +19,9 @@ to the input component directly. For further info we suggest to check both the n
 
 The possible values of the prop `social` have been updated and fully lowercased, the new values are:
 
-`old` | `new`
-
-`Facebook` | `facebook`
-
-`Github` | `github`
-
-`Linkedin` | `linkedin`
-
-`Twitter` | `x`
+| Old         | New        |
+|-------------|------------|
+| `Facebook`  | `facebook` |
+| `Github`    | `github`   |
+| `Linkedin`  | `linkedin` |
+| `Twitter`   | `x`        |
