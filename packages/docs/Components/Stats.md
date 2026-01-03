@@ -4,7 +4,7 @@
 
 <StatsDocs section="default" />
 
-# Illustration
+## Illustrations
 
 ### With avatar
 
