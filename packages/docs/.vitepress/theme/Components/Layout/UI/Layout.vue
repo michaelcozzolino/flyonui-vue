@@ -29,20 +29,29 @@ import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Featu
 import type { FlyonUITheme } from 'flyonui-vue';
 import DocsSidebar           from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebar.vue';
 import Home                  from '@/.vitepress/theme/Components/Layout/Features/Home/UI/Home.vue';
+import Navbar                from '@/.vitepress/theme/Components/Layout/Features/Navbar/UI/Navbar.vue';
 
-import Navbar                                 from '@/.vitepress/theme/Components/Layout/Features/Navbar/UI/Navbar.vue';
-import NotFound                               from '@/.vitepress/theme/Components/Layout/Features/NotFound/UI/NotFound.vue';
-import Sidebar                                from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Sidebar.vue';
-import { useLayoutStore }                     from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { useColorMode }                       from '@vueuse/core';
-import { useFlyonUIThemeFont }                from 'flyonui-vue';
-import { Content, onContentUpdated, useData } from 'vitepress';
-import { computed, onMounted, ref }           from 'vue';
+import NotFound
+    from '@/.vitepress/theme/Components/Layout/Features/NotFound/UI/NotFound.vue';
+import Sidebar
+    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Sidebar.vue';
+import {
+    useAnchorScrollSpy,
+}                                                        from '@/.vitepress/theme/Components/Layout/Lib/UseAnchorScrollSpy';
+import { useLayoutStore }                                from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import { useColorMode }                                  from '@vueuse/core';
+import { useFlyonUIThemeFont }                           from 'flyonui-vue';
+import { Content, onContentUpdated, useData, useRouter } from 'vitepress';
+import { computed, onMounted, ref }                      from 'vue';
+
+const router = useRouter();
 
 const { isHomepage, vitepressThemeLocalStorageKey } = useLayoutStore();
 const { frontmatter, page }                         = useData();
 
 const docsHeadings = ref<NodeListOf<HTMLElement> | null>(null);
+
+useAnchorScrollSpy(docsHeadings, router);
 
 const items = computed((): DocsSidebarItem[] => {
     if (docsHeadings.value === null) {
