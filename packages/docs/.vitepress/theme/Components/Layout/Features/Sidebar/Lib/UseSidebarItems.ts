@@ -37,6 +37,12 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         icon:     'uil:icons',
                         children: [],
                     },
+                    {
+                        text:     'Class and style',
+                        to:       '/customisation/class-and-style',
+                        icon:     'logos:tailwindcss-icon',
+                        children: [],
+                    },
                 ],
             },
             {
