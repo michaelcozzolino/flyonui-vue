@@ -1,31 +1,35 @@
 <template>
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 label="Full Name"
-                 placeholder="John Doe"
-                 helper-text="Please write your full name"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     label="Full Name"
+                     placeholder="John Doe"
+                     helper-text="Please write your full name"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name' }"
-                 placeholder="John Doe"
-                 :helper-text="{ text: 'Please write your full name', position: 'right' }"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name' }"
+                     placeholder="John Doe"
+                     :helper-text="{ text: 'Please write your full name', position: 'right' }"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 :helper-text="{ text: 'Please write your full name' }"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     :helper-text="{ text: 'Please write your full name' }"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 :helper-text="{ text: 'Please write your full name', position: 'right' }"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     :helper-text="{ text: 'Please write your full name', position: 'right' }"
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

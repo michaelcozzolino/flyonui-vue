@@ -1,74 +1,81 @@
 <template>
-    <FoInputText v-model="name"
-                 class="max-w-sm"
-                 :label="{ text: 'Name', type: 'inline' }"
-                 icon="tabler:user"
-                 placeholder="John Doe"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="name"
+                     :label="{ text: 'Name', type: 'inline' }"
+                     icon="tabler:user"
+                     placeholder="John Doe"
+        />
+    </div>
 
-    <FoInputText v-model="email"
-                 class="max-w-sm"
-                 :label="{ text: 'Email', type: 'floating' }"
-                 :icon="{ left: 'tabler:brand-mailgun' }"
-                 placeholder="admin@site.com"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="email"
+                     :label="{ text: 'Email', type: 'floating' }"
+                     :icon="{ left: 'tabler:brand-mailgun' }"
+                     placeholder="admin@site.com"
+        />
+    </div>
 
-    <FoInputText v-model="cardNumber"
-                 class="max-w-sm"
-                 :label="{ text: 'Card Number', type: 'inline' }"
-                 :icon="{ right: 'tabler:brand-mastercard' }"
-                 placeholder="xxxx-xxxx-xxxx-xxxx"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="cardNumber"
+                     :label="{ text: 'Card Number', type: 'inline' }"
+                     :icon="{ right: 'tabler:brand-mastercard' }"
+                     placeholder="xxxx-xxxx-xxxx-xxxx"
+        />
+    </div>
 
-    <FoInputText v-model="cardNumber"
-                 class="max-w-sm"
-                 :label="{ text: 'Card Number', type: 'floating' }"
-                 :icon="{ right: 'tabler:brand-mastercard' }"
-                 placeholder="xxxx-xxxx-xxxx-xxxx"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="cardNumber"
+                     :label="{ text: 'Card', type: 'floating' }"
+                     :icon="{ right: 'tabler:brand-mastercard' }"
+                     placeholder="xxxx-xxxx-xxxx-xxxx"
+        />
+    </div>
 
-    <FoInputText v-model="customDomain"
-                 class="max-w-sm"
-                 :label="{ text: 'Domain', type: 'floating' }"
-                 :icon="{ left: 'gridicons:domains' }"
-                 placeholder="My custom domain"
-    >
-        <template #append>
-            <FoInlineLabel type="inline">
-                .com
-            </FoInlineLabel>
-        </template>
-    </FoInputText>
+    <div class="max-w-sm">
+        <FoInputText v-model="customDomain"
+                     :label="{ text: 'Domain', type: 'floating' }"
+                     :icon="{ left: 'gridicons:domains' }"
+                     placeholder="My custom domain"
+        >
+            <template #append>
+                <FoInlineLabel type="inline">
+                    .com
+                </FoInlineLabel>
+            </template>
+        </FoInputText>
+    </div>
 
-    <FoInputText v-model="customDomain"
-                 class="max-w-sm"
-                 :label="{ text: 'Domain', type: 'floating' }"
-                 placeholder="My custom domain"
-    >
-        <template #prepend>
-            <FoInlineLabel type="inline">
-                www.
-            </FoInlineLabel>
-        </template>
-        <template #append>
-            <FoInlineLabel type="inline">
-                .com
-            </FoInlineLabel>
-        </template>
-    </FoInputText>
+    <div class="max-w-sm">
+        <FoInputText v-model="customDomain"
+                     :label="{ text: 'Domain', type: 'floating' }"
+                     placeholder="My custom domain"
+        >
+            <template #prepend>
+                <FoInlineLabel type="inline">
+                    www.
+                </FoInlineLabel>
+            </template>
+            <template #append>
+                <FoInlineLabel type="inline">
+                    .com
+                </FoInlineLabel>
+            </template>
+        </FoInputText>
+    </div>
 
     <!--    todo: add kbd -->
 
-    <FoInputText v-model="customDomain"
-                 class="max-w-sm"
-                 placeholder="John Doe"
-    >
-        <template #prepend>
-            <FoCheckbox v-model="isChecked"
-                        color="primary"
-            />
-        </template>
-    </FoInputText>
+    <div class="max-w-sm">
+        <FoInputText v-model="customDomain"
+                     placeholder="John Doe"
+        >
+            <template #prepend>
+                <FoCheckbox v-model="isChecked"
+                            color="primary"
+                />
+            </template>
+        </FoInputText>
+    </div>
     <!--    todo: add radio -->
 </template>
 

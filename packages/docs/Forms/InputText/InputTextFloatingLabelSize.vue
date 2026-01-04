@@ -1,37 +1,42 @@
 <template>
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 size="extraSmall"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     size="extraSmall"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 size="small"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     size="small"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 size="large"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     size="large"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 size="extraLarge"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     size="extraLarge"
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

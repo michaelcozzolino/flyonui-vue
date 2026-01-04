@@ -4,6 +4,7 @@
              gapClass,
          ]"
          class="flex"
+         :style="$attrs.style as StyleValue"
     >
         <Teleport defer
                   :to="`#${labelId}`"
@@ -20,9 +21,11 @@
                        switchHasIcon === false && helperText && 'mt-2',
                        $attrs.class,
                    ]"
-                   :aria-label="label ?? (isDisabled ? 'disabled checkbox' : 'checkbox')"
-                   :disabled="isDisabled"
+                   :aria-label="label ?? (disabled ? 'disabled checkbox' : 'checkbox')"
+                   :disabled="disabled"
                    :indeterminate.prop="isIndeterminate"
+                   v-bind="useNativeAttributes($attrs).value"
+                   v-on="useListeners($attrs).value"
             >
         </Teleport>
 
@@ -56,10 +59,12 @@
 <script lang="ts" setup>
 import type { ConfigurableComponentName }                            from '@/Lib';
 import type { CheckboxProps }                                        from '@/UI/Forms/Checkbox/Types/Checkbox.ts';
-import type { VNode }                                                from 'vue';
+import type { StyleValue, VNode }                                    from 'vue';
 import { useFlyonUIVueAppConfig }                                    from '@/Lib';
 import { useColor }                                                  from '@/Lib/UseColor/Internal';
 import { useElementId }                                              from '@/Lib/UseIdentifiable/Internal';
+import { useListeners }                                              from '@/Lib/UseListeners/Internal/Lib';
+import { useNativeAttributes }                                       from '@/Lib/UseNativeAttributes/Internal/Lib';
 import { useSize }                                                   from '@/Lib/UseSize/Internal/Lib';
 import { useValidity }                                               from '@/Lib/UseValidity/Internal';
 import { FoLabel }                                                   from '@/UI/Components/Label/Internal';
@@ -71,8 +76,8 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
-    isDisabled: false,
-    isValid:    undefined,
+    disabled: false,
+    isValid:  undefined,
 });
 
 const slots = defineSlots<{

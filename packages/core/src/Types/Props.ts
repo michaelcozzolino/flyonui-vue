@@ -1,6 +1,6 @@
 export interface Immutable {
     /** If true the component cannot be updated */
-    isReadonly?: boolean;
+    readonly?: boolean;
 }
 
 export interface Flushable {

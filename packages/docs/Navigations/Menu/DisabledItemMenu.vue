@@ -26,11 +26,11 @@ const items = ref<(MenuItem & Id)[]>([
         to:   '#',
     },
     {
-        id:         3,
-        icon:       'tabler:lock',
-        text:       'Security',
-        to:         '#',
-        isDisabled: true,
+        id:       3,
+        icon:     'tabler:lock',
+        text:     'Security',
+        to:       '#',
+        disabled: true,
     },
 ]);
 </script>

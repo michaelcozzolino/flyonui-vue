@@ -20,6 +20,12 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         icon:     'tabler:rocket',
                         children: [],
                     },
+                    {
+                        text:     'Upgrade Guide',
+                        to:       '/upgrade-guide',
+                        icon:     'tabler:arrow-up-circle',
+                        children: [],
+                    },
                 ],
             },
             {

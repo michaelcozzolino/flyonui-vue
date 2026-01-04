@@ -30,7 +30,7 @@
                     sizeClass,
                     validityClass,
                 ]"
-                :disabled="isDisabled"
+                :disabled="disabled"
                 aria-label="select"
         >
             <option v-if="defaultLabel?.type === 'inline'"
@@ -96,8 +96,8 @@ import FoSelectOption                              from '@/UI/Forms/Select/Inter
 import { computed, useId, watchEffect }            from 'vue';
 
 const props = withDefaults(defineProps<SelectProps<T, K>>(), {
-    isDisabled: undefined,
-    isValid:    undefined,
+    disabled: undefined,
+    isValid:  undefined,
 });
 
 const id = useId();

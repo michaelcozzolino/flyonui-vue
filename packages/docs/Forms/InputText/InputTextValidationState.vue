@@ -1,35 +1,39 @@
 <template>
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name' }"
-                 placeholder="John Doe"
-                 :helper-text="{ text: 'Helper text' }"
-                 is-valid
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name' }"
+                     placeholder="John Doe"
+                     :helper-text="{ text: 'Helper text' }"
+                     is-valid
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 :helper-text="{ text: 'Helper text' }"
-                 is-valid
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     :helper-text="{ text: 'Helper text' }"
+                     is-valid
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name' }"
-                 placeholder="John Doe"
-                 :helper-text="{ text: 'Helper text' }"
-                 :is-valid="false"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name' }"
+                     placeholder="John Doe"
+                     :helper-text="{ text: 'Helper text' }"
+                     :is-valid="false"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 :helper-text="{ text: 'Helper text' }"
-                 :is-valid="false"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     :helper-text="{ text: 'Helper text' }"
+                     :is-valid="false"
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

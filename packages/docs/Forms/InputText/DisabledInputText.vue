@@ -1,17 +1,19 @@
 <template>
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'What is your name?' }"
-                 placeholder="John Doe"
-                 is-disabled
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'What is your name?' }"
+                     placeholder="John Doe"
+                     disabled
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 :label="{ text: 'Full Name', type: 'floating' }"
-                 placeholder="John Doe"
-                 is-disabled
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     :label="{ text: 'Full Name', type: 'floating' }"
+                     placeholder="John Doe"
+                     disabled
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

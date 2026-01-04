@@ -1,5 +1,5 @@
 <template>
-    <option :disabled="option.isDisabled"
+    <option :disabled="option.disabled"
             :value="valueAsText ? option.text : option"
     >
         {{ option.text }}

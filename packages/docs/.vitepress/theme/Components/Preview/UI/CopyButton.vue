@@ -3,7 +3,7 @@
               color="info"
               preset="gradient"
               size="medium"
-              :is-disabled="isDisabled"
+              :disabled="disabled"
               @click.prevent="copy(text)"
     />
 </template>

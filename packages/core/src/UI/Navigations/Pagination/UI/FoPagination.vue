@@ -6,7 +6,7 @@
                             :preset="preset"
                             :shape="shape"
                             :size="size"
-                            :is-disabled="currentPage === 1"
+                            :disabled="currentPage === 1"
                             @click.prevent="currentPage > 1 && currentPage--"
         >
             {{ isTextHidden ? '' : 'Previous' }}
@@ -34,7 +34,7 @@
                           :preset="preset"
                           :shape="shape"
                           :size="size"
-                          is-disabled
+                          disabled
                           aria-hidden="true"
                           tabindex="-1"
                 />
@@ -45,7 +45,7 @@
                             :preset="preset"
                             :shape="shape"
                             :size="size"
-                            :is-disabled="currentPage === length"
+                            :disabled="currentPage === length"
                             @click.prevent="currentPage < length && currentPage++"
         >
             {{ isTextHidden ? '' : 'Next' }}

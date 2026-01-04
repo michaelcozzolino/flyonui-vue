@@ -1,32 +1,36 @@
 <template>
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 placeholder="John doe"
-                 size="extraSmall"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     placeholder="John doe"
+                     size="extraSmall"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 placeholder="John doe"
-                 size="small"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     placeholder="John doe"
+                     size="small"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 placeholder="John doe"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     placeholder="John doe"
+        />
+    </div>
 
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 placeholder="John doe"
-                 size="large"
-    />
-
-    <FoInputText v-model="input"
-                 class="max-w-sm"
-                 placeholder="John doe"
-                 size="extraLarge"
-    />
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     placeholder="John doe"
+                     size="large"
+        />
+    </div>
+    <div class="max-w-sm">
+        <FoInputText v-model="input"
+                     placeholder="John doe"
+                     size="extraLarge"
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

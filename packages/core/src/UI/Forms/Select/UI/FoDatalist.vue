@@ -8,7 +8,7 @@
                      :placeholder="placeholder"
                      :shape="shape"
                      :list="id"
-                     :is-disabled="isDisabled"
+                     :disabled="disabled"
                      :is-valid="isValid"
         />
 
@@ -31,8 +31,8 @@ import { FoSelectOption, onEmptyOptions }   from '@/UI/Forms/Select/Internal';
 import { computed }                         from 'vue';
 
 const props = withDefaults(defineProps<DatalistProps<T, K>>(), {
-    isDisabled: undefined,
-    isValid:    undefined,
+    disabled: undefined,
+    isValid:  undefined,
 });
 
 const selectedOption = defineModel<K | null>({ required: true });

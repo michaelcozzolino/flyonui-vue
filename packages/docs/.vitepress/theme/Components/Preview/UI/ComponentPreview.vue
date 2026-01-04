@@ -24,7 +24,7 @@
                                class="ms-auto"
                 >
                     <CopyButton :text="codePreviews[0].code"
-                                :is-disabled="codePreviews.length > 1"
+                                :disabled="codePreviews.length > 1"
                     />
 
                     <FoButton :icon="isLtr ? 'fluent:text-direction-horizontal-ltr-20-regular' : 'fluent:text-direction-horizontal-rtl-20-regular'"
@@ -111,24 +111,28 @@ const gridClass = computed(() => {
 
     const classes: Record<'columns' | 'rows', Record<number, string>> = {
         columns: {
-            1: 'grid-cols-1',
-            2: 'grid-cols-2',
-            3: 'grid-cols-3',
-            4: 'grid-cols-4',
-            5: 'grid-cols-5',
-            6: 'grid-cols-6',
-            7: 'grid-cols-7',
-            8: 'grid-cols-8',
+            1:  'grid-cols-1',
+            2:  'grid-cols-2',
+            3:  'grid-cols-3',
+            4:  'grid-cols-4',
+            5:  'grid-cols-5',
+            6:  'grid-cols-6',
+            7:  'grid-cols-7',
+            8:  'grid-cols-8',
+            9:  'grid-cols-9',
+            10: 'grid-cols-10',
         },
         rows: {
-            1: 'grid-rows-1',
-            2: 'grid-rows-2',
-            3: 'grid-rows-3',
-            4: 'grid-rows-4',
-            5: 'grid-rows-5',
-            6: 'grid-rows-6',
-            7: 'grid-rows-7',
-            8: 'grid-rows-8',
+            1:  'grid-rows-1',
+            2:  'grid-rows-2',
+            3:  'grid-rows-3',
+            4:  'grid-rows-4',
+            5:  'grid-rows-5',
+            6:  'grid-rows-6',
+            7:  'grid-rows-7',
+            8:  'grid-rows-8',
+            9:  'grid-rows-9',
+            10: 'grid-rows-10',
         },
     };
 
