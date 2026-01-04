@@ -2,6 +2,7 @@
     <div class="flex pr-2">
         <FoButton color="primary"
                   preset="outline"
+                  :shape="isSmallerOrEqualToSm ? 'square' : undefined"
                   icon="tabler:search"
         >
             <template v-if="!isSmallerOrEqualToSm">
