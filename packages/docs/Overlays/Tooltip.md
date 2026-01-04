@@ -12,6 +12,8 @@
 
 <TooltipDocs section="placement" />
 
+## Api
+
 ### Props
 
 <TooltipDocs section="props" />

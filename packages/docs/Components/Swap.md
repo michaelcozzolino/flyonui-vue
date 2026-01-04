@@ -14,6 +14,8 @@
 
 <SwapDocs section="flip" />
 
+## Api
+
 ### Props
 
 <SwapDocs section="props" />
