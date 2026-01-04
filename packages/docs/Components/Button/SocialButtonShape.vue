@@ -1,57 +1,57 @@
 <template>
-    <FoSocialButton social="Facebook"
+    <FoSocialButton social="facebook"
                     shape="square"
     />
 
-    <FoSocialButton social="Twitter"
+    <FoSocialButton social="x"
                     shape="square"
     />
 
-    <FoSocialButton social="Linkedin"
+    <FoSocialButton social="linkedin"
                     shape="circle"
     />
 
-    <FoSocialButton social="Github"
-                    shape="circle"
-    />
-
-    <FoSocialButton preset="soft"
-                    social="Facebook"
-                    shape="square"
-    />
-
-    <FoSocialButton preset="soft"
-                    social="Twitter"
-                    shape="square"
-    />
-
-    <FoSocialButton preset="soft"
-                    social="Linkedin"
+    <FoSocialButton social="github"
                     shape="circle"
     />
 
     <FoSocialButton preset="soft"
-                    social="Github"
+                    social="facebook"
+                    shape="square"
+    />
+
+    <FoSocialButton preset="soft"
+                    social="x"
+                    shape="square"
+    />
+
+    <FoSocialButton preset="soft"
+                    social="linkedin"
+                    shape="circle"
+    />
+
+    <FoSocialButton preset="soft"
+                    social="github"
                     shape="circle"
     />
 
     <FoSocialButton preset="outline"
-                    social="Facebook"
+                    social="facebook"
                     shape="square"
     />
 
     <FoSocialButton preset="outline"
-                    social="Twitter"
+                    social="x"
                     shape="square"
     />
 
     <FoSocialButton preset="outline"
-                    social="Linkedin"
+                    social="linkedin"
                     shape="circle"
     />
 
     <FoSocialButton preset="outline"
-                    social="Github"
+                    social="github"
                     shape="circle"
     />
 </template>
