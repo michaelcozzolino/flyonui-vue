@@ -1,7 +1,7 @@
 @layer base {
     :root {
         --vp-home-hero-name-color: var(--color-info) !important;
-        // t0do: many variables with division are not right, to be adjusted
+        // todo: many variables with division are not right, to be adjusted, also the whole css might need to be checked
         --vp-button-brand-bg: var(--color-primary) !important;
         --vp-button-brand-hover-bg: var(--color-info) !important;
 
@@ -18,27 +18,6 @@
 
         --vp-c-divider: var(--color-base-content)/0.1 !important;
         --vp-c-gutter: var(--color-base-content)/0.1 !important;
-    }
-
-    .DocSearch-Button, .VPFeature {
-        border-color: color-mix(in oklab, var(--vp-c-brand-1) 60%, transparent) !important;
-
-    }
-
-    .DocSearch-Button:hover {
-        border-color: var(--vp-c-brand-1) !important;
-    }
-
-
-    .VPSidebarItem.level-1 .text {
-        font-weight: 700 !important;
-    }
-
-    .VPSidebarItem.level-2 .text,
-    .VPSidebarItem.level-3 .text,
-    .VPSidebarItem.level-4 .text,
-    .VPSidebarItem.level-5 .text {
-        font-weight: 400 !important;
     }
 
     .VPLink > p:hover {
