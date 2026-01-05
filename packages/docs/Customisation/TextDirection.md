@@ -4,7 +4,7 @@ The text direction is by default `LTR` and can be set in two ways:
 
 ## All components
 
-by using the configuration you can set the same direction for all the `flyonui-vue` components.
+By using the configuration you can set the same direction for all the `flyonui-vue` components.
 
 <TextDirectionDocs section="all-components" />
 
