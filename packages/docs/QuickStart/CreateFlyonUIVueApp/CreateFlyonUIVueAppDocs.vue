@@ -1,7 +1,7 @@
 <template>
     <CodePreview title="TS"
                  lang="ts"
-                 :code="ConfigurationExampleRaw.replace('// @ts-expect-error E.G', '')"
+                 :code="ConfigurationExampleRaw.replace('// @ts-expect-error E.G.', '')"
     />
 </template>
 

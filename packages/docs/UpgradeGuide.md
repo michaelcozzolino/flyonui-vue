@@ -6,12 +6,17 @@
 
 The minimum required version for Node.js is now `>= 20.19.0`.
 
+### Types
+
+- The `Direction` type has been renamed to `TextDirection`.
+- The property `direction` of the type `FlyonUIVueAppGlobalConfig` has been renamed to `textDirection`.
+
 ### All Components - Props
 
 - The `isDisabled` and `isReadonly` props of every component have been renamed to `disabled` and `readonly`
   in order to reflect the native attribute of the html element.
   so in your component make sure to replace every (`isDisabled`|`is-disabled`)|(`isReadonly`|`is-readonly`) with
-  `disabled`|`readonly`
+  `disabled`|`readonly`.
 
 ### FoInputText
 
@@ -23,9 +28,9 @@ to the input component directly. For further info we suggest to check both the n
 
 The possible values of the prop `social` have been updated and fully lowercased, the new values are:
 
-| Old         | New        |
-|-------------|------------|
-| `Facebook`  | `facebook` |
-| `Github`    | `github`   |
-| `Linkedin`  | `linkedin` |
-| `Twitter`   | `x`        |
+| Old        | New        |
+|------------|------------|
+| `Facebook` | `facebook` |
+| `Github`   | `github`   |
+| `Linkedin` | `linkedin` |
+| `Twitter`  | `x`        |

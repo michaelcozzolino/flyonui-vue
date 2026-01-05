@@ -4,7 +4,7 @@
                ref="sidebar"
                class="sticky top-16 overflow-x-hidden overflow-y-auto h-[calc(100vh-4.25rem)] shrink-0"
                :class="[
-                   isCollapsed ? 'w-24' : 'w-64',
+                   isCollapsed ? 'w-24' : 'w-72',
                    isPageSizeSmallerThanSm && isCollapsed && 'hidden',
                    isPageSizeSmallerThanSm && 'sidebar-mobile',
                ]"

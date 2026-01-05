@@ -31,7 +31,7 @@
                               color="neutral"
                               preset="gradient"
                               size="medium"
-                              @click.prevent="isLtr ? direction = 'rtl' : direction = 'ltr'; activeTab = previewTab;"
+                              @click.prevent="isLtr ? textDirection = 'rtl' : textDirection = 'ltr'; activeTab = previewTab;"
                     />
                 </FoButtonGroup>
             </template>
@@ -40,7 +40,7 @@
                 <div class="gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6 overflow-x-auto"
                      data-test="flyonui-vue-preview"
                      :class="gridClass"
-                     :dir="direction"
+                     :dir="textDirection"
                 >
                     <ClientOnly>
                         <component :is="component" />
@@ -64,7 +64,7 @@
 
 <script setup lang="ts">
 import type { CodePreviewProps, ComponentPreviewProps } from '@/.vitepress/theme/Components/Preview/Types/Preview';
-import type { Direction, TabProps }                     from 'flyonui-vue';
+import type { TabProps, TextDirection }                 from 'flyonui-vue';
 import CodePreview
     from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import CopyButton
@@ -89,9 +89,9 @@ const tabs = ref<TabProps[]>([
     codeTab,
 ]);
 
-const direction = ref<Direction>('ltr');
+const textDirection = ref<TextDirection>('ltr');
 
-const isLtr = computed(() => direction.value === 'ltr');
+const isLtr = computed(() => textDirection.value === 'ltr');
 
 const codePreviews = computed((): CodePreviewProps[] => {
     if (typeof props.code === 'string') {
@@ -147,8 +147,8 @@ const gridClass = computed(() => {
 });
 
 watch(
-    () => config.value.global.direction,
-    (newDirection: Direction) => direction.value = newDirection,
+    () => config.value.global.textDirection,
+    (newDirection: TextDirection) => textDirection.value = newDirection,
     { immediate: true },
 );
 </script>

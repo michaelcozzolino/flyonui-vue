@@ -16,6 +16,7 @@ import LinkDocs                                       from '@/Content/Link/LinkD
 import MaskDocs                                       from '@/Content/Mask/MaskDocs.vue';
 import ClassAndStyleDocs                              from '@/Customisation/ClassAndStyle/ClassAndStyleDocs.vue';
 import IconsDocs                                      from '@/Customisation/Icons/IconsDocs.vue';
+import TextDirectionDocs                              from '@/Customisation/TextDirection/TextDirectionDocs.vue';
 import BuildSizeVisualizer                            from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
 import CheckboxDocs                                   from '@/Forms/Checkbox/CheckboxDocs.vue';
 import InputTextDocs                                  from '@/Forms/InputText/InputTextDocs.vue';
@@ -99,6 +100,7 @@ export default {
             { name: 'TabsDocs', instance: TabsDocs },
             { name: 'TableDocs', instance: TableDocs },
             { name: 'TextareaDocs', instance: TextareaDocs },
+            { name: 'TextDirectionDocs', instance: TextDirectionDocs },
             { name: 'TooltipDocs', instance: TooltipDocs },
             { name: 'SelectThemeController', instance: FoSelectThemeController },
             { name: 'Playground', instance: Playground },

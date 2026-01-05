@@ -1,5 +1,5 @@
 import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig }                    from '@/Lib';
-import type { Direction }                                                          from '@/Types';
+import type { TextDirection }                                                      from '@/Types';
 import { createFlyonUIVueApp, flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig } from '@/Lib';
 import { flyonUIVueAppConfigLocalStorageKey }                                      from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 import { flushPromises, mount }                                                    from '@vue/test-utils';
@@ -53,11 +53,11 @@ describe('createFlyonUIVueApp', () => {
         expect(vi.mocked(useLocalStorage).mock.results[0]?.value.value).toStrictEqual(expectedConfig);
         expect(localStorage.getItem(flyonUIVueAppConfigLocalStorageKey)).toBe(JSON.stringify(expectedConfig));
 
-        expect(document.dir).toBe(flyonUIVueAppDefaultConfig.global.direction);
+        expect(document.dir).toBe(flyonUIVueAppDefaultConfig.global.textDirection);
 
-        const newDirection: Direction = 'rtl';
+        const newDirection: TextDirection = 'rtl';
 
-        wrapper.vm.config.global.direction = newDirection;
+        wrapper.vm.config.global.textDirection = newDirection;
 
         await flushPromises();
 
@@ -65,7 +65,7 @@ describe('createFlyonUIVueApp', () => {
         expect(document.dir).toBe(newDirection);
 
         // Checks that the default config didn't get mutated
-        expect(flyonUIVueAppDefaultConfig.global.direction).toBe('ltr');
+        expect(flyonUIVueAppDefaultConfig.global.textDirection).toBe('ltr');
     });
 
     it('creates a FlyonUI vue app with the given user config and stores it inside the local storage', async () => {
@@ -152,7 +152,7 @@ describe('createFlyonUIVueApp', () => {
             template: '<div />',
             setup:    (_props, _ctx) => {
                 const { config, resetConfig } = useFlyonUIVueAppConfig();
-                const setDir                  = (dir: Direction) => config.value.global.direction = dir;
+                const setDir                  = (dir: TextDirection) => config.value.global.textDirection = dir;
                 return { config, resetConfig, setDir };
             },
         });
@@ -174,9 +174,9 @@ describe('createFlyonUIVueApp', () => {
         expect(vi.mocked(useLocalStorage).mock.results[0]?.value.value).toStrictEqual(expectedConfig);
         expect(localStorage.getItem(flyonUIVueAppConfigLocalStorageKey)).toBe(JSON.stringify(expectedConfig));
 
-        expect(document.dir).toBe(flyonUIVueAppDefaultConfig.global.direction);
+        expect(document.dir).toBe(flyonUIVueAppDefaultConfig.global.textDirection);
 
-        const newDirection: Direction = 'rtl';
+        const newDirection: TextDirection = 'rtl';
 
         wrapper.vm.setDir(newDirection);
 
