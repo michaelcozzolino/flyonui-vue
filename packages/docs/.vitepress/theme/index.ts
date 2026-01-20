@@ -20,12 +20,12 @@ import CheckboxDocs                                   from '@/Forms/Checkbox/Che
 import InputTextDocs                                  from '@/Forms/InputText/InputTextDocs.vue';
 import JoinDocs                                       from '@/Forms/Join/JoinDocs.vue';
 import SelectDocs                                     from '@/Forms/Select/SelectDocs.vue';
+import SwitchDocs                                     from '@/Forms/Switch/SwitchDocs.vue';
 import TextareaDocs                                   from '@/Forms/Textarea/TextareaDocs.vue';
 import MenuDocs                                       from '@/Navigations/Menu/MenuDocs.vue';
 import NavbarDocs                                     from '@/Navigations/Navbar/NavbarDocs.vue';
 import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
-import SwitchDocs                                     from '@/Next/Forms/Switch/SwitchDocs.vue';
-import TabsDocs                                       from '@/Next/Navigations/Tabs/TabsDocs.vue';
+import TabsDocs                                       from '@/Navigations/Tabs/TabsDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
 import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
 import TooltipDocs                                    from '@/Overlays/Tooltip/TooltipDocs.vue';
