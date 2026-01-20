@@ -128,7 +128,6 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/navigations/tabs',
                         icon:     'mdi:tab',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                 ],
             },
@@ -187,7 +186,6 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/forms/switch',
                         icon:     'mdi:toggle-switch',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Textarea',
