@@ -40,7 +40,7 @@
         "dev:ce.vue": "yarn concurrently \"yarn build:ce.vue:ui -w\" \"yarn build:ce.vue:types -w\" \"yarn alias:ce.vue:types -w\"",
         "build:ce.vue": "yarn build:ce.vue:ui && yarn build:ce.vue:types && yarn alias:ce.vue:types",
         "build:ce.vue:ui": "vite build -c vite.config.ce.vue.mts",
-        "build:ce.vue:types": "vue-tsc --emitDeclarationOnly -p tsconfig.build.json --outDir dist-ce.vue",
+        "build:ce.vue:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json --outDir dist-ce.vue",
         "alias:ce.vue:types": "tsc-alias -p tsconfig.build.json --outDir dist-ce.vue",
         "lint": "eslint . --fix",
         "publish": "yarn npm publish --access public",

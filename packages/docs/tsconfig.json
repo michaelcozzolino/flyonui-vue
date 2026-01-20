@@ -13,7 +13,6 @@
             ]
         },
         "allowImportingTsExtensions": false,
-        "declarationMap": true,
         "outDir": "dist"
     },
     "vueCompilerOptions": {
