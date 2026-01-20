@@ -7,7 +7,6 @@
                 "./src/*"
             ]
         },
-        "composite": true,
         "noEmit": false,
         "outDir": "dist"
     },

@@ -1,9 +1,7 @@
 {
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
-        "composite": true,
         "rootDir": "./src",
-        "declarationMap": true,
         "noEmit": false,
         "outDir": "dist-vue"
     },
