@@ -20,3 +20,11 @@ export interface TableRowProps {
     /** True if the row can be hovered */
     isHoverable?: boolean;
 }
+
+export interface TableCellProps {
+    /** The number of columns for which a cell should span over */
+    colspan?: number;
+
+    /** The number of rows for which a cell should span over */
+    rowspan?: number;
+}
