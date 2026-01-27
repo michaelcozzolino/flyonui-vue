@@ -125,20 +125,20 @@ const safePage = computed<number>({
     get: (): number => {
         const len = totalPages.value;
 
+        if (page.value < 1) {
+            return 1;
+        }
+
         if (page.value > len) {
             return len;
         }
 
         return page.value;
     },
-    set: (newPage: number): number => page.value = newPage,
+    set: (newPage: number): void => {
+        page.value = newPage;
+    },
 });
-
-watch(safePage, (): void => {
-    if (safePage.value <= 0) {
-        throw new Error('Page must be > 0.');
-    }
-}, { immediate: true });
 
 /**
  * The number of <th> that the developer is using through the head slot
@@ -159,34 +159,25 @@ watch([safePage, itemsPerPage, query], () => {
         return;
     }
 
+    let sourceItems = items.value;
+
+    if (query.value !== '') {
+        sourceItems = items.value.filter((item: T): boolean => {
+            for (const key of Object.keys(item) as (keyof T)[]) {
+                const value = JSON.stringify(item[key]).toLowerCase();
+
+                if (value.includes(query.value.toLowerCase())) {
+                    return true;
+                }
+            }
+
+            return false;
+        });
+    }
+
     const start = (safePage.value - 1) * itemsPerPage.value;
     const end   = start + itemsPerPage.value;
 
-    filteredItems.value = filterableItems.value.slice(start, end);
+    filteredItems.value = sourceItems.slice(start, end);
 }, { immediate: true });
-
-watch(query, () => {
-    if (query.value === '') {
-        return;
-    }
-
-    let totalFilteredItems = 0;
-
-    filteredItems.value = items.value.filter((item: T): boolean => {
-        if (totalFilteredItems === itemsPerPage.value) {
-            return false;
-        }
-
-        for (const key of Object.keys(item) as (keyof T)[]) {
-            const value = JSON.stringify(item[key]).toLowerCase();
-
-            if (value.includes(query.value)) {
-                totalFilteredItems++;
-                return true;
-            }
-        }
-
-        return false;
-    });
-});
 </script>
