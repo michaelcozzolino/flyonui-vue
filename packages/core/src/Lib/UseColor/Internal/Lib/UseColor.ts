@@ -42,6 +42,16 @@ export function useColor(
                 warning:   'checkbox-warning',
                 error:     'checkbox-error',
             },
+            FoHeading: {
+                neutral:   'text-neutral',
+                primary:   'text-primary',
+                secondary: 'text-secondary',
+                accent:    'text-accent',
+                info:      'text-info',
+                success:   'text-success',
+                warning:   'text-warning',
+                error:     'text-error',
+            },
             FoLink: {
                 neutral:   'link-neutral',
                 primary:   'link-primary',
