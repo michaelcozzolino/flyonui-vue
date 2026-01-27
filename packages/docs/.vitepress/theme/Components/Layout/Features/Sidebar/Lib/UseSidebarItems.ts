@@ -1,5 +1,6 @@
 import type { SidebarBadge, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
 import type { ComputedRef }               from 'vue';
+import { flyonUIVueNextPath }             from '@/Next/Lib/Next';
 import { computed }                       from 'vue';
 
 export function useSidebarItems(): ComputedRef<SidebarItem[]> {
@@ -203,6 +204,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/tables/table',
                         icon:     'mdi:table',
                         children: [],
+                    },
+                    {
+                        text:     'Data Table',
+                        to:       `${flyonUIVueNextPath}/tables/data-table`,
+                        icon:     'carbon:data-table',
+                        children: [],
+                        badge:    _unreleasedBadge,
                     },
                 ],
             },

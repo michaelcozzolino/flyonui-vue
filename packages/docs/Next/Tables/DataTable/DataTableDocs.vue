@@ -1,0 +1,87 @@
+<template>
+    <ComponentDocs :previews="previews"
+                   :section="section"
+                   :api-docs-component-names="['FoDataTable']"
+    />
+</template>
+
+<script setup lang="ts">
+import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
+import type { ApiType }              from '@/Api/Types/Api.ts';
+import type { Default }              from 'flyonui-vue';
+import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import ControlsPositionDataTable     from '@/Next/Tables/DataTable/ControlsPositionDataTable.vue';
+import ControlsPositionDataTableRaw  from '@/Next/Tables/DataTable/ControlsPositionDataTable.vue?raw';
+import DefaultDataTable              from '@/Next/Tables/DataTable/DefaultDataTable.vue';
+import DefaultDataTableRaw           from '@/Next/Tables/DataTable/DefaultDataTable.vue?raw';
+import FilterableDataTable           from '@/Next/Tables/DataTable/FilterableDataTable.vue';
+import FilterableDataTableRaw        from '@/Next/Tables/DataTable/FilterableDataTable.vue?raw';
+import NoSearchResultsDataTable      from '@/Next/Tables/DataTable/NoSearchResultsDataTable.vue';
+import NoSearchResultsDataTableRaw   from '@/Next/Tables/DataTable/NoSearchResultsDataTable.vue?raw';
+import SearchableDataTable           from '@/Next/Tables/DataTable/SearchableDataTable.vue';
+import SearchableDataTableRaw        from '@/Next/Tables/DataTable/SearchableDataTable.vue?raw';
+import SelectableDataTable           from '@/Next/Tables/DataTable/SelectableDataTable.vue';
+import SelectableDataTableRaw        from '@/Next/Tables/DataTable/SelectableDataTable.vue?raw';
+import { computed }                  from 'vue';
+
+type Section = Default
+    | 'selectable'
+    | 'searchable'
+    | 'no-search-results'
+    | 'controls-position'
+    | 'filterable'
+    | ApiType;
+
+interface Props {
+    section: Section;
+}
+
+defineProps<Props>();
+
+const previews = computed(() => {
+    return new Map<Section, ComponentDocsPreview>([
+        [
+            'default',
+            {
+                code:      DefaultDataTableRaw,
+                component: DefaultDataTable,
+            },
+        ],
+        [
+            'selectable',
+            {
+                code:      SelectableDataTableRaw,
+                component: SelectableDataTable,
+            },
+        ],
+        [
+            'searchable',
+            {
+                code:      SearchableDataTableRaw,
+                component: SearchableDataTable,
+            },
+        ],
+        [
+            'no-search-results',
+            {
+                code:      NoSearchResultsDataTableRaw,
+                component: NoSearchResultsDataTable,
+            },
+        ],
+        [
+            'controls-position',
+            {
+                code:      ControlsPositionDataTableRaw,
+                component: ControlsPositionDataTable,
+            },
+        ],
+        [
+            'filterable',
+            {
+                code:      FilterableDataTableRaw,
+                component: FilterableDataTable,
+            },
+        ],
+    ]);
+});
+</script>
