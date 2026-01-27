@@ -140,12 +140,6 @@ const safePage = computed<number>({
     },
 });
 
-watch(safePage, (): void => {
-    if (safePage.value <= 0 || safePage.value > totalPages.value) {
-        throw new Error(`Page must be between 1 and ${totalPages.value}, got ${safePage.value}.`);
-    }
-}, { immediate: true });
-
 /**
  * The number of <th> that the developer is using through the head slot
  */
