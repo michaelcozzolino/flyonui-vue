@@ -3,6 +3,7 @@ import type { ConfigurableComponentProps } from '@/Lib';
 type NonConfigurableComponentName = 'FoJoin'
     | 'FoCheckboxGroup'
     | 'FoDatalist'
+    | 'FoDataTable'
     | 'FoDotStyleBadge'
     | 'FoHeading'
     | 'FoLabel'
