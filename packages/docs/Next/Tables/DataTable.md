@@ -26,8 +26,8 @@
 
 ### Props
 
-<ButtonDocs section="props" />
+<DataTableDocs section="props" />
 
 ### Slots
 
-<ButtonDocs section="slots" />
+<DataTableDocs section="slots" />
