@@ -5,7 +5,7 @@
     ],
     "packageManager": "yarn@4.6.0",
     "engines": {
-        "node": ">=18.0.0"
+        "node": ">=20.19.0"
     },
     "scripts": {
         "dependency-upgrade": "npx yarn-upgrade-all",
@@ -39,7 +39,7 @@
     "resolutions": {
         "@iconify/vue": "^4.3.0",
         "@types/node": "^22.18.8",
-        "@vitejs/plugin-vue": "^5.2.4",
+        "@vitejs/plugin-vue": "^6.0.3",
         "@vue/test-utils": "^2.4.6",
         "@vue/tsconfig": "^0.8.1",
         "@vueuse/core": "^14.1.0",
@@ -51,9 +51,9 @@
         "tailwindcss": "^4.1.16",
         "tsc-alias": "^1.8.16",
         "typescript": "^5.9.3",
-        "vite": "^6.4.1",
+        "vite": "^7.3.0",
         "vitest": "^3.2.4",
-        "vue": "^3.5.22",
+        "vue": "^3.5.25",
         "vue-router": "^4.5.1",
         "vue-tsc": "^3.1.1"
     }

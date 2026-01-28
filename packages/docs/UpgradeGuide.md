@@ -2,6 +2,10 @@
 
 ## Upgrading to 3.x from 2.x
 
+### Version Requirements
+
+The minimum required version for Node.js is now `>= 20.19.0`.
+
 ### All Components - Props
 
 - The `isDisabled` and `isReadonly` props of every component have been renamed to `disabled` and `readonly`
