@@ -20,7 +20,7 @@
 
 <InputTextDocs section="floating-label" />
 
-# Sizes
+## Sizes
 
 ### Default size
 

@@ -34,7 +34,7 @@
 
 <ButtonDocs section="pilled" />
 
-### Validation states
+## Validation states
 
 <ButtonDocs section="state" />
 
