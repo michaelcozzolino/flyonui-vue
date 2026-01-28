@@ -1,19 +1,16 @@
 <template>
-    <th :colspan="colspan">
+    <th :colspan="colspan"
+        :rowspan="rowspan"
+    >
         <slot />
     </th>
 </template>
 
 <script setup lang="ts">
 import type { WithDefaultSlot } from '@/Types';
+import type { TableCellProps }  from '@/UI/Tables';
 
-// todo: add rowspan too and also for td
-interface Props {
-    /** The number of columns for which a cell should span over */
-    colspan?: number;
-}
-
-defineProps<Props>();
+defineProps<TableCellProps>();
 
 defineSlots<WithDefaultSlot>();
 </script>

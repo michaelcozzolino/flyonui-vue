@@ -1,6 +1,6 @@
 <template>
     <div id="flyonui-vue-docs-docs-sidebar"
-         class="sticky top-28 h-[calc(100vh-7.25rem)] w-64 overflow-x-hidden overflow-y-auto max-lg:hidden shrink-0"
+         class="sticky top-28 h-[calc(100vh-7.25rem)] w-60 overflow-x-hidden overflow-y-auto max-lg:hidden shrink-0"
     >
         <FoMenu class="vp-raw p-0!"
                 size="extraSmall"

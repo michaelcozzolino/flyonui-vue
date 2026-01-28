@@ -22,6 +22,7 @@
                 <slot name="head" />
             </FoTableHead>
 
+            <!--            todo: this might be a mistake -->
             <slot v-if="$slots.default" />
 
             <tbody v-if="$slots.body">
@@ -36,35 +37,26 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }     from '@/Lib';
-import type { WithDefaultSlot }   from '@/Types';
-import type { TableProps }        from '@/UI/Tables';
-import type { Slot }              from 'vue';
-import { useFlyonUIVueAppConfig } from '@/Lib';
-import { useBorder }              from '@/Lib/UseBorder/Internal';
-import { useClass }               from '@/Lib/UseClass/Internal';
-import { useResponsitivity }      from '@/Lib/UseResponsitivity/Internal';
-import { useSize }                from '@/Lib/UseSize/Internal';
-import { FoTableHead }            from '@/UI/Tables';
-import { computed }               from 'vue';
+import type { ComponentName }          from '@/Lib';
+import type { WithDefaultSlot }        from '@/Types';
+import type { TableProps, TableSlots } from '@/UI/Tables';
+import type { Slot }                   from 'vue';
+import { useFlyonUIVueAppConfig }      from '@/Lib';
+import { useBorder }                   from '@/Lib/UseBorder/Internal';
+import { useClass }                    from '@/Lib/UseClass/Internal';
+import { useResponsitivity }           from '@/Lib/UseResponsitivity/Internal';
+import { useSize }                     from '@/Lib/UseSize/Internal';
+import { FoTableHead }                 from '@/UI/Tables';
+import { computed }                    from 'vue';
 
 const props = withDefaults(defineProps<TableProps>(), {
     isBordered: undefined,
     isPinned:   undefined,
 });
 
-defineSlots<WithDefaultSlot & {
+defineSlots<WithDefaultSlot & TableSlots & {
     /** The table's <caption /> */
     caption?: Slot;
-
-    /** The table's <thead /> */
-    head?: Slot;
-
-    /** The table's <tbody /> */
-    body?: Slot;
-
-    /** The table's <tfoot /> */
-    footer?: Slot;
 }>();
 
 const componentName: ComponentName = 'FoTable';

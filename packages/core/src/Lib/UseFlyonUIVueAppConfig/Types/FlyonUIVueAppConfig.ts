@@ -2,7 +2,7 @@ import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size }
 import type { PickIfExists, Prettify }                                                 from '@/Lib/Utils/Internal';
 import type { Direction, HorizontalPosition }                                          from '@/Types';
 import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }            from '@/UI/Components';
-import type { KeyboardProps, LinkProps }                                               from '@/UI/Content';
+import type { HeadingProps, KeyboardProps, LinkProps }                                 from '@/UI/Content';
 import type { IconProps }                                                              from '@/UI/Customization';
 import type { CheckboxProps, InputTextProps, SelectProps, SwitchProps, TextareaProps } from '@/UI/Forms';
 import type { TabProps, TabsProps }                                                    from '@/UI/Navigations';
@@ -91,6 +91,7 @@ export interface ConfigurableComponentProps {
     FoButton:    ConfigurableProps<ButtonProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     /** Checkbox defaults */
     FoCheckbox:  ConfigurableProps<CheckboxProps>;
+    FoHeading:   ConfigurableProps<HeadingProps>;
     FoIcon:      ConfigurableProps<IconProps>;
     FoInputText: ConfigurableProps<
         InputTextProps
