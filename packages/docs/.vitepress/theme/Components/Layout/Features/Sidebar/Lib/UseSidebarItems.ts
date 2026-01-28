@@ -138,10 +138,9 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                     },
                     {
                         text:     'Tabs',
-                        to:       `${flyonUIVueNextPath}/navigations/tabs`,
+                        to:       '/navigations/tabs',
                         icon:     'mdi:tab',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                 ],
             },
@@ -197,10 +196,9 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                     },
                     {
                         text:     'Switch',
-                        to:       `${flyonUIVueNextPath}/forms/switch`,
+                        to:       '/forms/switch',
                         icon:     'mdi:toggle-switch',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Textarea',
@@ -218,6 +216,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/tables/table',
                         icon:     'mdi:table',
                         children: [],
+                    },
+                    {
+                        text:     'Data Table',
+                        to:       `${flyonUIVueNextPath}/tables/data-table`,
+                        icon:     'carbon:data-table',
+                        children: [],
+                        badge:    _unreleasedBadge,
                     },
                 ],
             },
