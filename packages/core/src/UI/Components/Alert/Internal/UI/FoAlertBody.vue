@@ -25,14 +25,14 @@
 <script setup lang="ts">
 import type { ComponentName }           from '@/Lib';
 import type { WithRequiredDefaultSlot } from '@/Types';
-import type { AlertEmits, BadgeProps }  from '@/UI/Components';
+import type { AlertEmits, AlertProps }  from '@/UI/Components';
 import {  useFlyonUIVueAppConfig }      from '@/Lib';
 import { useColor }                     from '@/Lib/UseColor/Internal';
 import { usePreset }                    from '@/Lib/UsePreset/Internal';
 import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
 import {  FoButton }                    from '@/UI/Components';
 
-const props = defineProps<BadgeProps>();
+const props = defineProps<AlertProps>();
 
 const emit = defineEmits<AlertEmits>();
 

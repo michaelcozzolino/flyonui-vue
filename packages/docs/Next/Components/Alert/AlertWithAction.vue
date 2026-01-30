@@ -6,7 +6,7 @@
 
         <FoLink to="#"
                 color="primary"
-                class="ont-semibold"
+                class="font-semibold"
         >
             policy
         </FoLink>
