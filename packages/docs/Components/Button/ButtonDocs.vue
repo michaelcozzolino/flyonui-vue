@@ -17,8 +17,6 @@ import ButtonState                   from '@/Components/Button/ButtonState.vue';
 import ButtonStateRaw                from '@/Components/Button/ButtonState.vue?raw';
 import DashedButton                  from '@/Components/Button/DashedButton.vue';
 import DashedButtonRaw               from '@/Components/Button/DashedButton.vue?raw';
-import DefaultButton                 from '@/Components/Button/DefaultButton.vue';
-import DefaultButtonRaw              from '@/Components/Button/DefaultButton.vue?raw';
 import GlassButton                   from '@/Components/Button/GlassButton.vue';
 import GlassButtonRaw                from '@/Components/Button/GlassButton.vue?raw';
 import GradientButton                from '@/Components/Button/GradientButton.vue';
@@ -39,6 +37,8 @@ import SocialButtonShape             from '@/Components/Button/SocialButtonShape
 import SocialButtonShapeRaw          from '@/Components/Button/SocialButtonShape.vue?raw';
 import SoftButton                    from '@/Components/Button/SoftButton.vue';
 import SoftButtonRaw                 from '@/Components/Button/SoftButton.vue?raw';
+import SolidButton                   from '@/Components/Button/SolidButton.vue';
+import SolidButtonRaw                from '@/Components/Button/SolidButton.vue?raw';
 import TextButton                    from '@/Components/Button/TextButton.vue';
 import TextButtonRaw                 from '@/Components/Button/TextButton.vue?raw';
 import { computed }                  from 'vue';
@@ -72,8 +72,8 @@ const previews = computed(() => {
         [
             'solid',
             {
-                code:      DefaultButtonRaw,
-                component: DefaultButton,
+                code:      SolidButtonRaw,
+                component: SolidButton,
             },
         ],
         [
