@@ -1,6 +1,9 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 
+import ComponentNotReadyForProductionAlert
+    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentNotReadyForProductionAlert.vue';
+import TipAlert                                       from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
 import Layout                                         from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 import CodePreview                                    from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import ComponentsApi                                  from '@/Api/UI/ComponentsApi.vue';
@@ -77,6 +80,8 @@ export default {
         registerDocComponents(app, [
             { name: 'KeyboardDocs', instance: KeyboardDocs },
             { name: 'AlertDocs', instance: AlertDocs },
+            { name: 'ComponentNotReadyForProductionAlert', instance: ComponentNotReadyForProductionAlert },
+            { name: 'TipAlert', instance: TipAlert },
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
