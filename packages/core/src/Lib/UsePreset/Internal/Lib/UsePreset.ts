@@ -13,6 +13,14 @@ export function usePreset(
     return useComponentClass<PresettableComponentName, Preset>(
         componentName,
         {
+            FoAlert: {
+                solid:    '',
+                outline:  'alert-outline',
+                dash:     'alert-outline border-dashed',
+                soft:     'alert-soft',
+                gradient: '',
+                text:     '',
+            },
             FoButton: {
                 solid:    '',
                 outline:  'btn-outline',

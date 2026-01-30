@@ -2,6 +2,7 @@ import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size }
 import type { PickIfExists, Prettify }                                                 from '@/Lib/Utils/Internal';
 import type { Direction, HorizontalPosition }                                          from '@/Types';
 import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }            from '@/UI/Components';
+import type { AlertProps }                                                             from '@/UI/Components/Alert';
 import type { HeadingProps, KeyboardProps, LinkProps }                                 from '@/UI/Content';
 import type { IconProps }                                                              from '@/UI/Customization';
 import type { CheckboxProps, InputTextProps, SelectProps, SwitchProps, TextareaProps } from '@/UI/Forms';
@@ -85,6 +86,7 @@ type ConfigurableProps<MaybeProps extends object> = Prettify<
 
 /** Configurable props for each component */
 export interface ConfigurableComponentProps {
+    FoAlert:     ConfigurableProps<AlertProps>;
     /** Badge defaults */
     FoBadge:     ConfigurableProps<BadgeProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     /** Button defaults */

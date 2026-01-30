@@ -66,6 +66,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                 text:     'Components',
                 children: [
                     {
+                        text:     'Alert',
+                        to:       `${flyonUIVueNextPath}/components/alert`,
+                        icon:     'line-md:alert',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Badge',
                         to:       '/components/badge',
                         icon:     'mdi:badge-account-outline',

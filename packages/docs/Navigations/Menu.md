@@ -18,9 +18,7 @@
 
 ### With tooltips
 
-::: warning
-The following component might have changes in future releases
-:::
+<ComponentNotReadyForProductionAlert />
 
 <MenuDocs section="with-tooltip" />
 

@@ -12,6 +12,16 @@ export function useColor(
     return useComponentClass<ColorableComponentName, Color>(
         componentName,
         {
+            FoAlert: {
+                neutral:   '',
+                primary:   'alert-primary',
+                secondary: 'alert-secondary',
+                accent:    'alert-accent',
+                info:      'alert-info',
+                success:   'alert-success',
+                warning:   'alert-warning',
+                error:     'alert-error',
+            },
             FoBadge: {
                 neutral:   '',
                 primary:   'badge-primary',
