@@ -26,6 +26,7 @@ import MenuDocs                                       from '@/Navigations/Menu/M
 import NavbarDocs                                     from '@/Navigations/Navbar/NavbarDocs.vue';
 import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
 import TabsDocs                                       from '@/Navigations/Tabs/TabsDocs.vue';
+import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
 import DataTableDocs                                  from '@/Next/Tables/DataTable/DataTableDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
 import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
@@ -75,6 +76,7 @@ export default {
 
         registerDocComponents(app, [
             { name: 'KeyboardDocs', instance: KeyboardDocs },
+            { name: 'AlertDocs', instance: AlertDocs },
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
