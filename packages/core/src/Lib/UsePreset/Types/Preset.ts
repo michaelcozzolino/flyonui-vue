@@ -1,6 +1,6 @@
 import type { ComponentName } from '@/Lib';
 
-export type PresettableComponentName = Extract<ComponentName, 'FoBadge' | 'FoButton' | 'FoSwitch'>;
+export type PresettableComponentName = Extract<ComponentName, 'FoAlert' | 'FoBadge' | 'FoButton' | 'FoSwitch'>;
 
 export type Preset = 'solid' | 'gradient' | 'text' | 'soft' | 'outline' | 'dash';
 

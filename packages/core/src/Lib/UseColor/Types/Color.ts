@@ -2,7 +2,15 @@ import type { ComponentName } from '@/Lib';
 
 export type ColorableComponentName = Extract<
     ComponentName,
-    'FoBadge' | 'FoButton' | 'FoCheckbox' | 'FoModal' | 'FoRadio' | 'FoSwitch' | 'FoTooltip' | ColorableTextComponentName
+    'FoAlert'
+    | 'FoBadge'
+    | 'FoButton'
+    | 'FoCheckbox'
+    | 'FoModal'
+    | 'FoRadio'
+    | 'FoSwitch'
+    | 'FoTooltip'
+    | ColorableTextComponentName
 >;
 
 export type ColorableTextComponentName = Extract<ComponentName, 'FoHeading' | 'FoLink' | 'FoLoading'>;

@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-            </transition>
+            </Transition>
         </div>
     </Transition>
 </template>
