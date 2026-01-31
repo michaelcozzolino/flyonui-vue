@@ -85,6 +85,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Diff',
+                        to:       `${flyonUIVueNextPath}/components/diff`,
+                        icon:     'tabler:git-compare',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'List Group',
                         to:       '/components/list-group',
                         icon:     'mdi:format-list-bulleted',

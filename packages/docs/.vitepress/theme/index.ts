@@ -30,6 +30,7 @@ import NavbarDocs                                     from '@/Navigations/Navbar
 import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
 import TabsDocs                                       from '@/Navigations/Tabs/TabsDocs.vue';
 import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
+import DiffDocs                                       from '@/Next/Components/DiffDocs/DiffDocs.vue';
 import DataTableDocs                                  from '@/Next/Tables/DataTable/DataTableDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
 import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
@@ -87,6 +88,7 @@ export default {
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
             { name: 'DataTableDocs', instance: DataTableDocs },
+            { name: 'DiffDocs', instance: DiffDocs },
             { name: 'InputTextDocs', instance: InputTextDocs },
             { name: 'IconsDocs', instance: IconsDocs },
             { name: 'JoinDocs', instance: JoinDocs },
