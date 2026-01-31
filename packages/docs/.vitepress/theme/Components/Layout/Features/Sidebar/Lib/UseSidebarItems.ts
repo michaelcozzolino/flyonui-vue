@@ -110,6 +110,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Status',
+                        to:       `${flyonUIVueNextPath}/components/status`,
+                        icon:     'tabler:circle-dot',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Swap',
                         to:       '/components/swap',
                         icon:     'mdi:swap-horizontal',
