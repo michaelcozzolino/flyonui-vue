@@ -1,4 +1,4 @@
-# Diff
+# Status
 
 ### Default
 
@@ -19,8 +19,8 @@
 [//]: # (todo: status with progress)
 ### Props
 
-<DiffDocs section="props" />
+<StatusDocs section="props" />
 
 ### Slots
 
-<DiffDocs section="slots" />
+<StatusDocs section="slots" />
