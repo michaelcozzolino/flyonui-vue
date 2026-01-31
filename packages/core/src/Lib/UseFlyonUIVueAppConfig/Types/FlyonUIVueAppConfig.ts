@@ -3,6 +3,7 @@ import type { PickIfExists, Prettify }                                          
 import type { Direction, HorizontalPosition }                                          from '@/Types';
 import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }            from '@/UI/Components';
 import type { AlertProps }                                                             from '@/UI/Components/Alert';
+import type { StatusProps }                                                            from '@/UI/Components/Status';
 import type { HeadingProps, KeyboardProps, LinkProps }                                 from '@/UI/Content';
 import type { IconProps }                                                              from '@/UI/Customization';
 import type { CheckboxProps, InputTextProps, SelectProps, SwitchProps, TextareaProps } from '@/UI/Forms';
@@ -112,6 +113,7 @@ export interface ConfigurableComponentProps {
     FoRadio:    ConfigurableProps<ButtonProps>; // todo: temporary
     /** Select defaults */
     FoSelect:   ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
+    FoStatus:   ConfigurableProps<StatusProps>;
     FoSwitch:   ConfigurableProps<SwitchProps> & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>;
     /** Table defaults */
     FoTable:    ConfigurableProps<TableProps>;

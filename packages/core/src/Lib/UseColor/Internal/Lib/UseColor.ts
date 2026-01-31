@@ -102,6 +102,16 @@ export function useColor(
                 warning:   'radio-warning',
                 error:     'radio-error',
             },
+            FoStatus: {
+                neutral:   '',
+                primary:   'status-primary',
+                secondary: 'status-secondary',
+                accent:    'status-accent',
+                info:      'status-info',
+                success:   'status-success',
+                warning:   'status-warning',
+                error:     'status-error',
+            },
             FoSwitch: {
                 neutral:   '',
                 primary:   'switch-primary',

@@ -8,6 +8,7 @@ export type ColorableComponentName = Extract<
     | 'FoCheckbox'
     | 'FoModal'
     | 'FoRadio'
+    | 'FoStatus'
     | 'FoSwitch'
     | 'FoTooltip'
     | ColorableTextComponentName
