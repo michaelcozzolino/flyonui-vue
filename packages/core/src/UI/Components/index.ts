@@ -1,6 +1,7 @@
 export * from '@/UI/Components/Alert';
 export * from '@/UI/Components/Badge';
 export * from '@/UI/Components/Button';
+export * from '@/UI/Components/Diff';
 export * from '@/UI/Components/HelperText';
 export * from '@/UI/Components/Label';
 export * from '@/UI/Components/ListGroup';
