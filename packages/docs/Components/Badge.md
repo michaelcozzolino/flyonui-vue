@@ -51,7 +51,7 @@
 [//]: # (todo: dismissible badge with avatar)
 ## Dismissible badge
 
-### Chips
+### Chips (Unreleased)
 
 <BadgeDocs section="chip" />
 
