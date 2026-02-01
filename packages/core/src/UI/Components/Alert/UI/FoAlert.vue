@@ -12,8 +12,9 @@
 </template>
 
 <script setup lang="ts">
+import type { DismissibleEmits }        from '@/Lib/UseDismissibleTransition';
 import type { WithRequiredDefaultSlot } from '@/Types';
-import type { AlertEmits, AlertProps }  from '@/UI/Components';
+import type { AlertProps }              from '@/UI/Components';
 import { UseDismissibleTransition }     from '@/Lib/UseDismissibleTransition/Internal';
 import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
 import { FoAlertBody }                  from '@/UI/Components/Alert/Internal';
@@ -21,7 +22,7 @@ import { ref }                          from 'vue';
 
 defineProps<AlertProps>();
 
-const emit = defineEmits<AlertEmits>();
+const emit = defineEmits<DismissibleEmits>();
 
 defineSlots<WithRequiredDefaultSlot>();
 
