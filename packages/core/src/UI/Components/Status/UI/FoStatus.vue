@@ -10,10 +10,10 @@
             <div v-if="animation === 'ping'"
                  :class="[statusClass, colorClass, sizeClass]"
             />
-        </Component>
+        </component>
 
         <slot />
-    </Component>
+    </component>
 </template>
 
 <script setup lang="ts">
