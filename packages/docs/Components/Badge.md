@@ -48,6 +48,13 @@
 
 <BadgeDocs section="in-a-button" />
 
+[//]: # (todo: dismissible badge with avatar)
+## Dismissible badge
+
+### Chips (Unreleased)
+
+<BadgeDocs section="chip" />
+
 ## Api
 
 ### Props

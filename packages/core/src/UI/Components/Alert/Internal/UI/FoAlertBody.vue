@@ -24,8 +24,9 @@
 
 <script setup lang="ts">
 import type { ComponentName }           from '@/Lib';
+import type { DismissibleEmits }        from '@/Lib/UseDismissibleTransition';
 import type { WithRequiredDefaultSlot } from '@/Types';
-import type { AlertEmits, AlertProps }  from '@/UI/Components';
+import type { AlertProps }              from '@/UI/Components';
 import {  useFlyonUIVueAppConfig }      from '@/Lib';
 import { useColor }                     from '@/Lib/UseColor/Internal';
 import { usePreset }                    from '@/Lib/UsePreset/Internal';
@@ -34,7 +35,7 @@ import {  FoButton }                    from '@/UI/Components';
 
 const props = defineProps<AlertProps>();
 
-const emit = defineEmits<AlertEmits>();
+const emit = defineEmits<DismissibleEmits>();
 
 defineSlots<WithRequiredDefaultSlot>();
 
