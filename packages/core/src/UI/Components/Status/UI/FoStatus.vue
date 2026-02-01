@@ -1,8 +1,8 @@
 <template>
-    <Component :is="statusTag"
+    <component :is="statusTag"
                :class="statusTag === 'div' && 'flex items-center gap-2'"
     >
-        <Component :is="animation === 'ping' ? 'div' : FoFragment"
+        <component :is="animation === 'ping' ? 'div' : FoFragment"
                    :class="animation === 'ping' && 'inline-grid *:[grid-area:1/1]'"
         >
             <div :class="[statusClass, colorClass, sizeClass, animationClass]" />

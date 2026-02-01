@@ -1,5 +1,5 @@
 <template>
-    <Component :is="isParent ? 'span' : 'li'"
+    <component :is="isParent ? 'span' : 'li'"
                class="menu-title"
     >
         <slot />
