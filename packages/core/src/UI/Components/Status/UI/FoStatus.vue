@@ -1,11 +1,15 @@
 <template>
     <component :is="statusTag"
                :class="statusTag === 'div' && 'flex items-center gap-2'"
+               v-bind="statusTag === 'div' && $attrs"
     >
         <component :is="animation === 'ping' ? 'div' : FoFragment"
                    :class="animation === 'ping' && 'inline-grid *:[grid-area:1/1]'"
+                   v-bind="animation === 'ping' && $attrs"
         >
-            <div :class="[statusClass, colorClass, sizeClass, animationClass]" />
+            <div :class="[statusClass, colorClass, sizeClass, animationClass]"
+                 v-bind="statusTag !== 'div' && animation !== 'ping' && $attrs"
+            />
 
             <div v-if="animation === 'ping'"
                  :class="[statusClass, colorClass, sizeClass]"
