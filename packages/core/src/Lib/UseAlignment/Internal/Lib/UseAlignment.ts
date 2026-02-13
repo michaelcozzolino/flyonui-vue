@@ -15,6 +15,11 @@ export function useAlignment(
     return useComponentClass<AlignableComponentName, Alignment>(
         componentName,
         {
+            FoDivider: {
+                left:   'divider-start',
+                center: '',
+                right:  'divider-end',
+            },
             FoPagination: standardAlignmentClasses,
             FoTabs:       standardAlignmentClasses,
         },

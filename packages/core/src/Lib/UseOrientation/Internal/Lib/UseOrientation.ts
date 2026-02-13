@@ -13,6 +13,10 @@ export function useOrientation(
                 horizontal: 'gap-4 overflow-x-auto',
                 vertical:   'flex-col gap-2',
             },
+            FoDivider: {
+                horizontal: 'divider-horizontal',
+                vertical:   '',
+            },
             FoJoin: {
                 horizontal: '',
                 vertical:   'join-vertical',
