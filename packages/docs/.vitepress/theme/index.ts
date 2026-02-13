@@ -32,6 +32,7 @@ import TabsDocs                                       from '@/Navigations/Tabs/T
 import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
 import DiffDocs                                       from '@/Next/Components/Diff/DiffDocs.vue';
 import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
+import DividerDocs                                    from '@/Next/Content/Divider/DividerDocs.vue';
 import DataTableDocs                                  from '@/Next/Tables/DataTable/DataTableDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
 import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
@@ -90,6 +91,7 @@ export default {
             { name: 'CheckboxDocs', instance: CheckboxDocs },
             { name: 'DataTableDocs', instance: DataTableDocs },
             { name: 'DiffDocs', instance: DiffDocs },
+            { name: 'DividerDocs', instance: DividerDocs },
             { name: 'InputTextDocs', instance: InputTextDocs },
             { name: 'IconsDocs', instance: IconsDocs },
             { name: 'JoinDocs', instance: JoinDocs },
