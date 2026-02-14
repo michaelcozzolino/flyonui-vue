@@ -10,6 +10,7 @@ The minimum required version for Node.js is now `>= 20.19.0`.
 
 - The `Direction` type has been renamed to `TextDirection`.
 - The property `direction` of the type `FlyonUIVueAppGlobalConfig` has been renamed to `textDirection`.
+- The `Animation` type has been renamed to `LoadingAnimation`.
 
 ### All Components - Props
 
