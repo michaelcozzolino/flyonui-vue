@@ -20,6 +20,7 @@ export function usePreset(
                 soft:     'alert-soft',
                 gradient: '',
                 text:     '',
+                dot:      '',
             },
             FoButton: {
                 solid:    '',
@@ -28,6 +29,7 @@ export function usePreset(
                 soft:     'btn-soft',
                 gradient: 'btn-gradient',
                 text:     'btn-text',
+                dot:      '',
             },
             FoBadge: {
                 solid:    '',
@@ -36,6 +38,16 @@ export function usePreset(
                 soft:     'badge-soft',
                 gradient: '',
                 text:     '',
+                dot:      '',
+            },
+            FoDivider: {
+                solid:    '',
+                outline:  '',
+                dash:     'divider-dashed',
+                soft:     '',
+                gradient: '',
+                text:     '',
+                dot:      'divider-dotted',
             },
             FoSwitch: {
                 solid:    '',
@@ -44,6 +56,7 @@ export function usePreset(
                 soft:     '',
                 gradient: '',
                 text:     '',
+                dot:      '',
             },
         },
         useFlyonUIVueAppConfigProperty(config, componentName, 'preset', preset),

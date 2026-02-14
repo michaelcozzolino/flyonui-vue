@@ -37,15 +37,22 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                 text:     'Content',
                 children: [
                     {
-                        text:     'Link',
-                        to:       '/content/link',
-                        icon:     'ic:round-link',
+                        text:     'Divider',
+                        to:       `${flyonUIVueNextPath}/content/divider`,
+                        icon:     'tabler:separator-horizontal',
                         children: [],
+                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Keyboard',
                         to:       '/content/keyboard',
                         icon:     'mdi:keyboard-outline',
+                        children: [],
+                    },
+                    {
+                        text:     'Link',
+                        to:       '/content/link',
+                        icon:     'ic:round-link',
                         children: [],
                     },
                     {

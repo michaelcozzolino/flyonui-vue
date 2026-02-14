@@ -6,6 +6,7 @@ export type ColorableComponentName = Extract<
     | 'FoBadge'
     | 'FoButton'
     | 'FoCheckbox'
+    | 'FoDivider'
     | 'FoModal'
     | 'FoRadio'
     | 'FoStatus'
@@ -14,7 +15,7 @@ export type ColorableComponentName = Extract<
     | ColorableTextComponentName
 >;
 
-export type ColorableTextComponentName = Extract<ComponentName, 'FoHeading' | 'FoLink' | 'FoLoading'>;
+export type ColorableTextComponentName = Extract<ComponentName, 'FoDivider' | 'FoHeading' | 'FoLink' | 'FoLoading'>;
 
 export type Color = 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
 

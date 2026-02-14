@@ -52,6 +52,16 @@ export function useColor(
                 warning:   'checkbox-warning',
                 error:     'checkbox-error',
             },
+            FoDivider: {
+                neutral:   'divider-neutral',
+                primary:   'divider-primary',
+                secondary: 'divider-secondary',
+                accent:    'divider-accent',
+                info:      'divider-info',
+                success:   'divider-success',
+                warning:   'divider-warning',
+                error:     'divider-error',
+            },
             FoHeading: {
                 neutral:   'text-neutral',
                 primary:   'text-primary',
