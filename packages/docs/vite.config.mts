@@ -5,7 +5,9 @@ import { defineConfig }  from 'vite';
 
 export default defineConfig({
     define: {
-        FLYONUI_VUE_VERSION: JSON.stringify(execSync('yarn core:version').toString().trim()),
+        FLYONUI_VUE_DOMAIN:       JSON.stringify('flyonui-vue.com'),
+        FLYONUI_VUE_VERSION:      JSON.stringify(execSync('yarn core:version').toString().trim()),
+        OLD_FLYONUI_VUE_VERSIONS: JSON.stringify(['2.x']),
     },
     resolve: {
         alias: [

@@ -1,7 +1,7 @@
 <template>
     <ClientOnly>
         <FoNavbar id="flyonui-vue-docs-navbar"
-                  class="vp-raw sticky top-0 z-100 border-b-1 border-base-content/10"
+                  class="vp-raw sticky top-0 z-100 border-b border-base-content/10"
                   :links="links"
                   link-type="js"
         >
@@ -14,14 +14,7 @@
                             @click="isSidebarCollapsed = !isSidebarCollapsed"
                     />
 
-                    <FoLink to="https://www.npmjs.com/package/flyonui-vue"
-                            color="info"
-                            underline-effect="hover-animated"
-                    >
-                        {{ flyonUIVueVersion }}
-                    </FoLink>
-
-                    <FoNavbarBrand :class="!isSidebarCollapsed && 'sm:ms-40'"
+                    <FoNavbarBrand :class="!isSidebarCollapsed && 'sm:ms-46'"
                                    @click="router.go('/')"
                     >
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,6 +25,28 @@
                             />
                         </svg>
                     </FoNavbarBrand>
+
+                    <FoPopover placement="bottom">
+                        <FoButton :icon="{ right: 'tabler:chevron-down' }"
+                                  preset="gradient"
+                                  size="small"
+                        >
+                            {{ currentVersion }}
+                        </FoButton>
+
+                        <template #body>
+                            <template v-for="{ name: version, to } in oldVersions"
+                                      :key="version"
+                            >
+                                <FoLink :to="to"
+                                        color="primary"
+                                        underline-effect="hover-animated"
+                                >
+                                    {{ version }}
+                                </FoLink>
+                            </template>
+                        </template>
+                    </FoPopover>
 
                     <VPNavBarSearch />
                 </div>
@@ -65,17 +80,20 @@
 import type { FlyonUITheme, NavbarLink } from 'flyonui-vue';
 import ConfigurationSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
+import {
+    useFlyonUIVueVersion,
+}                         from '@/.vitepress/theme/Components/Layout/Lib/UseFlyonUIVueVersion';
 import { useLayoutStore } from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
 
-import { loadIcons }                                                                  from '@iconify/vue';
-import { useColorMode, useStorage }                                                   from '@vueuse/core';
-import { FoButton, FoIcon, FoLink, FoModal, FoNavbar, FoNavbarBrand, FoSocialButton } from 'flyonui-vue';
-import { storeToRefs }                                                                from 'pinia';
-import { useData, useRouter, withBase }                                               from 'vitepress';
-import { VPNavBarSearch }                                                             from 'vitepress/theme';
-import { computed, onMounted, ref }                                                   from 'vue';
+import { loadIcons }                                                                             from '@iconify/vue';
+import { useColorMode, useStorage }                                                              from '@vueuse/core';
+import { FoButton, FoIcon, FoLink, FoModal, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
+import { storeToRefs }                                                                           from 'pinia';
+import { useData, useRouter, withBase }                                                          from 'vitepress';
+import { VPNavBarSearch }                                                                        from 'vitepress/theme';
+import { computed, onMounted, ref }                                                              from 'vue';
 
-const flyonUIVueVersion = FLYONUI_VUE_VERSION;
+const { currentVersion, oldVersions } = useFlyonUIVueVersion();
 
 const router = useRouter();
 
