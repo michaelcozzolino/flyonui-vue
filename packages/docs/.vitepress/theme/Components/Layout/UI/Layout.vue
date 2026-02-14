@@ -13,7 +13,11 @@
             >
                 <Sidebar />
 
-                <Content class="VPDoc vp-doc flex-grow m-8 min-w-0" />
+                <div class="flex flex-col VPDoc vp-doc grow m-8 min-w-0">
+                    <EndOfLifeAlert />
+
+                    <Content />
+                </div>
 
                 <DocsSidebar v-if="frontmatter.aside !== false && items.length"
                              :items="items"
@@ -27,14 +31,12 @@
 import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar.ts';
 
 import type { FlyonUITheme } from 'flyonui-vue';
+import EndOfLifeAlert        from '@/.vitepress/theme/Components/ComponentDocs/UI/EndOfLifeAlert.vue';
 import DocsSidebar           from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebar.vue';
 import Home                  from '@/.vitepress/theme/Components/Layout/Features/Home/UI/Home.vue';
 import Navbar                from '@/.vitepress/theme/Components/Layout/Features/Navbar/UI/Navbar.vue';
-
-import NotFound
-    from '@/.vitepress/theme/Components/Layout/Features/NotFound/UI/NotFound.vue';
-import Sidebar
-    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Sidebar.vue';
+import NotFound              from '@/.vitepress/theme/Components/Layout/Features/NotFound/UI/NotFound.vue';
+import Sidebar               from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/Sidebar.vue';
 import {
     useAnchorScrollSpy,
 }                                                        from '@/.vitepress/theme/Components/Layout/Lib/UseAnchorScrollSpy';
