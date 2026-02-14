@@ -1,6 +1,9 @@
 import type { Theme }                           from 'vitepress';
 import type { App, Component, DefineComponent } from 'vue';
 
+import ComponentNotReadyForProductionAlert
+    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentNotReadyForProductionAlert.vue';
+import TipAlert                                       from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
 import Layout                                         from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 import CodePreview                                    from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import ComponentsApi                                  from '@/Api/UI/ComponentsApi.vue';
@@ -27,6 +30,10 @@ import MenuDocs                                       from '@/Navigations/Menu/M
 import NavbarDocs                                     from '@/Navigations/Navbar/NavbarDocs.vue';
 import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
 import TabsDocs                                       from '@/Navigations/Tabs/TabsDocs.vue';
+import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
+import DiffDocs                                       from '@/Next/Components/Diff/DiffDocs.vue';
+import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
+import DividerDocs                                    from '@/Next/Content/Divider/DividerDocs.vue';
 import DataTableDocs                                  from '@/Next/Tables/DataTable/DataTableDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
 import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
@@ -77,11 +84,16 @@ export default {
         registerDocComponents(app, [
             { name: 'ClassAndStyleDocs', instance: ClassAndStyleDocs },
             { name: 'KeyboardDocs', instance: KeyboardDocs },
+            { name: 'AlertDocs', instance: AlertDocs },
+            { name: 'ComponentNotReadyForProductionAlert', instance: ComponentNotReadyForProductionAlert },
+            { name: 'TipAlert', instance: TipAlert },
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
             { name: 'DataTableDocs', instance: DataTableDocs },
+            { name: 'DiffDocs', instance: DiffDocs },
+            { name: 'DividerDocs', instance: DividerDocs },
             { name: 'InputTextDocs', instance: InputTextDocs },
             { name: 'IconsDocs', instance: IconsDocs },
             { name: 'JoinDocs', instance: JoinDocs },
@@ -95,6 +107,7 @@ export default {
             { name: 'PaginationDocs', instance: PaginationDocs },
             { name: 'PopoverDocs', instance: PopoverDocs },
             { name: 'StatsDocs', instance: StatsDocs },
+            { name: 'StatusDocs', instance: StatusDocs },
             { name: 'SwapDocs', instance: SwapDocs },
             { name: 'SelectDocs', instance: SelectDocs },
             { name: 'SwitchDocs', instance: SwitchDocs },

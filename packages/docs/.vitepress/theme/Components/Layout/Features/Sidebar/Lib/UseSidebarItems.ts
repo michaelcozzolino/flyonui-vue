@@ -49,15 +49,22 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                 text:     'Content',
                 children: [
                     {
-                        text:     'Link',
-                        to:       '/content/link',
-                        icon:     'ic:round-link',
+                        text:     'Divider',
+                        to:       `${flyonUIVueNextPath}/content/divider`,
+                        icon:     'tabler:separator-horizontal',
                         children: [],
+                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Keyboard',
                         to:       '/content/keyboard',
                         icon:     'mdi:keyboard-outline',
+                        children: [],
+                    },
+                    {
+                        text:     'Link',
+                        to:       '/content/link',
+                        icon:     'ic:round-link',
                         children: [],
                     },
                     {
@@ -78,6 +85,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                 text:     'Components',
                 children: [
                     {
+                        text:     'Alert',
+                        to:       `${flyonUIVueNextPath}/components/alert`,
+                        icon:     'line-md:alert',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Badge',
                         to:       '/components/badge',
                         icon:     'mdi:badge-account-outline',
@@ -88,6 +102,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/components/button',
                         icon:     'mdi:gesture-tap-button',
                         children: [],
+                    },
+                    {
+                        text:     'Diff',
+                        to:       `${flyonUIVueNextPath}/components/diff`,
+                        icon:     'tabler:git-compare',
+                        children: [],
+                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'List Group',
@@ -106,6 +127,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/components/stats',
                         icon:     'mdi:chart-bar',
                         children: [],
+                    },
+                    {
+                        text:     'Status',
+                        to:       `${flyonUIVueNextPath}/components/status`,
+                        icon:     'tabler:circle-dot',
+                        children: [],
+                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Swap',
