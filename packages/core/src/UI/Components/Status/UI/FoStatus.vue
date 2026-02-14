@@ -30,6 +30,10 @@ import { useSize }                           from '@/Lib/UseSize/Internal';
 import { FoFragment }                        from '@/UI/Components/Fragment/Internal';
 import { computed }                          from 'vue';
 
+defineOptions({
+    inheritAttrs: false,
+});
+
 const props = defineProps<StatusProps>();
 
 const slots = defineSlots<WithDefaultSlot>();
