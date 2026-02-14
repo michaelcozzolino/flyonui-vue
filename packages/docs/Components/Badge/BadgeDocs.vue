@@ -9,6 +9,8 @@
 import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
 import type { ApiType }              from '@/Api/Types/Api.ts';
 import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import BadgeChip                     from '@/Components/Badge/BadgeChip.vue';
+import BadgeChipRaw                  from '@/Components/Badge/BadgeChip.vue?raw';
 import BadgeInAButton                from '@/Components/Badge/BadgeInAButton.vue';
 import BadgeInAButtonRaw             from '@/Components/Badge/BadgeInAButton.vue?raw';
 import BadgeSize                     from '@/Components/Badge/BadgeSize.vue';
@@ -31,7 +33,6 @@ import SolidBadge                    from '@/Components/Badge/SolidBadge.vue';
 import SolidBadgeRaw                 from '@/Components/Badge/SolidBadge.vue?raw';
 import { computed }                  from 'vue';
 
-// todo: dismissible badges
 type Section = 'solid'
     | 'soft'
     | 'outline'
@@ -42,6 +43,7 @@ type Section = 'solid'
     | 'icon'
     | 'icon-position'
     | 'in-a-button'
+    | 'chip'
     | ApiType;
 
 interface Props {
@@ -121,6 +123,13 @@ const previews = computed(() => {
             {
                 code:      BadgeInAButtonRaw,
                 component: BadgeInAButton,
+            },
+        ],
+        [
+            'chip',
+            {
+                code:      BadgeChipRaw,
+                component: BadgeChip,
             },
         ],
     ]);

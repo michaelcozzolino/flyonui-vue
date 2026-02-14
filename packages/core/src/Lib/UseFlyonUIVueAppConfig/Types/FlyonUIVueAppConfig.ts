@@ -2,7 +2,10 @@ import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size }
 import type { PickIfExists, Prettify }                                                 from '@/Lib/Utils/Internal';
 import type { HorizontalPosition, TextDirection }                                      from '@/Types';
 import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }            from '@/UI/Components';
+import type { AlertProps }                                                             from '@/UI/Components/Alert';
+import type { StatusProps }                                                            from '@/UI/Components/Status';
 import type { HeadingProps, KeyboardProps, LinkProps }                                 from '@/UI/Content';
+import type { DividerProps }                                                           from '@/UI/Content/Divider';
 import type { IconProps }                                                              from '@/UI/Customization';
 import type { CheckboxProps, InputTextProps, SelectProps, SwitchProps, TextareaProps } from '@/UI/Forms';
 import type { TabProps, TabsProps }                                                    from '@/UI/Navigations';
@@ -82,12 +85,14 @@ type ConfigurableProps<MaybeProps extends object> = Prettify<
 
 /** Configurable props for each component */
 export interface ConfigurableComponentProps {
+    FoAlert:     ConfigurableProps<AlertProps>;
     /** Badge defaults */
     FoBadge:     ConfigurableProps<BadgeProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     /** Button defaults */
     FoButton:    ConfigurableProps<ButtonProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     /** Checkbox defaults */
     FoCheckbox:  ConfigurableProps<CheckboxProps>;
+    FoDivider:   ConfigurableProps<DividerProps>;
     FoHeading:   ConfigurableProps<HeadingProps>;
     FoIcon:      ConfigurableProps<IconProps>;
     FoInputText: ConfigurableProps<
@@ -107,6 +112,7 @@ export interface ConfigurableComponentProps {
     FoRadio:    ConfigurableProps<ButtonProps>; // todo: temporary
     /** Select defaults */
     FoSelect:   ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
+    FoStatus:   ConfigurableProps<StatusProps>;
     FoSwitch:   ConfigurableProps<SwitchProps> & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>;
     /** Table defaults */
     FoTable:    ConfigurableProps<TableProps>;

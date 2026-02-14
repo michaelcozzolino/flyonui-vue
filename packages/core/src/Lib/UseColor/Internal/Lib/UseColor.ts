@@ -12,6 +12,16 @@ export function useColor(
     return useComponentClass<ColorableComponentName, Color>(
         componentName,
         {
+            FoAlert: {
+                neutral:   '',
+                primary:   'alert-primary',
+                secondary: 'alert-secondary',
+                accent:    'alert-accent',
+                info:      'alert-info',
+                success:   'alert-success',
+                warning:   'alert-warning',
+                error:     'alert-error',
+            },
             FoBadge: {
                 neutral:   '',
                 primary:   'badge-primary',
@@ -41,6 +51,16 @@ export function useColor(
                 success:   'checkbox-success',
                 warning:   'checkbox-warning',
                 error:     'checkbox-error',
+            },
+            FoDivider: {
+                neutral:   'divider-neutral',
+                primary:   'divider-primary',
+                secondary: 'divider-secondary',
+                accent:    'divider-accent',
+                info:      'divider-info',
+                success:   'divider-success',
+                warning:   'divider-warning',
+                error:     'divider-error',
             },
             FoHeading: {
                 neutral:   'text-neutral',
@@ -91,6 +111,16 @@ export function useColor(
                 success:   'radio-success',
                 warning:   'radio-warning',
                 error:     'radio-error',
+            },
+            FoStatus: {
+                neutral:   '',
+                primary:   'status-primary',
+                secondary: 'status-secondary',
+                accent:    'status-accent',
+                info:      'status-info',
+                success:   'status-success',
+                warning:   'status-warning',
+                error:     'status-error',
             },
             FoSwitch: {
                 neutral:   '',

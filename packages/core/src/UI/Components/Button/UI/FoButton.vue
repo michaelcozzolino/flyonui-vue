@@ -52,6 +52,7 @@ import { useResponsitivity }                 from '@/Lib/UseResponsitivity/Inter
 import { useShape }                          from '@/Lib/UseShape/Internal';
 import { useSize }                           from '@/Lib/UseSize/Internal';
 import { useState }                          from '@/Lib/UseState/Internal';
+import { isInDismissibleBadgeInjectionKey }  from '@/UI/Components/Badge/Internal';
 import { FoLink }                            from '@/UI/Content';
 import { FoIcon }                            from '@/UI/Customization';
 import { usePositionableIcon }               from '@/UI/Customization/Icon/Internal';
@@ -72,8 +73,9 @@ const attrs = useAttrs();
 const componentName: ComponentName = 'FoButton';
 const { config }                   = useFlyonUIVueAppConfig();
 
-const isInJoin: boolean = inject(isInJoinInjectionKey, false);
-const isTabButton       = computed((): boolean => attrs.role === 'tab');
+const isInJoin: boolean    = inject(isInJoinInjectionKey, false);
+const isInDismissibleBadge = inject(isInDismissibleBadgeInjectionKey, computed((): false => false));
+const isTabButton          = computed((): boolean => attrs.role === 'tab');
 
 const buttonTag = computed((): 'button' | typeof FoLink => {
     if (props.to === undefined) {
@@ -110,7 +112,7 @@ const [
 ];
 
 const iconSize = computed(
-    (): CustomIconSize => isTabButton.value ? 'small' : { width: 18, height: 18 },
+    (): CustomIconSize => isTabButton.value || isInDismissibleBadge.value ? 'small' : { width: 18, height: 18 },
 );
 
 const stateClass = computed(() => {
