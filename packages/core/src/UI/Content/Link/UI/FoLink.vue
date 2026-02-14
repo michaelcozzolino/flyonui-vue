@@ -7,18 +7,15 @@
                   ]"
                   @click:link="emit('click:link')"
     >
-        <slot>
-            {{ useRequiredSlotMessage('FoLink') }}
-        </slot>
+        <slot />
     </FoRouterLink>
 </template>
 
 <script setup lang="ts">
-import type { WithRequiredDefaultSlot }        from '@/Types';
+import type { WithDefaultSlot }                from '@/Types';
 import type { LinkProps, UnderlineLinkEffect } from '@/UI/Content/Link';
 import { useFlyonUIVueAppConfig }              from '@/Lib';
 import { useTextColor }                        from '@/Lib/UseColor/Internal';
-import { useRequiredSlotMessage }              from '@/Lib/Utils/Internal';
 import { isInMenuItemInjectionKey }            from '@/UI/Components/Menu/Internal';
 import { FoRouterLink }                        from '@/UI/Content/Link/Internal';
 import { computed, inject }                    from 'vue';
@@ -29,7 +26,7 @@ const emit = defineEmits<{
     (e: 'click:link'): void;
 }>();
 
-defineSlots<WithRequiredDefaultSlot>();
+defineSlots<WithDefaultSlot>();
 
 const { config } = useFlyonUIVueAppConfig();
 

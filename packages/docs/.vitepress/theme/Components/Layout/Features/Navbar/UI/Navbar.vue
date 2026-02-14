@@ -1,7 +1,7 @@
 <template>
     <ClientOnly>
         <FoNavbar id="flyonui-vue-docs-navbar"
-                  class="vp-raw sticky top-0 z-100 border-b-1 border-base-content/10"
+                  class="vp-raw sticky top-0 z-100 border-b border-base-content/10"
                   :links="links"
                   link-type="js"
         >
@@ -39,7 +39,7 @@
                                       :key="version"
                             >
                                 <FoLink :to="to"
-                                        color="neutral"
+                                        color="primary"
                                         underline-effect="hover-animated"
                                 >
                                     {{ version }}
