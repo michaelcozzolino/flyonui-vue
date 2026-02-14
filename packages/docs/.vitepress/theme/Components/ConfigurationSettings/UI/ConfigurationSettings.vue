@@ -10,7 +10,7 @@
             </ConfigurationSettingsHeader>
 
             <ConfigurationSettingsItem>
-                <ThemeSettings v-model="config.global.direction"
+                <ThemeSettings v-model="config.global.textDirection"
                                :theme-storage-key="themeStorageKey"
                 />
             </ConfigurationSettingsItem>

@@ -1,6 +1,6 @@
 import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig } from '@/Lib';
 import type {
-    Direction,
+    TextDirection,
 }                                                               from '@/Types';
 import type { App, FunctionPlugin }       from 'vue';
 import {
@@ -26,7 +26,7 @@ import { watch } from 'vue';
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     global: {
         color:              'neutral',
-        direction:          'ltr',
+        textDirection:      'ltr',
         horizontalPosition: {
             icon:       'left',
             helperText: 'left',
@@ -58,7 +58,7 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
         },
     );
 
-    watch(() => config.value.global.direction, (newDirection: Direction) => {
+    watch(() => config.value.global.textDirection, (newDirection: TextDirection) => {
         useHead(getActiveHead() ?? createHead(), {
             htmlAttrs: { dir: newDirection },
         });

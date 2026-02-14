@@ -1,6 +1,6 @@
 import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size }       from '@/Lib';
 import type { PickIfExists, Prettify }                                                 from '@/Lib/Utils/Internal';
-import type { Direction, HorizontalPosition }                                          from '@/Types';
+import type { HorizontalPosition, TextDirection }                                      from '@/Types';
 import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }            from '@/UI/Components';
 import type { AlertProps }                                                             from '@/UI/Components/Alert';
 import type { StatusProps }                                                            from '@/UI/Components/Status';
@@ -66,10 +66,7 @@ interface HorizontalPositionComponentConfig<T extends object> {
 export interface FlyonUIVueAppGlobalConfig {
     /** Theme color */
     color:              Color;
-    // todo
-    // textColor:          Color | undefined;
-    /** Text direction */
-    direction:          Direction;
+    textDirection:      TextDirection;
     /** Default positions */
     horizontalPosition: HorizontalPositionGlobalConfig;
     /** Label style */

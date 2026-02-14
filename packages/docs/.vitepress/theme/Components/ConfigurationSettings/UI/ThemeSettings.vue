@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Direction }                          from 'flyonui-vue';
+import type { TextDirection }                      from 'flyonui-vue';
 import { FoIcon, FoSelectThemeController, FoSwap } from 'flyonui-vue';
 import { computed }                                from 'vue';
 
@@ -31,10 +31,10 @@ interface Props {
 
 defineProps<Props>();
 
-const direction = defineModel<Direction>({ required: true });
+const textDirection = defineModel<TextDirection>({ required: true });
 
 const isLtr = computed({
-    get: (): boolean => direction.value === 'ltr',
-    set: (isLtr: boolean) => direction.value = isLtr ? 'ltr' : 'rtl',
+    get: (): boolean => textDirection.value === 'ltr',
+    set: (isLtr: boolean) => textDirection.value = isLtr ? 'ltr' : 'rtl',
 });
 </script>

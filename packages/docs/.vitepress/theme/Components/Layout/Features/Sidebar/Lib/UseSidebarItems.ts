@@ -38,9 +38,15 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
-                        text:     'Class and style',
+                        text:     'Class and Style',
                         to:       '/customisation/class-and-style',
                         icon:     'logos:tailwindcss-icon',
+                        children: [],
+                    },
+                    {
+                        text:     'Text Direction (LTR | RTL)',
+                        to:       '/customisation/text-direction',
+                        icon:     'fluent:text-direction-horizontal-rtl-20-regular',
                         children: [],
                     },
                 ],

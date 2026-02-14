@@ -1,4 +1,4 @@
-# Classes and styles
+# Class and style
 
 Although, this is not encouraged, in some cases you might need some specific customizations that can be used without
 changing the theme directly.
