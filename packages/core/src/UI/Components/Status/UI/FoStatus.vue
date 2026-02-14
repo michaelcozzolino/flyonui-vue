@@ -5,7 +5,7 @@
     >
         <component :is="animation === 'ping' ? 'div' : FoFragment"
                    :class="animation === 'ping' && 'inline-grid *:[grid-area:1/1]'"
-                   v-bind="animation === 'ping' && $attrs"
+                   v-bind="statusTag !== 'div' && animation === 'ping' && $attrs"
         >
             <div :class="[statusClass, colorClass, sizeClass, animationClass]"
                  v-bind="statusTag !== 'div' && animation !== 'ping' && $attrs"
