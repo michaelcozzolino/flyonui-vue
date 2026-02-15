@@ -1,5 +1,5 @@
 <template>
-    <!-- todo: add custom sizes, but this might brink breaking changes for the icon size -->
+    <!-- todo: add custom sizes, but this might bring breaking changes for the icon size -->
     <blockquote class="relative p-4"
                 :class="alignmentClass"
     >
