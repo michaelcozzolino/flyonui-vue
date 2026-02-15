@@ -32,6 +32,7 @@ import TabsDocs                                       from '@/Navigations/Tabs/T
 import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
 import DiffDocs                                       from '@/Next/Components/Diff/DiffDocs.vue';
 import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
+import BlockQuoteDocs                                 from '@/Next/Content/BlockQuote/BlockQuoteDocs.vue';
 import DividerDocs                                    from '@/Next/Content/Divider/DividerDocs.vue';
 import DataTableDocs                                  from '@/Next/Tables/DataTable/DataTableDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
@@ -87,6 +88,7 @@ export default {
             { name: 'TipAlert', instance: TipAlert },
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
+            { name: 'BlockQuoteDocs', instance: BlockQuoteDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
             { name: 'DataTableDocs', instance: DataTableDocs },
