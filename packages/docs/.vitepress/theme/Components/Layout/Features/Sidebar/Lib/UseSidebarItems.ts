@@ -37,6 +37,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                 text:     'Content',
                 children: [
                     {
+                        text:     'BlockQuote',
+                        to:       `${flyonUIVueNextPath}/content/block-quote`,
+                        icon:     'tabler:quote',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Divider',
                         to:       `${flyonUIVueNextPath}/content/divider`,
                         icon:     'tabler:separator-horizontal',

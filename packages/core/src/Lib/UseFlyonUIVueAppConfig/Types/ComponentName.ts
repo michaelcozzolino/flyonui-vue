@@ -1,11 +1,12 @@
 import type { ConfigurableComponentProps } from '@/Lib';
 
-type NonConfigurableComponentName = 'FoJoin'
+type NonConfigurableComponentName = 'FoBlockQuote'
     | 'FoCheckboxGroup'
     | 'FoDatalist'
     | 'FoDataTable'
     | 'FoDiff'
     | 'FoDotStyleBadge'
+    | 'FoJoin'
     | 'FoLabel'
     | 'FoListGroup'
     | 'FoListGroupItem'
