@@ -5,6 +5,12 @@
         Unread messages
     </FoStatus>
 
+    <FoStatus color="success"
+              animation="spin"
+    >
+        Connecting to the server
+    </FoStatus>
+
     <FoStatus color="error"
               animation="ping"
     >

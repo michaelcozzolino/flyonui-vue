@@ -21,20 +21,23 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }                from '@/Lib';
-import type { WithDefaultSlot }              from '@/Types';
-import type { StatusAnimation, StatusProps } from '@/UI/Components/Status';
-import { useFlyonUIVueAppConfig }            from '@/Lib';
-import { useColor }                          from '@/Lib/UseColor/Internal';
-import { useSize }                           from '@/Lib/UseSize/Internal';
-import { FoFragment }                        from '@/UI/Components/Fragment/Internal';
-import { computed }                          from 'vue';
+import type { ComponentName }     from '@/Lib';
+import type { WithDefaultSlot }   from '@/Types';
+import type { StatusProps }       from '@/UI/Components/Status';
+import { useFlyonUIVueAppConfig } from '@/Lib';
+import { useColor }               from '@/Lib/UseColor/Internal';
+import { useSize }                from '@/Lib/UseSize/Internal';
+import { useTailwindAnimation }   from '@/Lib/UseTailwindAnimation/Internal';
+import { FoFragment }             from '@/UI/Components/Fragment/Internal';
+import { computed }               from 'vue';
 
 defineOptions({
     inheritAttrs: false,
 });
 
-const props = defineProps<StatusProps>();
+const props = withDefaults(defineProps<StatusProps>(), {
+    animation: 'none',
+});
 
 const slots = defineSlots<WithDefaultSlot>();
 
@@ -50,19 +53,11 @@ const [
     statusClass,
     colorClass,
     sizeClass,
+    animationClass,
 ] = [
     'status',
     useColor(config, componentName, () => props.color),
     useSize(config, componentName, () => props.size),
+    useTailwindAnimation(() => props.animation),
 ];
-
-const animationClass = computed((): string => {
-    const animations: Record<StatusAnimation, string> = {
-        bounce: 'animate-bounce',
-        ping:   'animate-ping',
-        pulse:  'animate-pulse',
-    };
-
-    return props.animation === undefined ? '' : animations[props.animation];
-});
 </script>

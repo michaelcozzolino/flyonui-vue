@@ -118,6 +118,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Skeleton',
+                        to:       `${flyonUIVueNextPath}/components/skeleton`,
+                        icon:     'tdesign:placeholder-filled',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Stats',
                         to:       '/components/stats',
                         icon:     'mdi:chart-bar',
