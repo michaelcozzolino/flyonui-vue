@@ -31,6 +31,7 @@ import PaginationDocs                                 from '@/Navigations/Pagina
 import TabsDocs                                       from '@/Navigations/Tabs/TabsDocs.vue';
 import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
 import DiffDocs                                       from '@/Next/Components/Diff/DiffDocs.vue';
+import SkeletonDocs                                   from '@/Next/Components/Skeleton/SkeletonDocs.vue';
 import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
 import BlockQuoteDocs                                 from '@/Next/Content/BlockQuote/BlockQuoteDocs.vue';
 import DividerDocs                                    from '@/Next/Content/Divider/DividerDocs.vue';
@@ -106,6 +107,7 @@ export default {
             { name: 'NavbarDocs', instance: NavbarDocs },
             { name: 'PaginationDocs', instance: PaginationDocs },
             { name: 'PopoverDocs', instance: PopoverDocs },
+            { name: 'SkeletonDocs', instance: SkeletonDocs },
             { name: 'StatsDocs', instance: StatsDocs },
             { name: 'StatusDocs', instance: StatusDocs },
             { name: 'SwapDocs', instance: SwapDocs },
