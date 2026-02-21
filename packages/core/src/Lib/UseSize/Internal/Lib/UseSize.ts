@@ -12,6 +12,13 @@ export function useSize(
     return useComponentClass<SizableComponentName, Size>(
         componentName,
         {
+            FoAvatar: {
+                extraSmall: 'text-xs size-6',
+                small:      'text-sm size-8',
+                medium:     'text-md size-10',
+                large:      'text-lg size-12',
+                extraLarge: 'text-xl size-14',
+            },
             FoButton: {
                 extraSmall: 'btn-xs',
                 small:      'btn-sm',

@@ -11,6 +11,12 @@ export function useShape(
     return useComponentClass<ShapeableComponentName, Shape>(
         componentName,
         {
+            FoAvatar: {
+                rounded: 'rounded-md',
+                circle:  'rounded-full',
+                pilled:  '',
+                square:  '',
+            },
             FoBadge: {
                 rounded: '',
                 circle:  'rounded-full',
