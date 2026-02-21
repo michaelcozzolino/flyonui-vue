@@ -87,6 +87,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         badge:    _unreleasedBadge,
                     },
                     {
+                        text:     'Avatar',
+                        to:       `${flyonUIVueNextPath}/components/avatar`,
+                        icon:     'carbon:user-avatar',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Badge',
                         to:       '/components/badge',
                         icon:     'mdi:badge-account-outline',
