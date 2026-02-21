@@ -11,6 +11,8 @@ import type { ApiType }               from '@/Api/Types/Api.ts';
 import ComponentDocs                  from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import AnimatedAvatarGroup            from '@/Next/Components/Avatar/AnimatedAvatarGroup.vue';
 import AnimatedAvatarGroupRaw         from '@/Next/Components/Avatar/AnimatedAvatarGroup.vue?raw';
+import AvatarBottomStatusIndicator    from '@/Next/Components/Avatar/AvatarBottomStatusIndicator.vue';
+import AvatarBottomStatusIndicatorRaw from '@/Next/Components/Avatar/AvatarBottomStatusIndicator.vue?raw';
 import AvatarGroup                    from '@/Next/Components/Avatar/AvatarGroup.vue';
 import AvatarGroupRaw                 from '@/Next/Components/Avatar/AvatarGroup.vue?raw';
 import AvatarIconPlaceholder          from '@/Next/Components/Avatar/AvatarIconPlaceholder.vue';
@@ -23,10 +25,8 @@ import AvatarShape                    from '@/Next/Components/Avatar/AvatarShape
 import AvatarShapeRaw                 from '@/Next/Components/Avatar/AvatarShape.vue?raw';
 import AvatarSize                     from '@/Next/Components/Avatar/AvatarSize.vue';
 import AvatarSizeRaw                  from '@/Next/Components/Avatar/AvatarSize.vue?raw';
-import AvatarStatusIndicatorBottom    from '@/Next/Components/Avatar/AvatarStatusIndicatorBottom.vue';
-import AvatarStatusIndicatorBottomRaw from '@/Next/Components/Avatar/AvatarStatusIndicatorBottom.vue?raw';
-import AvatarStatusIndicatorTop       from '@/Next/Components/Avatar/AvatarStatusIndicatorTop.vue';
-import AvatarStatusIndicatorTopRaw    from '@/Next/Components/Avatar/AvatarStatusIndicatorTop.vue?raw';
+import AvatarTopStatusIndicator       from '@/Next/Components/Avatar/AvatarTopStatusIndicator.vue';
+import AvatarTopStatusIndicatorRaw    from '@/Next/Components/Avatar/AvatarTopStatusIndicator.vue?raw';
 import MaskedAvatar                   from '@/Next/Components/Avatar/MaskedAvatar.vue';
 import MaskedAvatarRaw                from '@/Next/Components/Avatar/MaskedAvatar.vue?raw';
 import OutlineAvatar                  from '@/Next/Components/Avatar/OutlineAvatar.vue';
@@ -45,8 +45,8 @@ type Section = 'shape'
     | 'solid'
     | 'soft'
     | 'outline'
-    | 'status-indicator-top'
-    | 'status-indicator-bottom'
+    | 'top-status-indicator'
+    | 'bottom-status-indicator'
     | 'logo-indicator'
     | 'group'
     | 'animated-group'
@@ -117,17 +117,17 @@ const previews = computed(() => {
             },
         ],
         [
-            'status-indicator-top',
+            'top-status-indicator',
             {
-                code:      AvatarStatusIndicatorTopRaw,
-                component: AvatarStatusIndicatorTop,
+                code:      AvatarTopStatusIndicatorRaw,
+                component: AvatarTopStatusIndicator,
             },
         ],
         [
-            'status-indicator-bottom',
+            'bottom-status-indicator',
             {
-                code:      AvatarStatusIndicatorBottomRaw,
-                component: AvatarStatusIndicatorBottom,
+                code:      AvatarBottomStatusIndicatorRaw,
+                component: AvatarBottomStatusIndicator,
             },
         ],
         [
