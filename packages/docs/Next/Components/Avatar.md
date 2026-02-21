@@ -40,7 +40,7 @@
 
 <AvatarDocs section="top-status-indicator" />
 
-### Bottom status 
+### Bottom status
 
 <AvatarDocs section="bottom-status-indicator" />
 
