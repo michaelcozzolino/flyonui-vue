@@ -2,7 +2,8 @@ import type { ComponentName } from '@/Lib';
 
 export type SizableComponentName = Extract<
     ComponentName,
-    'FoBadge'
+    'FoAvatar'
+    | 'FoBadge'
     | 'FoButton'
     | 'FoCheckbox'
     | 'FoInputText'

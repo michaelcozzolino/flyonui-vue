@@ -1,8 +1,16 @@
-import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size }       from '@/Lib';
-import type { PickIfExists, Prettify }                                                 from '@/Lib/Utils/Internal';
-import type { Direction, HorizontalPosition }                                          from '@/Types';
-import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }            from '@/UI/Components';
+import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size } from '@/Lib';
+import type { PickIfExists, Prettify }                                           from '@/Lib/Utils/Internal';
+import type { Direction, HorizontalPosition }                                    from '@/Types';
+import type {
+    AvatarPlaceholderProps,
+    BadgeProps,
+    ButtonProps,
+    LabelType,
+    LoadingProps,
+    MenuProps,
+} from '@/UI/Components';
 import type { AlertProps }                                                             from '@/UI/Components/Alert';
+import type { AvatarProps }                                                            from '@/UI/Components/Avatar';
 import type { StatusProps }                                                            from '@/UI/Components/Status';
 import type { HeadingProps, KeyboardProps, LinkProps }                                 from '@/UI/Content';
 import type { DividerProps }                                                           from '@/UI/Content/Divider';
@@ -89,6 +97,7 @@ type ConfigurableProps<MaybeProps extends object> = Prettify<
 /** Configurable props for each component */
 export interface ConfigurableComponentProps {
     FoAlert:     ConfigurableProps<AlertProps>;
+    FoAvatar:    ConfigurableProps<AvatarProps & AvatarPlaceholderProps>;
     /** Badge defaults */
     FoBadge:     ConfigurableProps<BadgeProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     /** Button defaults */

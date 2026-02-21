@@ -30,6 +30,7 @@ import NavbarDocs                                     from '@/Navigations/Navbar
 import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
 import TabsDocs                                       from '@/Navigations/Tabs/TabsDocs.vue';
 import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
+import AvatarDocs                                     from '@/Next/Components/Avatar/AvatarDocs.vue';
 import DiffDocs                                       from '@/Next/Components/Diff/DiffDocs.vue';
 import SkeletonDocs                                   from '@/Next/Components/Skeleton/SkeletonDocs.vue';
 import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
@@ -83,6 +84,7 @@ export default {
         app.use(createPinia()).use(hljsVuePlugin);
 
         registerDocComponents(app, [
+            { name: 'AvatarDocs', instance: AvatarDocs },
             { name: 'KeyboardDocs', instance: KeyboardDocs },
             { name: 'AlertDocs', instance: AlertDocs },
             { name: 'ComponentNotReadyForProductionAlert', instance: ComponentNotReadyForProductionAlert },

@@ -46,3 +46,5 @@ export interface WithIcon {
     /** The Iconify icon's name */
     icon?: Icon;
 }
+
+export type WithRequiredIcon = Required<WithIcon>;
