@@ -113,7 +113,7 @@ const gridClass = computed(() => {
     const rows    = props.grid.rows;
 
     if (columns === 0 || rows === 0) {
-        return 'flex flex-wrap';
+        return 'flex flex-wrap items-start';
     }
 
     const classes: Record<'columns' | 'rows', Record<number, string>> = {
