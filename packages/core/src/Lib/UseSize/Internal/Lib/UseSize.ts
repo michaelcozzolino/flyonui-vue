@@ -15,7 +15,7 @@ export function useSize(
             FoAvatar: {
                 extraSmall: 'text-xs size-6',
                 small:      'text-sm size-8',
-                medium:     'text-md size-10',
+                medium:     'text-base size-10',
                 large:      'text-lg size-12',
                 extraLarge: 'text-xl size-14',
             },
