@@ -9,6 +9,7 @@ export type ColorableComponentName = Extract<
     | 'FoDivider'
     | 'FoModal'
     | 'FoRadio'
+    | 'FoRange'
     | 'FoStatus'
     | 'FoSwitch'
     | 'FoTooltip'

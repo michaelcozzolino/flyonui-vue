@@ -75,6 +75,13 @@ export function useSize(
                 large:      'modal-dialog-lg',
                 extraLarge: 'modal-dialog-xl',
             },
+            FoRange: {
+                extraSmall: 'range-xs',
+                small:      'range-sm',
+                medium:     '',
+                large:      'range-lg',
+                extraLarge: 'range-xl',
+            },
             FoSelect: {
                 extraSmall: 'select-xs',
                 small:      'select-sm',

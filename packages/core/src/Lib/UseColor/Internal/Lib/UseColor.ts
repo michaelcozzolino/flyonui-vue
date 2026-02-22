@@ -112,6 +112,16 @@ export function useColor(
                 warning:   'radio-warning',
                 error:     'radio-error',
             },
+            FoRange: {
+                neutral:   '',
+                primary:   'range-primary',
+                secondary: 'range-secondary',
+                accent:    'range-accent',
+                info:      'range-info',
+                success:   'range-success',
+                warning:   'range-warning',
+                error:     'range-error',
+            },
             FoStatus: {
                 neutral:   '',
                 primary:   'status-primary',
