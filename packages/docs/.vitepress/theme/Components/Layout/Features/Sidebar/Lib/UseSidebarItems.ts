@@ -226,6 +226,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Range',
+                        to:       `${flyonUIVueNextPath}/forms/range`,
+                        icon:     'radix-icons:slider',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Select',
                         to:       '/forms/select',
                         icon:     'mdi:chevron-down-box',
