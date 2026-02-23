@@ -3,7 +3,7 @@
                :class="slots.steps && 'w-full'"
                :style="slots.steps && $attrs.style"
     >
-        <input v-model="input"
+        <input v-model.number="input"
                class="range"
                :class="[colorClass, sizeClass, slots.steps && $attrs.class]"
                type="range"
@@ -36,9 +36,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<RangeProps>(), {
-    min:  0,
-    max:  100,
-    step: 1,
+    min:        0,
+    max:        100,
+    step:       1,
+    isDisabled: false,
 });
 
 const slots = defineSlots<{
