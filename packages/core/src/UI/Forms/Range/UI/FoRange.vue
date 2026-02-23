@@ -43,7 +43,7 @@ const props = withDefaults(defineProps<RangeProps>(), {
 });
 
 const slots = defineSlots<{
-    /** The step indicators to show for each steps */
+    /** The step indicators to show for each step */
     steps?: Slot;
 }>();
 
