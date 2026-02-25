@@ -3,6 +3,7 @@
          :class="background === undefined ? colorClass : backgroundClass"
          :style="`--value:${value};`"
          role="progressbar"
+         :aria-valuenow="value"
     >
         <slot />
     </div>
