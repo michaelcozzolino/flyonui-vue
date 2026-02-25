@@ -32,6 +32,7 @@ import TabsDocs                                       from '@/Navigations/Tabs/T
 import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
 import AvatarDocs                                     from '@/Next/Components/Avatar/AvatarDocs.vue';
 import DiffDocs                                       from '@/Next/Components/Diff/DiffDocs.vue';
+import RadialProgressDocs                             from '@/Next/Components/RadialProgress/RadialProgressDocs.vue';
 import SkeletonDocs                                   from '@/Next/Components/Skeleton/SkeletonDocs.vue';
 import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
 import BlockQuoteDocs                                 from '@/Next/Content/BlockQuote/BlockQuoteDocs.vue';
@@ -111,6 +112,7 @@ export default {
             { name: 'PaginationDocs', instance: PaginationDocs },
             { name: 'PopoverDocs', instance: PopoverDocs },
             { name: 'RangeDocs', instance: RangeDocs },
+            { name: 'RadialProgressDocs', instance: RadialProgressDocs },
             { name: 'SkeletonDocs', instance: SkeletonDocs },
             { name: 'StatsDocs', instance: StatsDocs },
             { name: 'StatusDocs', instance: StatusDocs },

@@ -9,6 +9,17 @@ export function useColor(
     componentName: MaybeRefOrGetter<ColorableComponentName>,
     color: MaybeRefOrGetter<Color | undefined>,
 ): ComputedRef<string> {
+    const textClasses: Record<Color, string> = {
+        neutral:   'text-neutral',
+        primary:   'text-primary',
+        secondary: 'text-secondary',
+        accent:    'text-accent',
+        info:      'text-info',
+        success:   'text-success',
+        warning:   'text-warning',
+        error:     'text-error',
+    };
+
     return useComponentClass<ColorableComponentName, Color>(
         componentName,
         {
@@ -62,17 +73,8 @@ export function useColor(
                 warning:   'divider-warning',
                 error:     'divider-error',
             },
-            FoHeading: {
-                neutral:   'text-neutral',
-                primary:   'text-primary',
-                secondary: 'text-secondary',
-                accent:    'text-accent',
-                info:      'text-info',
-                success:   'text-success',
-                warning:   'text-warning',
-                error:     'text-error',
-            },
-            FoLink: {
+            FoHeading: textClasses,
+            FoLink:    {
                 neutral:   'link-neutral',
                 primary:   'link-primary',
                 secondary: 'link-secondary',
@@ -92,17 +94,9 @@ export function useColor(
                 warning:   'bg-warning/30',
                 error:     'bg-error/30',
             },
-            FoLoading: {
-                neutral:   'text-neutral',
-                primary:   'text-primary',
-                secondary: 'text-secondary',
-                accent:    'text-accent',
-                info:      'text-info',
-                success:   'text-success',
-                warning:   'text-warning',
-                error:     'text-error',
-            },
-            FoRadio: {
+            FoLoading:        textClasses,
+            FoRadialProgress: textClasses,
+            FoRadio:          {
                 neutral:   '',
                 primary:   'radio-primary',
                 secondary: 'radio-secondary',

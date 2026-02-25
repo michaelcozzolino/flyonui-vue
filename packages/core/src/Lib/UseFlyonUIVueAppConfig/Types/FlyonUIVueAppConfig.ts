@@ -9,8 +9,12 @@ import type {
     LoadingProps,
     MenuProps,
 } from '@/UI/Components';
-import type { AlertProps }                                                             from '@/UI/Components/Alert';
-import type { AvatarProps }                                                            from '@/UI/Components/Avatar';
+import type { AlertProps }  from '@/UI/Components/Alert';
+import type { AvatarProps } from '@/UI/Components/Avatar';
+import type {
+    RadialProgressBackgroundProps,
+    RadialProgressProps,
+} from '@/UI/Components/RadialProgress';
 import type { StatusProps }                                                            from '@/UI/Components/Status';
 import type { HeadingProps, KeyboardProps, LinkProps }                                 from '@/UI/Content';
 import type { DividerProps }                                                           from '@/UI/Content/Divider';
@@ -113,24 +117,24 @@ export interface ConfigurableComponentProps {
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>
         & LabelTypeComponentConfig
     >;
-    FoKeyboard: ConfigurableProps<KeyboardProps>;
+    FoKeyboard:       ConfigurableProps<KeyboardProps>;
     /** Link defaults */
-    FoLink:     ConfigurableProps<LinkProps>;
+    FoLink:           ConfigurableProps<LinkProps>;
     /** Loading defaults */
-    FoLoading:  ConfigurableProps<LoadingProps>;
+    FoLoading:        ConfigurableProps<LoadingProps>;
     /** Menu defaults */
-    FoMenu:     ConfigurableProps<MenuProps>;
-    FoModal:    ConfigurableProps<Omit<ModalProps, 'backdrop'> & Colorable>;
-    /** Radio defaults */
-    FoRadio:    ConfigurableProps<ButtonProps>; // todo: temporary
-    FoRange:    ConfigurableProps<RangeProps>;
+    FoMenu:           ConfigurableProps<MenuProps>;
+    FoModal:          ConfigurableProps<Omit<ModalProps, 'backdrop'> & Colorable>;
+    FoRadialProgress: ConfigurableProps<RadialProgressProps & RadialProgressBackgroundProps>;
+    FoRadio:          ConfigurableProps<ButtonProps>; // todo: temporary
+    FoRange:          ConfigurableProps<RangeProps>;
     /** Select defaults */
-    FoSelect:   ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
-    FoStatus:   ConfigurableProps<StatusProps>;
-    FoSwitch:   ConfigurableProps<SwitchProps> & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>;
+    FoSelect:         ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
+    FoStatus:         ConfigurableProps<StatusProps>;
+    FoSwitch:         ConfigurableProps<SwitchProps> & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>;
     /** Table defaults */
-    FoTable:    ConfigurableProps<TableProps>;
-    FoTabs:     ConfigurableProps<TabsProps<TabProps>>;
+    FoTable:          ConfigurableProps<TableProps>;
+    FoTabs:           ConfigurableProps<TabsProps<TabProps>>;
     FoTextarea: ConfigurableProps<
         TextareaProps
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>
