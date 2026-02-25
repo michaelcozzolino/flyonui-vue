@@ -125,6 +125,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Radial Progress',
+                        to:       `${flyonUIVueNextPath}/components/radial-progress`,
+                        icon:     'tabler:progress',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Skeleton',
                         to:       `${flyonUIVueNextPath}/components/skeleton`,
                         icon:     'tdesign:placeholder-filled',

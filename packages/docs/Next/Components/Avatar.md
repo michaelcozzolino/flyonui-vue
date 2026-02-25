@@ -20,7 +20,7 @@
 
 <AvatarDocs section="initials-placeholder" />
 
-## Variants
+## Presets
 
 ### Solid
 
