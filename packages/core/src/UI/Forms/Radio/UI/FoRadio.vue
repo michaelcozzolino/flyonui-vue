@@ -18,7 +18,7 @@
                    isInset && 'radio-inset',
                ]"
                :disabled="isDisabled"
-               :aria-label="isInJoin && typeof label === 'string' ? label : ''"
+               :aria-label="isInJoin ? label : ''"
         >
 
         <FoLabel v-if="isInJoin === false && label !== undefined"
