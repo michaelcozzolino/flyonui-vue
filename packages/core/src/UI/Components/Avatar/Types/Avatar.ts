@@ -1,4 +1,5 @@
 import type { Colorable, Preset, Presettable, Shape, Shapeable, Sizable } from '@/Lib';
+import type { Image }                                                     from '@/Types';
 import type { WithRequiredIcon }                                          from '@/UI/Customization';
 
 export type AvatarShape = Extract<Shape, 'rounded' | 'circle'>;
@@ -24,7 +25,7 @@ export interface AvatarProps extends Shapeable<AvatarShape>, Sizable {
      * an object representing a placeholder icon or
      * an object representing a placeholder text
      */
-    avatar: { src: string; alt: string } | AvatarIcon | AvatarTextProps;
+    avatar: Image | AvatarIcon | AvatarTextProps;
 
     /** An indicator representing the status of the avatar with its own placement */
     indicator?: { status: AvatarIndicatorStatus; placement: AvatarIndicatorPlacement };
