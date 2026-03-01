@@ -2,7 +2,7 @@
     <FoHeading class="mb-1"
                level="6"
     >
-        Select you favourite language:
+        Select your favourite language:
     </FoHeading>
 
     <FoListGroup class="w-96"
