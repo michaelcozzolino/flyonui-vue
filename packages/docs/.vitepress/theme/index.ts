@@ -37,6 +37,7 @@ import SkeletonDocs                                   from '@/Next/Components/Sk
 import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
 import BlockQuoteDocs                                 from '@/Next/Content/BlockQuote/BlockQuoteDocs.vue';
 import DividerDocs                                    from '@/Next/Content/Divider/DividerDocs.vue';
+import RadioDocs                                      from '@/Next/Forms/Radio/RadioDocs.vue';
 import RangeDocs                                      from '@/Next/Forms/Range/RangeDocs.vue';
 import DataTableDocs                                  from '@/Next/Tables/DataTable/DataTableDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
@@ -111,6 +112,7 @@ export default {
             { name: 'NavbarDocs', instance: NavbarDocs },
             { name: 'PaginationDocs', instance: PaginationDocs },
             { name: 'PopoverDocs', instance: PopoverDocs },
+            { name: 'RadioDocs', instance: RadioDocs },
             { name: 'RangeDocs', instance: RangeDocs },
             { name: 'RadialProgressDocs', instance: RadialProgressDocs },
             { name: 'SkeletonDocs', instance: SkeletonDocs },

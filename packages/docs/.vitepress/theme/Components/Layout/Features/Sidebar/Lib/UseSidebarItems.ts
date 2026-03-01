@@ -233,6 +233,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Radio',
+                        to:       `${flyonUIVueNextPath}/forms/radio`,
+                        icon:     'mdi:radio-button-checked',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Range',
                         to:       `${flyonUIVueNextPath}/forms/range`,
                         icon:     'radix-icons:slider',
