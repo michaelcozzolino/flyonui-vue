@@ -75,6 +75,13 @@ export function useSize(
                 large:      'modal-dialog-lg',
                 extraLarge: 'modal-dialog-xl',
             },
+            FoRadio: {
+                extraSmall: 'radio-xs',
+                small:      'radio-sm',
+                medium:     '',
+                large:      'radio-lg',
+                extraLarge: 'radio-xl',
+            },
             FoRange: {
                 extraSmall: 'range-xs',
                 small:      'range-sm',

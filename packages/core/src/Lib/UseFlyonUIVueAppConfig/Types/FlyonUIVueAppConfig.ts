@@ -20,6 +20,7 @@ import type { HeadingProps, KeyboardProps, LinkProps }                          
 import type { DividerProps }                                                           from '@/UI/Content/Divider';
 import type { IconProps }                                                              from '@/UI/Customization';
 import type { CheckboxProps, InputTextProps, SelectProps, SwitchProps, TextareaProps } from '@/UI/Forms';
+import type { RadioProps }                                                             from '@/UI/Forms/Radio';
 import type { RangeProps }                                                             from '@/UI/Forms/Range';
 import type { TabProps, TabsProps }                                                    from '@/UI/Navigations';
 import type { ModalProps, TooltipProps }                                               from '@/UI/Overlays';
@@ -126,7 +127,7 @@ export interface ConfigurableComponentProps {
     FoMenu:           ConfigurableProps<MenuProps>;
     FoModal:          ConfigurableProps<Omit<ModalProps, 'backdrop'> & Colorable>;
     FoRadialProgress: ConfigurableProps<RadialProgressProps & RadialProgressBackgroundProps>;
-    FoRadio:          ConfigurableProps<ButtonProps>; // todo: temporary
+    FoRadio:          ConfigurableProps<RadioProps>;
     FoRange:          ConfigurableProps<RangeProps>;
     /** Select defaults */
     FoSelect:         ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
