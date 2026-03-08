@@ -8,9 +8,11 @@
         {{ name }}
     </FoLink>
 
-    <template v-else>
+    <span v-else
+          class="text-primary"
+    >
         {{ name }}
-    </template>
+    </span>
 </template>
 
 <script setup lang="ts">
