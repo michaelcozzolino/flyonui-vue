@@ -46,6 +46,11 @@ const labelClass = computed((): string => {
     }
 
     const classes: Record<FloatingLabelComponentName, Record<LabelType, string>> = {
+        FoInputFile: {
+            text:     'label-text',
+            floating: 'input-floating-label',
+            inline:   '',
+        },
         FoInputText: {
             text:     'label-text',
             floating: 'input-floating-label',

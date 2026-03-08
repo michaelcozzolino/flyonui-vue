@@ -3,7 +3,7 @@
     <div v-if="options.length"
          :class="[
              icon && useIcon && 'select',
-             icon === undefined && defaultLabel?.type === 'floating' && floatingLabelClass,
+             icon === undefined && floatingLabelClass,
          ]"
     >
         <FoIcon v-if="icon && useIcon"
@@ -25,7 +25,7 @@
                 v-model="selectedOption"
                 class="select"
                 :class="[
-                    icon === undefined && defaultLabel?.type === 'floating' && floatingLabelClass,
+                    icon === undefined && floatingLabelClass,
                     shapeClass,
                     sizeClass,
                     validityClass,
