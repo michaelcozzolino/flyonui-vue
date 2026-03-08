@@ -62,6 +62,7 @@ const previews = computed(() => {
             {
                 code:      InputFileSizeRaw,
                 component: InputFileSize,
+                grid:      { rows: 5, columns: 1 },
             },
         ],
         [
@@ -83,6 +84,7 @@ const previews = computed(() => {
             {
                 code:      InputFileHelperTextRaw,
                 component: InputFileHelperText,
+                grid:      { rows: 2, columns: 1 },
             },
         ],
         [
