@@ -1,6 +1,6 @@
 <template>
     <CodePreview title="TS"
-                 lang="ts"
+                 language="ts"
                  :code="ConfigurationExampleRaw.replace('// @ts-expect-error E.G', '')"
     />
 </template>

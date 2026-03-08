@@ -19,7 +19,7 @@ export interface ComponentPreviewProps {
 }
 
 export interface CodePreviewProps {
-    title?: string;
-    code:   string;
-    lang:   string;
+    title?:   string;
+    code:     string;
+    language: string;
 }
