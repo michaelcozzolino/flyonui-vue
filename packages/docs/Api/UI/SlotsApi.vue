@@ -1,7 +1,7 @@
 <template>
     <FoTable v-if="api.length"
              :id="`${componentName}-slots`"
-             class="vp-raw rounded-lg my-4 max-w-xl"
+             class="vp-raw rounded-lg my-4"
              is-bordered
              is-responsive
              is-striped="rows"
@@ -25,11 +25,11 @@
                         :key="slot.name"
                         class="text-center"
             >
-                <FoTableColumn class="font-mono font-semibold text-accent">
+                <FoTableColumn class="font-mono font-semibold text-base-content">
                     {{ slot.name }}
                 </FoTableColumn>
 
-                <FoTableColumn class="italic text-info">
+                <FoTableColumn class="italic text-base-content/70">
                     {{ slot.description ?? '-' }}
                 </FoTableColumn>
             </FoTableRow>
