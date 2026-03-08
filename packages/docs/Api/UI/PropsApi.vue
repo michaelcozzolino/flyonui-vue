@@ -29,16 +29,9 @@
                         class="text-center"
             >
                 <FoTableColumn class="font-mono font-semibold text-base-content">
-                    <FoLink v-if="prop.declarations[0] !== undefined"
-                            :to="prop.declarations[0].file"
-                            underline-effect="hover-animated"
-                    >
-                        {{ prop.name }}
-                    </FoLink>
-
-                    <template v-else>
-                        {{ prop.name }}
-                    </template>
+                    <LinkableApiName :name="prop.name"
+                                     :declarations="prop.declarations"
+                    />
                 </FoTableColumn>
 
                 <FoTableColumn class="italic text-base-content/70 whitespace-break-spaces!">
@@ -64,9 +57,10 @@
 <script setup lang="ts">
 import type { Api } from '@/Api/Types/Api.ts';
 
-import type { PropertyMeta, PropertyMetaSchema }                     from 'vue-component-meta';
-import { useArrayFilter }                                            from '@vueuse/core';
-import { FoLink, FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
+import type { PropertyMeta, PropertyMetaSchema }             from 'vue-component-meta';
+import LinkableApiName                                       from '@/Api/UI/LinkableApiName.vue';
+import { useArrayFilter }                                    from '@vueuse/core';
+import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
 
 const props = defineProps<Api<PropertyMeta>>();
 

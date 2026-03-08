@@ -26,7 +26,9 @@
                         class="text-center"
             >
                 <FoTableColumn class="font-mono font-semibold text-base-content">
-                    {{ slot.name }}
+                    <LinkableApiName :name="slot.name"
+                                     :declarations="slot.declarations"
+                    />
                 </FoTableColumn>
 
                 <FoTableColumn class="italic text-base-content/70">
@@ -41,6 +43,7 @@
 import type { Api }      from '@/Api/Types/Api.ts';
 import type { SlotMeta } from 'vue-component-meta';
 
+import LinkableApiName                                       from '@/Api/UI/LinkableApiName.vue';
 import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
 
 defineProps<Api<SlotMeta>>();
