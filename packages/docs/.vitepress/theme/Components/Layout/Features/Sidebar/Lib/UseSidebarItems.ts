@@ -221,6 +221,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Input File',
+                        to:       `${flyonUIVueNextPath}/forms/input-file`,
+                        icon:     'mdi:file-upload',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Input Text',
                         to:       '/forms/input-text',
                         icon:     'mdi:form-textbox',

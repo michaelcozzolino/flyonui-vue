@@ -1,7 +1,7 @@
 import type { ComponentName }      from '@/Lib';
 import type { HorizontalPosition } from '@/Types';
 
-export type PositionableHelperTextComponentName = Extract<ComponentName, 'FoInputText' | 'FoSelect' | 'FoTextarea'>;
+export type PositionableHelperTextComponentName = Extract<ComponentName, 'FoInputFile' | 'FoInputText' | 'FoSelect' | 'FoTextarea'>;
 
 export type HelperText = string;
 

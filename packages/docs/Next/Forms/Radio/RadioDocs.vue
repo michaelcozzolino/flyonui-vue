@@ -1,7 +1,7 @@
 <template>
     <ComponentDocs :previews="previews"
                    :section="section"
-                   api-docs-component-names="FoRadio"
+                   :api-docs-component-names="['FoRadio', 'FoImageRadio']"
     />
 </template>
 

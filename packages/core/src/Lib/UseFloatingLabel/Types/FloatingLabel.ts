@@ -1,3 +1,4 @@
 import type { ComponentName } from '@/Lib';
 
-export type FloatingLabelComponentName = Extract<ComponentName, 'FoInputText' | 'FoSelect' | 'FoTextarea'>;
+// todo: there is a mismatch between configurable and floating, this should be checked
+export type FloatingLabelComponentName = Extract<ComponentName, 'FoInputFile' | 'FoInputText' | 'FoSelect' | 'FoTextarea'>;

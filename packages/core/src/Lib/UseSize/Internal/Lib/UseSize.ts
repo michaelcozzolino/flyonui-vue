@@ -40,6 +40,13 @@ export function useSize(
                 large:      'checkbox-lg',
                 extraLarge: 'checkbox-xl',
             },
+            FoInputFile: {
+                extraSmall: 'input-xs',
+                small:      'input-sm',
+                medium:     '',
+                large:      'input-lg',
+                extraLarge: 'input-xl',
+            },
             FoInputText: {
                 extraSmall: 'input-xs',
                 small:      'input-sm',
