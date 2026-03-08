@@ -58,7 +58,7 @@
                                  :key="codePreview.code"
                                  :title="codePreview.title"
                                  :code="codePreview.code"
-                                 :lang="codePreview.lang"
+                                 :language="codePreview.language"
                     />
                 </div>
             </template>
@@ -102,10 +102,10 @@ const isLtr = computed(() => direction.value === 'ltr');
 
 const codePreviews = computed((): CodePreviewProps[] => {
     if (typeof props.code === 'string') {
-        return [{ title: 'Vue', code: props.code, lang: 'js' }];
+        return [{ title: 'Vue', code: props.code, language: 'js' }];
     }
 
-    return props.code.map(c => ({ ...c, lang: 'js' }));
+    return props.code.map(c => ({ ...c, language: 'js' }));
 });
 
 const gridClass = computed(() => {
