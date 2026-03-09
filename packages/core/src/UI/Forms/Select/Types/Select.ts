@@ -29,7 +29,7 @@ export interface BaseSelectProps<
     Validity,
     WithConfigurableHelperText {
     /**
-     * The component's options.
+     * The selects' options.
      * An array where each option is an object that contains at least "id" and "text".
      * In case of optgroup the array must contain an object with "options" and an optional "label"
      */
@@ -53,3 +53,16 @@ export type DatalistProps<
 > = BaseSelectProps<T, K, K>
     & WithPlaceholder
     & WithLabel;
+
+export interface MultipleSelectProps<
+    T extends string | number,
+> extends MaybeStringId, Disableable, WithLabel {
+    /**
+     * The multiple selects' options.
+     * An array where each option is an object that contains at least "id" and "text".
+     */
+    options: SelectOption<T>[];
+
+    /** The number of options that are visible in the select without scrolling. */
+    visibleOptions?: number;
+}
