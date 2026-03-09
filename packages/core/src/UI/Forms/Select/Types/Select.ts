@@ -29,7 +29,7 @@ export interface BaseSelectProps<
     Validity,
     WithConfigurableHelperText {
     /**
-     * The selects' options.
+     * The select's options.
      * An array where each option is an object that contains at least "id" and "text".
      * In case of optgroup the array must contain an object with "options" and an optional "label"
      */
