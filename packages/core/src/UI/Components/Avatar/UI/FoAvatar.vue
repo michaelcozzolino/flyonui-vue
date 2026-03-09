@@ -35,10 +35,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Color, ComponentName, Preset, Size } from '@/Lib';
+import type { Color, ComponentName, Size } from '@/Lib';
 import type {
     AvatarIndicatorPlacement,
     AvatarIndicatorStatus,
+    AvatarPlaceholderPreset,
     AvatarProps,
 }                                                  from '@/UI/Components/Avatar';
 import type { Slot }                  from 'vue';
@@ -69,18 +70,7 @@ const [
 ];
 
 const presetAndColorClass = computed((): string => {
-    const emptyColorClasses: Record<Color, ''> = {
-        neutral:   '',
-        primary:   '',
-        secondary: '',
-        accent:    '',
-        info:      '',
-        success:   '',
-        warning:   '',
-        error:     '',
-    };
-
-    const classes: Record<Preset, Record<Color, string>> = {
+    const classes: Record<AvatarPlaceholderPreset, Record<Color, string>> = {
         solid: {
             neutral:   'bg-neutral text-neutral-content',
             primary:   'bg-primary text-primary-content',
@@ -101,7 +91,6 @@ const presetAndColorClass = computed((): string => {
             warning:   'border border-warning text-warning',
             error:     'border border-error text-error',
         },
-        dash: emptyColorClasses,
         soft: {
             neutral:   'bg-neutral/10 text-neutral',
             primary:   'bg-primary/10 text-primary',
@@ -112,22 +101,15 @@ const presetAndColorClass = computed((): string => {
             warning:   'bg-warning/10 text-warning',
             error:     'bg-error/10 text-error',
         },
-        gradient: emptyColorClasses,
-        text:     emptyColorClasses,
-        dot:      emptyColorClasses,
     };
 
-    const defaultPreset = 'src' in props.avatar
-        ? null
-        : useFlyonUIVueAppConfigProperty(config, componentName, 'preset', props.avatar?.preset).value;
+    const defaultPreset = 'src' in props.avatar ? null : props.avatar.preset ?? 'solid';
 
     if (defaultPreset === null) {
         return '';
     }
 
-    const defaultColor = 'src' in props.avatar
-        ? null
-        : useFlyonUIVueAppConfigProperty(config, componentName, 'color', props.avatar.color).value;
+    const defaultColor = 'src' in props.avatar ? null : props.avatar.color ?? 'neutral';
 
     if (defaultColor === null) {
         return '';
