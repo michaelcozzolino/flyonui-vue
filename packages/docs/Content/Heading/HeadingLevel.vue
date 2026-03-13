@@ -1,25 +1,37 @@
 <template>
-    <FoHeading level="1">
+    <FoHeading level="1"
+               color="base"
+    >
         Heading 1
     </FoHeading>
 
-    <FoHeading level="2">
+    <FoHeading level="2"
+               color="base"
+    >
         Heading 2
     </FoHeading>
 
-    <FoHeading level="3">
+    <FoHeading level="3"
+               color="base"
+    >
         Heading 3
     </FoHeading>
 
-    <FoHeading level="4">
+    <FoHeading level="4"
+               color="base"
+    >
         Heading 4
     </FoHeading>
 
-    <FoHeading level="5">
+    <FoHeading level="5"
+               color="base"
+    >
         Heading 5
     </FoHeading>
 
-    <FoHeading level="6">
+    <FoHeading level="6"
+               color="base"
+    >
         Heading 6
     </FoHeading>
 </template>

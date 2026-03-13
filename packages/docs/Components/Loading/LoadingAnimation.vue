@@ -1,101 +1,139 @@
 <template>
-    <FoLoading size="extraSmall" />
+    <FoLoading color="base"
+               size="extraSmall"
+    />
 
-    <FoLoading size="small" />
+    <FoLoading color="base"
+               size="small"
+    />
 
-    <FoLoading />
+    <FoLoading color="base" />
 
-    <FoLoading size="large" />
+    <FoLoading color="base"
+               size="large"
+    />
 
-    <FoLoading size="extraLarge" />
+    <FoLoading color="base"
+               size="extraLarge"
+    />
 
     <FoLoading animation="dots"
+               color="base"
                size="extraSmall"
     />
 
     <FoLoading animation="dots"
+               color="base"
                size="small"
     />
 
-    <FoLoading animation="dots" />
+    <FoLoading animation="dots"
+               color="base"
+    />
 
     <FoLoading animation="dots"
+               color="base"
                size="large"
     />
 
     <FoLoading animation="dots"
+               color="base"
                size="extraLarge"
     />
 
     <FoLoading animation="ring"
+               color="base"
                size="extraSmall"
     />
 
     <FoLoading animation="ring"
+               color="base"
                size="small"
-    />
-
-    <FoLoading animation="ring" />
-
-    <FoLoading animation="ring"
-               size="large"
     />
 
     <FoLoading animation="ring"
+               color="base"
+    />
+
+    <FoLoading animation="ring"
+               color="base"
+               size="large"
+    />
+
+    <FoLoading animation="ring"
+               color="base"
                size="extraLarge"
     />
 
     <FoLoading animation="ball"
+               color="base"
                size="extraSmall"
     />
 
     <FoLoading animation="ball"
+               color="base"
                size="small"
     />
 
-    <FoLoading animation="ball" />
+    <FoLoading animation="ball"
+               color="base"
+    />
 
     <FoLoading animation="ball"
+               color="base"
                size="large"
     />
 
     <FoLoading animation="ball"
+               color="base"
                size="extraLarge"
     />
 
     <FoLoading animation="bars"
+               color="base"
                size="extraSmall"
     />
 
     <FoLoading animation="bars"
+               color="base"
                size="small"
     />
 
-    <FoLoading animation="bars" />
+    <FoLoading animation="bars"
+               color="base"
+    />
 
     <FoLoading animation="bars"
+               color="base"
                size="large"
     />
 
     <FoLoading animation="bars"
+               color="base"
                size="extraLarge"
     />
 
     <FoLoading animation="infinity"
+               color="base"
                size="extraSmall"
     />
 
     <FoLoading animation="infinity"
+               color="base"
                size="small"
     />
 
-    <FoLoading animation="infinity" />
+    <FoLoading animation="infinity"
+               color="base"
+    />
 
     <FoLoading animation="infinity"
+               color="base"
                size="large"
     />
 
     <FoLoading animation="infinity"
+               color="base"
                size="extraLarge"
     />
 </template>
