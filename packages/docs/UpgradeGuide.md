@@ -40,5 +40,5 @@ The possible values of the prop `social` have been updated and fully lowercased,
 ### FoDivider | FoHeading | FoLink | FoLoading
 
 The default color is now the color defined by the flyonui vue configuration, that is neutral if no settings have been
-manually configured. Before the default color was the `--color-base-content`, if you want now this color you have to pass
+manually configured. Before, the default color was the `--color-base-content`, if you now want this color you have to pass
 the `base` value to the `color` prop.
