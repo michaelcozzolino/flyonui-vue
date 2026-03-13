@@ -6,7 +6,7 @@
     <FoHeading level="4"
                color="base"
     >
-        Default
+        Base
     </FoHeading>
 
     <FoHeading level="4"
