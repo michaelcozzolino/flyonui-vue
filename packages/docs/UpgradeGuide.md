@@ -11,6 +11,7 @@ The minimum required version for Node.js is now `>= 20.19.0`.
 - The `Direction` type has been renamed to `TextDirection`.
 - The property `direction` of the type `FlyonUIVueAppGlobalConfig` has been renamed to `textDirection`.
 - The `Animation` type has been renamed to `LoadingAnimation`.
+- The `ColorableTextComponentName` type has been renamed to `TextColorableComponentName`.
 
 ### All Components - Props
 
@@ -35,3 +36,9 @@ The possible values of the prop `social` have been updated and fully lowercased,
 | `Github`   | `github`   |
 | `Linkedin` | `linkedin` |
 | `Twitter`  | `x`        |
+
+### FoDivider | FoHeading | FoLink | FoLoading
+
+The default color is now the color defined by the flyonui vue configuration, that is neutral if no settings have been
+manually configured. Before the default color was the `--color-base-content`, if you want now this color you have to pass
+the `base` value to the `color` prop.
