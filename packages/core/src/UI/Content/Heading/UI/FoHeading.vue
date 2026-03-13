@@ -30,7 +30,7 @@ const [
     colorClass,
     sizeClass,
 ] = [
-    useTextColor(config, 'FoHeading', () => props.color, 'text-base-content'),
+    useTextColor(config, 'FoHeading', () => props.color),
     computed(() => {
         const classes: Record<HeadingLevel, string> = {
             1: 'text-4xl',
