@@ -17,6 +17,9 @@
 <StatusDocs section="animation" />
 
 [//]: # (todo: status with progress)
+
+## Api
+
 ### Props
 
 <StatusDocs section="props" />

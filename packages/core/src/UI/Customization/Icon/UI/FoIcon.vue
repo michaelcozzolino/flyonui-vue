@@ -5,7 +5,7 @@
     />
 
     <span v-else-if="sizeClass"
-          :class="[iconClass, sizeClass]"
+          :class="[iconClass]"
     >
         <Icon :icon="icon"
               :height="sizeClass?.height"

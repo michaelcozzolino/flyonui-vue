@@ -15,7 +15,7 @@ export default defineConfig({
         // In the GitHub action the docs are built before the execution of the tests, in local they might not be.
         command:             process.env.CI ? previewCommand : `${workspaceCommand} build && ${previewCommand}`,
         url:                 baseURL,
-        timeout:             120 * 1000,
+        timeout:             600 * 1000,
         reuseExistingServer: !process.env.CI,
     },
     projects: [

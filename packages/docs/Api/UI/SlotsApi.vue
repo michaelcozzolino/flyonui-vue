@@ -1,7 +1,7 @@
 <template>
     <FoTable v-if="api.length"
              :id="`${componentName}-slots`"
-             class="vp-raw rounded-lg my-4 max-w-xl"
+             class="vp-raw rounded-lg my-4"
              is-bordered
              is-responsive
              is-striped="rows"
@@ -25,11 +25,13 @@
                         :key="slot.name"
                         class="text-center"
             >
-                <FoTableColumn class="font-mono font-semibold text-accent">
-                    {{ slot.name }}
+                <FoTableColumn class="font-mono font-semibold text-base-content">
+                    <LinkableApiName :name="slot.name"
+                                     :declarations="slot.declarations"
+                    />
                 </FoTableColumn>
 
-                <FoTableColumn class="italic text-info">
+                <FoTableColumn class="italic text-base-content/70">
                     {{ slot.description ?? '-' }}
                 </FoTableColumn>
             </FoTableRow>
@@ -41,6 +43,7 @@
 import type { Api }      from '@/Api/Types/Api.ts';
 import type { SlotMeta } from 'vue-component-meta';
 
+import LinkableApiName                                       from '@/Api/UI/LinkableApiName.vue';
 import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
 
 defineProps<Api<SlotMeta>>();

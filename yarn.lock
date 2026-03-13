@@ -5064,7 +5064,7 @@ __metadata:
     tailwindcss: "npm:^4.1.18"
     tsc-alias: "npm:^1.8.16"
     typescript: "npm:^5.9.3"
-    unhead: "npm:^2.1.4"
+    unhead: "npm:^2.1.12"
     vite: "npm:^7.3.0"
     vue: "npm:^3.5.28"
     vue-router: "npm:^4.6.4"
@@ -9043,12 +9043,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unhead@npm:^2.1.4":
-  version: 2.1.4
-  resolution: "unhead@npm:2.1.4"
+"unhead@npm:^2.1.12":
+  version: 2.1.12
+  resolution: "unhead@npm:2.1.12"
   dependencies:
     hookable: "npm:^6.0.1"
-  checksum: 10c0/084f28b40e9b918ff43fff03f64ff5c3aa28341795d4b139218a58063b7c9f7c94892aaddcd0951d32dd04113f9781eb95e5c02e51fa7ecb3e2e51c56e146d28
+  checksum: 10c0/fb5afcab73ea28176f854462e976f5f953e995563f3d9c7e5af42259af5fe1cbbc3111e54118e932c9d2673d641dd2f0c59656c9cc3e34505d2322564cfcd0e8
   languageName: node
   linkType: hard
 

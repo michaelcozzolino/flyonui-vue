@@ -1,7 +1,13 @@
 import type { ComponentName, FloatingLabelComponentName, MaybeStringId } from '@/Lib';
 import type { LabelType }                                                from '@/UI/Components';
 
-export type ConfigurableLabelComponentName = Extract<ComponentName, 'FoInputText' | 'FoSelect' | 'FoTextarea'>;
+export type ConfigurableLabelComponentName = Extract<
+    ComponentName,
+    'FoInputFile'
+    | 'FoInputText'
+    | 'FoSelect'
+    | 'FoTextarea'
+>;
 
 export interface LabelProps<T extends LabelType = LabelType> extends MaybeStringId {
     componentName?: FloatingLabelComponentName;

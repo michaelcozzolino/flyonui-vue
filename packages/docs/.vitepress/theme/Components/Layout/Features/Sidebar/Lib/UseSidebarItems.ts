@@ -55,6 +55,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                 text:     'Content',
                 children: [
                     {
+                        text:     'BlockQuote',
+                        to:       `${flyonUIVueNextPath}/content/block-quote`,
+                        icon:     'tabler:quote',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Divider',
                         to:       `${flyonUIVueNextPath}/content/divider`,
                         icon:     'tabler:separator-horizontal',
@@ -98,6 +105,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         badge:    _unreleasedBadge,
                     },
                     {
+                        text:     'Avatar',
+                        to:       `${flyonUIVueNextPath}/components/avatar`,
+                        icon:     'carbon:user-avatar',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Badge',
                         to:       '/components/badge',
                         icon:     'mdi:badge-account-outline',
@@ -127,6 +141,20 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/components/loading',
                         icon:     'line-md:loading-twotone-loop',
                         children: [],
+                    },
+                    {
+                        text:     'Radial Progress',
+                        to:       `${flyonUIVueNextPath}/components/radial-progress`,
+                        icon:     'tabler:progress',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
+                        text:     'Skeleton',
+                        to:       `${flyonUIVueNextPath}/components/skeleton`,
+                        icon:     'tdesign:placeholder-filled',
+                        children: [],
+                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Stats',
@@ -211,6 +239,13 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         children: [],
                     },
                     {
+                        text:     'Input File',
+                        to:       `${flyonUIVueNextPath}/forms/input-file`,
+                        icon:     'mdi:file-upload',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
                         text:     'Input Text',
                         to:       '/forms/input-text',
                         icon:     'mdi:form-textbox',
@@ -221,6 +256,20 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                         to:       '/forms/join',
                         icon:     'mdi:account-plus',
                         children: [],
+                    },
+                    {
+                        text:     'Radio',
+                        to:       `${flyonUIVueNextPath}/forms/radio`,
+                        icon:     'mdi:radio-button-checked',
+                        children: [],
+                        badge:    _unreleasedBadge,
+                    },
+                    {
+                        text:     'Range',
+                        to:       `${flyonUIVueNextPath}/forms/range`,
+                        icon:     'radix-icons:slider',
+                        children: [],
+                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Select',

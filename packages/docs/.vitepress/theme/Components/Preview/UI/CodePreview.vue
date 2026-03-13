@@ -16,7 +16,7 @@
             />
         </FoButtonGroup>
 
-        <CodeSnippet :language="lang"
+        <CodeSnippet :language="language"
                      :code="code"
         />
     </div>
@@ -37,6 +37,6 @@ const CodeSnippet = plugin.component;
 @reference "tailwindcss";
 
 .hljs {
-    @apply rounded-b-lg text-[16px]! max-h-[500px];
+    @apply rounded-b-lg text-[16px]! max-h-125;
 }
 </style>

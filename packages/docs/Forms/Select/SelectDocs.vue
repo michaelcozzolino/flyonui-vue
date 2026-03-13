@@ -1,7 +1,7 @@
 <template>
     <ComponentDocs :previews="previews"
                    :section="section"
-                   :api-docs-component-names="['FoSelect', 'FoDatalist']"
+                   :api-docs-component-names="['FoSelect', 'FoMultipleSelect', 'FoDatalist']"
     />
 </template>
 
@@ -16,6 +16,8 @@ import DefaultSelectSize               from '@/Forms/Select/DefaultSelectSize.vu
 import DefaultSelectSizeRaw            from '@/Forms/Select/DefaultSelectSize.vue?raw';
 import DisabledSelect                  from '@/Forms/Select/DisabledSelect.vue';
 import DisabledSelectRaw               from '@/Forms/Select/DisabledSelect.vue?raw';
+import MultipleSelect                  from '@/Forms/Select/MultipleSelect.vue';
+import MultipleSelectRaw               from '@/Forms/Select/MultipleSelect.vue?raw';
 import SelectAsDatalist                from '@/Forms/Select/SelectAsDatalist.vue';
 import SelectAsDatalistRaw             from '@/Forms/Select/SelectAsDatalist.vue?raw';
 import SelectFloatingLabel             from '@/Forms/Select/SelectFloatingLabel.vue';
@@ -49,6 +51,7 @@ type Section = Default
     | 'hidden-label'
     | 'disabled'
     | 'datalist'
+    | 'multiple'
     | 'optgroup'
     | 'ref-usage'
     | ApiType;
@@ -144,6 +147,13 @@ const previews = computed(() => {
             {
                 code:      SelectAsDatalistRaw,
                 component: SelectAsDatalist,
+            },
+        ],
+        [
+            'multiple',
+            {
+                code:      MultipleSelectRaw,
+                component: MultipleSelect,
             },
         ],
         [
