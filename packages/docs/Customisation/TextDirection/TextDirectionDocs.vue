@@ -2,7 +2,7 @@
     <CodePreview v-if="section === 'all-components'"
                  title="TS"
                  :code="AllComponentsTextDirectionConfigurationRaw.replace('// @ts-expect-error E.G.', '')"
-                 lang="ts"
+                 language="ts"
     />
 
     <ComponentDocs v-else
