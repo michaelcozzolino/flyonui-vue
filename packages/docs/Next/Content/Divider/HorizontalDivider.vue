@@ -1,17 +1,24 @@
 <template>
-    <FoDivider orientation="horizontal" />
+    <FoDivider color="base"
+               orientation="horizontal"
+    />
 
-    <FoDivider orientation="horizontal">
+    <FoDivider color="base"
+               orientation="horizontal"
+    >
         Text
     </FoDivider>
 
-    <FoDivider orientation="horizontal">
+    <FoDivider color="base"
+               orientation="horizontal"
+    >
         <FoIcon icon="tabler:sun"
                 size="small"
         />
     </FoDivider>
 
     <FoDivider class="h-72"
+               color="base"
                orientation="horizontal"
     >
         <FoIcon icon="tabler:sun"

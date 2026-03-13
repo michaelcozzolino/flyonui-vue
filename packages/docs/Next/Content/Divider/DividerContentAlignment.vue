@@ -1,27 +1,35 @@
 <template>
-    <FoDivider alignment="left">
+    <FoDivider color="base"
+               alignment="left"
+    >
         Start
     </FoDivider>
 
-    <FoDivider>
+    <FoDivider color="base">
         Center
     </FoDivider>
 
-    <FoDivider alignment="right">
+    <FoDivider color="base"
+               alignment="right"
+    >
         End
     </FoDivider>
 
-    <FoDivider alignment="left"
+    <FoDivider color="base"
+               alignment="left"
                orientation="horizontal"
     >
         Start
     </FoDivider>
 
-    <FoDivider orientation="horizontal">
+    <FoDivider color="base"
+               orientation="horizontal"
+    >
         Center
     </FoDivider>
 
-    <FoDivider alignment="right"
+    <FoDivider color="base"
+               alignment="right"
                orientation="horizontal"
     >
         End

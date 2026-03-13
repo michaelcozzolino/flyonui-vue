@@ -1,11 +1,11 @@
 <template>
-    <FoDivider />
+    <FoDivider color="base" />
 
-    <FoDivider>
+    <FoDivider color="base">
         Text
     </FoDivider>
 
-    <FoDivider>
+    <FoDivider color="base">
         <FoIcon icon="tabler:crown"
                 size="small"
         />

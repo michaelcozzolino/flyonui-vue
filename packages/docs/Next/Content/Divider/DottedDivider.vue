@@ -1,116 +1,122 @@
 <template>
     <FoDivider preset="dot">
-        Dotted
+        Default
+    </FoDivider>
+
+    <FoDivider color="base"
+               preset="dot"
+    >
+        Base
     </FoDivider>
 
     <FoDivider color="neutral"
                preset="dot"
     >
-        Dotted
+        Neutral
     </FoDivider>
 
     <FoDivider color="primary"
                preset="dot"
     >
-        Dotted
+        Primary
     </FoDivider>
 
     <FoDivider color="secondary"
                preset="dot"
     >
-        Dotted
+        Secondary
     </FoDivider>
 
     <FoDivider color="accent"
                preset="dot"
     >
-        Dotted
+        Accent
     </FoDivider>
 
     <FoDivider color="info"
                preset="dot"
     >
-        Dotted
+        Info
     </FoDivider>
 
     <FoDivider color="success"
                preset="dot"
     >
-        Dotted
+        Success
     </FoDivider>
 
     <FoDivider color="warning"
                preset="dot"
     >
-        Dotted
+        Warning
     </FoDivider>
 
     <FoDivider color="error"
                preset="dot"
     >
-        Dotted
+        Error
     </FoDivider>
 
     <FoDivider preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Default
     </FoDivider>
 
     <FoDivider color="neutral"
                preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Neutral
     </FoDivider>
 
     <FoDivider color="primary"
                preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Primary
     </FoDivider>
 
     <FoDivider color="secondary"
                preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Secondary
     </FoDivider>
 
     <FoDivider color="accent"
                preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Accent
     </FoDivider>
 
     <FoDivider color="info"
                preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Info
     </FoDivider>
 
     <FoDivider color="success"
                preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Success
     </FoDivider>
 
     <FoDivider color="warning"
                preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Warning
     </FoDivider>
 
     <FoDivider color="error"
                preset="dot"
                orientation="horizontal"
     >
-        Dotted
+        Error
     </FoDivider>
 </template>
 

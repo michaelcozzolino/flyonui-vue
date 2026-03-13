@@ -1,116 +1,122 @@
 <template>
     <FoDivider preset="dash">
-        Dashed
+        Default
+    </FoDivider>
+
+    <FoDivider color="base"
+               preset="dash"
+    >
+        Base
     </FoDivider>
 
     <FoDivider color="neutral"
                preset="dash"
     >
-        Dashed
+        Neutral
     </FoDivider>
 
     <FoDivider color="primary"
                preset="dash"
     >
-        Dashed
+        Primary
     </FoDivider>
 
     <FoDivider color="secondary"
                preset="dash"
     >
-        Dashed
+        Secondary
     </FoDivider>
 
     <FoDivider color="accent"
                preset="dash"
     >
-        Dashed
+        Accent
     </FoDivider>
 
     <FoDivider color="info"
                preset="dash"
     >
-        Dashed
+        Info
     </FoDivider>
 
     <FoDivider color="success"
                preset="dash"
     >
-        Dashed
+        Success
     </FoDivider>
 
     <FoDivider color="warning"
                preset="dash"
     >
-        Dashed
+        Warning
     </FoDivider>
 
     <FoDivider color="error"
                preset="dash"
     >
-        Dashed
+        Error
     </FoDivider>
 
     <FoDivider preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Default
     </FoDivider>
 
     <FoDivider color="neutral"
                preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Neutral
     </FoDivider>
 
     <FoDivider color="primary"
                preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Primary
     </FoDivider>
 
     <FoDivider color="secondary"
                preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Secondary
     </FoDivider>
 
     <FoDivider color="accent"
                preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Accent
     </FoDivider>
 
     <FoDivider color="info"
                preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Info
     </FoDivider>
 
     <FoDivider color="success"
                preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Success
     </FoDivider>
 
     <FoDivider color="warning"
                preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Warning
     </FoDivider>
 
     <FoDivider color="error"
                preset="dash"
                orientation="horizontal"
     >
-        Dashed
+        Error
     </FoDivider>
 </template>
 
