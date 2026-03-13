@@ -14,14 +14,21 @@ export type ColorableComponentName = Extract<
     | 'FoStatus'
     | 'FoSwitch'
     | 'FoTooltip'
-    | ColorableTextComponentName
+    | TextColorableComponentName
 >;
 
-export type ColorableTextComponentName = Extract<ComponentName, 'FoDivider' | 'FoHeading' | 'FoLink' | 'FoLoading'>;
+export type TextColorableComponentName = Extract<ComponentName, 'FoDivider' | 'FoHeading' | 'FoLink' | 'FoLoading'>;
 
 export type Color = 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
 
 export interface Colorable {
     /** The component's color */
     color?: Color;
+}
+
+export type TextColor = 'base' | Color;
+
+export interface TextColorable {
+    /** The component's text color */
+    color?: TextColor;
 }

@@ -11,17 +11,9 @@ describe('useTextColor', () => {
         expect(useTextColor(config, 'FoLink', 'neutral').value).toBe('link-neutral');
     });
 
-    it('returns no default class if the color is not defined', () => {
+    it('returns the base color class if the color is the base one', () => {
         const config = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
 
-        expect(useTextColor(config, 'FoLink', () => undefined).value).toBe('');
-    });
-
-    it('returns a specific default class if the color is not defined and the default class is specified', () => {
-        const config = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
-
-        const defaultColorClass = 'default-class';
-
-        expect(useTextColor(config, 'FoLink', () => undefined, defaultColorClass).value).toBe(defaultColorClass);
+        expect(useTextColor(config, 'FoLink', () => 'base').value).toBe('text-base-content');
     });
 });
