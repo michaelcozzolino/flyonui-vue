@@ -1,4 +1,4 @@
-import type { Colorable }         from '@/Lib';
+import type { TextColorable }     from '@/Lib';
 import type { FoRouterLinkProps } from '@/UI/Content/Link/Internal';
 import type { RouteLocationRaw }  from 'vue-router';
 
@@ -8,7 +8,7 @@ export type To = Link | RouteLocationRaw;
 
 export type UnderlineLinkEffect = 'hover' | 'hover-animated' | 'no-underline';
 
-export interface LinkProps extends FoRouterLinkProps, Colorable {
+export interface LinkProps extends FoRouterLinkProps, TextColorable {
     /**
      * If "hover", the link will be underlined when hovered
      * If "hover-animated", the link will be underlined with an underline animation when hovered
