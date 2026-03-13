@@ -1,16 +1,20 @@
-import type { Color, ColorableTextComponentName, FlyonUIVueAppDefaultConfig } from '@/Lib';
-import type { ComputedRef, MaybeRefOrGetter, Ref }                            from 'vue';
-import { useColor }                                                           from '@/Lib/UseColor/Internal';
-import { isDefined }                                                          from '@/Lib/Utils/Internal';
-import { computed, toValue }                                                  from 'vue';
+import type { FlyonUIVueAppDefaultConfig, TextColor, TextColorableComponentName } from '@/Lib';
+import type { ComputedRef, MaybeRefOrGetter, Ref }                                from 'vue';
+import { useColor }                                                               from '@/Lib/UseColor/Internal';
+import { computed, toValue }                                                      from 'vue';
 
 export function useTextColor(
     config: Ref<FlyonUIVueAppDefaultConfig>,
-    componentName: MaybeRefOrGetter<ColorableTextComponentName>,
-    color: MaybeRefOrGetter<Color | undefined>,
-    defaultColorClass: MaybeRefOrGetter<string> = '',
+    componentName: MaybeRefOrGetter<TextColorableComponentName>,
+    color: MaybeRefOrGetter<TextColor | undefined>,
 ): ComputedRef<string> {
     return computed((): string => {
-        return isDefined(color) ? useColor(config, componentName, color).value : toValue(defaultColorClass);
+        const c = toValue(color);
+
+        if (c === 'base') {
+            return 'text-base-content';
+        }
+
+        return useColor(config, componentName, c).value;
     });
 }

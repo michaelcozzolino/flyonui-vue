@@ -1,13 +1,15 @@
 <template>
     <FoLoading />
 
+    <FoLoading color="base" />
+
+    <FoLoading color="neutral" />
+
     <FoLoading color="primary" />
 
     <FoLoading color="secondary" />
 
     <FoLoading color="accent" />
-
-    <FoLoading color="neutral" />
 
     <FoLoading color="info" />
 

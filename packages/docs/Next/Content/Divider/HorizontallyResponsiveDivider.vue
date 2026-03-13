@@ -3,6 +3,7 @@
         <div class="shadow-base-300/20 bg-base-200 grid h-32 grow place-items-center shadow-sm" />
 
         <FoDivider :class="orientation === 'horizontal' && 'h-32!'"
+                   color="base"
                    :orientation="orientation"
         >
             OR

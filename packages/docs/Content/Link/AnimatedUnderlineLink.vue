@@ -1,5 +1,6 @@
 <template>
-    <FoLink to="https://www.google.com"
+    <FoLink color="base"
+            to="https://www.google.com"
             underline-effect="hover-animated"
     >
         Animated underline when hovered over.

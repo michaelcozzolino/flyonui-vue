@@ -1,90 +1,94 @@
 <template>
     <FoDivider>
-        Solid
+        Default
+    </FoDivider>
+
+    <FoDivider color="base">
+        Base
     </FoDivider>
 
     <FoDivider color="neutral">
-        Solid
+        Neutral
     </FoDivider>
 
     <FoDivider color="primary">
-        Solid
+        Primary
     </FoDivider>
 
     <FoDivider color="secondary">
-        Solid
+        Secondary
     </FoDivider>
 
     <FoDivider color="accent">
-        Solid
+        Accent
     </FoDivider>
 
     <FoDivider color="info">
-        Solid
+        Info
     </FoDivider>
 
     <FoDivider color="success">
-        Solid
+        Success
     </FoDivider>
 
     <FoDivider color="warning">
-        Solid
+        Warning
     </FoDivider>
 
     <FoDivider color="error">
-        Solid
+        Error
     </FoDivider>
 
     <FoDivider orientation="horizontal">
-        Solid
+        Default
     </FoDivider>
 
     <FoDivider color="neutral"
                orientation="horizontal"
     >
-        Solid
+        Neutral
     </FoDivider>
 
     <FoDivider color="primary"
                orientation="horizontal"
     >
-        Solid
+        Primary
     </FoDivider>
 
     <FoDivider color="secondary"
                orientation="horizontal"
     >
-        Solid
+        Secondary
     </FoDivider>
 
     <FoDivider color="accent"
                orientation="horizontal"
     >
-        Solid
+        Accent
     </FoDivider>
 
     <FoDivider color="info"
                orientation="horizontal"
     >
-        Solid
+        Info
     </FoDivider>
 
     <FoDivider color="success"
                orientation="horizontal"
     >
-        Solid
+        Success
     </FoDivider>
 
     <FoDivider color="warning"
                orientation="horizontal"
     >
-        Solid
+        Warning
     </FoDivider>
 
     <FoDivider color="error"
                orientation="horizontal"
     >
-        Solid
+        Error
     </FoDivider>
 </template>
 

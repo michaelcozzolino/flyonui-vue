@@ -4,6 +4,12 @@
     </FoLink>
 
     <FoLink to="https://www.google.com"
+            color="base"
+    >
+        Base link
+    </FoLink>
+
+    <FoLink to="https://www.google.com"
             color="neutral"
     >
         Neutral link
