@@ -32,9 +32,16 @@ import NavbarDocs                                     from '@/Navigations/Navbar
 import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
 import TabsDocs                                       from '@/Navigations/Tabs/TabsDocs.vue';
 import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
+import AvatarDocs                                     from '@/Next/Components/Avatar/AvatarDocs.vue';
 import DiffDocs                                       from '@/Next/Components/Diff/DiffDocs.vue';
+import RadialProgressDocs                             from '@/Next/Components/RadialProgress/RadialProgressDocs.vue';
+import SkeletonDocs                                   from '@/Next/Components/Skeleton/SkeletonDocs.vue';
 import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
+import BlockQuoteDocs                                 from '@/Next/Content/BlockQuote/BlockQuoteDocs.vue';
 import DividerDocs                                    from '@/Next/Content/Divider/DividerDocs.vue';
+import InputFileDocs                                  from '@/Next/Forms/InputFile/InputFileDocs.vue';
+import RadioDocs                                      from '@/Next/Forms/Radio/RadioDocs.vue';
+import RangeDocs                                      from '@/Next/Forms/Range/RangeDocs.vue';
 import DataTableDocs                                  from '@/Next/Tables/DataTable/DataTableDocs.vue';
 import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
 import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
@@ -83,6 +90,7 @@ export default {
         app.use(createPinia()).use(hljsVuePlugin);
 
         registerDocComponents(app, [
+            { name: 'AvatarDocs', instance: AvatarDocs },
             { name: 'ClassAndStyleDocs', instance: ClassAndStyleDocs },
             { name: 'KeyboardDocs', instance: KeyboardDocs },
             { name: 'AlertDocs', instance: AlertDocs },
@@ -90,11 +98,13 @@ export default {
             { name: 'TipAlert', instance: TipAlert },
             { name: 'LinkDocs', instance: LinkDocs },
             { name: 'BadgeDocs', instance: BadgeDocs },
+            { name: 'BlockQuoteDocs', instance: BlockQuoteDocs },
             { name: 'ButtonDocs', instance: ButtonDocs },
             { name: 'CheckboxDocs', instance: CheckboxDocs },
             { name: 'DataTableDocs', instance: DataTableDocs },
             { name: 'DiffDocs', instance: DiffDocs },
             { name: 'DividerDocs', instance: DividerDocs },
+            { name: 'InputFileDocs', instance: InputFileDocs },
             { name: 'InputTextDocs', instance: InputTextDocs },
             { name: 'IconsDocs', instance: IconsDocs },
             { name: 'JoinDocs', instance: JoinDocs },
@@ -107,6 +117,10 @@ export default {
             { name: 'NavbarDocs', instance: NavbarDocs },
             { name: 'PaginationDocs', instance: PaginationDocs },
             { name: 'PopoverDocs', instance: PopoverDocs },
+            { name: 'RadioDocs', instance: RadioDocs },
+            { name: 'RangeDocs', instance: RangeDocs },
+            { name: 'RadialProgressDocs', instance: RadialProgressDocs },
+            { name: 'SkeletonDocs', instance: SkeletonDocs },
             { name: 'StatsDocs', instance: StatsDocs },
             { name: 'StatusDocs', instance: StatusDocs },
             { name: 'SwapDocs', instance: SwapDocs },

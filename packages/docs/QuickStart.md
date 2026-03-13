@@ -7,7 +7,7 @@
 If you are starting a new `Vite` + `Vue` project you can use our automatic flyonui-vue installation tool 
 [create-flyonui-vue](https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/create-flyonui-vue/README.md):
 
-<CodePreview lang="bash"
+<CodePreview language="bash"
              code="yarn create flyonui-vue"
 />
 
@@ -18,31 +18,31 @@ and [Tailwind CSS](https://tailwindcss.com/) installed.
 
 1. Install `flyonui-vue` as a dependency using NPM or Yarn by running the following command:
 
-<CodePreview lang="bash" 
+<CodePreview language="bash" 
              code="npm i flyonui-vue"
 />
 
 or
 
-<CodePreview lang="bash"
+<CodePreview language="bash"
              code="yarn add flyonui-vue"
 />
 
 in order to use icons, `@iconify/vue` is required:
 
-<CodePreview lang="bash"
+<CodePreview language="bash"
              code="yarn add @iconify/vue"
 />
 
 2. Import styles:
 
-<CodePreview lang="css"
+<CodePreview language="css"
              code="@import 'flyonui-vue/index.css';"
 />
 
 3. source the tailwind components' classes:
 
-<CodePreview lang="css"
+<CodePreview language="css"
              code="@source '../../node_modules/flyonui-vue';"
 />
 
@@ -65,14 +65,14 @@ components supporting them, except that the `FoButton.vue` will have a `large` s
 for example:
 
 <CodePreview title="CustomButton.vue"
-             lang="js"
+             language="js"
              code="<FoButton>Large Accent Button</FoButton>"
 />
 
 <br>
 
 <CodePreview title="CustomBadge.vue"
-             lang="js"
+             language="js"
              code="<FoBadge>Small Info Badge</FoBadge>"
 />
 
@@ -92,7 +92,7 @@ A Vue Ref is exposed and can be manipulated on demand based on your desired beha
 All you need to do is to use the composable:
 
 <CodePreview title="Vue"
-             lang="js"
+             language="js"
              code="const config = useFlyonUIVueAppConfig();"
 />
 
@@ -100,6 +100,6 @@ if you want to be able to manipulate the configuration, where the initial one is
 use the plugin:
 
 <CodePreview title="App.ts"
-             lang="js"
+             language="js"
              code="app.use(createFlyonUIVueApp, {});"
 />

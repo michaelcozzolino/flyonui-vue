@@ -50,6 +50,10 @@ When the input field is empty the selected option will automatically be null.
 
 <SelectDocs section="datalist" />
 
+### Multiple (Unreleased)
+
+<SelectDocs section="multiple" />
+
 ### Optgroup
 
 <SelectDocs section="optgroup" />

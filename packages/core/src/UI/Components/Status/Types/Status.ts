@@ -1,7 +1,6 @@
 import type { Colorable, Sizable } from '@/Lib';
-
-export type StatusAnimation = 'bounce' | 'ping' | 'pulse';
+import type { TailwindAnimation }  from '@/Lib/UseTailwindAnimation';
 
 export interface StatusProps extends Colorable, Sizable {
-    animation?: StatusAnimation;
+    animation?: TailwindAnimation;
 }

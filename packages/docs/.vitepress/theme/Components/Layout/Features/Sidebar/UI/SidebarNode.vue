@@ -8,7 +8,7 @@
         >
             <FoBadge :color="item.badge.color"
                      preset="dash"
-                     size="small"
+                     size="extraSmall"
                      shape="pilled"
             >
                 {{ item.badge.text }}
