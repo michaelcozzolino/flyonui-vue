@@ -1,5 +1,5 @@
 <template>
-    <FoInputFile is-disabled
+    <FoInputFile disabled
                  @upload:file="file = $event"
     />
 </template>

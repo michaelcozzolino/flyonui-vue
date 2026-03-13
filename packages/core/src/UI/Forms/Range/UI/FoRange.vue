@@ -10,7 +10,7 @@
                :min="min"
                :max="max"
                :step="step"
-               :disabled="isDisabled"
+               :disabled="disabled"
                v-bind="slots.steps === undefined && $attrs"
         >
 

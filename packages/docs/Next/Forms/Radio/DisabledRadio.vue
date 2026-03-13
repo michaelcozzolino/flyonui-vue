@@ -1,24 +1,24 @@
 <template>
     <FoRadio v-model="selectedValue"
              :value="selectedValue"
-             is-disabled
+             disabled
     />
 
     <FoRadio v-model="selectedValue"
              value="unchecked"
-             is-disabled
+             disabled
     />
 
     <FoRadio v-model="selectedValue"
              :value="selectedValue"
              is-inset
-             is-disabled
+             disabled
     />
 
     <FoRadio v-model="selectedValue"
              value="unchecked"
              is-inset
-             is-disabled
+             disabled
     />
 </template>
 

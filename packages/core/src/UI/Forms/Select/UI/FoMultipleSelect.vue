@@ -10,7 +10,7 @@
                 v-model="selectedOptions"
                 class="select h-auto"
                 :size="visibleOptions"
-                :disabled="isDisabled"
+                :disabled="disabled"
                 multiple
         >
             <FoSelectOption v-for="option in options"

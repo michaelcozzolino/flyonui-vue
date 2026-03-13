@@ -17,7 +17,7 @@
                    hasLabelAndHelperText && 'mt-2',
                    isInset && 'radio-inset',
                ]"
-               :disabled="isDisabled"
+               :disabled="disabled"
                :aria-label="isInJoin ? label : ''"
         >
 

@@ -15,7 +15,7 @@
                type="file"
                class="input"
                :class="[sizeClass, validityClass]"
-               :disabled="isDisabled"
+               :disabled="disabled"
                multiple
                v-bind="reactiveOmit($attrs, 'style')"
                @change="change"
