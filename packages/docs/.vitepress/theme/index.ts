@@ -1,16 +1,16 @@
-import type { Theme }          from 'vitepress';
-import type { App, Component } from 'vue';
+import type { Theme } from 'vitepress';
 
+import type { App, Component }             from 'vue';
 import ComponentNotReadyForProductionAlert
     from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentNotReadyForProductionAlert.vue';
-import TipAlert                                       from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
-import Layout                                         from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
-import CodePreview                                    from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
-import hljsVuePlugin                                  from '@highlightjs/vue-plugin';
-import { FoKeyboard, FoSelectThemeController, vMask } from 'flyonui-vue';
-import { createPinia }                                from 'pinia';
-import DefaultTheme                                   from 'vitepress/theme';
-import { defineAsyncComponent }                       from 'vue';
+import TipAlert                                                            from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
+import Layout                                                              from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
+import CodePreview                                                         from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
+import hljsVuePlugin                                                       from '@highlightjs/vue-plugin';
+import { createFlyonUIVueApp, FoKeyboard, FoSelectThemeController, vMask } from 'flyonui-vue';
+import { createPinia }                                                     from 'pinia';
+import DefaultTheme                                                        from 'vitepress/theme';
+import { defineAsyncComponent }                                            from 'vue';
 import './index.css';
 import 'highlight.js/styles/github-dark-dimmed.css';
 import 'highlight.js/lib/common';
@@ -21,8 +21,6 @@ export default {
     enhanceApp: async ({ app }) => {
         if (!import.meta.env.SSR) {
             app.directive('mask', vMask());
-
-            const { createFlyonUIVueApp } = await import('flyonui-vue');
 
             // const createFlyonUIVueAppOptions: FlyonUIVueAppConfig = {
             //     global: {
@@ -37,6 +35,9 @@ export default {
             //                 helperText: 'left',
             //                 icon:       'left',
             //             },
+            //         },
+            //         FoButton: {
+            //             color: 'error',
             //         },
             //     },
             // };
