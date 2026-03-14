@@ -1,6 +1,6 @@
-import type { SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import type { ComputedRef } from 'vue';
-import { computed }         from 'vue';
+import type { SidebarBadge, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import type { ComputedRef }               from 'vue';
+import { computed }                       from 'vue';
 
 export function useSidebarItems(): ComputedRef<SidebarItem[]> {
     return computed((): SidebarItem[] => {
