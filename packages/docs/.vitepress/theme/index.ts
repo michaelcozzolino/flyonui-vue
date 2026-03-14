@@ -1,56 +1,16 @@
-import type { Theme }                           from 'vitepress';
-import type { App, Component, DefineComponent } from 'vue';
+import type { Theme }          from 'vitepress';
+import type { App, Component } from 'vue';
 
 import ComponentNotReadyForProductionAlert
     from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentNotReadyForProductionAlert.vue';
 import TipAlert                                       from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
 import Layout                                         from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 import CodePreview                                    from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
-import ComponentsApi                                  from '@/Api/UI/ComponentsApi.vue';
-import BadgeDocs                                      from '@/Components/Badge/BadgeDocs.vue';
-import ButtonDocs                                     from '@/Components/Button/ButtonDocs.vue';
-import ListGroupDocs                                  from '@/Components/ListGroup/ListGroupDocs.vue';
-import LoadingDocs                                    from '@/Components/Loading/LoadingDocs.vue';
-import StatsDocs                                      from '@/Components/Stats/StatsDocs.vue';
-import SwapDocs                                       from '@/Components/Swap/SwapDocs.vue';
-import HeadingDocs                                    from '@/Content/Heading/HeadingDocs.vue';
-import KeyboardDocs                                   from '@/Content/Keyboard/KeyboardDocs.vue';
-import LinkDocs                                       from '@/Content/Link/LinkDocs.vue';
-import MaskDocs                                       from '@/Content/Mask/MaskDocs.vue';
-import IconsDocs                                      from '@/Customisation/Icons/IconsDocs.vue';
-import BuildSizeVisualizer                            from '@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue';
-import CheckboxDocs                                   from '@/Forms/Checkbox/CheckboxDocs.vue';
-import InputTextDocs                                  from '@/Forms/InputText/InputTextDocs.vue';
-import JoinDocs                                       from '@/Forms/Join/JoinDocs.vue';
-import SelectDocs                                     from '@/Forms/Select/SelectDocs.vue';
-import SwitchDocs                                     from '@/Forms/Switch/SwitchDocs.vue';
-import TextareaDocs                                   from '@/Forms/Textarea/TextareaDocs.vue';
-import MenuDocs                                       from '@/Navigations/Menu/MenuDocs.vue';
-import NavbarDocs                                     from '@/Navigations/Navbar/NavbarDocs.vue';
-import PaginationDocs                                 from '@/Navigations/Pagination/PaginationDocs.vue';
-import TabsDocs                                       from '@/Navigations/Tabs/TabsDocs.vue';
-import AlertDocs                                      from '@/Next/Components/Alert/AlertDocs.vue';
-import AvatarDocs                                     from '@/Next/Components/Avatar/AvatarDocs.vue';
-import DiffDocs                                       from '@/Next/Components/Diff/DiffDocs.vue';
-import RadialProgressDocs                             from '@/Next/Components/RadialProgress/RadialProgressDocs.vue';
-import SkeletonDocs                                   from '@/Next/Components/Skeleton/SkeletonDocs.vue';
-import StatusDocs                                     from '@/Next/Components/Status/StatusDocs.vue';
-import BlockQuoteDocs                                 from '@/Next/Content/BlockQuote/BlockQuoteDocs.vue';
-import DividerDocs                                    from '@/Next/Content/Divider/DividerDocs.vue';
-import InputFileDocs                                  from '@/Next/Forms/InputFile/InputFileDocs.vue';
-import RadioDocs                                      from '@/Next/Forms/Radio/RadioDocs.vue';
-import RangeDocs                                      from '@/Next/Forms/Range/RangeDocs.vue';
-import DataTableDocs                                  from '@/Next/Tables/DataTable/DataTableDocs.vue';
-import ModalDocs                                      from '@/Overlays/Modal/ModalDocs.vue';
-import PopoverDocs                                    from '@/Overlays/Popover/PopoverDocs.vue';
-import TooltipDocs                                    from '@/Overlays/Tooltip/TooltipDocs.vue';
-import Playground                                     from '@/Playground/Playground.vue';
-import CreateFlyonUIVueAppDocs                        from '@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue';
-import TableDocs                                      from '@/Tables/Table/TableDocs.vue';
 import hljsVuePlugin                                  from '@highlightjs/vue-plugin';
 import { FoKeyboard, FoSelectThemeController, vMask } from 'flyonui-vue';
 import { createPinia }                                from 'pinia';
 import DefaultTheme                                   from 'vitepress/theme';
+import { defineAsyncComponent }                       from 'vue';
 import './index.css';
 import 'highlight.js/styles/github-dark-dimmed.css';
 import 'highlight.js/lib/common';
@@ -88,63 +48,201 @@ export default {
         app.use(createPinia()).use(hljsVuePlugin);
 
         registerDocComponents(app, [
-            { name: 'AvatarDocs', instance: AvatarDocs },
-            { name: 'KeyboardDocs', instance: KeyboardDocs },
-            { name: 'AlertDocs', instance: AlertDocs },
-            { name: 'ComponentNotReadyForProductionAlert', instance: ComponentNotReadyForProductionAlert },
-            { name: 'TipAlert', instance: TipAlert },
-            { name: 'LinkDocs', instance: LinkDocs },
-            { name: 'BadgeDocs', instance: BadgeDocs },
-            { name: 'BlockQuoteDocs', instance: BlockQuoteDocs },
-            { name: 'ButtonDocs', instance: ButtonDocs },
-            { name: 'CheckboxDocs', instance: CheckboxDocs },
-            { name: 'DataTableDocs', instance: DataTableDocs },
-            { name: 'DiffDocs', instance: DiffDocs },
-            { name: 'DividerDocs', instance: DividerDocs },
-            { name: 'InputFileDocs', instance: InputFileDocs },
-            { name: 'InputTextDocs', instance: InputTextDocs },
-            { name: 'IconsDocs', instance: IconsDocs },
-            { name: 'JoinDocs', instance: JoinDocs },
-            { name: 'LoadingDocs', instance: LoadingDocs },
-            { name: 'ListGroupDocs', instance: ListGroupDocs },
-            { name: 'MaskDocs', instance: MaskDocs },
-            { name: 'HeadingDocs', instance: HeadingDocs },
-            { name: 'MenuDocs', instance: MenuDocs },
-            { name: 'ModalDocs', instance: ModalDocs },
-            { name: 'NavbarDocs', instance: NavbarDocs },
-            { name: 'PaginationDocs', instance: PaginationDocs },
-            { name: 'PopoverDocs', instance: PopoverDocs },
-            { name: 'RadioDocs', instance: RadioDocs },
-            { name: 'RangeDocs', instance: RangeDocs },
-            { name: 'RadialProgressDocs', instance: RadialProgressDocs },
-            { name: 'SkeletonDocs', instance: SkeletonDocs },
-            { name: 'StatsDocs', instance: StatsDocs },
-            { name: 'StatusDocs', instance: StatusDocs },
-            { name: 'SwapDocs', instance: SwapDocs },
-            { name: 'SelectDocs', instance: SelectDocs },
-            { name: 'SwitchDocs', instance: SwitchDocs },
-            { name: 'TabsDocs', instance: TabsDocs },
-            { name: 'TableDocs', instance: TableDocs },
-            { name: 'TextareaDocs', instance: TextareaDocs },
-            { name: 'TooltipDocs', instance: TooltipDocs },
-            { name: 'SelectThemeController', instance: FoSelectThemeController },
-            { name: 'Playground', instance: Playground },
-            { name: 'BuildSizeVisualizer', instance: BuildSizeVisualizer },
-            { name: 'CodePreview', instance: CodePreview },
-            { name: 'CreateFlyonUIVueAppDocs', instance: CreateFlyonUIVueAppDocs },
-            { name: 'ComponentsApi', instance: ComponentsApi },
-            { name: 'FoKeyboard', instance: FoKeyboard },
+            {
+                name:      'AvatarDocs',
+                component: defineAsyncComponent(() => import('@/Next/Components/Avatar/AvatarDocs.vue')),
+            },
+            {
+                name:      'KeyboardDocs',
+                component: defineAsyncComponent(() => import('@/Content/Keyboard/KeyboardDocs.vue')),
+            },
+            {
+                name:      'AlertDocs',
+                component: defineAsyncComponent(() => import('@/Next/Components/Alert/AlertDocs.vue')),
+            },
+            {
+                name:      'ComponentNotReadyForProductionAlert',
+                component: ComponentNotReadyForProductionAlert,
+            },
+            {
+                name:      'TipAlert',
+                component: TipAlert,
+            },
+            {
+                name:      'LinkDocs',
+                component: defineAsyncComponent(() => import('@/Content/Link/LinkDocs.vue')),
+            },
+            {
+                name:      'BadgeDocs',
+                component: defineAsyncComponent(() => import('@/Components/Badge/BadgeDocs.vue')),
+            },
+            {
+                name:      'BlockQuoteDocs',
+                component: defineAsyncComponent(() => import('@/Next/Content/BlockQuote/BlockQuoteDocs.vue')),
+            },
+            {
+                name:      'ButtonDocs',
+                component: defineAsyncComponent(() => import('@/Components/Button/ButtonDocs.vue')),
+            },
+            {
+                name:      'CheckboxDocs',
+                component: defineAsyncComponent(() => import('@/Forms/Checkbox/CheckboxDocs.vue')),
+            },
+            {
+                name:      'DataTableDocs',
+                component: defineAsyncComponent(() => import('@/Next/Tables/DataTable/DataTableDocs.vue')),
+            },
+            {
+                name:      'DiffDocs',
+                component: defineAsyncComponent(() => import('@/Next/Components/Diff/DiffDocs.vue')),
+            },
+            {
+                name:      'DividerDocs',
+                component: defineAsyncComponent(() => import('@/Next/Content/Divider/DividerDocs.vue')),
+            },
+            {
+                name:      'InputFileDocs',
+                component: defineAsyncComponent(() => import('@/Next/Forms/InputFile/InputFileDocs.vue')),
+            },
+            {
+                name:      'InputTextDocs',
+                component: defineAsyncComponent(() => import('@/Forms/InputText/InputTextDocs.vue')),
+            },
+            {
+                name:      'IconsDocs',
+                component: defineAsyncComponent(() => import('@/Customisation/Icons/IconsDocs.vue')),
+            },
+            {
+                name:      'JoinDocs',
+                component: defineAsyncComponent(() => import('@/Forms/Join/JoinDocs.vue')),
+            },
+            {
+                name:      'LoadingDocs',
+                component: defineAsyncComponent(() => import('@/Components/Loading/LoadingDocs.vue')),
+            },
+            {
+                name:      'ListGroupDocs',
+                component: defineAsyncComponent(() => import('@/Components/ListGroup/ListGroupDocs.vue')),
+            },
+            {
+                name:      'MaskDocs',
+                component: defineAsyncComponent(() => import('@/Content/Mask/MaskDocs.vue')),
+            },
+            {
+                name:      'HeadingDocs',
+                component: defineAsyncComponent(() => import('@/Content/Heading/HeadingDocs.vue')),
+            },
+            {
+                name:      'MenuDocs',
+                component: defineAsyncComponent(() => import('@/Navigations/Menu/MenuDocs.vue')),
+            },
+            {
+                name:      'ModalDocs',
+                component: defineAsyncComponent(() => import('@/Overlays/Modal/ModalDocs.vue')),
+            },
+            {
+                name:      'NavbarDocs',
+                component: defineAsyncComponent(() => import('@/Navigations/Navbar/NavbarDocs.vue')),
+            },
+            {
+                name:      'PaginationDocs',
+                component: defineAsyncComponent(() => import('@/Navigations/Pagination/PaginationDocs.vue')),
+            },
+            {
+                name:      'PopoverDocs',
+                component: defineAsyncComponent(() => import('@/Overlays/Popover/PopoverDocs.vue')),
+            },
+            {
+                name:      'RadioDocs',
+                component: defineAsyncComponent(() => import('@/Next/Forms/Radio/RadioDocs.vue')),
+            },
+            {
+                name:      'RangeDocs',
+                component: defineAsyncComponent(() => import('@/Next/Forms/Range/RangeDocs.vue')),
+            },
+            {
+                name:      'RadialProgressDocs',
+                component: defineAsyncComponent(() => import('@/Next/Components/RadialProgress/RadialProgressDocs.vue')),
+            },
+            {
+                name:      'SkeletonDocs',
+                component: defineAsyncComponent(() => import('@/Next/Components/Skeleton/SkeletonDocs.vue')),
+            },
+            {
+                name:      'StatsDocs',
+                component: defineAsyncComponent(() => import('@/Components/Stats/StatsDocs.vue')),
+            },
+            {
+                name:      'StatusDocs',
+                component: defineAsyncComponent(() => import('@/Next/Components/Status/StatusDocs.vue')),
+            },
+            {
+                name:      'SwapDocs',
+                component: defineAsyncComponent(() => import('@/Components/Swap/SwapDocs.vue')),
+            },
+            {
+                name:      'SelectDocs',
+                component: defineAsyncComponent(() => import('@/Forms/Select/SelectDocs.vue')),
+            },
+            {
+                name:      'SwitchDocs',
+                component: defineAsyncComponent(() => import('@/Forms/Switch/SwitchDocs.vue')),
+            },
+            {
+                name:      'TabsDocs',
+                component: defineAsyncComponent(() => import('@/Navigations/Tabs/TabsDocs.vue')),
+            },
+            {
+                name:      'TableDocs',
+                component: defineAsyncComponent(() => import('@/Tables/Table/TableDocs.vue')),
+            },
+            {
+                name:      'TextareaDocs',
+                component: defineAsyncComponent(() => import('@/Forms/Textarea/TextareaDocs.vue')),
+            },
+            {
+                name:      'TooltipDocs',
+                component: defineAsyncComponent(() => import('@/Overlays/Tooltip/TooltipDocs.vue')),
+            },
+            {
+                name:      'SelectThemeController',
+                component: FoSelectThemeController,
+            },
+            {
+                name:      'Playground',
+                component: defineAsyncComponent(() => import('@/Playground/Playground.vue')),
+            },
+            {
+                name:      'BuildSizeVisualizer',
+                component: defineAsyncComponent(() => import('@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue')),
+            },
+            {
+                name:      'CodePreview',
+                component: CodePreview,
+            },
+            {
+                name:      'CreateFlyonUIVueAppDocs',
+                component: defineAsyncComponent(() => import('@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue')),
+            },
+            {
+                name:      'ComponentsApi',
+                component: defineAsyncComponent(() => import('@/Api/UI/ComponentsApi.vue')),
+            },
+            {
+                name:      'FoKeyboard',
+                component: FoKeyboard,
+            },
         ]);
     },
 } satisfies Theme;
 
 interface RegistrableComponent {
-    name:     string;
-    instance: Component | DefineComponent;
+    name:      string;
+    component: Component;
 }
 
 function registerDocComponents(app: App, components: RegistrableComponent[]): void {
     for (const component of components) {
-        app.component(component.name, component.instance);
+        app.component(component.name, component.component);
     }
 }
