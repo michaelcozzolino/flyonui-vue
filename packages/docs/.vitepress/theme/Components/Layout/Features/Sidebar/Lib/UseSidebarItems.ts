@@ -1,7 +1,6 @@
-import type { SidebarBadge, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import type { ComputedRef }               from 'vue';
-import { flyonUIVueNextPath }             from '@/Next/Lib/Next';
-import { computed }                       from 'vue';
+import type { SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import type { ComputedRef } from 'vue';
+import { computed }         from 'vue';
 
 export function useSidebarItems(): ComputedRef<SidebarItem[]> {
     return computed((): SidebarItem[] => {
@@ -38,17 +37,15 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                 children: [
                     {
                         text:     'BlockQuote',
-                        to:       `${flyonUIVueNextPath}/content/block-quote`,
+                        to:       '/content/block-quote',
                         icon:     'tabler:quote',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Divider',
-                        to:       `${flyonUIVueNextPath}/content/divider`,
+                        to:       '/content/divider',
                         icon:     'tabler:separator-horizontal',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Keyboard',
@@ -81,17 +78,15 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                 children: [
                     {
                         text:     'Alert',
-                        to:       `${flyonUIVueNextPath}/components/alert`,
+                        to:       '/components/alert',
                         icon:     'line-md:alert',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Avatar',
-                        to:       `${flyonUIVueNextPath}/components/avatar`,
+                        to:       '/components/avatar',
                         icon:     'carbon:user-avatar',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Badge',
@@ -107,10 +102,9 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                     },
                     {
                         text:     'Diff',
-                        to:       `${flyonUIVueNextPath}/components/diff`,
+                        to:       '/components/diff',
                         icon:     'tabler:git-compare',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'List Group',
@@ -126,17 +120,15 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                     },
                     {
                         text:     'Radial Progress',
-                        to:       `${flyonUIVueNextPath}/components/radial-progress`,
+                        to:       '/components/radial-progress',
                         icon:     'tabler:progress',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Skeleton',
-                        to:       `${flyonUIVueNextPath}/components/skeleton`,
+                        to:       '/components/skeleton',
                         icon:     'tdesign:placeholder-filled',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Stats',
@@ -146,10 +138,9 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                     },
                     {
                         text:     'Status',
-                        to:       `${flyonUIVueNextPath}/components/status`,
+                        to:       '/components/status',
                         icon:     'tabler:circle-dot',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Swap',
@@ -222,10 +213,9 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                     },
                     {
                         text:     'Input File',
-                        to:       `${flyonUIVueNextPath}/forms/input-file`,
+                        to:       '/forms/input-file',
                         icon:     'mdi:file-upload',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Input Text',
@@ -241,17 +231,15 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                     },
                     {
                         text:     'Radio',
-                        to:       `${flyonUIVueNextPath}/forms/radio`,
+                        to:       '/forms/radio',
                         icon:     'mdi:radio-button-checked',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Range',
-                        to:       `${flyonUIVueNextPath}/forms/range`,
+                        to:       '/forms/range',
                         icon:     'radix-icons:slider',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                     {
                         text:     'Select',
@@ -284,10 +272,9 @@ export function useSidebarItems(): ComputedRef<SidebarItem[]> {
                     },
                     {
                         text:     'Data Table',
-                        to:       `${flyonUIVueNextPath}/tables/data-table`,
+                        to:       '/tables/data-table',
                         icon:     'carbon:data-table',
                         children: [],
-                        badge:    _unreleasedBadge,
                     },
                 ],
             },
