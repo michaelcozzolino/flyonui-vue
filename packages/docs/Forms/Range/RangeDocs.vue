@@ -10,20 +10,20 @@ import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/Compone
 import type { ApiType }              from '@/Api/Types/Api.ts';
 import type { Default }              from 'flyonui-vue';
 import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import CustomColor                   from '@/Next/Forms/Range/CustomColor.vue';
-import CustomColorRaw                from '@/Next/Forms/Range/CustomColor.vue?raw';
-import DefaultRange                  from '@/Next/Forms/Range/DefaultRange.vue';
-import DefaultRangeRaw               from '@/Next/Forms/Range/DefaultRange.vue?raw';
-import DisabledRange                 from '@/Next/Forms/Range/DisabledRange.vue';
-import DisabledRangeRaw              from '@/Next/Forms/Range/DisabledRange.vue?raw';
-import MinMaxAndStepRange            from '@/Next/Forms/Range/MinMaxAndStepRange.vue';
-import MinMaxAndStepRangeRaw         from '@/Next/Forms/Range/MinMaxAndStepRange.vue?raw';
-import RangeColor                    from '@/Next/Forms/Range/RangeColor.vue';
-import RangeColorRaw                 from '@/Next/Forms/Range/RangeColor.vue?raw';
-import RangeSize                     from '@/Next/Forms/Range/RangeSize.vue';
-import RangeSizeRaw                  from '@/Next/Forms/Range/RangeSize.vue?raw';
-import StepsRange                    from '@/Next/Forms/Range/StepsRange.vue';
-import StepsRangeRaw                 from '@/Next/Forms/Range/StepsRange.vue?raw';
+import CustomColor                   from '@/Forms/Range/CustomColor.vue';
+import CustomColorRaw                from '@/Forms/Range/CustomColor.vue?raw';
+import DefaultRange                  from '@/Forms/Range/DefaultRange.vue';
+import DefaultRangeRaw               from '@/Forms/Range/DefaultRange.vue?raw';
+import DisabledRange                 from '@/Forms/Range/DisabledRange.vue';
+import DisabledRangeRaw              from '@/Forms/Range/DisabledRange.vue?raw';
+import MinMaxAndStepRange            from '@/Forms/Range/MinMaxAndStepRange.vue';
+import MinMaxAndStepRangeRaw         from '@/Forms/Range/MinMaxAndStepRange.vue?raw';
+import RangeColor                    from '@/Forms/Range/RangeColor.vue';
+import RangeColorRaw                 from '@/Forms/Range/RangeColor.vue?raw';
+import RangeSize                     from '@/Forms/Range/RangeSize.vue';
+import RangeSizeRaw                  from '@/Forms/Range/RangeSize.vue?raw';
+import StepsRange                    from '@/Forms/Range/StepsRange.vue';
+import StepsRangeRaw                 from '@/Forms/Range/StepsRange.vue?raw';
 import { computed }                  from 'vue';
 
 type Section = Default

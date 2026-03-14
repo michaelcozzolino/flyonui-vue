@@ -11,23 +11,23 @@ import type { ApiType }                     from '@/Api/Types/Api.ts';
 import type { Default }                     from 'flyonui-vue';
 import ComponentDocs                        from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import CustomRadialProgressSizeAndThickness
-    from '@/Next/Components/RadialProgress/CustomRadialProgressSizeAndThickness.vue';
+    from '@/Components/RadialProgress/CustomRadialProgressSizeAndThickness.vue';
 import CustomRadialProgressSizeAndThicknessRaw
-    from '@/Next/Components/RadialProgress/CustomRadialProgressSizeAndThickness.vue?raw';
-import DefaultRadialProgress            from '@/Next/Components/RadialProgress/DefaultRadialProgress.vue';
-import DefaultRadialProgressRaw         from '@/Next/Components/RadialProgress/DefaultRadialProgress.vue?raw';
-import RadialProgressBackgroundColor    from '@/Next/Components/RadialProgress/RadialProgressBackgroundColor.vue';
+    from '@/Components/RadialProgress/CustomRadialProgressSizeAndThickness.vue?raw';
+import DefaultRadialProgress            from '@/Components/RadialProgress/DefaultRadialProgress.vue';
+import DefaultRadialProgressRaw         from '@/Components/RadialProgress/DefaultRadialProgress.vue?raw';
+import RadialProgressBackgroundColor    from '@/Components/RadialProgress/RadialProgressBackgroundColor.vue';
 import RadialProgressBackgroundColorRaw
-    from '@/Next/Components/RadialProgress/RadialProgressBackgroundColor.vue?raw';
-import RadialProgressColor             from '@/Next/Components/RadialProgress/RadialProgressColor.vue';
-import RadialProgressColorRaw          from '@/Next/Components/RadialProgress/RadialProgressColor.vue?raw';
-import RadialProgressSoftBackground    from '@/Next/Components/RadialProgress/RadialProgressSoftBackground.vue';
+    from '@/Components/RadialProgress/RadialProgressBackgroundColor.vue?raw';
+import RadialProgressColor             from '@/Components/RadialProgress/RadialProgressColor.vue';
+import RadialProgressColorRaw          from '@/Components/RadialProgress/RadialProgressColor.vue?raw';
+import RadialProgressSoftBackground    from '@/Components/RadialProgress/RadialProgressSoftBackground.vue';
 import RadialProgressSoftBackgroundRaw
-    from '@/Next/Components/RadialProgress/RadialProgressSoftBackground.vue?raw';
-import RadialProgressWithText     from '@/Next/Components/RadialProgress/RadialProgressWithText.vue';
-import RadialProgressWithTextRaw  from '@/Next/Components/RadialProgress/RadialProgressWithText.vue?raw';
-import RadialProgressWithValue    from '@/Next/Components/RadialProgress/RadialProgressWithValue.vue';
-import RadialProgressWithValueRaw from '@/Next/Components/RadialProgress/RadialProgressWithValue.vue?raw';
+    from '@/Components/RadialProgress/RadialProgressSoftBackground.vue?raw';
+import RadialProgressWithText     from '@/Components/RadialProgress/RadialProgressWithText.vue';
+import RadialProgressWithTextRaw  from '@/Components/RadialProgress/RadialProgressWithText.vue?raw';
+import RadialProgressWithValue    from '@/Components/RadialProgress/RadialProgressWithValue.vue';
+import RadialProgressWithValueRaw from '@/Components/RadialProgress/RadialProgressWithValue.vue?raw';
 import { computed }               from 'vue';
 
 type Section = Default

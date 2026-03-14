@@ -4,7 +4,7 @@
 
 <HeadingDocs section="level" />
 
-### Colors (Unreleased)
+### Colors
 
 <HeadingDocs section="color" />
 
