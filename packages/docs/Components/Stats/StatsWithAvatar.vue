@@ -2,14 +2,10 @@
     <FoStats>
         <FoStat>
             <FoStatFigure>
-                <!--            todo: avatar component -->
-                <div class="avatar">
-                    <div class="size-12 rounded-full">
-                        <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png"
-                             alt="User Avatar"
-                        >
-                    </div>
-                </div>
+                <FoAvatar :avatar="{ src: 'https://cdn.flyonui.com/fy-assets/avatar/avatar-1.png', alt: 'User Avatar' }"
+                          shape="circle"
+                          size="large"
+                />
             </FoStatFigure>
 
             <FoStatTitle>
@@ -29,6 +25,7 @@
 
 <script setup lang="ts">
 import {
+    FoAvatar,
     FoStat,
     FoStatDescription,
     FoStatFigure,

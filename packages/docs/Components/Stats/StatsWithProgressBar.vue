@@ -1,13 +1,10 @@
 <template>
     <FoStats :class="isSmallerOrEqualToSm && 'w-full'">
         <FoStat>
-            <div class="avatar avatar-placeholder">
-                <div class="bg-success/20 text-success size-10 rounded-full">
-                    <FoIcon icon="tabler:package"
-                            size="medium"
-                    />
-                </div>
-            </div>
+            <FoAvatar :avatar="{ icon: 'tabler:package', color: 'success', preset: 'soft' }"
+                      shape="circle"
+                      size="medium"
+            />
 
             <FoStatValue class="mb-1">
                 Order
@@ -27,13 +24,10 @@
 
     <FoStats :class="isSmallerOrEqualToSm && 'w-full'">
         <FoStat>
-            <div class="avatar avatar-placeholder">
-                <div class="bg-warning/20 text-warning size-10 rounded-full">
-                    <FoIcon icon="tabler:cash"
-                            size="medium"
-                    />
-                </div>
-            </div>
+            <FoAvatar :avatar="{ icon: 'tabler:cash', color: 'warning', preset: 'soft' }"
+                      shape="circle"
+                      size="medium"
+            />
 
             <FoStatValue class="mb-1">
                 Revenue
@@ -53,14 +47,10 @@
 
     <FoStats :class="isSmallerOrEqualToSm && 'w-full'">
         <FoStat>
-            <!--            todo: avatar component -->
-            <div class="avatar avatar-placeholder">
-                <div class="bg-error/20 text-error size-10 rounded-full">
-                    <FoIcon icon="tabler:credit-card"
-                            size="medium"
-                    />
-                </div>
-            </div>
+            <FoAvatar :avatar="{ icon: 'tabler:credit-card', color: 'error', preset: 'soft' }"
+                      shape="circle"
+                      size="medium"
+            />
 
             <FoStatValue class="mb-1">
                 Invoice
@@ -83,7 +73,7 @@
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 import {
-    FoIcon,
+    FoAvatar,
     FoStat,
     FoStats,
     FoStatTitle,
