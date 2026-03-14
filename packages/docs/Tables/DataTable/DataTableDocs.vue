@@ -10,18 +10,18 @@ import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/Compone
 import type { ApiType }              from '@/Api/Types/Api.ts';
 import type { Default }              from 'flyonui-vue';
 import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import ControlsPositionDataTable     from '@/Next/Tables/DataTable/ControlsPositionDataTable.vue';
-import ControlsPositionDataTableRaw  from '@/Next/Tables/DataTable/ControlsPositionDataTable.vue?raw';
-import DefaultDataTable              from '@/Next/Tables/DataTable/DefaultDataTable.vue';
-import DefaultDataTableRaw           from '@/Next/Tables/DataTable/DefaultDataTable.vue?raw';
-import FilterableDataTable           from '@/Next/Tables/DataTable/FilterableDataTable.vue';
-import FilterableDataTableRaw        from '@/Next/Tables/DataTable/FilterableDataTable.vue?raw';
-import NoSearchResultsDataTable      from '@/Next/Tables/DataTable/NoSearchResultsDataTable.vue';
-import NoSearchResultsDataTableRaw   from '@/Next/Tables/DataTable/NoSearchResultsDataTable.vue?raw';
-import SearchableDataTable           from '@/Next/Tables/DataTable/SearchableDataTable.vue';
-import SearchableDataTableRaw        from '@/Next/Tables/DataTable/SearchableDataTable.vue?raw';
-import SelectableDataTable           from '@/Next/Tables/DataTable/SelectableDataTable.vue';
-import SelectableDataTableRaw        from '@/Next/Tables/DataTable/SelectableDataTable.vue?raw';
+import ControlsPositionDataTable     from '@/Tables/DataTable/ControlsPositionDataTable.vue';
+import ControlsPositionDataTableRaw  from '@/Tables/DataTable/ControlsPositionDataTable.vue?raw';
+import DefaultDataTable              from '@/Tables/DataTable/DefaultDataTable.vue';
+import DefaultDataTableRaw           from '@/Tables/DataTable/DefaultDataTable.vue?raw';
+import FilterableDataTable           from '@/Tables/DataTable/FilterableDataTable.vue';
+import FilterableDataTableRaw        from '@/Tables/DataTable/FilterableDataTable.vue?raw';
+import NoSearchResultsDataTable      from '@/Tables/DataTable/NoSearchResultsDataTable.vue';
+import NoSearchResultsDataTableRaw   from '@/Tables/DataTable/NoSearchResultsDataTable.vue?raw';
+import SearchableDataTable           from '@/Tables/DataTable/SearchableDataTable.vue';
+import SearchableDataTableRaw        from '@/Tables/DataTable/SearchableDataTable.vue?raw';
+import SelectableDataTable           from '@/Tables/DataTable/SelectableDataTable.vue';
+import SelectableDataTableRaw        from '@/Tables/DataTable/SelectableDataTable.vue?raw';
 import { computed }                  from 'vue';
 
 type Section = Default
