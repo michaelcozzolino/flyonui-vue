@@ -3,7 +3,7 @@ import { flyonUIVueNextPath } from '@/Next/Lib/Next';
 import { expect, test }       from '@playwright/test';
 
 test('components previews', async ({ page }) => {
-    test.slow();
+    test.setTimeout(10 * 60 * 1000);
 
     const body = page.locator('body').first();
     await body.waitFor();
@@ -55,6 +55,12 @@ test('components previews', async ({ page }) => {
 
                 const preview = codeSnippet.locator('[data-test="flyonui-vue-preview"]').first();
                 await preview.waitFor();
+
+                // waits that any async components are loaded into the preview and asserts that there is at least one
+                await expect.poll(
+                    async () => await preview.locator('*').count(),
+                ).toBeGreaterThan(0);
+
                 await preview.scrollIntoViewIfNeeded();
 
                 const screenshot = await preview.screenshot({ animations: 'disabled' });

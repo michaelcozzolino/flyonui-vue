@@ -21,6 +21,6 @@ export function useFlyonUIVueAppConfigProperty<
     return computed(() => {
         const { components, global } = toValue(config);
 
-        return components?.[toValue(componentName)]?.[property] ?? toValue(value) ?? global[property];
+        return toValue(value) ?? components?.[toValue(componentName)]?.[property] ?? global[property];
     });
 }

@@ -1,8 +1,8 @@
-import type { useRouter }        from 'vitepress';
-import type { Ref }              from 'vue';
-import { useEventListener }      from '@vueuse/core';
-import { getScrollOffset }       from 'vitepress';
-import { onMounted, ref, watch } from 'vue';
+import type { useRouter }             from 'vitepress';
+import type { Ref }                   from 'vue';
+import { isClient, useEventListener } from '@vueuse/core';
+import { getScrollOffset }            from 'vitepress';
+import { onMounted, ref, watch }      from 'vue';
 
 interface ResolvedHeader {
     element: HTMLElement;
@@ -20,6 +20,10 @@ export function useAnchorScrollSpy(
     docsHeadings: Ref<NodeListOf<HTMLElement> | null>,
     router: ReturnType<typeof useRouter>,
 ): void {
+    if (isClient === false) {
+        return;
+    }
+
     useEventListener(window, 'scroll', setActiveHash, { passive: true });
 
     const resolvedHeaders = ref<ResolvedHeader[]>([]);
