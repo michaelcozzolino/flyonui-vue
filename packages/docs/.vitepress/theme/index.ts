@@ -51,7 +51,7 @@ export default {
         registerDocComponents(app, [
             {
                 name:      'AvatarDocs',
-                component: defineAsyncComponent(() => import('@/Next/Components/Avatar/AvatarDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Components/Avatar/AvatarDocs.vue')),
             },
             {
                 name:      'KeyboardDocs',
@@ -59,7 +59,7 @@ export default {
             },
             {
                 name:      'AlertDocs',
-                component: defineAsyncComponent(() => import('@/Next/Components/Alert/AlertDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Components/Alert/AlertDocs.vue')),
             },
             {
                 name:      'ComponentNotReadyForProductionAlert',
@@ -79,7 +79,7 @@ export default {
             },
             {
                 name:      'BlockQuoteDocs',
-                component: defineAsyncComponent(() => import('@/Next/Content/BlockQuote/BlockQuoteDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Content/BlockQuote/BlockQuoteDocs.vue')),
             },
             {
                 name:      'ButtonDocs',
@@ -91,19 +91,19 @@ export default {
             },
             {
                 name:      'DataTableDocs',
-                component: defineAsyncComponent(() => import('@/Next/Tables/DataTable/DataTableDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Tables/DataTable/DataTableDocs.vue')),
             },
             {
                 name:      'DiffDocs',
-                component: defineAsyncComponent(() => import('@/Next/Components/Diff/DiffDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Components/Diff/DiffDocs.vue')),
             },
             {
                 name:      'DividerDocs',
-                component: defineAsyncComponent(() => import('@/Next/Content/Divider/DividerDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Content/Divider/DividerDocs.vue')),
             },
             {
                 name:      'InputFileDocs',
-                component: defineAsyncComponent(() => import('@/Next/Forms/InputFile/InputFileDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Forms/InputFile/InputFileDocs.vue')),
             },
             {
                 name:      'InputTextDocs',
@@ -155,19 +155,19 @@ export default {
             },
             {
                 name:      'RadioDocs',
-                component: defineAsyncComponent(() => import('@/Next/Forms/Radio/RadioDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Forms/Radio/RadioDocs.vue')),
             },
             {
                 name:      'RangeDocs',
-                component: defineAsyncComponent(() => import('@/Next/Forms/Range/RangeDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Forms/Range/RangeDocs.vue')),
             },
             {
                 name:      'RadialProgressDocs',
-                component: defineAsyncComponent(() => import('@/Next/Components/RadialProgress/RadialProgressDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Components/RadialProgress/RadialProgressDocs.vue')),
             },
             {
                 name:      'SkeletonDocs',
-                component: defineAsyncComponent(() => import('@/Next/Components/Skeleton/SkeletonDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Components/Skeleton/SkeletonDocs.vue')),
             },
             {
                 name:      'StatsDocs',
@@ -175,7 +175,7 @@ export default {
             },
             {
                 name:      'StatusDocs',
-                component: defineAsyncComponent(() => import('@/Next/Components/Status/StatusDocs.vue')),
+                component: defineAsyncComponent(() => import('@/Components/Status/StatusDocs.vue')),
             },
             {
                 name:      'SwapDocs',
