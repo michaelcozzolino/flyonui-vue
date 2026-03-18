@@ -28,7 +28,7 @@
                                   preset="text"
                                   size="extraSmall"
                                   title="Scroll to current page"
-                                  @click="scrollToActiveItem()"
+                                  @click="expandActiveItemParent(); scrollToActiveItem()"
                         />
 
                         <FoButton icon="bi:chevron-expand"
@@ -67,13 +67,14 @@
 <script setup lang="ts">
 import type {
     ParentSidebarItem,
-}                           from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import { useSidebarItems }  from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
-import SidebarNode          from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
-import { useLayoutStore }   from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { onClickOutside }   from '@vueuse/core';
-import { FoButton, FoMenu } from 'flyonui-vue';
-import { storeToRefs }      from 'pinia';
+    SidebarItem,
+}                          from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import { useSidebarItems }                   from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
+import SidebarNode                           from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
+import { useLayoutStore }                    from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import { onClickOutside, useArrayFindIndex } from '@vueuse/core';
+import { FoButton, FoMenu }                  from 'flyonui-vue';
+import { storeToRefs }                       from 'pinia';
 import {
     nextTick,
     ref,
@@ -89,6 +90,12 @@ const items = useSidebarItems();
 
 // The active items can only be the children by implementation
 const activeItemId = ref<string | null>(null);
+
+const activeItemParentIndex = useArrayFindIndex(items, (parentItem: ParentSidebarItem): boolean => {
+    return parentItem.children.findIndex(
+        (childItem: SidebarItem): boolean => childItem.text === activeItemId.value,
+    ) !== -1;
+});
 
 onClickOutside(
     sidebarElement,
@@ -107,11 +114,11 @@ async function scrollToActiveItem(): Promise<void> {
     await nextTick();
 
     if (sidebarElement.value === null) {
-        throw new Error(`Cannot scroll to the active item: the sidebar element is not initialized yet.`);
+        throw new Error(`Cannot scroll to the active item: the sidebar element does not exist.`);
     }
 
     if (activeItemId.value === null) {
-        throw new Error(`Cannot scroll to the active item: the item element is not initialized yet.`);
+        throw new Error(`Cannot scroll to the active item: the item element does not exist.`);
     }
 
     const activeItemElement = document.getElementById(activeItemId.value);
@@ -133,6 +140,16 @@ async function scrollToActiveItem(): Promise<void> {
         top:      scrollTop,
         behavior: 'smooth',
     });
+}
+
+function expandActiveItemParent(): void {
+    const activeItemParent = items.value[activeItemParentIndex.value] ?? null;
+
+    if (activeItemParent === null) {
+        throw new Error(`Cannot expand active item parent: the parent item element does not exist.`);
+    }
+
+    activeItemParent.isCollapsed = false;
 }
 
 function collapseAll(): void {
