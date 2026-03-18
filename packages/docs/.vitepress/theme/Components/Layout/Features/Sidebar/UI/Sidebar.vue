@@ -18,7 +18,6 @@
                               color="neutral"
                               preset="text"
                               size="extraSmall"
-                              title="Scroll to current page"
                               @click="isCollapsed = !isCollapsed; expandAll();"
                     />
 
@@ -27,7 +26,7 @@
                                   color="neutral"
                                   preset="text"
                                   size="extraSmall"
-                                  title="Scroll to current page"
+                                  title="Scroll to the current page"
                                   @click="expandActiveItemParent(); scrollToActiveItem()"
                         />
 
