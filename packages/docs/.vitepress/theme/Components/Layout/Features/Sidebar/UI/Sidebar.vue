@@ -2,22 +2,61 @@
     <ClientOnly>
         <aside id="flyonui-vue-docs-sidebar"
                ref="sidebar"
-               class="sticky top-16 overflow-x-hidden overflow-y-auto h-[calc(100vh-4.25rem)] shrink-0"
+               class="sticky top-16 h-[calc(100vh-4.25rem)] shrink-0 overflow-x-hidden overflow-y-auto"
                :class="[
                    isCollapsed ? 'w-24' : 'w-64',
                    isPageSizeSmallerThanSm && isCollapsed && 'hidden',
-                   isPageSizeSmallerThanSm && 'sidebar-mobile',
+                   isPageSizeSmallerThanSm && 'fixed z-1 w-62.5 overflow-x-hidden bg-base-100 top-20 transition-[width]',
                ]"
                tabindex="-1"
         >
-            <div class="px-0!">
+            <div class="px-0! vp-raw">
+                <div class="sticky top-0 z-10 flex items-center justify-center gap-1 p-2 border-b border-base-content/10 bg-base-100"
+                     :class="isCollapsed && 'justify-center'"
+                >
+                    <FoButton :icon="isCollapsed ? 'bi:chevron-double-right' : 'bi:chevron-double-left'"
+                              color="neutral"
+                              preset="text"
+                              size="extraSmall"
+                              title="Scroll to current page"
+                              @click="isCollapsed = !isCollapsed; expandAll();"
+                    />
+
+                    <template v-if="isCollapsed === false">
+                        <FoButton icon="tabler:current-location"
+                                  color="neutral"
+                                  preset="text"
+                                  size="extraSmall"
+                                  title="Scroll to current page"
+                                  @click="scrollToActiveItem()"
+                        />
+
+                        <FoButton icon="bi:chevron-expand"
+                                  color="neutral"
+                                  preset="text"
+                                  size="extraSmall"
+                                  title="Expand all"
+                                  @click="expandAll()"
+                        />
+
+                        <FoButton icon="bi:chevron-contract"
+                                  color="neutral"
+                                  preset="text"
+                                  size="extraSmall"
+                                  title="Collapse all"
+                                  @click="collapseAll()"
+                        />
+                    </template>
+                </div>
+
                 <FoMenu class="vp-raw pl-0!"
                         size="small"
                         :hide-text="isCollapsed"
                 >
-                    <SidebarNode v-for="item in items"
+                    <SidebarNode v-for="(item, index) in items"
                                  :key="item.text"
-                                 :item="item"
+                                 v-model:active-node-id="activeItemId"
+                                 v-model:item="items[index] as ParentSidebarItem"
                     />
                 </FoMenu>
             </div>
@@ -26,19 +65,30 @@
 </template>
 
 <script setup lang="ts">
-import { useSidebarItems } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
-import SidebarNode         from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
-import { useLayoutStore }  from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { onClickOutside }  from '@vueuse/core';
-import { FoMenu }          from 'flyonui-vue';
-import { storeToRefs }     from 'pinia';
-import { useTemplateRef }  from 'vue';
+import type {
+    ParentSidebarItem,
+}                           from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import { useSidebarItems }  from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
+import SidebarNode          from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
+import { useLayoutStore }   from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import { onClickOutside }   from '@vueuse/core';
+import { FoButton, FoMenu } from 'flyonui-vue';
+import { storeToRefs }      from 'pinia';
+import {
+    nextTick,
+    ref,
+    useTemplateRef,
+    watch,
+}                           from 'vue';
 
-const sidebarElement = useTemplateRef<HTMLElement>('sidebar');
+const sidebarElement = useTemplateRef('sidebar');
 
 const { isSidebarCollapsed: isCollapsed, isPageSizeSmallerThanSm } = storeToRefs(useLayoutStore());
 
 const items = useSidebarItems();
+
+// The active items can only be the children by implementation
+const activeItemId = ref<string | null>(null);
 
 onClickOutside(
     sidebarElement,
@@ -49,20 +99,53 @@ onClickOutside(
     },
     { ignore: ['.flyonui-vue-navbar-collapse'] },
 );
-</script>
 
-<style scoped lang="css">
-@reference "tailwindcss";
+watch(activeItemId, scrollToActiveItem, { immediate: true });
 
-.sidebar-mobile {
-    position: fixed;
-    width: 250px;
-    overflow-x: hidden;
-    transition: 0.5s;
-    z-index: 1;
-    background-color: var(--color-base-100);
+async function scrollToActiveItem(): Promise<void> {
+    // We should wait for the active item id to be populated after its component has been mounted
+    await nextTick();
 
-    /* due to the search input becoming an icon that is higher than the input */
-    @apply top-20;
+    if (sidebarElement.value === null) {
+        throw new Error(`Cannot scroll to the active item: the sidebar element is not initialized yet.`);
+    }
+
+    if (activeItemId.value === null) {
+        throw new Error(`Cannot scroll to the active item: the item element is not initialized yet.`);
+    }
+
+    const activeItemElement = document.getElementById(activeItemId.value);
+
+    if (activeItemElement === null) {
+        throw new Error(`Cannot scroll to the active item: the item element does not exist.`);
+    }
+
+    const activeItemRect = activeItemElement.getBoundingClientRect();
+    const sidebarRect    = sidebarElement.value.getBoundingClientRect();
+
+    const scrollTop = sidebarElement.value.scrollTop
+        + activeItemRect.top
+        - sidebarRect.top
+        - sidebarElement.value.clientHeight / 2
+        + activeItemRect.height / 2;
+
+    sidebarElement.value.scrollTo({
+        top:      scrollTop,
+        behavior: 'smooth',
+    });
 }
-</style>
+
+function collapseAll(): void {
+    toggleCollapse(true);
+}
+
+function expandAll(): void {
+    toggleCollapse(false);
+}
+
+function toggleCollapse(isCollapsed: boolean): void {
+    for (const item of items.value) {
+        item.isCollapsed = isCollapsed;
+    }
+}
+</script>
