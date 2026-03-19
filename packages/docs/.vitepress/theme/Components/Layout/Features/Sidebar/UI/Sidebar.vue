@@ -48,7 +48,7 @@
                     </template>
                 </div>
 
-                <FoMenu v-if="showMenu"
+                <FoMenu v-show="showMenu"
                         class="vp-raw pl-0!"
                         size="small"
                         :hide-text="isCollapsed"
