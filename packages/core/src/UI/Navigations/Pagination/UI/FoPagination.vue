@@ -70,6 +70,7 @@ const props = withDefaults(defineProps<PaginationProps>(), {
     hideText:  'never',
 });
 
+/** The selected page in the pagination */
 const currentPage = defineModel<number>({ required: true });
 
 const componentName: ComponentName = 'FoPagination';

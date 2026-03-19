@@ -102,11 +102,20 @@ const slots = defineSlots<TableSlots & {
     info?: Slot;
 }>();
 
-const items         = defineModel<T[]>('items', { required: true });
+/** The items to be used in the table to calculate length, total pages and so on */
+const items = defineModel<T[]>('items', { required: true });
+
+/** The filtered items to be shown if any filters are applied such as the search */
 const filteredItems = defineModel<T[]>('filteredItems', { required: true });
-const page          = defineModel<number>('page', { required: true });
-const itemsPerPage  = defineModel<number>('itemsPerPage', { required: true });
-const query         = defineModel<string>('query', { required: false, default: '' });
+
+/** The current's data table page */
+const page = defineModel<number>('page', { required: true });
+
+/** The number of items to be shown on each page */
+const itemsPerPage = defineModel<number>('itemsPerPage', { required: true });
+
+/** The query to be used as search input */
+const query = defineModel<string>('query', { required: false, default: '' });
 
 const filterableItems = computed((): T[] => query.value === '' ? items.value : filteredItems.value);
 
