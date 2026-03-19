@@ -5,8 +5,8 @@
                class="sticky top-16 h-[calc(100vh-4.25rem)] shrink-0 overflow-x-hidden overflow-y-auto"
                :class="[
                    isCollapsed ? 'w-24' : 'w-64',
-                   isPageSizeSmallerThanSm && isCollapsed && 'hidden',
-                   isPageSizeSmallerThanSm && 'fixed z-1 w-62.5 overflow-x-hidden bg-base-100 top-20 transition-[width]',
+                   isPageSizeSmallerThanSm && 'fixed! z-1 overflow-x-hidden top-20 transition-[width]',
+                   showMenu && 'bg-base-100'
                ]"
                tabindex="-1"
         >
@@ -48,7 +48,8 @@
                     </template>
                 </div>
 
-                <FoMenu class="vp-raw pl-0!"
+                <FoMenu v-if="showMenu"
+                        class="vp-raw pl-0!"
                         size="small"
                         :hide-text="isCollapsed"
                 >
@@ -75,6 +76,7 @@ import { onClickOutside, useArrayFindIndex } from '@vueuse/core';
 import { FoButton, FoMenu }                  from 'flyonui-vue';
 import { storeToRefs }                       from 'pinia';
 import {
+    computed,
     nextTick,
     ref,
     useTemplateRef,
@@ -86,6 +88,8 @@ const sidebarElement = useTemplateRef('sidebar');
 const { isSidebarCollapsed: isCollapsed, isPageSizeSmallerThanSm } = storeToRefs(useLayoutStore());
 
 const items = useSidebarItems();
+
+const showMenu = computed((): boolean => isPageSizeSmallerThanSm.value === false || isCollapsed.value === false);
 
 // The active items can only be the children by implementation
 const activeItemId = ref<string | null>(null);
