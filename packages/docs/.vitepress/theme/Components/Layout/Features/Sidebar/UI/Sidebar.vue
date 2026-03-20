@@ -6,7 +6,7 @@
                :class="[
                    isCollapsed ? 'w-24' : 'w-64',
                    isPageSizeSmallerThanSm && 'fixed! z-1 overflow-x-hidden top-20 transition-[width]',
-                   showMenu && 'bg-base-100'
+                   showMenu && 'bg-base-100',
                ]"
                tabindex="-1"
         >
@@ -110,7 +110,7 @@ onClickOutside(
     { ignore: ['.flyonui-vue-navbar-collapse'] },
 );
 
-watch(activeItemId, scrollToActiveItem, { immediate: true });
+watch(activeItemId, scrollToActiveItem);
 
 async function scrollToActiveItem(): Promise<void> {
     // We should wait for the active item id to be populated after its component has been mounted
