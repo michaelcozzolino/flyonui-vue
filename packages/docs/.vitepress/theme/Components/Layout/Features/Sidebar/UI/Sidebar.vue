@@ -111,7 +111,7 @@ onClickOutside(
     { ignore: ['.flyonui-vue-navbar-collapse'] },
 );
 
-watch(activeItemId, scrollToActiveItem, { immediate: true });
+watch(activeItemId, scrollToActiveItem);
 
 async function scrollToActiveItem(): Promise<void> {
     // We should wait for the active item id to be populated after its component has been mounted
