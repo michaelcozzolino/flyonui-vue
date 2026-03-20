@@ -13,6 +13,7 @@
     "scripts": {
         "generate:resolutions": "tsx ./src/GenerateResolutions.ts",
         "generate:components-api": "tsx ./src/GenerateComponentsApi.ts",
-        "get:core:version": "tsx ./src/getFlyonUIVueVersion.ts"
+        "get:core:version": "tsx ./src/getFlyonUIVueVersion.ts",
+        "codex:load:docs-icons": "tsx src/Codex/LoadDocsIcons/LoadDocsIcons.ts"
     }
 }
