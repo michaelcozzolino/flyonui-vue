@@ -2,10 +2,11 @@
     <ClientOnly>
         <aside id="flyonui-vue-docs-sidebar"
                ref="sidebar"
-               class="sticky top-16 h-[calc(100vh-4.25rem)] shrink-0 overflow-x-hidden overflow-y-auto"
+               class="sticky shrink-0 overflow-x-hidden overflow-y-auto"
                :class="[
                    isCollapsed ? 'w-24' : 'w-64',
-                   isPageSizeSmallerThanSm && 'fixed! z-1 overflow-x-hidden top-20 transition-[width]',
+                   isPageSizeSmallerThanSm && 'fixed! z-1 overflow-x-hidden transition-[width]',
+                   isPageSizeSmallerThanSm ? 'top-20 h-[calc(100vh-5rem)]' : 'top-18 h-[calc(100vh-4.5rem)]',
                    showMenu && 'bg-base-100',
                ]"
                tabindex="-1"
