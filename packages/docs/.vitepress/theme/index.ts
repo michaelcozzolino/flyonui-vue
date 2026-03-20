@@ -3,14 +3,16 @@ import type { Theme } from 'vitepress';
 import type { App, Component }             from 'vue';
 import ComponentNotReadyForProductionAlert
     from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentNotReadyForProductionAlert.vue';
-import TipAlert                                                            from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
-import Layout                                                              from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
+import TipAlert                     from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
+import { defineAsyncDocsComponent } from '@/.vitepress/theme/Components/Layout/Lib/defineAsyncDocsComponent';
+import Layout
+    from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
 import CodePreview                                                         from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import hljsVuePlugin                                                       from '@highlightjs/vue-plugin';
+import { loadIcons }                                                       from '@iconify/vue';
 import { createFlyonUIVueApp, FoKeyboard, FoSelectThemeController, vMask } from 'flyonui-vue';
 import { createPinia }                                                     from 'pinia';
 import DefaultTheme                                                        from 'vitepress/theme';
-import { defineAsyncComponent }                                            from 'vue';
 import './index.css';
 import 'highlight.js/styles/github-dark-dimmed.css';
 import 'highlight.js/lib/common';
@@ -51,15 +53,15 @@ export default {
         registerDocComponents(app, [
             {
                 name:      'AvatarDocs',
-                component: defineAsyncComponent(() => import('@/Components/Avatar/AvatarDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Avatar/AvatarDocs.vue')),
             },
             {
                 name:      'KeyboardDocs',
-                component: defineAsyncComponent(() => import('@/Content/Keyboard/KeyboardDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Content/Keyboard/KeyboardDocs.vue')),
             },
             {
                 name:      'AlertDocs',
-                component: defineAsyncComponent(() => import('@/Components/Alert/AlertDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Alert/AlertDocs.vue')),
             },
             {
                 name:      'ComponentNotReadyForProductionAlert',
@@ -71,139 +73,139 @@ export default {
             },
             {
                 name:      'LinkDocs',
-                component: defineAsyncComponent(() => import('@/Content/Link/LinkDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Content/Link/LinkDocs.vue')),
             },
             {
                 name:      'BadgeDocs',
-                component: defineAsyncComponent(() => import('@/Components/Badge/BadgeDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Badge/BadgeDocs.vue')),
             },
             {
                 name:      'BlockQuoteDocs',
-                component: defineAsyncComponent(() => import('@/Content/BlockQuote/BlockQuoteDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Content/BlockQuote/BlockQuoteDocs.vue')),
             },
             {
                 name:      'ButtonDocs',
-                component: defineAsyncComponent(() => import('@/Components/Button/ButtonDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Button/ButtonDocs.vue')),
             },
             {
                 name:      'CheckboxDocs',
-                component: defineAsyncComponent(() => import('@/Forms/Checkbox/CheckboxDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/Checkbox/CheckboxDocs.vue')),
             },
             {
                 name:      'DataTableDocs',
-                component: defineAsyncComponent(() => import('@/Tables/DataTable/DataTableDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Tables/DataTable/DataTableDocs.vue')),
             },
             {
                 name:      'DiffDocs',
-                component: defineAsyncComponent(() => import('@/Components/Diff/DiffDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Diff/DiffDocs.vue')),
             },
             {
                 name:      'DividerDocs',
-                component: defineAsyncComponent(() => import('@/Content/Divider/DividerDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Content/Divider/DividerDocs.vue')),
             },
             {
                 name:      'InputFileDocs',
-                component: defineAsyncComponent(() => import('@/Forms/InputFile/InputFileDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/InputFile/InputFileDocs.vue')),
             },
             {
                 name:      'InputTextDocs',
-                component: defineAsyncComponent(() => import('@/Forms/InputText/InputTextDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/InputText/InputTextDocs.vue')),
             },
             {
                 name:      'IconsDocs',
-                component: defineAsyncComponent(() => import('@/Customisation/Icons/IconsDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Customisation/Icons/IconsDocs.vue')),
             },
             {
                 name:      'JoinDocs',
-                component: defineAsyncComponent(() => import('@/Forms/Join/JoinDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/Join/JoinDocs.vue')),
             },
             {
                 name:      'LoadingDocs',
-                component: defineAsyncComponent(() => import('@/Components/Loading/LoadingDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Loading/LoadingDocs.vue')),
             },
             {
                 name:      'ListGroupDocs',
-                component: defineAsyncComponent(() => import('@/Components/ListGroup/ListGroupDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/ListGroup/ListGroupDocs.vue')),
             },
             {
                 name:      'MaskDocs',
-                component: defineAsyncComponent(() => import('@/Content/Mask/MaskDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Content/Mask/MaskDocs.vue')),
             },
             {
                 name:      'HeadingDocs',
-                component: defineAsyncComponent(() => import('@/Content/Heading/HeadingDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Content/Heading/HeadingDocs.vue')),
             },
             {
                 name:      'MenuDocs',
-                component: defineAsyncComponent(() => import('@/Navigations/Menu/MenuDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Navigations/Menu/MenuDocs.vue')),
             },
             {
                 name:      'ModalDocs',
-                component: defineAsyncComponent(() => import('@/Overlays/Modal/ModalDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Overlays/Modal/ModalDocs.vue')),
             },
             {
                 name:      'NavbarDocs',
-                component: defineAsyncComponent(() => import('@/Navigations/Navbar/NavbarDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Navigations/Navbar/NavbarDocs.vue')),
             },
             {
                 name:      'PaginationDocs',
-                component: defineAsyncComponent(() => import('@/Navigations/Pagination/PaginationDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Navigations/Pagination/PaginationDocs.vue')),
             },
             {
                 name:      'PopoverDocs',
-                component: defineAsyncComponent(() => import('@/Overlays/Popover/PopoverDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Overlays/Popover/PopoverDocs.vue')),
             },
             {
                 name:      'RadioDocs',
-                component: defineAsyncComponent(() => import('@/Forms/Radio/RadioDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/Radio/RadioDocs.vue')),
             },
             {
                 name:      'RangeDocs',
-                component: defineAsyncComponent(() => import('@/Forms/Range/RangeDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/Range/RangeDocs.vue')),
             },
             {
                 name:      'RadialProgressDocs',
-                component: defineAsyncComponent(() => import('@/Components/RadialProgress/RadialProgressDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/RadialProgress/RadialProgressDocs.vue')),
             },
             {
                 name:      'SkeletonDocs',
-                component: defineAsyncComponent(() => import('@/Components/Skeleton/SkeletonDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Skeleton/SkeletonDocs.vue')),
             },
             {
                 name:      'StatsDocs',
-                component: defineAsyncComponent(() => import('@/Components/Stats/StatsDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Stats/StatsDocs.vue')),
             },
             {
                 name:      'StatusDocs',
-                component: defineAsyncComponent(() => import('@/Components/Status/StatusDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Status/StatusDocs.vue')),
             },
             {
                 name:      'SwapDocs',
-                component: defineAsyncComponent(() => import('@/Components/Swap/SwapDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Components/Swap/SwapDocs.vue')),
             },
             {
                 name:      'SelectDocs',
-                component: defineAsyncComponent(() => import('@/Forms/Select/SelectDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/Select/SelectDocs.vue')),
             },
             {
                 name:      'SwitchDocs',
-                component: defineAsyncComponent(() => import('@/Forms/Switch/SwitchDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/Switch/SwitchDocs.vue')),
             },
             {
                 name:      'TabsDocs',
-                component: defineAsyncComponent(() => import('@/Navigations/Tabs/TabsDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Navigations/Tabs/TabsDocs.vue')),
             },
             {
                 name:      'TableDocs',
-                component: defineAsyncComponent(() => import('@/Tables/Table/TableDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Tables/Table/TableDocs.vue')),
             },
             {
                 name:      'TextareaDocs',
-                component: defineAsyncComponent(() => import('@/Forms/Textarea/TextareaDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Forms/Textarea/TextareaDocs.vue')),
             },
             {
                 name:      'TooltipDocs',
-                component: defineAsyncComponent(() => import('@/Overlays/Tooltip/TooltipDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Overlays/Tooltip/TooltipDocs.vue')),
             },
             {
                 name:      'SelectThemeController',
@@ -211,11 +213,11 @@ export default {
             },
             {
                 name:      'Playground',
-                component: defineAsyncComponent(() => import('@/Playground/Playground.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Playground/Playground.vue')),
             },
             {
                 name:      'BuildSizeVisualizer',
-                component: defineAsyncComponent(() => import('@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Extra/BuildSizeVisualizer/BuildSizeVisualizer.vue')),
             },
             {
                 name:      'CodePreview',
@@ -223,17 +225,19 @@ export default {
             },
             {
                 name:      'CreateFlyonUIVueAppDocs',
-                component: defineAsyncComponent(() => import('@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue')),
+                component: defineAsyncDocsComponent(() => import('@/QuickStart/CreateFlyonUIVueApp/CreateFlyonUIVueAppDocs.vue')),
             },
             {
                 name:      'ComponentsApi',
-                component: defineAsyncComponent(() => import('@/Api/UI/ComponentsApi.vue')),
+                component: defineAsyncDocsComponent(() => import('@/Api/UI/ComponentsApi.vue')),
             },
             {
                 name:      'FoKeyboard',
                 component: FoKeyboard,
             },
         ]);
+
+        loadIconifyIcons();
     },
 } satisfies Theme;
 
@@ -242,8 +246,133 @@ interface RegistrableComponent {
     component: Component;
 }
 
-function registerDocComponents(app: App, components: RegistrableComponent[]): void {
-    for (const component of components) {
-        app.component(component.name, component.component);
+function registerDocComponents(app: App, registrableComponents: RegistrableComponent[]): void {
+    for (const registrableComponent of registrableComponents) {
+        app.component(registrableComponent.name, registrableComponent.component);
     }
+}
+
+function loadIconifyIcons(): void {
+    loadIcons([
+        'bi:chevron-contract',
+        'bi:chevron-double-left',
+        'bi:chevron-double-right',
+        'bi:chevron-expand',
+        'carbon:data-table',
+        'carbon:insert-page',
+        'carbon:user-avatar',
+        'ep:select',
+        'fluent:color-20-regular',
+        'fluent:shapes-20-regular',
+        'fluent:text-direction-horizontal-ltr-20-regular',
+        'fluent:text-direction-horizontal-rtl-20-regular',
+        'gridicons:domains',
+        'ic:round-link',
+        'ic:sharp-account-circle',
+        'ix:hard-reset',
+        'la:border-style',
+        'line-md:account',
+        'line-md:alert',
+        'line-md:loading-twotone-loop',
+        'mdi:account-child',
+        'mdi:account-plus',
+        'mdi:badge-account-outline',
+        'mdi:chart-bar',
+        'mdi:chart-pie',
+        'mdi:checkbox-marked',
+        'mdi:chevron-down-box',
+        'mdi:face-mask',
+        'mdi:file-upload',
+        'mdi:form-textbox',
+        'mdi:format-header-1',
+        'mdi:format-list-bulleted',
+        'mdi:gesture-tap-button',
+        'mdi:keyboard-outline',
+        'mdi:menu',
+        'mdi:radio-button-checked',
+        'mdi:swap-horizontal',
+        'mdi:tab',
+        'mdi:table',
+        'mdi:textarea',
+        'mdi:toggle-switch',
+        'mdi:tooltip-outline',
+        'mdi:tooltip-text',
+        'mdi:view-sequential',
+        'quill:label',
+        'radix-icons:dimensions',
+        'radix-icons:slider',
+        'solar:user-bold',
+        'svg-spinners:3-dots-move',
+        'tabler:alert-triangle',
+        'tabler:apps',
+        'tabler:book',
+        'tabler:books',
+        'tabler:brand-mailgun',
+        'tabler:brand-mastercard',
+        'tabler:calendar',
+        'tabler:calendar-event',
+        'tabler:caret-down-filled',
+        'tabler:caret-left-filled',
+        'tabler:caret-right-filled',
+        'tabler:caret-up-filled',
+        'tabler:cash',
+        'tabler:check',
+        'tabler:layout-sidebar-left-collapse-filled',
+        'tabler:layout-sidebar-right-collapse-filled',
+        'tabler:chevron-down',
+        'tabler:chevron-left',
+        'tabler:chevron-right',
+        'tabler:chevron-up',
+        'tabler:circle-check',
+        'tabler:circle-dot',
+        'tabler:circle-minus',
+        'tabler:circle-plus',
+        'tabler:clock',
+        'tabler:cloud',
+        'tabler:copy',
+        'tabler:copy-check',
+        'tabler:credit-card',
+        'tabler:crown',
+        'tabler:current-location',
+        'tabler:device-desktop',
+        'tabler:device-laptop',
+        'tabler:device-mobile',
+        'tabler:device-tablet',
+        'tabler:dots',
+        'tabler:dots-vertical',
+        'tabler:folder',
+        'tabler:git-compare',
+        'tabler:headphones',
+        'tabler:home',
+        'tabler:info-circle',
+        'tabler:list-details',
+        'tabler:lock',
+        'tabler:mail',
+        'tabler:menu-2',
+        'tabler:message',
+        'tabler:moon',
+        'tabler:movie',
+        'tabler:package',
+        'tabler:pencil',
+        'tabler:player-pause',
+        'tabler:player-play',
+        'tabler:progress',
+        'tabler:quote',
+        'tabler:rocket',
+        'tabler:send',
+        'tabler:separator-horizontal',
+        'tabler:settings',
+        'tabler:settings-bolt',
+        'tabler:star',
+        'tabler:sun',
+        'tabler:trash',
+        'tabler:user',
+        'tabler:users-group',
+        'tabler:volume',
+        'tabler:volume-off',
+        'tabler:world',
+        'tabler:x',
+        'tdesign:placeholder-filled',
+        'uil:icons',
+    ]);
 }
