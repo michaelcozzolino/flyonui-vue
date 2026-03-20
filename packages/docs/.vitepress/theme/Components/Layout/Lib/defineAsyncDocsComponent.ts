@@ -26,11 +26,6 @@ function trackAsyncDocsComponent<T extends Component>(component: AsyncComponentL
     return async () => {
         clearReadyTimeout();
         pendingAsyncComponentCount.value += 1;
-     return async () => {
-         clearReadyTimeout();
-         pendingAsyncComponentCount.value += 1;
-
-         return await component().finally(() => {
 
         return await component().finally(() => {
             pendingAsyncComponentCount.value = Math.max(0, pendingAsyncComponentCount.value - 1);
