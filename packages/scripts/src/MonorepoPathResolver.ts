@@ -1,7 +1,7 @@
 import { resolve }       from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-export type PackageName = 'core' | 'create-flyonui-vue' | 'docs' | 'web-components';
+export type PackageName = 'core' | 'create-flyonui-vue' | 'docs' | 'scripts' | 'web-components';
 
 class MonorepoPathResolver {
     public resolveRootPath() {
