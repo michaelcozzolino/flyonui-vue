@@ -12,7 +12,7 @@
                tabindex="-1"
         >
             <div class="px-0! vp-raw">
-                <div class="sticky top-0 z-10 flex items-center justify-center gap-1 p-2 border-b border-base-content/10 bg-base-100"
+                <div class="sticky top-0 z-10 flex items-center justify-center gap-1 p-1 border-b border-base-content/10 bg-base-100"
                      :class="isCollapsed && 'justify-center'"
                 >
                     <FoButton :icon="isCollapsed ? 'bi:chevron-double-right' : 'bi:chevron-double-left'"
