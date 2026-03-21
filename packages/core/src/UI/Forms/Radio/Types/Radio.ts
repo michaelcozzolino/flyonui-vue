@@ -3,13 +3,16 @@ import type { Image }                                                    from '@
 import type { WithHelperText, WithLabel }                                from '@/UI/Components';
 
 interface RadioValue {
+    /** The radio's internal value */
     value: string;
 }
 
 export interface RadioProps extends MaybeStringId, RadioValue, Colorable, Disableable, Sizable, Validity, WithLabel, WithHelperText {
+    /** True, if the radio is an inset one, false otherwise */
     isInset?: boolean;
 }
 
 export interface ImageRadioProps extends RadioValue {
+    /** The image of the radio */
     image: Image;
 }

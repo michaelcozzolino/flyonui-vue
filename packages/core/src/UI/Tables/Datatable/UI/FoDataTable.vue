@@ -164,9 +164,10 @@ const totalHeaderColumns = computed((): number => {
 });
 
 watch([safePage, itemsPerPage, query], () => {
-    if (props.useAjax) {
-        return;
-    }
+    // todo
+    // if (props.useAjax) {
+    //     return;
+    // }
 
     let sourceItems = items.value;
 
