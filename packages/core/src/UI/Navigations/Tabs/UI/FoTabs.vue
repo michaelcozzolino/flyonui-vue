@@ -86,6 +86,7 @@ defineSlots<
     }
 >();
 
+/** The selected tab */
 const activeTab = defineModel<T>({ required: true });
 
 const componentName: ComponentName = 'FoTabs';

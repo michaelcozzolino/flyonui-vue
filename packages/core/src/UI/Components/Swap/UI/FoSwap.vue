@@ -36,6 +36,7 @@ defineSlots<{
 
 const componentName: ComponentName = 'FoSwap';
 
+/** If true, the swap is on, otherwise it is off */
 const isOn = defineModel<boolean>({ required: true });
 
 const animationClass = computed(() => {

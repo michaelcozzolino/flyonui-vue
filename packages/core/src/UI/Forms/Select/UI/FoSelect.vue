@@ -102,6 +102,7 @@ const props = withDefaults(defineProps<SelectProps<T, K>>(), {
 
 const id = useElementId(() => props.id);
 
+/** The selected option in the select. If nothing is selected, it is null */
 const selectedOption = defineModel<SelectOption<T> | null>({ required: true });
 
 const componentName: ComponentName = 'FoSelect';

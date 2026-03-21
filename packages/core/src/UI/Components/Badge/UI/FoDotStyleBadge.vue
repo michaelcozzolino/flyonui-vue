@@ -9,8 +9,11 @@
 </template>
 
 <script setup lang="ts">
-import type { BadgeProps } from '@/UI/Components';
-import { FoBadge }         from '@/UI/Components';
+import type { WithDefaultSlot } from '@/Types';
+import type { BadgeProps }      from '@/UI/Components';
+import { FoBadge }              from '@/UI/Components';
 
 const props = defineProps<BadgeProps>();
+
+defineSlots<WithDefaultSlot>();
 </script>

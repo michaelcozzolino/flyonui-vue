@@ -11,12 +11,15 @@
 
 <script setup lang="ts">
 import type { Color, ComponentName }                                from '@/Lib';
+import type { WithDefaultSlot }                                     from '@/Types';
 import type { RadialProgressBackgroundPreset, RadialProgressProps } from '@/UI/Components/RadialProgress';
 import { useFlyonUIVueAppConfig }                                   from '@/Lib';
 import { useColor }                                                 from '@/Lib/UseColor/Internal';
 import { computed }                                                 from 'vue';
 
 const props = defineProps<RadialProgressProps>();
+
+defineSlots<WithDefaultSlot>();
 
 const componentName: ComponentName = 'FoRadialProgress';
 const { config }                   = useFlyonUIVueAppConfig();
