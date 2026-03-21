@@ -18,6 +18,7 @@
 
         <CodeSnippet :language="language"
                      :code="code"
+                     dir="ltr"
         />
     </div>
 </template>
