@@ -9,9 +9,10 @@ export default defineConfig({
     expect: {
         toMatchSnapshot: { maxDiffPixelRatio: 0.04, threshold: 0.1 },
     },
-    workers:   '50%',
-    outputDir: './tests/EndToEnd/Results',
-    webServer: {
+    workers:       '50%',
+    fullyParallel: true,
+    outputDir:     './tests/EndToEnd/Results',
+    webServer:     {
         // In the GitHub action the docs are built before the execution of the tests, in local they might not be.
         command:             process.env.CI ? previewCommand : `${workspaceCommand} build && ${previewCommand}`,
         url:                 baseURL,
