@@ -30,16 +30,11 @@
             </div>
 
             <template v-else>
-                <!-- todo: replace with FoAvatar when implemented -->
-                <div v-if="author.avatar !== undefined"
-                     class="avatar"
-                >
-                    <div class="size-10 rounded-full">
-                        <img :src="author.avatar"
-                             :alt="author.name"
-                        >
-                    </div>
-                </div>
+                <FoAvatar v-if="author.avatar !== undefined"
+                          :avatar="{ src: author.avatar, alt: author.name }"
+                          shape="circle"
+                          size="medium"
+                />
 
                 <div class="ms-4">
                     <div class="text-base-content text-base font-semibold">
@@ -64,6 +59,7 @@ import type { WithRequiredDefaultSlot } from '@/Types';
 import type { BlockQuoteProps }         from '@/UI/Content/BlockQuote/Types';
 import { useAlignment }                 from '@/Lib/UseAlignment/Internal';
 import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
+import { FoAvatar }                     from '@/UI/Components';
 import { FoIcon }                       from '@/UI/Customization';
 import { computed }                     from 'vue';
 

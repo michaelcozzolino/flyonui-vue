@@ -46,8 +46,7 @@
 <script setup lang="ts">
 import type { ComponentName }                                                 from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot }                               from '@/Types';
-import type { MenuItem }                                                      from '@/UI/Components';
-import type { Navigation }                                                    from '@/UI/Content/Link';
+import type { MenuItemProps }                                                 from '@/UI/Components';
 import { useState }                                                           from '@/Lib/UseState/Internal';
 import { isInMenuItemInjectionKey, menuTextPropsInjectionKey }                from '@/UI/Components/Menu/Internal';
 import { FoLink }                                                             from '@/UI/Content/Link';
@@ -55,12 +54,7 @@ import { FoIcon }                                                             fr
 import { useMotion }                                                          from '@vueuse/motion';
 import { computed, inject, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 
-interface Props {
-    item:        MenuItem;
-    navigation?: Navigation;
-}
-
-const props = defineProps<Props>();
+const props = defineProps<MenuItemProps>();
 
 const emit = defineEmits<{
     (e: 'click:item'): void;

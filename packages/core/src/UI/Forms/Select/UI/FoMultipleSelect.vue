@@ -31,6 +31,7 @@ const props = withDefaults(defineProps<MultipleSelectProps<T>>(), {
     visibleOptions: 4,
 });
 
+/** The selected option in the multiple select. If nothing is selected, it is empty */
 const selectedOptions = defineModel<SelectOption<T>[]>({ required: true });
 
 const id = useElementId(() => props.id);

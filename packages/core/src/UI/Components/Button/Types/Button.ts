@@ -44,6 +44,8 @@ export interface ButtonProps extends MaybeStringId,
 export interface LoadingButtonProps extends Omit<ButtonProps, 'icon'> {
     /** True if the component is in loading state */
     isLoading?: boolean;
+
+    /** The specific animation icon and its position */
     icon?: {
         position?: HorizontalPosition;
     } & LoadingProps;

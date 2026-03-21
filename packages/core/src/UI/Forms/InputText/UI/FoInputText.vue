@@ -123,7 +123,8 @@ const isInJoin: boolean = inject(isInJoinInjectionKey, false);
 
 type InputTextValue = string | (string | null);
 
-// todo: this should be documented through the component api
+// todo: the modifiers should be documented through the component api
+/** The input text to be modified */
 const [input, modifiers] = defineModel<InputTextValue, 'trim' | 'null'>({
     required: true,
     set:      (value: InputTextValue) => {

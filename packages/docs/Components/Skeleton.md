@@ -27,7 +27,3 @@
 ### Props
 
 <SkeletonDocs section="props" />
-
-### Slots
-
-<SkeletonDocs section="slots" />

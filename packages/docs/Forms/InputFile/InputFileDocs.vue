@@ -10,20 +10,20 @@ import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/Compone
 import type { ApiType }              from '@/Api/Types/Api.ts';
 import type { Default }              from 'flyonui-vue';
 import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import DefaultInputFile              from '@/Next/Forms/InputFile/DefaultInputFile.vue';
-import DefaultInputFileRaw           from '@/Next/Forms/InputFile/DefaultInputFile.vue?raw';
-import DisabledInputFile             from '@/Next/Forms/InputFile/DisabledInputFile.vue';
-import DisabledInputFileRaw          from '@/Next/Forms/InputFile/DisabledInputFile.vue?raw';
-import InputFileHelperText           from '@/Next/Forms/InputFile/InputFileHelperText.vue';
-import InputFileHelperTextRaw        from '@/Next/Forms/InputFile/InputFileHelperText.vue?raw';
-import InputFileLabel                from '@/Next/Forms/InputFile/InputFileLabel.vue';
-import InputFileLabelRaw             from '@/Next/Forms/InputFile/InputFileLabel.vue?raw';
-import InputFileSize                 from '@/Next/Forms/InputFile/InputFileSize.vue';
-import InputFileSizeRaw              from '@/Next/Forms/InputFile/InputFileSize.vue?raw';
-import InputFileValidationState      from '@/Next/Forms/InputFile/InputFileValidationState.vue';
-import InputFileValidationStateRaw   from '@/Next/Forms/InputFile/InputFileValidationState.vue?raw';
-import MultipleFilesInputFile        from '@/Next/Forms/InputFile/MultipleFilesInputFile.vue';
-import MultipleFilesInputFileRaw     from '@/Next/Forms/InputFile/MultipleFilesInputFile.vue?raw';
+import DefaultInputFile              from '@/Forms/InputFile/DefaultInputFile.vue';
+import DefaultInputFileRaw           from '@/Forms/InputFile/DefaultInputFile.vue?raw';
+import DisabledInputFile             from '@/Forms/InputFile/DisabledInputFile.vue';
+import DisabledInputFileRaw          from '@/Forms/InputFile/DisabledInputFile.vue?raw';
+import InputFileHelperText           from '@/Forms/InputFile/InputFileHelperText.vue';
+import InputFileHelperTextRaw        from '@/Forms/InputFile/InputFileHelperText.vue?raw';
+import InputFileLabel                from '@/Forms/InputFile/InputFileLabel.vue';
+import InputFileLabelRaw             from '@/Forms/InputFile/InputFileLabel.vue?raw';
+import InputFileSize                 from '@/Forms/InputFile/InputFileSize.vue';
+import InputFileSizeRaw              from '@/Forms/InputFile/InputFileSize.vue?raw';
+import InputFileValidationState      from '@/Forms/InputFile/InputFileValidationState.vue';
+import InputFileValidationStateRaw   from '@/Forms/InputFile/InputFileValidationState.vue?raw';
+import MultipleFilesInputFile        from '@/Forms/InputFile/MultipleFilesInputFile.vue';
+import MultipleFilesInputFileRaw     from '@/Forms/InputFile/MultipleFilesInputFile.vue?raw';
 import { computed }                  from 'vue';
 
 type Section = Default

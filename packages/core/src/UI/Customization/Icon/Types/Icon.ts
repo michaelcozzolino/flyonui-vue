@@ -43,6 +43,9 @@ export interface IconComponentProps {
 export type IconProps = IconifyIconProps | IconComponentProps;
 
 export interface WithConfigurableIcon {
+    /**
+     * The icon's name or a left/right position followed by the icon's name, both positions can be used at the same time
+     */
     icon?: ConfigurableIcon;
 }
 

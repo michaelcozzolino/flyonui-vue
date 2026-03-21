@@ -55,6 +55,7 @@ import { computed } from 'vue';
 const props = defineProps<AvatarProps>();
 
 const slots = defineSlots<{
+    /** Custom indicator that could be an image, svg or whatever is not supported by the standard indicator prop */
     indicator?: Slot;
 }>();
 

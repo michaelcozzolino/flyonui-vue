@@ -34,5 +34,9 @@ export interface Navigation {
 }
 
 export interface CustomNavigatable {
+    /**
+     * A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router
+     * is not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead
+     */
     navigation?: Navigation;
 }
