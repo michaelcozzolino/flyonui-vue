@@ -1,4 +1,5 @@
 import type { AsyncComponentLoader, Component } from 'vue';
+import { isClient }                             from '@vueuse/core';
 import { defineAsyncComponent, ref }            from 'vue';
 
 /**
@@ -53,6 +54,10 @@ function clearReadyTimeout(): void {
  * Defers the ready flag to the next macrotask so new async loads can invalidate it before the page is revealed.
  */
 export function markDocsPageAsReady(): void {
+    if (isClient === false) {
+        return;
+    }
+
     clearReadyTimeout();
 
     if (pendingAsyncComponentCount.value > 0) {
