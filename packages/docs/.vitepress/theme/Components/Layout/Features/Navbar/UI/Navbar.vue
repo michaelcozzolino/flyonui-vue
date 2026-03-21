@@ -82,20 +82,31 @@ import ConfigurationSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
 import {
     useFlyonUIVueVersion,
-}                         from '@/.vitepress/theme/Components/Layout/Lib/UseFlyonUIVueVersion';
-import { useLayoutStore ,
-}                                                                             from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { useColorMode, useStorage }                                                              from '@vueuse/core';
-import { FoButton, FoLink, FoModal, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
-import {  useRouter, withBase }                                                          from 'vitepress';
-import { VPNavBarSearch }                                                                        from 'vitepress/theme';
-import { computed, onMounted, ref }                                                              from 'vue';
+}                                   from '@/.vitepress/theme/Components/Layout/Lib/UseFlyonUIVueVersion';
+import {
+    useLayoutStore,
+}                                   from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import { useColorMode, useStorage } from '@vueuse/core';
+import {
+    FoButton,
+    FoLink,
+    FoModal,
+    FoNavbar,
+    FoNavbarBrand,
+    FoPopover,
+    FoSocialButton,
+}                                        from 'flyonui-vue';
+import { useRouter, withBase }      from 'vitepress';
+import { VPNavBarSearch }           from 'vitepress/theme';
+import { computed, onMounted, ref } from 'vue';
 
 const { currentVersion, oldVersions } = useFlyonUIVueVersion();
 
+const flyonUIVueVersion = FLYONUI_VUE_VERSION;
+
 const router = useRouter();
 
-const { vitepressThemeLocalStorageKey } = useLayoutStore();
+const { isSidebarCollapsed, vitepressThemeLocalStorageKey } = useLayoutStore();
 
 const links = computed((): NavbarLink[] => {
     return [

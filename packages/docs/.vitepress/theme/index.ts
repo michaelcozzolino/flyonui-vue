@@ -55,7 +55,10 @@ export default {
                 name:      'AvatarDocs',
                 component: defineAsyncDocsComponent(() => import('@/Components/Avatar/AvatarDocs.vue')),
             },
-            { name: 'ClassAndStyleDocs', instance: ClassAndStyleDocs },
+            {
+                name:      'ClassAndStyleDocs',
+                component: defineAsyncDocsComponent(() => import('@/Customisation/ClassAndStyle/ClassAndStyleDocs.vue')),
+            },
             {
                 name:      'KeyboardDocs',
                 component: defineAsyncDocsComponent(() => import('@/Content/Keyboard/KeyboardDocs.vue')),
@@ -204,7 +207,10 @@ export default {
                 name:      'TextareaDocs',
                 component: defineAsyncDocsComponent(() => import('@/Forms/Textarea/TextareaDocs.vue')),
             },
-            { name: 'TextDirectionDocs', instance: TextDirectionDocs },
+            {
+                name:      'TextDirectionDocs',
+                component: defineAsyncDocsComponent(() => import('@/Customisation/TextDirection/TextDirectionDocs.vue')),
+            },
 
             {
                 name:      'TooltipDocs',
