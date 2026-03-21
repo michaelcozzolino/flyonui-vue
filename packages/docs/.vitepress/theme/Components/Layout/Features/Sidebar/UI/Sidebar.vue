@@ -15,7 +15,7 @@
                 <div class="sticky top-0 z-10 flex items-center justify-center gap-1 p-1 border-b border-base-content/10 bg-base-100"
                      :class="isCollapsed && 'justify-center'"
                 >
-                    <FoButton :icon="isCollapsed ? 'bi:chevron-double-right' : 'bi:chevron-double-left'"
+                    <FoButton :icon="collapseButtonIcon"
                               color="neutral"
                               preset="text"
                               size="extraSmall"
@@ -70,12 +70,12 @@ import type {
     ParentSidebarItem,
     SidebarItem,
 }                          from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import { useSidebarItems }                   from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
-import SidebarNode                           from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
-import { useLayoutStore }                    from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { onClickOutside, useArrayFindIndex } from '@vueuse/core';
-import { FoButton, FoMenu }                  from 'flyonui-vue';
-import { storeToRefs }                       from 'pinia';
+import { useSidebarItems }                          from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
+import SidebarNode                                  from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
+import { useLayoutStore }                           from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import { onClickOutside, useArrayFindIndex }        from '@vueuse/core';
+import { FoButton, FoMenu, useFlyonUIVueAppConfig } from 'flyonui-vue';
+import { storeToRefs }                              from 'pinia';
 import {
     computed,
     nextTick,
@@ -84,6 +84,8 @@ import {
     watch,
 }                           from 'vue';
 
+const { config } = useFlyonUIVueAppConfig();
+
 const sidebarElement = useTemplateRef('sidebar');
 
 const { isSidebarCollapsed: isCollapsed, isPageSizeSmallerThanSm } = storeToRefs(useLayoutStore());
@@ -91,6 +93,17 @@ const { isSidebarCollapsed: isCollapsed, isPageSizeSmallerThanSm } = storeToRefs
 const items = useSidebarItems();
 
 const showMenu = computed((): boolean => isPageSizeSmallerThanSm.value === false || isCollapsed.value === false);
+
+const collapseButtonIcon = computed((): string => {
+    const arrowLeftIcon = 'bi:chevron-double-left';
+    const arrowRightIcon = 'bi:chevron-double-right';
+
+    if (config.value.global.direction === 'rtl') {
+        return isCollapsed.value ? arrowLeftIcon : arrowRightIcon;
+    }
+
+    return isCollapsed.value ? arrowRightIcon : arrowLeftIcon;
+});
 
 // The active items can only be the children by implementation
 const activeItemId = ref<string | null>(null);
