@@ -24,13 +24,18 @@
 </template>
 
 <script setup lang="ts">
-import { FoAlert, FoIcon, FoLink  } from 'flyonui-vue';
-import { computed }                 from 'vue';
+import { isClient }                from '@vueuse/core';
+import { FoAlert, FoIcon, FoLink } from 'flyonui-vue';
+import { computed }                from 'vue';
 
 /**
- * It checks that the current url contains vx in its domain, where x is a version number.
+ * It checks that the current url contains v.x in its domain, where x is a version number.
  */
 const isOutdatedVersion = computed((): boolean => {
+    if (isClient === false) {
+        return false;
+    }
+
     const subdomain = window.location.hostname.split('.')[0];
 
     return /^v\d+$/.test(subdomain ?? '');
