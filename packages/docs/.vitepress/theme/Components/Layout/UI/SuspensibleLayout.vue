@@ -10,12 +10,12 @@
             <Home v-else-if="isHomepage()" />
 
             <div v-else
-                 class="flex"
+                 class="flex min-w-0"
             >
                 <Sidebar />
 
                 <div v-show="isDocsPageReady"
-                     class="flex w-full"
+                     class="flex min-w-0 flex-1"
                 >
                     <Content class="VPDoc vp-doc grow m-8 min-w-0" />
 
