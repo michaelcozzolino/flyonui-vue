@@ -1,5 +1,7 @@
-import { kebabCase }    from 'change-case';
-import { defineConfig } from 'vitepress';
+import type { HeadConfig } from 'vitepress';
+import process             from 'node:process';
+import { kebabCase }       from 'change-case';
+import { defineConfig }    from 'vitepress';
 
 export default defineConfig({
     rewrites: (id) => {
@@ -19,18 +21,7 @@ export default defineConfig({
             'link',
             { rel: 'icon', type: 'image/svg', href: '/assets/logo.svg' },
         ],
-        [
-            'script',
-            { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-5TX4XTLE62' },
-        ],
-        [
-            'script',
-            {},
-            `window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-5TX4XTLE62');`,
-        ],
+        ...getGoogleAnalyticsScripts(),
     ],
     themeConfig: {
         outline: 'deep',
@@ -48,3 +39,22 @@ export default defineConfig({
         },
     },
 });
+
+function getGoogleAnalyticsScripts(): HeadConfig[] {
+    return process.env.NODE_ENV === 'production'
+        ? [
+                [
+                    'script',
+                    { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-5TX4XTLE62' },
+                ],
+                [
+                    'script',
+                    {},
+                    `window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-5TX4XTLE62');`,
+                ],
+            ]
+        : [];
+}

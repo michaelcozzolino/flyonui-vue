@@ -13,9 +13,11 @@ import LoadingAnimation              from '@/Components/Loading/LoadingAnimation
 import LoadingAnimationRaw           from '@/Components/Loading/LoadingAnimation.vue?raw';
 import LoadingColor                  from '@/Components/Loading/LoadingColor.vue';
 import LoadingColorRaw               from '@/Components/Loading/LoadingColor.vue?raw';
+import LoadingSize                   from '@/Components/Loading/LoadingSize.vue';
+import LoadingSizeRaw                from '@/Components/Loading/LoadingSize.vue?raw';
 import { computed }                  from 'vue';
 
-type Section = 'animation' | 'color' | ApiType;
+type Section = 'animation' | 'color' | 'size' | ApiType;
 
 interface Props {
     section: Section;
@@ -41,6 +43,14 @@ const previews = computed(() => {
             {
                 code:      LoadingColorRaw,
                 component: LoadingColor,
+                excludeFromTests,
+            },
+        ],
+        [
+            'size',
+            {
+                code:      LoadingSizeRaw,
+                component: LoadingSize,
                 excludeFromTests,
             },
         ],

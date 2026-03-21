@@ -9,12 +9,12 @@
 import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
 import type { ApiType }              from '@/Api/Types/Api.ts';
 import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import BlurredImageDiff              from '@/Next/Components/Diff/BlurredImageDiff.vue';
-import BlurredImageDiffRaw           from '@/Next/Components/Diff/BlurredImageDiff.vue?raw';
-import ImageDiff                     from '@/Next/Components/Diff/ImageDiff.vue';
-import ImageDiffRaw                  from '@/Next/Components/Diff/ImageDiff.vue?raw';
-import TextDiff                      from '@/Next/Components/Diff/TextDiff.vue';
-import TextDiffRaw                   from '@/Next/Components/Diff/TextDiff.vue?raw';
+import BlurredImageDiff              from '@/Components/Diff/BlurredImageDiff.vue';
+import BlurredImageDiffRaw           from '@/Components/Diff/BlurredImageDiff.vue?raw';
+import ImageDiff                     from '@/Components/Diff/ImageDiff.vue';
+import ImageDiffRaw                  from '@/Components/Diff/ImageDiff.vue?raw';
+import TextDiff                      from '@/Components/Diff/TextDiff.vue';
+import TextDiffRaw                   from '@/Components/Diff/TextDiff.vue?raw';
 import { computed }                  from 'vue';
 
 type Section = 'image'

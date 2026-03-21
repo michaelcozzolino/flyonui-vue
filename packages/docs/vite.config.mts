@@ -9,6 +9,10 @@ export default defineConfig({
         FLYONUI_VUE_VERSION:      JSON.stringify(execSync('yarn core:version').toString().trim()),
         OLD_FLYONUI_VUE_VERSIONS: JSON.stringify(['2.x']),
     },
+    build: {
+        // The generated component API is intentionally large and now lives in its own lazy chunk.
+        chunkSizeWarningLimit: 800,
+    },
     resolve: {
         alias: [
             {

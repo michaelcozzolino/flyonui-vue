@@ -7,12 +7,12 @@
         >
             <template #start>
                 <div class="flex place-items-center gap-4">
-                    <!--                    todo: the hover:text-info can be done through color prop of iconify -->
-                    <FoIcon v-show="isNotHomepage() && !page.isNotFound"
-                            class="flyonui-vue-navbar-collapse ms-2 cursor-pointer hover:text-info"
-                            :icon="isSidebarCollapsed ? 'tabler:layout-sidebar-right-collapse-filled' : 'tabler:layout-sidebar-left-collapse-filled'"
-                            @click="isSidebarCollapsed = !isSidebarCollapsed"
-                    />
+                    <FoLink to="https://www.npmjs.com/package/flyonui-vue"
+                            color="info"
+                            underline-effect="hover-animated"
+                    >
+                        {{ flyonUIVueVersion }}
+                    </FoLink>
 
                     <FoNavbarBrand :class="!isSidebarCollapsed && 'sm:ms-46'"
                                    @click="router.go('/')"
@@ -83,13 +83,11 @@ import ConfigurationSettings
 import {
     useFlyonUIVueVersion,
 }                         from '@/.vitepress/theme/Components/Layout/Lib/UseFlyonUIVueVersion';
-import { useLayoutStore } from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-
-import { loadIcons }                                                                             from '@iconify/vue';
+import { useLayoutStore ,
+}                                                                             from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
 import { useColorMode, useStorage }                                                              from '@vueuse/core';
-import { FoButton, FoIcon, FoLink, FoModal, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
-import { storeToRefs }                                                                           from 'pinia';
-import { useData, useRouter, withBase }                                                          from 'vitepress';
+import { FoButton, FoLink, FoModal, FoNavbar, FoNavbarBrand, FoPopover, FoSocialButton } from 'flyonui-vue';
+import {  useRouter, withBase }                                                          from 'vitepress';
 import { VPNavBarSearch }                                                                        from 'vitepress/theme';
 import { computed, onMounted, ref }                                                              from 'vue';
 
@@ -97,9 +95,7 @@ const { currentVersion, oldVersions } = useFlyonUIVueVersion();
 
 const router = useRouter();
 
-const { page }                                         = useData();
-const { isNotHomepage, vitepressThemeLocalStorageKey } = useLayoutStore();
-const { isSidebarCollapsed }                           = storeToRefs(useLayoutStore());
+const { vitepressThemeLocalStorageKey } = useLayoutStore();
 
 const links = computed((): NavbarLink[] => {
     return [
@@ -133,20 +129,5 @@ onMounted(() => {
         mergeDefaults: true,
         storageKey:    themeStorageKey,
     });
-
-    loadIcons([
-        'tabler:layout-sidebar-left-collapse-filled',
-        'tabler:layout-sidebar-right-collapse-filled',
-        'radix-icons:dimensions',
-        'la:border-style',
-        'fluent:color-20-regular',
-        'fluent:shapes-20-regular',
-        'fluent:text-direction-horizontal-ltr-20-regular',
-        'fluent:text-direction-horizontal-rtl-20-regular',
-        'ep:select',
-        'tabler:chevron-left',
-        'tabler:chevron-right',
-        'tabler:dots',
-    ]);
 });
 </script>

@@ -1,6 +1,6 @@
 import type { Disableable, Orientable, Sizable  } from '@/Lib';
 import type { Flushable, WithRequiredText }       from '@/Types';
-import type { WithTo }                            from '@/UI/Content';
+import type { CustomNavigatable, WithTo }         from '@/UI/Content';
 import type { WithIcon }                          from '@/UI/Customization';
 
 export interface MenuTextProps {
@@ -20,3 +20,8 @@ export type MenuItem = Disableable
     & WithIcon
     & WithRequiredText
     & WithTo;
+
+export interface MenuItemProps extends CustomNavigatable {
+    /** The props of an item of the menu */
+    item: MenuItem;
+}

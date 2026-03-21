@@ -60,6 +60,7 @@ const props = withDefaults(defineProps<RadioProps>(), {
     isValid: undefined,
 });
 
+/** The value of the checked radio */
 const checkedValue = defineModel<string>({ required: true });
 
 const componentName: ComponentName = 'FoRadio';

@@ -92,6 +92,7 @@ const componentName: ComponentName = 'FoTextarea';
 
 const { config } = useFlyonUIVueAppConfig();
 
+/** The input text to be modified */
 const input = defineModel<string>({ required: true });
 
 const iconSize: IconSize = 'small';

@@ -47,6 +47,7 @@ const slots = defineSlots<{
     steps?: Slot;
 }>();
 
+/** The current range value */
 const input = defineModel<number>({ required: true });
 
 const componentName: ComponentName = 'FoRange';

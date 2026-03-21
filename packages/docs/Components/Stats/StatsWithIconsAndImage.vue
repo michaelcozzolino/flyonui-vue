@@ -24,14 +24,10 @@
 
         <FoStat>
             <FoStatFigure>
-                <!--            todo: avatar component -->
-                <div class="avatar">
-                    <div class="size-12 rounded-full">
-                        <img src="https://cdn.flyonui.com/fy-assets/avatar/avatar-2.png"
-                             alt="User Avatar"
-                        >
-                    </div>
-                </div>
+                <FoAvatar :avatar="{ src: 'https://cdn.flyonui.com/fy-assets/avatar/avatar-2.png', alt: 'User Avatar' }"
+                          shape="circle"
+                          size="large"
+                />
             </FoStatFigure>
 
             <FoStatValue class="text-success">
@@ -52,6 +48,7 @@
 <script setup lang="ts">
 import type { Identifiable } from 'flyonui-vue';
 import {
+    FoAvatar,
     FoIcon,
     FoStat,
     FoStatDescription,

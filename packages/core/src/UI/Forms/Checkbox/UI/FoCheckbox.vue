@@ -90,7 +90,13 @@ const slots = defineSlots<{
     default?: () => VNode[];
 }>();
 
-const checked         = defineModel<boolean>({ required: true });
+/** If true, the checkbox is checked, otherwise it is not */
+const checked = defineModel<boolean>({ required: true });
+
+/**
+ * If true, the checkbox is indeterminate and not checked,
+ * otherwise it is not indeterminate and could either be checked or not depending on the user interaction
+ */
 const isIndeterminate = defineModel<boolean>('isIndeterminate');
 
 const id         = useElementId(() => props.id);

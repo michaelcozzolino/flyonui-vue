@@ -10,14 +10,14 @@ import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/Compone
 import type { ApiType }              from '@/Api/Types/Api.ts';
 import type { Default }              from 'flyonui-vue';
 import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import BlockQuoteAlignment           from '@/Next/Content/BlockQuote/BlockQuoteAlignment.vue';
-import BlockQuoteAlignmentRaw        from '@/Next/Content/BlockQuote/BlockQuoteAlignment.vue?raw';
-import DefaultBlockQuote             from '@/Next/Content/BlockQuote/DefaultBlockQuote.vue';
-import DefaultBlockQuoteRaw          from '@/Next/Content/BlockQuote/DefaultBlockQuote.vue?raw';
-import NamedBlockQuote               from '@/Next/Content/BlockQuote/NamedBlockQuote.vue';
-import NamedBlockQuoteRaw            from '@/Next/Content/BlockQuote/NamedBlockQuote.vue?raw';
-import NamedBlockQuoteWithAvatar     from '@/Next/Content/BlockQuote/NamedBlockQuoteWithAvatar.vue';
-import NamedBlockQuoteWithAvatarRaw  from '@/Next/Content/BlockQuote/NamedBlockQuoteWithAvatar.vue?raw';
+import BlockQuoteAlignment           from '@/Content/BlockQuote/BlockQuoteAlignment.vue';
+import BlockQuoteAlignmentRaw        from '@/Content/BlockQuote/BlockQuoteAlignment.vue?raw';
+import DefaultBlockQuote             from '@/Content/BlockQuote/DefaultBlockQuote.vue';
+import DefaultBlockQuoteRaw          from '@/Content/BlockQuote/DefaultBlockQuote.vue?raw';
+import NamedBlockQuote               from '@/Content/BlockQuote/NamedBlockQuote.vue';
+import NamedBlockQuoteRaw            from '@/Content/BlockQuote/NamedBlockQuote.vue?raw';
+import NamedBlockQuoteWithAvatar     from '@/Content/BlockQuote/NamedBlockQuoteWithAvatar.vue';
+import NamedBlockQuoteWithAvatarRaw  from '@/Content/BlockQuote/NamedBlockQuoteWithAvatar.vue?raw';
 import { computed }                  from 'vue';
 
 type Section = Default

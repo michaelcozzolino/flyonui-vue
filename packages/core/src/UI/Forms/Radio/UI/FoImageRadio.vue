@@ -20,5 +20,6 @@ import { FoLabel }              from '@/UI/Components/Label/Internal';
 
 defineProps<ImageRadioProps>();
 
+/** The value of the checked image */
 const checkedValue = defineModel<string>({ required: true });
 </script>
