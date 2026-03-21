@@ -1,5 +1,6 @@
 import type { Color, Sizable, Size } from '@/Lib';
 import type { VueClass }             from '@/Types';
+import type { HeadingLevel }         from '@/UI/Content';
 
 export type ModalSize = Exclude<Size, 'extraSmall'>;
 
@@ -46,4 +47,9 @@ export interface ModalProps extends Sizable<ModalSize> {
 
     /** Backdrop options such as color and the type that can either be static or disabled */
     backdrop?: { color?: Color; type?: ModalBackdropType };
+}
+
+export interface ModalTitleProps {
+    /** The heading's modal title rank */
+    headingLevel?: HeadingLevel;
 }
