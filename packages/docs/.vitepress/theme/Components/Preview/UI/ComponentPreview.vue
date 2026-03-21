@@ -22,6 +22,7 @@
 
                 <ComponentPreviewResizer v-model:size-class="sizeClass"
                                          class="ms-auto"
+                                         @click.prevent="activeTab.id === codeTab.id && (activeTab = previewTab)"
                 />
 
                 <FoButtonGroup v-if="0 in codePreviews"
