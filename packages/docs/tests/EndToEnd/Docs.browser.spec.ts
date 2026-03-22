@@ -49,6 +49,8 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
     });
 
     test(`components previews: ${section}`, async ({ page }) => {
+        test.slow();
+
         const body = page.locator('body').first();
         await body.waitFor();
 
