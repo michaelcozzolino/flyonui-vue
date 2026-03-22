@@ -3,7 +3,7 @@
     "workspaces": [
         "packages/*"
     ],
-    "packageManager": "yarn@4.6.0",
+    "packageManager": "yarn@4.13.0",
     "engines": {
         "node": ">=18.0.0"
     },
