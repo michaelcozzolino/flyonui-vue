@@ -28,12 +28,10 @@
                           textareaIcon?.right && 'resize-none',
                           sizeClass,
                           validityClass,
-                          $attrs.class,
                       ]"
                       :disabled="disabled"
                       :readonly="readonly"
-                      v-bind="useNativeAttributes($attrs).value"
-                      v-on="useListeners($attrs).value"
+                      v-bind="reactiveOmit($attrs, 'style')"
             />
 
             <FoLabel v-if="defaultLabel?.type === 'floating'"
@@ -66,8 +64,6 @@ import type { TextareaLabelType, TextareaProps }   from '@/UI/Forms/Textarea';
 import type { StyleValue }                         from 'vue';
 import { useFlyonUIVueAppConfig }                  from '@/Lib';
 import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
-import { useListeners }                            from '@/Lib/UseListeners/Internal/Lib';
-import { useNativeAttributes }                     from '@/Lib/UseNativeAttributes/Internal/Lib';
 import { useSize }                                 from '@/Lib/UseSize/Internal';
 import { useValidity }                             from '@/Lib/UseValidity/Internal';
 import { FoFragment }                              from '@/UI/Components/Fragment/Internal';
@@ -75,6 +71,7 @@ import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperT
 import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
 import { FoIcon }                                  from '@/UI/Customization/Icon';
 import { usePositionableIcon }                     from '@/UI/Customization/Icon/Internal';
+import { reactiveOmit }                            from '@vueuse/core';
 import { computed,  useId }                        from 'vue';
 
 defineOptions({

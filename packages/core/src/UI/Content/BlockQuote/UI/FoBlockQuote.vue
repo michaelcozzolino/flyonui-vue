@@ -1,8 +1,8 @@
 <template>
-    <!-- todo: add custom sizes, but this might bring breaking changes for the icon size -->
     <blockquote class="relative p-4"
                 :class="alignmentClass"
     >
+        <!-- todo: add custom sizes, but this might bring breaking changes for the icon size -->
         <FoIcon class="text-base-300/20 absolute -top-3 rotate-180 rtl:rotate-0"
                 :class="iconAlignmentClass"
                 icon="tabler:quote"

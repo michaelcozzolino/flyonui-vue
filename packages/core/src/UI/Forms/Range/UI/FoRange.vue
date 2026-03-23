@@ -11,7 +11,7 @@
                :max="max"
                :step="step"
                :disabled="disabled"
-               v-bind="slots.steps === undefined && $attrs"
+               v-bind="reactiveOmit($attrs, 'class', 'style')"
         >
 
         <div v-if="slots.steps"
@@ -30,6 +30,7 @@ import { useFlyonUIVueAppConfig } from '@/Lib';
 import { useColor }               from '@/Lib/UseColor/Internal';
 import { useSize }                from '@/Lib/UseSize/Internal';
 import { FoFragment }             from '@/UI/Components/Fragment/Internal';
+import { reactiveOmit }           from '@vueuse/core';
 
 defineOptions({
     inheritAttrs: false,
