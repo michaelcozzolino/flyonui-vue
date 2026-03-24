@@ -98,7 +98,7 @@ const collapseButtonIcon = computed((): string => {
     const arrowLeftIcon = 'bi:chevron-double-left';
     const arrowRightIcon = 'bi:chevron-double-right';
 
-    if (config.value.global.direction === 'rtl') {
+    if (config.value.global.textDirection === 'rtl') {
         return isCollapsed.value ? arrowLeftIcon : arrowRightIcon;
     }
 
