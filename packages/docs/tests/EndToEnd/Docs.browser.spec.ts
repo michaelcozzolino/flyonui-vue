@@ -1,36 +1,33 @@
+import type {
+    ParentSidebarItem,
+    SidebarItem,
+}                             from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import type { Locator }       from 'playwright';
 import { useSidebarItems }    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
 import { flyonUIVueNextPath } from '@/Next/Lib/Next';
 import { expect, test }       from '@playwright/test';
 
-test('props and slots tables do not have empty columns', async ({ page }) => {
-    test.setTimeout(10 * 60 * 1000);
+const docsPagePathsBySection = getDocsPagePathsBySection();
 
-    const body = page.locator('body').first();
-    await body.waitFor();
+for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
+    test(`props and slots tables do not have empty columns: ${section}`, async ({ page }) => {
+        const body = page.locator('body').first();
+        await body.waitFor();
 
-    const sidebarItems = useSidebarItems();
-
-    for (const sidebarItem of sidebarItems.value) {
-        for (const childSidebarItem of sidebarItem.children) {
-            const childSidebarItemPath = childSidebarItem.to;
-
-            if (typeof childSidebarItemPath !== 'string') {
-                throw new TypeError('The child sidebar item path must be a string.');
-            }
-
-            await page.goto(childSidebarItemPath);
+        for (const docsPagePath of docsPagePaths) {
+            await page.goto(docsPagePath);
 
             const propsApis = await page.locator('[data-test="props-api"]').all();
             const slotsApis = await page.locator('[data-test="slots-api"]').all();
 
             for (const api of [...propsApis, ...slotsApis]) {
-                const apiId = await api.getAttribute('id');
+                const id = await getApiId(api);
 
                 /**
                  * FoCheckbox temporarily excluded as it contains an internal slot and I have to see how to handle this
                  * FoInputText temporarily excluded as it contains modelModifiers and I have to see how to handle this
                  */
-                if (apiId?.includes('FoCheckbox') || apiId?.includes('FoInputText')) {
+                if (id.includes('FoCheckbox') || id.includes('FoInputText')) {
                     continue;
                 }
 
@@ -43,32 +40,22 @@ test('props and slots tables do not have empty columns', async ({ page }) => {
                     for (const [columnIndex, column] of columns.entries()) {
                         await expect(
                             column,
-                            `Expected "${apiId ?? 'unknown-api'}" on "${childSidebarItemPath}" to have content in row ${rowIndex + 1}, column ${columnIndex + 1}.`,
+                            `Expected "${id}" on "${docsPagePath}" to have content in row ${rowIndex + 1}, column ${columnIndex + 1}.`,
                         ).not.toHaveText(/^\s*$/);
                     }
                 }
             }
         }
-    }
-});
+    });
 
-test('components previews', async ({ page }) => {
-    test.setTimeout(10 * 60 * 1000);
+    test(`components previews: ${section}`, async ({ page }) => {
+        test.slow();
 
-    const body = page.locator('body').first();
-    await body.waitFor();
+        const body = page.locator('body').first();
+        await body.waitFor();
 
-    const sidebarItems = useSidebarItems();
-
-    for (const sidebarItem of sidebarItems.value) {
-        for (const childSidebarItem of sidebarItem.children) {
-            const childSidebarItemPath = childSidebarItem.to; // E.G: /content/link
-
-            if (typeof childSidebarItemPath !== 'string') {
-                throw new TypeError('The child sidebar item path must be a string.');
-            }
-
-            await page.goto(childSidebarItemPath);
+        for (const docsPagePath of docsPagePaths) {
+            await page.goto(docsPagePath);
 
             // Hides navbar and sidebars
             await page.addStyleTag({
@@ -93,7 +80,7 @@ test('components previews', async ({ page }) => {
              * /next/content/link -> content/link for unreleased features snapshots will still use the standard naming
              *                                    so that it will be easier to test them when a new release is done.
              */
-            const pathPrefix = childSidebarItemPath.replace(flyonUIVueNextPath, '').slice(1);
+            const pathPrefix = docsPagePath.replace(flyonUIVueNextPath, '').slice(1);
 
             for (const codeSnippet of codeSnippets) {
                 const screenshotId = await codeSnippet.getAttribute('data-test-screenshot');
@@ -121,19 +108,51 @@ test('components previews', async ({ page }) => {
             const propsApis = await page.locator('[data-test="props-api"]').all();
             const slotsApis = await page.locator('[data-test="slots-api"]').all();
 
-            const apis = [...propsApis, ...slotsApis];
-
-            for (const api of apis) {
-                const id = await api.getAttribute('id');
-
-                if (id === null) {
-                    throw new Error('Api must have an id.');
-                }
-
+            for (const api of [...propsApis, ...slotsApis]) {
+                const id         = await getApiId(api);
                 const screenshot = await api.screenshot();
 
                 expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}/${id}.png`.replaceAll('/', '-'));
             }
         }
+    });
+}
+
+function getDocsPagePathsBySection(): Record<string, string[]> {
+    const initialSections: Record<string, string[]> = {};
+
+    return getDocsPagePaths().reduce((sections: Record<string, string[]>, docsPagePath: string): Record<string, string[]> => {
+        const section: string | undefined = docsPagePath.split('/')[1];
+
+        if (section === undefined) {
+            throw new Error(`Cannot resolve section for docs page path "${docsPagePath}".`);
+        }
+
+        sections[section] ??= [];
+        sections[section].push(docsPagePath);
+
+        return sections;
+    }, initialSections);
+}
+
+function getDocsPagePaths(): string[] {
+    return useSidebarItems().value.flatMap((sidebarItem: ParentSidebarItem): string[] => {
+        return sidebarItem.children.map((childSidebarItem: SidebarItem): string => {
+            if (typeof childSidebarItem.to !== 'string') {
+                throw new TypeError('The child sidebar item path must be a string.');
+            }
+
+            return childSidebarItem.to;
+        });
+    });
+}
+
+async function getApiId(api: Locator): Promise<string> {
+    const id = await api.getAttribute('id');
+
+    if (id === null) {
+        throw new Error('The Api must have an id.');
     }
-});
+
+    return id;
+}
