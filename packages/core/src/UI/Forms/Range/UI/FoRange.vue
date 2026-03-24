@@ -5,13 +5,13 @@
     >
         <input v-model.number="input"
                class="range"
-               :class="[colorClass, sizeClass, slots.steps && $attrs.class]"
+               :class="[colorClass, sizeClass]"
                type="range"
                :min="min"
                :max="max"
                :step="step"
                :disabled="disabled"
-               v-bind="reactiveOmit($attrs, 'class', 'style')"
+               v-bind="reactiveOmit($attrs, 'style')"
         >
 
         <div v-if="slots.steps"
