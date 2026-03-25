@@ -7,10 +7,16 @@
               disabled
     />
 
-    <FoSwitch v-model="isIndeterminateChecked"
+    <FoSwitch v-model="indeterminateChecked"
+              v-model:indeterminate="indeterminate"
               color="primary"
-              label="Indeterminate"
-              is-indeterminate
+              label="Indeterminate with parent mutation"
+    />
+
+    <FoSwitch v-model="indeterminateChecked"
+              indeterminate
+              color="primary"
+              label="Indeterminate without parent mutation"
     />
 </template>
 
@@ -18,7 +24,8 @@
 import { FoSwitch } from 'flyonui-vue';
 import { ref }      from 'vue';
 
-const disabledChecked        = ref<boolean>(true);
-const disabledUnchecked      = ref<boolean>(false);
-const isIndeterminateChecked = ref<boolean>(false);
+const disabledChecked      = ref<boolean>(true);
+const disabledUnchecked    = ref<boolean>(false);
+const indeterminateChecked = ref<boolean>(false);
+const indeterminate        = ref<boolean>(true);
 </script>
