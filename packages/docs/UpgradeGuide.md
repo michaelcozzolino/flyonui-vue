@@ -20,6 +20,9 @@ The minimum required version for Node.js is now `>= 20.19.0`.
   so in your component make sure to replace every (`isDisabled`|`is-disabled`)|(`isReadonly`|`is-readonly`) with
   `disabled`|`readonly`.
 
+### FoCheckbox | FoSwitch - defineModel and props
+- The `isIndeterminate` v-model prop as been renamed to `indeterminate`
+
 ### FoInputText
 
 In some cases, where the component contains icons and labels, if, for example, you need to have a specific size on the input,
