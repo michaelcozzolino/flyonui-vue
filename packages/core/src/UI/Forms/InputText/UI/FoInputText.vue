@@ -40,14 +40,12 @@
                        isGroup === false && sizeClass,
                        validityClass,
                        withoutFocus && 'no-focus border-0',
-                       $attrs.class,
                    ]"
                    :placeholder="placeholder"
                    :disabled="disabled"
                    :readonly="readonly"
                    :list="list"
-                   v-bind="useNativeAttributes($attrs).value"
-                   v-on="useListeners($attrs).value"
+                   v-bind="reactiveOmit($attrs, 'style')"
             >
 
             <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
@@ -88,8 +86,6 @@ import type { StyleValue }                             from 'vue';
 import { useFlyonUIVueAppConfig }                      from '@/Lib';
 import { useFloatingLabel }                            from '@/Lib/UseFloatingLabel/Internal';
 import { useFlyonUIVueAppConfigProperty }              from '@/Lib/UseFlyonUIVueAppConfig/Internal';
-import { useListeners }                                from '@/Lib/UseListeners/Internal/Lib';
-import { useNativeAttributes }                         from '@/Lib/UseNativeAttributes/Internal/Lib';
 import { useShape }                                    from '@/Lib/UseShape/Internal';
 import { useSize }                                     from '@/Lib/UseSize/Internal';
 import { useValidity }                                 from '@/Lib/UseValidity/Internal';
@@ -99,6 +95,7 @@ import { FoLabel, useLabel }                           from '@/UI/Components/Lab
 import { FoIcon }                                      from '@/UI/Customization/Icon';
 import { useHasPositionableIcon, usePositionableIcon } from '@/UI/Customization/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem }           from '@/UI/Forms/Join/Internal';
+import { reactiveOmit }                                from '@vueuse/core';
 import { computed, inject, useId }                     from 'vue';
 
 defineOptions({

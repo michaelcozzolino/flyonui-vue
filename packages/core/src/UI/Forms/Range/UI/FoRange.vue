@@ -5,13 +5,14 @@
     >
         <input v-model.number="input"
                class="range"
-               :class="[colorClass, sizeClass, slots.steps && $attrs.class]"
+               :class="[colorClass, sizeClass]"
                type="range"
                :min="min"
                :max="max"
                :step="step"
                :disabled="disabled"
-               v-bind="slots.steps === undefined && $attrs"
+               v-bind="reactiveOmit($attrs, 'style')"
+               :style="slots.steps === undefined && $attrs.style"
         >
 
         <div v-if="slots.steps"
@@ -30,6 +31,7 @@ import { useFlyonUIVueAppConfig } from '@/Lib';
 import { useColor }               from '@/Lib/UseColor/Internal';
 import { useSize }                from '@/Lib/UseSize/Internal';
 import { FoFragment }             from '@/UI/Components/Fragment/Internal';
+import { reactiveOmit }           from '@vueuse/core';
 
 defineOptions({
     inheritAttrs: false,

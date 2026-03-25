@@ -1,14 +1,16 @@
 <template>
+    <!--    :id="id" todo -->
     <a v-if="navigation !== undefined && isStringLink(to)"
-       :class="[$attrs?.class, navigation.activePath === to && exactActiveClass]"
+       :class="[navigation.activePath === to && exactActiveClass]"
+       v-bind="$attrs"
        :href="to"
        @click.prevent="navigation.navigate(to); emit('click:link')"
     >
         <slot />
     </a>
-
+    <!--    :id="id" todo -->
     <a v-else-if="useATag(to)"
-       :class="$attrs?.class"
+       v-bind="$attrs"
        :href="to"
        :target="isExternalLink(to) ? '_blank' : undefined"
        :rel="isExternalLink(to) ? 'noopener, noreferrer' : undefined"
@@ -23,7 +25,8 @@
                custom
     >
         <a :href="href"
-           :class="[$attrs?.class, isActive && activeClass, isExactActive && exactActiveClass]"
+           :class="[isActive && activeClass, isExactActive && exactActiveClass]"
+           v-bind="$attrs"
            @click="navigate($event); emit('click:link')"
         >
             <slot />

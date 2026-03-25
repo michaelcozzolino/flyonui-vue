@@ -1,7 +1,7 @@
 <template>
     <component :is="orientation === 'horizontal' ? 'div' : FoFragment"
                :class="orientation === 'horizontal' && 'w-full'"
-               :style="orientation === 'horizontal' && $attrs.style"
+               v-bind="orientation === 'horizontal' ? reactiveOmit($attrs, 'class') : {}"
     >
         <ul class="divide-base-content/25"
             :class="[
@@ -9,11 +9,8 @@
                 flushClass,
                 stripesClass,
                 withoutGuttersClass,
-                $attrs.class,
             ]"
-            :style="orientation !== 'horizontal' && $attrs.style as StyleValue"
-            v-bind="useNativeAttributes($attrs).value"
-            v-on="useListeners($attrs).value"
+            v-bind="orientation !== 'horizontal' ? $attrs : { class: $attrs.class }"
         >
             <slot>
                 {{ useRequiredSlotMessage(componentName) }}
@@ -26,15 +23,13 @@
 import type { ComponentName }               from '@/Lib';
 import type { WithRequiredDefaultSlot }     from '@/Types';
 import type { ListGroupProps }              from '@/UI/Components';
-import type { StyleValue }                  from 'vue';
 import { useClass }                         from '@/Lib/UseClass/Internal';
-import { useListeners }                     from '@/Lib/UseListeners/Internal/Lib';
-import { useNativeAttributes }              from '@/Lib/UseNativeAttributes/Internal/Lib';
 import { useOrientation }                   from '@/Lib/UseOrientation/Internal';
 import { useStripes }                       from '@/Lib/UseStripes/Internal';
 import { useRequiredSlotMessage }           from '@/Lib/Utils/Internal';
 import { FoFragment }                       from '@/UI/Components/Fragment/Internal';
 import { listGroupOrientationInjectionKey } from '@/UI/Components/ListGroup/Internal';
+import { reactiveOmit }                     from '@vueuse/core';
 import { computed, provide }                from 'vue';
 
 defineOptions({

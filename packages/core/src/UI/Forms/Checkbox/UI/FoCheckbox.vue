@@ -19,13 +19,11 @@
                        sizeClass,
                        validityClass,
                        switchHasIcon === false && helperText && 'mt-2',
-                       $attrs.class,
                    ]"
                    :aria-label="label ?? (disabled ? 'disabled checkbox' : 'checkbox')"
                    :disabled="disabled"
                    :indeterminate.prop="isIndeterminate"
-                   v-bind="useNativeAttributes($attrs).value"
-                   v-on="useListeners($attrs).value"
+                   v-bind="reactiveOmit($attrs, 'style')"
             >
         </Teleport>
 
@@ -63,12 +61,11 @@ import type { StyleValue, VNode }                                    from 'vue';
 import { useFlyonUIVueAppConfig }                                    from '@/Lib';
 import { useColor }                                                  from '@/Lib/UseColor/Internal';
 import { useElementId }                                              from '@/Lib/UseIdentifiable/Internal';
-import { useListeners }                                              from '@/Lib/UseListeners/Internal/Lib';
-import { useNativeAttributes }                                       from '@/Lib/UseNativeAttributes/Internal/Lib';
 import { useSize }                                                   from '@/Lib/UseSize/Internal/Lib';
 import { useValidity }                                               from '@/Lib/UseValidity/Internal';
 import { FoLabel }                                                   from '@/UI/Components/Label/Internal';
 import { isCheckableInGroupInjectionKey, switchOptionsInjectionKey } from '@/UI/Forms/Checkbox/Internal';
+import { reactiveOmit }                                              from '@vueuse/core';
 import { computed, inject, watch }                                   from 'vue';
 
 defineOptions({
