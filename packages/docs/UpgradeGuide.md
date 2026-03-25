@@ -21,7 +21,7 @@ The minimum required version for Node.js is now `>= 20.19.0`.
   `disabled`|`readonly`.
 
 ### FoCheckbox | FoSwitch - defineModel and props
-- The `isIndeterminate` v-model prop as been renamed to `indeterminate`
+- The `isIndeterminate` v-model prop has been renamed to `indeterminate`
 
 ### FoInputText
 
