@@ -295,6 +295,20 @@ describe('forwards class and style attributes on the right elements for', () => 
         expect(styleTarget.attributes('style')).toContain('color: rgb(255, 0, 0)');
     }
 
+    it('foRange', async () => {
+        await expectClassAndStyleForwarding((): MountResult => ({
+            wrapper: mount(FoRange, {
+                props: { modelValue: 50 },
+                attrs: {
+                    class: customClass,
+                    style: customStyle,
+                },
+            }),
+            classTargetElement: 'input',
+            styleTargetElement: 'input',
+        }));
+    });
+
     it('foRange with steps', async () => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoRange, {
@@ -485,6 +499,20 @@ describe('forwards class and style attributes on the right elements for', () => 
             }),
             classTargetElement: 'ul',
             styleTargetElement: 'ul',
+        }));
+    });
+
+    it('foListGroup horizontal', async () => {
+        await expectClassAndStyleForwarding((): MountResult => ({
+            wrapper: mount(FoListGroup, {
+                props: { orientation: 'horizontal' },
+                attrs: {
+                    class: customClass,
+                    style: customStyle,
+                },
+                slots: { default: '<li>Item</li>' },
+            }),
+            classTargetElement: 'ul',
         }));
     });
 
