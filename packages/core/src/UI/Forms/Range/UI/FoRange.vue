@@ -38,10 +38,10 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<RangeProps>(), {
-    min:        0,
-    max:        100,
-    step:       1,
-    isDisabled: false,
+    min:      0,
+    max:      100,
+    step:     1,
+    disabled: false,
 });
 
 const slots = defineSlots<{
