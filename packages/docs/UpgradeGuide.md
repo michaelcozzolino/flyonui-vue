@@ -21,7 +21,7 @@ The minimum required version for Node.js is now `>= 20.19.0`.
   `disabled`|`readonly`.
 
 ### FoCheckbox | FoSwitch - defineModel and props
-- The `isIndeterminate` v-model prop has been renamed to `indeterminate`
+- The `isIndeterminate` v-model prop has been renamed to `indeterminate`.
 
 ### FoInputText
 
@@ -45,3 +45,7 @@ The possible values of the prop `social` have been updated and fully lowercased,
 The default color is now the color defined by the flyonui vue configuration, that is neutral if no settings have been
 manually configured. Before, the default color was the `--color-base-content`, if you now want this color you have to pass
 the `base` value to the `color` prop.
+
+### FoDataList
+- The component has been renamed from `FoDatalist` to `FoDataList`.
+- All the types having `Datalist*` in the name have been renamed to `DataList*`.

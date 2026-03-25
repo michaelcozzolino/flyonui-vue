@@ -1,7 +1,7 @@
 <template>
     <ComponentDocs :previews="previews"
                    :section="section"
-                   :api-docs-component-names="['FoSelect', 'FoMultipleSelect', 'FoDatalist']"
+                   :api-docs-component-names="['FoSelect', 'FoMultipleSelect', 'FoDataList']"
     />
 </template>
 
@@ -18,8 +18,8 @@ import DisabledSelect                  from '@/Forms/Select/DisabledSelect.vue';
 import DisabledSelectRaw               from '@/Forms/Select/DisabledSelect.vue?raw';
 import MultipleSelect                  from '@/Forms/Select/MultipleSelect.vue';
 import MultipleSelectRaw               from '@/Forms/Select/MultipleSelect.vue?raw';
-import SelectAsDatalist                from '@/Forms/Select/SelectAsDatalist.vue';
-import SelectAsDatalistRaw             from '@/Forms/Select/SelectAsDatalist.vue?raw';
+import SelectAsDataList                from '@/Forms/Select/SelectAsDataList.vue';
+import SelectAsDataListRaw             from '@/Forms/Select/SelectAsDataList.vue?raw';
 import SelectFloatingLabel             from '@/Forms/Select/SelectFloatingLabel.vue';
 import SelectFloatingLabelRaw          from '@/Forms/Select/SelectFloatingLabel.vue?raw';
 import SelectFloatingLabelSize         from '@/Forms/Select/SelectFloatingLabelSize.vue';
@@ -145,8 +145,8 @@ const previews = computed(() => {
         [
             'datalist',
             {
-                code:      SelectAsDatalistRaw,
-                component: SelectAsDatalist,
+                code:      SelectAsDataListRaw,
+                component: SelectAsDataList,
             },
         ],
         [

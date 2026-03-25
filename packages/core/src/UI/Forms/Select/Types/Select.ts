@@ -45,11 +45,11 @@ export type SelectProps<
     & WithConfigurableInputLabel
     & WithIcon;
 
-export type DatalistOption<T extends number | string> = Omit<SelectOption<T>, 'disabled'>;
+export type DataListOption<T extends number | string> = Omit<SelectOption<T>, 'disabled'>;
 
-export type DatalistProps<
+export type DataListProps<
     T extends string | number = number,
-    K extends DatalistOption<T> = DatalistOption<T>,
+    K extends DataListOption<T> = DataListOption<T>,
 > = BaseSelectProps<T, K, K>
     & WithPlaceholder
     & WithLabel;
