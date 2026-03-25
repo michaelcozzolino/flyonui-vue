@@ -44,7 +44,7 @@
 
 <SelectDocs section="disabled" />
 
-### Datalist
+### Data List
 
 When the input field is empty the selected option will automatically be null.
 

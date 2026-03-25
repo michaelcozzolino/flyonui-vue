@@ -1,5 +1,5 @@
 <template>
-    <FoDatalist v-model="selectedOption"
+    <FoDataList v-model="selectedOption"
                 class="max-w-sm"
                 label="Select your city"
                 placeholder="Type to search..."
@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import type { SelectOption }             from 'flyonui-vue';
-import { FoDatalist, useSelectedOption } from 'flyonui-vue';
+import { FoDataList, useSelectedOption } from 'flyonui-vue';
 import { ref }                           from 'vue';
 
 const options = ref<SelectOption[]>([
