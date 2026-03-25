@@ -1,6 +1,7 @@
 <template>
     <FoCheckbox v-bind="reactiveOmit(props, 'preset')"
                 v-model="isChecked"
+                v-model:indeterminate="indeterminate"
                 class="peer"
                 :class="presetClass"
     >
@@ -46,6 +47,12 @@ const { config }                   = useFlyonUIVueAppConfig();
 
 /** If true, the switch is on, otherwise it is off */
 const isChecked = defineModel<boolean>({ required: true });
+
+/**
+ * If true, the switch is indeterminate and not checked,
+ * otherwise it is not indeterminate and could either be checked or not depending on the user interaction
+ */
+const indeterminate = defineModel<boolean>('indeterminate');
 
 const switchIcon = usePositionableIcon(
     config,

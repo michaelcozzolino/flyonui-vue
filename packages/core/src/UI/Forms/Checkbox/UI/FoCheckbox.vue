@@ -11,7 +11,7 @@
                   :disabled="!switchHasIcon"
         >
             <input :id="id"
-                   v-model="checked"
+                   v-model="isChecked"
                    type="checkbox"
                    :class="[
                        isSwitch ? 'switch' : 'checkbox',
@@ -22,7 +22,7 @@
                    ]"
                    :aria-label="label ?? (disabled ? 'disabled checkbox' : 'checkbox')"
                    :disabled="disabled"
-                   :indeterminate.prop="isIndeterminate"
+                   :indeterminate.prop="indeterminate"
                    v-bind="reactiveOmit($attrs, 'style')"
             >
         </Teleport>
@@ -88,13 +88,13 @@ const slots = defineSlots<{
 }>();
 
 /** If true, the checkbox is checked, otherwise it is not */
-const checked = defineModel<boolean>({ required: true });
+const isChecked = defineModel<boolean>({ required: true });
 
 /**
  * If true, the checkbox is indeterminate and not checked,
  * otherwise it is not indeterminate and could either be checked or not depending on the user interaction
  */
-const isIndeterminate = defineModel<boolean>('isIndeterminate');
+const indeterminate = defineModel<boolean>('indeterminate');
 
 const id         = useElementId(() => props.id);
 const labelId    = computed((): string => `label-${id.value}`);
@@ -129,9 +129,15 @@ const gapClass = computed(() => {
     return 'gap-1';
 });
 
-watch(isIndeterminate, (newValue: boolean | undefined) => {
+watch(indeterminate, (newValue: boolean | undefined) => {
     if (newValue) {
-        checked.value = false;
+        isChecked.value = false;
     }
 }, { immediate: true });
+
+watch(
+    isChecked,
+    () => indeterminate.value = false,
+    { once: true },
+);
 </script>
