@@ -19,12 +19,11 @@
                        sizeClass,
                        validityClass,
                        switchHasIcon === false && helperText && 'mt-2',
-                       $attrs.class,
                    ]"
                    :aria-label="label ?? (disabled ? 'disabled checkbox' : 'checkbox')"
                    :disabled="disabled"
                    :indeterminate.prop="isIndeterminate"
-                   v-bind="reactiveOmit($attrs, 'class', 'style')"
+                   v-bind="reactiveOmit($attrs, 'style')"
             >
         </Teleport>
 

@@ -10,7 +10,7 @@
                 stripesClass,
                 withoutGuttersClass,
             ]"
-            v-bind="orientation !== 'horizontal' ? $attrs : {}"
+            v-bind="orientation !== 'horizontal' ? $attrs : { class: $attrs.class }"
         >
             <slot>
                 {{ useRequiredSlotMessage(componentName) }}

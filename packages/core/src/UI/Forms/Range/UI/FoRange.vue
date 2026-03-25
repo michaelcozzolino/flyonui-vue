@@ -12,6 +12,7 @@
                :step="step"
                :disabled="disabled"
                v-bind="reactiveOmit($attrs, 'style')"
+               :style="slots.steps === undefined && $attrs.style"
         >
 
         <div v-if="slots.steps"
