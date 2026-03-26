@@ -102,11 +102,20 @@ const slots = defineSlots<TableSlots & {
     info?: Slot;
 }>();
 
-const items         = defineModel<T[]>('items', { required: true });
+/** The items to be used in the table to calculate length, total pages and so on */
+const items = defineModel<T[]>('items', { required: true });
+
+/** The filtered items to be shown if any filters are applied such as the search */
 const filteredItems = defineModel<T[]>('filteredItems', { required: true });
-const page          = defineModel<number>('page', { required: true });
-const itemsPerPage  = defineModel<number>('itemsPerPage', { required: true });
-const query         = defineModel<string>('query', { required: false, default: '' });
+
+/** The current's data table page */
+const page = defineModel<number>('page', { required: true });
+
+/** The number of items to be shown on each page */
+const itemsPerPage = defineModel<number>('itemsPerPage', { required: true });
+
+/** The query to be used as search input */
+const query = defineModel<string>('query', { required: false, default: '' });
 
 const filterableItems = computed((): T[] => query.value === '' ? items.value : filteredItems.value);
 
@@ -125,20 +134,20 @@ const safePage = computed<number>({
     get: (): number => {
         const len = totalPages.value;
 
+        if (page.value < 1) {
+            return 1;
+        }
+
         if (page.value > len) {
             return len;
         }
 
         return page.value;
     },
-    set: (newPage: number): number => page.value = newPage,
+    set: (newPage: number): void => {
+        page.value = newPage;
+    },
 });
-
-watch(safePage, (): void => {
-    if (safePage.value <= 0) {
-        throw new Error('Page must be > 0.');
-    }
-}, { immediate: true });
 
 /**
  * The number of <th> that the developer is using through the head slot
@@ -155,38 +164,30 @@ const totalHeaderColumns = computed((): number => {
 });
 
 watch([safePage, itemsPerPage, query], () => {
-    if (props.useAjax) {
-        return;
+    // todo
+    // if (props.useAjax) {
+    //     return;
+    // }
+
+    let sourceItems = items.value;
+
+    if (query.value !== '') {
+        sourceItems = items.value.filter((item: T): boolean => {
+            for (const key of Object.keys(item) as (keyof T)[]) {
+                const value = JSON.stringify(item[key]).toLowerCase();
+
+                if (value.includes(query.value.toLowerCase())) {
+                    return true;
+                }
+            }
+
+            return false;
+        });
     }
 
     const start = (safePage.value - 1) * itemsPerPage.value;
     const end   = start + itemsPerPage.value;
 
-    filteredItems.value = filterableItems.value.slice(start, end);
+    filteredItems.value = sourceItems.slice(start, end);
 }, { immediate: true });
-
-watch(query, () => {
-    if (query.value === '') {
-        return;
-    }
-
-    let totalFilteredItems = 0;
-
-    filteredItems.value = items.value.filter((item: T): boolean => {
-        if (totalFilteredItems === itemsPerPage.value) {
-            return false;
-        }
-
-        for (const key of Object.keys(item) as (keyof T)[]) {
-            const value = JSON.stringify(item[key]).toLowerCase();
-
-            if (value.includes(query.value)) {
-                totalFilteredItems++;
-                return true;
-            }
-        }
-
-        return false;
-    });
-});
 </script>

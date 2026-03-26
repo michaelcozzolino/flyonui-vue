@@ -18,11 +18,13 @@ import type { WithConfigurableIcon }        from '@/UI/Customization/Icon';
 // todo: in case it is used by other components, just move it to shared
 export type Layout = Default | 'wide' | 'block';
 
+export type ButtonPreset = Exclude<Preset, 'dot'>;
+
 export interface ButtonProps extends MaybeStringId,
     Colorable,
     CustomNavigatable,
     Disableable,
-    Presettable,
+    Presettable<ButtonPreset>,
     Responsive,
     Shapeable,
     Sizable,
@@ -42,6 +44,8 @@ export interface ButtonProps extends MaybeStringId,
 export interface LoadingButtonProps extends Omit<ButtonProps, 'icon'> {
     /** True if the component is in loading state */
     isLoading?: boolean;
+
+    /** The specific animation icon and its position */
     icon?: {
         position?: HorizontalPosition;
     } & LoadingProps;

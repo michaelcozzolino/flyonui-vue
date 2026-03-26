@@ -86,6 +86,7 @@ defineSlots<
     }
 >();
 
+/** The selected tab */
 const activeTab = defineModel<T>({ required: true });
 
 const componentName: ComponentName = 'FoTabs';
@@ -116,7 +117,6 @@ const areAllTabsDisabled = useArrayEvery(
     (tab: T) => tab.isDisabled === true,
 );
 
-// todo: check why these can be undefined, as in the docs is not shown
 const { arrowLeft, arrowRight, arrowUp, arrowDown } = useMagicKeys({
     passive:      false,
     onEventFired: (e: KeyboardEvent): void => {

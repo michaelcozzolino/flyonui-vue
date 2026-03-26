@@ -6,11 +6,11 @@
             "DOM",
             "DOM.Iterable"
         ],
-        "esModuleInterop": true,
-        "resolveJsonModule": true,
         "paths": {
             "@/*": ["./src/*"]
         },
-        "allowImportingTsExtensions": false
+        "resolveJsonModule": true,
+        "allowImportingTsExtensions": false,
+        "esModuleInterop": true
     }
 }

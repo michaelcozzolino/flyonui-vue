@@ -1,10 +1,26 @@
-import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size }       from '@/Lib';
-import type { PickIfExists, Prettify }                                                 from '@/Lib/Utils/Internal';
-import type { Direction, HorizontalPosition }                                          from '@/Types';
-import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }            from '@/UI/Components';
-import type { KeyboardProps, LinkProps }                                               from '@/UI/Content';
+import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size } from '@/Lib';
+import type { PickIfExists, Prettify }                                           from '@/Lib/Utils/Internal';
+import type { Direction, HorizontalPosition }                                    from '@/Types';
+import type {
+    BadgeProps,
+    ButtonProps,
+    LabelType,
+    LoadingProps,
+    MenuProps,
+} from '@/UI/Components';
+import type { AlertProps }  from '@/UI/Components/Alert';
+import type { AvatarProps } from '@/UI/Components/Avatar';
+import type {
+    RadialProgressProps,
+} from '@/UI/Components/RadialProgress';
+import type { StatusProps }                                                            from '@/UI/Components/Status';
+import type { HeadingProps, KeyboardProps, LinkProps }                                 from '@/UI/Content';
+import type { DividerProps }                                                           from '@/UI/Content/Divider';
 import type { IconProps }                                                              from '@/UI/Customization';
 import type { CheckboxProps, InputTextProps, SelectProps, SwitchProps, TextareaProps } from '@/UI/Forms';
+import type { InputFileProps }                                                         from '@/UI/Forms/InputFile';
+import type { RadioProps }                                                             from '@/UI/Forms/Radio';
+import type { RangeProps }                                                             from '@/UI/Forms/Range';
 import type { TabProps, TabsProps }                                                    from '@/UI/Navigations';
 import type { ModalProps, TooltipProps }                                               from '@/UI/Overlays';
 import type { TableProps }                                                             from '@/UI/Tables';
@@ -85,34 +101,45 @@ type ConfigurableProps<MaybeProps extends object> = Prettify<
 
 /** Configurable props for each component */
 export interface ConfigurableComponentProps {
+    FoAlert:     ConfigurableProps<AlertProps>;
+    FoAvatar:    ConfigurableProps<AvatarProps>;
     /** Badge defaults */
     FoBadge:     ConfigurableProps<BadgeProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     /** Button defaults */
     FoButton:    ConfigurableProps<ButtonProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     /** Checkbox defaults */
     FoCheckbox:  ConfigurableProps<CheckboxProps>;
+    FoDivider:   ConfigurableProps<DividerProps>;
+    FoHeading:   ConfigurableProps<HeadingProps>;
     FoIcon:      ConfigurableProps<IconProps>;
+    FoInputFile: ConfigurableProps<
+        InputFileProps
+        & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>
+        & LabelTypeComponentConfig
+    >;
     FoInputText: ConfigurableProps<
         InputTextProps
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>
         & LabelTypeComponentConfig
     >;
-    FoKeyboard: ConfigurableProps<KeyboardProps>;
+    FoKeyboard:       ConfigurableProps<KeyboardProps>;
     /** Link defaults */
-    FoLink:     ConfigurableProps<LinkProps>;
+    FoLink:           ConfigurableProps<LinkProps>;
     /** Loading defaults */
-    FoLoading:  ConfigurableProps<LoadingProps>;
+    FoLoading:        ConfigurableProps<LoadingProps>;
     /** Menu defaults */
-    FoMenu:     ConfigurableProps<MenuProps>;
-    FoModal:    ConfigurableProps<Omit<ModalProps, 'backdrop'> & Colorable>;
-    /** Radio defaults */
-    FoRadio:    ConfigurableProps<ButtonProps>; // todo: temporary
+    FoMenu:           ConfigurableProps<MenuProps>;
+    FoModal:          ConfigurableProps<Omit<ModalProps, 'backdrop'> & Colorable>;
+    FoRadialProgress: ConfigurableProps<RadialProgressProps>;
+    FoRadio:          ConfigurableProps<RadioProps>;
+    FoRange:          ConfigurableProps<RangeProps>;
     /** Select defaults */
-    FoSelect:   ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
-    FoSwitch:   ConfigurableProps<SwitchProps> & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>;
+    FoSelect:         ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
+    FoStatus:         ConfigurableProps<StatusProps>;
+    FoSwitch:         ConfigurableProps<SwitchProps> & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>;
     /** Table defaults */
-    FoTable:    ConfigurableProps<TableProps>;
-    FoTabs:     ConfigurableProps<TabsProps<TabProps>>;
+    FoTable:          ConfigurableProps<TableProps>;
+    FoTabs:           ConfigurableProps<TabsProps<TabProps>>;
     FoTextarea: ConfigurableProps<
         TextareaProps
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>

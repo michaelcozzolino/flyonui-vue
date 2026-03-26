@@ -26,19 +26,26 @@ export interface Dimension2D {
 
 export type CustomIconSize = IconSize | Dimension2D;
 
-export type IconProps = Required<WithIcon> & {
+export interface IconifyIconProps extends WithRequiredIcon {
     /**
      * todo: bug this is not shown in the generated components api
      * The size of the icon that will be applied only to an iconify icon.
      * If the icon is a custom component you should define the size in that component itself.
      */
     size?: CustomIconSize;
-} | {
+}
+
+export interface IconComponentProps {
     /** If a custom icon is needed, it can also be a custom svg or component. */
     icon: Component;
-};
+}
+
+export type IconProps = IconifyIconProps | IconComponentProps;
 
 export interface WithConfigurableIcon {
+    /**
+     * The icon's name or a left/right position followed by the icon's name, both positions can be used at the same time
+     */
     icon?: ConfigurableIcon;
 }
 
@@ -46,3 +53,5 @@ export interface WithIcon {
     /** The Iconify icon's name */
     icon?: Icon;
 }
+
+export type WithRequiredIcon = Required<WithIcon>;

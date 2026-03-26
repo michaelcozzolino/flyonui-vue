@@ -7,7 +7,8 @@ export interface Searchable {
 }
 
 export interface DatatableProps extends Searchable {
-    useAjax?: boolean;
+    // todo: implement ajax functionality
+    // useAjax?: boolean;
 
     /** When it is an array of numbers, a dropdown will be shown to select one of the given possibilities */
     rowsPerPage: number | number[];

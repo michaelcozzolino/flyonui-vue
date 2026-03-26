@@ -1,9 +1,8 @@
 <template>
-    <!--    todo: multiple options  -->
     <div v-if="options.length"
          :class="[
              icon && useIcon && 'select',
-             icon === undefined && defaultLabel?.type === 'floating' && floatingLabelClass,
+             icon === undefined && floatingLabelClass,
          ]"
     >
         <FoIcon v-if="icon && useIcon"
@@ -25,7 +24,7 @@
                 v-model="selectedOption"
                 class="select"
                 :class="[
-                    icon === undefined && defaultLabel?.type === 'floating' && floatingLabelClass,
+                    icon === undefined && floatingLabelClass,
                     shapeClass,
                     sizeClass,
                     validityClass,
@@ -83,9 +82,10 @@ import type { LabelType }     from '@/UI/Components';
 import type { SelectOption, SelectProps } from '@/UI/Forms';
 import { useFlyonUIVueAppConfig }         from '@/Lib';
 import { useFloatingLabel }               from '@/Lib/UseFloatingLabel/Internal';
+import { useElementId }                   from '@/Lib/UseIdentifiable/Internal';
 import { useShape }                       from '@/Lib/UseShape/Internal';
-import { useSize }                        from '@/Lib/UseSize/Internal';
 
+import { useSize }                                 from '@/Lib/UseSize/Internal';
 import { useValidity }                             from '@/Lib/UseValidity/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperText/Internal';
 import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
@@ -93,15 +93,16 @@ import { FoIcon }                                  from '@/UI/Customization';
 import { isSelectOptionGroup }                     from '@/UI/Forms/Select/Internal';
 import { onEmptyOptions }                          from '@/UI/Forms/Select/Internal/Lib/OnEmptyOptions';
 import FoSelectOption                              from '@/UI/Forms/Select/Internal/UI/FoSelectOption.vue';
-import { computed, useId, watchEffect }            from 'vue';
+import { computed, watchEffect }                   from 'vue';
 
 const props = withDefaults(defineProps<SelectProps<T, K>>(), {
     isDisabled: undefined,
     isValid:    undefined,
 });
 
-const id = useId();
+const id = useElementId(() => props.id);
 
+/** The selected option in the select. If nothing is selected, it is null */
 const selectedOption = defineModel<SelectOption<T> | null>({ required: true });
 
 const componentName: ComponentName = 'FoSelect';

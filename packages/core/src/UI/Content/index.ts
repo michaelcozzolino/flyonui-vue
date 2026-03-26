@@ -1,3 +1,5 @@
+export * from '@/UI/Content/BlockQuote';
+export * from '@/UI/Content/Divider';
 export * from '@/UI/Content/Heading';
 export * from '@/UI/Content/Keyboard';
 export * from '@/UI/Content/Link';

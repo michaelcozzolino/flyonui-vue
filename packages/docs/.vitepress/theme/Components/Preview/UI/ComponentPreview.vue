@@ -20,6 +20,11 @@
                     Code
                 </FoTab>
 
+                <ComponentPreviewResizer v-model:size-class="sizeClass"
+                                         class="ms-auto"
+                                         @click.prevent="activeTab.id === codeTab.id && (activeTab = previewTab)"
+                />
+
                 <FoButtonGroup v-if="0 in codePreviews"
                                class="ms-auto"
                 >
@@ -37,9 +42,9 @@
             </template>
 
             <template #[`content-${previewTab.id}`]>
-                <div class="gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose w-full border p-3 sm:p-6 overflow-x-auto"
+                <div class="place-self-center gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose border p-3 sm:p-6 overflow-x-auto"
                      data-test="flyonui-vue-preview"
-                     :class="gridClass"
+                     :class="[sizeClass, gridClass]"
                      :dir="direction"
                 >
                     <ClientOnly>
@@ -54,7 +59,7 @@
                                  :key="codePreview.code"
                                  :title="codePreview.title"
                                  :code="codePreview.code"
-                                 :lang="codePreview.lang"
+                                 :language="codePreview.language"
                     />
                 </div>
             </template>
@@ -67,6 +72,7 @@ import type { CodePreviewProps, ComponentPreviewProps } from '@/.vitepress/theme
 import type { Direction, TabProps }                     from 'flyonui-vue';
 import CodePreview
     from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
+import ComponentPreviewResizer from '@/.vitepress/theme/Components/Preview/UI/ComponentPreviewResizer.vue';
 import CopyButton
     from '@/.vitepress/theme/Components/Preview/UI/CopyButton.vue';
 import { FoButton, FoButtonGroup, FoTab, FoTabs, useFlyonUIVueAppConfig } from 'flyonui-vue';
@@ -75,6 +81,8 @@ import { computed, reactive, ref, useId, watch }                          from '
 const props = withDefaults(defineProps<ComponentPreviewProps>(), {
     grid: () => ({ columns: 0, rows: 0 }),
 });
+
+const sizeClass = ref<string>('');
 
 const id         = useId();
 const { config } = useFlyonUIVueAppConfig();
@@ -95,10 +103,10 @@ const isLtr = computed(() => direction.value === 'ltr');
 
 const codePreviews = computed((): CodePreviewProps[] => {
     if (typeof props.code === 'string') {
-        return [{ title: 'Vue', code: props.code, lang: 'js' }];
+        return [{ title: 'Vue', code: props.code, language: 'js' }];
     }
 
-    return props.code.map(c => ({ ...c, lang: 'js' }));
+    return props.code.map(c => ({ ...c, language: 'js' }));
 });
 
 const gridClass = computed(() => {
@@ -106,7 +114,7 @@ const gridClass = computed(() => {
     const rows    = props.grid.rows;
 
     if (columns === 0 || rows === 0) {
-        return 'flex flex-wrap';
+        return 'flex flex-wrap items-start';
     }
 
     const classes: Record<'columns' | 'rows', Record<number, string>> = {

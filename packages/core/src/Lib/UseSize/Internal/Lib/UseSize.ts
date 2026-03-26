@@ -12,6 +12,13 @@ export function useSize(
     return useComponentClass<SizableComponentName, Size>(
         componentName,
         {
+            FoAvatar: {
+                extraSmall: 'text-xs size-6',
+                small:      'text-sm size-8',
+                medium:     'text-base size-10',
+                large:      'text-lg size-12',
+                extraLarge: 'text-xl size-14',
+            },
             FoButton: {
                 extraSmall: 'btn-xs',
                 small:      'btn-sm',
@@ -32,6 +39,13 @@ export function useSize(
                 medium:     '',
                 large:      'checkbox-lg',
                 extraLarge: 'checkbox-xl',
+            },
+            FoInputFile: {
+                extraSmall: 'input-xs',
+                small:      'input-sm',
+                medium:     '',
+                large:      'input-lg',
+                extraLarge: 'input-xl',
             },
             FoInputText: {
                 extraSmall: 'input-xs',
@@ -68,12 +82,33 @@ export function useSize(
                 large:      'modal-dialog-lg',
                 extraLarge: 'modal-dialog-xl',
             },
+            FoRadio: {
+                extraSmall: 'radio-xs',
+                small:      'radio-sm',
+                medium:     '',
+                large:      'radio-lg',
+                extraLarge: 'radio-xl',
+            },
+            FoRange: {
+                extraSmall: 'range-xs',
+                small:      'range-sm',
+                medium:     '',
+                large:      'range-lg',
+                extraLarge: 'range-xl',
+            },
             FoSelect: {
                 extraSmall: 'select-xs',
                 small:      'select-sm',
                 medium:     '',
                 large:      'select-lg',
                 extraLarge: 'select-xl',
+            },
+            FoStatus: {
+                extraSmall: 'status-xs',
+                small:      'status-sm',
+                medium:     '',
+                large:      'status-lg',
+                extraLarge: 'status-xl',
             },
             FoSwitch: {
                 extraSmall: 'switch-xs',

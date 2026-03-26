@@ -3,11 +3,12 @@
     "workspaces": [
         "packages/*"
     ],
-    "packageManager": "yarn@4.6.0",
+    "packageManager": "yarn@4.13.0",
     "engines": {
         "node": ">=18.0.0"
     },
     "scripts": {
+        "load:docs-icons": "yarn workspace flyonui-vue-scripts codex:load:docs-icons",
         "dependency-upgrade": "npx yarn-upgrade-all",
         "dev": "yarn concurrently \"yarn workspace flyonui-vue dev:vue\" \"yarn workspace flyonui-vue-docs dev\"",
         "build": "yarn workspaces foreach -Apt run build",
@@ -38,23 +39,23 @@
     },
     "resolutions": {
         "@iconify/vue": "^4.3.0",
-        "@types/node": "^22.18.8",
+        "@types/node": "^22.19.15",
         "@vitejs/plugin-vue": "^5.2.4",
         "@vue/test-utils": "^2.4.6",
-        "@vue/tsconfig": "^0.8.1",
-        "@vueuse/core": "^14.1.0",
+        "@vue/tsconfig": "^0.9.0",
+        "@vueuse/core": "^14.2.1",
         "concurrently": "^9.2.1",
         "flyonui": "^2.4.1",
         "flyonui-vue": "workspace:*",
         "jsdom": "^26.1.0",
-        "sass-embedded": "^1.93.2",
-        "tailwindcss": "^4.1.16",
+        "sass-embedded": "^1.98.0",
+        "tailwindcss": "^4.2.2",
         "tsc-alias": "^1.8.16",
         "typescript": "^5.9.3",
         "vite": "^6.4.1",
         "vitest": "^3.2.4",
-        "vue": "^3.5.22",
-        "vue-router": "^4.5.1",
-        "vue-tsc": "^3.1.1"
+        "vue": "^3.5.30",
+        "vue-router": "^4.6.4",
+        "vue-tsc": "^3.2.6"
     }
 }

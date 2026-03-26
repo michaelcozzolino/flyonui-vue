@@ -35,6 +35,7 @@ const props = withDefaults(defineProps<DatalistProps<T, K>>(), {
     isValid:    undefined,
 });
 
+/** The selected option in the list. If nothing is selected, it is null */
 const selectedOption = defineModel<K | null>({ required: true });
 
 const id = useElementId(() => props.id);

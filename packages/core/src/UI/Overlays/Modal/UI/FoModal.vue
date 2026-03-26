@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-            </transition>
+            </Transition>
         </div>
     </Transition>
 </template>
@@ -123,6 +123,7 @@ defineSlots<WithDefaultSlot & {
     footer?: Slot;
 }>();
 
+/** If true, the modal is open, otherwise it is closed */
 const isOpen = defineModel<boolean>({ required: true });
 
 const componentName: ComponentName = 'FoModal';

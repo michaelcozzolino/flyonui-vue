@@ -1,19 +1,12 @@
 <template>
     <ClientOnly>
         <FoNavbar id="flyonui-vue-docs-navbar"
-                  class="vp-raw sticky top-0 z-100 border-b-1 border-base-content/10"
+                  class="vp-raw sticky top-0 z-100 border-b border-base-content/10"
                   :links="links"
                   link-type="js"
         >
             <template #start>
                 <div class="flex place-items-center gap-4">
-                    <!--                    todo: the hover:text-info can be done through color prop of iconify -->
-                    <FoIcon v-show="isNotHomepage() && !page.isNotFound"
-                            class="flyonui-vue-navbar-collapse ms-2 cursor-pointer hover:text-info"
-                            :icon="isSidebarCollapsed ? 'tabler:layout-sidebar-right-collapse-filled' : 'tabler:layout-sidebar-left-collapse-filled'"
-                            @click="isSidebarCollapsed = !isSidebarCollapsed"
-                    />
-
                     <FoLink to="https://www.npmjs.com/package/flyonui-vue"
                             color="info"
                             underline-effect="hover-animated"
@@ -21,9 +14,7 @@
                         {{ flyonUIVueVersion }}
                     </FoLink>
 
-                    <FoNavbarBrand :class="!isSidebarCollapsed && 'sm:ms-40'"
-                                   @click="router.go('/')"
-                    >
+                    <FoNavbarBrand @click="router.go('/')">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                   clip-rule="evenodd"
@@ -65,23 +56,21 @@
 import type { FlyonUITheme, NavbarLink } from 'flyonui-vue';
 import ConfigurationSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
-import { useLayoutStore } from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import {
+    useLayoutStore,
+}                                                                             from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
+import { useColorMode, useStorage } from '@vueuse/core';
 
-import { loadIcons }                                                                  from '@iconify/vue';
-import { useColorMode, useStorage }                                                   from '@vueuse/core';
-import { FoButton, FoIcon, FoLink, FoModal, FoNavbar, FoNavbarBrand, FoSocialButton } from 'flyonui-vue';
-import { storeToRefs }                                                                from 'pinia';
-import { useData, useRouter, withBase }                                               from 'vitepress';
-import { VPNavBarSearch }                                                             from 'vitepress/theme';
-import { computed, onMounted, ref }                                                   from 'vue';
+import { FoButton, FoLink, FoModal, FoNavbar, FoNavbarBrand, FoSocialButton } from 'flyonui-vue';
+import { useRouter, withBase }                                                from 'vitepress';
+import { VPNavBarSearch }                                                     from 'vitepress/theme';
+import { computed, onMounted, ref }                                           from 'vue';
 
 const flyonUIVueVersion = FLYONUI_VUE_VERSION;
 
 const router = useRouter();
 
-const { page }                                         = useData();
-const { isNotHomepage, vitepressThemeLocalStorageKey } = useLayoutStore();
-const { isSidebarCollapsed }                           = storeToRefs(useLayoutStore());
+const { vitepressThemeLocalStorageKey } = useLayoutStore();
 
 const links = computed((): NavbarLink[] => {
     return [
@@ -115,20 +104,5 @@ onMounted(() => {
         mergeDefaults: true,
         storageKey:    themeStorageKey,
     });
-
-    loadIcons([
-        'tabler:layout-sidebar-left-collapse-filled',
-        'tabler:layout-sidebar-right-collapse-filled',
-        'radix-icons:dimensions',
-        'la:border-style',
-        'fluent:color-20-regular',
-        'fluent:shapes-20-regular',
-        'fluent:text-direction-horizontal-ltr-20-regular',
-        'fluent:text-direction-horizontal-rtl-20-regular',
-        'ep:select',
-        'tabler:chevron-left',
-        'tabler:chevron-right',
-        'tabler:dots',
-    ]);
 });
 </script>

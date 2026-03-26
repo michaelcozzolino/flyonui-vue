@@ -44,6 +44,7 @@ const props = withDefaults(defineProps<SwitchProps>(), {
 const componentName: ComponentName = 'FoSwitch';
 const { config }                   = useFlyonUIVueAppConfig();
 
+/** If true, the switch is on, otherwise it is off */
 const isChecked = defineModel<boolean>({ required: true });
 
 const switchIcon = usePositionableIcon(

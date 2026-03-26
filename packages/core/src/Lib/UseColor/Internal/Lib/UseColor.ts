@@ -9,9 +9,30 @@ export function useColor(
     componentName: MaybeRefOrGetter<ColorableComponentName>,
     color: MaybeRefOrGetter<Color | undefined>,
 ): ComputedRef<string> {
+    const textClasses: Record<Color, string> = {
+        neutral:   'text-neutral',
+        primary:   'text-primary',
+        secondary: 'text-secondary',
+        accent:    'text-accent',
+        info:      'text-info',
+        success:   'text-success',
+        warning:   'text-warning',
+        error:     'text-error',
+    };
+
     return useComponentClass<ColorableComponentName, Color>(
         componentName,
         {
+            FoAlert: {
+                neutral:   '',
+                primary:   'alert-primary',
+                secondary: 'alert-secondary',
+                accent:    'alert-accent',
+                info:      'alert-info',
+                success:   'alert-success',
+                warning:   'alert-warning',
+                error:     'alert-error',
+            },
             FoBadge: {
                 neutral:   '',
                 primary:   'badge-primary',
@@ -42,7 +63,18 @@ export function useColor(
                 warning:   'checkbox-warning',
                 error:     'checkbox-error',
             },
-            FoLink: {
+            FoDivider: {
+                neutral:   'divider-neutral',
+                primary:   'divider-primary',
+                secondary: 'divider-secondary',
+                accent:    'divider-accent',
+                info:      'divider-info',
+                success:   'divider-success',
+                warning:   'divider-warning',
+                error:     'divider-error',
+            },
+            FoHeading: textClasses,
+            FoLink:    {
                 neutral:   'link-neutral',
                 primary:   'link-primary',
                 secondary: 'link-secondary',
@@ -62,17 +94,9 @@ export function useColor(
                 warning:   'bg-warning/30',
                 error:     'bg-error/30',
             },
-            FoLoading: {
-                neutral:   'text-neutral',
-                primary:   'text-primary',
-                secondary: 'text-secondary',
-                accent:    'text-accent',
-                info:      'text-info',
-                success:   'text-success',
-                warning:   'text-warning',
-                error:     'text-error',
-            },
-            FoRadio: {
+            FoLoading:        textClasses,
+            FoRadialProgress: textClasses,
+            FoRadio:          {
                 neutral:   '',
                 primary:   'radio-primary',
                 secondary: 'radio-secondary',
@@ -81,6 +105,26 @@ export function useColor(
                 success:   'radio-success',
                 warning:   'radio-warning',
                 error:     'radio-error',
+            },
+            FoRange: {
+                neutral:   '',
+                primary:   'range-primary',
+                secondary: 'range-secondary',
+                accent:    'range-accent',
+                info:      'range-info',
+                success:   'range-success',
+                warning:   'range-warning',
+                error:     'range-error',
+            },
+            FoStatus: {
+                neutral:   '',
+                primary:   'status-primary',
+                secondary: 'status-secondary',
+                accent:    'status-accent',
+                info:      'status-info',
+                success:   'status-success',
+                warning:   'status-warning',
+                error:     'status-error',
             },
             FoSwitch: {
                 neutral:   '',

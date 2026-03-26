@@ -7,7 +7,7 @@ import { describe, expect, it } from 'vitest';
 import { ref }                  from 'vue';
 
 describe('useFlyonUIVueAppConfigProperty', () => {
-    it('returns the component config value when defined instead of the given value', () => {
+    it('returns the defined component config value when the component has no value', () => {
         const componentName: ConfigurableComponentName = 'FoButton';
         const property: ConfigurableProperty<typeof componentName> = 'color';
         const expectedValue: Color = 'secondary';
@@ -17,7 +17,7 @@ describe('useFlyonUIVueAppConfigProperty', () => {
             components: { [componentName]: { [property]: expectedValue } },
         });
 
-        expect(useFlyonUIVueAppConfigProperty(config, componentName, property, 'primary').value).toBe(expectedValue);
+        expect(useFlyonUIVueAppConfigProperty(config, componentName, property, undefined).value).toBe(expectedValue);
     });
 
     it('returns the given value when there is no value specified in the component config', () => {

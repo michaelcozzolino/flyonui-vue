@@ -2,10 +2,22 @@ import type { ComponentName } from '@/Lib';
 
 export type ColorableComponentName = Extract<
     ComponentName,
-    'FoBadge' | 'FoButton' | 'FoCheckbox' | 'FoModal' | 'FoRadio' | 'FoSwitch' | 'FoTooltip' | ColorableTextComponentName
+    'FoAlert'
+    | 'FoBadge'
+    | 'FoButton'
+    | 'FoCheckbox'
+    | 'FoDivider'
+    | 'FoModal'
+    | 'FoRadialProgress'
+    | 'FoRadio'
+    | 'FoRange'
+    | 'FoStatus'
+    | 'FoSwitch'
+    | 'FoTooltip'
+    | ColorableTextComponentName
 >;
 
-export type ColorableTextComponentName = Extract<ComponentName, 'FoLink' | 'FoLoading'>;
+export type ColorableTextComponentName = Extract<ComponentName, 'FoDivider' | 'FoHeading' | 'FoLink' | 'FoLoading'>;
 
 export type Color = 'neutral' | 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
 
