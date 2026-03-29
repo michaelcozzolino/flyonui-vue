@@ -19,9 +19,12 @@ export interface DatatableProps extends Searchable {
     controlsPosition?: 'up' | 'down' | 'both';
 }
 
-export interface DataTableHeaderProps<Item extends object, Value extends string | number> extends TableCellProps {
+export interface DataTableHeaderProps<Item extends object, Value extends string> extends TableCellProps {
     /** The filter for the data table column, if you do not need a filter use the FoTableHeader component */
     filter: {
+        /** The select filter type will show a dropdown with possible values */
+        type: 'select';
+
         /** The possible accepted values for the filter */
         values: Value[];
 
@@ -30,5 +33,12 @@ export interface DataTableHeaderProps<Item extends object, Value extends string 
          * @returns false if the value should be filtered out, true otherwise
          */
         onFilter: (item: Item, filter: Value) => boolean;
+    } | {
+        /**
+         * The range filter type will show two inputs to be optionally filled to have a filter
+         * between a min and max range
+         */
+        type:     'range';
+        getValue: (item: Item) => number;
     };
 }
