@@ -5,7 +5,9 @@
         <div class="flex items-center gap-2">
             <slot />
 
-            <div class="dropdown relative inline-flex">
+            <div v-if="filter !== undefined"
+                 class="dropdown relative inline-flex"
+            >
                 <FoIcon class="cursor-pointer hover:text-warning"
                         :class="(selectedDropdownFilterValue !== null || isRangeFilterSet) && 'text-warning'"
                         icon="tabler:filter"
@@ -50,13 +52,13 @@
 </template>
 
 <script setup lang="ts" generic="Item extends object, Value extends string">
-import type { WithDefaultSlot }              from '@/Types';
-import type { DataTableHeaderProps }         from '@/UI/Tables';
-import type { DataTableColumnFilterContext } from '@/UI/Tables/Datatable/Internal/Lib';
-import { useSafeInjection }                  from '@/Lib/UseSafeInjection/Internal';
-import { FoIcon }                            from '@/UI/Customization';
-import { FoInputText }                       from '@/UI/Forms';
-import { FoTableHeader }                     from '@/UI/Tables';
+import type { WithDefaultSlot }                              from '@/Types';
+import type { DataTableColumnFilters, DataTableHeaderProps } from '@/UI/Tables';
+import type { DataTableColumnFilterContext }                 from '@/UI/Tables/Datatable/Internal/Lib';
+import { useSafeInjection }                                  from '@/Lib/UseSafeInjection/Internal';
+import { FoIcon }                                            from '@/UI/Customization';
+import { FoInputText }                                       from '@/UI/Forms';
+import { FoTableHeader }                                     from '@/UI/Tables';
 import {
     dataTableColumnFilterInjectionKey,
 } from '@/UI/Tables/Datatable/Internal/Lib';
@@ -89,6 +91,10 @@ onClickOutside(dropdownElement, (): void => {
 });
 
 watch(selectedDropdownFilterValue, () => {
+    if (props.filter === undefined) {
+        return;
+    }
+
     if (selectedDropdownFilterValue.value === null) {
         dataTableFilter.setFilter(filterKey, null);
 
@@ -96,6 +102,8 @@ watch(selectedDropdownFilterValue, () => {
     }
 
     dataTableFilter.setFilter(filterKey, (item: Item): boolean => {
+        guardAgainstNotDefinedFilter(props.filter);
+
         if (props.filter.type !== 'select') {
             throw new Error('Trying to set a select filter when the filter type is not.');
         }
@@ -104,7 +112,15 @@ watch(selectedDropdownFilterValue, () => {
     });
 }, { immediate: true });
 
+watch(rangeFilterValues, onNumberFilter, { deep: true });
+
 function onDropdownFilterClick(value: Value): void {
+    guardAgainstNotDefinedFilter(props.filter);
+
+    if (props.filter.type !== 'select') {
+        throw new Error('Trying to set a select filter when the filter type is not.');
+    }
+
     if (selectedDropdownFilterValue.value === value) {
         selectedDropdownFilterValue.value = null;
         showFilterValues.value = false;
@@ -115,6 +131,8 @@ function onDropdownFilterClick(value: Value): void {
     selectedDropdownFilterValue.value = value;
 
     dataTableFilter.setFilter(filterKey, (item: object): boolean => {
+        guardAgainstNotDefinedFilter(props.filter);
+
         if (props.filter.type !== 'select') {
             throw new Error('Trying to set a select filter when the filter type is not.');
         }
@@ -126,6 +144,12 @@ function onDropdownFilterClick(value: Value): void {
 }
 
 function onNumberFilter(): void {
+    guardAgainstNotDefinedFilter(props.filter);
+
+    if (props.filter.type !== 'range') {
+        throw new Error('Trying to set a select filter when the filter type is not.');
+    }
+
     if (isRangeFilterSet.value === false) {
         dataTableFilter.setFilter(filterKey, null);
 
@@ -136,6 +160,8 @@ function onNumberFilter(): void {
     const max = rangeFilterValues.value.max === '' ? Number.NaN : +rangeFilterValues.value.max;
 
     dataTableFilter.setFilter(filterKey, (item: object): boolean => {
+        guardAgainstNotDefinedFilter(props.filter);
+
         if (props.filter.type !== 'range') {
             throw new Error('Trying to set a select filter when the filter type is not.');
         }
@@ -158,5 +184,9 @@ function onNumberFilter(): void {
     });
 }
 
-watch(rangeFilterValues, onNumberFilter, { deep: true });
+function guardAgainstNotDefinedFilter(filter: typeof props.filter): asserts filter is DataTableColumnFilters<Item, Value> {
+    if (filter === undefined) {
+        throw new Error('Unable to apply filter when it is not defined.');
+    }
+}
 </script>
