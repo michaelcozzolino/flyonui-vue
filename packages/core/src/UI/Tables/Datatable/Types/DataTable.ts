@@ -1,3 +1,5 @@
+import type { TableCellProps } from '@/UI/Tables';
+
 export interface Searchable {
     /**
      * If true, an input search will be displayed to allow the user to search for items in the datatable,
@@ -15,4 +17,18 @@ export interface DatatableProps extends Searchable {
 
     /** Decides the position to show the datatable controls */
     controlsPosition?: 'up' | 'down' | 'both';
+}
+
+export interface DataTableHeaderProps<Item extends object, Value extends string | number> extends TableCellProps {
+    /** The filter for the data table column, if you do not need a filter use the FoTableHeader component */
+    filter: {
+        /** The possible accepted values for the filter */
+        values: Value[];
+
+        /**
+         * A callback to filter an item according to the specific filter value
+         * @returns false if the value should be filtered out, true otherwise
+         */
+        onFilter: (item: Item, filter: Value) => boolean;
+    };
 }
