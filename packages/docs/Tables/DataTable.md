@@ -24,6 +24,10 @@
 
 <DataTableDocs section="filterable" />
 
+### Filterable by column
+
+<DataTableDocs section="filterable-by-column" />
+
 ### Props
 
 <DataTableDocs section="props" />

@@ -17,9 +17,9 @@
             </template>
         </FoDataTableControls>
 
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto overflow-y-visible">
             <div class="inline-block min-w-full align-middle">
-                <div class="overflow-hidden">
+                <div class="overflow-visible">
                     <FoTable>
                         <template v-if="$slots.head"
                                   #head
@@ -81,15 +81,16 @@
 </template>
 
 <script setup lang="ts" generic="T extends object">
-import type { SelectOption }                  from '@/UI/Forms';
-import type { DatatableProps, TableSlots }    from '@/UI/Tables';
-import type { Slot }                          from 'vue';
-import { FoIcon }                             from '@/UI/Customization';
-import { useSelectedOption }                  from '@/UI/Forms';
-import { FoTable, FoTableColumn, FoTableRow } from '@/UI/Tables';
-import { FoDataTableControls }                from '@/UI/Tables/Datatable/Internal/UI';
-import { isDefined, useArrayMap }             from '@vueuse/core';
-import { computed, watch }                    from 'vue';
+import type { SelectOption }                    from '@/UI/Forms';
+import type { DatatableProps, TableSlots }      from '@/UI/Tables';
+import type { Slot }                            from 'vue';
+import { FoIcon }                               from '@/UI/Customization';
+import { useSelectedOption }                    from '@/UI/Forms';
+import { FoTable, FoTableColumn, FoTableRow }   from '@/UI/Tables';
+import { dataTableColumnFilterInjectionKey }    from '@/UI/Tables/Datatable/Internal/Lib';
+import { FoDataTableControls }                  from '@/UI/Tables/Datatable/Internal/UI';
+import { isDefined, useArrayMap }               from '@vueuse/core';
+import { computed, provide, shallowRef, watch } from 'vue';
 
 const props = withDefaults(defineProps<DatatableProps>(), {
     useAjax:          false,
@@ -116,6 +117,31 @@ const itemsPerPage = defineModel<number>('itemsPerPage', { required: true });
 
 /** The query to be used as search input */
 const query = defineModel<string>('query', { required: false, default: '' });
+
+/** The current page items after search/pagination, before any column-specific filters are applied */
+const preColumnFilteredItems = shallowRef<T[]>([]);
+
+/**
+ * The currently applied filters for a specific data table header column.
+ * The key is a unique symbol given by the column.
+ */
+const activeColumnFilters = shallowRef(new Map<symbol, (item: T) => boolean>());
+
+provide(dataTableColumnFilterInjectionKey, {
+    setFilter: (key: symbol, predicate: ((item: T) => boolean) | null): void => {
+        const nextFilters = new Map(activeColumnFilters.value);
+
+        if (predicate === null) {
+            nextFilters.delete(key);
+        } else {
+            nextFilters.set(key, predicate);
+        }
+
+        activeColumnFilters.value = nextFilters;
+
+        filteredItems.value = applyColumnFilters(preColumnFilteredItems.value);
+    },
+});
 
 const filterableItems = computed((): T[] => query.value === '' ? items.value : filteredItems.value);
 
@@ -163,6 +189,18 @@ const totalHeaderColumns = computed((): number => {
     return typeof children.default === 'function' ? children.default()?.length : 0;
 });
 
+function applyColumnFilters(items: T[]): T[] {
+    return items.filter((item: T): boolean => {
+        for (const predicate of activeColumnFilters.value.values()) {
+            if (predicate(item) === false) {
+                return false;
+            }
+        }
+
+        return true;
+    });
+}
+
 watch([safePage, itemsPerPage, query], () => {
     // todo
     // if (props.useAjax) {
@@ -188,6 +226,8 @@ watch([safePage, itemsPerPage, query], () => {
     const start = (safePage.value - 1) * itemsPerPage.value;
     const end   = start + itemsPerPage.value;
 
-    filteredItems.value = sourceItems.slice(start, end);
+    preColumnFilteredItems.value = sourceItems.slice(start, end);
+
+    filteredItems.value = applyColumnFilters(preColumnFilteredItems.value);
 }, { immediate: true });
 </script>
