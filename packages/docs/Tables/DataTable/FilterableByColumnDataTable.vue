@@ -4,7 +4,7 @@
                  v-model:page="page"
                  v-model:filtered-items="filteredProducts"
                  v-model:query="searchQuery"
-                 :rows-per-page="5"
+                 :rows-per-page="[5, 10, 20, 30, 40, 50]"
                  is-searchable
     >
         <template #head>
@@ -16,9 +16,44 @@
                     />
                 </FoDataTableHeader>
 
-                <FoDataTableHeader>Product Name</FoDataTableHeader>
-                <FoDataTableHeader>Price</FoDataTableHeader>
-                <FoDataTableHeader>Availability</FoDataTableHeader>
+                <FoDataTableHeader :filter="{
+                    type: 'select',
+                    values: ['ALL', 'APPLE', 'SAMSUNG', 'SONY', 'DELL'],
+                    onFilter: (item: Product, filter: string): boolean => {
+                        return filter === 'ALL' ? true : item.name.toLowerCase().includes(filter.toLowerCase())
+                    },
+                }"
+                >
+                    Product Name
+                </FoDataTableHeader>
+
+                <FoDataTableHeader :filter="{
+                    type: 'range',
+                    getValue: (item: Product): number => {
+                        return item.price
+                    },
+                }"
+                >
+                    Price
+                </FoDataTableHeader>
+
+                <FoDataTableHeader :filter="{
+                    type: 'select',
+                    values: ['ALL', 'IN STOCK', 'OUT OF STOCK', 'LIMITED'],
+                    onFilter: (item: Product, filter: string): boolean => {
+                        const filters: Record<string, Availability> = {
+                            'IN STOCK': 'In Stock',
+                            'OUT OF STOCK': 'Out of Stock',
+                            'LIMITED': 'Limited',
+                        };
+
+                        return filter === 'ALL' ? true : item.availability === filters[filter];
+                    },
+                }"
+                >
+                    Availability
+                </FoDataTableHeader>
+
                 <FoDataTableHeader>Actions</FoDataTableHeader>
             </FoTableRow>
         </template>
@@ -62,9 +97,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Color }                                                                               from 'flyonui-vue';
-import { FoBadge, FoButton, FoCheckbox, FoDataTable, FoDataTableHeader, FoTableColumn, FoTableRow } from 'flyonui-vue';
-import { computed, ref }                                                                            from 'vue';
+import type { Color }                                                                                  from 'flyonui-vue';
+import { FoBadge, FoButton, FoCheckbox, FoDataTable, FoDataTableHeader, FoTableColumn,    FoTableRow } from 'flyonui-vue';
+import { computed, ref }                                                                               from 'vue';
 
 type Availability = 'In Stock' | 'Limited' | 'Out of Stock';
 
