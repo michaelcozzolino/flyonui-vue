@@ -19,7 +19,7 @@
 
         <div class="overflow-x-auto overflow-y-visible">
             <div class="inline-block min-w-full align-middle">
-                <div class="overflow-hidden">
+                <div class="overflow-visible">
                     <FoTable>
                         <template v-if="$slots.head"
                                   #head
