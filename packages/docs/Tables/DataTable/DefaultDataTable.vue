@@ -7,11 +7,11 @@
     >
         <template #head>
             <FoTableRow>
-                <FoTableHeader>Name</FoTableHeader>
-                <FoTableHeader>Email</FoTableHeader>
-                <FoTableHeader>Status</FoTableHeader>
-                <FoTableHeader>Date</FoTableHeader>
-                <FoTableHeader>Actions</FoTableHeader>
+                <FoDataTableHeader>Name</FoDataTableHeader>
+                <FoDataTableHeader>Email</FoDataTableHeader>
+                <FoDataTableHeader>Status</FoDataTableHeader>
+                <FoDataTableHeader>Date</FoDataTableHeader>
+                <FoDataTableHeader>Actions</FoDataTableHeader>
             </FoTableRow>
         </template>
 
@@ -50,9 +50,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Color }                                                               from 'flyonui-vue';
-import { FoBadge, FoButton, FoDataTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
-import { ref }                                                                      from 'vue';
+import type { Color }                                                                   from 'flyonui-vue';
+import { FoBadge, FoButton, FoDataTable, FoDataTableHeader, FoTableColumn, FoTableRow } from 'flyonui-vue';
+import { ref }                                                                          from 'vue';
 
 type Status = 'Professional' | 'Rejected' | 'Applied' | 'Current' | 'Inactive' | 'Pending';
 

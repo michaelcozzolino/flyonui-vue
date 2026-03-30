@@ -16,43 +16,40 @@
                     />
                 </FoDataTableHeader>
 
-                <FoDataTableHeader v-model:filtered-items="filteredProducts"
-                                   :filter="{
-                                       type: 'select',
-                                       values: ['ALL', 'APPLE', 'SAMSUNG', 'SONY', 'DELL'],
-                                       onFilter: (item: Product, filter: string): boolean => {
-                                           return filter === 'ALL' ? true : item.name.toLowerCase().includes(filter.toLowerCase())
-                                       },
-                                   }"
+                <FoDataTableHeader :filter="{
+                    type: 'select',
+                    values: ['ALL', 'APPLE', 'SAMSUNG', 'SONY', 'DELL'],
+                    onFilter: (item: Product, filter: string): boolean => {
+                        return filter === 'ALL' ? true : item.name.toLowerCase().includes(filter.toLowerCase())
+                    },
+                }"
                 >
                     Product Name
                 </FoDataTableHeader>
 
-                <FoDataTableHeader v-model:filtered-items="filteredProducts"
-                                   :filter="{
-                                       type: 'range',
-                                       getValue: (item: Product): number => {
-                                           return item.price
-                                       },
-                                   }"
+                <FoDataTableHeader :filter="{
+                    type: 'range',
+                    getValue: (item: Product): number => {
+                        return item.price
+                    },
+                }"
                 >
                     Price
                 </FoDataTableHeader>
 
-                <FoDataTableHeader v-model:filtered-items="filteredProducts"
-                                   :filter="{
-                                       type: 'select',
-                                       values: ['ALL', 'IN STOCK', 'OUT OF STOCK', 'LIMITED'],
-                                       onFilter: (item: Product, filter: string): boolean => {
-                                           const filters: Record<string, Availability> = {
-                                               'IN STOCK': 'In Stock',
-                                               'OUT OF STOCK': 'Out of Stock',
-                                               'LIMITED': 'Limited',
-                                           };
+                <FoDataTableHeader :filter="{
+                    type: 'select',
+                    values: ['ALL', 'IN STOCK', 'OUT OF STOCK', 'LIMITED'],
+                    onFilter: (item: Product, filter: string): boolean => {
+                        const filters: Record<string, Availability> = {
+                            'IN STOCK': 'In Stock',
+                            'OUT OF STOCK': 'Out of Stock',
+                            'LIMITED': 'Limited',
+                        };
 
-                                           return filter === 'ALL' ? true : item.availability === filters[filter];
-                                       },
-                                   }"
+                        return filter === 'ALL' ? true : item.availability === filters[filter];
+                    },
+                }"
                 >
                     Availability
                 </FoDataTableHeader>
@@ -72,7 +69,7 @@
                 </FoTableColumn>
 
                 <FoTableColumn>{{ product.name }}</FoTableColumn>
-                <FoTableColumn>{{ product.price }}</FoTableColumn>
+                <FoTableColumn>${{ product.price }}</FoTableColumn>
 
                 <FoTableColumn>
                     <FoBadge preset="soft"
