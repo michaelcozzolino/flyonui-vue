@@ -11,7 +11,7 @@
                 <FoIcon class="cursor-pointer hover:text-warning"
                         :class="(selectedDropdownFilterValue !== null || isRangeFilterSet) && 'text-warning'"
                         icon="tabler:filter"
-                        size="doubleExtraSmall"
+                        :size="{ height: 14, width: 14 }"
                         @click.prevent="showFilterValues = !showFilterValues"
                 />
 
