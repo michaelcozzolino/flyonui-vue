@@ -54,14 +54,14 @@
 <script setup lang="ts" generic="Item extends object, Value extends string">
 import type { WithDefaultSlot }                              from '@/Types';
 import type { DataTableColumnFilters, DataTableHeaderProps } from '@/UI/Tables';
-import type { DataTableColumnFilterContext }                 from '@/UI/Tables/Datatable/Internal/Lib';
+import type { DataTableColumnFilterContext }                 from '@/UI/Tables/DataTable/Internal/Lib';
 import { useSafeInjection }                                  from '@/Lib/UseSafeInjection/Internal';
 import { FoIcon }                                            from '@/UI/Customization';
 import { FoInputText }                                       from '@/UI/Forms';
 import { FoTableHeader }                                     from '@/UI/Tables';
 import {
     dataTableColumnFilterInjectionKey,
-} from '@/UI/Tables/Datatable/Internal/Lib';
+}                                                            from '@/UI/Tables/DataTable/Internal/Lib';
 import { onClickOutside }                                        from '@vueuse/core';
 import { computed, onBeforeUnmount, ref, useTemplateRef, watch } from 'vue';
 
