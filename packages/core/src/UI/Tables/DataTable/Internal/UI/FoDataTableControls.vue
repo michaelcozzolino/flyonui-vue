@@ -40,7 +40,7 @@
 
 <script setup lang="ts">
 import type { SelectOption }           from '@/UI/Forms';
-import type { DatatableControlsProps } from '@/UI/Tables/Datatable/Internal/Types';
+import type { DatatableControlsProps } from '@/UI/Tables/DataTable/Internal/Types';
 import { FoInputText, FoSelect }       from '@/UI/Forms';
 import { FoPagination }                from '@/UI/Navigations';
 
