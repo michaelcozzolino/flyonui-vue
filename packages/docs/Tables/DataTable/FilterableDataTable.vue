@@ -9,17 +9,17 @@
     >
         <template #head>
             <FoTableRow>
-                <FoTableHeader class="w-3.5 pe-0">
+                <FoDataTableHeader class="w-3.5 pe-0">
                     <FoCheckbox v-model="areAllProductsSelected"
                                 size="small"
                                 :disabled="filteredProducts.length === 0"
                     />
-                </FoTableHeader>
+                </FoDataTableHeader>
 
-                <FoTableHeader>Product Name</FoTableHeader>
-                <FoTableHeader>Price</FoTableHeader>
-                <FoTableHeader>Availability</FoTableHeader>
-                <FoTableHeader>Actions</FoTableHeader>
+                <FoDataTableHeader>Product Name</FoDataTableHeader>
+                <FoDataTableHeader>Price</FoDataTableHeader>
+                <FoDataTableHeader>Availability</FoDataTableHeader>
+                <FoDataTableHeader>Actions</FoDataTableHeader>
             </FoTableRow>
         </template>
 
@@ -34,7 +34,7 @@
                 </FoTableColumn>
 
                 <FoTableColumn>{{ product.name }}</FoTableColumn>
-                <FoTableColumn>{{ product.price }}</FoTableColumn>
+                <FoTableColumn>${{ product.price }}</FoTableColumn>
 
                 <FoTableColumn>
                     <FoBadge preset="soft"
@@ -62,9 +62,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Color }                                                                           from 'flyonui-vue';
-import { FoBadge, FoButton, FoCheckbox, FoDataTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
-import { computed, ref }                                                                        from 'vue';
+import type { Color }                                                                               from 'flyonui-vue';
+import { FoBadge, FoButton, FoCheckbox, FoDataTable, FoDataTableHeader, FoTableColumn, FoTableRow } from 'flyonui-vue';
+import { computed, ref }                                                                            from 'vue';
 
 type Availability = 'In Stock' | 'Limited' | 'Out of Stock';
 
