@@ -6,6 +6,7 @@
             <slot />
 
             <div v-if="filter !== undefined"
+                 ref="dropdown"
                  class="dropdown relative inline-flex"
             >
                 <FoIcon class="cursor-pointer hover:text-warning"
@@ -16,7 +17,6 @@
                 />
 
                 <ul v-show="showFilterValues"
-                    ref="dropdown"
                     class="dropdown-menu absolute inset-e-0 top-full z-10 mt-2 w-auto opacity-100"
                     role="menu"
                     aria-orientation="vertical"
