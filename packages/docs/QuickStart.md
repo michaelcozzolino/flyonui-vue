@@ -5,7 +5,7 @@
 ### New Projects
 
 If you are starting a new `Vite` + `Vue` project you can use our automatic flyonui-vue installation tool 
-[create-flyonui-vue](https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/create-flyonui-vue/README.md):
+[create-flyonui-vue](https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/create-flyonui-vue/README.md):
 
 <CodePreview language="bash"
              code="yarn create flyonui-vue"
@@ -82,7 +82,7 @@ the components on the left and the helper text on the right, when available. Wit
 complex structure for the icon and helper text.
 We suggest you to play with the configuration settings menu in the top right corner of this website and check the 
 changes around the websites and the docs of each component.
-If you do not use any configuration at all the [default values](https://github.com/michaelcozzolino/flyonui-vue/blob/2.x/packages/core/src/Shared/UseFlyonUIVueAppConfig/Lib/CreateFlyonUIVueApp.ts) 
+If you do not use any configuration at all the [default values](https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseFlyonUIVueAppConfig/Lib/CreateFlyonUIVueApp.ts) 
 are used.
 
 
