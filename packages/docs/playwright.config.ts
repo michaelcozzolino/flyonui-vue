@@ -7,7 +7,7 @@ const previewCommand   = `${workspaceCommand} preview`;
 
 export default defineConfig({
     expect: {
-        toMatchSnapshot: { maxDiffPixelRatio: 0.03, threshold: 0.05 },
+        toMatchSnapshot: { maxDiffPixelRatio: 0.015, threshold: 0.025 },
     },
     workers:       '50%',
     fullyParallel: true,
