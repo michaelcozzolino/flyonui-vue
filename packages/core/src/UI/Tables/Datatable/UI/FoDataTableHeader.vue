@@ -62,8 +62,8 @@ import { FoTableHeader }                                     from '@/UI/Tables';
 import {
     dataTableColumnFilterInjectionKey,
 } from '@/UI/Tables/Datatable/Internal/Lib';
-import { onClickOutside }                       from '@vueuse/core';
-import { computed, ref, useTemplateRef, watch } from 'vue';
+import { onClickOutside }                                        from '@vueuse/core';
+import { computed, onBeforeUnmount, ref, useTemplateRef, watch } from 'vue';
 
 const props = defineProps<DataTableHeaderProps<Item, Value>>();
 
@@ -89,6 +89,8 @@ const dropdownElement = useTemplateRef('dropdown');
 onClickOutside(dropdownElement, (): void => {
     showFilterValues.value = false;
 });
+
+onBeforeUnmount((): void => dataTableFilter.setFilter(filterKey, null));
 
 watch(selectedDropdownFilterValue, () => {
     if (props.filter === undefined) {
