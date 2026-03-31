@@ -1,5 +1,7 @@
 # DataTable
 
+<ComponentNotReadyForProductionAlert />
+
 ### Default
 
 <DataTableDocs section="default" />
