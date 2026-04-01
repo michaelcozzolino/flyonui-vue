@@ -11,12 +11,12 @@ export default defineConfig({
     build: {
         emptyOutDir:  false,
         cssCodeSplit: true,
-        target:       'ESNext',
+        target:       'esnext',
         lib:          {
             entry: resolve(__dirname, './src/index.ts'),
             name:  'flyonui-web-components',
         },
-        rollupOptions: {
+        rolldownOptions: {
             external: ['vue'],
             output:   {
                 globals: {
