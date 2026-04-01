@@ -8,13 +8,13 @@
         "publish": "yarn npm publish --access public"
     },
     "dependencies": {
-        "fs-extra": "^11.3.2",
+        "fs-extra": "^11.3.4",
         "prompts": "^2.4.2"
     },
     "devDependencies": {
-        "@tsconfig/node-lts": "^22.0.2",
+        "@tsconfig/node-lts": "^24.0.0",
         "@types/fs-extra": "^11.0.4",
         "@types/prompts": "^2.4.9",
-        "typescript": "^5.9.3"
+        "typescript": "^6.0.2"
     }
 }
