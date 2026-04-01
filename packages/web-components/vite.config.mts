@@ -11,6 +11,7 @@ export default defineConfig({
     build: {
         emptyOutDir:  false,
         cssCodeSplit: true,
+        cssMinify:    'esbuild',
         target:       'esnext',
         lib:          {
             entry: resolve(__dirname, './src/index.ts'),
