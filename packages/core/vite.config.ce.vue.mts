@@ -21,7 +21,7 @@ export default defineConfig({
             entry: resolve(__dirname, './src/index.ts'),
             name:  'flyonui-web-components',
         },
-        rollupOptions: {
+        rolldownOptions: {
             external: ['@iconify/vue', 'tailwindcss'],
             output:   {
                 globals: {

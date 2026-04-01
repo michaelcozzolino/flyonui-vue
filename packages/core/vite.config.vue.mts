@@ -31,7 +31,7 @@ export default defineConfig({
             entry: resolve(__dirname, './src/index.ts'),
             name:  'flyonui-vue',
         },
-        rollupOptions: {
+        rolldownOptions: {
             external: ['@iconify/vue', 'vue', 'vue-router', 'tailwindcss'],
             output:   {
                 globals: {
