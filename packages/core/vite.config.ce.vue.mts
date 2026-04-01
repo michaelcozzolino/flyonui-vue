@@ -16,7 +16,7 @@ export default defineConfig({
         outDir:       'dist-ce.vue',
         emptyOutDir:  false,
         cssCodeSplit: true,
-        target:       'ESNext',
+        target:       'esnext',
         lib:          {
             entry: resolve(__dirname, './src/index.ts'),
             name:  'flyonui-web-components',

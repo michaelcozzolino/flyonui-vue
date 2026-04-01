@@ -26,7 +26,7 @@ export default defineConfig({
         outDir:       'dist-vue',
         emptyOutDir:  false,
         cssCodeSplit: true,
-        target:       'ESNext',
+        target:       'esnext',
         lib:          {
             entry: resolve(__dirname, './src/index.ts'),
             name:  'flyonui-vue',
