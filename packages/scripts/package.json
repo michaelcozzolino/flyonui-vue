@@ -6,7 +6,7 @@
         "flyonui": "^2.4.1",
         "flyonui-vue": "workspace:*",
         "typescript": "^6.0.2",
-        "vue-component-meta": "^3.2.6",
+        "vue-component-meta": "3.1.8",
         "vue-component-type-helpers": "^3.2.6",
         "vue-tsc": "^3.2.6"
     },

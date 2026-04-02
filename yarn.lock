@@ -2848,6 +2848,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@volar/language-core@npm:2.4.26":
+  version: 2.4.26
+  resolution: "@volar/language-core@npm:2.4.26"
+  dependencies:
+    "@volar/source-map": "npm:2.4.26"
+  checksum: 10c0/f53b24a51234217db33bd694620abd472842c801002afb420558e2c5e63a3c5cc3eb3463513550c49491b07771fe4d12c23d87792157b7a377e7e554242b0d49
+  languageName: node
+  linkType: hard
+
 "@volar/language-core@npm:2.4.28":
   version: 2.4.28
   resolution: "@volar/language-core@npm:2.4.28"
@@ -2857,10 +2866,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@volar/source-map@npm:2.4.26":
+  version: 2.4.26
+  resolution: "@volar/source-map@npm:2.4.26"
+  checksum: 10c0/a8b8003b8aadea452f95135f175ef5085ff765ff5d595c57f6ec20341762d9ea03192f2b421357ce66072f2d51ff38b68d172ad13b8792bd33933e4ed16312c4
+  languageName: node
+  linkType: hard
+
 "@volar/source-map@npm:2.4.28":
   version: 2.4.28
   resolution: "@volar/source-map@npm:2.4.28"
   checksum: 10c0/24b0b02c7f66febe47f0bfda4a5ed4beaf949041eddc6325c7478b900faeb071795b696d97a4f326dde47217d06e40b67129300bc544f054772c5cb84c2f254e
+  languageName: node
+  linkType: hard
+
+"@volar/typescript@npm:2.4.26":
+  version: 2.4.26
+  resolution: "@volar/typescript@npm:2.4.26"
+  dependencies:
+    "@volar/language-core": "npm:2.4.26"
+    path-browserify: "npm:^1.0.1"
+    vscode-uri: "npm:^3.0.8"
+  checksum: 10c0/a59a79c58f33bae24a28320f0e5c0be43d88bbcda60d4932c70be52aeb5b4ce6db7966443b20915556a2c499ba86a5350f6b87e3d6cb6f0a57069603e78599a7
   languageName: node
   linkType: hard
 
@@ -3051,6 +3078,26 @@ __metadata:
   version: 8.1.1
   resolution: "@vue/devtools-shared@npm:8.1.1"
   checksum: 10c0/5c3bfa0aca19f9ca4a1dc3a0aa8e932d3ba34e74995e6abcbedd3fcf659ee9bd1502558a328c743cc8697be9308404b068f29451dc49eb29ddebbf5f80ec5540
+  languageName: node
+  linkType: hard
+
+"@vue/language-core@npm:3.1.8":
+  version: 3.1.8
+  resolution: "@vue/language-core@npm:3.1.8"
+  dependencies:
+    "@volar/language-core": "npm:2.4.26"
+    "@vue/compiler-dom": "npm:^3.5.0"
+    "@vue/shared": "npm:^3.5.0"
+    alien-signals: "npm:^3.0.0"
+    muggle-string: "npm:^0.4.1"
+    path-browserify: "npm:^1.0.1"
+    picomatch: "npm:^4.0.2"
+  peerDependencies:
+    typescript: "*"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/5b685bfbb43b7a0942bc299540eb08a2d39526990d91f4809f111943178b42f9f56103d3eadf24ef8ac7a44532123709fde42cc68561027d15b857f4bd37bff6
   languageName: node
   linkType: hard
 
@@ -5186,7 +5233,7 @@ __metadata:
     flyonui: "npm:^2.4.1"
     flyonui-vue: "workspace:*"
     typescript: "npm:^6.0.2"
-    vue-component-meta: "npm:^3.2.6"
+    vue-component-meta: "npm:3.1.8"
     vue-component-type-helpers: "npm:^3.2.6"
     vue-tsc: "npm:^3.2.6"
   languageName: unknown
@@ -9703,19 +9750,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-component-meta@npm:^3.2.6":
-  version: 3.2.6
-  resolution: "vue-component-meta@npm:3.2.6"
+"vue-component-meta@npm:3.1.8":
+  version: 3.1.8
+  resolution: "vue-component-meta@npm:3.1.8"
   dependencies:
-    "@volar/typescript": "npm:2.4.28"
-    "@vue/language-core": "npm:3.2.6"
+    "@volar/typescript": "npm:2.4.26"
+    "@vue/language-core": "npm:3.1.8"
     path-browserify: "npm:^1.0.1"
+    vue-component-type-helpers: "npm:3.1.8"
   peerDependencies:
     typescript: "*"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: 10c0/779b9a54183997f2ad17cf74487a47e53820356e83c91b83e7384a1c84fe4ed382848d78fed34098ba2f15a78c4ce59345911e2f1c7bc52930cc8ce5325bba25
+  checksum: 10c0/55b3549757a62ae17ad2cbc7cdfbc792b7408b0de9fd1b9e1eadd0e94393a344480980449ed16ed466948976b80776e98cd48e1650b4d03f114890a10f850ea9
+  languageName: node
+  linkType: hard
+
+"vue-component-type-helpers@npm:3.1.8":
+  version: 3.1.8
+  resolution: "vue-component-type-helpers@npm:3.1.8"
+  checksum: 10c0/c99b675e5894506c92e68fed05efe9d0099dc5415094ca08afcfd5458abc7034f99dc79e2ce6d9f69252fe7266c07e1004160c70529146c98b07b87c006f103f
   languageName: node
   linkType: hard
 
