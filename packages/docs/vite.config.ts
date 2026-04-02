@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import tailwindcss       from '@tailwindcss/vite';
 import { defineConfig }  from 'vite';
 
+// todo: maybe this should be moved to config.ts of vitepress
 export default defineConfig({
     plugins: [
         tailwindcss(),
