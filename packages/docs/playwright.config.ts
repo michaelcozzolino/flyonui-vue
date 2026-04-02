@@ -6,9 +6,6 @@ const workspaceCommand = 'yarn workspace flyonui-vue-docs';
 const previewCommand   = `${workspaceCommand} preview`;
 
 export default defineConfig({
-    expect: {
-        toMatchSnapshot: { maxDiffPixelRatio: 0.015, threshold: 0.025 },
-    },
     workers:       '50%',
     fullyParallel: true,
     outputDir:     './tests/EndToEnd/Results',
