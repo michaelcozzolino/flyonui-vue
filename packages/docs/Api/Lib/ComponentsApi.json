@@ -15542,6 +15542,21 @@
         "slots": [],
         "exposed": [
             {
+                "name": "value",
+                "type": "string",
+                "description": "The radio's internal value",
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Forms/Radio/Types/Radio.ts",
+                        "range": [
+                            339,
+                            353
+                        ]
+                    }
+                ],
+                "schema": "string"
+            },
+            {
                 "name": "modelValue",
                 "type": "string",
                 "description": "The value of the checked image",
@@ -15567,21 +15582,6 @@
                         }
                     ]
                 }
-            },
-            {
-                "name": "value",
-                "type": "string",
-                "description": "The radio's internal value",
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Forms/Radio/Types/Radio.ts",
-                        "range": [
-                            339,
-                            353
-                        ]
-                    }
-                ],
-                "schema": "string"
             },
             {
                 "name": "image",
@@ -34938,6 +34938,21 @@
                 }
             },
             {
+                "name": "value",
+                "type": "string",
+                "description": "The radio's internal value",
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Forms/Radio/Types/Radio.ts",
+                        "range": [
+                            339,
+                            353
+                        ]
+                    }
+                ],
+                "schema": "string"
+            },
+            {
                 "name": "modelValue",
                 "type": "string",
                 "description": "The value of the checked radio",
@@ -34963,21 +34978,6 @@
                         }
                     ]
                 }
-            },
-            {
-                "name": "value",
-                "type": "string",
-                "description": "The radio's internal value",
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Forms/Radio/Types/Radio.ts",
-                        "range": [
-                            339,
-                            353
-                        ]
-                    }
-                ],
-                "schema": "string"
             },
             {
                 "name": "label",
