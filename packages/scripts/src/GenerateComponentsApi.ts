@@ -14,8 +14,7 @@ async function generateComponentsApi(): Promise<void> {
     const vueComponentsPath = resolve(corePath, 'src/UI');
 
     const checkerOptions: MetaCheckerOptions = {
-        forceUseTs: true,
-        printer:    { newLine: 1 },
+        printer: { newLine: 1 },
     };
 
     const tsconfigChecker = createChecker(
@@ -35,11 +34,17 @@ async function generateComponentsApi(): Promise<void> {
             componentsApi[name as ComponentName] = tsconfigChecker.getComponentMeta(componentPath);
         }
 
+        const sortedComponentsApi = Object.fromEntries(
+            Object.entries(componentsApi).sort(([firstComponentName], [secondComponentName]) => {
+                return firstComponentName.localeCompare(secondComponentName);
+            }),
+        ) as Record<ComponentName, ComponentMeta>;
+
         const componentApiDocsPath = resolve(packagesPath, 'docs/Api/Lib');
 
         writeFile(
             join(componentApiDocsPath, 'ComponentsApi.json'),
-            `${JSON.stringify(componentsApi, null, 4).replaceAll(
+            `${JSON.stringify(sortedComponentsApi, null, 4).replaceAll(
                 // Replaces the absolute path of the file with the GitHub url
                 /(?<="file":\s*")(?:[A-Za-z]:)?(?:(?:\/|\\\\)[^"\\/]+)*(?:\/|\\\\)flyonui-vue(?=\/|\\\\|")/g,
                 `https://github.com/michaelcozzolino/flyonui-vue/blob/3.x`, // todo: the 3.x must be dynamic

@@ -6,7 +6,6 @@
             "DOM",
             "DOM.Iterable"
         ],
-        "baseUrl": ".",
         "paths": {
             "@/*": [
                 "./*"
@@ -29,6 +28,6 @@
     "exclude": [
         "node_modules",
         "dist",
-        "vite.config.mts"
+        "vite.config.ts"
     ]
 }

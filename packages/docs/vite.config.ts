@@ -1,9 +1,14 @@
 import { execSync }      from 'node:child_process';
 import { resolve }       from 'node:path';
 import { fileURLToPath } from 'node:url';
+import tailwindcss       from '@tailwindcss/vite';
 import { defineConfig }  from 'vite';
 
+// todo: maybe this should be moved to config.ts of vitepress
 export default defineConfig({
+    plugins: [
+        tailwindcss(),
+    ],
     define: {
         FLYONUI_VUE_DOMAIN:       JSON.stringify('flyonui-vue.com'),
         FLYONUI_VUE_VERSION:      JSON.stringify(execSync('yarn core:version').toString().trim()),

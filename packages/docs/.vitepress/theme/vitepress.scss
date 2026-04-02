@@ -1,7 +1,9 @@
 @layer base {
     :root {
         --vp-home-hero-name-color: var(--color-info) !important;
-        // todo: many variables with division are not right, to be adjusted, also the whole css might need to be checked
+         /*
+         todo: many variables with division are not right, to be adjusted, also the whole css might need to be checked
+         */
         --vp-button-brand-bg: var(--color-primary) !important;
         --vp-button-brand-hover-bg: var(--color-info) !important;
 

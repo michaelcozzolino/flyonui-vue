@@ -1,14 +1,14 @@
 {
     "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
-        "baseUrl": ".",
         "paths": {
             "@/*": [
                 "./src/*"
             ]
         },
         "noEmit": false,
-        "outDir": "dist"
+        "outDir": "dist",
+        "rootDir": "."
     },
     "include": [
         "src/**/*.ts",
@@ -18,6 +18,6 @@
     "exclude": [
         "node_modules",
         "dist",
-        "vite.config.mts"
+        "vite.config.ts"
     ]
 }

@@ -34,12 +34,12 @@
         "build": "yarn build:vue && yarn build:ce.vue",
         "dev:vue": "yarn concurrently \"yarn build:vue:ui -w -m development\" \"yarn build:vue:types -w\" \"yarn alias:vue:types -w\"",
         "build:vue": "yarn build:vue:ui && yarn build:vue:types && yarn alias:vue:types",
-        "build:vue:ui": "vite build -c vite.config.vue.mts",
+        "build:vue:ui": "vite build -c vite.config.vue.ts",
         "build:vue:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json --outDir dist-vue",
         "alias:vue:types": "tsc-alias -p tsconfig.build.json --outDir dist-vue",
         "dev:ce.vue": "yarn concurrently \"yarn build:ce.vue:ui -w -m development\" \"yarn build:ce.vue:types -w\" \"yarn alias:ce.vue:types -w\"",
         "build:ce.vue": "yarn build:ce.vue:ui && yarn build:ce.vue:types && yarn alias:ce.vue:types",
-        "build:ce.vue:ui": "vite build -c vite.config.ce.vue.mts",
+        "build:ce.vue:ui": "vite build -c vite.config.ce.vue.ts",
         "build:ce.vue:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.build.json --outDir dist-ce.vue",
         "alias:ce.vue:types": "tsc-alias -p tsconfig.build.json --outDir dist-ce.vue",
         "lint": "eslint . --fix",
@@ -49,11 +49,11 @@
         "type-check": "vue-tsc --noEmit -p tsconfig.build.json && vue-tsc --noEmit -p tsconfig.test.json"
     },
     "peerDependencies": {
-        "@iconify/vue": "^4",
+        "@iconify/vue": "^4 || ^5",
         "flyonui": "^2",
         "tailwindcss": "^4",
         "vue": "^3",
-        "vue-router": "^4"
+        "vue-router": "^4 || ^5"
     },
     "peerDependenciesMeta": {
         "@iconify/vue": {
@@ -65,29 +65,29 @@
     },
     "dependencies": {
         "@floating-ui/vue": "^1.1.11",
-        "@vueuse/components": "^13.9.0",
+        "@vueuse/components": "^14.2.1",
         "@vueuse/core": "^14.2.1",
         "@vueuse/motion": "^3.0.3",
         "deepmerge": "^4.3.1",
         "unhead": "^2.1.12"
     },
     "devDependencies": {
-        "@iconify/vue": "^4.3.0",
+        "@iconify/vue": "^5.0.0",
         "@tailwindcss/vite": "^4.2.2",
-        "@types/node": "^22.19.15",
-        "@vitejs/plugin-vue": "^6.0.3",
+        "@types/node": "^20.19.0",
+        "@vitejs/plugin-vue": "^6.0.5",
         "@vue/test-utils": "^2.4.6",
-        "@vue/tsconfig": "^0.9.0",
+        "@vue/tsconfig": "^0.9.1",
         "concurrently": "^9.2.1",
-        "jsdom": "^26.1.0",
-        "rollup-plugin-visualizer": "^5.14.0",
+        "jsdom": "^29.0.1",
+        "rollup-plugin-visualizer": "^7.0.1",
         "sass-embedded": "^1.98.0",
         "tailwindcss": "^4.2.2",
         "tsc-alias": "^1.8.16",
-        "typescript": "^5.9.3",
-        "vite": "^7.3.0",
-        "vue": "^3.5.30",
-        "vue-router": "^4.6.4",
+        "typescript": "^6.0.2",
+        "vite": "^8.0.3",
+        "vue": "^3.5.31",
+        "vue-router": "^5.0.4",
         "vue-tsc": "^3.2.6"
     }
 }
