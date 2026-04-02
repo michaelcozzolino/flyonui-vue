@@ -15,8 +15,8 @@
         "node_modules",
         "dist-vue",
         "dist-ce.vue",
-        "vite.config.vue.mts",
-        "vite.config.ce.vue.mts",
+        "vite.config.vue.ts",
+        "vite.config.ce.vue.ts",
         "src/Scripts/**/*.ts",
         "tests/**"
     ]

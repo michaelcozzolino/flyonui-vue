@@ -28,6 +28,6 @@
     "exclude": [
         "node_modules",
         "dist",
-        "vite.config.mts"
+        "vite.config.ts"
     ]
 }
