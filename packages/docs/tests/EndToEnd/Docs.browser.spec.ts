@@ -37,6 +37,9 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
                 pageErrors,
                 `Expected "${docsPagePath}" not to emit page errors, but got:\n${pageErrors.join('\n')}`,
             ).toEqual([]);
+
+            consoleMessages.length = 0;
+            pageErrors.length = 0;
         }
     });
 
