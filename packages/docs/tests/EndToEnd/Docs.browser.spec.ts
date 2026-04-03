@@ -10,6 +10,36 @@ import { expect, test }       from '@playwright/test';
 const docsPagePathsBySection = getDocsPagePathsBySection();
 
 for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
+    test(`pages do not emit console messages or page errors: ${section}`, async ({ page }) => {
+        const body = page.locator('body').first();
+        await body.waitFor();
+
+        const consoleMessages: string[] = [];
+        const pageErrors: string[]      = [];
+
+        page.on('console', (message) => {
+            consoleMessages.push(`[${message.type()}] ${message.text()}`);
+        });
+
+        page.on('pageerror', (error) => {
+            pageErrors.push(error.message);
+        });
+
+        for (const docsPagePath of getDocsPagePathsBySection(['/extra/build-size-visualizer'])[section] ?? []) {
+            await page.goto(docsPagePath);
+
+            expect(
+                consoleMessages,
+                `Expected "${docsPagePath}" not to emit console messages, but got:\n${consoleMessages.join('\n')}`,
+            ).toEqual([]);
+
+            expect(
+                pageErrors,
+                `Expected "${docsPagePath}" not to emit page errors, but got:\n${pageErrors.join('\n')}`,
+            ).toEqual([]);
+        }
+    });
+
     test(`props and slots tables do not have empty columns: ${section}`, async ({ page }) => {
         const body = page.locator('body').first();
         await body.waitFor();
@@ -118,10 +148,10 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
     });
 }
 
-function getDocsPagePathsBySection(): Record<string, string[]> {
+function getDocsPagePathsBySection(excludedDocsPagePaths: string[] = []): Record<string, string[]> {
     const initialSections: Record<string, string[]> = {};
 
-    return getDocsPagePaths().reduce((sections: Record<string, string[]>, docsPagePath: string): Record<string, string[]> => {
+    return getDocsPagePaths(excludedDocsPagePaths).reduce((sections: Record<string, string[]>, docsPagePath: string): Record<string, string[]> => {
         const section: string | undefined = docsPagePath.split('/')[1];
 
         if (section === undefined) {
@@ -135,7 +165,7 @@ function getDocsPagePathsBySection(): Record<string, string[]> {
     }, initialSections);
 }
 
-function getDocsPagePaths(): string[] {
+function getDocsPagePaths(excludedDocsPagePaths: string[] = []): string[] {
     return useSidebarItems().value.flatMap((sidebarItem: ParentSidebarItem): string[] => {
         return sidebarItem.children.map((childSidebarItem: SidebarItem): string => {
             if (typeof childSidebarItem.to !== 'string') {
@@ -144,6 +174,8 @@ function getDocsPagePaths(): string[] {
 
             return childSidebarItem.to;
         });
+    }).filter((docsPagePath: string): boolean => {
+        return !excludedDocsPagePaths.includes(docsPagePath);
     });
 }
 

@@ -308,7 +308,6 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
         },
         {
             text:        'Extra',
-            disabled:    !import.meta.env.PROD,
             isCollapsed: false,
             children:    [
                 {

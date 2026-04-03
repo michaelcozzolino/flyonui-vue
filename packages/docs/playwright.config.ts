@@ -9,12 +9,12 @@ export default defineConfig({
     expect: {
         toMatchSnapshot: process.env.CI ? { maxDiffPixelRatio: 0.025, threshold: 0.025 } : undefined,
     },
-    workers:       '50%',
+    workers:       process.env.CI ? '100%' : '50%',
     fullyParallel: true,
     outputDir:     './tests/EndToEnd/Results',
     webServer:     {
         // In the GitHub action the docs are built before the execution of the tests, in local they might not be.
-        command:             process.env.CI ? previewCommand : `${workspaceCommand} build && ${previewCommand}`,
+        command:             process.env.CI ? previewCommand : `yarn workspace flyonui-vue build && ${workspaceCommand} build && ${previewCommand}`,
         url:                 baseURL,
         reuseExistingServer: !process.env.CI,
     },
