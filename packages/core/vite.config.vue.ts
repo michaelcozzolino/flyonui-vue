@@ -1,45 +1,45 @@
 import { resolve }      from 'node:path';
-import process          from 'node:process';
 import tailwindcss      from '@tailwindcss/vite';
 import vue              from '@vitejs/plugin-vue';
 import { visualizer }   from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-    plugins: [
-        vue(),
-        tailwindcss(),
-        // todo: understand why not working in local
-        ...process.env.GENERATE_BUILD_SIZE_VISUALIZER
-            ? [visualizer({
-                    filename: '../docs/public/build-size-visualizer.html',
-                })]
-            : [],
-    ],
-    resolve: {
-        alias: {
-            '@': resolve(__dirname, './src'),
+export default defineConfig(({ mode }) => {
+    return {
+        plugins: [
+            vue(),
+            tailwindcss(),
+            ...mode === 'production'
+                ? [visualizer({
+                        filename: '../docs/public/build-size-visualizer.html',
+                    })]
+                : [],
+        ],
+        resolve: {
+            alias: {
+                '@': resolve(__dirname, './src'),
+            },
+            dedupe: ['vue', 'flyonui', 'flyonui-vue'],
         },
-        dedupe: ['vue', 'flyonui', 'flyonui-vue'],
-    },
-    build: {
-        outDir:       'dist-vue',
-        emptyOutDir:  false,
-        cssCodeSplit: true,
-        target:       'esnext',
-        lib:          {
-            entry: resolve(__dirname, './src/index.ts'),
-            name:  'flyonui-vue',
-        },
-        rolldownOptions: {
-            external: ['@iconify/vue', 'vue', 'vue-router', 'tailwindcss'],
-            output:   {
-                globals: {
-                    '@iconify/vue': 'Iconify',
-                    'vue':          'Vue',
-                    'vue-router':   'VueRouter',
+        build: {
+            outDir:       'dist-vue',
+            emptyOutDir:  false,
+            cssCodeSplit: true,
+            target:       'esnext',
+            lib:          {
+                entry: resolve(__dirname, './src/index.ts'),
+                name:  'flyonui-vue',
+            },
+            rolldownOptions: {
+                external: ['@iconify/vue', 'vue', 'vue-router', 'tailwindcss'],
+                output:   {
+                    globals: {
+                        '@iconify/vue': 'Iconify',
+                        'vue':          'Vue',
+                        'vue-router':   'VueRouter',
+                    },
                 },
             },
         },
-    },
+    };
 });

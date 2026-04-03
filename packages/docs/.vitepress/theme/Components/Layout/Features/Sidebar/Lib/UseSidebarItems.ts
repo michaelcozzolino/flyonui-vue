@@ -15,40 +15,41 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
         {
             text:        'Getting Started',
             isCollapsed: false,
-                children: [
-                    {
-                        text:     'Quick Start',
-                        to:       '/quick-start',
-                        icon:     'tabler:rocket',
-                        children: [],
-                    },
-                    {
-                        text:     'Upgrade Guide',
-                        to:       '/upgrade-guide',
-                        icon:     'tabler:arrow-up-circle',
-                        children: [],
-                    },
-                ],
-            },
-            {
-                text:     'Customization',
-            isCollapsed: false,    children: [
-                    {
-                        text:     'Icons',
-                        to:       '/customisation/icons',
-                        icon:     'uil:icons',
-                        children: [],
-                    },
-                    {
-                        text:     'Class and Style',
-                        to:       '/customisation/class-and-style',
-                        icon:     'logos:tailwindcss-icon',
-                        children: [],
-                    },
-                    {
-                        text:     'Text Direction (LTR | RTL)',
-                        to:       '/customisation/text-direction',
-                        icon:     'fluent:text-direction-horizontal-rtl-20-regular',
+            children:    [
+                {
+                    text:     'Quick Start',
+                    to:       '/quick-start',
+                    icon:     'tabler:rocket',
+                    children: [],
+                },
+                {
+                    text:     'Upgrade Guide',
+                    to:       '/upgrade-guide',
+                    icon:     'tabler:arrow-up-circle',
+                    children: [],
+                },
+            ],
+        },
+        {
+            text:        'Customization',
+            isCollapsed: false,
+            children:    [
+                {
+                    text:     'Icons',
+                    to:       '/customisation/icons',
+                    icon:     'uil:icons',
+                    children: [],
+                },
+                {
+                    text:     'Class and Style',
+                    to:       '/customisation/class-and-style',
+                    icon:     'logos:tailwindcss-icon',
+                    children: [],
+                },
+                {
+                    text:     'Text Direction (LTR | RTL)',
+                    to:       '/customisation/text-direction',
+                    icon:     'fluent:text-direction-horizontal-rtl-20-regular',
                     children: [],
                 },
             ],
