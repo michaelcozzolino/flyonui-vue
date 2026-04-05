@@ -8,16 +8,12 @@
         "type": "git",
         "url": "git+https://github.com/michaelcozzolino/flyonui-vue.git"
     },
-    "browserslist": [
-        "defaults and fully supports es6-module",
-        "maintained node versions"
-    ],
     "exports": {
         ".": {
             "types": "./dist-vue/index.d.ts",
             "import": "./dist-vue/flyonui-vue.js",
             "require": "./dist-vue/flyonui-vue.umd.cjs",
-            "default": "./dist-vue/index.d.ts"
+            "default": "./dist-vue/flyonui-vue.js"
         },
         "./ce": {
             "types": "./dist-ce.vue/index.d.ts",
@@ -26,6 +22,13 @@
         },
         "./*.css": "./dist-vue/*.css"
     },
+    "main": "./dist-vue/flyonui-vue.umd.cjs",
+    "module": "./dist-vue/flyonui-vue.js",
+    "types": "./dist-vue/index.d.ts",
+    "browserslist": [
+        "defaults and fully supports es6-module",
+        "maintained node versions"
+    ],
     "files": [
         "dist-ce.vue",
         "dist-vue"

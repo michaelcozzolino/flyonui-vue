@@ -21,4 +21,3 @@
 ### Slots
 
 <TooltipDocs section="slots" />
-

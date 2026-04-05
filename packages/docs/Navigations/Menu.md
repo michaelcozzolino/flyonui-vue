@@ -37,7 +37,7 @@
 ### With active item (External Router)
 
 In case of external router, you need to pass a navigation props that contains a function to navigate to the item route
-and an active path that will be used to highlight the active item. 
+and an active path that will be used to highlight the active item.
 These docs are an use case to this, where the Vitepress router is used.
 <MenuDocs section="with-active-item-external-router" />
 

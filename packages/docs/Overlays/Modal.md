@@ -51,7 +51,7 @@ bodies or the viewport.
 
 ## Close on escape
 
-By default, the modal will be closed when the <FoKeyboard>esc</FoKeyboard> key is pressed. This behaviour can be changed through 
+By default, the modal will be closed when the <FoKeyboard>esc</FoKeyboard> key is pressed. This behaviour can be changed through
 the `closeOnEscape` prop.
 
 <ModalDocs section="close-on-escape" />
