@@ -45,7 +45,7 @@
         "sass-embedded": "^1.106.1",
         "typescript": "^6.0.3",
         "vite": "^8.3.5",
-        "vitepress": "2.0.0-alpha.20",
+        "vitepress": "2.0.0-alpha.17",
         "vue-tsc": "^3.3.13"
     }
 }
