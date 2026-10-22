@@ -14,10 +14,10 @@ import type { FloatingLabelComponentName } from '@/Lib';
 import type { WithRequiredDefaultSlot }    from '@/Types';
 import type { LabelType }                  from '@/UI/Components';
 import type { LabelProps }                 from '@/UI/Components/Label/Internal/Types/Label';
+import { computed, inject }                from 'vue';
 import { useElementId }                    from '@/Lib/UseIdentifiable/Internal';
 import { useRequiredSlotMessage }          from '@/Lib/Utils/Internal';
 import { switchOptionsInjectionKey }       from '@/UI/Forms/Checkbox/Internal';
-import { computed, inject }                from 'vue';
 
 defineOptions({
     inheritAttrs: false,

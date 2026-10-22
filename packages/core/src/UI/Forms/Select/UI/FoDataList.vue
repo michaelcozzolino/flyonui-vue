@@ -24,11 +24,11 @@
 
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
 import type { DataListProps, SelectOption } from '@/UI/Forms';
+import { computed }                         from 'vue';
 import { useElementId }                     from '@/Lib/UseIdentifiable/Internal';
 import { FoLabel }                          from '@/UI/Components/Label/Internal';
 import { FoInputText }                      from '@/UI/Forms';
 import { FoSelectOption, onEmptyOptions }   from '@/UI/Forms/Select/Internal';
-import { computed }                         from 'vue';
 
 const props = withDefaults(defineProps<DataListProps<T, K>>(), {
     disabled: undefined,

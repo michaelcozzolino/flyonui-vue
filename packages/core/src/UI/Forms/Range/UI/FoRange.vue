@@ -24,14 +24,14 @@
 </template>
 
 <script setup lang="ts">
+import type { Slot }              from 'vue';
 import type { ComponentName }     from '@/Lib';
 import type { RangeProps }        from '@/UI/Forms/Range';
-import type { Slot }              from 'vue';
+import { reactiveOmit }           from '@vueuse/core';
 import { useFlyonUIVueAppConfig } from '@/Lib';
 import { useColor }               from '@/Lib/UseColor/Internal';
 import { useSize }                from '@/Lib/UseSize/Internal';
 import { FoFragment }             from '@/UI/Components/Fragment/Internal';
-import { reactiveOmit }           from '@vueuse/core';
 
 defineOptions({
     inheritAttrs: false,

@@ -1,6 +1,6 @@
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import type { HorizontalPosition }            from '@/Types/Utils';
 import type { Mask }                          from '@/UI/Content/Mask';
-import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import { computed, toValue }                  from 'vue';
 
 function useMask(mask: MaybeRefOrGetter<Mask>): ComputedRef<string> {

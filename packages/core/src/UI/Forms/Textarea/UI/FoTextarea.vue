@@ -59,9 +59,11 @@
 </template>
 
 <script setup lang="ts">
+import type { StyleValue }                         from 'vue';
 import type { ComponentName, IconSize  }           from '@/Lib';
 import type { TextareaLabelType, TextareaProps }   from '@/UI/Forms/Textarea';
-import type { StyleValue }                         from 'vue';
+import { reactiveOmit }                            from '@vueuse/core';
+import { computed,  useId }                        from 'vue';
 import { useFlyonUIVueAppConfig }                  from '@/Lib';
 import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
 import { useSize }                                 from '@/Lib/UseSize/Internal';
@@ -71,8 +73,6 @@ import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperT
 import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
 import { FoIcon }                                  from '@/UI/Customization/Icon';
 import { usePositionableIcon }                     from '@/UI/Customization/Icon/Internal';
-import { reactiveOmit }                            from '@vueuse/core';
-import { computed,  useId }                        from 'vue';
 
 defineOptions({
     inheritAttrs: false,

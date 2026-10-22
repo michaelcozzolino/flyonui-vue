@@ -24,12 +24,12 @@
 import type { ComponentName }     from '@/Lib';
 import type { WithDefaultSlot }   from '@/Types';
 import type { StatusProps }       from '@/UI/Components/Status';
+import { computed }               from 'vue';
 import { useFlyonUIVueAppConfig } from '@/Lib';
 import { useColor }               from '@/Lib/UseColor/Internal';
 import { useSize }                from '@/Lib/UseSize/Internal';
 import { useTailwindAnimation }   from '@/Lib/UseTailwindAnimation/Internal';
 import { FoFragment }             from '@/UI/Components/Fragment/Internal';
-import { computed }               from 'vue';
 
 defineOptions({
     inheritAttrs: false,

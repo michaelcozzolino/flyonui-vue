@@ -23,14 +23,14 @@
 import type { ComponentName }               from '@/Lib';
 import type { WithRequiredDefaultSlot }     from '@/Types';
 import type { ListGroupProps }              from '@/UI/Components';
+import { reactiveOmit }                     from '@vueuse/core';
+import { computed, provide }                from 'vue';
 import { useClass }                         from '@/Lib/UseClass/Internal';
 import { useOrientation }                   from '@/Lib/UseOrientation/Internal';
 import { useStripes }                       from '@/Lib/UseStripes/Internal';
 import { useRequiredSlotMessage }           from '@/Lib/Utils/Internal';
 import { FoFragment }                       from '@/UI/Components/Fragment/Internal';
 import { listGroupOrientationInjectionKey } from '@/UI/Components/ListGroup/Internal';
-import { reactiveOmit }                     from '@vueuse/core';
-import { computed, provide }                from 'vue';
 
 defineOptions({
     inheritAttrs: false,

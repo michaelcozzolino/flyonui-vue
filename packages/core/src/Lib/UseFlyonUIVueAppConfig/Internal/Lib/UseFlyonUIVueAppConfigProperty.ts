@@ -1,3 +1,4 @@
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import type {
     ConfigurableComponentName,
     ConfigurableProperty,
@@ -5,9 +6,7 @@ import type {
     FlyonUIVueAppDefaultConfig,
     FlyonUIVueAppGlobalConfig,
 } from '@/Lib';
-
-import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { computed, toValue }                  from 'vue';
+import { computed, toValue } from 'vue';
 
 export function useFlyonUIVueAppConfigProperty<
     T extends ConfigurableComponentName,

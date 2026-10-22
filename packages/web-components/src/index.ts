@@ -1,6 +1,5 @@
 import type { FlyonUIVueComponent, FlyonUIWebComponent } from '@/Types/WebComponent';
 import { kebabCase }                                     from 'change-case';
-
 import {
     FoBadge,
     FoButton,
@@ -11,14 +10,10 @@ import {
     FoStatTitle,
     FoStatValue,
 } from 'flyonui-vue/ce';
-import badgeCss
-    from 'flyonui/components/badge.css?inline';
-import buttonCss
-    from 'flyonui/components/button.css?inline';
-import checkboxCss
-    from 'flyonui/components/checkbox.css?inline';
-import statCss
-    from 'flyonui/components/stat.css?inline';
+import badgeCss                from 'flyonui/components/badge.css?inline';
+import buttonCss               from 'flyonui/components/button.css?inline';
+import checkboxCss             from 'flyonui/components/checkbox.css?inline';
+import statCss                 from 'flyonui/components/stat.css?inline';
 import { defineCustomElement } from 'vue';
 import StyleSheetHelper        from '@/Lib/StyleSheetHelper';
 

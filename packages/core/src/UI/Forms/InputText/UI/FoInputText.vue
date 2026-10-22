@@ -78,11 +78,13 @@
 </template>
 
 <script setup lang="ts">
+import type { StyleValue }                             from 'vue';
 import type { ComponentName, IconSize, Size }          from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot }        from '@/Types';
 import type { LabelType }                              from '@/UI/Components';
 import type { InputTextProps }                         from '@/UI/Forms/InputText';
-import type { StyleValue }                             from 'vue';
+import { reactiveOmit }                                from '@vueuse/core';
+import { computed, inject, useId }                     from 'vue';
 import { useFlyonUIVueAppConfig }                      from '@/Lib';
 import { useFloatingLabel }                            from '@/Lib/UseFloatingLabel/Internal';
 import { useFlyonUIVueAppConfigProperty }              from '@/Lib/UseFlyonUIVueAppConfig/Internal';
@@ -95,8 +97,6 @@ import { FoLabel, useLabel }                           from '@/UI/Components/Lab
 import { FoIcon }                                      from '@/UI/Customization/Icon';
 import { useHasPositionableIcon, usePositionableIcon } from '@/UI/Customization/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem }           from '@/UI/Forms/Join/Internal';
-import { reactiveOmit }                                from '@vueuse/core';
-import { computed, inject, useId }                     from 'vue';
 
 defineOptions({
     inheritAttrs: false,

@@ -12,11 +12,11 @@
 import type { ComponentName }           from '@/Lib';
 import type { WithRequiredDefaultSlot } from '@/Types';
 import type { JoinProps }               from '@/UI/Forms/Join';
+import { provide }                      from 'vue';
 import { useOrientation }               from '@/Lib/UseOrientation/Internal';
 import { useResponsitivity }            from '@/Lib/UseResponsitivity/Internal';
 import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
 import { isInJoinInjectionKey }         from '@/UI/Forms/Join/Internal';
-import { provide }                      from 'vue';
 
 const props = withDefaults(defineProps<JoinProps>(), {
     isResponsive: false,

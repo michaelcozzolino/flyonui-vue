@@ -81,16 +81,16 @@
 </template>
 
 <script setup lang="ts" generic="T extends object">
+import type { Slot }                            from 'vue';
 import type { SelectOption }                    from '@/UI/Forms';
 import type { DatatableProps, TableSlots }      from '@/UI/Tables';
-import type { Slot }                            from 'vue';
+import { isDefined, useArrayMap }               from '@vueuse/core';
+import { computed, provide, shallowRef, watch } from 'vue';
 import { FoIcon }                               from '@/UI/Customization';
 import { useSelectedOption }                    from '@/UI/Forms';
 import { FoTable, FoTableColumn, FoTableRow }   from '@/UI/Tables';
 import { dataTableColumnFilterInjectionKey }    from '@/UI/Tables/DataTable/Internal/Lib';
 import { FoDataTableControls }                  from '@/UI/Tables/DataTable/Internal/UI';
-import { isDefined, useArrayMap }               from '@vueuse/core';
-import { computed, provide, shallowRef, watch } from 'vue';
 
 const props = withDefaults(defineProps<DatatableProps>(), {
     useAjax:          false,

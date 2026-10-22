@@ -83,17 +83,17 @@
 </template>
 
 <script setup lang="ts">
+import type { Slot }                                             from 'vue';
 import type { ComponentName }                                    from '@/Lib';
 import type { WithDefaultSlot }                                  from '@/Types';
 import type { ModalPlacement, ModalProps }                       from '@/UI/Overlays';
-import type { Slot }                                             from 'vue';
+import { onClickOutside, useFocus, useScrollLock }               from '@vueuse/core';
+import { computed, provide, useTemplateRef, watch, watchEffect } from 'vue';
 import { useFlyonUIVueAppConfig }                                from '@/Lib';
 import { useColor }                                              from '@/Lib/UseColor/Internal';
 import { useSize }                                               from '@/Lib/UseSize/Internal';
 import { FoButton }                                              from '@/UI/Components';
 import { isModalTransparentInjectionKey }                        from '@/UI/Overlays/Modal/Internal';
-import { onClickOutside, useFocus, useScrollLock }               from '@vueuse/core';
-import { computed, provide, useTemplateRef, watch, watchEffect } from 'vue';
 
 const props = withDefaults(defineProps<ModalProps>(), {
     closeOnEscape: true,

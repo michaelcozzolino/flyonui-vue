@@ -1,8 +1,8 @@
-import type { StripedComponentName } from '@/Lib';
-
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useClass }                           from '@/Lib/UseClass/Internal';
-import { toValue }                            from 'vue';
+
+import type { StripedComponentName } from '@/Lib';
+import { toValue }                   from 'vue';
+import { useClass }                  from '@/Lib/UseClass/Internal';
 
 export function useStripes(
     elementName: MaybeRefOrGetter<StripedComponentName>,

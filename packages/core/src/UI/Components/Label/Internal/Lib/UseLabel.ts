@@ -1,7 +1,7 @@
+import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import type { FlyonUIVueAppDefaultConfig }         from '@/Lib';
 import type { InputLabel, LabelType }              from '@/UI/Components';
 import type { ConfigurableLabelComponentName }     from '@/UI/Components/Label/Internal/Types';
-import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { computed, toValue }                       from 'vue';
 
 export function useLabel<T extends LabelType>(

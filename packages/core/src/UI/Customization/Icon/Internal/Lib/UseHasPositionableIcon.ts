@@ -1,5 +1,5 @@
-import type { PositionableIcon } from '@/UI/Customization';
 import type { MaybeRefOrGetter } from 'vue';
+import type { PositionableIcon } from '@/UI/Customization';
 import {  toValue }              from 'vue';
 
 export function useHasPositionableIcon(icon: MaybeRefOrGetter<PositionableIcon | undefined>): boolean {

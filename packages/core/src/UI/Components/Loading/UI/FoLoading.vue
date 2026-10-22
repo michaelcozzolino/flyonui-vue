@@ -11,10 +11,10 @@
 <script setup lang="ts">
 import type { ComponentName }                  from '@/Lib';
 import type { LoadingAnimation, LoadingProps } from '@/UI/Components';
+import { computed }                            from 'vue';
 import { useFlyonUIVueAppConfig }              from '@/Lib';
 import { useTextColor }                        from '@/Lib/UseColor/Internal';
 import { useSize }                             from '@/Lib/UseSize/Internal';
-import { computed }                            from 'vue';
 
 const props = withDefaults(defineProps<LoadingProps>(), {
     animation: 'spinner',

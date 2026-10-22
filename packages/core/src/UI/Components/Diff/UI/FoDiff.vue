@@ -17,8 +17,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }     from '@/Lib';
 import type { Slot }              from 'vue';
+import type { ComponentName }     from '@/Lib';
 import { useRequiredSlotMessage } from '@/Lib/Utils/Internal';
 
 defineSlots<{

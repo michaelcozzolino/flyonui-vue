@@ -5,10 +5,10 @@
 <script setup lang="ts">
 import type { ComponentName }   from '@/Lib';
 import type { SkeletonProps }   from '@/UI/Components/Skeleton/Types/Skeleton';
+import { computed }             from 'vue';
 import { useClass }             from '@/Lib/UseClass/Internal';
 import { useStripes }           from '@/Lib/UseStripes/Internal';
 import { useTailwindAnimation } from '@/Lib/UseTailwindAnimation/Internal';
-import { computed }             from 'vue';
 
 const props = withDefaults(defineProps<SkeletonProps>(), {
     animation: 'none',

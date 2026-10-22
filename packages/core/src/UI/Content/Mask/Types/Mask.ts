@@ -1,5 +1,4 @@
-export type Mask =
-    | 'heart'
+export type Mask = 'heart'
     | 'squircle'
     | 'hexagon'
     | 'hexagon-2'

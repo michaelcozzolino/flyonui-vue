@@ -1,9 +1,9 @@
-import type { Shape }                 from '@/Lib';
 import type { MaybeRefOrGetter }      from 'vue';
-import { flyonUIVueAppDefaultConfig } from '@/Lib';
-import { isTextAllowedForShape }      from '@/Lib/UseShape/Internal';
+import type { Shape }                 from '@/Lib';
 import { describe, expect, it }       from 'vitest';
 import { computed, ref }              from 'vue';
+import { flyonUIVueAppDefaultConfig } from '@/Lib';
+import { isTextAllowedForShape }      from '@/Lib/UseShape/Internal';
 
 describe('isTextAllowedForShape', () => {
     it.each<[MaybeRefOrGetter<Shape>, boolean]>([

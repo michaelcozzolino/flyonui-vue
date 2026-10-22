@@ -1,13 +1,13 @@
 import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig }                    from '@/Lib';
 import type { TextDirection }                                                      from '@/Types';
-import { createFlyonUIVueApp, flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig } from '@/Lib';
-import { flyonUIVueAppConfigLocalStorageKey }                                      from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 import { flushPromises, mount }                                                    from '@vue/test-utils';
 import { noop, useLocalStorage }                                                   from '@vueuse/core';
 import deepmerge                                                                   from 'deepmerge';
 import { useHead }                                                                 from 'unhead';
 import { beforeEach, describe, expect, it, vi }                                    from 'vitest';
 import { defineComponent }                                                         from 'vue';
+import { createFlyonUIVueApp, flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig } from '@/Lib';
+import { flyonUIVueAppConfigLocalStorageKey }                                      from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 vi.mock('@vueuse/core', { spy: true });
 vi.mock('unhead', { spy: true });

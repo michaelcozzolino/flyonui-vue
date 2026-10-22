@@ -1,8 +1,8 @@
-import type { ComponentName }    from '@/Lib';
 import type { MaybeRefOrGetter } from 'vue';
-import { useComponentClass }     from '@/Lib/UseClass/Internal';
+import type { ComponentName }    from '@/Lib';
 import { describe, expect, it }  from 'vitest';
 import { ref }                   from 'vue';
+import { useComponentClass }     from '@/Lib/UseClass/Internal';
 
 describe('useComponentClass', () => {
     const componentName: ComponentName = 'FoButton';

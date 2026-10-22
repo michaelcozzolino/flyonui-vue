@@ -1,9 +1,9 @@
-import type { FlyonUIVueAppDefaultConfig } from '@/Lib';
 import type { MaybeRefOrGetter }           from 'vue';
-import { flyonUIVueAppDefaultConfig }      from '@/Lib';
-import { resetFlyonUIVueAppConfig }        from '@/Lib/UseFlyonUIVueAppConfig/Internal';
+import type { FlyonUIVueAppDefaultConfig } from '@/Lib';
 import { describe, expect, it }            from 'vitest';
 import { ref }                             from 'vue';
+import { flyonUIVueAppDefaultConfig }      from '@/Lib';
+import { resetFlyonUIVueAppConfig }        from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 describe('resetFlyonUIVueAppConfig', () => {
     it.each<[MaybeRefOrGetter<FlyonUIVueAppDefaultConfig>]>([

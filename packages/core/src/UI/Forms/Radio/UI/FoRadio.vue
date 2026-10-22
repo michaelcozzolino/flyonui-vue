@@ -39,6 +39,8 @@
 <script setup lang="ts">
 import type { ComponentName }                from '@/Lib';
 import type { RadioProps }                   from '@/UI/Forms/Radio';
+import { reactiveOmit }                      from '@vueuse/core';
+import { computed, inject }                  from 'vue';
 import { useFlyonUIVueAppConfig }            from '@/Lib';
 import { useClass }                          from '@/Lib/UseClass/Internal';
 import { useColor }                          from '@/Lib/UseColor/Internal';
@@ -49,8 +51,6 @@ import { FoFragment }                        from '@/UI/Components/Fragment/Inte
 import { FoHelperText }                      from '@/UI/Components/HelperText/Internal';
 import { FoLabel }                           from '@/UI/Components/Label/Internal';
 import { isInJoinInjectionKey, useJoinItem } from '@/UI/Forms/Join/Internal';
-import { reactiveOmit }                      from '@vueuse/core';
-import { computed, inject }                  from 'vue';
 
 defineOptions({
     inheritAttrs: false,
