@@ -22,7 +22,7 @@ export default defineConfig({
         alias: [
             {
                 find:        '@',
-                replacement: resolve(__dirname, '.'),
+                replacement: resolve(import.meta.dirname, '.'),
             },
             {
                 find:        /^.*\/VPNavBarSearchButton\.vue$/,
