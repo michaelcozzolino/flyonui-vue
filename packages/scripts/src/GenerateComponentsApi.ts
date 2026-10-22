@@ -14,8 +14,9 @@ async function generateComponentsApi(): Promise<void> {
     const vueComponentsPath = resolve(corePath, 'src/UI');
 
     const checkerOptions: MetaCheckerOptions = {
-        schema:  true,
-        printer: { newLine: 1 },
+        schema:         true,
+        noDeclarations: false,
+        printer:        { newLine: 1 },
     };
 
     const tsconfigChecker = createChecker(
