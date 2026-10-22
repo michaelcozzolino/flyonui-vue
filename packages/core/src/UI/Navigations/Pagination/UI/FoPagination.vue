@@ -56,12 +56,12 @@
 <script setup lang="ts">
 import type { ComponentName }                  from '@/Lib';
 import type { PaginationProps }                from '@/UI/Navigations';
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
+import { computed, watch }                     from 'vue';
 import { useAlignment }                        from '@/Lib/UseAlignment/Internal';
 import { FoButton }                            from '@/UI/Components';
 import { useRoundedNone }                      from '@/UI/Navigations/Pagination/Internal';
 import FoPaginationButton                      from '@/UI/Navigations/Pagination/Internal/UI/FoPaginationButton.vue';
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
-import { computed, watch }                     from 'vue';
 
 const props = withDefaults(defineProps<PaginationProps>(), {
     alignment: 'left',

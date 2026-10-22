@@ -10,9 +10,9 @@
 
 <script setup lang="ts">
 import type { TooltipProps, TooltipSlots } from '@/UI/Overlays/Tooltip';
+import { provide }                         from 'vue';
 import { FoTooltip }                       from '@/UI/Overlays/Tooltip';
 import { tooltipAsPopover }                from '@/UI/Overlays/Tooltip/Internal';
-import { provide }                         from 'vue';
 
 defineProps<TooltipProps>();
 

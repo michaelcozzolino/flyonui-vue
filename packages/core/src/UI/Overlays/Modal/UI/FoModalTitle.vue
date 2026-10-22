@@ -12,10 +12,10 @@
 <script setup lang="ts">
 import type { WithRequiredDefaultSlot }   from '@/Types';
 import type { ModalTitleProps }           from '@/UI/Overlays';
+import { computed, inject }               from 'vue';
 import { useRequiredSlotMessage }         from '@/Lib/Utils/Internal';
 import { FoHeading  }                     from '@/UI/Content';
 import { isModalTransparentInjectionKey } from '@/UI/Overlays/Modal/Internal';
-import { computed, inject }               from 'vue';
 
 defineProps<ModalTitleProps>();
 

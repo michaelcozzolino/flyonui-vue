@@ -76,15 +76,14 @@
 </template>
 
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
-import type { ComponentName } from '@/Lib';
-import type { LabelType }     from '@/UI/Components';
-
-import type { SelectOption, SelectProps } from '@/UI/Forms';
-import { useFlyonUIVueAppConfig }         from '@/Lib';
-import { useFloatingLabel }               from '@/Lib/UseFloatingLabel/Internal';
-import { useElementId }                   from '@/Lib/UseIdentifiable/Internal';
-import { useShape }                       from '@/Lib/UseShape/Internal';
-
+import type { ComponentName }                      from '@/Lib';
+import type { LabelType }                          from '@/UI/Components';
+import type { SelectOption, SelectProps }          from '@/UI/Forms';
+import { computed, watchEffect }                   from 'vue';
+import { useFlyonUIVueAppConfig }                  from '@/Lib';
+import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
+import { useElementId }                            from '@/Lib/UseIdentifiable/Internal';
+import { useShape }                                from '@/Lib/UseShape/Internal';
 import { useSize }                                 from '@/Lib/UseSize/Internal';
 import { useValidity }                             from '@/Lib/UseValidity/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperText/Internal';
@@ -93,7 +92,6 @@ import { FoIcon }                                  from '@/UI/Customization';
 import { isSelectOptionGroup }                     from '@/UI/Forms/Select/Internal';
 import { onEmptyOptions }                          from '@/UI/Forms/Select/Internal/Lib/OnEmptyOptions';
 import FoSelectOption                              from '@/UI/Forms/Select/Internal/UI/FoSelectOption.vue';
-import { computed, watchEffect }                   from 'vue';
 
 const props = withDefaults(defineProps<SelectProps<T, K>>(), {
     disabled: undefined,

@@ -37,17 +37,17 @@
 </template>
 
 <script setup lang="ts">
+import type { Slot }                   from 'vue';
 import type { ComponentName }          from '@/Lib';
 import type { WithDefaultSlot }        from '@/Types';
 import type { TableProps, TableSlots } from '@/UI/Tables';
-import type { Slot }                   from 'vue';
+import { computed }                    from 'vue';
 import { useFlyonUIVueAppConfig }      from '@/Lib';
 import { useBorder }                   from '@/Lib/UseBorder/Internal';
 import { useClass }                    from '@/Lib/UseClass/Internal';
 import { useResponsitivity }           from '@/Lib/UseResponsitivity/Internal';
 import { useSize }                     from '@/Lib/UseSize/Internal';
 import { FoTableHead }                 from '@/UI/Tables';
-import { computed }                    from 'vue';
 
 const props = withDefaults(defineProps<TableProps>(), {
     isBordered: undefined,
