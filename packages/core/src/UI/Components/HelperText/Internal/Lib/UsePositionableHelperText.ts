@@ -1,11 +1,11 @@
-import type { FlyonUIVueAppDefaultConfig } from '@/Lib';
+import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
+import type { FlyonUIVueAppDefaultConfig }         from '@/Lib';
 import type {
     ConfigurableHelperText,
     PositionableHelperText,
     PositionableHelperTextComponentName,
 }                                                  from '@/UI/Components/HelperText/Internal';
-import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
-import { computed, toValue }                       from 'vue';
+import { computed, toValue } from 'vue';
 
 export function usePositionableHelperText(
     config: Ref<FlyonUIVueAppDefaultConfig>,

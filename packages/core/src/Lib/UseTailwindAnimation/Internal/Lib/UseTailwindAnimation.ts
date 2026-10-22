@@ -1,5 +1,5 @@
-import type { TailwindAnimation }             from '@/Lib/UseTailwindAnimation/Types';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import type { TailwindAnimation }             from '@/Lib/UseTailwindAnimation/Types';
 import { computed, toValue }                  from 'vue';
 
 export function useTailwindAnimation(animation: MaybeRefOrGetter<TailwindAnimation>): ComputedRef<string> {

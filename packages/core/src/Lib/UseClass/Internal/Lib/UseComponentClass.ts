@@ -1,5 +1,5 @@
-import type { ComponentName }                 from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import type { ComponentName }                 from '@/Lib';
 import { computed, toValue }                  from 'vue';
 
 export function useComponentClass<T extends ComponentName, K extends string>(

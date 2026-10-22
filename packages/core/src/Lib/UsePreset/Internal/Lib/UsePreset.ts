@@ -1,5 +1,5 @@
-import type { FlyonUIVueAppDefaultConfig, Preset, PresettableComponentName } from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter, Ref }                           from 'vue';
+import type { FlyonUIVueAppDefaultConfig, Preset, PresettableComponentName } from '@/Lib';
 import { useComponentClass }                                                 from '@/Lib/UseClass/Internal';
 import {
     useFlyonUIVueAppConfigProperty,

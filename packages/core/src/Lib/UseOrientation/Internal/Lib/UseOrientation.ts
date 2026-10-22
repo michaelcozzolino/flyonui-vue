@@ -1,5 +1,5 @@
-import type { OrientableComponentName, Orientation } from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter }        from 'vue';
+import type { OrientableComponentName, Orientation } from '@/Lib';
 import { useComponentClass }                         from '@/Lib/UseClass/Internal';
 
 export function useOrientation(

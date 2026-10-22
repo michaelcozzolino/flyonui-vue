@@ -1,5 +1,5 @@
-import type { AlignableComponentName, Alignment } from '@/Lib/UseAlignment';
 import type { ComputedRef, MaybeRefOrGetter }     from 'vue';
+import type { AlignableComponentName, Alignment } from '@/Lib/UseAlignment';
 import { useComponentClass }                      from '@/Lib/UseClass/Internal';
 
 export function useAlignment(
