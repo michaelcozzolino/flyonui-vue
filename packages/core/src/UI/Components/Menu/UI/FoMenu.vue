@@ -12,13 +12,13 @@
 import type { ComponentName }           from '@/Lib';
 import type { WithRequiredDefaultSlot } from '@/Types';
 import type { MenuProps }               from '@/UI/Components';
+import { computed, provide }            from 'vue';
 import { useFlyonUIVueAppConfig }       from '@/Lib';
 import { useClass }                     from '@/Lib/UseClass/Internal';
 import { useOrientation }               from '@/Lib/UseOrientation/Internal';
 import { useSize }                      from '@/Lib/UseSize/Internal';
 import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
 import { menuTextPropsInjectionKey }    from '@/UI/Components/Menu/Internal';
-import { computed, provide }            from 'vue';
 
 const props = withDefaults(defineProps<MenuProps>(), {
     hideText:      false,

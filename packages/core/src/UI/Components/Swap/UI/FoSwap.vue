@@ -18,11 +18,11 @@
 </template>
 
 <script setup lang="ts">
+import type { Slot }                     from 'vue';
 import type { ComponentName }            from '@/Lib';
 import type { SwapAnimation, SwapProps } from '@/UI/Components';
-import type { Slot }                     from 'vue';
-import { useRequiredSlotMessage }        from '@/Lib/Utils/Internal';
 import { computed }                      from 'vue';
+import { useRequiredSlotMessage }        from '@/Lib/Utils/Internal';
 
 const props = defineProps<SwapProps>();
 

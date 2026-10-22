@@ -57,11 +57,11 @@ import type { ComponentName }           from '@/Lib';
 import type { Alignment }               from '@/Lib/UseAlignment';
 import type { WithRequiredDefaultSlot } from '@/Types';
 import type { BlockQuoteProps }         from '@/UI/Content/BlockQuote/Types';
+import { computed }                     from 'vue';
 import { useAlignment }                 from '@/Lib/UseAlignment/Internal';
 import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
 import { FoAvatar }                     from '@/UI/Components';
 import { FoIcon }                       from '@/UI/Customization';
-import { computed }                     from 'vue';
 
 const props = withDefaults(defineProps<BlockQuoteProps>(), {
     alignment: 'left',

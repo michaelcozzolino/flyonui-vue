@@ -1,7 +1,7 @@
 import type { FlyonUIVueAppDefaultConfig, FlyonUIVueAppInjectionContext } from '@/Lib';
+import { inject, ref }                                                    from 'vue';
 import { flyonUIVueAppDefaultConfig  }                                    from '@/Lib';
 import { resetFlyonUIVueAppConfig, useFlyonUIVueAppConfigInjectionKey }   from '@/Lib/UseFlyonUIVueAppConfig/Internal';
-import { inject, ref }                                                    from 'vue';
 
 export function useFlyonUIVueAppConfig(): FlyonUIVueAppInjectionContext {
     /**

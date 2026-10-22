@@ -1,5 +1,5 @@
-import type { State, StatefulComponentName }  from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
+import type { State, StatefulComponentName }  from '@/Lib';
 import { useComponentClass }                  from '@/Lib/UseClass/Internal';
 
 export function useState(

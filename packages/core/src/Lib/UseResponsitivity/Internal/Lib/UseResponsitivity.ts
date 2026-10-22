@@ -1,7 +1,7 @@
-import type { ResponsiveComponentName }       from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useClass }                           from '@/Lib/UseClass/Internal';
+import type { ResponsiveComponentName }       from '@/Lib';
 import { toValue }                            from 'vue';
+import { useClass }                           from '@/Lib/UseClass/Internal';
 
 export function useResponsitivity(
     componentName: MaybeRefOrGetter<ResponsiveComponentName>,

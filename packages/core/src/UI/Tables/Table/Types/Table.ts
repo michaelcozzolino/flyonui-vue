@@ -1,5 +1,5 @@
-import type { Borderable, MaybeStringId, Responsive, Sizable, Size } from '@/Lib';
 import type { Slot }                                                 from 'vue';
+import type { Borderable, MaybeStringId, Responsive, Sizable, Size } from '@/Lib';
 
 type RowsOrColumns = 'rows' | 'columns';
 

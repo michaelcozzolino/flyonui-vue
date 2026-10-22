@@ -55,9 +55,11 @@
 </template>
 
 <script lang="ts" setup>
+import type { StyleValue, VNode }                                    from 'vue';
 import type { ConfigurableComponentName }                            from '@/Lib';
 import type { CheckboxProps }                                        from '@/UI/Forms/Checkbox/Types/Checkbox.ts';
-import type { StyleValue, VNode }                                    from 'vue';
+import { reactiveOmit }                                              from '@vueuse/core';
+import { computed, inject, watch }                                   from 'vue';
 import { useFlyonUIVueAppConfig }                                    from '@/Lib';
 import { useColor }                                                  from '@/Lib/UseColor/Internal';
 import { useElementId }                                              from '@/Lib/UseIdentifiable/Internal';
@@ -65,8 +67,6 @@ import { useSize }                                                   from '@/Lib
 import { useValidity }                                               from '@/Lib/UseValidity/Internal';
 import { FoLabel }                                                   from '@/UI/Components/Label/Internal';
 import { isCheckableInGroupInjectionKey, switchOptionsInjectionKey } from '@/UI/Forms/Checkbox/Internal';
-import { reactiveOmit }                                              from '@vueuse/core';
-import { computed, inject, watch }                                   from 'vue';
 
 defineOptions({
     inheritAttrs: false,

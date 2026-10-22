@@ -14,11 +14,11 @@
 <script setup lang="ts">
 import type { WithDefaultSlot }                from '@/Types';
 import type { LinkProps, UnderlineLinkEffect } from '@/UI/Content/Link';
+import { computed, inject }                    from 'vue';
 import { useFlyonUIVueAppConfig }              from '@/Lib';
 import { useTextColor }                        from '@/Lib/UseColor/Internal';
 import { isInMenuItemInjectionKey }            from '@/UI/Components/Menu/Internal';
 import { FoRouterLink }                        from '@/UI/Content/Link/Internal';
-import { computed, inject }                    from 'vue';
 
 const props = defineProps<LinkProps>();
 

@@ -1,8 +1,8 @@
+import type { ComputedRef, MaybeRefOrGetter } from 'vue';
 import type { FloatingLabelComponentName }    from '@/Lib';
 import type { LabelType }                     from '@/UI/Components';
-import type { ComputedRef, MaybeRefOrGetter } from 'vue';
-import { useClass }                           from '@/Lib/UseClass/Internal';
 import { computed, toValue }                  from 'vue';
+import { useClass }                           from '@/Lib/UseClass/Internal';
 
 export function useFloatingLabel(
     componentName: MaybeRefOrGetter<FloatingLabelComponentName>,

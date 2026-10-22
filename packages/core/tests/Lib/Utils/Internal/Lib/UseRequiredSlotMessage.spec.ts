@@ -1,6 +1,6 @@
 import type { ComponentName }     from '@/Lib';
-import { useRequiredSlotMessage } from '@/Lib/Utils/Internal';
 import { describe, expect, it }   from 'vitest';
+import { useRequiredSlotMessage } from '@/Lib/Utils/Internal';
 
 describe('useRequiredSlotMessage', () => {
     it('returns a message for a required slot', () => {

@@ -1,6 +1,6 @@
+import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import type { FlyonUIVueAppDefaultConfig }         from '@/Lib';
 import type { SizableComponentName, Size }         from '@/Lib/UseSize/Types';
-import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
 import { useComponentClass }                       from '@/Lib/UseClass/Internal';
 import { useFlyonUIVueAppConfigProperty }          from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 

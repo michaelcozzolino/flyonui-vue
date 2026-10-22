@@ -13,9 +13,9 @@
 import type { Color, ComponentName }                                from '@/Lib';
 import type { WithDefaultSlot }                                     from '@/Types';
 import type { RadialProgressBackgroundPreset, RadialProgressProps } from '@/UI/Components/RadialProgress';
+import { computed }                                                 from 'vue';
 import { useFlyonUIVueAppConfig }                                   from '@/Lib';
 import { useColor }                                                 from '@/Lib/UseColor/Internal';
-import { computed }                                                 from 'vue';
 
 const props = defineProps<RadialProgressProps>();
 

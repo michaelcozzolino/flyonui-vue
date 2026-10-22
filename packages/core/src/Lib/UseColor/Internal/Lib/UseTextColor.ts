@@ -1,7 +1,7 @@
-import type { FlyonUIVueAppDefaultConfig, TextColor, TextColorableComponentName } from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter, Ref }                                from 'vue';
-import { useColor }                                                               from '@/Lib/UseColor/Internal';
+import type { FlyonUIVueAppDefaultConfig, TextColor, TextColorableComponentName } from '@/Lib';
 import { computed, toValue }                                                      from 'vue';
+import { useColor }                                                               from '@/Lib/UseColor/Internal';
 
 export function useTextColor(
     config: Ref<FlyonUIVueAppDefaultConfig>,

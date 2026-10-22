@@ -1,6 +1,6 @@
+import type { RouteLocationRaw }  from 'vue-router';
 import type { TextColorable }     from '@/Lib';
 import type { FoRouterLinkProps } from '@/UI/Content/Link/Internal';
-import type { RouteLocationRaw }  from 'vue-router';
 
 export type Link = string;
 

@@ -1,5 +1,5 @@
-import type { MenuTextProps }             from '@/UI/Components';
 import type { ComputedRef, InjectionKey } from 'vue';
+import type { MenuTextProps }             from '@/UI/Components';
 
 export const menuTextPropsInjectionKey: InjectionKey<ComputedRef<MenuTextProps>> = Symbol('props related to the text of the items in the menu');
 

@@ -1,10 +1,10 @@
+import type { Ref }                                                              from 'vue';
 import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size } from '@/Lib';
 import type { PickIfExists, Prettify }                                           from '@/Lib/Utils/Internal';
-import type { HorizontalPosition, TextDirection }                                      from '@/Types';
-import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps ,
-} from '@/UI/Components';
-import type { AlertProps }  from '@/UI/Components/Alert';
-import type { AvatarProps } from '@/UI/Components/Avatar';
+import type { HorizontalPosition, TextDirection }                                from '@/Types';
+import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }      from '@/UI/Components';
+import type { AlertProps }                                                       from '@/UI/Components/Alert';
+import type { AvatarProps }                                                      from '@/UI/Components/Avatar';
 import type {
     RadialProgressProps,
 } from '@/UI/Components/RadialProgress';
@@ -19,7 +19,6 @@ import type { RangeProps }                                                      
 import type { TabProps, TabsProps }                                                    from '@/UI/Navigations';
 import type { ModalProps, TooltipProps }                                               from '@/UI/Overlays';
 import type { TableProps }                                                             from '@/UI/Tables';
-import type { Ref }                                                                    from 'vue';
 
 /**
  * todo: docs here should be checked and put in vitepress

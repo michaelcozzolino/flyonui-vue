@@ -35,6 +35,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Slot }                       from 'vue';
 import type { Color, ComponentName, Size } from '@/Lib';
 import type {
     AvatarIndicatorPlacement,
@@ -42,7 +43,7 @@ import type {
     AvatarPlaceholderPreset,
     AvatarProps,
 }                                                  from '@/UI/Components/Avatar';
-import type { Slot }                  from 'vue';
+import { computed }                   from 'vue';
 import { useFlyonUIVueAppConfig }     from '@/Lib';
 import {
     useFlyonUIVueAppConfigProperty,
@@ -50,7 +51,6 @@ import {
 import { useShape } from '@/Lib/UseShape/Internal';
 import { useSize }  from '@/Lib/UseSize/Internal';
 import { FoIcon }   from '@/UI/Customization';
-import { computed } from 'vue';
 
 const props = defineProps<AvatarProps>();
 

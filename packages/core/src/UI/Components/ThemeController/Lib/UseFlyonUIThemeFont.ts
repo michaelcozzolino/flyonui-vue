@@ -1,5 +1,5 @@
-import type { FlyonUITheme, FlyonUIThemeFont } from '@/UI/Components';
 import type { MaybeRefOrGetter }               from 'vue';
+import type { FlyonUITheme, FlyonUIThemeFont } from '@/UI/Components';
 import { useCssVar }                           from '@vueuse/core';
 import { useHead }                             from 'unhead';
 import { createHead }                          from 'unhead/client';

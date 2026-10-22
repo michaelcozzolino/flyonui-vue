@@ -1,7 +1,5 @@
 import type { FlyonUIVueComponent, FlyonUIWebComponent } from '@/Types/WebComponent';
-import StyleSheetHelper                                  from '@/Lib/StyleSheetHelper';
-
-import { kebabCase } from 'change-case';
+import { kebabCase }                                     from 'change-case';
 import {
     FoBadge,
     FoButton,
@@ -12,22 +10,18 @@ import {
     FoStatTitle,
     FoStatValue,
 } from 'flyonui-vue/ce';
-import badgeCss
-    from 'flyonui/components/badge.css?inline';
-import buttonCss
-    from 'flyonui/components/button.css?inline';
-import checkboxCss
-    from 'flyonui/components/checkbox.css?inline';
-import statCss
-    from 'flyonui/components/stat.css?inline';
+import badgeCss                from 'flyonui/components/badge.css?inline';
+import buttonCss               from 'flyonui/components/button.css?inline';
+import checkboxCss             from 'flyonui/components/checkbox.css?inline';
+import statCss                 from 'flyonui/components/stat.css?inline';
 import { defineCustomElement } from 'vue';
+import StyleSheetHelper        from '@/Lib/StyleSheetHelper';
 
 const statStyleSheet = StyleSheetHelper.generate(statCss);
 
 const vueComponents: FlyonUIVueComponent[] = [
     { component: FoButton, styleSheet: StyleSheetHelper.generate(buttonCss) },
     { component: FoBadge, styleSheet: StyleSheetHelper.generate(badgeCss) },
-    // @ts-expect-error a type error occurs only with checkbox, todo: check why
     { component: FoCheckbox, styleSheet: StyleSheetHelper.generate(checkboxCss) },
     { component: FoStats, styleSheet: statStyleSheet },
     { component: FoStat, styleSheet: statStyleSheet },

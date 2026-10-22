@@ -48,9 +48,11 @@
 </template>
 
 <script setup lang="ts" generic="T extends TabProps">
+import type { Slot }                                                          from 'vue';
 import type { ComponentName }                                                 from '@/Lib';
 import type { TabProps, TabsProps }                                           from '@/UI/Navigations';
-import type { Slot }                                                          from 'vue';
+import { useArrayEvery, useArrayFindIndex, useFocus, useMagicKeys, whenever } from '@vueuse/core';
+import { computed, provide, useTemplateRef, watch }                           from 'vue';
 import { useFlyonUIVueAppConfig }                                             from '@/Lib';
 import { useAlignment }                                                       from '@/Lib/UseAlignment/Internal';
 import { useOrientation }                                                     from '@/Lib/UseOrientation/Internal';
@@ -59,8 +61,6 @@ import { useSize }                                                            fr
 import { useArrayLength }                                                     from '@/Lib/Utils/Internal';
 import { FoTab, FoTabContent }                                                from '@/UI/Navigations';
 import { activeTabInjectionKey, tabsPropsInjectionKey }                       from '@/UI/Navigations/Tabs/Internal';
-import { useArrayEvery, useArrayFindIndex, useFocus, useMagicKeys, whenever } from '@vueuse/core';
-import { computed, provide, useTemplateRef, watch }                           from 'vue';
 
 const props = withDefaults(defineProps<TabsProps<T>>(), {
     alignment:    'left',

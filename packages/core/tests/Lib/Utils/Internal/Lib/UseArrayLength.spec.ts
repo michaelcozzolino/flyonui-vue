@@ -1,7 +1,7 @@
 import type { MaybeRefOrGetter } from 'vue';
-import { useArrayLength }        from '@/Lib/Utils/Internal';
 import { describe, expect, it }  from 'vitest';
 import { ref  }                  from 'vue';
+import { useArrayLength }        from '@/Lib/Utils/Internal';
 
 describe('useArrayLength', () => {
     it.each([

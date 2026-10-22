@@ -1,7 +1,7 @@
-import { FoBadge, FoButton }    from '@/UI/Components';
-import { FoPopover }            from '@/UI/Overlays';
 import { mount }                from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
+import { FoBadge, FoButton }    from '@/UI/Components';
+import { FoPopover }            from '@/UI/Overlays';
 
 describe('FoPopover', () => {
     it('is rendered successfully', async () => {

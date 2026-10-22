@@ -1,7 +1,7 @@
 import type { HeadingLevel }    from '@/UI/Content';
-import { FoHeading }            from '@/UI/Content';
 import { flushPromises, mount } from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
+import { FoHeading }            from '@/UI/Content';
 
 describe('FoHeading', () => {
     it('is rendered successfully with the right level', async () => {

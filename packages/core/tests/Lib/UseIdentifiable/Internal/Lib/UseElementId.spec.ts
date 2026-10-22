@@ -1,8 +1,8 @@
 import type { MaybeRefOrGetter }         from 'vue';
-import { useElementId }                  from '@/Lib/UseIdentifiable/Internal';
 import { flushPromises, mount }          from '@vue/test-utils';
 import { describe, expect, it }          from 'vitest';
 import { defineComponent, ref, toValue } from 'vue';
+import { useElementId }                  from '@/Lib/UseIdentifiable/Internal';
 
 describe('useElementId', () => {
     it.each<[MaybeRefOrGetter<string>]>([

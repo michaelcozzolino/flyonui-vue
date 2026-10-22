@@ -28,14 +28,14 @@
 <script setup lang="ts">
 import type { ComponentName }                          from '@/Lib';
 import type { SwitchProps }                            from '@/UI/Forms/Switch';
+import { reactiveOmit }                                from '@vueuse/core';
+import { computed, provide }                           from 'vue';
 import {  useFlyonUIVueAppConfig }                     from '@/Lib';
 import { usePreset }                                   from '@/Lib/UsePreset/Internal';
 import { FoIcon }                                      from '@/UI/Customization';
 import { useHasPositionableIcon, usePositionableIcon } from '@/UI/Customization/Icon/Internal';
 import { FoCheckbox }                                  from '@/UI/Forms';
 import { switchOptionsInjectionKey }                   from '@/UI/Forms/Checkbox/Internal';
-import { reactiveOmit }                                from '@vueuse/core';
-import { computed, provide }                           from 'vue';
 
 const props = withDefaults(defineProps<SwitchProps>(), {
     disabled: false,

@@ -44,6 +44,7 @@ import type { WithAddonSlots, WithDefaultSlot } from '@/Types';
 
 import type { ButtonProps }                  from '@/UI/Components';
 import type { CustomIconSize }               from '@/UI/Customization';
+import { computed, inject, useAttrs }        from 'vue';
 import { useFlyonUIVueAppConfig }            from '@/Lib';
 import { useColor }                          from '@/Lib/UseColor/Internal';
 import { useGlass }                          from '@/Lib/UseGlass/Internal';
@@ -57,7 +58,6 @@ import { FoLink }                            from '@/UI/Content';
 import { FoIcon }                            from '@/UI/Customization';
 import { usePositionableIcon }               from '@/UI/Customization/Icon/Internal';
 import { isInJoinInjectionKey, useJoinItem } from '@/UI/Forms/Join/Internal';
-import { computed, inject, useAttrs }        from 'vue';
 
 const props = withDefaults(defineProps<ButtonProps>(), {
     type:         'button',

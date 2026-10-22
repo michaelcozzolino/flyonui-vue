@@ -47,12 +47,12 @@
 import type { ComponentName }                                                 from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot }                               from '@/Types';
 import type { MenuItemProps }                                                 from '@/UI/Components';
+import { useMotion }                                                          from '@vueuse/motion';
+import { computed, inject, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 import { useState }                                                           from '@/Lib/UseState/Internal';
 import { isInMenuItemInjectionKey, menuTextPropsInjectionKey }                from '@/UI/Components/Menu/Internal';
 import { FoLink }                                                             from '@/UI/Content/Link';
 import { FoIcon }                                                             from '@/UI/Customization/Icon';
-import { useMotion }                                                          from '@vueuse/motion';
-import { computed, inject, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 
 const props = defineProps<MenuItemProps>();
 
