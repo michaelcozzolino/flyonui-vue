@@ -10,11 +10,11 @@
 import type { ComponentName, Orientation }  from '@/Lib';
 import type { WithRequiredDefaultSlot }     from '@/Types';
 import type { ListGroupItemProps }          from '@/UI/Components';
+import { computed, inject }                 from 'vue';
 import { useOrientation }                   from '@/Lib/UseOrientation/Internal';
 import { useStripes }                       from '@/Lib/UseStripes/Internal';
 import { useRequiredSlotMessage }           from '@/Lib/Utils/Internal';
 import { listGroupOrientationInjectionKey } from '@/UI/Components/ListGroup/Internal';
-import { computed, inject }                 from 'vue';
 
 const props = withDefaults(defineProps<ListGroupItemProps>(), {
     isStriped: false,

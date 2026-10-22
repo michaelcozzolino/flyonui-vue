@@ -13,9 +13,9 @@
 import type { DismissibleEmits }    from '@/Lib/UseDismissibleTransition';
 import type { WithDefaultSlot }     from '@/Types';
 import type { BadgeProps }          from '@/UI/Components';
+import { ref }                      from 'vue';
 import { UseDismissibleTransition } from '@/Lib/UseDismissibleTransition/Internal';
 import { FoBadgeBody }              from '@/UI/Components/Badge/Internal';
-import { ref }                      from 'vue';
 
 withDefaults(defineProps<BadgeProps>(), {
     isDismissible: false,

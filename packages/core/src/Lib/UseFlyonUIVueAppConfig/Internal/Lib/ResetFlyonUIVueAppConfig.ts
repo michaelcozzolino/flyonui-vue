@@ -1,5 +1,5 @@
-import type { FlyonUIVueAppDefaultConfig } from '@/Lib';
 import type { MaybeRefOrGetter, Ref }      from 'vue';
+import type { FlyonUIVueAppDefaultConfig } from '@/Lib';
 import {  toValue }                        from 'vue';
 
 export function resetFlyonUIVueAppConfig(

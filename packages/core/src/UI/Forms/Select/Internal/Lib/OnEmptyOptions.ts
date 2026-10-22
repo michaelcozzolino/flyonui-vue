@@ -1,7 +1,7 @@
-import type { SelectOption, SelectOptionType } from '@/UI/Forms';
 import type { MaybeRefOrGetter }               from 'vue';
-import { useArrayLength }                      from '@/Lib/Utils/Internal';
+import type { SelectOption, SelectOptionType } from '@/UI/Forms';
 import { watch }                               from 'vue';
+import { useArrayLength }                      from '@/Lib/Utils/Internal';
 
 export function onEmptyOptions<T extends number | string, K extends SelectOption<T>>(
     options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,

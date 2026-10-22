@@ -39,9 +39,10 @@
 </template>
 
 <script setup lang="ts">
+import type { StyleValue }                         from 'vue';
 import type { ComponentName }                      from '@/Lib';
 import type { InputFileProps }                     from '@/UI/Forms/InputFile';
-import type { StyleValue }                         from 'vue';
+import { reactiveOmit }                            from '@vueuse/core';
 import { useFlyonUIVueAppConfig }                  from '@/Lib';
 import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
 import { useElementId }                            from '@/Lib/UseIdentifiable/Internal';
@@ -49,7 +50,6 @@ import { useSize }                                 from '@/Lib/UseSize/Internal'
 import { useValidity }                             from '@/Lib/UseValidity/Internal';
 import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperText/Internal';
 import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
-import { reactiveOmit }                            from '@vueuse/core';
 
 defineOptions({
     inheritAttrs: false,

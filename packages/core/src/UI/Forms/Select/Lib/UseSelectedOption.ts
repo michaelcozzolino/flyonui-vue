@@ -1,8 +1,8 @@
-import type { SelectOption, SelectOptionType }                                from '@/UI/Forms/Select';
-import type { ComputedRef, MaybeRefOrGetter, Ref }                            from 'vue';
-import { useIdentifiable }                                                    from '@/Lib/UseIdentifiable/Internal';
-import { isSelectOptionGroup }                                                from '@/UI/Forms/Select/Internal';
-import { computed, isReadonly, isRef, ref, toValue, watch, watchEffect      } from 'vue';
+import type { ComputedRef, MaybeRefOrGetter, Ref }                       from 'vue';
+import type { SelectOption, SelectOptionType }                           from '@/UI/Forms/Select';
+import { computed, isReadonly, isRef, ref, toValue, watch, watchEffect } from 'vue';
+import { useIdentifiable }                                               from '@/Lib/UseIdentifiable/Internal';
+import { isSelectOptionGroup }                                           from '@/UI/Forms/Select/Internal';
 
 /**
  * Retrieves the select option of a select field.

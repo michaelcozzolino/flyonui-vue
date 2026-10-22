@@ -13,10 +13,10 @@
 import type { Preset }                    from '@/Lib';
 import type { WithDefaultSlot }           from '@/Types';
 import type { Social, SocialButtonProps } from '@/UI/Components';
+import { computed }                       from 'vue';
 import { useFlyonUIVueAppConfig }         from '@/Lib';
 import { isTextAllowedForShape }          from '@/Lib/UseShape/Internal';
 import { FoButton }                       from '@/UI/Components';
-import { computed }                       from 'vue';
 
 const props = withDefaults(defineProps<SocialButtonProps>(), {
     preset: 'solid',

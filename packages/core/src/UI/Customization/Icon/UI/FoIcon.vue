@@ -15,9 +15,9 @@
 </template>
 
 <script setup lang="ts">
+import type { Component }                        from 'vue';
 import type { IconSize }                         from '@/Lib';
 import type { Dimension2D, IconProps, IconType } from '@/UI/Customization';
-import type { Component }                        from 'vue';
 import { Icon }                                  from '@iconify/vue';
 import { computed }                              from 'vue';
 

@@ -1,12 +1,12 @@
-import type { FlyonUIVueAppDefaultConfig } from '@/Lib';
+import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
+import type { FlyonUIVueAppDefaultConfig }         from '@/Lib';
 import type {
     ConfigurableIcon,
     PositionableIcon,
     PositionableIconComponentName,
 }                                                  from '@/UI/Customization/Icon';
-import type { ComputedRef, MaybeRefOrGetter, Ref } from 'vue';
-import { hasOwn, isObject }                        from '@vueuse/core';
-import { computed, toValue }                       from 'vue';
+import { hasOwn, isObject }  from '@vueuse/core';
+import { computed, toValue } from 'vue';
 
 export function usePositionableIcon(
     config: Ref<FlyonUIVueAppDefaultConfig>,

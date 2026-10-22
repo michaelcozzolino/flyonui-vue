@@ -1,5 +1,5 @@
-import type { FlyonUIVueAppDefaultConfig, Shape, ShapeableComponentName } from '@/Lib';
 import type { ComputedRef, MaybeRefOrGetter, Ref }                        from 'vue';
+import type { FlyonUIVueAppDefaultConfig, Shape, ShapeableComponentName } from '@/Lib';
 import { useComponentClass }                                              from '@/Lib/UseClass/Internal';
 import { useFlyonUIVueAppConfigProperty }                                 from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 

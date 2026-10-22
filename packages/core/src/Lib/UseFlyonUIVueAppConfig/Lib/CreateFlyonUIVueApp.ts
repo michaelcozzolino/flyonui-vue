@@ -1,13 +1,8 @@
+import type { App, FunctionPlugin }                             from 'vue';
 import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig } from '@/Lib';
 import type {
     TextDirection,
 }                                                               from '@/Types';
-import type { App, FunctionPlugin }       from 'vue';
-import {
-    flyonUIVueAppConfigLocalStorageKey,
-    resetFlyonUIVueAppConfig,
-    useFlyonUIVueAppConfigInjectionKey,
-}                                                               from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 import {
     useLocalStorage,
 }                                                               from '@vueuse/core';
@@ -21,7 +16,12 @@ import {
 import {
     getActiveHead,
 }                                                               from 'unhead/legacy';
-import { watch } from 'vue';
+import { watch }                          from 'vue';
+import {
+    flyonUIVueAppConfigLocalStorageKey,
+    resetFlyonUIVueAppConfig,
+    useFlyonUIVueAppConfigInjectionKey,
+}                                                               from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export const flyonUIVueAppDefaultConfig: FlyonUIVueAppDefaultConfig = {
     global: {

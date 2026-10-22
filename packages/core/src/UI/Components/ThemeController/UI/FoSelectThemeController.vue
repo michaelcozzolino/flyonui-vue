@@ -9,10 +9,10 @@
 <script setup lang="ts">
 import type { FlyonUITheme, ThemeControllerProps } from '@/UI/Components';
 import type { SelectProps }                        from '@/UI/Forms';
-import { useFlyonUIThemeFont }                     from '@/UI/Components/ThemeController/Lib/UseFlyonUIThemeFont';
-import { FoSelect, useSelectedOption }             from '@/UI/Forms';
 import { useArrayMap, useColorMode }               from '@vueuse/core';
 import { onMounted, toValue, watch }               from 'vue';
+import { useFlyonUIThemeFont }                     from '@/UI/Components/ThemeController/Lib/UseFlyonUIThemeFont';
+import { FoSelect, useSelectedOption }             from '@/UI/Forms';
 
 const props = withDefaults(defineProps<ThemeControllerProps & Omit<SelectProps<FlyonUITheme>, 'label' | 'options'>>(), {
     initialValue: 'dark',

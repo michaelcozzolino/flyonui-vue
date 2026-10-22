@@ -1,5 +1,5 @@
-import type { FlyonUIVueAppDefaultConfig, Shape, ShapeableComponentName } from '@/Lib';
 import type { MaybeRefOrGetter }                                          from 'vue';
+import type { FlyonUIVueAppDefaultConfig, Shape, ShapeableComponentName } from '@/Lib';
 import { useFlyonUIVueAppConfigProperty }                                 from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 export function isTextAllowedForShape(

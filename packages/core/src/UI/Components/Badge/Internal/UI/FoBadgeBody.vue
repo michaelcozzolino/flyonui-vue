@@ -35,6 +35,7 @@ import type { ComponentName }               from '@/Lib';
 import type { DismissibleEmits }            from '@/Lib/UseDismissibleTransition';
 import type { WithDefaultSlot }             from '@/Types';
 import type { BadgeProps }                  from '@/UI/Components';
+import { computed, provide }                from 'vue';
 import { useFlyonUIVueAppConfig }           from '@/Lib';
 import { useColor }                         from '@/Lib/UseColor/Internal';
 import { usePreset }                        from '@/Lib/UsePreset/Internal';
@@ -44,7 +45,6 @@ import { FoButton }                         from '@/UI/Components';
 import { isInDismissibleBadgeInjectionKey } from '@/UI/Components/Badge/Internal';
 import { FoIcon }                           from '@/UI/Customization';
 import { usePositionableIcon }              from '@/UI/Customization/Icon/Internal';
-import { computed, provide }                from 'vue';
 
 const props = withDefaults(defineProps<BadgeProps>(), {
     isDismissible: false,

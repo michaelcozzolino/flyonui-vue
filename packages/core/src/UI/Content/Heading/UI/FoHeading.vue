@@ -11,10 +11,10 @@
 <script setup lang="ts">
 import type { WithRequiredDefaultSlot }    from '@/Types';
 import type { HeadingLevel, HeadingProps } from '@/UI/Content/Heading';
+import { computed }                        from 'vue';
 import { useFlyonUIVueAppConfig }          from '@/Lib';
 import { useTextColor }                    from '@/Lib/UseColor/Internal';
 import { useRequiredSlotMessage }          from '@/Lib/Utils/Internal';
-import { computed }                        from 'vue';
 
 const props = defineProps<HeadingProps>();
 

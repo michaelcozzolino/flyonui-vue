@@ -1,5 +1,5 @@
-import type { HorizontalPosition }               from '@/Types/Utils';
 import type { ComputedRef, FunctionDirective }   from 'vue';
+import type { HorizontalPosition }               from '@/Types/Utils';
 import { leftSideMaskClass, rightSideMaskClass } from '@/UI/Content/Mask';
 
 export function vMask(): FunctionDirective<HTMLElement, string, string, HorizontalPosition> {
