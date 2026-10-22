@@ -1,7 +1,7 @@
 import type { MaybeRefOrGetter } from 'vue';
-import { isDefined }             from '@/Lib/Utils/Internal';
 import { describe, expect, it }  from 'vitest';
 import {  ref }                  from 'vue';
+import { isDefined }             from '@/Lib/Utils/Internal';
 
 describe('isDefined', () => {
     it.each<[MaybeRefOrGetter<string | undefined>, boolean]>([

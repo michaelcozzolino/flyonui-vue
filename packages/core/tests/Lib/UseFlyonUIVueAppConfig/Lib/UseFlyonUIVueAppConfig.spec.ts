@@ -1,7 +1,7 @@
-import { flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig } from '@/Lib';
 import { flushPromises, mount }                               from '@vue/test-utils';
 import { describe, expect, it }                               from 'vitest';
 import { defineComponent }                                    from 'vue';
+import { flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig } from '@/Lib';
 
 describe('useFlyonUIVueAppConfig', () => {
     it('injects the right config if the CreateFlyonUIVueApp plugin is used', async () => {

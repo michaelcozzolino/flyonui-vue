@@ -1,5 +1,5 @@
-import { useOrientation }       from '@/Lib/UseOrientation/Internal';
 import { describe, expect, it } from 'vitest';
+import { useOrientation }       from '@/Lib/UseOrientation/Internal';
 
 describe('useOrientation', () => {
     it('returns an orientation class', () => {

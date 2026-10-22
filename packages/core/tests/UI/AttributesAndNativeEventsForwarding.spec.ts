@@ -1,9 +1,9 @@
 import type { VueWrapper }                                                    from '@vue/test-utils';
+import { mount }                                                              from '@vue/test-utils';
+import { describe, expect, it, vi }                                           from 'vitest';
 import { FoButton, FoListGroup, FoLoading, FoSkeleton, FoStatus }             from '@/UI/Components';
 import { FoBlockQuote, FoDivider, FoHeading, FoKeyboard, FoLink }             from '@/UI/Content';
 import { FoCheckbox, FoInputFiles, FoInputText, FoJoin, FoRange, FoTextarea } from '@/UI/Forms';
-import { mount }                                                              from '@vue/test-utils';
-import { describe, expect, it, vi }                                           from 'vitest';
 
 // todo: names of the components must be camel case, eslint
 describe('forwards attributes and native event listeners for', () => {

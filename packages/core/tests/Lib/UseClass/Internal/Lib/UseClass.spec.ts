@@ -1,7 +1,7 @@
 import type { MaybeRefOrGetter } from 'vue';
-import { useClass }              from '@/Lib/UseClass/Internal';
 import { describe, expect, it }  from 'vitest';
 import { ref }                   from 'vue';
+import { useClass }              from '@/Lib/UseClass/Internal';
 
 describe('useClass', () => {
     const positiveClass  = 'positive-class';

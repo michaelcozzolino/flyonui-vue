@@ -1,8 +1,8 @@
 import type { FlyonUIVueAppDefaultConfig } from '@/Lib';
-import { flyonUIVueAppDefaultConfig  }     from '@/Lib';
-import { useTextColor }                    from '@/Lib/UseColor/Internal';
 import { describe, expect, it }            from 'vitest';
 import { ref }                             from 'vue';
+import { flyonUIVueAppDefaultConfig  }     from '@/Lib';
+import { useTextColor }                    from '@/Lib/UseColor/Internal';
 
 describe('useTextColor', () => {
     it('returns a color class if the color is defined', () => {

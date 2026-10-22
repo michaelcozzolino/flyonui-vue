@@ -1,10 +1,10 @@
 import type { Color, ConfigurableComponentName, ConfigurableProperty, FlyonUIVueAppDefaultConfig } from '@/Lib';
+import { describe, expect, it }                                                                    from 'vitest';
+import { ref }                                                                                     from 'vue';
 import { flyonUIVueAppDefaultConfig }                                                              from '@/Lib';
 import {
     useFlyonUIVueAppConfigProperty,
 }                                                                                                  from '@/Lib/UseFlyonUIVueAppConfig/Internal';
-import { describe, expect, it } from 'vitest';
-import { ref }                  from 'vue';
 
 describe('useFlyonUIVueAppConfigProperty', () => {
     it('returns the defined component config value when the component has no value', () => {

@@ -1,7 +1,7 @@
 import type { MaybeRefOrGetter } from 'vue';
-import { useIdentifiable }       from '@/Lib/UseIdentifiable/Internal';
 import { describe, expect, it }  from 'vitest';
 import { ref }                   from 'vue';
+import { useIdentifiable }       from '@/Lib/UseIdentifiable/Internal';
 
 describe('useIdentifiable', () => {
     interface TestIdentifiable {

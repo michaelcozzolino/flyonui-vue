@@ -1,5 +1,5 @@
-import { useResponsitivity }    from '@/Lib/UseResponsitivity/Internal';
 import { describe, expect, it } from 'vitest';
+import { useResponsitivity }    from '@/Lib/UseResponsitivity/Internal';
 
 describe('useResponsitivity', () => {
     it('returns a responsive class', () => {
