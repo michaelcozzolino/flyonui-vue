@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => {
         ],
         resolve: {
             alias: {
-                '@': resolve(__dirname, './src'),
+                '@': resolve(import.meta.dirname, './src'),
             },
             dedupe: ['vue', 'flyonui', 'flyonui-vue'],
         },
@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
             cssCodeSplit: true,
             target:       'esnext',
             lib:          {
-                entry: resolve(__dirname, './src/index.ts'),
+                entry: resolve(import.meta.dirname, './src/index.ts'),
                 name:  'flyonui-vue',
             },
             rolldownOptions: {
