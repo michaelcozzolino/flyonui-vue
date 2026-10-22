@@ -1,12 +1,12 @@
-import type { ComponentName }                     from 'flyonui-vue';
-import type { ComponentMeta, MetaCheckerOptions } from 'vue-component-meta';
-import { writeFile }                              from 'node:fs/promises';
-import * as path                                  from 'node:path';
-import { join, resolve }                          from 'node:path';
-import process                                    from 'node:process';
-import glob                                       from 'fast-glob';
-import { createChecker }                          from 'vue-component-meta';
-import MonorepoPathResolver                       from './MonorepoPathResolver.ts';
+import type { ComponentName }                                   from 'flyonui-vue';
+import type { ComponentMeta, MetaCheckerOptions, PropertyMeta } from 'vue-component-meta';
+import { writeFile }                                            from 'node:fs/promises';
+import * as path                                                from 'node:path';
+import { join, resolve }                                        from 'node:path';
+import process                                                  from 'node:process';
+import glob                                                     from 'fast-glob';
+import { createChecker }                                        from 'vue-component-meta';
+import MonorepoPathResolver                                     from './MonorepoPathResolver.ts';
 
 async function generateComponentsApi(): Promise<void> {
     const packagesPath      = MonorepoPathResolver.resolvePackagesPath();
@@ -14,6 +14,7 @@ async function generateComponentsApi(): Promise<void> {
     const vueComponentsPath = resolve(corePath, 'src/UI');
 
     const checkerOptions: MetaCheckerOptions = {
+        schema:  true,
         printer: { newLine: 1 },
     };
 
@@ -31,7 +32,14 @@ async function generateComponentsApi(): Promise<void> {
         for (const componentPath of componentsPaths) {
             const { name } = path.parse(componentPath);
 
-            componentsApi[name as ComponentName] = tsconfigChecker.getComponentMeta(componentPath);
+            const componentMeta = tsconfigChecker.getComponentMeta(componentPath);
+
+            componentsApi[name as ComponentName] = {
+                ...componentMeta,
+                props: componentMeta.props.filter(
+                    (prop: PropertyMeta): boolean => prop.name.startsWith('onVue:') === false,
+                ),
+            };
         }
 
         const sortedComponentsApi = Object.fromEntries(
