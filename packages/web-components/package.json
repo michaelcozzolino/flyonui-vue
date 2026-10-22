@@ -43,16 +43,16 @@
         "flyonui-vue": "workspace:*"
     },
     "devDependencies": {
-        "@types/node": "^20.19.0",
-        "@vue/test-utils": "^2.4.6",
+        "@types/node": "^20.19.43",
+        "@vue/test-utils": "^2.5.1",
         "@vue/tsconfig": "^0.9.1",
-        "concurrently": "^9.2.1",
-        "esbuild": "^0.27.0",
-        "jsdom": "^29.0.1",
-        "tsc-alias": "^1.8.16",
-        "typescript": "^6.0.2",
-        "vite": "^8.0.3",
-        "vue": "^3.5.31",
-        "vue-tsc": "^3.2.6"
+        "concurrently": "^9.2.5",
+        "esbuild": "^0.28.2",
+        "jsdom": "^29.1.1",
+        "tsc-alias": "^1.9.8",
+        "typescript": "^6.0.3",
+        "vite": "^8.3.5",
+        "vue": "^3.5.44",
+        "vue-tsc": "^3.3.13"
     }
 }
