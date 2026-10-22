@@ -23,4 +23,3 @@
 ### Slots
 
 <SwapDocs section="slots" />
-

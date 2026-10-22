@@ -87,4 +87,3 @@
 ### Slots
 
 <TableDocs section="slots" />
-

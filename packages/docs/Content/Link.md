@@ -27,4 +27,3 @@
 ### Slots
 
 <LinkDocs section="slots" />
-

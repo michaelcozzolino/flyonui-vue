@@ -22,10 +22,12 @@ export default defineConfig({
             name:  'flyonui-web-components',
         },
         rolldownOptions: {
-            external: ['@iconify/vue', 'tailwindcss'],
+            external: ['@iconify/vue', 'vue', 'vue-router', 'tailwindcss'],
             output:   {
                 globals: {
                     '@iconify/vue': 'Iconify',
+                    'vue':          'Vue',
+                    'vue-router':   'VueRouter',
                 },
             },
         },

@@ -13,6 +13,3 @@ By using the configuration you can set the same direction for all the `flyonui-v
 You can wrap the component into a container element such as `<div>` and use the `dir` attribute on it.
 
 <TextDirectionDocs section="single-component" />
-
-
-
