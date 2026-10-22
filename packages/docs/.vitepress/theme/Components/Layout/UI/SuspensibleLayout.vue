@@ -17,7 +17,11 @@
                 <div v-show="isDocsPageReady"
                      class="flex min-w-0 flex-1"
                 >
-                    <Content class="VPDoc vp-doc grow m-8 min-w-0" />
+                    <div class="flex min-w-0 grow flex-col m-8">
+                        <EndOfLifeAlert />
+
+                        <Content class="VPDoc vp-doc min-w-0" />
+                    </div>
 
                     <DocsSidebar v-if="frontmatter.aside !== false && items.length"
                                  :items="items"
@@ -32,9 +36,11 @@
 import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar.ts';
 
 import type { FlyonUITheme } from 'flyonui-vue';
-import DocsSidebar           from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebar.vue';
-import Home                  from '@/.vitepress/theme/Components/Layout/Features/Home/UI/Home.vue';
-import Navbar                from '@/.vitepress/theme/Components/Layout/Features/Navbar/UI/Navbar.vue';
+import EndOfLifeAlert
+    from '@/.vitepress/theme/Components/ComponentDocs/UI/EndOfLifeAlert.vue';
+import DocsSidebar from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebar.vue';
+import Home        from '@/.vitepress/theme/Components/Layout/Features/Home/UI/Home.vue';
+import Navbar      from '@/.vitepress/theme/Components/Layout/Features/Navbar/UI/Navbar.vue';
 
 import NotFound
     from '@/.vitepress/theme/Components/Layout/Features/NotFound/UI/NotFound.vue';

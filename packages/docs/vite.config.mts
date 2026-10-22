@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
     define: {
+        FLYONUI_VUE_DOMAIN:  JSON.stringify('flyonui-vue.com'),
         FLYONUI_VUE_VERSION: JSON.stringify(execSync('yarn core:version').toString().trim()),
     },
     build: {
