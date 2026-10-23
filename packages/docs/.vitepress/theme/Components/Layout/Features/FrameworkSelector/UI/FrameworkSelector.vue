@@ -17,18 +17,9 @@
             <template v-if="isFrameworkSelected(framework.id)"
                       #indicator
             >
-                <svg class="size-3 text-primary"
-                     xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 24 24"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     stroke-width="3"
-                     aria-hidden="true"
-                >
-                    <path d="m5 12 4 4L19 6" />
-                </svg>
+                <FoIcon icon="tabler:check"
+                        size="doubleExtraSmall"
+                />
             </template>
         </FoAvatar>
     </div>
@@ -36,7 +27,7 @@
 
 <script setup lang="ts">
 import type { FrameworkId }           from '@/.vitepress/theme/Components/Preview/Types/Preview.ts';
-import { FoAvatar }                   from 'flyonui-vue';
+import { FoAvatar, FoIcon }           from 'flyonui-vue';
 import { storeToRefs }                from 'pinia';
 import { useFrameworkSelectionStore } from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore.ts';
 
