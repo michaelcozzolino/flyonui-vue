@@ -27,8 +27,9 @@
         "src"
     ],
     "scripts": {
-        "dev": "yarn concurrently \"yarn build:ui -w\" \"yarn build:types -w\" \"yarn alias:types -w\"",
-        "build": "yarn build:ui && yarn build:types && yarn alias:types",
+        "dev": "yarn concurrently \"yarn build:styles -w\" \"yarn build:ui -w\" \"yarn build:types -w\" \"yarn alias:types -w\"",
+        "build": "yarn build:styles && yarn build:ui && yarn build:types && yarn alias:types",
+        "build:styles": "tailwindcss -i src/index.web-components.css -o src/index.css",
         "build:ui": "vite build",
         "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.json",
         "alias:types": "tsc-alias -p tsconfig.json",
