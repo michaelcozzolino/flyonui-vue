@@ -1,82 +1,75 @@
 <template>
-    <section class="vp-raw gap-4 border-neutral/10 rounded-box flex flex-col border p-3 sm:p-6 md:my-8"
-             :data-test-screenshot="dataTestScreenshot"
-             data-test="code-snippet"
+    <FoTabs v-model="activeTab"
+            size="medium"
+            :tabs="tabs"
     >
-        <FoTabs v-model="activeTab"
-                size="medium"
-                :tabs="tabs"
-        >
-            <template #tabs>
-                <FoTab :id="previewTab.id"
-                       size="medium"
-                >
-                    Preview
-                </FoTab>
+        <template #tabs>
+            <FoTab :id="previewTab.id"
+                   size="medium"
+            >
+                Preview
+            </FoTab>
 
-                <FoTab :id="codeTab.id"
-                       size="medium"
-                >
-                    Code
-                </FoTab>
+            <FoTab :id="codeTab.id"
+                   size="medium"
+            >
+                Code
+            </FoTab>
 
-                <ComponentPreviewResizer v-model:size-class="sizeClass"
-                                         class="ms-auto"
-                                         @click.prevent="activeTab.id === codeTab.id && (activeTab = previewTab)"
+            <ComponentPreviewResizer v-model:size-class="sizeClass"
+                                     class="ms-auto"
+                                     @click.prevent="activeTab.id === codeTab.id && (activeTab = previewTab)"
+            />
+
+            <FoButtonGroup v-if="0 in codePreviews"
+                           class="ms-auto"
+            >
+                <CopyButton :text="codePreviews[0].code"
+                            :disabled="codePreviews.length > 1"
                 />
 
-                <FoButtonGroup v-if="0 in codePreviews"
-                               class="ms-auto"
-                >
-                    <CopyButton :text="codePreviews[0].code"
-                                :disabled="codePreviews.length > 1"
-                    />
+                <FoButton :icon="isLtr ? 'fluent:text-direction-horizontal-ltr-20-regular' : 'fluent:text-direction-horizontal-rtl-20-regular'"
+                          color="neutral"
+                          preset="gradient"
+                          size="medium"
+                          @click.prevent="isLtr ? textDirection = 'rtl' : textDirection = 'ltr'; activeTab = previewTab;"
+                />
+            </FoButtonGroup>
+        </template>
 
-                    <FoButton :icon="isLtr ? 'fluent:text-direction-horizontal-ltr-20-regular' : 'fluent:text-direction-horizontal-rtl-20-regular'"
-                              color="neutral"
-                              preset="gradient"
-                              size="medium"
-                              @click.prevent="isLtr ? textDirection = 'rtl' : textDirection = 'ltr'; activeTab = previewTab;"
-                    />
-                </FoButtonGroup>
-            </template>
+        <template #[`content-${previewTab.id}`]>
+            <div class="place-self-center gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose border p-3 sm:p-6 overflow-x-auto"
+                 data-test="flyonui-vue-preview"
+                 :class="[sizeClass, gridClass]"
+                 :dir="textDirection"
+            >
+                <ClientOnly>
+                    <component :is="component" />
+                </ClientOnly>
+            </div>
+        </template>
 
-            <template #[`content-${previewTab.id}`]>
-                <div class="place-self-center gap-4 bg-base-200/20 border-neutral/10 rounded-box not-prose border p-3 sm:p-6 overflow-x-auto"
-                     data-test="flyonui-vue-preview"
-                     :class="[sizeClass, gridClass]"
-                     :dir="textDirection"
-                >
-                    <ClientOnly>
-                        <component :is="component" />
-                    </ClientOnly>
-                </div>
-            </template>
-
-            <template #[`content-${codeTab.id}`]>
-                <div class="flex flex-col gap-4">
-                    <CodePreview v-for="codePreview in codePreviews"
-                                 :key="codePreview.code"
-                                 :title="codePreview.title"
-                                 :code="codePreview.code"
-                                 :language="codePreview.language"
-                    />
-                </div>
-            </template>
-        </FoTabs>
-    </section>
+        <template #[`content-${codeTab.id}`]>
+            <div class="flex flex-col gap-4">
+                <CodePreview v-for="codePreview in codePreviews"
+                             :key="codePreview.code"
+                             :title="codePreview.title"
+                             :code="codePreview.code"
+                             :language="codePreview.language"
+                />
+            </div>
+        </template>
+    </FoTabs>
 </template>
 
 <script setup lang="ts">
-import type { CodePreviewProps, ComponentPreviewProps } from '@/.vitepress/theme/Components/Preview/Types/Preview';
-import type { TabProps, TextDirection }                 from 'flyonui-vue';
-import CodePreview
-    from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
-import ComponentPreviewResizer from '@/.vitepress/theme/Components/Preview/UI/ComponentPreviewResizer.vue';
-import CopyButton
-    from '@/.vitepress/theme/Components/Preview/UI/CopyButton.vue';
+import type { TabProps, TextDirection }                                   from 'flyonui-vue';
+import type { CodePreviewProps, ComponentPreviewProps }                   from '@/.vitepress/theme/Components/Preview/Types/Preview';
 import { FoButton, FoButtonGroup, FoTab, FoTabs, useFlyonUIVueAppConfig } from 'flyonui-vue';
-import { computed, reactive, ref, useId, watch }                          from 'vue';
+import { computed, isVNode, reactive, ref, useId, watch }                 from 'vue';
+import CodePreview                                                        from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
+import ComponentPreviewResizer                                            from '@/.vitepress/theme/Components/Preview/UI/ComponentPreviewResizer.vue';
+import CopyButton                                                         from '@/.vitepress/theme/Components/Preview/UI/CopyButton.vue';
 
 const props = withDefaults(defineProps<ComponentPreviewProps>(), {
     grid: () => ({ columns: 0, rows: 0 }),
@@ -101,12 +94,42 @@ const textDirection = ref<TextDirection>('ltr');
 
 const isLtr = computed(() => textDirection.value === 'ltr');
 
-const codePreviews = computed((): CodePreviewProps[] => {
-    if (typeof props.code === 'string') {
-        return [{ title: 'Vue', code: props.code, language: 'js' }];
+interface FrameworkMetadata {
+    title:    string;
+    language: string;
+}
+
+const frameworkMetadata = computed((): FrameworkMetadata => {
+    if (isVNode(props.component)) {
+        switch (props.component.props?.framework) {
+            case 'angular':
+                return { title: 'Angular', language: 'ts' };
+            case 'html':
+                return { title: 'HTML', language: 'html' };
+            case 'react':
+                return { title: 'React', language: 'tsx' };
+        }
     }
 
-    return props.code.map(c => ({ ...c, language: 'js' }));
+    return { title: 'Vue', language: 'js' };
+});
+
+const codePreviews = computed((): CodePreviewProps[] => {
+    if (typeof props.code === 'string') {
+        return [
+            {
+                title: frameworkMetadata.value.title,
+                code:
+                props.code,
+                language: frameworkMetadata.value.language,
+            },
+        ];
+    }
+
+    return props.code.map((c): CodePreviewProps => ({
+        ...c,
+        title: c.title ?? frameworkMetadata.value.title,
+    }));
 });
 
 const gridClass = computed(() => {
