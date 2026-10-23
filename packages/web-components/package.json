@@ -43,6 +43,7 @@
         "flyonui-vue": "workspace:*"
     },
     "devDependencies": {
+        "@tailwindcss/cli": "^4.3.3",
         "@types/node": "^20.19.43",
         "@vue/test-utils": "^2.5.1",
         "@vue/tsconfig": "^0.9.1",
