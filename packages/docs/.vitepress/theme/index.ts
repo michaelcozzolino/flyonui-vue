@@ -1,18 +1,16 @@
-import type { Theme } from 'vitepress';
-
-import type { App, Component }             from 'vue';
-import ComponentNotReadyForProductionAlert
-    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentNotReadyForProductionAlert.vue';
-import TipAlert                     from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
-import { defineAsyncDocsComponent } from '@/.vitepress/theme/Components/Layout/Lib/defineAsyncDocsComponent';
-import Layout
-    from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
-import CodePreview                                                         from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
+import type { Theme }                                                      from 'vitepress';
+import type { App, Component }                                             from 'vue';
 import hljsVuePlugin                                                       from '@highlightjs/vue-plugin';
 import { loadIcons }                                                       from '@iconify/vue';
 import { createFlyonUIVueApp, FoKeyboard, FoSelectThemeController, vMask } from 'flyonui-vue';
+import { registerFlyonUIWebComponents }                                    from 'flyonui-web-components';
 import { createPinia }                                                     from 'pinia';
 import DefaultTheme                                                        from 'vitepress/theme';
+import ComponentNotReadyForProductionAlert                                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentNotReadyForProductionAlert.vue';
+import TipAlert                                                            from '@/.vitepress/theme/Components/ComponentDocs/UI/TipAlert.vue';
+import { defineAsyncDocsComponent }                                        from '@/.vitepress/theme/Components/Layout/Lib/defineAsyncDocsComponent';
+import Layout                                                              from '@/.vitepress/theme/Components/Layout/UI/Layout.vue';
+import CodePreview                                                         from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
 import './index.css';
 import 'highlight.js/styles/github-dark-dimmed.css';
 import 'highlight.js/lib/common';
@@ -246,6 +244,7 @@ export default {
             },
         ]);
 
+        registerFlyonUIWebComponents();
         loadIconifyIcons();
     },
 } satisfies Theme;
@@ -283,6 +282,9 @@ function loadIconifyIcons(): void {
         'line-md:account',
         'line-md:alert',
         'line-md:loading-twotone-loop',
+        'logos:html-5',
+        'logos:react',
+        'logos:vue',
         'mdi:account-child',
         'mdi:account-plus',
         'mdi:badge-account-outline',

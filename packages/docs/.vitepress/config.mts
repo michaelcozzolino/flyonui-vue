@@ -4,6 +4,13 @@ import { kebabCase }       from 'change-case';
 import { defineConfig }    from 'vitepress';
 
 export default defineConfig({
+    vue: {
+        template: {
+            compilerOptions: {
+                isCustomElement: (tag: string): boolean => tag.startsWith('fo-'),
+            },
+        },
+    },
     rewrites: (id) => {
         const format = '.md';
 

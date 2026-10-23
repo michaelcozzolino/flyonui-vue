@@ -48,6 +48,8 @@
                     </template>
                 </div>
 
+                <FrameworkSelector v-if="isCollapsed === false" />
+
                 <FoMenu v-show="showMenu"
                         class="vp-raw pl-0!"
                         size="small"
@@ -65,23 +67,15 @@
 </template>
 
 <script setup lang="ts">
-import type {
-    ParentSidebarItem,
-    SidebarItem,
-}                          from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import { useSidebarItems }                          from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
-import SidebarNode                                  from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
-import { useLayoutStore }                           from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { onClickOutside, useArrayFindIndex }        from '@vueuse/core';
-import { FoButton, FoMenu, useFlyonUIVueAppConfig } from 'flyonui-vue';
-import { storeToRefs }                              from 'pinia';
-import {
-    computed,
-    nextTick,
-    ref,
-    useTemplateRef,
-    watch,
-}                           from 'vue';
+import type { ParentSidebarItem, SidebarItem }            from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import { onClickOutside, useArrayFindIndex }              from '@vueuse/core';
+import { FoButton, FoMenu, useFlyonUIVueAppConfig }       from 'flyonui-vue';
+import { storeToRefs }                                    from 'pinia';
+import { computed, nextTick, ref, useTemplateRef, watch } from 'vue';
+import FrameworkSelector                                  from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/UI/FrameworkSelector.vue';
+import { useSidebarItems }                                from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
+import SidebarNode                                        from '@/.vitepress/theme/Components/Layout/Features/Sidebar/UI/SidebarNode.vue';
+import { useLayoutStore }                                 from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
 
 const { config } = useFlyonUIVueAppConfig();
 
