@@ -44,6 +44,7 @@ export default {
 
             // todo: document this
             app.use(createFlyonUIVueApp, {});
+            registerFlyonUIWebComponents();
         }
 
         app.use(createPinia()).use(hljsVuePlugin);
@@ -244,7 +245,6 @@ export default {
             },
         ]);
 
-        registerFlyonUIWebComponents();
         loadIconifyIcons();
     },
 } satisfies Theme;
