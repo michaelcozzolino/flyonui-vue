@@ -13,8 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar.ts';
 import type { Navigation }      from 'flyonui-vue';
+import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar.ts';
 import { FoMenu, FoMenuItem }   from 'flyonui-vue';
 
 interface Props {

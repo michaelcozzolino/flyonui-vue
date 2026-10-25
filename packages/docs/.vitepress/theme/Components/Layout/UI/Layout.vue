@@ -13,6 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import SuspensibleLayout from '@/.vitepress/theme/Components/Layout/UI/SuspensibleLayout.vue';
 import { FoLoading }     from 'flyonui-vue';
+import SuspensibleLayout from '@/.vitepress/theme/Components/Layout/UI/SuspensibleLayout.vue';
 </script>

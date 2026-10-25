@@ -71,15 +71,7 @@
 
 <script setup lang="ts">
 import type { FlyonUITheme, NavbarLink } from 'flyonui-vue';
-import ConfigurationSettings
-    from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
-import {
-    useFlyonUIVueVersion,
-}                                   from '@/.vitepress/theme/Components/Layout/Lib/UseFlyonUIVueVersion';
-import {
-    useLayoutStore,
-}                                   from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
-import { useColorMode, useStorage } from '@vueuse/core';
+import { useColorMode, useStorage }      from '@vueuse/core';
 import {
     FoButton,
     FoLink,
@@ -88,10 +80,13 @@ import {
     FoNavbarBrand,
     FoPopover,
     FoSocialButton,
-}                                        from 'flyonui-vue';
+}                                   from 'flyonui-vue';
 import { useRouter, withBase }      from 'vitepress';
 import { VPNavBarSearch }           from 'vitepress/theme';
 import { computed, onMounted, ref } from 'vue';
+import ConfigurationSettings        from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ConfigurationSettings.vue';
+import { useFlyonUIVueVersion }     from '@/.vitepress/theme/Components/Layout/Lib/UseFlyonUIVueVersion';
+import { useLayoutStore }           from '@/.vitepress/theme/Components/Layout/Lib/UseLayoutStore';
 
 const { currentVersion, oldVersions } = useFlyonUIVueVersion();
 

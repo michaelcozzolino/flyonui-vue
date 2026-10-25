@@ -25,9 +25,9 @@
 
 <script setup lang="ts">
 import type { CodePreviewProps }   from '@/.vitepress/theme/Components/Preview/Types/Preview';
-import CopyButton                  from '@/.vitepress/theme/Components/Preview/UI/CopyButton.vue';
 import plugin                      from '@highlightjs/vue-plugin';
 import { FoButton, FoButtonGroup } from 'flyonui-vue';
+import CopyButton                  from '@/.vitepress/theme/Components/Preview/UI/CopyButton.vue';
 
 defineProps<CodePreviewProps>();
 
