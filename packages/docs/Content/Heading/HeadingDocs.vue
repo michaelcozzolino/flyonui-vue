@@ -6,14 +6,14 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import HeadingColor                  from '@/Content/Heading/HeadingColor.vue';
-import HeadingColorRaw               from '@/Content/Heading/HeadingColor.vue?raw';
-import HeadingLevel                  from '@/Content/Heading/HeadingLevel.vue';
-import HeadingLevelRaw               from '@/Content/Heading/HeadingLevel.vue?raw';
-import { computed }                  from 'vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import HeadingColor                     from '@/Content/Heading/HeadingColor.vue';
+import HeadingColorRaw                  from '@/Content/Heading/HeadingColor.vue?raw';
+import HeadingLevel                     from '@/Content/Heading/HeadingLevel.vue';
+import HeadingLevelRaw                  from '@/Content/Heading/HeadingLevel.vue?raw';
 
 type Section = 'level' | 'color' | ApiType;
 
@@ -24,20 +24,24 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'level',
             {
-                grid:      { columns: 1, rows: 6 },
-                code:      HeadingLevelRaw,
-                component: HeadingLevel,
+                vue: {
+                    codePreview: HeadingLevelRaw,
+                    component:   HeadingLevel,
+                },
+                grid: { columns: 1, rows: 6 },
             },
         ],
         [
             'color',
             {
-                code:      HeadingColorRaw,
-                component: HeadingColor,
+                vue: {
+                    codePreview: HeadingColorRaw,
+                    component:   HeadingColor,
+                },
             },
         ],
     ]);

@@ -6,36 +6,36 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview }  from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }               from '@/Api/Types/Api.ts';
-import ComponentDocs                  from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import AnimatedAvatarGroup            from '@/Components/Avatar/AnimatedAvatarGroup.vue';
-import AnimatedAvatarGroupRaw         from '@/Components/Avatar/AnimatedAvatarGroup.vue?raw';
-import AvatarBottomStatusIndicator    from '@/Components/Avatar/AvatarBottomStatusIndicator.vue';
-import AvatarBottomStatusIndicatorRaw from '@/Components/Avatar/AvatarBottomStatusIndicator.vue?raw';
-import AvatarGroup                    from '@/Components/Avatar/AvatarGroup.vue';
-import AvatarGroupRaw                 from '@/Components/Avatar/AvatarGroup.vue?raw';
-import AvatarIconPlaceholder          from '@/Components/Avatar/AvatarIconPlaceholder.vue';
-import AvatarIconPlaceholderRaw       from '@/Components/Avatar/AvatarIconPlaceholder.vue?raw';
-import AvatarInitialsPlaceholder      from '@/Components/Avatar/AvatarInitialsPlaceholder.vue';
-import AvatarInitialsPlaceholderRaw   from '@/Components/Avatar/AvatarInitialsPlaceholder.vue?raw';
-import AvatarLogoIndicator            from '@/Components/Avatar/AvatarLogoIndicator.vue';
-import AvatarLogoIndicatorRaw         from '@/Components/Avatar/AvatarLogoIndicator.vue?raw';
-import AvatarShape                    from '@/Components/Avatar/AvatarShape.vue';
-import AvatarShapeRaw                 from '@/Components/Avatar/AvatarShape.vue?raw';
-import AvatarSize                     from '@/Components/Avatar/AvatarSize.vue';
-import AvatarSizeRaw                  from '@/Components/Avatar/AvatarSize.vue?raw';
-import AvatarTopStatusIndicator       from '@/Components/Avatar/AvatarTopStatusIndicator.vue';
-import AvatarTopStatusIndicatorRaw    from '@/Components/Avatar/AvatarTopStatusIndicator.vue?raw';
-import MaskedAvatar                   from '@/Components/Avatar/MaskedAvatar.vue';
-import MaskedAvatarRaw                from '@/Components/Avatar/MaskedAvatar.vue?raw';
-import OutlineAvatar                  from '@/Components/Avatar/OutlineAvatar.vue';
-import OutlineAvatarRaw               from '@/Components/Avatar/OutlineAvatar.vue?raw';
-import SoftAvatar                     from '@/Components/Avatar/SoftAvatar.vue';
-import SoftAvatarRaw                  from '@/Components/Avatar/SoftAvatar.vue?raw';
-import SolidAvatar                    from '@/Components/Avatar/SolidAvatar.vue';
-import SolidAvatarRaw                 from '@/Components/Avatar/SolidAvatar.vue?raw';
-import { computed }                   from 'vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import AnimatedAvatarGroup              from '@/Components/Avatar/AnimatedAvatarGroup.vue';
+import AnimatedAvatarGroupRaw           from '@/Components/Avatar/AnimatedAvatarGroup.vue?raw';
+import AvatarBottomStatusIndicator      from '@/Components/Avatar/AvatarBottomStatusIndicator.vue';
+import AvatarBottomStatusIndicatorRaw   from '@/Components/Avatar/AvatarBottomStatusIndicator.vue?raw';
+import AvatarGroup                      from '@/Components/Avatar/AvatarGroup.vue';
+import AvatarGroupRaw                   from '@/Components/Avatar/AvatarGroup.vue?raw';
+import AvatarIconPlaceholder            from '@/Components/Avatar/AvatarIconPlaceholder.vue';
+import AvatarIconPlaceholderRaw         from '@/Components/Avatar/AvatarIconPlaceholder.vue?raw';
+import AvatarInitialsPlaceholder        from '@/Components/Avatar/AvatarInitialsPlaceholder.vue';
+import AvatarInitialsPlaceholderRaw     from '@/Components/Avatar/AvatarInitialsPlaceholder.vue?raw';
+import AvatarLogoIndicator              from '@/Components/Avatar/AvatarLogoIndicator.vue';
+import AvatarLogoIndicatorRaw           from '@/Components/Avatar/AvatarLogoIndicator.vue?raw';
+import AvatarShape                      from '@/Components/Avatar/AvatarShape.vue';
+import AvatarShapeRaw                   from '@/Components/Avatar/AvatarShape.vue?raw';
+import AvatarSize                       from '@/Components/Avatar/AvatarSize.vue';
+import AvatarSizeRaw                    from '@/Components/Avatar/AvatarSize.vue?raw';
+import AvatarTopStatusIndicator         from '@/Components/Avatar/AvatarTopStatusIndicator.vue';
+import AvatarTopStatusIndicatorRaw      from '@/Components/Avatar/AvatarTopStatusIndicator.vue?raw';
+import MaskedAvatar                     from '@/Components/Avatar/MaskedAvatar.vue';
+import MaskedAvatarRaw                  from '@/Components/Avatar/MaskedAvatar.vue?raw';
+import OutlineAvatar                    from '@/Components/Avatar/OutlineAvatar.vue';
+import OutlineAvatarRaw                 from '@/Components/Avatar/OutlineAvatar.vue?raw';
+import SoftAvatar                       from '@/Components/Avatar/SoftAvatar.vue';
+import SoftAvatarRaw                    from '@/Components/Avatar/SoftAvatar.vue?raw';
+import SolidAvatar                      from '@/Components/Avatar/SolidAvatar.vue';
+import SolidAvatarRaw                   from '@/Components/Avatar/SolidAvatar.vue?raw';
 
 type Section = 'shape'
     | 'size'
@@ -59,96 +59,122 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'shape',
             {
-                code:      AvatarShapeRaw,
-                component: AvatarShape,
+                vue: {
+                    codePreview: AvatarShapeRaw,
+                    component:   AvatarShape,
+                },
             },
         ],
         [
             'size',
             {
-                code:      AvatarSizeRaw,
-                component: AvatarSize,
+                vue: {
+                    codePreview: AvatarSizeRaw,
+                    component:   AvatarSize,
+                },
             },
         ],
         [
             'masked',
             {
-                code:      MaskedAvatarRaw,
-                component: MaskedAvatar,
+                vue: {
+                    codePreview: MaskedAvatarRaw,
+                    component:   MaskedAvatar,
+                },
             },
         ],
         [
             'icon-placeholder',
             {
-                code:      AvatarIconPlaceholderRaw,
-                component: AvatarIconPlaceholder,
+                vue: {
+                    codePreview: AvatarIconPlaceholderRaw,
+                    component:   AvatarIconPlaceholder,
+                },
             },
         ],
         [
             'text-placeholder',
             {
-                code:      AvatarInitialsPlaceholderRaw,
-                component: AvatarInitialsPlaceholder,
+                vue: {
+                    codePreview: AvatarInitialsPlaceholderRaw,
+                    component:   AvatarInitialsPlaceholder,
+                },
             },
         ],
         [
             'solid',
             {
-                code:      SolidAvatarRaw,
-                component: SolidAvatar,
+                vue: {
+                    codePreview: SolidAvatarRaw,
+                    component:   SolidAvatar,
+                },
             },
         ],
         [
             'soft',
             {
-                code:      SoftAvatarRaw,
-                component: SoftAvatar,
+                vue: {
+                    codePreview: SoftAvatarRaw,
+                    component:   SoftAvatar,
+                },
             },
         ],
         [
             'outline',
             {
-                code:      OutlineAvatarRaw,
-                component: OutlineAvatar,
+                vue: {
+                    codePreview: OutlineAvatarRaw,
+                    component:   OutlineAvatar,
+                },
             },
         ],
         [
             'top-status-indicator',
             {
-                code:      AvatarTopStatusIndicatorRaw,
-                component: AvatarTopStatusIndicator,
+                vue: {
+                    codePreview: AvatarTopStatusIndicatorRaw,
+                    component:   AvatarTopStatusIndicator,
+                },
             },
         ],
         [
             'bottom-status-indicator',
             {
-                code:      AvatarBottomStatusIndicatorRaw,
-                component: AvatarBottomStatusIndicator,
+                vue: {
+                    codePreview: AvatarBottomStatusIndicatorRaw,
+                    component:   AvatarBottomStatusIndicator,
+                },
             },
         ],
         [
             'logo-indicator',
             {
-                code:      AvatarLogoIndicatorRaw,
-                component: AvatarLogoIndicator,
+                vue: {
+                    codePreview: AvatarLogoIndicatorRaw,
+                    component:   AvatarLogoIndicator,
+                },
             },
         ],
         [
             'group',
             {
-                code:      AvatarGroupRaw,
-                component: AvatarGroup,
+                vue: {
+                    codePreview: AvatarGroupRaw,
+                    component:   AvatarGroup,
+                },
             },
         ],
         [
             'animated-group',
             {
-                code:      AnimatedAvatarGroupRaw,
-                component: AnimatedAvatarGroup,
+                vue: {
+                    codePreview: AnimatedAvatarGroupRaw,
+                    component:   AnimatedAvatarGroup,
+                },
             },
         ],
     ]);

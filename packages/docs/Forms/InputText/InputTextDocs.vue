@@ -6,9 +6,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview }      from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }                   from '@/Api/Types/Api.ts';
 import type { Default }                   from 'flyonui-vue';
+import type { FrameworkSectionPreview }   from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                   from '@/Api/Types/Api.ts';
+import { computed }                       from 'vue';
 import ComponentDocs                      from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DefaultInputText                   from '@/Forms/InputText/DefaultInputText.vue';
 import DefaultInputTextRaw                from '@/Forms/InputText/DefaultInputText.vue?raw';
@@ -40,7 +41,6 @@ import JoinInputText                      from '@/Forms/InputText/JoinInputText.
 import JoinInputTextRaw                   from '@/Forms/InputText/JoinInputText.vue?raw';
 import ReadonlyInputText                  from '@/Forms/InputText/ReadonlyInputText.vue';
 import ReadonlyInputTextRaw               from '@/Forms/InputText/ReadonlyInputText.vue?raw';
-import { computed }                       from 'vue';
 
 type Section = Default
     | 'with-placeholder'
@@ -66,118 +66,148 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultInputTextRaw,
-                component: DefaultInputText,
+                vue: {
+                    codePreview: DefaultInputTextRaw,
+                    component:   DefaultInputText,
+                },
             },
         ],
         [
             'with-placeholder',
             {
-                code:      InputTextWithPlaceholderRaw,
-                component: InputTextWithPlaceholder,
+                vue: {
+                    codePreview: InputTextWithPlaceholderRaw,
+                    component:   InputTextWithPlaceholder,
+                },
             },
         ],
         [
             'with-label-and-helper-text',
             {
-                grid:      { columns: 1, rows: 4 },
-                code:      InputTextWithLabelAndHelperTextRaw,
-                component: InputTextWithLabelAndHelperText,
+                vue: {
+                    codePreview: InputTextWithLabelAndHelperTextRaw,
+                    component:   InputTextWithLabelAndHelperText,
+                },
+                grid: { columns: 1, rows: 4 },
             },
         ],
         [
             'hidden-label',
             {
-                code:      InputTextHiddenLabelRaw,
-                component: InputTextHiddenLabel,
+                vue: {
+                    codePreview: InputTextHiddenLabelRaw,
+                    component:   InputTextHiddenLabel,
+                },
             },
         ],
         [
             'floating-label',
             {
-                code:      InputTextFloatingLabelRaw,
-                component: InputTextFloatingLabel,
+                vue: {
+                    codePreview: InputTextFloatingLabelRaw,
+                    component:   InputTextFloatingLabel,
+                },
             },
         ],
         [
             'size',
             {
-                grid:      { columns: 1, rows: 4 },
-                code:      InputTextSizeRaw,
-                component: InputTextSize,
+                vue: {
+                    codePreview: InputTextSizeRaw,
+                    component:   InputTextSize,
+                },
+                grid: { columns: 1, rows: 4 },
             },
         ],
         [
             'floating-label-size',
             {
-                grid:      { columns: 1, rows: 3 },
-                code:      InputTextFloatingLabelSizeRaw,
-                component: InputTextFloatingLabelSize,
+                vue: {
+                    codePreview: InputTextFloatingLabelSizeRaw,
+                    component:   InputTextFloatingLabelSize,
+                },
+                grid: { columns: 1, rows: 3 },
             },
         ],
         [
             'validation-state',
             {
-                grid:      { columns: 1, rows: 2 },
-                code:      InputTextValidationStateRaw,
-                component: InputTextValidationState,
+                vue: {
+                    codePreview: InputTextValidationStateRaw,
+                    component:   InputTextValidationState,
+                },
+                grid: { columns: 1, rows: 2 },
             },
         ],
         [
             'inline-label',
             {
-                code:      InputTextInlineLabelRaw,
-                component: InputTextInlineLabel,
+                vue: {
+                    codePreview: InputTextInlineLabelRaw,
+                    component:   InputTextInlineLabel,
+                },
             },
         ],
         [
             'with-icon',
             {
-                grid:      { columns: 1, rows: 7 },
-                code:      InputTextWithIconRaw,
-                component: InputTextWithIcon,
+                vue: {
+                    codePreview: InputTextWithIconRaw,
+                    component:   InputTextWithIcon,
+                },
+                grid: { columns: 1, rows: 7 },
             },
         ],
         [
             'shape',
             {
-                grid:      { columns: 1, rows: 2 },
-                code:      InputTextShapeRaw,
-                component: InputTextShape,
+                vue: {
+                    codePreview: InputTextShapeRaw,
+                    component:   InputTextShape,
+                },
+                grid: { columns: 1, rows: 2 },
             },
         ],
         [
             'without-focus',
             {
-                code:      InputTextWithoutFocusRaw,
-                component: InputTextWithoutFocus,
+                vue: {
+                    codePreview: InputTextWithoutFocusRaw,
+                    component:   InputTextWithoutFocus,
+                },
             },
         ],
         [
             'disabled',
             {
-                grid:      { columns: 1, rows: 2 },
-                code:      DisabledInputTextRaw,
-                component: DisabledInputText,
+                vue: {
+                    codePreview: DisabledInputTextRaw,
+                    component:   DisabledInputText,
+                },
+                grid: { columns: 1, rows: 2 },
             },
         ],
         [
             'readonly',
             {
-                code:      ReadonlyInputTextRaw,
-                component: ReadonlyInputText,
+                vue: {
+                    codePreview: ReadonlyInputTextRaw,
+                    component:   ReadonlyInputText,
+                },
             },
         ],
         [
             'join',
             {
-                grid:      { columns: 1, rows: 10 },
-                code:      JoinInputTextRaw,
-                component: JoinInputText,
+                vue: {
+                    codePreview: JoinInputTextRaw,
+                    component:   JoinInputText,
+                },
+                grid: { columns: 1, rows: 10 },
             },
         ],
     ]);

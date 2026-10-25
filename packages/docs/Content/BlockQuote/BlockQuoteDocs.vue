@@ -6,19 +6,19 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api.ts';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import BlockQuoteAlignment           from '@/Content/BlockQuote/BlockQuoteAlignment.vue';
-import BlockQuoteAlignmentRaw        from '@/Content/BlockQuote/BlockQuoteAlignment.vue?raw';
-import DefaultBlockQuote             from '@/Content/BlockQuote/DefaultBlockQuote.vue';
-import DefaultBlockQuoteRaw          from '@/Content/BlockQuote/DefaultBlockQuote.vue?raw';
-import NamedBlockQuote               from '@/Content/BlockQuote/NamedBlockQuote.vue';
-import NamedBlockQuoteRaw            from '@/Content/BlockQuote/NamedBlockQuote.vue?raw';
-import NamedBlockQuoteWithAvatar     from '@/Content/BlockQuote/NamedBlockQuoteWithAvatar.vue';
-import NamedBlockQuoteWithAvatarRaw  from '@/Content/BlockQuote/NamedBlockQuoteWithAvatar.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import BlockQuoteAlignment              from '@/Content/BlockQuote/BlockQuoteAlignment.vue';
+import BlockQuoteAlignmentRaw           from '@/Content/BlockQuote/BlockQuoteAlignment.vue?raw';
+import DefaultBlockQuote                from '@/Content/BlockQuote/DefaultBlockQuote.vue';
+import DefaultBlockQuoteRaw             from '@/Content/BlockQuote/DefaultBlockQuote.vue?raw';
+import NamedBlockQuote                  from '@/Content/BlockQuote/NamedBlockQuote.vue';
+import NamedBlockQuoteRaw               from '@/Content/BlockQuote/NamedBlockQuote.vue?raw';
+import NamedBlockQuoteWithAvatar        from '@/Content/BlockQuote/NamedBlockQuoteWithAvatar.vue';
+import NamedBlockQuoteWithAvatarRaw     from '@/Content/BlockQuote/NamedBlockQuoteWithAvatar.vue?raw';
 
 type Section = Default
     | 'alignment'
@@ -33,33 +33,41 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultBlockQuoteRaw,
-                component: DefaultBlockQuote,
+                vue: {
+                    codePreview: DefaultBlockQuoteRaw,
+                    component:   DefaultBlockQuote,
+                },
             },
         ],
         [
             'alignment',
             {
-                code:      BlockQuoteAlignmentRaw,
-                component: BlockQuoteAlignment,
+                vue: {
+                    codePreview: BlockQuoteAlignmentRaw,
+                    component:   BlockQuoteAlignment,
+                },
             },
         ],
         [
             'named',
             {
-                code:      NamedBlockQuoteRaw,
-                component: NamedBlockQuote,
+                vue: {
+                    codePreview: NamedBlockQuoteRaw,
+                    component:   NamedBlockQuote,
+                },
             },
         ],
         [
             'named-with-avatar',
             {
-                code:      NamedBlockQuoteWithAvatarRaw,
-                component: NamedBlockQuoteWithAvatar,
+                vue: {
+                    codePreview: NamedBlockQuoteWithAvatarRaw,
+                    component:   NamedBlockQuoteWithAvatar,
+                },
             },
         ],
     ]);

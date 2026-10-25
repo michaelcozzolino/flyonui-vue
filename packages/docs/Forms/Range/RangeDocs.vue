@@ -6,25 +6,25 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api.ts';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import CustomColor                   from '@/Forms/Range/CustomColor.vue';
-import CustomColorRaw                from '@/Forms/Range/CustomColor.vue?raw';
-import DefaultRange                  from '@/Forms/Range/DefaultRange.vue';
-import DefaultRangeRaw               from '@/Forms/Range/DefaultRange.vue?raw';
-import DisabledRange                 from '@/Forms/Range/DisabledRange.vue';
-import DisabledRangeRaw              from '@/Forms/Range/DisabledRange.vue?raw';
-import MinMaxAndStepRange            from '@/Forms/Range/MinMaxAndStepRange.vue';
-import MinMaxAndStepRangeRaw         from '@/Forms/Range/MinMaxAndStepRange.vue?raw';
-import RangeColor                    from '@/Forms/Range/RangeColor.vue';
-import RangeColorRaw                 from '@/Forms/Range/RangeColor.vue?raw';
-import RangeSize                     from '@/Forms/Range/RangeSize.vue';
-import RangeSizeRaw                  from '@/Forms/Range/RangeSize.vue?raw';
-import StepsRange                    from '@/Forms/Range/StepsRange.vue';
-import StepsRangeRaw                 from '@/Forms/Range/StepsRange.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import CustomColor                      from '@/Forms/Range/CustomColor.vue';
+import CustomColorRaw                   from '@/Forms/Range/CustomColor.vue?raw';
+import DefaultRange                     from '@/Forms/Range/DefaultRange.vue';
+import DefaultRangeRaw                  from '@/Forms/Range/DefaultRange.vue?raw';
+import DisabledRange                    from '@/Forms/Range/DisabledRange.vue';
+import DisabledRangeRaw                 from '@/Forms/Range/DisabledRange.vue?raw';
+import MinMaxAndStepRange               from '@/Forms/Range/MinMaxAndStepRange.vue';
+import MinMaxAndStepRangeRaw            from '@/Forms/Range/MinMaxAndStepRange.vue?raw';
+import RangeColor                       from '@/Forms/Range/RangeColor.vue';
+import RangeColorRaw                    from '@/Forms/Range/RangeColor.vue?raw';
+import RangeSize                        from '@/Forms/Range/RangeSize.vue';
+import RangeSizeRaw                     from '@/Forms/Range/RangeSize.vue?raw';
+import StepsRange                       from '@/Forms/Range/StepsRange.vue';
+import StepsRangeRaw                    from '@/Forms/Range/StepsRange.vue?raw';
 
 type Section = Default
     | 'size'
@@ -42,55 +42,69 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultRangeRaw,
-                component: DefaultRange,
+                vue: {
+                    codePreview: DefaultRangeRaw,
+                    component:   DefaultRange,
+                },
             },
         ],
         [
             'size',
             {
-                code:      RangeSizeRaw,
-                component: RangeSize,
-                grid:      { rows: 5, columns: 1 },
+                vue: {
+                    codePreview: RangeSizeRaw,
+                    component:   RangeSize,
+                },
+                grid: { rows: 5, columns: 1 },
             },
         ],
         [
             'color',
             {
-                code:      RangeColorRaw,
-                component: RangeColor,
+                vue: {
+                    codePreview: RangeColorRaw,
+                    component:   RangeColor,
+                },
             },
         ],
         [
             'custom-color',
             {
-                code:      CustomColorRaw,
-                component: CustomColor,
+                vue: {
+                    codePreview: CustomColorRaw,
+                    component:   CustomColor,
+                },
             },
         ],
         [
             'disabled',
             {
-                code:      DisabledRangeRaw,
-                component: DisabledRange,
+                vue: {
+                    codePreview: DisabledRangeRaw,
+                    component:   DisabledRange,
+                },
             },
         ],
         [
             'min-max-and-step',
             {
-                code:      MinMaxAndStepRangeRaw,
-                component: MinMaxAndStepRange,
+                vue: {
+                    codePreview: MinMaxAndStepRangeRaw,
+                    component:   MinMaxAndStepRange,
+                },
             },
         ],
         [
             'steps',
             {
-                code:      StepsRangeRaw,
-                component: StepsRange,
+                vue: {
+                    codePreview: StepsRangeRaw,
+                    component:   StepsRange,
+                },
             },
         ],
     ]);

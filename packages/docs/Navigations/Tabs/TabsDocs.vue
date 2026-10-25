@@ -6,35 +6,35 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import ActivateOnHoverTabs           from '@/Navigations/Tabs/ActivateOnHoverTabs.vue';
-import ActivateOnHoverTabsRaw        from '@/Navigations/Tabs/ActivateOnHoverTabs.vue?raw';
-import DefaultTabs                   from '@/Navigations/Tabs/DefaultTabs.vue';
-import DefaultTabsRaw                from '@/Navigations/Tabs/DefaultTabs.vue?raw';
-import DisabledTabs                  from '@/Navigations/Tabs/DisabledTabs.vue';
-import DisabledTabsRaw               from '@/Navigations/Tabs/DisabledTabs.vue?raw';
-import FilledTabs                    from '@/Navigations/Tabs/FilledTabs.vue';
-import FilledTabsRaw                 from '@/Navigations/Tabs/FilledTabs.vue?raw';
-import FullControlTabs               from '@/Navigations/Tabs/FullControlTabs.vue';
-import FullControlTabsRaw            from '@/Navigations/Tabs/FullControlTabs.vue?raw';
-import ResponsiveTabs                from '@/Navigations/Tabs/ResponsiveTabs.vue';
-import ResponsiveTabsRaw             from '@/Navigations/Tabs/ResponsiveTabs.vue?raw';
-import TabsAlignment                 from '@/Navigations/Tabs/TabsAlignment.vue';
-import TabsAlignmentRaw              from '@/Navigations/Tabs/TabsAlignment.vue?raw';
-import TabsShape                     from '@/Navigations/Tabs/TabsShape.vue';
-import TabsShapeRaw                  from '@/Navigations/Tabs/TabsShape.vue?raw';
-import TabsSize                      from '@/Navigations/Tabs/TabsSize.vue';
-import TabsSizeRaw                   from '@/Navigations/Tabs/TabsSize.vue?raw';
-import TabsWithBadge                 from '@/Navigations/Tabs/TabsWithBadge.vue';
-import TabsWithBadgeRaw              from '@/Navigations/Tabs/TabsWithBadge.vue?raw';
-import TabsWithIcon                  from '@/Navigations/Tabs/TabsWithIcon.vue';
-import TabsWithIconRaw               from '@/Navigations/Tabs/TabsWithIcon.vue?raw';
-import VerticalTabs                  from '@/Navigations/Tabs/VerticalTabs.vue';
-import VerticalTabsRaw               from '@/Navigations/Tabs/VerticalTabs.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import ActivateOnHoverTabs              from '@/Navigations/Tabs/ActivateOnHoverTabs.vue';
+import ActivateOnHoverTabsRaw           from '@/Navigations/Tabs/ActivateOnHoverTabs.vue?raw';
+import DefaultTabs                      from '@/Navigations/Tabs/DefaultTabs.vue';
+import DefaultTabsRaw                   from '@/Navigations/Tabs/DefaultTabs.vue?raw';
+import DisabledTabs                     from '@/Navigations/Tabs/DisabledTabs.vue';
+import DisabledTabsRaw                  from '@/Navigations/Tabs/DisabledTabs.vue?raw';
+import FilledTabs                       from '@/Navigations/Tabs/FilledTabs.vue';
+import FilledTabsRaw                    from '@/Navigations/Tabs/FilledTabs.vue?raw';
+import FullControlTabs                  from '@/Navigations/Tabs/FullControlTabs.vue';
+import FullControlTabsRaw               from '@/Navigations/Tabs/FullControlTabs.vue?raw';
+import ResponsiveTabs                   from '@/Navigations/Tabs/ResponsiveTabs.vue';
+import ResponsiveTabsRaw                from '@/Navigations/Tabs/ResponsiveTabs.vue?raw';
+import TabsAlignment                    from '@/Navigations/Tabs/TabsAlignment.vue';
+import TabsAlignmentRaw                 from '@/Navigations/Tabs/TabsAlignment.vue?raw';
+import TabsShape                        from '@/Navigations/Tabs/TabsShape.vue';
+import TabsShapeRaw                     from '@/Navigations/Tabs/TabsShape.vue?raw';
+import TabsSize                         from '@/Navigations/Tabs/TabsSize.vue';
+import TabsSizeRaw                      from '@/Navigations/Tabs/TabsSize.vue?raw';
+import TabsWithBadge                    from '@/Navigations/Tabs/TabsWithBadge.vue';
+import TabsWithBadgeRaw                 from '@/Navigations/Tabs/TabsWithBadge.vue?raw';
+import TabsWithIcon                     from '@/Navigations/Tabs/TabsWithIcon.vue';
+import TabsWithIconRaw                  from '@/Navigations/Tabs/TabsWithIcon.vue?raw';
+import VerticalTabs                     from '@/Navigations/Tabs/VerticalTabs.vue';
+import VerticalTabsRaw                  from '@/Navigations/Tabs/VerticalTabs.vue?raw';
 
 type Section = Default
     | 'disabled'
@@ -57,89 +57,113 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultTabsRaw,
-                component: DefaultTabs,
+                vue: {
+                    codePreview: DefaultTabsRaw,
+                    component:   DefaultTabs,
+                },
             },
         ],
         [
             'disabled',
             {
-                code:      DisabledTabsRaw,
-                component: DisabledTabs,
+                vue: {
+                    codePreview: DisabledTabsRaw,
+                    component:   DisabledTabs,
+                },
             },
         ],
         [
             'filled',
             {
-                code:      FilledTabsRaw,
-                component: FilledTabs,
+                vue: {
+                    codePreview: FilledTabsRaw,
+                    component:   FilledTabs,
+                },
             },
         ],
         [
             'vertical',
             {
-                code:      VerticalTabsRaw,
-                component: VerticalTabs,
+                vue: {
+                    codePreview: VerticalTabsRaw,
+                    component:   VerticalTabs,
+                },
             },
         ],
         [
             'size',
             {
-                code:      TabsSizeRaw,
-                component: TabsSize,
+                vue: {
+                    codePreview: TabsSizeRaw,
+                    component:   TabsSize,
+                },
             },
         ],
         [
             'alignment',
             {
-                code:      TabsAlignmentRaw,
-                component: TabsAlignment,
+                vue: {
+                    codePreview: TabsAlignmentRaw,
+                    component:   TabsAlignment,
+                },
             },
         ],
         [
             'with-icon',
             {
-                code:      TabsWithIconRaw,
-                component: TabsWithIcon,
+                vue: {
+                    codePreview: TabsWithIconRaw,
+                    component:   TabsWithIcon,
+                },
             },
         ],
         [
             'with-badge',
             {
-                code:      TabsWithBadgeRaw,
-                component: TabsWithBadge,
+                vue: {
+                    codePreview: TabsWithBadgeRaw,
+                    component:   TabsWithBadge,
+                },
             },
         ],
         [
             'responsive',
             {
-                code:      ResponsiveTabsRaw,
-                component: ResponsiveTabs,
+                vue: {
+                    codePreview: ResponsiveTabsRaw,
+                    component:   ResponsiveTabs,
+                },
             },
         ],
         [
             'activate-on-hover',
             {
-                code:      ActivateOnHoverTabsRaw,
-                component: ActivateOnHoverTabs,
+                vue: {
+                    codePreview: ActivateOnHoverTabsRaw,
+                    component:   ActivateOnHoverTabs,
+                },
             },
         ],
         [
             'shape',
             {
-                code:      TabsShapeRaw,
-                component: TabsShape,
+                vue: {
+                    codePreview: TabsShapeRaw,
+                    component:   TabsShape,
+                },
             },
         ],
         [
             'full-control',
             {
-                code:      FullControlTabsRaw,
-                component: FullControlTabs,
+                vue: {
+                    codePreview: FullControlTabsRaw,
+                    component:   FullControlTabs,
+                },
             },
         ],
     ]);

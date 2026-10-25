@@ -6,16 +6,16 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import LoadingAnimation              from '@/Components/Loading/LoadingAnimation.vue';
-import LoadingAnimationRaw           from '@/Components/Loading/LoadingAnimation.vue?raw';
-import LoadingColor                  from '@/Components/Loading/LoadingColor.vue';
-import LoadingColorRaw               from '@/Components/Loading/LoadingColor.vue?raw';
-import LoadingSize                   from '@/Components/Loading/LoadingSize.vue';
-import LoadingSizeRaw                from '@/Components/Loading/LoadingSize.vue?raw';
-import { computed }                  from 'vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import LoadingAnimation                 from '@/Components/Loading/LoadingAnimation.vue';
+import LoadingAnimationRaw              from '@/Components/Loading/LoadingAnimation.vue?raw';
+import LoadingColor                     from '@/Components/Loading/LoadingColor.vue';
+import LoadingColorRaw                  from '@/Components/Loading/LoadingColor.vue?raw';
+import LoadingSize                      from '@/Components/Loading/LoadingSize.vue';
+import LoadingSizeRaw                   from '@/Components/Loading/LoadingSize.vue?raw';
 
 type Section = 'animation' | 'color' | 'size' | ApiType;
 
@@ -28,30 +28,37 @@ defineProps<Props>();
 const excludeFromTests = true;
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'animation',
             {
-                grid:      { columns: 5, rows: 6 },
-                code:      LoadingAnimationRaw,
-                component: LoadingAnimation,
                 excludeFromTests,
+                vue: {
+                    codePreview: LoadingAnimationRaw,
+                    component:   LoadingAnimation,
+                },
+                grid: { columns: 5, rows: 6 },
             },
         ],
         [
             'color',
             {
-                code:      LoadingColorRaw,
-                component: LoadingColor,
                 excludeFromTests,
+                vue: {
+                    codePreview: LoadingColorRaw,
+                    component:   LoadingColor,
+
+                },
             },
         ],
         [
             'size',
             {
-                code:      LoadingSizeRaw,
-                component: LoadingSize,
                 excludeFromTests,
+                vue: {
+                    codePreview: LoadingSizeRaw,
+                    component:   LoadingSize,
+                },
             },
         ],
     ]);
