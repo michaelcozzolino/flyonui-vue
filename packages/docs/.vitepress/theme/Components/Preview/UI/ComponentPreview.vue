@@ -115,18 +115,18 @@ const frameworkMetadata = computed((): FrameworkMetadata => {
 });
 
 const codePreviews = computed((): CodePreviewProps[] => {
-    if (typeof props.code === 'string') {
+    if (typeof props.codePreview === 'string') {
         return [
             {
                 title: frameworkMetadata.value.title,
                 code:
-                props.code,
+                props.codePreview,
                 language: frameworkMetadata.value.language,
             },
         ];
     }
 
-    return props.code.map((c): CodePreviewProps => ({
+    return props.codePreview.map((c: CodePreviewProps): Required<CodePreviewProps> => ({
         ...c,
         title: c.title ?? frameworkMetadata.value.title,
     }));

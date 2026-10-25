@@ -1,21 +1,26 @@
-import type { Component } from 'vue';
+import type { Type }                              from '@angular/core';
+import type { RendererNode }                      from '@vue/runtime-core';
+import type { ComponentType }                     from 'react';
+import type { Component, RendererElement, VNode } from 'vue';
+
+export type FrameworkId = 'vue' | 'react' | 'html' | 'angular';
+
+export type FrameworkSectionPreview = {
+    excludeFromTests?:   boolean;
+    dataTestScreenshot?: boolean;
+    grid?:               { columns: number; rows: number };
+} & Partial<Record<FrameworkId, ComponentPreviewProps>>;
 
 export interface ComponentPreviewProps {
     /**
      * If string it is only a code and the title will be defined by default in the component itself,
      * otherwise we have multiple codes that need to have a different title.
      */
-    code: string | { title: string; code: string }[];
+    codePreview: string | CodePreviewProps[];
 
-    /** The component to be shown in the preview */
-    component: Component;
-
-    /**
-     * Used mainly as name of the screenshot preview for visual tests, In case it is undefined, it means that it
-     * is by purpose as not everything can be tested through screenshots, such as animations.
-     */
-    dataTestScreenshot?: string;
-    grid?:               { columns: number; rows: number };
+    /** The (web) component to be shown in the preview */
+    component: Component | VNode<RendererNode, RendererElement, WebComponentPreviewProps>;
+    grid?:     { columns: number; rows: number };
 }
 
 export interface CodePreviewProps {
@@ -23,3 +28,10 @@ export interface CodePreviewProps {
     code:     string;
     language: string;
 }
+
+export type AngularComponent = Type<unknown>;
+export type ReactComponent = ComponentType;
+
+export type WebComponentPreviewProps = { framework: 'angular'; component: AngularComponent }
+    | { framework: 'html'; html: string }
+    | { framework: 'react'; component: ReactComponent };
