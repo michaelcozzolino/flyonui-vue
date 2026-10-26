@@ -5194,6 +5194,7 @@ __metadata:
   dependencies:
     "@tailwindcss/cli": "npm:^4.3.3"
     "@types/node": "npm:^20.19.43"
+    "@types/react": "npm:^19.3.0"
     "@vue/test-utils": "npm:^2.5.1"
     "@vue/tsconfig": "npm:^0.9.1"
     concurrently: "npm:^9.2.5"
@@ -5206,6 +5207,11 @@ __metadata:
     vite: "npm:^8.3.5"
     vue: "npm:^3.5.44"
     vue-tsc: "npm:^3.3.13"
+  peerDependencies:
+    "@types/react": ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
   languageName: unknown
   linkType: soft
 
