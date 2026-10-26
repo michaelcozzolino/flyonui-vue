@@ -1,11 +1,11 @@
+import type { Locator } from 'playwright';
 import type {
     ParentSidebarItem,
     SidebarItem,
 }                             from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import type { Locator }       from 'playwright';
+import { expect, test }       from '@playwright/test';
 import { useSidebarItems }    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
 import { flyonUIVueNextPath } from '@/Next/Lib/Next';
-import { expect, test }       from '@playwright/test';
 
 const docsPagePathsBySection = getDocsPagePathsBySection();
 
@@ -28,9 +28,14 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
         for (const docsPagePath of getDocsPagePathsBySection(['/extra/build-size-visualizer'])[section] ?? []) {
             await page.goto(docsPagePath);
 
+            // todo: remove filter when the web-components package is production-ready
+            const unexpectedConsoleMessages = consoleMessages.filter(message => !message.includes(
+                '[warning] FlyonUI web components is still an experimental package, its api and behaviour might change. DO NOT use on production.',
+            ));
+
             expect(
-                consoleMessages,
-                `Expected "${docsPagePath}" not to emit console messages, but got:\n${consoleMessages.join('\n')}`,
+                unexpectedConsoleMessages,
+                `Expected "${docsPagePath}" not to emit console messages, but got:\n${unexpectedConsoleMessages.join('\n')}`,
             ).toEqual([]);
 
             expect(
