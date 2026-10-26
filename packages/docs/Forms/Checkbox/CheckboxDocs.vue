@@ -6,29 +6,39 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import CheckboxColor                 from '@/Forms/Checkbox/CheckboxColor.vue';
-import CheckboxColorRaw              from '@/Forms/Checkbox/CheckboxColor.vue?raw';
-import CheckboxSize                  from '@/Forms/Checkbox/CheckboxSize.vue';
-import CheckboxSizeRaw               from '@/Forms/Checkbox/CheckboxSize.vue?raw';
-import CheckboxState                 from '@/Forms/Checkbox/CheckboxState.vue';
-import CheckboxStateRaw              from '@/Forms/Checkbox/CheckboxState.vue?raw';
-import CheckboxValidationState       from '@/Forms/Checkbox/CheckboxValidationState.vue';
-import CheckboxValidationStateRaw    from '@/Forms/Checkbox/CheckboxValidationState.vue?raw';
-import CheckboxWithCustomColor       from '@/Forms/Checkbox/CheckboxWithCustomColor.vue';
-import CheckboxWithCustomColorRaw    from '@/Forms/Checkbox/CheckboxWithCustomColor.vue?raw';
-import CheckboxWithHelperText        from '@/Forms/Checkbox/CheckboxWithHelperText.vue';
-import CheckboxWithHelperTextRaw     from '@/Forms/Checkbox/CheckboxWithHelperText.vue?raw';
-import DefaultCheckbox               from '@/Forms/Checkbox/DefaultCheckbox.vue';
-import DefaultCheckboxRaw            from '@/Forms/Checkbox/DefaultCheckbox.vue?raw';
-import InlineCheckboxGroup           from '@/Forms/Checkbox/InlineCheckboxGroup.vue';
-import InlineCheckboxGroupRaw        from '@/Forms/Checkbox/InlineCheckboxGroup.vue?raw';
-import VerticalCheckboxGroup         from '@/Forms/Checkbox/VerticalCheckboxGroup.vue';
-import VerticalCheckboxGroupRaw      from '@/Forms/Checkbox/VerticalCheckboxGroup.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import {
+    getAngularWebComponentPreview,
+    getHtmlWebComponentPreview,
+    getReactWebComponentPreview,
+}                                 from '@/.vitepress/theme/Components/Preview/Lib/GetWebComponentPreview';
+import CheckboxColor              from '@/Forms/Checkbox/CheckboxColor.vue';
+import CheckboxColorRaw           from '@/Forms/Checkbox/CheckboxColor.vue?raw';
+import CheckboxSize               from '@/Forms/Checkbox/CheckboxSize.vue';
+import CheckboxSizeRaw            from '@/Forms/Checkbox/CheckboxSize.vue?raw';
+import CheckboxState              from '@/Forms/Checkbox/CheckboxState.vue';
+import CheckboxStateRaw           from '@/Forms/Checkbox/CheckboxState.vue?raw';
+import CheckboxValidationState    from '@/Forms/Checkbox/CheckboxValidationState.vue';
+import CheckboxValidationStateRaw from '@/Forms/Checkbox/CheckboxValidationState.vue?raw';
+import CheckboxWithCustomColor    from '@/Forms/Checkbox/CheckboxWithCustomColor.vue';
+import CheckboxWithCustomColorRaw from '@/Forms/Checkbox/CheckboxWithCustomColor.vue?raw';
+import CheckboxWithHelperText     from '@/Forms/Checkbox/CheckboxWithHelperText.vue';
+import CheckboxWithHelperTextRaw  from '@/Forms/Checkbox/CheckboxWithHelperText.vue?raw';
+import DefaultCheckbox            from '@/Forms/Checkbox/DefaultCheckbox.vue';
+import DefaultCheckboxRaw         from '@/Forms/Checkbox/DefaultCheckbox.vue?raw';
+import AngularDefaultCheckbox     from '@/Forms/Checkbox/DefaultCheckboxAngular';
+import AngularDefaultCheckboxRaw  from '@/Forms/Checkbox/DefaultCheckboxAngular.ts?raw';
+import DefaultCheckboxHtml        from '@/Forms/Checkbox/DefaultCheckboxHTML.html?raw';
+import DefaultCheckboxReact       from '@/Forms/Checkbox/DefaultCheckboxReact.tsx';
+import ReactDefaultCheckboxRaw    from '@/Forms/Checkbox/DefaultCheckboxReact.tsx?raw';
+import InlineCheckboxGroup        from '@/Forms/Checkbox/InlineCheckboxGroup.vue';
+import InlineCheckboxGroupRaw     from '@/Forms/Checkbox/InlineCheckboxGroup.vue?raw';
+import VerticalCheckboxGroup      from '@/Forms/Checkbox/VerticalCheckboxGroup.vue';
+import VerticalCheckboxGroupRaw   from '@/Forms/Checkbox/VerticalCheckboxGroup.vue?raw';
 
 type Section = Default
     | 'with-helper-text'
@@ -48,68 +58,98 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultCheckboxRaw,
-                component: DefaultCheckbox,
+                vue: {
+                    component:   DefaultCheckbox,
+                    codePreview: DefaultCheckboxRaw,
+                },
+                react: {
+                    component:   getReactWebComponentPreview(DefaultCheckboxReact),
+                    codePreview: ReactDefaultCheckboxRaw,
+                },
+                html: {
+                    component:   getHtmlWebComponentPreview(DefaultCheckboxHtml),
+                    codePreview: DefaultCheckboxHtml,
+                },
+                angular: {
+                    component:   getAngularWebComponentPreview(AngularDefaultCheckbox),
+                    codePreview: AngularDefaultCheckboxRaw,
+                },
             },
         ],
         [
             'with-helper-text',
             {
-                code:      CheckboxWithHelperTextRaw,
-                component: CheckboxWithHelperText,
+                vue: {
+                    component:   CheckboxWithHelperText,
+                    codePreview: CheckboxWithHelperTextRaw,
+                },
             },
         ],
         [
             'color',
             {
-                code:      CheckboxColorRaw,
-                component: CheckboxColor,
+                vue: {
+                    component:   CheckboxColor,
+                    codePreview: CheckboxColorRaw,
+                },
             },
         ],
         [
             'with-custom-color',
             {
-                code:      CheckboxWithCustomColorRaw,
-                component: CheckboxWithCustomColor,
+                vue: {
+                    component:   CheckboxWithCustomColor,
+                    codePreview: CheckboxWithCustomColorRaw,
+                },
             },
         ],
         [
             'size',
             {
-                code:      CheckboxSizeRaw,
-                component: CheckboxSize,
+                vue: {
+                    component:   CheckboxSize,
+                    codePreview: CheckboxSizeRaw,
+                },
             },
         ],
         [
             'validation-state',
             {
-                code:      CheckboxValidationStateRaw,
-                component: CheckboxValidationState,
+                vue: {
+                    component:   CheckboxValidationState,
+                    codePreview: CheckboxValidationStateRaw,
+                },
             },
         ],
         [
             'state',
             {
-                code:      CheckboxStateRaw,
-                component: CheckboxState,
+                vue: {
+                    component:   CheckboxState,
+                    codePreview: CheckboxStateRaw,
+                },
             },
         ],
         [
             'inline-group',
             {
-                code:      InlineCheckboxGroupRaw,
-                component: InlineCheckboxGroup,
+                vue: {
+                    component:   InlineCheckboxGroup,
+                    codePreview: InlineCheckboxGroupRaw,
+                },
             },
         ],
         [
             'vertical-group',
             {
-                code:      VerticalCheckboxGroupRaw,
-                component: VerticalCheckboxGroup,
+                vue: {
+                    component:   VerticalCheckboxGroup,
+                    codePreview: VerticalCheckboxGroupRaw,
+                },
             },
         ],
     ]);
