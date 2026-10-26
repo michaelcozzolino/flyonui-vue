@@ -8,9 +8,10 @@ export const useFrameworkSelectionStore = defineStore('FrameworkSelectionStore',
 
     const frameworks = computed((): Framework[] => [
         { id: 'vue', label: 'Vue', icon: 'logos:vue' },
-        { id: 'react', label: 'React', icon: 'logos:react' },
-        { id: 'html', label: 'HTML', icon: 'logos:html-5' },
-        { id: 'angular', label: 'Angular', icon: 'logos:angular-icon' },
+        // todo: uncomment when web-components will be production ready
+        // { id: 'react', label: 'React', icon: 'logos:react' },
+        // { id: 'html', label: 'HTML', icon: 'logos:html-5' },
+        // { id: 'angular', label: 'Angular', icon: 'logos:angular-icon' },
     ]);
 
     const selectedFrameworkIds = useLocalStorage<FrameworkId[]>(
