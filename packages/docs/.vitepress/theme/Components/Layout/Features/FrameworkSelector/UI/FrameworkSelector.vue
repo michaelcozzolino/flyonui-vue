@@ -27,10 +27,10 @@
 </template>
 
 <script setup lang="ts">
-import type { FrameworkId }           from '@/.vitepress/theme/Components/Preview/Types/Preview.ts';
+import type { FrameworkId }           from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Types/FrameworkSelector';
 import { FoAvatar, FoIcon }           from 'flyonui-vue';
 import { storeToRefs }                from 'pinia';
-import { useFrameworkSelectionStore } from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore.ts';
+import { useFrameworkSelectionStore } from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore';
 
 const { frameworks, selectedFrameworkIds } = storeToRefs(useFrameworkSelectionStore());
 

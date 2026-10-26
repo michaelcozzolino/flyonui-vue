@@ -2,8 +2,7 @@ import type { Type }                              from '@angular/core';
 import type { RendererNode }                      from '@vue/runtime-core';
 import type { ComponentType }                     from 'react';
 import type { Component, RendererElement, VNode } from 'vue';
-
-export type FrameworkId = 'vue' | 'react' | 'html' | 'angular';
+import type { FrameworkId }                       from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Types/FrameworkSelector';
 
 export type FrameworkSectionPreview = {
     excludeFromTests?:   boolean;

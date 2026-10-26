@@ -28,17 +28,13 @@
 </template>
 
 <script setup lang="ts">
-import type { TabProps }       from 'flyonui-vue';
-import type {
-    ComponentPreviewProps,
-    FrameworkId,
-    FrameworkSectionPreview,
-}                                      from '@/.vitepress/theme/Components/Preview/Types/Preview';
-import { FoTab, FoTabContent, FoTabs } from 'flyonui-vue';
-import { storeToRefs }                 from 'pinia';
-import { computed, ref, watch }        from 'vue';
-import { useFrameworkSelectionStore }  from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore.ts';
-import ComponentPreview                from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
+import type { TabProps }                                       from 'flyonui-vue';
+import type { ComponentPreviewProps, FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import { FoTab, FoTabContent, FoTabs }                         from 'flyonui-vue';
+import { storeToRefs }                                         from 'pinia';
+import { computed, ref, watch }                                from 'vue';
+import { useFrameworkSelectionStore }                          from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore';
+import ComponentPreview                                        from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 
 interface Props {
     previews: FrameworkSectionPreview;
@@ -46,20 +42,7 @@ interface Props {
 
 const props = defineProps<Props>();
 
-interface FrameworkMetadata {
-    id:    FrameworkId;
-    label: string;
-    icon:  NonNullable<TabProps['icon']>;
-}
-
-const frameworkMetadata: FrameworkMetadata[] = [
-    { id: 'vue', label: 'Vue', icon: 'logos:vue' },
-    { id: 'react', label: 'React', icon: 'logos:react' },
-    { id: 'html', label: 'HTML', icon: 'logos:html-5' },
-    { id: 'angular', label: 'Angular', icon: 'logos:angular-icon' },
-];
-
-const { selectedFrameworkIds } = storeToRefs(useFrameworkSelectionStore());
+const { frameworks, selectedFrameworkIds } = storeToRefs(useFrameworkSelectionStore());
 
 interface FrameworkTab extends TabProps, Pick<ComponentPreviewProps, 'codePreview' | 'component'> {
     label: string;
@@ -68,7 +51,7 @@ interface FrameworkTab extends TabProps, Pick<ComponentPreviewProps, 'codePrevie
 const frameworkTabs = computed((): FrameworkTab[] => {
     const tabs: FrameworkTab[] = [];
 
-    for (const { id, label, icon } of frameworkMetadata) {
+    for (const { id, label, icon } of frameworks.value) {
         const frameworkPreview = props.previews[id] ?? null;
 
         if (frameworkPreview !== null && selectedFrameworkIds.value.includes(id)) {
