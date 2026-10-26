@@ -1,7 +1,7 @@
-import type { DefineComponent, VueElementConstructor } from 'vue';
+import type { ComponentOptions, VueElementConstructor } from 'vue';
 
 export interface FlyonUIVueComponent {
-    readonly component: DefineComponent<Record<string, any>, any, any>;
+    readonly component: ComponentOptions<any>;
     readonly styles:    string[];
 }
 
