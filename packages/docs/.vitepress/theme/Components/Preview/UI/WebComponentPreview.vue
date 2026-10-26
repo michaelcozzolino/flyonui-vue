@@ -30,7 +30,7 @@ watch(previewElement, async (): Promise<void> => {
             await renderAngular(props.component);
             break;
         case 'html':
-            await renderHtml();
+            await renderHtml(props.component);
             break;
         case 'react':
             renderReact(props.component);
@@ -50,12 +50,12 @@ async function renderAngular(component: AngularComponent): Promise<void> {
     angularComponent.changeDetectorRef.detectChanges();
 }
 
-async function renderHtml(): Promise<void> {
-    if (props.framework !== 'html' || previewElement.value === null) {
+async function renderHtml(component: string): Promise<void> {
+    if (previewElement.value === null) {
         return;
     }
 
-    previewElement.value.innerHTML = props.html;
+    previewElement.value.innerHTML = component;
 
     // Let custom-element mount hooks finish before the snippet initializes its properties.
     await nextTick();

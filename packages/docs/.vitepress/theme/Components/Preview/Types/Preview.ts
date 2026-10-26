@@ -33,5 +33,5 @@ export type AngularComponent = Type<unknown>;
 export type ReactComponent = ComponentType;
 
 export type WebComponentPreviewProps = { framework: 'angular'; component: AngularComponent }
-    | { framework: 'html'; html: string }
+    | { framework: 'html'; component: string }
     | { framework: 'react'; component: ReactComponent };

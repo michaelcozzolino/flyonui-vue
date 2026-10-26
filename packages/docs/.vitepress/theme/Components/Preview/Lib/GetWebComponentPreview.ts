@@ -11,8 +11,8 @@ export function getAngularWebComponentPreview<T extends AngularComponent>(compon
     return getWebComponentPreview({ framework: 'angular', component });
 }
 
-export function getHtmlWebComponentPreview(html: string): VNode {
-    return getWebComponentPreview({ framework: 'html', html });
+export function getHtmlWebComponentPreview(component: string): VNode {
+    return getWebComponentPreview({ framework: 'html', component });
 }
 
 export function getReactWebComponentPreview<T extends ReactComponent>(component: T): VNode {
