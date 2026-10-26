@@ -11,7 +11,6 @@ import { createApplication }                                from '@angular/platf
 import { createElement }                                    from 'react';
 import { createRoot }                                       from 'react-dom/client';
 import { nextTick, onBeforeUnmount, useTemplateRef, watch } from 'vue';
-import '@angular/compiler';
 
 const props = defineProps<WebComponentPreviewProps>();
 

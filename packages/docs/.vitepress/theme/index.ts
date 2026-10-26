@@ -14,6 +14,7 @@ import CodePreview                                                         from 
 import './index.css';
 import 'highlight.js/styles/github-dark-dimmed.css';
 import 'highlight.js/lib/common';
+import '@angular/compiler';
 
 export default {
     extends:    DefaultTheme,
