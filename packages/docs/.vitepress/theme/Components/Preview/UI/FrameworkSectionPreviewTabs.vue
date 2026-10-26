@@ -36,7 +36,7 @@ import type {
 }                                      from '@/.vitepress/theme/Components/Preview/Types/Preview';
 import { FoTab, FoTabContent, FoTabs } from 'flyonui-vue';
 import { storeToRefs }                 from 'pinia';
-import { computed, ref }               from 'vue';
+import { computed, ref, watch }        from 'vue';
 import { useFrameworkSelectionStore }  from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore.ts';
 import ComponentPreview                from '@/.vitepress/theme/Components/Preview/UI/ComponentPreview.vue';
 
@@ -87,4 +87,19 @@ const frameworkTabs = computed((): FrameworkTab[] => {
 });
 
 const activeTab = ref<Readonly<FrameworkTab>>(frameworkTabs.value[0]);
+
+watch(frameworkTabs, (): void => {
+    if (frameworkTabs.value.some((tab: FrameworkTab): boolean => tab.id === activeTab.value?.id)) {
+        return;
+    }
+
+    // the first tab is always vue, according to the framework metadata
+    const fallbackTab = frameworkTabs.value[0] ?? null;
+
+    if (fallbackTab === null) {
+        throw new Error('Fallback tab not found.');
+    }
+
+    activeTab.value = fallbackTab;
+});
 </script>
