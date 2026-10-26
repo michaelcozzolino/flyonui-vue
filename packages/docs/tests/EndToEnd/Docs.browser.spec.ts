@@ -1,13 +1,37 @@
-import type { Locator } from 'playwright';
-import type {
-    ParentSidebarItem,
-    SidebarItem,
-}                             from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import { expect, test }       from '@playwright/test';
-import { useSidebarItems }    from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
-import { flyonUIVueNextPath } from '@/Next/Lib/Next';
+import type { Locator }                         from 'playwright';
+import type { Framework, FrameworkId }          from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Types/FrameworkSelector';
+import type {  ParentSidebarItem, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import { Buffer }                               from 'node:buffer';
+import { expect, test }                         from '@playwright/test';
+import { createPinia, setActivePinia }          from 'pinia';
+import { useFrameworkSelectionStore }           from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore';
+import { useSidebarItems }                      from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
+import { flyonUIVueNextPath }                   from '@/Next/Lib/Next';
+import { playwrightServerURL }                  from '@/playwright.config.ts';
+
+setActivePinia(createPinia());
 
 const docsPagePathsBySection = getDocsPagePathsBySection();
+
+const { frameworks, selectedFrameworksLocalStorageKey } = useFrameworkSelectionStore();
+const selectedFrameworkIds: FrameworkId[]               = frameworks.map(({ id }: Framework): FrameworkId => id);
+
+test.use({
+    storageState: {
+        cookies: [],
+        origins: [
+            {
+                origin:       playwrightServerURL,
+                localStorage: [
+                    {
+                        name:  selectedFrameworksLocalStorageKey,
+                        value: JSON.stringify(selectedFrameworkIds),
+                    },
+                ],
+            },
+        ],
+    },
+});
 
 for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
     test(`pages do not emit console messages or page errors: ${section}`, async ({ page }) => {
@@ -128,19 +152,45 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
                     continue;
                 }
 
-                const preview = codeSnippet.locator('[data-test="flyonui-vue-preview"]').first();
-                await preview.waitFor();
+                let vueScreenshot: Buffer<ArrayBufferLike> | null = null;
 
-                // waits that any async components are loaded into the preview and asserts that there is at least one
-                await expect.poll(
-                    async () => await preview.locator('*').count(),
-                ).toBeGreaterThan(0);
+                for (const { id, label } of frameworks) {
+                    const frameworkTab = codeSnippet.getByRole('tab', { name: label, exact: true });
 
-                await preview.scrollIntoViewIfNeeded();
+                    if (await frameworkTab.count() === 0) {
+                        continue;
+                    }
 
-                const screenshot = await preview.screenshot({ animations: 'disabled' });
+                    await frameworkTab.click();
 
-                expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}/${screenshotId}.png`.replaceAll('/', '-'));
+                    const preview = codeSnippet.locator(`#tab-content-${id} [data-test="flyonui-vue-preview"]`);
+                    await preview.waitFor();
+
+                    // Wait for the framework preview to render before capturing it.
+                    await expect.poll(
+                        async () => await preview.locator('*').count(),
+                    ).toBeGreaterThan(0);
+
+                    await preview.scrollIntoViewIfNeeded();
+
+                    const screenshot = await preview.screenshot({ animations: 'disabled' });
+
+                    if (id === 'vue') {
+                        vueScreenshot = screenshot;
+                        expect.soft(screenshot).toMatchSnapshot(`${pathPrefix}/${screenshotId}.png`.replaceAll('/', '-'));
+
+                        continue;
+                    }
+
+                    if (vueScreenshot === null) {
+                        throw new Error(`Cannot compare the ${label} preview because the Vue preview is missing.`);
+                    }
+
+                    expect.soft(
+                        Buffer.compare(screenshot, vueScreenshot),
+                        `Expected the ${label} preview for "${screenshotId}" to match the Vue preview.`,
+                    ).toBe(0);
+                }
             }
 
             const propsApis = await page.locator('[data-test="props-api"]').all();

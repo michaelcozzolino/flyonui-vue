@@ -1,7 +1,8 @@
 import * as process              from 'node:process';
 import { defineConfig, devices } from '@playwright/test';
 
-const baseURL          = 'http://localhost:4173';
+export const playwrightServerURL = 'http://localhost:4173';
+
 const workspaceCommand = 'yarn workspace flyonui-vue-docs';
 const previewCommand   = `${workspaceCommand} preview`;
 
@@ -16,7 +17,7 @@ export default defineConfig({
     webServer:     {
         // In the GitHub action the docs are built before the execution of the tests, in local they might not be.
         command:             process.env.CI ? previewCommand : `yarn workspace flyonui-vue build && ${workspaceCommand} build && ${previewCommand}`,
-        url:                 baseURL,
+        url:                 playwrightServerURL,
         reuseExistingServer: !process.env.CI,
         timeout:             90000,
     },
@@ -30,7 +31,7 @@ export default defineConfig({
                         '--disable-font-subpixel-positioning',
                     ],
                 },
-                baseURL,
+                baseURL: playwrightServerURL,
             },
         },
     ],

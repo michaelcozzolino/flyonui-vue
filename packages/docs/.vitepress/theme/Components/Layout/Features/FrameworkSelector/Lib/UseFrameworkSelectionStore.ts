@@ -4,6 +4,8 @@ import { defineStore }                 from 'pinia';
 import { computed }                    from 'vue';
 
 export const useFrameworkSelectionStore = defineStore('FrameworkSelectionStore', () => {
+    const selectedFrameworksLocalStorageKey = 'flyonui-vue-docs-selected-frameworks';
+
     const frameworks = computed((): Framework[] => [
         { id: 'vue', label: 'Vue', icon: 'logos:vue' },
         { id: 'react', label: 'React', icon: 'logos:react' },
@@ -12,10 +14,10 @@ export const useFrameworkSelectionStore = defineStore('FrameworkSelectionStore',
     ]);
 
     const selectedFrameworkIds = useLocalStorage<FrameworkId[]>(
-        'flyonui-vue-docs-selected-frameworks',
+        selectedFrameworksLocalStorageKey,
         ['vue'],
         { writeDefaults: true },
     );
 
-    return { frameworks, selectedFrameworkIds };
+    return { frameworks, selectedFrameworkIds, selectedFrameworksLocalStorageKey };
 });
