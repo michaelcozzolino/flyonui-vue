@@ -8,7 +8,8 @@
                       preset: 'outline',
                   }"
                   class="transition-transform hover:scale-110"
-                  :class="isSingleFrameworkSelected(framework.id) ? 'cursor-not-allowed' : 'cursor-pointer'"
+                  :class="isFrameworkDisabled(framework.id) ? 'cursor-not-allowed' : 'cursor-pointer'"
+                  :aria-disabled="isFrameworkDisabled(framework.id)"
                   shape="circle"
                   size="small"
                   :title="framework.label"
@@ -45,8 +46,8 @@ function selectFramework(id: FrameworkId): void {
     selectedFrameworkIds.value = [...selectedFrameworkIds.value, id];
 }
 
-function isSingleFrameworkSelected(id: FrameworkId): boolean {
-    return selectedFrameworkIds.value.length === 1 && isFrameworkSelected(id);
+function isFrameworkDisabled(id: FrameworkId): boolean {
+    return isFrameworkSelected(id) && (id === 'vue' || selectedFrameworkIds.value.length === 1);
 }
 
 function isFrameworkSelected(id: FrameworkId): boolean {
