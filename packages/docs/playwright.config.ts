@@ -18,6 +18,7 @@ export default defineConfig({
         command:             process.env.CI ? previewCommand : `yarn workspace flyonui-vue build && ${workspaceCommand} build && ${previewCommand}`,
         url:                 baseURL,
         reuseExistingServer: !process.env.CI,
+        timeout:             90000,
     },
     projects: [
         {
