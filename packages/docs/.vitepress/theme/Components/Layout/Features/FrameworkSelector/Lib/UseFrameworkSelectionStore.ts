@@ -1,7 +1,8 @@
 import type { Identifiable, WithIcon, WithLabel } from 'flyonui-vue';
 import type { FrameworkId }                       from '@/.vitepress/theme/Components/Preview/Types/Preview.ts';
+import { useLocalStorage }                        from '@vueuse/core';
 import { defineStore }                            from 'pinia';
-import { computed, ref }                          from 'vue';
+import { computed }                               from 'vue';
 
 type Framework = Identifiable<'id', FrameworkId> & Required<WithLabel & WithIcon>;
 
@@ -13,8 +14,10 @@ export const useFrameworkSelectionStore = defineStore('FrameworkSelectionStore',
         { id: 'angular', label: 'Angular', icon: 'logos:angular-icon' },
     ]);
 
-    const selectedFrameworkIds = ref<FrameworkId[]>(
-        frameworks.value.map(framework => framework.id), // todo: remove temporary for debug
+    const selectedFrameworkIds = useLocalStorage<FrameworkId[]>(
+        'flyonui-vue-docs-selected-frameworks',
+        ['vue'],
+        { writeDefaults: true },
     );
 
     return { frameworks, selectedFrameworkIds };

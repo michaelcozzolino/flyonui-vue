@@ -36,7 +36,7 @@ const { frameworks, selectedFrameworkIds } = storeToRefs(useFrameworkSelectionSt
 
 function selectFramework(id: FrameworkId): void {
     if (isFrameworkSelected(id)) {
-        if (selectedFrameworkIds.value.length > 1) {
+        if (id !== 'vue' && selectedFrameworkIds.value.length > 1) {
             selectedFrameworkIds.value = selectedFrameworkIds.value.filter(selected => selected !== id);
         }
 
