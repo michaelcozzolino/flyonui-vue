@@ -173,6 +173,9 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
 
                     await preview.scrollIntoViewIfNeeded();
 
+                    // move mouse outside the components preview to avoid unwanted hover
+                    await page.mouse.move(0, 0);
+
                     const screenshot = await preview.screenshot({ animations: 'disabled' });
 
                     if (id === 'vue') {
