@@ -1,11 +1,14 @@
 {
     "extends": "@tsconfig/node-lts/tsconfig.json",
     "compilerOptions": {
-        "moduleResolution": "nodenext",
+        "moduleResolution": "Bundler",
         "module": "ESNext",
         "target": "ESNext",
         "allowImportingTsExtensions": true,
-        "noEmit": true
+        "noEmit": true,
+        "paths": {
+            "@/*": ["./src/*"]
+        }
     },
     "include": ["src/**/*.ts"]
 }
