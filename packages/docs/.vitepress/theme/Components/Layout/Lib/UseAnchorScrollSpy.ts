@@ -1,7 +1,6 @@
 import type { useRouter }             from 'vitepress';
 import type { Ref }                   from 'vue';
 import { isClient, useEventListener } from '@vueuse/core';
-import { getScrollOffset }            from 'vitepress';
 import { onMounted, ref, watch }      from 'vue';
 
 interface ResolvedHeader {
@@ -103,7 +102,6 @@ export function useAnchorScrollSpy(
         }
 
         const scrollY      = window.scrollY;
-        const offset       = getScrollOffset();
         const innerHeight  = window.innerHeight;
         const offsetHeight = document.body.offsetHeight;
 
@@ -126,8 +124,10 @@ export function useAnchorScrollSpy(
         // inspired by VitePress src/client/theme-default/composables/outline.ts
         let activeHash = router.route.hash;
 
-        for (const { hash, top } of resolvedHeaders.value) {
-            if (top > scrollY + offset + 4) {
+        for (const { element, hash, top } of resolvedHeaders.value) {
+            const scrollMarginTop = Number.parseFloat(getComputedStyle(element).scrollMarginTop) || 0;
+
+            if (top > scrollY + scrollMarginTop + 4) {
                 break;
             }
 
