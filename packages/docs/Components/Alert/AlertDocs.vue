@@ -6,30 +6,30 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api.ts';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import AlertWithAction               from '@/Components/Alert/AlertWithAction.vue';
-import AlertWithActionRaw            from '@/Components/Alert/AlertWithAction.vue?raw';
-import AlertWithIcon                 from '@/Components/Alert/AlertWithIcon.vue';
-import AlertWithIconRaw              from '@/Components/Alert/AlertWithIcon.vue?raw';
-import AlertWithList                 from '@/Components/Alert/AlertWithList.vue';
-import AlertWithListRaw              from '@/Components/Alert/AlertWithList.vue?raw';
-import DashedAlert                   from '@/Components/Alert/DashedAlert.vue';
-import DashedAlertRaw                from '@/Components/Alert/DashedAlert.vue?raw';
-import DescriptiveAlert              from '@/Components/Alert/DescriptiveAlert.vue';
-import DescriptiveAlertRaw           from '@/Components/Alert/DescriptiveAlert.vue?raw';
-import DismissibleAlert              from '@/Components/Alert/DismissibleAlert.vue';
-import DismissibleAlertRaw           from '@/Components/Alert/DismissibleAlert.vue?raw';
-import OutlineAlert                  from '@/Components/Alert/OutlineAlert.vue';
-import OutlineAlertRaw               from '@/Components/Alert/OutlineAlert.vue?raw';
-import ResponsiveAlert               from '@/Components/Alert/ResponsiveAlert.vue';
-import ResponsiveAlertRaw            from '@/Components/Alert/ResponsiveAlert.vue?raw';
-import SoftAlert                     from '@/Components/Alert/SoftAlert.vue';
-import SoftAlertRaw                  from '@/Components/Alert/SoftAlert.vue?raw';
-import SolidAlert                    from '@/Components/Alert/SolidAlert.vue';
-import SolidAlertRaw                 from '@/Components/Alert/SolidAlert.vue?raw';
-import { computed }                  from 'vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import AlertWithAction                  from '@/Components/Alert/AlertWithAction.vue';
+import AlertWithActionRaw               from '@/Components/Alert/AlertWithAction.vue?raw';
+import AlertWithIcon                    from '@/Components/Alert/AlertWithIcon.vue';
+import AlertWithIconRaw                 from '@/Components/Alert/AlertWithIcon.vue?raw';
+import AlertWithList                    from '@/Components/Alert/AlertWithList.vue';
+import AlertWithListRaw                 from '@/Components/Alert/AlertWithList.vue?raw';
+import DashedAlert                      from '@/Components/Alert/DashedAlert.vue';
+import DashedAlertRaw                   from '@/Components/Alert/DashedAlert.vue?raw';
+import DescriptiveAlert                 from '@/Components/Alert/DescriptiveAlert.vue';
+import DescriptiveAlertRaw              from '@/Components/Alert/DescriptiveAlert.vue?raw';
+import DismissibleAlert                 from '@/Components/Alert/DismissibleAlert.vue';
+import DismissibleAlertRaw              from '@/Components/Alert/DismissibleAlert.vue?raw';
+import OutlineAlert                     from '@/Components/Alert/OutlineAlert.vue';
+import OutlineAlertRaw                  from '@/Components/Alert/OutlineAlert.vue?raw';
+import ResponsiveAlert                  from '@/Components/Alert/ResponsiveAlert.vue';
+import ResponsiveAlertRaw               from '@/Components/Alert/ResponsiveAlert.vue?raw';
+import SoftAlert                        from '@/Components/Alert/SoftAlert.vue';
+import SoftAlertRaw                     from '@/Components/Alert/SoftAlert.vue?raw';
+import SolidAlert                       from '@/Components/Alert/SolidAlert.vue';
+import SolidAlertRaw                    from '@/Components/Alert/SolidAlert.vue?raw';
 
 type Section = 'solid'
     | 'soft'
@@ -50,75 +50,95 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'solid',
             {
-                code:      SolidAlertRaw,
-                component: SolidAlert,
+                vue: {
+                    codePreview: SolidAlertRaw,
+                    component:   SolidAlert,
+                },
             },
         ],
         [
             'soft',
             {
-                code:      SoftAlertRaw,
-                component: SoftAlert,
+                vue: {
+                    codePreview: SoftAlertRaw,
+                    component:   SoftAlert,
+                },
             },
         ],
         [
             'outline',
             {
-                code:      OutlineAlertRaw,
-                component: OutlineAlert,
+                vue: {
+                    codePreview: OutlineAlertRaw,
+                    component:   OutlineAlert,
+                },
             },
         ],
         [
             'dash',
             {
-                code:      DashedAlertRaw,
-                component: DashedAlert,
+                vue: {
+                    codePreview: DashedAlertRaw,
+                    component:   DashedAlert,
+                },
             },
         ],
         [
             'with-icon',
             {
-                code:      AlertWithIconRaw,
-                component: AlertWithIcon,
+                vue: {
+                    codePreview: AlertWithIconRaw,
+                    component:   AlertWithIcon,
+                },
             },
         ],
         [
             'descriptive',
             {
-                code:      DescriptiveAlertRaw,
-                component: DescriptiveAlert,
+                vue: {
+                    codePreview: DescriptiveAlertRaw,
+                    component:   DescriptiveAlert,
+                },
             },
         ],
         [
             'with-list',
             {
-                code:      AlertWithListRaw,
-                component: AlertWithList,
+                vue: {
+                    codePreview: AlertWithListRaw,
+                    component:   AlertWithList,
+                },
             },
         ],
         [
             'with-action',
             {
-                code:      AlertWithActionRaw,
-                component: AlertWithAction,
+                vue: {
+                    codePreview: AlertWithActionRaw,
+                    component:   AlertWithAction,
+                },
             },
         ],
         [
             'responsive',
             {
-                code:      ResponsiveAlertRaw,
-                component: ResponsiveAlert,
+                vue: {
+                    codePreview: ResponsiveAlertRaw,
+                    component:   ResponsiveAlert,
+                },
             },
         ],
         [
             'dismissible',
             {
-                code:      DismissibleAlertRaw,
-                component: DismissibleAlert,
+                vue: {
+                    codePreview: DismissibleAlertRaw,
+                    component:   DismissibleAlert,
+                },
             },
         ],
     ]);

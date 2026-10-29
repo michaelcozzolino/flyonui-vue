@@ -2,11 +2,13 @@ import { execSync }      from 'node:child_process';
 import { resolve }       from 'node:path';
 import { fileURLToPath } from 'node:url';
 import tailwindcss       from '@tailwindcss/vite';
+import react             from '@vitejs/plugin-react';
 import { defineConfig }  from 'vite';
 
 // todo: maybe this should be moved to config.ts of vitepress
 export default defineConfig({
     plugins: [
+        react(),
         tailwindcss(),
     ],
     define: {
@@ -31,6 +33,17 @@ export default defineConfig({
                 ),
             },
         ],
-        dedupe: ['vue', 'flyonui', 'flyonui-vue', 'pinia'],
+        dedupe: [
+            '@angular/common',
+            '@angular/compiler',
+            '@angular/core',
+            '@angular/platform-browser',
+            'react',
+            'react-dom',
+            'vue',
+            'flyonui',
+            'flyonui-vue',
+            'pinia',
+        ],
     },
 });

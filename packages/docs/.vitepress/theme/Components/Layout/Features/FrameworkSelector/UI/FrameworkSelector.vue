@@ -1,0 +1,56 @@
+<template>
+    <div class="flex items-center justify-center gap-2 mt-2 mx-2">
+        <FoAvatar v-for="framework in frameworks"
+                  :key="framework.id"
+                  :avatar="{
+                      icon: framework.icon,
+                      color: 'neutral',
+                      preset: 'outline',
+                  }"
+                  class="transition-transform hover:scale-110"
+                  :class="isFrameworkDisabled(framework.id) ? 'cursor-not-allowed' : 'cursor-pointer'"
+                  :aria-disabled="isFrameworkDisabled(framework.id)"
+                  shape="circle"
+                  size="small"
+                  :title="framework.label"
+                  @click.prevent="selectFramework(framework.id)"
+        >
+            <template v-if="isFrameworkSelected(framework.id)"
+                      #indicator
+            >
+                <FoIcon icon="tabler:check"
+                        size="doubleExtraSmall"
+                />
+            </template>
+        </FoAvatar>
+    </div>
+</template>
+
+<script setup lang="ts">
+import type { FrameworkId }           from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Types/FrameworkSelector';
+import { FoAvatar, FoIcon }           from 'flyonui-vue';
+import { storeToRefs }                from 'pinia';
+import { useFrameworkSelectionStore } from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore';
+
+const { frameworks, selectedFrameworkIds } = storeToRefs(useFrameworkSelectionStore());
+
+function selectFramework(id: FrameworkId): void {
+    if (isFrameworkSelected(id)) {
+        if (id !== 'vue' && selectedFrameworkIds.value.length > 1) {
+            selectedFrameworkIds.value = selectedFrameworkIds.value.filter(selected => selected !== id);
+        }
+
+        return;
+    }
+
+    selectedFrameworkIds.value = [...selectedFrameworkIds.value, id];
+}
+
+function isFrameworkDisabled(id: FrameworkId): boolean {
+    return isFrameworkSelected(id) && (id === 'vue' || selectedFrameworkIds.value.length === 1);
+}
+
+function isFrameworkSelected(id: FrameworkId): boolean {
+    return selectedFrameworkIds.value.includes(id);
+}
+</script>

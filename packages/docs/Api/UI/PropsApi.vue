@@ -55,12 +55,11 @@
 </template>
 
 <script setup lang="ts">
-import type { Api } from '@/Api/Types/Api.ts';
-
 import type { PropertyMeta, PropertyMetaSchema }             from 'vue-component-meta';
-import LinkableApiName                                       from '@/Api/UI/LinkableApiName.vue';
+import type { Api }                                          from '@/Api/Types/Api.ts';
 import { useArrayFilter }                                    from '@vueuse/core';
 import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
+import LinkableApiName                                       from '@/Api/UI/LinkableApiName.vue';
 
 const props = defineProps<Api<PropertyMeta>>();
 
@@ -69,7 +68,7 @@ const internalPropNames = ['key', 'ref', 'ref_for', 'ref_key', 'class', 'style']
 const propsApi = useArrayFilter(
     () => props.api,
     (prop: PropertyMeta) => internalPropNames.includes(prop.name) === false
-        && prop.tags.find((tag: PropertyMeta['tags'][number]) => tag.name === 'internal') === undefined,
+        && !prop.tags.some((tag: PropertyMeta['tags'][number]) => tag.name === 'internal'),
 );
 
 function getValues(schema: PropertyMetaSchema): string {

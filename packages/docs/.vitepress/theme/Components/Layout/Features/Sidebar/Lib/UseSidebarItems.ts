@@ -1,9 +1,6 @@
-import type {
-    ParentSidebarItem,
-    SidebarBadge,
-}                   from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import type { Ref } from 'vue';
-import { ref }      from 'vue';
+import type { Ref }                             from 'vue';
+import type { ParentSidebarItem, SidebarBadge } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import { ref }                                  from 'vue';
 
 export function useSidebarItems(): Ref<ParentSidebarItem[]> {
     const _unreleasedBadge: SidebarBadge = {

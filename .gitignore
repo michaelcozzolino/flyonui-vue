@@ -88,3 +88,5 @@ packages/create-flyonui-vue/src/Templates/*/yarn.lock
 
 packages/docs/tests/EndToEnd/Results
 packages/docs/tests/EndToEnd/Report
+
+packages/web-components/src/index.css

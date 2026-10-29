@@ -1,12 +1,8 @@
-import type { ComponentPreviewProps } from '@/.vitepress/theme/Components/Preview/Types/Preview';
-import type { ComponentName }         from 'flyonui-vue';
+import type { ComponentName }           from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
 
-export interface ComponentDocsPreview extends Omit<ComponentPreviewProps, 'dataTestScreenshot'> {
-    excludeFromTests?: boolean;
-}
-
-export interface ComponentDocsProps<S extends string, C extends ComponentDocsPreview> {
-    previews:               Map<S, C>;
+export interface ComponentDocsProps<S extends string> {
+    previews:               Map<S, FrameworkSectionPreview>;
     section:                S;
     apiDocsComponentNames?: ComponentName | ComponentName[];
 }

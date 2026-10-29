@@ -6,27 +6,27 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api.ts';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import BorderedStats                 from '@/Components/Stats/BorderedStats.vue';
-import BorderedStatsRaw              from '@/Components/Stats/BorderedStats.vue?raw';
-import CenteredItemStats             from '@/Components/Stats/CenteredItemStats.vue';
-import CenteredItemStatsRaw          from '@/Components/Stats/CenteredItemStats.vue?raw';
-import DefaultStats                  from '@/Components/Stats/DefaultStats.vue';
-import DefaultStatsRaw               from '@/Components/Stats/DefaultStats.vue?raw';
-import StatsWithActionsButton        from '@/Components/Stats/StatsWithActionsButton.vue';
-import StatsWithActionsButtonRaw     from '@/Components/Stats/StatsWithActionsButton.vue?raw';
-import StatsWithAvatar               from '@/Components/Stats/StatsWithAvatar.vue';
-import StatsWithAvatarRaw            from '@/Components/Stats/StatsWithAvatar.vue?raw';
-import StatsWithIconsAndImage        from '@/Components/Stats/StatsWithIconsAndImage.vue';
-import StatsWithIconsAndImageRaw     from '@/Components/Stats/StatsWithIconsAndImage.vue?raw';
-import StatsWithProgressBar          from '@/Components/Stats/StatsWithProgressBar.vue';
-import StatsWithProgressBarRaw       from '@/Components/Stats/StatsWithProgressBar.vue?raw';
-import VerticalStats                 from '@/Components/Stats/VerticalStats.vue';
-import VerticalStatsRaw              from '@/Components/Stats/VerticalStats.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import BorderedStats                    from '@/Components/Stats/BorderedStats.vue';
+import BorderedStatsRaw                 from '@/Components/Stats/BorderedStats.vue?raw';
+import CenteredItemStats                from '@/Components/Stats/CenteredItemStats.vue';
+import CenteredItemStatsRaw             from '@/Components/Stats/CenteredItemStats.vue?raw';
+import DefaultStats                     from '@/Components/Stats/DefaultStats.vue';
+import DefaultStatsRaw                  from '@/Components/Stats/DefaultStats.vue?raw';
+import StatsWithActionsButton           from '@/Components/Stats/StatsWithActionsButton.vue';
+import StatsWithActionsButtonRaw        from '@/Components/Stats/StatsWithActionsButton.vue?raw';
+import StatsWithAvatar                  from '@/Components/Stats/StatsWithAvatar.vue';
+import StatsWithAvatarRaw               from '@/Components/Stats/StatsWithAvatar.vue?raw';
+import StatsWithIconsAndImage           from '@/Components/Stats/StatsWithIconsAndImage.vue';
+import StatsWithIconsAndImageRaw        from '@/Components/Stats/StatsWithIconsAndImage.vue?raw';
+import StatsWithProgressBar             from '@/Components/Stats/StatsWithProgressBar.vue';
+import StatsWithProgressBarRaw          from '@/Components/Stats/StatsWithProgressBar.vue?raw';
+import VerticalStats                    from '@/Components/Stats/VerticalStats.vue';
+import VerticalStatsRaw                 from '@/Components/Stats/VerticalStats.vue?raw';
 
 type Section = Default
     | 'with-avatar'
@@ -45,61 +45,77 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultStatsRaw,
-                component: DefaultStats,
+                vue: {
+                    codePreview: DefaultStatsRaw,
+                    component:   DefaultStats,
+                },
             },
         ],
         [
             'with-avatar',
             {
-                code:      StatsWithAvatarRaw,
-                component: StatsWithAvatar,
+                vue: {
+                    codePreview: StatsWithAvatarRaw,
+                    component:   StatsWithAvatar,
+                },
             },
         ],
         [
             'with-icons-and-image',
             {
-                code:      StatsWithIconsAndImageRaw,
-                component: StatsWithIconsAndImage,
+                vue: {
+                    codePreview: StatsWithIconsAndImageRaw,
+                    component:   StatsWithIconsAndImage,
+                },
             },
         ],
         [
             'centered-item',
             {
-                code:      CenteredItemStatsRaw,
-                component: CenteredItemStats,
+                vue: {
+                    codePreview: CenteredItemStatsRaw,
+                    component:   CenteredItemStats,
+                },
             },
         ],
         [
             'vertical',
             {
-                code:      VerticalStatsRaw,
-                component: VerticalStats,
+                vue: {
+                    codePreview: VerticalStatsRaw,
+                    component:   VerticalStats,
+                },
             },
         ],
         [
             'with-progress-bar',
             {
-                code:      StatsWithProgressBarRaw,
-                component: StatsWithProgressBar,
+                vue: {
+                    codePreview: StatsWithProgressBarRaw,
+                    component:   StatsWithProgressBar,
+                },
             },
         ],
         [
             'with-actions-button',
             {
-                code:      StatsWithActionsButtonRaw,
-                component: StatsWithActionsButton,
+                vue: {
+                    codePreview: StatsWithActionsButtonRaw,
+                    component:   StatsWithActionsButton,
+                },
             },
         ],
         [
             'bordered',
             {
-                code:      BorderedStatsRaw,
-                component: BorderedStats,
+                vue: {
+                    codePreview: BorderedStatsRaw,
+                    component:   BorderedStats,
+                },
             },
         ],
     ]);

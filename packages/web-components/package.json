@@ -17,6 +17,9 @@
             "types": "./dist/src/index.d.ts",
             "import": "./dist/flyonui-web-components.js",
             "require": "./dist/flyonui-web-components.umd.cjs"
+        },
+        "./react": {
+            "types": "./dist/src/react.d.ts"
         }
     },
     "main": "./dist/flyonui-web-components.umd.cjs",
@@ -27,8 +30,9 @@
         "src"
     ],
     "scripts": {
-        "dev": "yarn concurrently \"yarn build:ui -w\" \"yarn build:types -w\" \"yarn alias:types -w\"",
-        "build": "yarn build:ui && yarn build:types && yarn alias:types",
+        "dev": "yarn concurrently \"yarn build:styles -w\" \"yarn build:ui -w\" \"yarn build:types -w\" \"yarn alias:types -w\"",
+        "build": "yarn build:styles && yarn build:ui && yarn build:types && yarn alias:types",
+        "build:styles": "tailwindcss -i src/index.web-components.css -o src/index.css",
         "build:ui": "vite build",
         "build:types": "vue-tsc --declaration --emitDeclarationOnly -p tsconfig.json",
         "alias:types": "tsc-alias -p tsconfig.json",
@@ -42,8 +46,18 @@
         "flyonui": "^2.4.1",
         "flyonui-vue": "workspace:*"
     },
+    "peerDependencies": {
+        "@types/react": "^19.0.0"
+    },
+    "peerDependenciesMeta": {
+        "@types/react": {
+            "optional": true
+        }
+    },
     "devDependencies": {
+        "@tailwindcss/cli": "^4.3.3",
         "@types/node": "^20.19.43",
+        "@types/react": "^19.3.0",
         "@vue/test-utils": "^2.5.1",
         "@vue/tsconfig": "^0.9.1",
         "concurrently": "^9.2.5",

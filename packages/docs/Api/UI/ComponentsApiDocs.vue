@@ -7,10 +7,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ApiType }       from '@/Api/Types/Api.ts';
 import type { ComponentName } from 'flyonui-vue';
-import ComponentsApi          from '@/Api/UI/ComponentsApi.vue';
+import type { ApiType }       from '@/Api/Types/Api.ts';
 import { computed }           from 'vue';
+import ComponentsApi          from '@/Api/UI/ComponentsApi.vue';
 
 interface Props {
     componentNames: ComponentName | ComponentName[];

@@ -6,17 +6,17 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api.ts';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import DefaultPopover                from '@/Overlays/Popover/DefaultPopover.vue';
-import DefaultPopoverRaw             from '@/Overlays/Popover/DefaultPopover.vue?raw';
-import PopoverColor                  from '@/Overlays/Popover/PopoverColor.vue';
-import PopoverColorRaw               from '@/Overlays/Popover/PopoverColor.vue?raw';
-import PopoverPlacement              from '@/Overlays/Popover/PopoverPlacement.vue';
-import PopoverPlacementRaw           from '@/Overlays/Popover/PopoverPlacement.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import DefaultPopover                   from '@/Overlays/Popover/DefaultPopover.vue';
+import DefaultPopoverRaw                from '@/Overlays/Popover/DefaultPopover.vue?raw';
+import PopoverColor                     from '@/Overlays/Popover/PopoverColor.vue';
+import PopoverColorRaw                  from '@/Overlays/Popover/PopoverColor.vue?raw';
+import PopoverPlacement                 from '@/Overlays/Popover/PopoverPlacement.vue';
+import PopoverPlacementRaw              from '@/Overlays/Popover/PopoverPlacement.vue?raw';
 
 type Section = Default | 'color' | 'placement' | ApiType;
 
@@ -27,26 +27,32 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultPopoverRaw,
-                component: DefaultPopover,
+                vue: {
+                    codePreview: DefaultPopoverRaw,
+                    component:   DefaultPopover,
+                },
             },
         ],
         [
             'color',
             {
-                code:      PopoverColorRaw,
-                component: PopoverColor,
+                vue: {
+                    codePreview: PopoverColorRaw,
+                    component:   PopoverColor,
+                },
             },
         ],
         [
             'placement',
             {
-                code:      PopoverPlacementRaw,
-                component: PopoverPlacement,
+                vue: {
+                    codePreview: PopoverPlacementRaw,
+                    component:   PopoverPlacement,
+                },
             },
         ],
     ]);

@@ -6,9 +6,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview }      from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }                   from '@/Api/Types/Api.ts';
 import type { Default }                   from 'flyonui-vue';
+import type { FrameworkSectionPreview }   from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                   from '@/Api/Types/Api.ts';
+import { computed }                       from 'vue';
 import ComponentDocs                      from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DefaultTextarea                    from '@/Forms/Textarea/DefaultTextarea.vue';
 import DefaultTextareaRaw                 from '@/Forms/Textarea/DefaultTextarea.vue?raw';
@@ -32,7 +33,6 @@ import TextareaWithIcon                   from '@/Forms/Textarea/TextareaWithIco
 import TextareaWithIconRaw                from '@/Forms/Textarea/TextareaWithIcon.vue?raw';
 import TextareaWithLabelAndPlaceholder    from '@/Forms/Textarea/TextareaWithLabelAndPlaceholder.vue';
 import TextareaWithLabelAndPlaceholderRaw from '@/Forms/Textarea/TextareaWithLabelAndPlaceholder.vue?raw';
-import { computed }                       from 'vue';
 
 type Section = Default
     | 'with-label-and-placeholder'
@@ -54,93 +54,115 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                grid:      { columns: 1, rows: 1 },
-                code:      DefaultTextareaRaw,
-                component: DefaultTextarea,
+                vue: {
+                    codePreview: DefaultTextareaRaw,
+                    component:   DefaultTextarea,
+                },
+                grid: { columns: 1, rows: 1 },
             },
         ],
         [
             'with-label-and-placeholder',
             {
-                grid:      { columns: 1, rows: 1 },
-                code:      TextareaWithLabelAndPlaceholderRaw,
-                component: TextareaWithLabelAndPlaceholder,
+                vue: {
+                    codePreview: TextareaWithLabelAndPlaceholderRaw,
+                    component:   TextareaWithLabelAndPlaceholder,
+                },
+                grid: { columns: 1, rows: 1 },
             },
         ],
         [
             'hidden-label',
             {
-                grid:      { columns: 1, rows: 1 },
-                code:      TextareaHiddenLabelRaw,
-                component: TextareaHiddenLabel,
+                vue: {
+                    codePreview: TextareaHiddenLabelRaw,
+                    component:   TextareaHiddenLabel,
+                },
+                grid: { columns: 1, rows: 1 },
             },
         ],
         [
             'floating-label',
             {
-                grid:      { columns: 1, rows: 1 },
-                code:      TextareaFloatingLabelRaw,
-                component: TextareaFloatingLabel,
+                vue: {
+                    codePreview: TextareaFloatingLabelRaw,
+                    component:   TextareaFloatingLabel,
+                },
+                grid: { columns: 1, rows: 1 },
             },
         ],
         [
             'default-size',
             {
-                grid:      { columns: 1, rows: 5 },
-                code:      TextareaDefaultSizeRaw,
-                component: TextareaDefaultSize,
+                vue: {
+                    codePreview: TextareaDefaultSizeRaw,
+                    component:   TextareaDefaultSize,
+                },
+                grid: { columns: 1, rows: 5 },
             },
         ],
         [
             'floating-label-size',
             {
-                grid:      { columns: 1, rows: 5 },
-                code:      TextareaFloatingLabelSizeRaw,
-                component: TextareaFloatingLabelSize,
+                vue: {
+                    codePreview: TextareaFloatingLabelSizeRaw,
+                    component:   TextareaFloatingLabelSize,
+                },
+                grid: { columns: 1, rows: 5 },
             },
         ],
         [
             'with-icon',
             {
-                grid:      { columns: 1, rows: 6 },
-                code:      TextareaWithIconRaw,
-                component: TextareaWithIcon,
+                vue: {
+                    codePreview: TextareaWithIconRaw,
+                    component:   TextareaWithIcon,
+                },
+                grid: { columns: 1, rows: 6 },
             },
         ],
         [
             'with-helper-text',
             {
-                grid:      { columns: 1, rows: 2 },
-                code:      TextareaWithHelperTextRaw,
-                component: TextareaWithHelperText,
+                vue: {
+                    codePreview: TextareaWithHelperTextRaw,
+                    component:   TextareaWithHelperText,
+                },
+                grid: { columns: 1, rows: 2 },
             },
         ],
         [
             'validation-state',
             {
-                grid:      { columns: 1, rows: 4 },
-                code:      TextareaValidationStateRaw,
-                component: TextareaValidationState,
+                vue: {
+                    codePreview: TextareaValidationStateRaw,
+                    component:   TextareaValidationState,
+                },
+                grid: { columns: 1, rows: 4 },
             },
         ],
         [
             'disabled',
             {
-                grid:      { columns: 1, rows: 2 },
-                code:      DisabledTextareaRaw,
-                component: DisabledTextarea,
+                vue: {
+                    codePreview: DisabledTextareaRaw,
+                    component:   DisabledTextarea,
+                },
+                grid: { columns: 1, rows: 2 },
             },
         ],
         [
             'readonly',
             {
-                grid:      { columns: 1, rows: 1 },
-                code:      ReadonlyTextareaRaw,
-                component: ReadonlyTextarea,
+                vue: {
+                    codePreview: ReadonlyTextareaRaw,
+                    component:   ReadonlyTextarea,
+                },
+                grid: { columns: 1, rows: 1 },
             },
         ],
     ]);

@@ -6,21 +6,21 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api.ts';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import DefaultJoin                   from '@/Forms/Join/DefaultJoin.vue';
-import DefaultJoinRaw                from '@/Forms/Join/DefaultJoin.vue?raw';
-import JoinIcon                      from '@/Forms/Join/JoinIcon.vue';
-import JoinIconRaw                   from '@/Forms/Join/JoinIcon.vue?raw';
-import PilledJoin                    from '@/Forms/Join/PilledJoin.vue';
-import PilledJoinRaw                 from '@/Forms/Join/PilledJoin.vue?raw';
-import ResponsiveJoin                from '@/Forms/Join/ResponsiveJoin.vue';
-import ResponsiveJoinRaw             from '@/Forms/Join/ResponsiveJoin.vue?raw';
-import VerticalJoin                  from '@/Forms/Join/VerticalJoin.vue';
-import VerticalJoinRaw               from '@/Forms/Join/VerticalJoin.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import DefaultJoin                      from '@/Forms/Join/DefaultJoin.vue';
+import DefaultJoinRaw                   from '@/Forms/Join/DefaultJoin.vue?raw';
+import JoinIcon                         from '@/Forms/Join/JoinIcon.vue';
+import JoinIconRaw                      from '@/Forms/Join/JoinIcon.vue?raw';
+import PilledJoin                       from '@/Forms/Join/PilledJoin.vue';
+import PilledJoinRaw                    from '@/Forms/Join/PilledJoin.vue?raw';
+import ResponsiveJoin                   from '@/Forms/Join/ResponsiveJoin.vue';
+import ResponsiveJoinRaw                from '@/Forms/Join/ResponsiveJoin.vue?raw';
+import VerticalJoin                     from '@/Forms/Join/VerticalJoin.vue';
+import VerticalJoinRaw                  from '@/Forms/Join/VerticalJoin.vue?raw';
 
 type Section = Default | 'icon' | 'vertical' | 'responsive' | 'pilled' | ApiType;
 
@@ -31,40 +31,50 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultJoinRaw,
-                component: DefaultJoin,
+                vue: {
+                    codePreview: DefaultJoinRaw,
+                    component:   DefaultJoin,
+                },
             },
         ],
         [
             'icon',
             {
-                code:      JoinIconRaw,
-                component: JoinIcon,
+                vue: {
+                    codePreview: JoinIconRaw,
+                    component:   JoinIcon,
+                },
             },
         ],
         [
             'vertical',
             {
-                code:      VerticalJoinRaw,
-                component: VerticalJoin,
+                vue: {
+                    codePreview: VerticalJoinRaw,
+                    component:   VerticalJoin,
+                },
             },
         ],
         [
             'responsive',
             {
-                code:      ResponsiveJoinRaw,
-                component: ResponsiveJoin,
+                vue: {
+                    codePreview: ResponsiveJoinRaw,
+                    component:   ResponsiveJoin,
+                },
             },
         ],
         [
             'pilled',
             {
-                code:      PilledJoinRaw,
-                component: PilledJoin,
+                vue: {
+                    codePreview: PilledJoinRaw,
+                    component:   PilledJoin,
+                },
             },
         ],
     ]);

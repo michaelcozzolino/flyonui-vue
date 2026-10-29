@@ -6,8 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview }    from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
 import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
 import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DashedDivider                    from '@/Content/Divider/DashedDivider.vue';
 import DashedDividerRaw                 from '@/Content/Divider/DashedDivider.vue?raw';
@@ -27,7 +28,6 @@ import VerticalDivider                  from '@/Content/Divider/VerticalDivider.
 import VerticalDividerRaw               from '@/Content/Divider/VerticalDivider.vue?raw';
 import VerticallyResponsiveDivider      from '@/Content/Divider/VerticallyResponsiveDivider.vue';
 import VerticallyResponsiveDividerRaw   from '@/Content/Divider/VerticallyResponsiveDivider.vue?raw';
-import { computed }                     from 'vue';
 
 type Section = 'vertical'
     | 'horizontal'
@@ -47,68 +47,86 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'vertical',
             {
-                code:      VerticalDividerRaw,
-                component: VerticalDivider,
+                vue: {
+                    codePreview: VerticalDividerRaw,
+                    component:   VerticalDivider,
+                },
             },
         ],
         [
             'horizontal',
             {
-                code:      HorizontalDividerRaw,
-                component: HorizontalDivider,
+                vue: {
+                    codePreview: HorizontalDividerRaw,
+                    component:   HorizontalDivider,
+                },
             },
         ],
         [
             'solid',
             {
-                code:      SolidDividerRaw,
-                component: SolidDivider,
+                vue: {
+                    codePreview: SolidDividerRaw,
+                    component:   SolidDivider,
+                },
             },
         ],
         [
             'dotted',
             {
-                code:      DottedDividerRaw,
-                component: DottedDivider,
+                vue: {
+                    codePreview: DottedDividerRaw,
+                    component:   DottedDivider,
+                },
             },
         ],
         [
             'dashed',
             {
-                code:      DashedDividerRaw,
-                component: DashedDivider,
+                vue: {
+                    codePreview: DashedDividerRaw,
+                    component:   DashedDivider,
+                },
             },
         ],
         [
             'with-custom-thickness',
             {
-                code:      DividerWithCustomThicknessRaw,
-                component: DividerWithCustomThickness,
+                vue: {
+                    codePreview: DividerWithCustomThicknessRaw,
+                    component:   DividerWithCustomThickness,
+                },
             },
         ],
         [
             'content-alignment',
             {
-                code:      DividerContentAlignmentRaw,
-                component: DividerContentAlignment,
+                vue: {
+                    codePreview: DividerContentAlignmentRaw,
+                    component:   DividerContentAlignment,
+                },
             },
         ],
         [
             'horizontally-responsive',
             {
-                code:      HorizontallyResponsiveDividerRaw,
-                component: HorizontallyResponsiveDivider,
+                vue: {
+                    codePreview: HorizontallyResponsiveDividerRaw,
+                    component:   HorizontallyResponsiveDivider,
+                },
             },
         ],
         [
             'vertically-responsive',
             {
-                code:      VerticallyResponsiveDividerRaw,
-                component: VerticallyResponsiveDivider,
+                vue: {
+                    codePreview: VerticallyResponsiveDividerRaw,
+                    component:   VerticallyResponsiveDivider,
+                },
             },
         ],
     ]);

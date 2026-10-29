@@ -1,6 +1,7 @@
 {
     "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
+        "experimentalDecorators": true,
         "lib": [
             "ES2022",
             "DOM",
@@ -11,7 +12,7 @@
                 "./*"
             ]
         },
-        "allowImportingTsExtensions": false,
+        "allowImportingTsExtensions": true,
         "outDir": "dist"
     },
     "vueCompilerOptions": {

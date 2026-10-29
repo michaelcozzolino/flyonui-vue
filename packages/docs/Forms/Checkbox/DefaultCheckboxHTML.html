@@ -1,0 +1,24 @@
+<fo-checkbox id="html-checkbox"
+             model-value
+             label="Checked"
+>
+</fo-checkbox>
+
+<script>
+    (() => {
+        let isChecked = true;
+
+        const checkbox = document.getElementById('html-checkbox');
+
+        if (checkbox === null) {
+            throw new Error('checkbox not found.');
+        }
+
+        checkbox.modelValue = isChecked;
+
+        checkbox.addEventListener('update:modelValue', (event) => {
+            [isChecked] = event.detail;
+            checkbox.modelValue = isChecked;
+        });
+    })();
+</script>

@@ -6,7 +6,7 @@
          class="flex"
          :style="$attrs.style as StyleValue"
     >
-        <Teleport defer
+        <Teleport :defer="switchHasIcon"
                   :to="`#${labelId}`"
                   :disabled="!switchHasIcon"
         >
@@ -57,7 +57,7 @@
 <script lang="ts" setup>
 import type { StyleValue, VNode }                                    from 'vue';
 import type { ConfigurableComponentName }                            from '@/Lib';
-import type { CheckboxProps }                                        from '@/UI/Forms/Checkbox/Types/Checkbox.ts';
+import type { CheckboxProps }                                        from '@/UI/Forms/Checkbox/Types/Checkbox';
 import { reactiveOmit }                                              from '@vueuse/core';
 import { computed, inject, watch }                                   from 'vue';
 import { useFlyonUIVueAppConfig }                                    from '@/Lib';

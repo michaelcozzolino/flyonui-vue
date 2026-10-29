@@ -5,13 +5,13 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import DefaultNavbar                 from '@/Navigations/Navbar/DefaultNavbar.vue';
-import DefaultNavbarRaw              from '@/Navigations/Navbar/DefaultNavbar.vue?raw';
-import NavbarWithLogo                from '@/Navigations/Navbar/NavbarWithLogo.vue';
-import NavbarWithLogoRaw             from '@/Navigations/Navbar/NavbarWithLogo.vue?raw';
-import { computed }                  from 'vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import DefaultNavbar                    from '@/Navigations/Navbar/DefaultNavbar.vue';
+import DefaultNavbarRaw                 from '@/Navigations/Navbar/DefaultNavbar.vue?raw';
+import NavbarWithLogo                   from '@/Navigations/Navbar/NavbarWithLogo.vue';
+import NavbarWithLogoRaw                from '@/Navigations/Navbar/NavbarWithLogo.vue?raw';
 
 type Section = 'default' | 'with-logo';
 
@@ -22,19 +22,23 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultNavbarRaw,
-                component: DefaultNavbar,
+                vue: {
+                    codePreview: DefaultNavbarRaw,
+                    component:   DefaultNavbar,
+                },
             },
         ],
         [
             'with-logo',
             {
-                code:      NavbarWithLogoRaw,
-                component: NavbarWithLogo,
+                vue: {
+                    codePreview: NavbarWithLogoRaw,
+                    component:   NavbarWithLogo,
+                },
             },
         ],
     ]);

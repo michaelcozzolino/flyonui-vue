@@ -6,43 +6,43 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview }   from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }                from '@/Api/Types/Api.ts';
-import ComponentDocs                   from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import ActiveItemMenuExternalRouter    from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue';
-import ActiveItemMenuExternalRouterRaw from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue?raw';
-import ActiveItemMenuVueRouterRaw      from '@/Navigations/Menu/ActiveItemMenuVueRouter.vue?raw';
-import DefaultMenu                     from '@/Navigations/Menu/DefaultMenu.vue';
-import DefaultMenuRaw                  from '@/Navigations/Menu/DefaultMenu.vue?raw';
-import DisabledItemMenu                from '@/Navigations/Menu/DisabledItemMenu.vue';
-import DisabledItemMenuRaw             from '@/Navigations/Menu/DisabledItemMenu.vue?raw';
-import FlushedMenu                     from '@/Navigations/Menu/FlushedMenu.vue';
-import FlushedMenuRaw                  from '@/Navigations/Menu/FlushedMenu.vue?raw';
-import IconMenu                        from '@/Navigations/Menu/IconMenu.vue';
-import IconMenuRaw                     from '@/Navigations/Menu/IconMenu.vue?raw';
-import MenuOrientation                 from '@/Navigations/Menu/MenuOrientation.vue';
-import MenuOrientationRaw              from '@/Navigations/Menu/MenuOrientation.vue?raw';
-import MenuSize                        from '@/Navigations/Menu/MenuSize.vue';
-import MenuSizeRaw                     from '@/Navigations/Menu/MenuSize.vue?raw';
-import MenuWithBadge                   from '@/Navigations/Menu/MenuWithBadge.vue';
-import MenuWithBadgeRaw                from '@/Navigations/Menu/MenuWithBadge.vue?raw';
-import MenuWithTitle                   from '@/Navigations/Menu/MenuWithTitle.vue';
-import MenuWithTitleRaw                from '@/Navigations/Menu/MenuWithTitle.vue?raw';
-import MenuWithTitleAsParent           from '@/Navigations/Menu/MenuWithTitleAsParent.vue';
-import MenuWithTitleAsParentRaw        from '@/Navigations/Menu/MenuWithTitleAsParent.vue?raw';
-import MenuWithTooltip                 from '@/Navigations/Menu/MenuWithTooltip.vue';
-import MenuWithTooltipRaw              from '@/Navigations/Menu/MenuWithTooltip.vue?raw';
-import OnlyIconMenu                    from '@/Navigations/Menu/OnlyIconMenu.vue';
-import OnlyIconMenuRaw                 from '@/Navigations/Menu/OnlyIconMenu.vue?raw';
-import MegaMenuWithSubmenu             from '@/Navigations/Menu/WithSubmenu/MegaMenuWithSubmenu.vue';
-import MegaMenuWithSubmenuRaw          from '@/Navigations/Menu/WithSubmenu/MegaMenuWithSubmenu.vue?raw';
-import MenuWithHorizontalSubmenu       from '@/Navigations/Menu/WithSubmenu/MenuWithHorizontalSubmenu.vue';
-import MenuWithHorizontalSubmenuRaw    from '@/Navigations/Menu/WithSubmenu/MenuWithHorizontalSubmenu.vue?raw';
-import MenuWithSubmenu                 from '@/Navigations/Menu/WithSubmenu/MenuWithSubmenu.vue';
-import MenuWithSubmenuRaw              from '@/Navigations/Menu/WithSubmenu/MenuWithSubmenu.vue?raw';
-import MenuWithSubmenuNodeRaw          from '@/Navigations/Menu/WithSubmenu/MenuWithSubmenuNode.vue?raw';
-import ItemRaw                         from '@/Navigations/Menu/WithSubmenu/Types/Item?raw';
-import { computed }                    from 'vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview.ts';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import ActiveItemMenuExternalRouter     from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue';
+import ActiveItemMenuExternalRouterRaw  from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue?raw';
+import ActiveItemMenuVueRouterRaw       from '@/Navigations/Menu/ActiveItemMenuVueRouter.vue?raw';
+import DefaultMenu                      from '@/Navigations/Menu/DefaultMenu.vue';
+import DefaultMenuRaw                   from '@/Navigations/Menu/DefaultMenu.vue?raw';
+import DisabledItemMenu                 from '@/Navigations/Menu/DisabledItemMenu.vue';
+import DisabledItemMenuRaw              from '@/Navigations/Menu/DisabledItemMenu.vue?raw';
+import FlushedMenu                      from '@/Navigations/Menu/FlushedMenu.vue';
+import FlushedMenuRaw                   from '@/Navigations/Menu/FlushedMenu.vue?raw';
+import IconMenu                         from '@/Navigations/Menu/IconMenu.vue';
+import IconMenuRaw                      from '@/Navigations/Menu/IconMenu.vue?raw';
+import MenuOrientation                  from '@/Navigations/Menu/MenuOrientation.vue';
+import MenuOrientationRaw               from '@/Navigations/Menu/MenuOrientation.vue?raw';
+import MenuSize                         from '@/Navigations/Menu/MenuSize.vue';
+import MenuSizeRaw                      from '@/Navigations/Menu/MenuSize.vue?raw';
+import MenuWithBadge                    from '@/Navigations/Menu/MenuWithBadge.vue';
+import MenuWithBadgeRaw                 from '@/Navigations/Menu/MenuWithBadge.vue?raw';
+import MenuWithTitle                    from '@/Navigations/Menu/MenuWithTitle.vue';
+import MenuWithTitleRaw                 from '@/Navigations/Menu/MenuWithTitle.vue?raw';
+import MenuWithTitleAsParent            from '@/Navigations/Menu/MenuWithTitleAsParent.vue';
+import MenuWithTitleAsParentRaw         from '@/Navigations/Menu/MenuWithTitleAsParent.vue?raw';
+import MenuWithTooltip                  from '@/Navigations/Menu/MenuWithTooltip.vue';
+import MenuWithTooltipRaw               from '@/Navigations/Menu/MenuWithTooltip.vue?raw';
+import OnlyIconMenu                     from '@/Navigations/Menu/OnlyIconMenu.vue';
+import OnlyIconMenuRaw                  from '@/Navigations/Menu/OnlyIconMenu.vue?raw';
+import MegaMenuWithSubmenu              from '@/Navigations/Menu/WithSubmenu/MegaMenuWithSubmenu.vue';
+import MegaMenuWithSubmenuRaw           from '@/Navigations/Menu/WithSubmenu/MegaMenuWithSubmenu.vue?raw';
+import MenuWithHorizontalSubmenu        from '@/Navigations/Menu/WithSubmenu/MenuWithHorizontalSubmenu.vue';
+import MenuWithHorizontalSubmenuRaw     from '@/Navigations/Menu/WithSubmenu/MenuWithHorizontalSubmenu.vue?raw';
+import MenuWithSubmenu                  from '@/Navigations/Menu/WithSubmenu/MenuWithSubmenu.vue';
+import MenuWithSubmenuRaw               from '@/Navigations/Menu/WithSubmenu/MenuWithSubmenu.vue?raw';
+import MenuWithSubmenuNodeRaw           from '@/Navigations/Menu/WithSubmenu/MenuWithSubmenuNode.vue?raw';
+import ItemRaw                          from '@/Navigations/Menu/WithSubmenu/Types/Item?raw';
 
 type Section = 'default'
     | 'icon'
@@ -69,157 +69,198 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultMenuRaw,
-                component: DefaultMenu,
+                vue: {
+                    codePreview: DefaultMenuRaw,
+                    component:   DefaultMenu,
+                },
             },
         ],
         [
             'icon',
             {
-                code:      IconMenuRaw,
-                component: IconMenu,
+                vue: {
+                    codePreview: IconMenuRaw,
+                    component:   IconMenu,
+                },
             },
         ],
         [
             'only-icon',
             {
-                code:      OnlyIconMenuRaw,
-                component: OnlyIconMenu,
+                vue: {
+                    codePreview: OnlyIconMenuRaw,
+                    component:   OnlyIconMenu,
+                },
             },
         ],
         [
             'orientation',
             {
-                code:      MenuOrientationRaw,
-                component: MenuOrientation,
+                vue: {
+                    codePreview: MenuOrientationRaw,
+                    component:   MenuOrientation,
+                },
             },
         ],
         [
             'with-tooltip',
             {
-                code:      MenuWithTooltipRaw,
-                component: MenuWithTooltip,
+                vue: {
+                    codePreview: MenuWithTooltipRaw,
+                    component:   MenuWithTooltip,
+                },
             },
         ],
         [
             'with-disabled-item',
             {
-                code:      DisabledItemMenuRaw,
-                component: DisabledItemMenu,
+                vue: {
+                    codePreview: DisabledItemMenuRaw,
+                    component:   DisabledItemMenu,
+                },
             },
         ],
         [
             'with-badge',
             {
-                code:      MenuWithBadgeRaw,
-                component: MenuWithBadge,
+                vue: {
+                    codePreview: MenuWithBadgeRaw,
+                    component:   MenuWithBadge,
+                },
             },
         ],
         [
             'with-active-item-vue-router',
             {
-                code:      ActiveItemMenuVueRouterRaw,
-                // we have to use this to show that the link is active as Vitepress does not use Vue Router
-                component: ActiveItemMenuExternalRouter,
+                vue: {
+                    codePreview: ActiveItemMenuVueRouterRaw,
+                    // we have to use this to show that the link is active as Vitepress does not use Vue Router
+                    component:   ActiveItemMenuExternalRouter,
+                },
             },
         ],
         [
             'with-active-item-external-router',
             {
-                code:      ActiveItemMenuExternalRouterRaw,
-                component: ActiveItemMenuExternalRouter,
+                vue: {
+                    codePreview: ActiveItemMenuExternalRouterRaw,
+                    component:   ActiveItemMenuExternalRouter,
+                },
             },
         ],
         [
             'size',
             {
-                code:      MenuSizeRaw,
-                component: MenuSize,
+                vue: {
+                    codePreview: MenuSizeRaw,
+                    component:   MenuSize,
+                },
             },
         ],
         [
             'flushed',
             {
-                code:      FlushedMenuRaw,
-                component: FlushedMenu,
+                vue: {
+                    codePreview: FlushedMenuRaw,
+                    component:   FlushedMenu,
+                },
             },
         ],
         [
             'with-title',
             {
-                code:      MenuWithTitleRaw,
-                component: MenuWithTitle,
+                vue: {
+                    codePreview: MenuWithTitleRaw,
+                    component:   MenuWithTitle,
+                },
             },
         ],
         [
             'with-title-as-parent',
             {
-                code:      MenuWithTitleAsParentRaw,
-                component: MenuWithTitleAsParent,
+                vue: {
+                    codePreview: MenuWithTitleAsParentRaw,
+                    component:   MenuWithTitleAsParent,
+                },
             },
         ],
         [
             'with-submenu',
             {
-                code: [
-                    {
-                        title: 'Item.ts',
-                        code:  ItemRaw,
-                    },
-                    {
-                        title: 'MenuWithSubmenu.vue',
-                        code:  MenuWithSubmenuRaw,
-                    },
-                    {
-                        title: 'MenuWithSubmenuNode.vue',
-                        code:  MenuWithSubmenuNodeRaw,
-                    },
-                ],
-                component: MenuWithSubmenu,
+                vue: {
+                    component:   MenuWithSubmenu,
+                    codePreview: [
+                        {
+                            title:    'Item.ts',
+                            code:     ItemRaw,
+                            language: 'js',
+                        },
+                        {
+                            title:    'MenuWithSubmenu.vue',
+                            code:     MenuWithSubmenuRaw,
+                            language: 'js',
+                        },
+                        {
+                            title:    'MenuWithSubmenuNode.vue',
+                            code:     MenuWithSubmenuNodeRaw,
+                            language: 'js',
+                        },
+                    ],
+                },
             },
         ],
         [
             'with-horizontal-submenu',
             {
-                code: [
-                    {
-                        title: 'Item.ts',
-                        code:  ItemRaw,
-                    },
-                    {
-                        title: 'MenuWithHorizontalSubmenu.vue',
-                        code:  MenuWithHorizontalSubmenuRaw,
-                    },
-                    {
-                        title: 'MenuWithSubmenuNode.vue',
-                        code:  MenuWithSubmenuNodeRaw,
-                    },
-                ],
-                component: MenuWithHorizontalSubmenu,
+                vue: {
+                    codePreview: [
+                        {
+                            title:    'Item.ts',
+                            code:     ItemRaw,
+                            language: 'js',
+                        },
+                        {
+                            title:    'MenuWithHorizontalSubmenu.vue',
+                            code:     MenuWithHorizontalSubmenuRaw,
+                            language: 'js',
+                        },
+                        {
+                            title:    'MenuWithSubmenuNode.vue',
+                            code:     MenuWithSubmenuNodeRaw,
+                            language: 'js',
+                        },
+                    ],
+                    component: MenuWithHorizontalSubmenu,
+                },
             },
         ],
         [
             'mega-with-submenu',
             {
-                code: [
-                    {
-                        title: 'Item.ts',
-                        code:  ItemRaw,
-                    },
-                    {
-                        title: 'MegaMenuWithSubmenu.vue',
-                        code:  MegaMenuWithSubmenuRaw,
-                    },
-                    {
-                        title: 'MenuWithSubmenuNode.vue',
-                        code:  MenuWithSubmenuNodeRaw,
-                    },
-                ],
-                component: MegaMenuWithSubmenu,
+                vue: {
+                    codePreview: [
+                        {
+                            title:    'Item.ts',
+                            code:     ItemRaw,
+                            language: 'js',
+                        },
+                        {
+                            title:    'MegaMenuWithSubmenu.vue',
+                            code:     MegaMenuWithSubmenuRaw,
+                            language: 'js',
+                        },
+                        {
+                            title:    'MenuWithSubmenuNode.vue',
+                            code:     MenuWithSubmenuNodeRaw,
+                            language: 'js',
+                        },
+                    ],
+                    component: MegaMenuWithSubmenu,
+                },
             },
         ],
     ]);

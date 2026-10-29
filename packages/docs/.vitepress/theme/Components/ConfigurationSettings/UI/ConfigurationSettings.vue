@@ -59,6 +59,8 @@
 </template>
 
 <script setup lang="ts">
+import { FoListGroup, useFlyonUIVueAppConfig } from 'flyonui-vue';
+import { ref }                                 from 'vue';
 // todo: maybe these paths could be aliased
 import ColorSettings               from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ColorSettings.vue';
 import ConfigurationSettingsHeader
@@ -75,8 +77,6 @@ import SizeSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/SizeSettings.vue';
 import ThemeSettings
     from '@/.vitepress/theme/Components/ConfigurationSettings/UI/ThemeSettings.vue';
-import { FoListGroup, useFlyonUIVueAppConfig } from 'flyonui-vue';
-import { ref }                                 from 'vue';
 
 interface Props {
     themeStorageKey: string;

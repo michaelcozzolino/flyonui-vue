@@ -16,14 +16,13 @@
 </template>
 
 <script setup lang="ts">
-import type { DocsSidebarItem } from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar';
-
-import DocsSidebarNode           from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebarNode.vue';
-import { enableAnchorScrollSpy } from '@/.vitepress/theme/Components/Layout/Lib/UseAnchorScrollSpy';
+import type { DocsSidebarItem }  from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar';
 import { useEventListener }      from '@vueuse/core';
 import { FoMenu }                from 'flyonui-vue';
 import { useRouter }             from 'vitepress';
 import { computed, watch }       from 'vue';
+import DocsSidebarNode           from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/UI/DocsSidebarNode.vue';
+import { enableAnchorScrollSpy } from '@/.vitepress/theme/Components/Layout/Lib/UseAnchorScrollSpy';
 
 interface Props {
     items: DocsSidebarItem[];

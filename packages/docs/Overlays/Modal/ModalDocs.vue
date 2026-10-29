@@ -7,35 +7,35 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api.ts';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import CloseOnEscapeModal            from '@/Overlays/Modal/CloseOnEscapeModal.vue';
-import CloseOnEscapeModalRaw         from '@/Overlays/Modal/CloseOnEscapeModal.vue?raw';
-import CustomModalBackdropColor      from '@/Overlays/Modal/CustomModalBackdropColor.vue';
-import CustomModalBackdropColorRaw   from '@/Overlays/Modal/CustomModalBackdropColor.vue?raw';
-import DefaultModal                  from '@/Overlays/Modal/DefaultModal.vue';
-import DefaultModalRaw               from '@/Overlays/Modal/DefaultModal.vue?raw';
-import FullscreenModal               from '@/Overlays/Modal/FullscreenModal.vue';
-import FullscreenModalRaw            from '@/Overlays/Modal/FullscreenModal.vue?raw';
-import ModalBackdrop                 from '@/Overlays/Modal/ModalBackdrop.vue';
-import ModalBackdropRaw              from '@/Overlays/Modal/ModalBackdrop.vue?raw';
-import ModalBackdropColor            from '@/Overlays/Modal/ModalBackdropColor.vue';
-import ModalBackdropColorRaw         from '@/Overlays/Modal/ModalBackdropColor.vue?raw';
-import ModalPlacement                from '@/Overlays/Modal/ModalPlacement.vue';
-import ModalPlacementRaw             from '@/Overlays/Modal/ModalPlacement.vue?raw';
-import ModalScrolling                from '@/Overlays/Modal/ModalScrolling.vue';
-import ModalScrollingRaw             from '@/Overlays/Modal/ModalScrolling.vue?raw';
-import ModalSize                     from '@/Overlays/Modal/ModalSize.vue';
-import ModalSizeRaw                  from '@/Overlays/Modal/ModalSize.vue?raw';
-import ModalTransition               from '@/Overlays/Modal/ModalTransition.vue';
-import ModalTransitionRaw            from '@/Overlays/Modal/ModalTransition.vue?raw';
-import TransparentModal              from '@/Overlays/Modal/TransparentModal.vue';
-import TransparentModalRaw           from '@/Overlays/Modal/TransparentModal.vue?raw';
-import VideoModal                    from '@/Overlays/Modal/VideoModal.vue';
-import VideoModalRaw                 from '@/Overlays/Modal/VideoModal.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import CloseOnEscapeModal               from '@/Overlays/Modal/CloseOnEscapeModal.vue';
+import CloseOnEscapeModalRaw            from '@/Overlays/Modal/CloseOnEscapeModal.vue?raw';
+import CustomModalBackdropColor         from '@/Overlays/Modal/CustomModalBackdropColor.vue';
+import CustomModalBackdropColorRaw      from '@/Overlays/Modal/CustomModalBackdropColor.vue?raw';
+import DefaultModal                     from '@/Overlays/Modal/DefaultModal.vue';
+import DefaultModalRaw                  from '@/Overlays/Modal/DefaultModal.vue?raw';
+import FullscreenModal                  from '@/Overlays/Modal/FullscreenModal.vue';
+import FullscreenModalRaw               from '@/Overlays/Modal/FullscreenModal.vue?raw';
+import ModalBackdrop                    from '@/Overlays/Modal/ModalBackdrop.vue';
+import ModalBackdropRaw                 from '@/Overlays/Modal/ModalBackdrop.vue?raw';
+import ModalBackdropColor               from '@/Overlays/Modal/ModalBackdropColor.vue';
+import ModalBackdropColorRaw            from '@/Overlays/Modal/ModalBackdropColor.vue?raw';
+import ModalPlacement                   from '@/Overlays/Modal/ModalPlacement.vue';
+import ModalPlacementRaw                from '@/Overlays/Modal/ModalPlacement.vue?raw';
+import ModalScrolling                   from '@/Overlays/Modal/ModalScrolling.vue';
+import ModalScrollingRaw                from '@/Overlays/Modal/ModalScrolling.vue?raw';
+import ModalSize                        from '@/Overlays/Modal/ModalSize.vue';
+import ModalSizeRaw                     from '@/Overlays/Modal/ModalSize.vue?raw';
+import ModalTransition                  from '@/Overlays/Modal/ModalTransition.vue';
+import ModalTransitionRaw               from '@/Overlays/Modal/ModalTransition.vue?raw';
+import TransparentModal                 from '@/Overlays/Modal/TransparentModal.vue';
+import TransparentModalRaw              from '@/Overlays/Modal/TransparentModal.vue?raw';
+import VideoModal                       from '@/Overlays/Modal/VideoModal.vue';
+import VideoModalRaw                    from '@/Overlays/Modal/VideoModal.vue?raw';
 
 type Section = Default
     | 'fullscreen'
@@ -60,101 +60,125 @@ defineProps<Props>();
 const excludeFromTests = true;
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultModalRaw,
-                component: DefaultModal,
                 excludeFromTests,
+                vue: {
+                    codePreview: DefaultModalRaw,
+                    component:   DefaultModal,
+                },
             },
         ],
         [
             'fullscreen',
             {
-                code:      FullscreenModalRaw,
-                component: FullscreenModal,
                 excludeFromTests,
+                vue: {
+                    codePreview: FullscreenModalRaw,
+                    component:   FullscreenModal,
+                },
             },
         ],
         [
             'transparent',
             {
-                code:      TransparentModalRaw,
-                component: TransparentModal,
                 excludeFromTests,
+                vue: {
+                    codePreview: TransparentModalRaw,
+                    component:   TransparentModal,
+                },
             },
         ],
         [
             'size',
             {
-                code:      ModalSizeRaw,
-                component: ModalSize,
                 excludeFromTests,
+                vue: {
+                    codePreview: ModalSizeRaw,
+                    component:   ModalSize,
+                },
             },
         ],
         [
             'transition',
             {
-                code:      ModalTransitionRaw,
-                component: ModalTransition,
                 excludeFromTests,
+                vue: {
+                    codePreview: ModalTransitionRaw,
+                    component:   ModalTransition,
+                },
             },
         ],
         [
             'scrolling',
             {
-                code:      ModalScrollingRaw,
-                component: ModalScrolling,
                 excludeFromTests,
+                vue: {
+                    codePreview: ModalScrollingRaw,
+                    component:   ModalScrolling,
+                },
             },
         ],
         [
             'placement',
             {
-                code:      ModalPlacementRaw,
-                component: ModalPlacement,
                 excludeFromTests,
+                vue: {
+                    codePreview: ModalPlacementRaw,
+                    component:   ModalPlacement,
+                },
             },
         ],
         [
             'video',
             {
-                code:      VideoModalRaw,
-                component: VideoModal,
                 excludeFromTests,
+                vue: {
+                    codePreview: VideoModalRaw,
+                    component:   VideoModal,
+                },
             },
         ],
         [
             'backdrop-color',
             {
-                code:      ModalBackdropColorRaw,
-                component: ModalBackdropColor,
                 excludeFromTests,
+                vue: {
+                    codePreview: ModalBackdropColorRaw,
+                    component:   ModalBackdropColor,
+                },
             },
         ],
         [
             'custom-backdrop-color',
             {
-                code:      CustomModalBackdropColorRaw,
-                component: CustomModalBackdropColor,
                 excludeFromTests,
+                vue: {
+                    codePreview: CustomModalBackdropColorRaw,
+                    component:   CustomModalBackdropColor,
+                },
             },
         ],
         [
             'backdrop',
             {
-                code:      ModalBackdropRaw,
-                component: ModalBackdrop,
                 excludeFromTests,
+                vue: {
+                    codePreview: ModalBackdropRaw,
+                    component:   ModalBackdrop,
+                },
             },
         ],
         [
             'close-on-escape',
             {
-                code:      CloseOnEscapeModalRaw,
-                component: CloseOnEscapeModal,
                 excludeFromTests,
+                vue: {
+                    codePreview: CloseOnEscapeModalRaw,
+                    component:   CloseOnEscapeModal,
+                },
             },
         ],
     ]);

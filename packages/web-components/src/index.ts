@@ -13,25 +13,24 @@ import {
 import badgeCss                from 'flyonui/components/badge.css?inline';
 import buttonCss               from 'flyonui/components/button.css?inline';
 import checkboxCss             from 'flyonui/components/checkbox.css?inline';
+import labelCss                from 'flyonui/components/label.css?inline';
 import statCss                 from 'flyonui/components/stat.css?inline';
 import { defineCustomElement } from 'vue';
-import StyleSheetHelper        from '@/Lib/StyleSheetHelper';
-
-const statStyleSheet = StyleSheetHelper.generate(statCss);
+import cssStyle                from '@/index.css?inline';
 
 const vueComponents: FlyonUIVueComponent[] = [
-    { component: FoButton, styleSheet: StyleSheetHelper.generate(buttonCss) },
-    { component: FoBadge, styleSheet: StyleSheetHelper.generate(badgeCss) },
-    { component: FoCheckbox, styleSheet: StyleSheetHelper.generate(checkboxCss) },
-    { component: FoStats, styleSheet: statStyleSheet },
-    { component: FoStat, styleSheet: statStyleSheet },
-    { component: FoStatTitle, styleSheet: statStyleSheet },
-    { component: FoStatValue, styleSheet: statStyleSheet },
-    { component: FoStatDescription, styleSheet: statStyleSheet },
+    { component: FoButton, styles: [buttonCss] },
+    { component: FoBadge, styles: [badgeCss] },
+    { component: FoCheckbox, styles: [checkboxCss, labelCss] },
+    { component: FoStats, styles: [statCss] },
+    { component: FoStat, styles: [statCss] },
+    { component: FoStatTitle, styles: [statCss] },
+    { component: FoStatValue, styles: [statCss] },
+    { component: FoStatDescription, styles: [statCss] },
 ];
 
 const webComponents: FlyonUIWebComponent[] = vueComponents.map(
-    ({ component, styleSheet }: FlyonUIVueComponent): FlyonUIWebComponent => {
+    ({ component, styles }: FlyonUIVueComponent): FlyonUIWebComponent => {
         const name = component.__name;
 
         if (name === undefined) {
@@ -40,8 +39,20 @@ const webComponents: FlyonUIWebComponent[] = vueComponents.map(
 
         return {
             name,
-            component: defineCustomElement(component),
-            styleSheet,
+            component: defineCustomElement(component, { styles: [
+                /**
+                 * Component styles create the utilities layer before cssStyle is loaded,
+                 * so it establishes layer precedence first.
+                 */
+                '@layer properties, theme, base, components, utilities;',
+                ...styles,
+                cssStyle,
+                /**
+                 * https://stackoverflow.com/questions/69644173/web-component-inheriting-parent-styles-even-with-all-initial-set
+                 * Resets all styles to avoid style inheritance, excluding fonts
+                 */
+                ':host { all: initial !important; font: inherit !important; }',
+            ] }),
         };
     },
 );
@@ -53,7 +64,6 @@ export function registerFlyonUIWebComponents(): void {
         const name = kebabCase(webComponent.name);
 
         if (customElements.get(name) === undefined) {
-            StyleSheetHelper.load(webComponent);
             customElements.define(name, webComponent.component);
         }
     }

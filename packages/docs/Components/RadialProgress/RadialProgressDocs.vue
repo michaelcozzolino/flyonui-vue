@@ -6,29 +6,25 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview }        from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }                     from '@/Api/Types/Api.ts';
-import type { Default }                     from 'flyonui-vue';
-import ComponentDocs                        from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import CustomRadialProgressSizeAndThickness
-    from '@/Components/RadialProgress/CustomRadialProgressSizeAndThickness.vue';
-import CustomRadialProgressSizeAndThicknessRaw
-    from '@/Components/RadialProgress/CustomRadialProgressSizeAndThickness.vue?raw';
-import DefaultRadialProgress            from '@/Components/RadialProgress/DefaultRadialProgress.vue';
-import DefaultRadialProgressRaw         from '@/Components/RadialProgress/DefaultRadialProgress.vue?raw';
-import RadialProgressBackgroundColor    from '@/Components/RadialProgress/RadialProgressBackgroundColor.vue';
-import RadialProgressBackgroundColorRaw
-    from '@/Components/RadialProgress/RadialProgressBackgroundColor.vue?raw';
-import RadialProgressColor             from '@/Components/RadialProgress/RadialProgressColor.vue';
-import RadialProgressColorRaw          from '@/Components/RadialProgress/RadialProgressColor.vue?raw';
-import RadialProgressSoftBackground    from '@/Components/RadialProgress/RadialProgressSoftBackground.vue';
-import RadialProgressSoftBackgroundRaw
-    from '@/Components/RadialProgress/RadialProgressSoftBackground.vue?raw';
-import RadialProgressWithText     from '@/Components/RadialProgress/RadialProgressWithText.vue';
-import RadialProgressWithTextRaw  from '@/Components/RadialProgress/RadialProgressWithText.vue?raw';
-import RadialProgressWithValue    from '@/Components/RadialProgress/RadialProgressWithValue.vue';
-import RadialProgressWithValueRaw from '@/Components/RadialProgress/RadialProgressWithValue.vue?raw';
-import { computed }               from 'vue';
+import type { Default }                        from 'flyonui-vue';
+import type { FrameworkSectionPreview }        from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                        from '@/Api/Types/Api.ts';
+import { computed }                            from 'vue';
+import ComponentDocs                           from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import CustomRadialProgressSizeAndThickness    from '@/Components/RadialProgress/CustomRadialProgressSizeAndThickness.vue';
+import CustomRadialProgressSizeAndThicknessRaw from '@/Components/RadialProgress/CustomRadialProgressSizeAndThickness.vue?raw';
+import DefaultRadialProgress                   from '@/Components/RadialProgress/DefaultRadialProgress.vue';
+import DefaultRadialProgressRaw                from '@/Components/RadialProgress/DefaultRadialProgress.vue?raw';
+import RadialProgressBackgroundColor           from '@/Components/RadialProgress/RadialProgressBackgroundColor.vue';
+import RadialProgressBackgroundColorRaw        from '@/Components/RadialProgress/RadialProgressBackgroundColor.vue?raw';
+import RadialProgressColor                     from '@/Components/RadialProgress/RadialProgressColor.vue';
+import RadialProgressColorRaw                  from '@/Components/RadialProgress/RadialProgressColor.vue?raw';
+import RadialProgressSoftBackground            from '@/Components/RadialProgress/RadialProgressSoftBackground.vue';
+import RadialProgressSoftBackgroundRaw         from '@/Components/RadialProgress/RadialProgressSoftBackground.vue?raw';
+import RadialProgressWithText                  from '@/Components/RadialProgress/RadialProgressWithText.vue';
+import RadialProgressWithTextRaw               from '@/Components/RadialProgress/RadialProgressWithText.vue?raw';
+import RadialProgressWithValue                 from '@/Components/RadialProgress/RadialProgressWithValue.vue';
+import RadialProgressWithValueRaw              from '@/Components/RadialProgress/RadialProgressWithValue.vue?raw';
 
 type Section = Default
     | 'with-value'
@@ -46,54 +42,68 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultRadialProgressRaw,
-                component: DefaultRadialProgress,
+                vue: {
+                    codePreview: DefaultRadialProgressRaw,
+                    component:   DefaultRadialProgress,
+                },
             },
         ],
         [
             'with-value',
             {
-                code:      RadialProgressWithValueRaw,
-                component: RadialProgressWithValue,
+                vue: {
+                    codePreview: RadialProgressWithValueRaw,
+                    component:   RadialProgressWithValue,
+                },
             },
         ],
         [
             'with-text',
             {
-                code:      RadialProgressWithTextRaw,
-                component: RadialProgressWithText,
+                vue: {
+                    codePreview: RadialProgressWithTextRaw,
+                    component:   RadialProgressWithText,
+                },
             },
         ],
         [
             'color',
             {
-                code:      RadialProgressColorRaw,
-                component: RadialProgressColor,
+                vue: {
+                    codePreview: RadialProgressColorRaw,
+                    component:   RadialProgressColor,
+                },
             },
         ],
         [
             'background-color',
             {
-                code:      RadialProgressBackgroundColorRaw,
-                component: RadialProgressBackgroundColor,
+                vue: {
+                    codePreview: RadialProgressBackgroundColorRaw,
+                    component:   RadialProgressBackgroundColor,
+                },
             },
         ],
         [
             'soft-background',
             {
-                code:      RadialProgressSoftBackgroundRaw,
-                component: RadialProgressSoftBackground,
+                vue: {
+                    codePreview: RadialProgressSoftBackgroundRaw,
+                    component:   RadialProgressSoftBackground,
+                },
             },
         ],
         [
             'custom-size-and-thickness',
             {
-                code:      CustomRadialProgressSizeAndThicknessRaw,
-                component: CustomRadialProgressSizeAndThickness,
+                vue: {
+                    codePreview: CustomRadialProgressSizeAndThicknessRaw,
+                    component:   CustomRadialProgressSizeAndThickness,
+                },
             },
         ],
     ]);

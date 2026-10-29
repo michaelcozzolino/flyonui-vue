@@ -6,25 +6,25 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentDocsPreview } from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
-import type { ApiType }              from '@/Api/Types/Api.ts';
-import type { Default }              from 'flyonui-vue';
-import ComponentDocs                 from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
-import DefaultInputFile              from '@/Forms/InputFile/DefaultInputFile.vue';
-import DefaultInputFileRaw           from '@/Forms/InputFile/DefaultInputFile.vue?raw';
-import DisabledInputFile             from '@/Forms/InputFile/DisabledInputFile.vue';
-import DisabledInputFileRaw          from '@/Forms/InputFile/DisabledInputFile.vue?raw';
-import InputFileHelperText           from '@/Forms/InputFile/InputFileHelperText.vue';
-import InputFileHelperTextRaw        from '@/Forms/InputFile/InputFileHelperText.vue?raw';
-import InputFileLabel                from '@/Forms/InputFile/InputFileLabel.vue';
-import InputFileLabelRaw             from '@/Forms/InputFile/InputFileLabel.vue?raw';
-import InputFileSize                 from '@/Forms/InputFile/InputFileSize.vue';
-import InputFileSizeRaw              from '@/Forms/InputFile/InputFileSize.vue?raw';
-import InputFileValidationState      from '@/Forms/InputFile/InputFileValidationState.vue';
-import InputFileValidationStateRaw   from '@/Forms/InputFile/InputFileValidationState.vue?raw';
-import MultipleFilesInputFile        from '@/Forms/InputFile/MultipleFilesInputFile.vue';
-import MultipleFilesInputFileRaw     from '@/Forms/InputFile/MultipleFilesInputFile.vue?raw';
-import { computed }                  from 'vue';
+import type { Default }                 from 'flyonui-vue';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api.ts';
+import { computed }                     from 'vue';
+import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
+import DefaultInputFile                 from '@/Forms/InputFile/DefaultInputFile.vue';
+import DefaultInputFileRaw              from '@/Forms/InputFile/DefaultInputFile.vue?raw';
+import DisabledInputFile                from '@/Forms/InputFile/DisabledInputFile.vue';
+import DisabledInputFileRaw             from '@/Forms/InputFile/DisabledInputFile.vue?raw';
+import InputFileHelperText              from '@/Forms/InputFile/InputFileHelperText.vue';
+import InputFileHelperTextRaw           from '@/Forms/InputFile/InputFileHelperText.vue?raw';
+import InputFileLabel                   from '@/Forms/InputFile/InputFileLabel.vue';
+import InputFileLabelRaw                from '@/Forms/InputFile/InputFileLabel.vue?raw';
+import InputFileSize                    from '@/Forms/InputFile/InputFileSize.vue';
+import InputFileSizeRaw                 from '@/Forms/InputFile/InputFileSize.vue?raw';
+import InputFileValidationState         from '@/Forms/InputFile/InputFileValidationState.vue';
+import InputFileValidationStateRaw      from '@/Forms/InputFile/InputFileValidationState.vue?raw';
+import MultipleFilesInputFile           from '@/Forms/InputFile/MultipleFilesInputFile.vue';
+import MultipleFilesInputFileRaw        from '@/Forms/InputFile/MultipleFilesInputFile.vue?raw';
 
 type Section = Default
     | 'label'
@@ -42,56 +42,70 @@ interface Props {
 defineProps<Props>();
 
 const previews = computed(() => {
-    return new Map<Section, ComponentDocsPreview>([
+    return new Map<Section, FrameworkSectionPreview>([
         [
             'default',
             {
-                code:      DefaultInputFileRaw,
-                component: DefaultInputFile,
+                vue: {
+                    codePreview: DefaultInputFileRaw,
+                    component:   DefaultInputFile,
+                },
             },
         ],
         [
             'label',
             {
-                code:      InputFileLabelRaw,
-                component: InputFileLabel,
+                vue: {
+                    codePreview: InputFileLabelRaw,
+                    component:   InputFileLabel,
+                },
             },
         ],
         [
             'size',
             {
-                code:      InputFileSizeRaw,
-                component: InputFileSize,
-                grid:      { rows: 5, columns: 1 },
+                vue: {
+                    codePreview: InputFileSizeRaw,
+                    component:   InputFileSize,
+                },
+                grid: { rows: 5, columns: 1 },
             },
         ],
         [
             'validation-state',
             {
-                code:      InputFileValidationStateRaw,
-                component: InputFileValidationState,
+                vue: {
+                    codePreview: InputFileValidationStateRaw,
+                    component:   InputFileValidationState,
+                },
             },
         ],
         [
             'disabled',
             {
-                code:      DisabledInputFileRaw,
-                component: DisabledInputFile,
+                vue: {
+                    codePreview: DisabledInputFileRaw,
+                    component:   DisabledInputFile,
+                },
             },
         ],
         [
             'helper-text',
             {
-                code:      InputFileHelperTextRaw,
-                component: InputFileHelperText,
-                grid:      { rows: 2, columns: 1 },
+                vue: {
+                    codePreview: InputFileHelperTextRaw,
+                    component:   InputFileHelperText,
+                },
+                grid: { rows: 2, columns: 1 },
             },
         ],
         [
             'multiple-files',
             {
-                code:      MultipleFilesInputFileRaw,
-                component: MultipleFilesInputFile,
+                vue: {
+                    codePreview: MultipleFilesInputFileRaw,
+                    component:   MultipleFilesInputFile,
+                },
             },
         ],
     ]);
