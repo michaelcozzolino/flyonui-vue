@@ -57,6 +57,7 @@
         "typescript": "^6.0.3",
         "vite": "^8.3.5",
         "vitepress": "2.0.0-alpha.21",
+        "vitepress-plugin-llms": "^1.14.0",
         "vue-tsc": "^3.3.13"
     }
 }

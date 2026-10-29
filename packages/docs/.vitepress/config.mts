@@ -2,6 +2,7 @@ import type { HeadConfig } from 'vitepress';
 import process             from 'node:process';
 import { kebabCase }       from 'change-case';
 import { defineConfig }    from 'vitepress';
+import llmstxt             from 'vitepress-plugin-llms';
 
 export default defineConfig({
     vue: {
@@ -10,6 +11,9 @@ export default defineConfig({
                 isCustomElement: (tag: string): boolean => tag.startsWith('fo-'),
             },
         },
+    },
+    vite: {
+        plugins: [llmstxt()],
     },
     rewrites: (id) => {
         const format = '.md';
