@@ -2,7 +2,7 @@ import type { HeadConfig }  from 'vitepress';
 import process              from 'node:process';
 import { kebabCase }        from 'change-case';
 import { defineConfig }     from 'vitepress';
-import { createLlmsPlugin } from './Plugins/Llmstxt';
+import { createLlmsPlugin } from '@/.vitepress/Plugins/Llmstxt';
 
 export const docsDomain = 'flyonui-vue.com';
 

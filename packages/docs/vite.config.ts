@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import tailwindcss       from '@tailwindcss/vite';
 import react             from '@vitejs/plugin-react';
 import { defineConfig }  from 'vite';
+import { docsDomain }    from '@/.vitepress/config';
 
 // todo: maybe this should be moved to config.ts of vitepress
 export default defineConfig({
@@ -12,7 +13,7 @@ export default defineConfig({
         tailwindcss(),
     ],
     define: {
-        FLYONUI_VUE_DOMAIN:       JSON.stringify('flyonui-vue.com'),
+        FLYONUI_VUE_DOMAIN:       JSON.stringify(docsDomain),
         FLYONUI_VUE_VERSION:      JSON.stringify(execSync('yarn core:version').toString().trim()),
         OLD_FLYONUI_VUE_VERSIONS: JSON.stringify(['2.x']),
     },
