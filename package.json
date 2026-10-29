@@ -5,7 +5,7 @@
     ],
     "packageManager": "yarn@4.13.0",
     "engines": {
-        "node": ">=20.19.0"
+        "node": ">=22.0.0"
     },
     "scripts": {
         "load:docs-icons": "yarn workspace flyonui-vue-scripts codex:load:docs-icons",

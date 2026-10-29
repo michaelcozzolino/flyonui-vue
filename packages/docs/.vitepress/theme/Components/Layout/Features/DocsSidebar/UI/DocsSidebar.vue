@@ -41,7 +41,7 @@ watch(() => router.route.path, () => {
 function navigate(to: string): Promise<void> {
     enableAnchorScrollSpy.value = false;
 
-    return router.go(to, { smoothScroll: true });
+    return router.go(to);
 }
 
 /**
