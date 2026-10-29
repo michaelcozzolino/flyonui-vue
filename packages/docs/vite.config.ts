@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import tailwindcss       from '@tailwindcss/vite';
 import react             from '@vitejs/plugin-react';
 import { defineConfig }  from 'vite';
-import { docsDomain }    from '@/.vitepress/config';
+import { docsDomain }    from './.vitepress/config';
 
 // todo: maybe this should be moved to config.ts of vitepress
 export default defineConfig({
