@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts" generic="T extends number | string">
-import type { SelectOptionProps } from '@/UI/Forms/Select/Internal/Types/Select.ts';
+import type { SelectOptionProps } from '@/UI/Forms/Select/Internal/Types/Select';
 
 defineProps<SelectOptionProps<T>>();
 </script>

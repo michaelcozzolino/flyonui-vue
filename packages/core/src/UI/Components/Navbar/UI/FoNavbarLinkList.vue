@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import type { NavbarLink } from '@/UI/Components/Navbar/Types/Navbar.ts';
+import type { NavbarLink } from '@/UI/Components/Navbar/Types/Navbar';
 import { RouterLink }      from 'vue-router';
 
 interface Props {

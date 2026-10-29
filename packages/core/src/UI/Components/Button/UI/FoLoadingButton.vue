@@ -25,8 +25,8 @@
 <script setup lang="ts">
 import type { Slot }               from 'vue';
 import type { HorizontalPosition } from '@/Types/Utils';
-import type { LoadingButtonProps } from '@/UI/Components/Button/Types/Button.ts';
-import type { LoadingProps }       from '@/UI/Components/Loading/Types/Loading.ts';
+import type { LoadingButtonProps } from '@/UI/Components/Button/Types/Button';
+import type { LoadingProps }       from '@/UI/Components/Loading/Types/Loading';
 import { reactiveOmit }            from '@vueuse/core';
 import { computed }                from 'vue';
 import { useFlyonUIVueAppConfig }  from '@/Lib';

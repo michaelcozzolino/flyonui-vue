@@ -13,7 +13,7 @@
 <script setup lang="ts">
 import type { ComponentName }     from 'flyonui-vue';
 import type { ComponentMeta }     from 'vue-component-meta';
-import type { ApiProps, ApiType } from '@/Api/Types/Api.ts';
+import type { ApiProps, ApiType } from '@/Api/Types/Api';
 import { computed }               from 'vue';
 import componentsApi              from '@/Api/Lib/ComponentsApi.json';
 import PropsApi                   from '@/Api/UI/PropsApi.vue';

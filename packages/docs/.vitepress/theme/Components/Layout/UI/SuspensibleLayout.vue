@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import type { FlyonUITheme }                             from 'flyonui-vue';
-import type { DocsSidebarItem }                          from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar.ts';
+import type { DocsSidebarItem }                          from '@/.vitepress/theme/Components/Layout/Features/DocsSidebar/Types/DocsSidebar';
 import { useColorMode }                                  from '@vueuse/core';
 import { useFlyonUIThemeFont }                           from 'flyonui-vue';
 import { Content, onContentUpdated, useData, useRouter } from 'vitepress';

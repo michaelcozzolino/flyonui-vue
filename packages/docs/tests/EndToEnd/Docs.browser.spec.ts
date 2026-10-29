@@ -7,7 +7,7 @@ import { createPinia, setActivePinia }          from 'pinia';
 import { useFrameworkSelectionStore }           from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore';
 import { useSidebarItems }                      from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
 import { flyonUIVueNextPath }                   from '@/Next/Lib/Next';
-import { playwrightServerURL }                  from '@/playwright.config.ts';
+import { playwrightServerURL }                  from '@/playwright.config';
 
 setActivePinia(createPinia());
 

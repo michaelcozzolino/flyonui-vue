@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview.ts';
-import type { ApiType }                 from '@/Api/Types/Api.ts';
+import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api';
 import { computed }                     from 'vue';
 import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import ActiveItemMenuExternalRouter     from '@/Navigations/Menu/ActiveItemMenuExternalRouter.vue';

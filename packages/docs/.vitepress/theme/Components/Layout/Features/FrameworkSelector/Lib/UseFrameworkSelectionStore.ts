@@ -1,4 +1,4 @@
-import type { Framework, FrameworkId } from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Types/FrameworkSelector.ts';
+import type { Framework, FrameworkId } from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Types/FrameworkSelector';
 import { useLocalStorage }             from '@vueuse/core';
 import { defineStore }                 from 'pinia';
 import { computed }                    from 'vue';

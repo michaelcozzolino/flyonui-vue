@@ -56,7 +56,7 @@
 
 <script setup lang="ts">
 import type { PropertyMeta, PropertyMetaSchema }             from 'vue-component-meta';
-import type { Api }                                          from '@/Api/Types/Api.ts';
+import type { Api }                                          from '@/Api/Types/Api';
 import { useArrayFilter }                                    from '@vueuse/core';
 import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
 import LinkableApiName                                       from '@/Api/UI/LinkableApiName.vue';

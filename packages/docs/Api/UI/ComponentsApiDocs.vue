@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import type { ComponentName } from 'flyonui-vue';
-import type { ApiType }       from '@/Api/Types/Api.ts';
+import type { ApiType }       from '@/Api/Types/Api';
 import { computed }           from 'vue';
 import ComponentsApi          from '@/Api/UI/ComponentsApi.vue';
 
