@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 import type { SlotMeta }                                     from 'vue-component-meta';
-import type { Api }                                          from '@/Api/Types/Api.ts';
+import type { Api }                                          from '@/Api/Types/Api';
 import { FoTable, FoTableColumn, FoTableHeader, FoTableRow } from 'flyonui-vue';
 import LinkableApiName                                       from '@/Api/UI/LinkableApiName.vue';
 

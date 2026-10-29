@@ -2,7 +2,7 @@ import { spawnSync }        from 'node:child_process';
 import { readFileSync }     from 'node:fs';
 import { resolve }          from 'node:path';
 import process              from 'node:process';
-import MonorepoPathResolver from '../../MonorepoPathResolver.ts';
+import MonorepoPathResolver from '@/MonorepoPathResolver';
 
 function loadDocsIcons(): void {
     const rootPath = MonorepoPathResolver.resolveRootPath();

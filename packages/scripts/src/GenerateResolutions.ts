@@ -1,7 +1,7 @@
-import type { PackageName }             from './MonorepoPathResolver.ts';
+import type { PackageName }             from '@/MonorepoPathResolver';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import process                          from 'node:process';
-import MonorepoPathResolver             from './MonorepoPathResolver.ts';
+import MonorepoPathResolver             from '@/MonorepoPathResolver';
 
 interface DependencyInfo {
     count:   number;

@@ -1,12 +1,12 @@
 {
     "extends": "@vue/tsconfig/tsconfig.dom.json",
     "compilerOptions": {
-        "experimentalDecorators": true,
         "lib": [
             "ES2022",
             "DOM",
             "DOM.Iterable"
         ],
+        "experimentalDecorators": true,
         "paths": {
             "@/*": [
                 "./*"

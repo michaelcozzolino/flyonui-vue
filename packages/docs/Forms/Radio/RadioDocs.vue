@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import type { Default }                 from 'flyonui-vue';
 import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
-import type { ApiType }                 from '@/Api/Types/Api.ts';
+import type { ApiType }                 from '@/Api/Types/Api';
 import { computed }                     from 'vue';
 import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import CustomRadioColor                 from '@/Forms/Radio/CustomRadioColor.vue';

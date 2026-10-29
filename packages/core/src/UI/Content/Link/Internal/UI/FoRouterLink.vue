@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
 import type { FoRouterLinkProps } from '@/UI/Content/Link/Internal';
-import type { To }                from '@/UI/Content/Link/Types/Link.ts';
+import type { To }                from '@/UI/Content/Link/Types/Link';
 import { RouterLink }             from 'vue-router';
 
 defineOptions({

@@ -6,7 +6,7 @@ import { join, resolve }                                        from 'node:path'
 import process                                                  from 'node:process';
 import glob                                                     from 'fast-glob';
 import { createChecker }                                        from 'vue-component-meta';
-import MonorepoPathResolver                                     from './MonorepoPathResolver.ts';
+import MonorepoPathResolver                                     from '@/MonorepoPathResolver';
 
 async function generateComponentsApi(): Promise<void> {
     const packagesPath      = MonorepoPathResolver.resolvePackagesPath();
