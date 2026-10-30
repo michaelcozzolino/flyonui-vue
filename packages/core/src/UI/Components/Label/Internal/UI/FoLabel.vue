@@ -32,9 +32,9 @@ defineSlots<WithRequiredDefaultSlot>();
 
 const switchOptions = inject(switchOptionsInjectionKey, computed((): undefined => undefined));
 
-const isLabelUsedAsSwitchIcon = computed(() => switchOptions.value?.labelAsIcon === true);
+const isLabelUsedAsSwitchIcon = computed((): boolean => switchOptions.value?.labelAsIcon === true);
 
-const labelId = useElementId(() => props.id);
+const labelId = useElementId((): string | undefined => props.id);
 
 const labelClass = computed((): string => {
     if (isLabelUsedAsSwitchIcon.value) {

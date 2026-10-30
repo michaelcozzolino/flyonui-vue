@@ -92,7 +92,7 @@ onClickOutside(dropdownElement, (): void => {
 
 onBeforeUnmount((): void => dataTableFilter.setFilter(filterKey, null));
 
-watch(selectedDropdownFilterValue, () => {
+watch(selectedDropdownFilterValue, (): void => {
     if (props.filter === undefined) {
         return;
     }

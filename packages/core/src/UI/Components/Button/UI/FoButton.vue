@@ -39,11 +39,12 @@
 </template>
 
 <script lang="ts" setup>
-import type { ComponentName }                   from '@/Lib';
-import type { WithAddonSlots, WithDefaultSlot } from '@/Types';
+import type { Color, ComponentName, Preset, Shape, Size } from '@/Lib';
+import type { WithAddonSlots, WithDefaultSlot }           from '@/Types';
 
 import type { ButtonProps }                  from '@/UI/Components';
 import type { CustomIconSize }               from '@/UI/Customization';
+import type { ConfigurableIcon }             from '@/UI/Customization/Icon';
 import { computed, inject, useAttrs }        from 'vue';
 import { useFlyonUIVueAppConfig }            from '@/Lib';
 import { useColor }                          from '@/Lib/UseColor/Internal';
@@ -90,7 +91,7 @@ const isPureButton = computed((): boolean => buttonTag.value === 'button');
 const buttonIcon = usePositionableIcon(
     config,
     componentName,
-    () => props.icon,
+    (): ConfigurableIcon | undefined => props.icon,
 );
 
 const [
@@ -102,27 +103,27 @@ const [
     glassClass,
     responsiveClass,
 ] = [
-    useColor(config, componentName, () => props.color),
+    useColor(config, componentName, (): Color | undefined => props.color),
     useJoinItem(isInJoin),
-    usePreset(config, componentName, () => props.preset),
-    useShape(config, componentName, () => props.shape),
-    useSize(config, componentName, () => props.size),
-    useGlass(() => props.withGlass),
-    useResponsitivity(componentName, () => props.isResponsive),
+    usePreset(config, componentName, (): Preset | undefined => props.preset),
+    useShape(config, componentName, (): Shape | undefined => props.shape),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useGlass((): boolean => props.withGlass),
+    useResponsitivity(componentName, (): boolean => props.isResponsive),
 ];
 
 const iconSize = computed(
     (): CustomIconSize => isTabButton.value || isInDismissibleBadge.value ? 'small' : { width: 18, height: 18 },
 );
 
-const stateClass = computed(() => {
+const stateClass = computed((): string[] => {
     return [
         useState(componentName, props.isActive ? 'active' : 'default').value,
-        useState(componentName, () => props.disabled ? 'disabled' : 'default').value,
+        useState(componentName, props.disabled ? 'disabled' : 'default').value,
     ];
 });
 
-const layoutClass = computed(() => {
+const layoutClass = computed((): string => {
     const layouts = {
         default: '',
         wide:    'btn-wide',

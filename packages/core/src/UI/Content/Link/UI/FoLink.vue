@@ -12,6 +12,7 @@
 </template>
 
 <script setup lang="ts">
+import type { TextColor }                      from '@/Lib';
 import type { WithDefaultSlot }                from '@/Types';
 import type { LinkProps, UnderlineLinkEffect } from '@/UI/Content/Link';
 import { computed, inject }                    from 'vue';
@@ -36,8 +37,8 @@ const [
     colorClass,
     underlineClass,
 ] = [
-    useTextColor(config, 'FoLink', () => props.color),
-    computed(() => {
+    useTextColor(config, 'FoLink', (): TextColor | undefined => props.color),
+    computed((): string => {
         if (props.underlineEffect === undefined) {
             return '';
         }

@@ -54,14 +54,14 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }                  from '@/Lib';
-import type { PaginationProps }                from '@/UI/Navigations';
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
-import { computed, watch }                     from 'vue';
-import { useAlignment }                        from '@/Lib/UseAlignment/Internal';
-import { FoButton }                            from '@/UI/Components';
-import { useRoundedNone }                      from '@/UI/Navigations/Pagination/Internal';
-import FoPaginationButton                      from '@/UI/Navigations/Pagination/Internal/UI/FoPaginationButton.vue';
+import type { Alignment, ComponentName }         from '@/Lib';
+import type { PaginationProps, PaginationShape } from '@/UI/Navigations';
+import { breakpointsTailwind, useBreakpoints }   from '@vueuse/core';
+import { computed, watch }                       from 'vue';
+import { useAlignment }                          from '@/Lib/UseAlignment/Internal';
+import { FoButton }                              from '@/UI/Components';
+import { useRoundedNone }                        from '@/UI/Navigations/Pagination/Internal';
+import FoPaginationButton                        from '@/UI/Navigations/Pagination/Internal/UI/FoPaginationButton.vue';
 
 const props = withDefaults(defineProps<PaginationProps>(), {
     alignment: 'left',
@@ -78,8 +78,8 @@ const componentName: ComponentName = 'FoPagination';
 const breakpoints = useBreakpoints(breakpointsTailwind);
 
 const [alignmentClass, roundedNoneClass] = [
-    useAlignment(componentName, () => props.alignment),
-    useRoundedNone(() => props.shape),
+    useAlignment(componentName, (): Alignment => props.alignment),
+    useRoundedNone((): PaginationShape => props.shape),
 
 ];
 
@@ -99,7 +99,7 @@ type Ellipsis = 'left-ellipsis' | 'right-ellipsis';
 type PageItem = number | Ellipsis;
 
 /** It Builds page list like: 1 … 14 15 16 17 18 … 20 */
-const pageItems = computed<PageItem[]>(() => {
+const pageItems = computed<PageItem[]>((): PageItem[] => {
     const siblings = 2; // how many pages on each side of current page (… 14 15 [16] 17 18 …)
     const boundaries = 1; // how many pages to always show at the edges (1 … … 20)
     const totalPages = props.length;
@@ -158,7 +158,7 @@ const pageItems = computed<PageItem[]>(() => {
     return pages;
 });
 
-watch(currentPage, (newPage: number) => {
+watch(currentPage, (newPage: number): void => {
     if (newPage <= 0 || newPage > props.length) {
         throw new Error(`Page ${newPage} is not valid.`);
     }

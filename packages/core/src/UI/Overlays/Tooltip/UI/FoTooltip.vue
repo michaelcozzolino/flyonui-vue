@@ -25,7 +25,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }              from '@/Lib';
+import type { Placement }                  from '@floating-ui/vue';
+import type { Color, ComponentName, Size } from '@/Lib';
 import type { TooltipProps, TooltipSlots } from '@/UI/Overlays';
 import { offset, useFloating }             from '@floating-ui/vue';
 import { onClickOutside }                  from '@vueuse/core';
@@ -54,7 +55,7 @@ const floatingElement  = useTemplateRef('floating');
 const showTooltip = ref<boolean>(false);
 
 const { floatingStyles } = useFloating(referenceElement, floatingElement, {
-    placement:  () => props.placement,
+    placement:  (): Placement => props.placement,
     middleware: [offset(8)],
 });
 
@@ -62,11 +63,15 @@ const [
     colorClass,
     sizeClass,
 ] = [
-    useColor(config, componentName, () => props.color),
-    useSize(config, componentName, () => props.size),
+    useColor(config, componentName, (): Color | undefined => props.color),
+    useSize(config, componentName, (): Size | undefined => props.size),
 ];
 
 // todo: on resize
 // todo: document maxSize for both tooltip and popover
-onClickOutside(tooltipElement, () => isPopover && (showTooltip.value = false));
+onClickOutside(tooltipElement, (): void => {
+    if (isPopover) {
+        showTooltip.value = false;
+    }
+});
 </script>

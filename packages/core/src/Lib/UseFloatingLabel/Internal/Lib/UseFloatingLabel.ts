@@ -8,7 +8,7 @@ export function useFloatingLabel(
     componentName: MaybeRefOrGetter<FloatingLabelComponentName>,
     labelType: MaybeRefOrGetter<LabelType | undefined>,
 ): ComputedRef<string> {
-    return computed(() => {
+    return computed((): string => {
         const isFloating = toValue(labelType) === 'floating';
 
         const classes: Record<FloatingLabelComponentName, ComputedRef<string>> = {

@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }                  from '@/Lib';
+import type { ComponentName, Size, TextColor } from '@/Lib';
 import type { LoadingAnimation, LoadingProps } from '@/UI/Components';
 import { computed }                            from 'vue';
 import { useFlyonUIVueAppConfig }              from '@/Lib';
@@ -24,7 +24,7 @@ const componentName: ComponentName = 'FoLoading';
 
 const { config } = useFlyonUIVueAppConfig();
 
-const animationClass = computed(() => {
+const animationClass = computed((): string => {
     const icons: Record<LoadingAnimation, string> = {
         spinner:  'loading-spinner',
         dots:     'loading-dots',
@@ -41,7 +41,7 @@ const [
     colorClass,
     sizeClass,
 ] = [
-    useTextColor(config, componentName, () => props.color),
-    useSize(config, componentName, () => props.size),
+    useTextColor(config, componentName, (): TextColor | undefined => props.color),
+    useSize(config, componentName, (): Size | undefined => props.size),
 ];
 </script>

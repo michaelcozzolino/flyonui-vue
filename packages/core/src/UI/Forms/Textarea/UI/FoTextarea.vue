@@ -60,10 +60,13 @@
 
 <script setup lang="ts">
 import type { StyleValue }                         from 'vue';
-import type { ComponentName, IconSize  }           from '@/Lib';
+import type { ComponentName, IconSize, Size }      from '@/Lib';
+import type { ConfigurableHelperText }             from '@/UI/Components/HelperText';
+import type { ConfigurableLabel }                  from '@/UI/Components/Label';
+import type { ConfigurableIcon }                   from '@/UI/Customization/Icon';
 import type { TextareaLabelType, TextareaProps }   from '@/UI/Forms/Textarea';
 import { reactiveOmit }                            from '@vueuse/core';
-import { computed,  useId }                        from 'vue';
+import { computed, useId }                         from 'vue';
 import { useFlyonUIVueAppConfig }                  from '@/Lib';
 import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
 import { useSize }                                 from '@/Lib/UseSize/Internal';
@@ -97,22 +100,22 @@ const iconSize: IconSize = 'small';
 const textareaIcon = usePositionableIcon(
     config,
     componentName,
-    () => props.icon,
+    (): ConfigurableIcon | undefined => props.icon,
 );
 
 const textareaHelperText = usePositionableHelperText(
     config,
     componentName,
-    () => props.helperText,
+    (): ConfigurableHelperText | undefined => props.helperText,
 );
 
 const defaultLabel = useLabel<TextareaLabelType>(
     config,
     componentName,
-    () => props.label,
+    (): ConfigurableLabel<TextareaLabelType> | undefined => props.label,
 );
 
-const iconClass = computed(() => 'text-base-content/80 mt-2 mx-4 shrink-0');
+const iconClass = computed((): string => 'text-base-content/80 mt-2 mx-4 shrink-0');
 
 const hasIcon = computed((): boolean => {
     return textareaIcon.value?.left !== undefined || textareaIcon.value?.right !== undefined;
@@ -127,8 +130,8 @@ const [
     sizeClass,
     validityClass,
 ] = [
-    useFloatingLabel(componentName, () => defaultLabel.value?.type),
-    useSize(config, componentName, () => props.size),
-    useValidity(() => props.isValid),
+    useFloatingLabel(componentName, (): TextareaLabelType | undefined => defaultLabel.value?.type),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useValidity((): boolean | undefined => props.isValid),
 ];
 </script>

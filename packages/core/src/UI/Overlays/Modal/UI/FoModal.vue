@@ -84,7 +84,7 @@
 
 <script setup lang="ts">
 import type { Slot }                                             from 'vue';
-import type { ComponentName }                                    from '@/Lib';
+import type { Color, ComponentName, Size }                       from '@/Lib';
 import type { WithDefaultSlot }                                  from '@/Types';
 import type { ModalPlacement, ModalProps }                       from '@/UI/Overlays';
 import { onClickOutside, useFocus, useScrollLock }               from '@vueuse/core';
@@ -129,7 +129,7 @@ const isOpen = defineModel<boolean>({ required: true });
 const componentName: ComponentName = 'FoModal';
 const { config }                   = useFlyonUIVueAppConfig();
 
-provide(isModalTransparentInjectionKey, computed(() => props.isTransparent));
+provide(isModalTransparentInjectionKey, computed((): boolean => props.isTransparent));
 
 const backdropElement     = useTemplateRef<HTMLElement>('backdrop');
 const modalContentElement = useTemplateRef<HTMLElement>('content');
@@ -144,7 +144,7 @@ const isModalBodyScrollLocked    = useScrollLock(modalBody);
 const isStaticBackdrop   = computed((): boolean => props.backdrop?.type === 'static');
 const isDisabledBackdrop = computed((): boolean => props.backdrop?.type === 'disabled');
 
-onClickOutside(modalContentElement, () => {
+onClickOutside(modalContentElement, (): void => {
     if (isStaticBackdrop.value) {
         return;
     }
@@ -156,11 +156,11 @@ const [
     backdropColorClass,
     sizeClass,
 ] = [
-    useColor(config, componentName, () => props.backdrop?.color),
-    useSize(config, componentName, () => props.size),
+    useColor(config, componentName, (): Color | undefined => props.backdrop?.color),
+    useSize(config, componentName, (): Size | undefined => props.size),
 ];
 
-const placementClass = computed(() => {
+const placementClass = computed((): string => {
     const placements: Record<ModalPlacement, string> = {
         'top-start':     'modal-top-start',
         'top-center':    '',
@@ -176,7 +176,7 @@ const placementClass = computed(() => {
     return placements[props.placement];
 });
 
-watch(isOpen, () => {
+watch(isOpen, (): void => {
     if (isOpen.value === false) {
         isDocumentBodyScrollLocked.value = false;
         isModalBodyScrollLocked.value = false;
@@ -186,7 +186,7 @@ watch(isOpen, () => {
     focused.value = isOpen.value;
 });
 
-watchEffect(() => {
+watchEffect((): void => {
     if (isOpen.value === false) {
         return;
     }

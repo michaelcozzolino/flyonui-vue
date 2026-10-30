@@ -9,6 +9,7 @@
 </template>
 
 <script setup lang="ts">
+import type { TextColor }                  from '@/Lib';
 import type { WithRequiredDefaultSlot }    from '@/Types';
 import type { HeadingLevel, HeadingProps } from '@/UI/Content/Heading';
 import { computed }                        from 'vue';
@@ -22,7 +23,7 @@ defineSlots<WithRequiredDefaultSlot>();
 
 const { config } = useFlyonUIVueAppConfig();
 
-const tag = computed(() => {
+const tag = computed((): `h${HeadingLevel}` => {
     return `h${props.level}`;
 });
 
@@ -30,8 +31,8 @@ const [
     colorClass,
     sizeClass,
 ] = [
-    useTextColor(config, 'FoHeading', () => props.color),
-    computed(() => {
+    useTextColor(config, 'FoHeading', (): TextColor | undefined => props.color),
+    computed((): string => {
         const classes: Record<HeadingLevel, string> = {
             1: 'text-4xl',
             2: 'text-3xl',

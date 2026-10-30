@@ -1,11 +1,11 @@
-import type { ComputedRef, FunctionDirective }   from 'vue';
-import type { HorizontalPosition }               from '@/Types/Utils';
-import { leftSideMaskClass, rightSideMaskClass } from '@/UI/Content/Mask';
+import type { ComputedRef, DirectiveBinding, FunctionDirective } from 'vue';
+import type { HorizontalPosition }                               from '@/Types/Utils';
+import { leftSideMaskClass, rightSideMaskClass }                 from '@/UI/Content/Mask';
 
 export function vMask(): FunctionDirective<HTMLElement, string, string, HorizontalPosition> {
-    return (el, { value, arg }) => {
+    return (el: HTMLElement, { value, arg }: DirectiveBinding<string, string, HorizontalPosition>): void => {
         // Removing all the masks previously added to avoid conflicts on updated
-        el.classList.remove(...Array.from(el.classList).filter(c => c.startsWith('mask-')));
+        el.classList.remove(...Array.from(el.classList).filter((c: string): boolean => c.startsWith('mask-')));
 
         const classes: string[] = value.split(' ');
 

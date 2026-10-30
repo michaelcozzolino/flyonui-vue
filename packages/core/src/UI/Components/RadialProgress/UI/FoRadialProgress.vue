@@ -24,7 +24,7 @@ defineSlots<WithDefaultSlot>();
 const componentName: ComponentName = 'FoRadialProgress';
 const { config }                   = useFlyonUIVueAppConfig();
 
-const colorClass = useColor(config, componentName, () => props.color);
+const colorClass = useColor(config, componentName, (): Color | undefined => props.color);
 
 const backgroundClass = computed((): string => {
     const colorClasses: Record<RadialProgressBackgroundPreset, Record<Color, string>> = {

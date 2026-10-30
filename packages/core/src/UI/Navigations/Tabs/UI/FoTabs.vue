@@ -48,8 +48,9 @@
 </template>
 
 <script setup lang="ts" generic="T extends TabProps">
-import type { Slot }                                                          from 'vue';
-import type { ComponentName }                                                 from '@/Lib';
+import type { MaybeRef, Slot }                                                from 'vue';
+import type { ComponentName, Orientation, Size }                              from '@/Lib';
+import type { Alignment }                                                     from '@/Lib/UseAlignment';
 import type { TabProps, TabsProps }                                           from '@/UI/Navigations';
 import { useArrayEvery, useArrayFindIndex, useFocus, useMagicKeys, whenever } from '@vueuse/core';
 import { computed, provide, useTemplateRef, watch }                           from 'vue';
@@ -94,7 +95,7 @@ const componentName: ComponentName = 'FoTabs';
 const { config } = useFlyonUIVueAppConfig();
 
 provide(activeTabInjectionKey, activeTab);
-provide(tabsPropsInjectionKey, computed(() => props));
+provide(tabsPropsInjectionKey, computed((): TabsProps<T> => props));
 
 const [
     alignmentClass,
@@ -102,10 +103,10 @@ const [
     responsiveClass,
     sizeClass,
 ] = [
-    useAlignment(componentName, () => props.alignment),
-    useOrientation(componentName, () => props.orientation),
-    useResponsitivity(componentName, () => props.isResponsive),
-    useSize(config, componentName, () => props.size),
+    useAlignment(componentName, (): Alignment => props.alignment),
+    useOrientation(componentName, (): Orientation => props.orientation),
+    useResponsitivity(componentName, (): boolean => props.isResponsive),
+    useSize(config, componentName, (): Size | undefined => props.size),
 ];
 
 const tabsElement    = useTemplateRef('tabs');
@@ -113,8 +114,8 @@ const { focused }    = useFocus(tabsElement);
 const activeTabIndex = useArrayFindIndex((): T[] => props.tabs, (tab: T): boolean => tab.id === activeTab.value.id);
 
 const areAllTabsDisabled = useArrayEvery(
-    () => props.tabs,
-    (tab: T) => tab.disabled === true,
+    (): T[] => props.tabs,
+    (tab: T): boolean => tab.disabled === true,
 );
 
 const { arrowLeft, arrowRight, arrowUp, arrowDown } = useMagicKeys({
@@ -126,13 +127,13 @@ const { arrowLeft, arrowRight, arrowUp, arrowDown } = useMagicKeys({
     },
 });
 
-watch(useArrayLength(() => props.tabs), (length: number) => {
+watch(useArrayLength((): T[] => props.tabs), (length: number): void => {
     if (length === 0) {
         throw new Error('No tabs found.');
     }
 });
 
-whenever(() => [arrowLeft, arrowRight, arrowUp, arrowDown], () => {
+whenever((): (MaybeRef<boolean | undefined> | undefined)[] => [arrowLeft, arrowRight, arrowUp, arrowDown], (): void => {
     if (areAllTabsDisabled.value || focused.value === false) {
         return;
     }

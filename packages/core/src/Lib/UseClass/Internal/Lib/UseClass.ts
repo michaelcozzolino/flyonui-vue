@@ -7,7 +7,7 @@ export function useClass(
     negativeClass: MaybeRefOrGetter<string> = '',
     undefinedClass: MaybeRefOrGetter<string> = '',
 ): ComputedRef<string> {
-    return computed(() => {
+    return computed((): string => {
         const _test = toValue(test);
 
         if (_test === undefined) {

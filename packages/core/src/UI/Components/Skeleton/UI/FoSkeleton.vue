@@ -25,7 +25,7 @@ const [
     skeletonClass,
     stripesClass,
 ] = [
-    useClass(() => props.isStriped === false, 'skeleton'),
-    useStripes(componentName, () => props.isStriped),
+    useClass((): boolean => props.isStriped === false, 'skeleton'),
+    useStripes(componentName, (): boolean => props.isStriped),
 ];
 </script>

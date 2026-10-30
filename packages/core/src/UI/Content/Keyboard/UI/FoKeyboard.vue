@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }           from '@/Lib';
+import type { ComponentName, Size }     from '@/Lib';
 import type { WithRequiredDefaultSlot } from '@/Types';
 import type { KeyboardProps }           from '@/UI/Content';
 import { useFlyonUIVueAppConfig }       from '@/Lib';
@@ -24,5 +24,5 @@ const componentName: ComponentName = 'FoKeyboard';
 
 const { config } = useFlyonUIVueAppConfig();
 
-const sizeClass = useSize(config, componentName, () => props.size);
+const sizeClass = useSize(config, componentName, (): Size | undefined => props.size);
 </script>
