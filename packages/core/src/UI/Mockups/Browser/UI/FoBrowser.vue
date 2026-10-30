@@ -23,9 +23,7 @@ import { useBorder }                     from '@/Lib/UseBorder/Internal';
 import { useRequiredSlotMessage }        from '@/Lib/Utils/Internal';
 import { isBorderedBrowserInjectionKey } from '@/UI/Mockups/Browser/Internal';
 
-const props = withDefaults(defineProps<BrowserProps>(), {
-    isBordered: false,
-});
+const props = defineProps<BrowserProps>();
 
 defineSlots<WithRequiredDefaultSlot & {
     /** Allows to show the url or other browser icons or data */
