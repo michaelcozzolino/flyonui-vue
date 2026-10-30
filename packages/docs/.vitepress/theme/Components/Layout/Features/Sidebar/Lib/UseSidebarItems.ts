@@ -314,6 +314,13 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
                     badge:    _unreleasedBadge,
                     children: [],
                 },
+                {
+                    text:     'Code',
+                    to:       '/mockups/code',
+                    icon:     'mdi:code-braces',
+                    badge:    _unreleasedBadge,
+                    children: [],
+                },
             ],
         },
         {
