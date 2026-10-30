@@ -1,7 +1,7 @@
 <template>
     <ComponentDocs :previews="previews"
                    :section="section"
-                   api-docs-component-names="FoBrowser"
+                   :api-docs-component-names="['FoBrowser', 'FoBrowserToolbarURL']"
     />
 </template>
 
