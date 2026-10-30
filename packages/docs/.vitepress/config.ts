@@ -1,7 +1,10 @@
-import type { HeadConfig } from 'vitepress';
-import process             from 'node:process';
-import { kebabCase }       from 'change-case';
-import { defineConfig }    from 'vitepress';
+import type { HeadConfig }  from 'vitepress';
+import process              from 'node:process';
+import { kebabCase }        from 'change-case';
+import { defineConfig }     from 'vitepress';
+import { createLlmsPlugin } from './Plugins/Llmstxt';
+
+export const docsDomain = 'flyonui-vue.com';
 
 export default defineConfig({
     vue: {
@@ -10,6 +13,9 @@ export default defineConfig({
                 isCustomElement: (tag: string): boolean => tag.startsWith('fo-'),
             },
         },
+    },
+    vite: {
+        plugins: [createLlmsPlugin(docsDomain)],
     },
     rewrites: (id) => {
         const format = '.md';
