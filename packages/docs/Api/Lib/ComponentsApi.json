@@ -2119,8 +2119,8 @@
                     "schema": [
                         "undefined",
                         "\"left\"",
-                        "\"center\"",
-                        "\"right\""
+                        "\"right\"",
+                        "\"center\""
                     ]
                 },
                 "declarations": [
@@ -6419,7 +6419,6 @@
                     "type": "TextColor | undefined",
                     "schema": [
                         "undefined",
-                        "\"base\"",
                         "\"neutral\"",
                         "\"primary\"",
                         "\"secondary\"",
@@ -6427,7 +6426,8 @@
                         "\"info\"",
                         "\"success\"",
                         "\"warning\"",
-                        "\"error\""
+                        "\"error\"",
+                        "\"base\""
                     ]
                 },
                 "declarations": [
@@ -6480,8 +6480,8 @@
                     "schema": [
                         "undefined",
                         "\"left\"",
-                        "\"center\"",
-                        "\"right\""
+                        "\"right\"",
+                        "\"center\""
                     ]
                 },
                 "declarations": [
@@ -7249,7 +7249,6 @@
                     "type": "TextColor | undefined",
                     "schema": [
                         "undefined",
-                        "\"base\"",
                         "\"neutral\"",
                         "\"primary\"",
                         "\"secondary\"",
@@ -7257,7 +7256,8 @@
                         "\"info\"",
                         "\"success\"",
                         "\"warning\"",
-                        "\"error\""
+                        "\"error\"",
+                        "\"base\""
                     ]
                 },
                 "declarations": [
@@ -7955,8 +7955,8 @@
                                                             }
                                                         ]
                                                     },
-                                                    "__@hasInstance@773": {
-                                                        "name": "__@hasInstance@773",
+                                                    "__@hasInstance@736": {
+                                                        "name": "__@hasInstance@736",
                                                         "global": false,
                                                         "description": "Determines whether the given value inherits from this function if this function was used\nas a constructor function.\n\nA constructor function can control which objects are recognized as its instances by\n'instanceof' by overriding this method.",
                                                         "tags": [],
@@ -11508,8 +11508,8 @@
                                     }
                                 ]
                             },
-                            "__@iterator@401": {
-                                "name": "__@iterator@401",
+                            "__@iterator@403": {
+                                "name": "__@iterator@403",
                                 "global": false,
                                 "description": "",
                                 "tags": [],
@@ -13554,7 +13554,6 @@
                     "type": "TextColor | undefined",
                     "schema": [
                         "undefined",
-                        "\"base\"",
                         "\"neutral\"",
                         "\"primary\"",
                         "\"secondary\"",
@@ -13562,7 +13561,8 @@
                         "\"info\"",
                         "\"success\"",
                         "\"warning\"",
-                        "\"error\""
+                        "\"error\"",
+                        "\"base\""
                     ]
                 },
                 "declarations": [
@@ -14299,7 +14299,6 @@
                     "type": "TextColor | undefined",
                     "schema": [
                         "undefined",
-                        "\"base\"",
                         "\"neutral\"",
                         "\"primary\"",
                         "\"secondary\"",
@@ -14307,7 +14306,8 @@
                         "\"info\"",
                         "\"success\"",
                         "\"warning\"",
-                        "\"error\""
+                        "\"error\"",
+                        "\"base\""
                     ]
                 },
                 "declarations": [
@@ -14614,7 +14614,6 @@
                                         "type": "TextColor | undefined",
                                         "schema": [
                                             "undefined",
-                                            "\"base\"",
                                             "\"neutral\"",
                                             "\"primary\"",
                                             "\"secondary\"",
@@ -14622,7 +14621,8 @@
                                             "\"info\"",
                                             "\"success\"",
                                             "\"warning\"",
-                                            "\"error\""
+                                            "\"error\"",
+                                            "\"base\""
                                         ]
                                     },
                                     "declarations": [
@@ -14674,32 +14674,6 @@
                         "range": [
                             1342,
                             1411
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "type",
-                "global": false,
-                "description": "The button's type",
-                "tags": [],
-                "required": false,
-                "type": "\"button\" | \"submit\" | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "\"button\" | \"submit\" | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"button\"",
-                        "\"submit\""
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
-                        "range": [
-                            935,
-                            962
                         ]
                     }
                 ]
@@ -14767,6 +14741,34 @@
                 ]
             },
             {
+                "name": "shape",
+                "global": false,
+                "description": "The component's shape",
+                "tags": [],
+                "required": false,
+                "type": "Shape | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Shape | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"rounded\"",
+                        "\"pilled\"",
+                        "\"square\"",
+                        "\"circle\""
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseShape/Types/Shape.ts",
+                        "range": [
+                            355,
+                            365
+                        ]
+                    }
+                ]
+            },
+            {
                 "name": "size",
                 "global": false,
                 "description": "The component's size",
@@ -14791,6 +14793,258 @@
                         "range": [
                             604,
                             613
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "type",
+                "global": false,
+                "description": "The button's type",
+                "tags": [],
+                "required": false,
+                "type": "\"button\" | \"submit\" | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "\"button\" | \"submit\" | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"button\"",
+                        "\"submit\""
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
+                        "range": [
+                            935,
+                            962
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "id",
+                "global": false,
+                "description": "The component's id, if not given, a random one might be assigned",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseIdentifiable/Types/Identifiable.ts",
+                        "range": [
+                            425,
+                            445
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "layout",
+                "global": false,
+                "description": "The button's layout",
+                "tags": [],
+                "required": false,
+                "type": "Layout | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Layout | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"default\"",
+                        "\"wide\"",
+                        "\"block\""
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
+                        "range": [
+                            999,
+                            1015
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "isActive",
+                "global": false,
+                "description": "The button's active state, when undefined it is neither active nor inactive",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
+                        "range": [
+                            1108,
+                            1127
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "navigation",
+                "global": false,
+                "description": "A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router\nis not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead",
+                "tags": [],
+                "required": false,
+                "type": "Navigation | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Navigation | undefined",
+                    "schema": [
+                        "undefined",
+                        {
+                            "kind": "object",
+                            "type": "Navigation",
+                            "schema": {
+                                "navigate": {
+                                    "name": "navigate",
+                                    "global": false,
+                                    "description": "Navigate to a path",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "(to: string) => Promise<void>",
+                                    "schema": {
+                                        "kind": "event",
+                                        "type": "(to: string): Promise<void>",
+                                        "schema": []
+                                    },
+                                    "declarations": [
+                                        {
+                                            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
+                                            "range": [
+                                                990,
+                                                1030
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "activePath": {
+                                    "name": "activePath",
+                                    "global": false,
+                                    "description": "Currently active path",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "string",
+                                    "schema": "string",
+                                    "declarations": [
+                                        {
+                                            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
+                                            "range": [
+                                                1069,
+                                                1088
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
+                        "range": [
+                            1350,
+                            1374
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "disabled",
+                "global": false,
+                "description": "If true, the component will be disabled without allowing more interactions",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseState/Types/State.ts",
+                        "range": [
+                            360,
+                            379
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "isResponsive",
+                "global": false,
+                "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseResponsitivity/Types/Responsitivity.ts",
+                        "range": [
+                            291,
+                            314
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "withGlass",
+                "global": false,
+                "description": "Renders with glass style",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseGlass/Types/Glass.ts",
+                        "range": [
+                            69,
+                            89
                         ]
                     }
                 ]
@@ -15128,260 +15382,6 @@
                         "range": [
                             860,
                             868
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "navigation",
-                "global": false,
-                "description": "A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router\nis not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead",
-                "tags": [],
-                "required": false,
-                "type": "Navigation | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Navigation | undefined",
-                    "schema": [
-                        "undefined",
-                        {
-                            "kind": "object",
-                            "type": "Navigation",
-                            "schema": {
-                                "navigate": {
-                                    "name": "navigate",
-                                    "global": false,
-                                    "description": "Navigate to a path",
-                                    "tags": [],
-                                    "required": true,
-                                    "type": "(to: string) => Promise<void>",
-                                    "schema": {
-                                        "kind": "event",
-                                        "type": "(to: string): Promise<void>",
-                                        "schema": []
-                                    },
-                                    "declarations": [
-                                        {
-                                            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
-                                            "range": [
-                                                990,
-                                                1030
-                                            ]
-                                        }
-                                    ]
-                                },
-                                "activePath": {
-                                    "name": "activePath",
-                                    "global": false,
-                                    "description": "Currently active path",
-                                    "tags": [],
-                                    "required": true,
-                                    "type": "string",
-                                    "schema": "string",
-                                    "declarations": [
-                                        {
-                                            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
-                                            "range": [
-                                                1069,
-                                                1088
-                                            ]
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
-                        "range": [
-                            1350,
-                            1374
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "shape",
-                "global": false,
-                "description": "The component's shape",
-                "tags": [],
-                "required": false,
-                "type": "Shape | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Shape | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"rounded\"",
-                        "\"pilled\"",
-                        "\"square\"",
-                        "\"circle\""
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseShape/Types/Shape.ts",
-                        "range": [
-                            355,
-                            365
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "id",
-                "global": false,
-                "description": "The component's id, if not given, a random one might be assigned",
-                "tags": [],
-                "required": false,
-                "type": "string | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "string | undefined",
-                    "schema": [
-                        "undefined",
-                        "string"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseIdentifiable/Types/Identifiable.ts",
-                        "range": [
-                            425,
-                            445
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "layout",
-                "global": false,
-                "description": "The button's layout",
-                "tags": [],
-                "required": false,
-                "type": "Layout | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Layout | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"default\"",
-                        "\"wide\"",
-                        "\"block\""
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
-                        "range": [
-                            999,
-                            1015
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "isActive",
-                "global": false,
-                "description": "The button's active state, when undefined it is neither active nor inactive",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
-                        "range": [
-                            1108,
-                            1127
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "disabled",
-                "global": false,
-                "description": "If true, the component will be disabled without allowing more interactions",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseState/Types/State.ts",
-                        "range": [
-                            360,
-                            379
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "isResponsive",
-                "global": false,
-                "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseResponsitivity/Types/Responsitivity.ts",
-                        "range": [
-                            291,
-                            314
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "withGlass",
-                "global": false,
-                "description": "Renders with glass style",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseGlass/Types/Glass.ts",
-                        "range": [
-                            69,
-                            89
                         ]
                     }
                 ]
@@ -20093,8 +20093,8 @@
                     "schema": [
                         "undefined",
                         "\"left\"",
-                        "\"center\"",
-                        "\"right\""
+                        "\"right\"",
+                        "\"center\""
                     ]
                 },
                 "declarations": [
@@ -20376,32 +20376,6 @@
         "type": 1,
         "props": [
             {
-                "name": "type",
-                "global": false,
-                "description": "The button's type",
-                "tags": [],
-                "required": false,
-                "type": "\"button\" | \"submit\" | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "\"button\" | \"submit\" | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"button\"",
-                        "\"submit\""
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
-                        "range": [
-                            935,
-                            962
-                        ]
-                    }
-                ]
-            },
-            {
                 "name": "color",
                 "global": false,
                 "description": "The component's color",
@@ -20488,6 +20462,284 @@
                         "range": [
                             604,
                             613
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "icon",
+                "global": false,
+                "description": "The icon's name or a left/right position followed by the icon's name, both positions can be used at the same time",
+                "tags": [],
+                "required": false,
+                "type": "ConfigurableIcon | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "ConfigurableIcon | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Partial<Record<HorizontalPosition, string>>"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Customization/Icon/Types/Icon.ts",
+                        "range": [
+                            1643,
+                            1667
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "type",
+                "global": false,
+                "description": "The button's type",
+                "tags": [],
+                "required": false,
+                "type": "\"button\" | \"submit\" | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "\"button\" | \"submit\" | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"button\"",
+                        "\"submit\""
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
+                        "range": [
+                            935,
+                            962
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "id",
+                "global": false,
+                "description": "The component's id, if not given, a random one might be assigned",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseIdentifiable/Types/Identifiable.ts",
+                        "range": [
+                            425,
+                            445
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "layout",
+                "global": false,
+                "description": "The button's layout",
+                "tags": [],
+                "required": false,
+                "type": "Layout | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Layout | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"default\"",
+                        "\"wide\"",
+                        "\"block\""
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
+                        "range": [
+                            999,
+                            1015
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "isActive",
+                "global": false,
+                "description": "The button's active state, when undefined it is neither active nor inactive",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
+                        "range": [
+                            1108,
+                            1127
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "navigation",
+                "global": false,
+                "description": "A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router\nis not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead",
+                "tags": [],
+                "required": false,
+                "type": "Navigation | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Navigation | undefined",
+                    "schema": [
+                        "undefined",
+                        {
+                            "kind": "object",
+                            "type": "Navigation",
+                            "schema": {
+                                "navigate": {
+                                    "name": "navigate",
+                                    "global": false,
+                                    "description": "Navigate to a path",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "(to: string) => Promise<void>",
+                                    "schema": {
+                                        "kind": "event",
+                                        "type": "(to: string): Promise<void>",
+                                        "schema": []
+                                    },
+                                    "declarations": [
+                                        {
+                                            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
+                                            "range": [
+                                                990,
+                                                1030
+                                            ]
+                                        }
+                                    ]
+                                },
+                                "activePath": {
+                                    "name": "activePath",
+                                    "global": false,
+                                    "description": "Currently active path",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "string",
+                                    "schema": "string",
+                                    "declarations": [
+                                        {
+                                            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
+                                            "range": [
+                                                1069,
+                                                1088
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
+                        "range": [
+                            1350,
+                            1374
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "disabled",
+                "global": false,
+                "description": "If true, the component will be disabled without allowing more interactions",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseState/Types/State.ts",
+                        "range": [
+                            360,
+                            379
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "isResponsive",
+                "global": false,
+                "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseResponsitivity/Types/Responsitivity.ts",
+                        "range": [
+                            291,
+                            314
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "withGlass",
+                "global": false,
+                "description": "Renders with glass style",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseGlass/Types/Glass.ts",
+                        "range": [
+                            69,
+                            89
                         ]
                     }
                 ]
@@ -20830,258 +21082,6 @@
                 ]
             },
             {
-                "name": "navigation",
-                "global": false,
-                "description": "A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router\nis not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead",
-                "tags": [],
-                "required": false,
-                "type": "Navigation | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Navigation | undefined",
-                    "schema": [
-                        "undefined",
-                        {
-                            "kind": "object",
-                            "type": "Navigation",
-                            "schema": {
-                                "navigate": {
-                                    "name": "navigate",
-                                    "global": false,
-                                    "description": "Navigate to a path",
-                                    "tags": [],
-                                    "required": true,
-                                    "type": "(to: string) => Promise<void>",
-                                    "schema": {
-                                        "kind": "event",
-                                        "type": "(to: string): Promise<void>",
-                                        "schema": []
-                                    },
-                                    "declarations": [
-                                        {
-                                            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
-                                            "range": [
-                                                990,
-                                                1030
-                                            ]
-                                        }
-                                    ]
-                                },
-                                "activePath": {
-                                    "name": "activePath",
-                                    "global": false,
-                                    "description": "Currently active path",
-                                    "tags": [],
-                                    "required": true,
-                                    "type": "string",
-                                    "schema": "string",
-                                    "declarations": [
-                                        {
-                                            "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
-                                            "range": [
-                                                1069,
-                                                1088
-                                            ]
-                                        }
-                                    ]
-                                }
-                            }
-                        }
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Content/Link/Types/Link.ts",
-                        "range": [
-                            1350,
-                            1374
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "icon",
-                "global": false,
-                "description": "The icon's name or a left/right position followed by the icon's name, both positions can be used at the same time",
-                "tags": [],
-                "required": false,
-                "type": "ConfigurableIcon | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "ConfigurableIcon | undefined",
-                    "schema": [
-                        "undefined",
-                        "string",
-                        "Partial<Record<HorizontalPosition, string>>"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Customization/Icon/Types/Icon.ts",
-                        "range": [
-                            1643,
-                            1667
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "id",
-                "global": false,
-                "description": "The component's id, if not given, a random one might be assigned",
-                "tags": [],
-                "required": false,
-                "type": "string | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "string | undefined",
-                    "schema": [
-                        "undefined",
-                        "string"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseIdentifiable/Types/Identifiable.ts",
-                        "range": [
-                            425,
-                            445
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "layout",
-                "global": false,
-                "description": "The button's layout",
-                "tags": [],
-                "required": false,
-                "type": "Layout | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Layout | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"default\"",
-                        "\"wide\"",
-                        "\"block\""
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
-                        "range": [
-                            999,
-                            1015
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "isActive",
-                "global": false,
-                "description": "The button's active state, when undefined it is neither active nor inactive",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/UI/Components/Button/Types/Button.ts",
-                        "range": [
-                            1108,
-                            1127
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "disabled",
-                "global": false,
-                "description": "If true, the component will be disabled without allowing more interactions",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseState/Types/State.ts",
-                        "range": [
-                            360,
-                            379
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "isResponsive",
-                "global": false,
-                "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseResponsitivity/Types/Responsitivity.ts",
-                        "range": [
-                            291,
-                            314
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "withGlass",
-                "global": false,
-                "description": "Renders with glass style",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseGlass/Types/Glass.ts",
-                        "range": [
-                            69,
-                            89
-                        ]
-                    }
-                ]
-            },
-            {
                 "name": "shape",
                 "global": false,
                 "description": "The component's shape",
@@ -21285,10 +21285,10 @@
                     "type": "Placement | undefined",
                     "schema": [
                         "undefined",
-                        "\"left\"",
-                        "\"right\"",
                         "\"bottom\"",
                         "\"top\"",
+                        "\"left\"",
+                        "\"right\"",
                         "\"bottom-start\"",
                         "\"bottom-end\"",
                         "\"top-start\"",
@@ -24366,8 +24366,8 @@
                                         }
                                     ]
                                 },
-                                "__@RefSymbol@740": {
-                                    "name": "__@RefSymbol@740",
+                                "__@RefSymbol@703": {
+                                    "name": "__@RefSymbol@703",
                                     "global": false,
                                     "description": "Type differentiator only.\nWe need this to be in public d.ts but don't want it to show up in IDE\nautocomplete, so we use a private Symbol instead.",
                                     "tags": [],
@@ -24384,8 +24384,8 @@
                                         }
                                     ]
                                 },
-                                "__@ShallowRefMarker@1692": {
-                                    "name": "__@ShallowRefMarker@1692",
+                                "__@ShallowRefMarker@1395": {
+                                    "name": "__@ShallowRefMarker@1395",
                                     "global": false,
                                     "description": "",
                                     "tags": [],
@@ -24505,6 +24505,32 @@
                 ]
             },
             {
+                "name": "shape",
+                "global": false,
+                "description": "The component's shape",
+                "tags": [],
+                "required": false,
+                "type": "\"rounded\" | \"pilled\" | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "\"rounded\" | \"pilled\" | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"rounded\"",
+                        "\"pilled\""
+                    ]
+                },
+                "declarations": [
+                    {
+                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseShape/Types/Shape.ts",
+                        "range": [
+                            355,
+                            365
+                        ]
+                    }
+                ]
+            },
+            {
                 "name": "size",
                 "global": false,
                 "description": "The component's size",
@@ -24529,32 +24555,6 @@
                         "range": [
                             604,
                             613
-                        ]
-                    }
-                ]
-            },
-            {
-                "name": "shape",
-                "global": false,
-                "description": "The component's shape",
-                "tags": [],
-                "required": false,
-                "type": "\"rounded\" | \"pilled\" | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "\"rounded\" | \"pilled\" | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"rounded\"",
-                        "\"pilled\""
-                    ]
-                },
-                "declarations": [
-                    {
-                        "file": "https://github.com/michaelcozzolino/flyonui-vue/blob/3.x/packages/core/src/Lib/UseShape/Types/Shape.ts",
-                        "range": [
-                            355,
-                            365
                         ]
                     }
                 ]
@@ -29978,8 +29978,8 @@
                     "schema": [
                         "undefined",
                         "\"left\"",
-                        "\"center\"",
-                        "\"right\""
+                        "\"right\"",
+                        "\"center\""
                     ]
                 },
                 "declarations": [
@@ -30667,10 +30667,10 @@
                     "type": "Placement | undefined",
                     "schema": [
                         "undefined",
-                        "\"left\"",
-                        "\"right\"",
                         "\"bottom\"",
                         "\"top\"",
+                        "\"left\"",
+                        "\"right\"",
                         "\"bottom-start\"",
                         "\"bottom-end\"",
                         "\"top-start\"",
