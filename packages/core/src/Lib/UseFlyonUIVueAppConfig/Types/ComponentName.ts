@@ -2,6 +2,8 @@ import type { ConfigurableComponentProps } from '@/Lib';
 
 type NonConfigurableComponentName = 'FoAvatarGroup'
     | 'FoBlockQuote'
+    | 'FoBrowser'
+    | 'FoBrowserToolbarURL'
     | 'FoCheckboxGroup'
     | 'FoDataList'
     | 'FoDataTable'

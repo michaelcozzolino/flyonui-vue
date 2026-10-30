@@ -88,6 +88,10 @@ export default {
                 component: defineAsyncDocsComponent(() => import('@/Content/BlockQuote/BlockQuoteDocs.vue')),
             },
             {
+                name:      'BrowserDocs',
+                component: defineAsyncDocsComponent(() => import('@/Mockups/Browser/BrowserDocs.vue')),
+            },
+            {
                 name:      'ButtonDocs',
                 component: defineAsyncDocsComponent(() => import('@/Components/Button/ButtonDocs.vue')),
             },
