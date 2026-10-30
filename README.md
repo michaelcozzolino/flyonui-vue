@@ -133,9 +133,8 @@ This monorepo contains the following:
         <tr><td><a href="https://flyonui.com/docs/third-party-plugins/wave-effect/">Wave Effect</a></td><td>No matching Vue feature found</td><td>—</td></tr>
         <tr><td><a href="https://flyonui.com/docs/third-party-plugins/editor/">WYSIWYG Editor</a></td><td><strong><span style="color: #b91c1c">Not planned 🚫</span></strong></td><td>—</td></tr>
         <tr><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>Coverage</strong></td><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>1/7 implemented (14.3%)</strong></td><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>1/7 documented (14.3%)</strong></td></tr>
-        <tr><th scope="rowgroup" rowspan="3" style="text-align: center; vertical-align: middle;">Full coverage</th><td>Implemented</td><td><strong>37 / 69 (53.6%)</strong></td><td></td></tr>
-        <tr><td>Documented implementation</td><td><strong>36 / 69 (52.2%)</strong></td><td></td></tr>
-        <tr><td>Production ready</td><td><strong>34 / 37 implemented (91.9%)</strong></td><td></td></tr>
+        <tr><th colspan="2" rowspan="2">Full Coverage</th><td><strong>37 / 69 implemented (53.6%)</strong></td><td><strong>36 / 69 documented (52.2%)</strong></td></tr>
+        <tr><td><strong>Production ready</strong></td><td><strong>34 / 37 implemented (91.9%)</strong></td></tr>
     </tbody>
 </table>
 
