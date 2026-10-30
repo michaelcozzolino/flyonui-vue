@@ -11,3 +11,10 @@
 ### With image
 
 <BrowserDocs section="with-image" />
+
+### Props
+
+<BrowserDocs section="props" />
+
+### Slots
+<BrowserDocs section="slots" />
