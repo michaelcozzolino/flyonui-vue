@@ -304,6 +304,19 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
             ],
         },
         {
+            text:        'Mockups',
+            isCollapsed: false,
+            children:    [
+                {
+                    text:     'Browser',
+                    to:       '/mockups/browser',
+                    icon:     'tabler:device-desktop',
+                    badge:    _unreleasedBadge,
+                    children: [],
+                },
+            ],
+        },
+        {
             text:        'Extra',
             isCollapsed: false,
             children:    [
