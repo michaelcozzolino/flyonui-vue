@@ -6,7 +6,6 @@ import { expect, test }                         from '@playwright/test';
 import { createPinia, setActivePinia }          from 'pinia';
 import { useFrameworkSelectionStore }           from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore';
 import { useSidebarItems }                      from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
-import { flyonUIVueNextPath }                   from '@/Next/Lib/Next';
 import { playwrightServerURL }                  from '@/playwright.config';
 
 setActivePinia(createPinia());
@@ -137,12 +136,8 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
 
             const codeSnippets = await page.locator('[data-test="code-snippet"]').all();
 
-            /**
-             * /content/link -> content/link
-             * /next/content/link -> content/link for unreleased features snapshots will still use the standard naming
-             *                                    so that it will be easier to test them when a new release is done.
-             */
-            const pathPrefix = docsPagePath.replace(flyonUIVueNextPath, '').slice(1);
+            // /content/link -> content/link
+            const pathPrefix = docsPagePath.slice(1);
 
             for (const codeSnippet of codeSnippets) {
                 const screenshotId = await codeSnippet.getAttribute('data-test-screenshot');
