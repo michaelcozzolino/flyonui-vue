@@ -34,7 +34,7 @@ interface DocumentationSectionItem {
 }
 
 function getDocumentationSections(): DocumentationSection[] {
-    const docsDir = join(import.meta.dirname, '..');
+    const docsDir = join(import.meta.dirname, '../..');
 
     const ignoredDirectories = new Set([
         'Extra',
