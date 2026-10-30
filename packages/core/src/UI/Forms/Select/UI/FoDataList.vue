@@ -38,11 +38,11 @@ const props = withDefaults(defineProps<DataListProps<T, K>>(), {
 /** The selected option in the list. If nothing is selected, it is null */
 const selectedOption = defineModel<K | null>({ required: true });
 
-const id = useElementId(() => props.id);
+const id = useElementId((): string | undefined => props.id);
 
 const input = computed({
     get: (): string | null => selectedOption.value?.text ?? null,
-    set: (newOptionText: string | null) => {
+    set: (newOptionText: string | null): void => {
         if (newOptionText === null) {
             selectedOption.value = null;
 
@@ -59,5 +59,5 @@ const input = computed({
     },
 });
 
-onEmptyOptions(() => props.options);
+onEmptyOptions((): K[] => props.options);
 </script>

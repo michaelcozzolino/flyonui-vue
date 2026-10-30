@@ -3,8 +3,8 @@ import { flushPromises, mount } from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
 import { FoHeading }            from '@/UI/Content';
 
-describe('FoHeading', () => {
-    it('is rendered successfully with the right level', async () => {
+describe('FoHeading', (): void => {
+    it('is rendered successfully with the right level', async (): Promise<void> => {
         const headingLevel: HeadingLevel = '4';
         const text             = 'heading';
 

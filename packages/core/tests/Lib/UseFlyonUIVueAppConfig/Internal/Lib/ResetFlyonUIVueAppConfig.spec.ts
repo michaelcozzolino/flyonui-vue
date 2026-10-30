@@ -5,12 +5,12 @@ import { ref }                             from 'vue';
 import { flyonUIVueAppDefaultConfig }      from '@/Lib';
 import { resetFlyonUIVueAppConfig }        from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
-describe('resetFlyonUIVueAppConfig', () => {
+describe('resetFlyonUIVueAppConfig', (): void => {
     it.each<[MaybeRefOrGetter<FlyonUIVueAppDefaultConfig>]>([
         [{ ...flyonUIVueAppDefaultConfig }],
         [ref({ ...flyonUIVueAppDefaultConfig })],
-        [() => ({ ...flyonUIVueAppDefaultConfig })],
-    ])('resets a given config', (initialConfig: MaybeRefOrGetter<FlyonUIVueAppDefaultConfig>) => {
+        [(): FlyonUIVueAppDefaultConfig => ({ ...flyonUIVueAppDefaultConfig })],
+    ])('resets a given config', (initialConfig: MaybeRefOrGetter<FlyonUIVueAppDefaultConfig>): void => {
         const config = ref<FlyonUIVueAppDefaultConfig>({
             ...flyonUIVueAppDefaultConfig,
             components: {

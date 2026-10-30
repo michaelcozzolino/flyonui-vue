@@ -76,29 +76,31 @@
 </template>
 
 <script setup lang="ts" generic="T extends string | number, K extends SelectOption<T>">
-import type { ComponentName }                      from '@/Lib';
-import type { LabelType }                          from '@/UI/Components';
-import type { SelectOption, SelectProps }          from '@/UI/Forms';
-import { computed, watchEffect }                   from 'vue';
-import { useFlyonUIVueAppConfig }                  from '@/Lib';
-import { useFloatingLabel }                        from '@/Lib/UseFloatingLabel/Internal';
-import { useElementId }                            from '@/Lib/UseIdentifiable/Internal';
-import { useShape }                                from '@/Lib/UseShape/Internal';
-import { useSize }                                 from '@/Lib/UseSize/Internal';
-import { useValidity }                             from '@/Lib/UseValidity/Internal';
-import { FoHelperText, usePositionableHelperText } from '@/UI/Components/HelperText/Internal';
-import { FoLabel, useLabel }                       from '@/UI/Components/Label/Internal';
-import { FoIcon }                                  from '@/UI/Customization';
-import { isSelectOptionGroup }                     from '@/UI/Forms/Select/Internal';
-import { onEmptyOptions }                          from '@/UI/Forms/Select/Internal/Lib/OnEmptyOptions';
-import FoSelectOption                              from '@/UI/Forms/Select/Internal/UI/FoSelectOption.vue';
+import type { ComponentName, Shape, Size }                  from '@/Lib';
+import type { LabelType }                                   from '@/UI/Components';
+import type { ConfigurableHelperText }                      from '@/UI/Components/HelperText';
+import type { ConfigurableLabel }                           from '@/UI/Components/Label';
+import type { SelectOption, SelectOptionType, SelectProps } from '@/UI/Forms';
+import { computed, watchEffect }                            from 'vue';
+import { useFlyonUIVueAppConfig }                           from '@/Lib';
+import { useFloatingLabel }                                 from '@/Lib/UseFloatingLabel/Internal';
+import { useElementId }                                     from '@/Lib/UseIdentifiable/Internal';
+import { useShape }                                         from '@/Lib/UseShape/Internal';
+import { useSize }                                          from '@/Lib/UseSize/Internal';
+import { useValidity }                                      from '@/Lib/UseValidity/Internal';
+import { FoHelperText, usePositionableHelperText }          from '@/UI/Components/HelperText/Internal';
+import { FoLabel, useLabel }                                from '@/UI/Components/Label/Internal';
+import { FoIcon }                                           from '@/UI/Customization';
+import { isSelectOptionGroup }                              from '@/UI/Forms/Select/Internal';
+import { onEmptyOptions }                                   from '@/UI/Forms/Select/Internal/Lib/OnEmptyOptions';
+import FoSelectOption                                       from '@/UI/Forms/Select/Internal/UI/FoSelectOption.vue';
 
 const props = withDefaults(defineProps<SelectProps<T, K>>(), {
     disabled: undefined,
     isValid:  undefined,
 });
 
-const id = useElementId(() => props.id);
+const id = useElementId((): string | undefined => props.id);
 
 /** The selected option in the select. If nothing is selected, it is null */
 const selectedOption = defineModel<SelectOption<T> | null>({ required: true });
@@ -110,13 +112,13 @@ const { config } = useFlyonUIVueAppConfig();
 const defaultLabel = useLabel(
     config,
     componentName,
-    () => props.label,
+    (): ConfigurableLabel | undefined => props.label,
 );
 
 const selectHelperText = usePositionableHelperText(
     config,
     componentName,
-    () => props.helperText,
+    (): ConfigurableHelperText | undefined => props.helperText,
 );
 
 const useIcon = computed((): boolean => {
@@ -129,15 +131,15 @@ const [
     sizeClass,
     validityClass,
 ] = [
-    useFloatingLabel(componentName, () => defaultLabel.value?.type),
-    useShape(config, componentName, () => props.shape),
-    useSize(config, componentName, () => props.size),
-    useValidity(() => props.isValid),
+    useFloatingLabel(componentName, (): LabelType | undefined => defaultLabel.value?.type),
+    useShape(config, componentName, (): Shape | undefined => props.shape),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useValidity((): boolean | undefined => props.isValid),
 ];
 
-onEmptyOptions(() => props.options);
+onEmptyOptions((): SelectOptionType<T, K>[] => props.options);
 
-watchEffect(() => {
+watchEffect((): void => {
     /**
      * when no option is selected and the label is not the null option, the selected one will be the first.
      * So that in case the developer is using the useSelectedOption composable where allowNull is true, but there is no

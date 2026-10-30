@@ -2,8 +2,8 @@ import { flushPromises, mount } from '@vue/test-utils';
 import { describe, expect, it } from 'vitest';
 import { FoKeyboard }           from '@/UI/Content';
 
-describe('FoKeyboard', () => {
-    it('is rendered successfully', async () => {
+describe('FoKeyboard', (): void => {
+    it('is rendered successfully', async (): Promise<void> => {
         const key = 'M';
 
         const wrapper = mount(FoKeyboard, {

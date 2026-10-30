@@ -1,10 +1,11 @@
-import { resolve }      from 'node:path';
-import tailwindcss      from '@tailwindcss/vite';
-import vue              from '@vitejs/plugin-vue';
-import { visualizer }   from 'rollup-plugin-visualizer';
-import { defineConfig } from 'vite';
+import type { ConfigEnv, UserConfig } from 'vite';
+import { resolve }                    from 'node:path';
+import tailwindcss                    from '@tailwindcss/vite';
+import vue                            from '@vitejs/plugin-vue';
+import { visualizer }                 from 'rollup-plugin-visualizer';
+import { defineConfig }               from 'vite';
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     return {
         plugins: [
             vue(),

@@ -35,6 +35,6 @@ const textDirection = defineModel<TextDirection>({ required: true });
 
 const isLtr = computed({
     get: (): boolean => textDirection.value === 'ltr',
-    set: (isLtr: boolean) => textDirection.value = isLtr ? 'ltr' : 'rtl',
+    set: (isLtr: boolean): string => textDirection.value = isLtr ? 'ltr' : 'rtl',
 });
 </script>

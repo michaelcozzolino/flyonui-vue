@@ -6,7 +6,7 @@ import { useArrayLength }                      from '@/Lib/Utils/Internal';
 export function onEmptyOptions<T extends number | string, K extends SelectOption<T>>(
     options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
 ): void {
-    watch(useArrayLength(options), (length) => {
+    watch(useArrayLength(options), (length: number): void => {
         if (length === 0) {
             throw new Error('No options found.');
         }

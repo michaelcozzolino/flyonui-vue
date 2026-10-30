@@ -34,7 +34,7 @@ const router = useRouter();
 
 const activePath = computed((): string => router.route.path + router.route.hash);
 
-watch(() => router.route.path, () => {
+watch((): string => router.route.path, (): void => {
     navigate(activePath.value);
 }, { immediate: true });
 
@@ -49,5 +49,7 @@ function navigate(to: string): Promise<void> {
  * according to the navigate function above, the scroll spy that was disabled will be enabled again. This is to avoid
  * conflicts with the manual scroll.
  */
-useEventListener('scrollend', () => enableAnchorScrollSpy.value = true);
+useEventListener('scrollend', (): void => {
+    enableAnchorScrollSpy.value = true;
+});
 </script>

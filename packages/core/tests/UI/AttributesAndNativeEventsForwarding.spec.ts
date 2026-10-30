@@ -6,7 +6,7 @@ import { FoBlockQuote, FoDivider, FoHeading, FoKeyboard, FoLink }             fr
 import { FoCheckbox, FoInputFiles, FoInputText, FoJoin, FoRange, FoTextarea } from '@/UI/Forms';
 
 // todo: names of the components must be camel case, eslint
-describe('forwards attributes and native event listeners for', () => {
+describe('forwards attributes and native event listeners for', (): void => {
     interface MountResult {
         /**
          * When not undefined, this is used to specify which element should have the attributes and events,
@@ -37,7 +37,7 @@ describe('forwards attributes and native event listeners for', () => {
         expect(onClick).toHaveBeenCalledTimes(1);
     }
 
-    it('foButton', async () => {
+    it('foButton', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttributeValue: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoButton, {
                 attrs: { [customAttributeName]: customAttributeValue, onClick },
@@ -46,7 +46,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foRange', async () => {
+    it('foRange', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoRange, {
                 props: { modelValue: 50 },
@@ -56,7 +56,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foRange with steps', async () => {
+    it('foRange with steps', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoRange, {
                 props: { modelValue: 50 },
@@ -69,7 +69,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foCheckbox', async () => {
+    it('foCheckbox', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoCheckbox, {
                 props: { modelValue: true },
@@ -79,7 +79,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foInputText', async () => {
+    it('foInputText', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoInputText, {
                 props: { modelValue: 'Input text' },
@@ -89,7 +89,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foInputText with input container', async () => {
+    it('foInputText with input container', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoInputText, {
                 props: {
@@ -103,7 +103,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foTextarea', async () => {
+    it('foTextarea', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoTextarea, {
                 props: { modelValue: 'Textarea value' },
@@ -113,7 +113,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foTextarea with input container', async () => {
+    it('foTextarea with input container', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoTextarea, {
                 props: {
@@ -127,7 +127,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foInputFiles', async () => {
+    it('foInputFiles', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoInputFiles, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -136,7 +136,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foJoin', async () => {
+    it('foJoin', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoJoin, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -145,7 +145,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foLink', async () => {
+    it('foLink', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoLink, {
                 props: { to: '#section' },
@@ -156,7 +156,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foBlockQuote', async () => {
+    it('foBlockQuote', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoBlockQuote, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -165,7 +165,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foHeading', async () => {
+    it('foHeading', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoHeading, {
                 props: { level: '4' },
@@ -175,7 +175,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foKeyboard', async () => {
+    it('foKeyboard', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoKeyboard, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -184,7 +184,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foDivider', async () => {
+    it('foDivider', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoDivider, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -194,7 +194,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foDivider horizontal', async () => {
+    it('foDivider horizontal', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoDivider, {
                 props: { orientation: 'horizontal' },
@@ -204,7 +204,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foListGroup', async () => {
+    it('foListGroup', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoListGroup, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -214,7 +214,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foListGroup horizontal', async () => {
+    it('foListGroup horizontal', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoListGroup, {
                 props: { orientation: 'horizontal' },
@@ -224,7 +224,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foLoading', async () => {
+    it('foLoading', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoLoading, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -232,7 +232,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foSkeleton', async () => {
+    it('foSkeleton', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoSkeleton, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -240,7 +240,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foStatus', async () => {
+    it('foStatus', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoStatus, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -249,7 +249,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foStatus ping', async () => {
+    it('foStatus ping', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoStatus, {
                 props: { animation: 'ping' },
@@ -259,7 +259,7 @@ describe('forwards attributes and native event listeners for', () => {
         }));
     });
 
-    it('foStatus with content', async () => {
+    it('foStatus with content', async (): Promise<void> => {
         await expectAttributesAndNativeEventsForwarding((customAttribute: string, onClick: () => void): MountResult => ({
             wrapper: mount(FoStatus, {
                 attrs: { [customAttributeName]: customAttribute, onClick },
@@ -269,7 +269,7 @@ describe('forwards attributes and native event listeners for', () => {
     });
 });
 
-describe('forwards class and style attributes on the right elements for', () => {
+describe('forwards class and style attributes on the right elements for', (): void => {
     interface MountResult {
         /** When not undefined, the class attribute must stay on this element */
         classTargetElement?: string;
@@ -295,7 +295,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         expect(styleTarget.attributes('style')).toContain('color: rgb(255, 0, 0)');
     }
 
-    it('foRange', async () => {
+    it('foRange', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoRange, {
                 props: { modelValue: 50 },
@@ -309,7 +309,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foRange with steps', async () => {
+    it('foRange with steps', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoRange, {
                 props: { modelValue: 50 },
@@ -325,7 +325,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foInputText', async () => {
+    it('foInputText', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoInputText, {
                 props: { modelValue: 'Input text' },
@@ -338,7 +338,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foInputText with input container', async () => {
+    it('foInputText with input container', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoInputText, {
                 props: {
@@ -355,7 +355,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foTextarea', async () => {
+    it('foTextarea', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoTextarea, {
                 props: { modelValue: 'Textarea value' },
@@ -368,7 +368,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foTextarea with input container', async () => {
+    it('foTextarea with input container', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoTextarea, {
                 props: {
@@ -385,7 +385,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foInputFiles', async () => {
+    it('foInputFiles', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoInputFiles, {
                 attrs: {
@@ -397,7 +397,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foCheckbox', async () => {
+    it('foCheckbox', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoCheckbox, {
                 props: { modelValue: true },
@@ -410,7 +410,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foLink', async () => {
+    it('foLink', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoLink, {
                 props: { to: '#section' },
@@ -425,7 +425,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foBlockQuote', async () => {
+    it('foBlockQuote', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoBlockQuote, {
                 attrs: {
@@ -437,7 +437,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foButton', async () => {
+    it('foButton', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoButton, {
                 attrs: {
@@ -449,7 +449,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foKeyboard', async () => {
+    it('foKeyboard', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoKeyboard, {
                 attrs: {
@@ -461,7 +461,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foDivider', async () => {
+    it('foDivider', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoDivider, {
                 attrs: {
@@ -475,7 +475,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foDivider horizontal', async () => {
+    it('foDivider horizontal', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoDivider, {
                 props: { orientation: 'horizontal' },
@@ -488,7 +488,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foListGroup', async () => {
+    it('foListGroup', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoListGroup, {
                 attrs: {
@@ -502,7 +502,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foListGroup horizontal', async () => {
+    it('foListGroup horizontal', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoListGroup, {
                 props: { orientation: 'horizontal' },
@@ -516,7 +516,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foJoin', async () => {
+    it('foJoin', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoJoin, {
                 attrs: {
@@ -528,7 +528,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foHeading', async () => {
+    it('foHeading', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoHeading, {
                 props: { level: '4' },
@@ -541,7 +541,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foLoading', async () => {
+    it('foLoading', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoLoading, {
                 attrs: {
@@ -552,7 +552,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foSkeleton', async () => {
+    it('foSkeleton', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoSkeleton, {
                 attrs: {
@@ -563,7 +563,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foStatus', async () => {
+    it('foStatus', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoStatus, {
                 attrs: {
@@ -576,7 +576,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foStatus ping', async () => {
+    it('foStatus ping', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoStatus, {
                 props: { animation: 'ping' },
@@ -589,7 +589,7 @@ describe('forwards class and style attributes on the right elements for', () => 
         }));
     });
 
-    it('foStatus with content', async () => {
+    it('foStatus with content', async (): Promise<void> => {
         await expectClassAndStyleForwarding((): MountResult => ({
             wrapper: mount(FoStatus, {
                 attrs: {
