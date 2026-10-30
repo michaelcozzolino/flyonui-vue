@@ -7,5 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import { useRequiredSlotMessage } from '@/Lib/Utils/Internal';
+import type { WithRequiredDefaultSlot } from '@/Types';
+import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
+
+defineSlots<WithRequiredDefaultSlot>();
 </script>

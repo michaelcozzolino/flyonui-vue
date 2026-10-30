@@ -23,3 +23,7 @@
 ### Color
 
 <CodeDocs section="color" />
+
+### Slots
+
+<CodeDocs section="slots" />
