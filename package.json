@@ -26,7 +26,7 @@
         "change-case": "^5.4.4"
     },
     "devDependencies": {
-        "@michaelcozzolino/eslint-config": "^2.0.0",
+        "@michaelcozzolino/eslint-config": "^2.1.0",
         "@vitest/browser": "^4.1.12",
         "@vitest/coverage-v8": "^4.1.12",
         "@vue/test-utils": "^2.5.1",
