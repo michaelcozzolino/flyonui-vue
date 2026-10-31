@@ -18,14 +18,14 @@ export function createLlmsPlugin(docsDomain: string): PluginOption[] {
                     { text: 'Upgrade Guide', link: '/upgrade-guide' },
                 ],
             },
-            ...getDocumentationSections().map(({ section, items }) => ({ text: section, items })),
+            ...getDocumentationSections(),
         ],
     }), useCleanLlmsLinks()];
 }
 
 interface DocumentationSection {
-    section: string;
-    items:   DocumentationSectionItem[];
+    text:  string;
+    items: DocumentationSectionItem[];
 }
 
 interface DocumentationSectionItem {
@@ -73,16 +73,16 @@ function getDocumentationSections(): DocumentationSection[] {
             return [
                 {
                     text: name,
-                    link: `/${path.map(segment => kebabCase(segment)).join('/')}`,
+                    link: `/${path.map((segment: string): string => kebabCase(segment)).join('/')}`,
                 },
             ];
         });
     }
 
     return readdirSync(docsDir, { withFileTypes: true })
-        .filter(entry => entry.isDirectory() && !entry.name.startsWith('.') && !ignoredDirectories.has(entry.name))
-        .map(entry => ({ section: entry.name, items: getSectionItems(join(docsDir, entry.name), [entry.name]) }))
-        .filter(section => section.items.length > 0);
+        .filter((entry: Dirent): boolean => entry.isDirectory() && !entry.name.startsWith('.') && !ignoredDirectories.has(entry.name))
+        .map((entry: Dirent): DocumentationSection => ({ text: entry.name, items: getSectionItems(join(docsDir, entry.name), [entry.name]) }))
+        .filter((section: DocumentationSection): boolean => section.items.length > 0);
 }
 
 /**
@@ -103,7 +103,7 @@ function useCleanLlmsLinks(): PluginOption {
             outputDirectory = config.vitepress.outDir;
             isServerBuild = Boolean(config.build.ssr);
         },
-        writeBundle() {
+        writeBundle(): void {
             if (isServerBuild) {
                 return;
             }
