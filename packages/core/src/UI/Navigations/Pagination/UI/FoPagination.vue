@@ -54,7 +54,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Alignment, ComponentName }         from '@/Lib';
+import type { ComponentName }                    from '@/Lib';
+import type { Alignment }                        from '@/Lib/UseAlignment';
 import type { PaginationProps, PaginationShape } from '@/UI/Navigations';
 import { breakpointsTailwind, useBreakpoints }   from '@vueuse/core';
 import { computed, watch }                       from 'vue';

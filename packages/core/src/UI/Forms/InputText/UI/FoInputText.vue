@@ -1,6 +1,6 @@
 <template>
     <div :class="[
-             inputGroupContainerClass,
+             isGroup && 'input',
              isGroup ? sizeClass : floatingClass,
          ]"
          :style="$attrs.style as StyleValue"
@@ -170,10 +170,6 @@ const hasIcon = computed((): boolean => useHasPositionableIcon(inputIcon));
 
 const isGroup = computed((): boolean => {
     return hasIcon.value || slots.append !== undefined || slots.prepend !== undefined || defaultLabel.value?.type === 'inline';
-});
-
-const inputGroupContainerClass = computed((): string => {
-    return isGroup.value && 'input';
 });
 
 const hasInputContainer = computed((): boolean => {

@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import type { Slot }                   from 'vue';
-import type { ComponentName }          from '@/Lib';
+import type { ComponentName, Size }    from '@/Lib';
 import type { WithDefaultSlot }        from '@/Types';
 import type { TableProps, TableSlots } from '@/UI/Tables';
 import { computed }                    from 'vue';

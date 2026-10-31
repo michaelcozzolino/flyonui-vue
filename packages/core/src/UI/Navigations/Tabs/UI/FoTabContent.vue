@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Size }                                                    from '@/Lib';
 import type { WithRequiredDefaultSlot }                                 from '@/Types';
 import type { TabContentProps }                                         from '@/UI/Navigations/Tabs/Types/Tabs';
 import { computed }                                                     from 'vue';
