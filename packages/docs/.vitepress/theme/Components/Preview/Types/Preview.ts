@@ -7,7 +7,7 @@ import type { FrameworkId }                       from '@/.vitepress/theme/Compo
 export type FrameworkSectionPreview = {
     excludeFromTests?:   boolean;
     dataTestScreenshot?: boolean;
-    grid?:               { columns: number; rows: number };
+    grid?:               ComponentPreviewGrid;
 } & Partial<Record<FrameworkId, ComponentPreviewProps>>;
 
 export interface ComponentPreviewProps {
@@ -19,13 +19,18 @@ export interface ComponentPreviewProps {
 
     /** The (web) component to be shown in the preview */
     component: Component | VNode<RendererNode, RendererElement, WebComponentPreviewProps>;
-    grid?:     { columns: number; rows: number };
+    grid?:     ComponentPreviewGrid;
 }
 
 export interface CodePreviewProps {
     title?:   string;
     code:     string;
     language: string;
+}
+
+export interface ComponentPreviewGrid {
+    columns: number;
+    rows:    number;
 }
 
 export type AngularComponent = Type<unknown>;

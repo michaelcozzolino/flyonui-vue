@@ -1,20 +1,29 @@
+import type { ComputedRef, Ref }               from 'vue';
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 import { defineStore }                         from 'pinia';
 import { useRoute }                            from 'vitepress';
 import { computed, ref, watch }                from 'vue';
 
-export const useLayoutStore = defineStore('UseLayoutStore', () => {
+interface UseLayoutStoreReturn {
+    vitepressThemeLocalStorageKey: string;
+    isSidebarCollapsed:            Ref<boolean>;
+    isPageSizeSmallerThanSm:       ComputedRef<boolean>;
+    isHomepage:                    () => boolean;
+    isNotHomepage:                 () => boolean;
+}
+
+export const useLayoutStore = defineStore('UseLayoutStore', (): UseLayoutStoreReturn => {
     const vitepressThemeLocalStorageKey = 'vitepress-theme-appearance';
 
     const isSidebarCollapsed = ref<boolean>(false);
 
-    const isPageSizeSmallerThanSm = computed(() => {
+    const isPageSizeSmallerThanSm = computed((): boolean => {
         const breakpoints = useBreakpoints(breakpointsTailwind);
 
         return breakpoints.smaller('sm').value;
     });
 
-    watch(isPageSizeSmallerThanSm, () => {
+    watch(isPageSizeSmallerThanSm, (): void => {
         if (isPageSizeSmallerThanSm.value) {
             isSidebarCollapsed.value = true;
         }

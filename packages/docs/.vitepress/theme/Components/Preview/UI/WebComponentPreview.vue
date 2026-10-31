@@ -82,7 +82,7 @@ function renderReact(component: Extract<WebComponentPreviewProps, { framework: '
     reactRoot.render(createElement(component));
 }
 
-onBeforeUnmount(() => {
+onBeforeUnmount((): void => {
     if (angularComponent !== null && angularApplication !== null) {
         angularApplication.detachView(angularComponent.hostView);
     }
