@@ -6,8 +6,8 @@ import {
     useFlyonUIVueAppConfigProperty,
 }                                                                                                  from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
-describe('useFlyonUIVueAppConfigProperty', () => {
-    it('returns the defined component config value when the component has no value', () => {
+describe('useFlyonUIVueAppConfigProperty', (): void => {
+    it('returns the defined component config value when the component has no value', (): void => {
         const componentName: ConfigurableComponentName = 'FoButton';
         const property: ConfigurableProperty<typeof componentName> = 'color';
         const expectedValue: Color = 'secondary';
@@ -20,15 +20,15 @@ describe('useFlyonUIVueAppConfigProperty', () => {
         expect(useFlyonUIVueAppConfigProperty(config, componentName, property, undefined).value).toBe(expectedValue);
     });
 
-    it('returns the given value when there is no value specified in the component config', () => {
+    it('returns the given value when there is no value specified in the component config', (): void => {
         const config = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
 
         expect(
-            useFlyonUIVueAppConfigProperty(config, () => 'FoButton', 'color', () => 'secondary').value,
+            useFlyonUIVueAppConfigProperty(config, (): 'FoButton' => 'FoButton', 'color', (): 'secondary' => 'secondary').value,
         ).toBe('secondary');
     });
 
-    it('returns the global config value when neither the component config value nor the given value are defined', () => {
+    it('returns the global config value when neither the component config value nor the given value are defined', (): void => {
         const config = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
 
         expect(
