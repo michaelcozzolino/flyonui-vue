@@ -111,18 +111,18 @@ const items = computed((): DocsSidebarItem[] => {
     return roots;
 });
 
-onMounted(async () => {
+onMounted(async (): Promise<void> => {
     useFlyonUIThemeFont(
         useColorMode<FlyonUITheme>({ storageKey: vitepressThemeLocalStorageKey }),
         '--vp-font-family-base',
     );
 });
 
-watch(() => router.route.path, () => {
+watch((): string => router.route.path, (): void => {
     resetDocsPageAsyncState();
 }, { immediate: true });
 
-watch(isDocsPageReady, async () => {
+watch(isDocsPageReady, async (): Promise<void> => {
     if (isDocsPageReady.value === false) {
         return;
     }
@@ -135,7 +135,7 @@ watch(isDocsPageReady, async () => {
      * Due to the loader, if the route has a hash the scroll gets lost, so we do a manual scroll to the current hash.
      * When changing page, there will be no hash so the callback will exit early.
      */
-    requestAnimationFrame(() => {
+    requestAnimationFrame((): void => {
         const hash = router.route.hash;
 
         if (hash === '') {
@@ -152,10 +152,10 @@ watch(isDocsPageReady, async () => {
     });
 });
 
-onContentUpdated(() => {
+onContentUpdated((): void => {
     docsHeadings.value = document.querySelectorAll('.VPDoc :where(h1,h2,h3,h4,h5,h6)');
 
-    nextTick(() => {
+    nextTick((): void => {
         if (pendingAsyncComponentCount.value === 0) {
             markDocsPageAsReady();
         }

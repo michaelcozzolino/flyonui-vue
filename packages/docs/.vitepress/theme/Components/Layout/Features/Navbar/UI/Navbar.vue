@@ -108,7 +108,7 @@ const themeStorageKey = 'vitepress-theme-appearance';
 
 const show = ref<boolean>(false);
 
-onMounted(() => {
+onMounted((): void => {
     /**
      * The theme selector will be shown only on click, in order to allow the automatic theme selection from local
      * storage on first load, it must be fetched and set according to the user one.

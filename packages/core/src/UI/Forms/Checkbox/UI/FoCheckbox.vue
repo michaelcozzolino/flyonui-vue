@@ -56,7 +56,7 @@
 
 <script lang="ts" setup>
 import type { StyleValue, VNode }                                    from 'vue';
-import type { ConfigurableComponentName }                            from '@/Lib';
+import type { Color, ConfigurableComponentName, Size }               from '@/Lib';
 import type { CheckboxProps }                                        from '@/UI/Forms/Checkbox/Types/Checkbox';
 import { reactiveOmit }                                              from '@vueuse/core';
 import { computed, inject, watch }                                   from 'vue';
@@ -96,7 +96,7 @@ const isChecked = defineModel<boolean>({ required: true });
  */
 const indeterminate = defineModel<boolean>('indeterminate');
 
-const id         = useElementId(() => props.id);
+const id         = useElementId((): string | undefined => props.id);
 const labelId    = computed((): string => `label-${id.value}`);
 const { config } = useFlyonUIVueAppConfig();
 
@@ -116,12 +116,12 @@ const [
     sizeClass,
     validityClass,
 ] = [
-    useColor(config, componentName, () => props.color),
-    useSize(config, componentName, () => props.size),
-    useValidity(() => props.isValid),
+    useColor(config, componentName, (): Color | undefined => props.color),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useValidity((): boolean | undefined => props.isValid),
 ];
 
-const gapClass = computed(() => {
+const gapClass = computed((): string => {
     if (isCheckableInGroup || props.helperText !== undefined) {
         return 'gap-2';
     }
@@ -129,7 +129,7 @@ const gapClass = computed(() => {
     return 'gap-1';
 });
 
-watch(indeterminate, (newValue: boolean | undefined) => {
+watch(indeterminate, (newValue: boolean | undefined): void => {
     if (newValue) {
         isChecked.value = false;
     }
@@ -137,7 +137,7 @@ watch(indeterminate, (newValue: boolean | undefined) => {
 
 watch(
     isChecked,
-    () => indeterminate.value = false,
+    (): boolean => indeterminate.value = false,
     { once: true },
 );
 </script>

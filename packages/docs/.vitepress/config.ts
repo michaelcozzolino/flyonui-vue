@@ -17,13 +17,13 @@ export default defineConfig({
     vite: {
         plugins: [createLlmsPlugin(docsDomain)],
     },
-    rewrites: (id) => {
+    rewrites: (id: string): string => {
         const format = '.md';
 
         // E.G: Forms/InputText.md
         return id.replace(format, '') // removes .md because the kebabCase function would replace the "." with "-": Forms/InputText
             .split('/') // ['Forms', 'InputText']
-            .map(id => kebabCase(id)) // ['forms', 'input-text']
+            .map((id: string): string => kebabCase(id)) // ['forms', 'input-text']
             .join('/') // forms/input-text
             + format; // forms/input-text.md
     },

@@ -27,14 +27,14 @@ export function useAnchorScrollSpy(
 
     const resolvedHeaders = ref<ResolvedHeader[]>([]);
 
-    onMounted(() => {
-        requestAnimationFrame(() => {
+    onMounted((): void => {
+        requestAnimationFrame((): void => {
             resolvedHeaders.value = resolveHeaders();
             setActiveHash();
         });
     });
 
-    watch(docsHeadings, () => {
+    watch(docsHeadings, (): void => {
         resolvedHeaders.value = resolveHeaders();
         requestAnimationFrame(setActiveHash);
     });
@@ -69,7 +69,7 @@ export function useAnchorScrollSpy(
             });
         }
 
-        return resolvedHeaders.sort((a, b) => a.top - b.top);
+        return resolvedHeaders.sort((a: ResolvedHeader, b: ResolvedHeader): number => a.top - b.top);
     }
 
     /**

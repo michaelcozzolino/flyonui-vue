@@ -81,7 +81,7 @@ const employees = ref<Employee[]>([
     },
 ]);
 
-const actionIcons = computed(() => ['tabler:pencil', 'tabler:trash', 'tabler:dots-vertical']);
+const actionIcons = computed((): string[] => ['tabler:pencil', 'tabler:trash', 'tabler:dots-vertical']);
 
 function getBadgeColor(status: Status): Color {
     const presets: Record<Status, Color> = {

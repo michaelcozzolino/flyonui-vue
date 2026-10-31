@@ -52,7 +52,7 @@ interface Props {
 
 defineProps<Props>();
 
-const previews = computed(() => {
+const previews = computed((): Map<Section, FrameworkSectionPreview> => {
     return new Map<Section, FrameworkSectionPreview>([
         [
             'solid',

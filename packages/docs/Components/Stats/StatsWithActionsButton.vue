@@ -47,6 +47,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Orientation }                    from 'flyonui-vue';
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 import {
     FoButton,
@@ -61,5 +62,5 @@ import { computed } from 'vue';
 const breakpoints     = useBreakpoints(breakpointsTailwind);
 const isGreaterThanMd = breakpoints.greater('md');
 
-const orientation = computed(() => isGreaterThanMd.value ? 'horizontal' : 'vertical');
+const orientation = computed((): Orientation => isGreaterThanMd.value ? 'horizontal' : 'vertical');
 </script>

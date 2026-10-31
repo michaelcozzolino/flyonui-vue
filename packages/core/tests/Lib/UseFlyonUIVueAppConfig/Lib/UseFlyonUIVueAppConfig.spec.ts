@@ -1,13 +1,15 @@
+import type { SetupContext }                                  from 'vue';
+import type { FlyonUIVueAppInjectionContext }                 from '@/Lib';
 import { flushPromises, mount }                               from '@vue/test-utils';
 import { describe, expect, it }                               from 'vitest';
 import { defineComponent }                                    from 'vue';
 import { flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig } from '@/Lib';
 
-describe('useFlyonUIVueAppConfig', () => {
-    it('injects the right config if the CreateFlyonUIVueApp plugin is used', async () => {
+describe('useFlyonUIVueAppConfig', (): void => {
+    it('injects the right config if the CreateFlyonUIVueApp plugin is used', async (): Promise<void> => {
         const TestApp = defineComponent({
             template: '<div />',
-            setup:    (_props, _ctx) => {
+            setup:    (_props: Record<never, never>, _ctx: SetupContext): Pick<FlyonUIVueAppInjectionContext, 'config'> => {
                 const { config } = useFlyonUIVueAppConfig();
 
                 return { config };
@@ -21,10 +23,10 @@ describe('useFlyonUIVueAppConfig', () => {
         expect(wrapper.vm.config).toStrictEqual(flyonUIVueAppDefaultConfig);
     });
 
-    it('uses a fallback config if the CreateFlyonUIVueApp plugin is not used', async () => {
+    it('uses a fallback config if the CreateFlyonUIVueApp plugin is not used', async (): Promise<void> => {
         const TestApp = defineComponent({
             template: '<div />',
-            setup:    (_props, _ctx) => {
+            setup:    (_props: Record<never, never>, _ctx: SetupContext): Pick<FlyonUIVueAppInjectionContext, 'config'> => {
                 const { config } = useFlyonUIVueAppConfig();
 
                 return { config };
@@ -38,10 +40,10 @@ describe('useFlyonUIVueAppConfig', () => {
         expect(wrapper.vm.config).toStrictEqual(flyonUIVueAppDefaultConfig);
     });
 
-    it('resets the config when the resetConfig function is called', async () => {
+    it('resets the config when the resetConfig function is called', async (): Promise<void> => {
         const TestApp = defineComponent({
             template: '<div />',
-            setup:    (_props, _ctx) => {
+            setup:    (_props: Record<never, never>, _ctx: SetupContext): FlyonUIVueAppInjectionContext => {
                 const { config, resetConfig } = useFlyonUIVueAppConfig();
 
                 return { config, resetConfig };
