@@ -16,7 +16,7 @@
             />
 
             <FoIcon v-else-if="switchIcon?.right !== undefined"
-                    class="text-neutral-content end-1 block peer-checked:hidden"
+                    class="text-neutral-content end-1 block"
                     :class="iconClass"
                     :icon="switchIcon.right"
                     size="extraSmall"
@@ -28,7 +28,7 @@
 <script setup lang="ts">
 import type { ComponentName, Preset }                  from '@/Lib';
 import type { ConfigurableIcon }                       from '@/UI/Customization/Icon';
-import type { SwitchOptions }                          from '@/UI/Forms/Checkbox/Internal';
+import type { SwitchInjectedOptions }                  from '@/UI/Forms/Checkbox/Internal';
 import type { SwitchProps }                            from '@/UI/Forms/Switch';
 import { reactiveOmit }                                from '@vueuse/core';
 import { computed, provide }                           from 'vue';
@@ -64,7 +64,7 @@ const switchIcon = usePositionableIcon(
 
 const hasIcon = computed((): boolean => useHasPositionableIcon(switchIcon));
 
-provide(switchOptionsInjectionKey, computed((): SwitchOptions => ({ labelAsIcon: hasIcon.value })));
+provide(switchOptionsInjectionKey, computed((): SwitchInjectedOptions => ({ labelAsIcon: hasIcon.value })));
 
 const presetClass = usePreset(config, componentName, (): Preset | undefined => props.preset);
 
