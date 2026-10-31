@@ -28,7 +28,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-    links:    () => [],
+    links:    (): NavbarLink[] => [],
     linkType: 'vue',
 });
 </script>

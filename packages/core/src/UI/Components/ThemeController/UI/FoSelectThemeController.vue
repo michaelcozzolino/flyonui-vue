@@ -9,6 +9,7 @@
 <script setup lang="ts">
 import type { FlyonUITheme, ThemeControllerProps } from '@/UI/Components';
 import type { SelectProps }                        from '@/UI/Forms';
+import type { SelectOption }                       from '@/UI/Forms/Select';
 import { useArrayMap, useColorMode }               from '@vueuse/core';
 import { onMounted, toValue, watch }               from 'vue';
 import { useFlyonUIThemeFont }                     from '@/UI/Components/ThemeController/Lib/UseFlyonUIThemeFont';
@@ -40,14 +41,14 @@ const props = withDefaults(defineProps<ThemeControllerProps & Omit<SelectProps<F
     },
 });
 
-const themeOptions = useArrayMap(() => Object.values(props.modes), (mode: FlyonUITheme) => ({
+const themeOptions = useArrayMap((): FlyonUITheme[] => Object.values(props.modes), (mode: FlyonUITheme): SelectOption<FlyonUITheme> => ({
     id:   mode,
     text: `${mode[0]?.toUpperCase()}${mode.slice(1)}`,
 }));
 
 const selectedTheme = useSelectedOption(themeOptions, useColorMode<FlyonUITheme>({ ...props }));
 
-onMounted(() => {
+onMounted((): void => {
     if (toValue(props.initialValue) in props.modes === false) {
         throw new Error(`The initial theme ${props.initialValue} is not available.`);
     }
@@ -55,7 +56,7 @@ onMounted(() => {
 
 watch(
     selectedTheme,
-    () => useFlyonUIThemeFont(selectedTheme.value.id, () => props.fontFamilyVar),
+    (): void => useFlyonUIThemeFont(selectedTheme.value.id, (): `--${string}` => props.fontFamilyVar),
     { immediate: true },
 );
 </script>

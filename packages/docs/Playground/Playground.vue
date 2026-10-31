@@ -6,7 +6,7 @@
 import sdk           from '@stackblitz/sdk';
 import { onMounted } from 'vue';
 
-onMounted(() => {
+onMounted((): void => {
     sdk.embedProjectId(
         'playground',
         'vitejs-vite-fwfuujjb',

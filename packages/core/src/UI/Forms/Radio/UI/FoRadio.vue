@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }                from '@/Lib';
+import type { Color, ComponentName, Size }   from '@/Lib';
 import type { RadioProps }                   from '@/UI/Forms/Radio';
 import { reactiveOmit }                      from '@vueuse/core';
 import { computed, inject }                  from 'vue';
@@ -76,10 +76,10 @@ const [
     validityClass,
     joinItemClass,
 ] = [
-    useColor(config, componentName, () => props.color),
-    useSize(config, componentName, () => props.size),
-    useValidity(() => props.isValid),
-    useClass(isInJoin, () => `btn btn-soft ${useJoinItem(isInJoin).value}`),
+    useColor(config, componentName, (): Color | undefined => props.color),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useValidity((): boolean | undefined => props.isValid),
+    useClass(isInJoin, (): string => `btn btn-soft ${useJoinItem(isInJoin).value}`),
 ];
 
 const hasLabelAndHelperText = computed((): boolean => props.label !== undefined && props.helperText !== undefined);

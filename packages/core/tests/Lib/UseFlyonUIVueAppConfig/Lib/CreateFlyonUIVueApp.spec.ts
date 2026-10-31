@@ -1,26 +1,27 @@
-import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig }                    from '@/Lib';
-import type { TextDirection }                                                      from '@/Types';
-import { flushPromises, mount }                                                    from '@vue/test-utils';
-import { noop, useLocalStorage }                                                   from '@vueuse/core';
-import deepmerge                                                                   from 'deepmerge';
-import { useHead }                                                                 from 'unhead';
-import { beforeEach, describe, expect, it, vi }                                    from 'vitest';
-import { defineComponent }                                                         from 'vue';
-import { createFlyonUIVueApp, flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig } from '@/Lib';
-import { flyonUIVueAppConfigLocalStorageKey }                                      from '@/Lib/UseFlyonUIVueAppConfig/Internal';
+import type { SetupContext }                                                                   from 'vue';
+import type { FlyonUIVueAppConfig, FlyonUIVueAppDefaultConfig, FlyonUIVueAppInjectionContext } from '@/Lib';
+import type { TextDirection }                                                                  from '@/Types';
+import { flushPromises, mount }                                                                from '@vue/test-utils';
+import { noop, useLocalStorage }                                                               from '@vueuse/core';
+import deepmerge                                                                               from 'deepmerge';
+import { useHead }                                                                             from 'unhead';
+import { beforeEach, describe, expect, it, vi }                                                from 'vitest';
+import { defineComponent }                                                                     from 'vue';
+import { createFlyonUIVueApp, flyonUIVueAppDefaultConfig, useFlyonUIVueAppConfig }             from '@/Lib';
+import { flyonUIVueAppConfigLocalStorageKey }                                                  from '@/Lib/UseFlyonUIVueAppConfig/Internal';
 
 vi.mock('@vueuse/core', { spy: true });
 vi.mock('unhead', { spy: true });
 
-describe('createFlyonUIVueApp', () => {
-    beforeEach(() => {
+describe('createFlyonUIVueApp', (): void => {
+    beforeEach((): void => {
         localStorage.removeItem(flyonUIVueAppConfigLocalStorageKey);
     });
 
-    it('mutates the config and the head dir attribute immediately and after the text direction changes without mutating the default config', async () => {
+    it('mutates the config and the head dir attribute immediately and after the text direction changes without mutating the default config', async (): Promise<void> => {
         const TestApp = defineComponent({
             template: '<div />',
-            setup:    (_props, _ctx) => {
+            setup:    (_props: Record<never, never>, _ctx: SetupContext): Pick<FlyonUIVueAppInjectionContext, 'config'> => {
                 const { config } = useFlyonUIVueAppConfig();
 
                 return { config };
@@ -68,7 +69,7 @@ describe('createFlyonUIVueApp', () => {
         expect(flyonUIVueAppDefaultConfig.global.textDirection).toBe('ltr');
     });
 
-    it('creates a FlyonUI vue app with the given user config and stores it inside the local storage', async () => {
+    it('creates a FlyonUI vue app with the given user config and stores it inside the local storage', async (): Promise<void> => {
         const TestApp = defineComponent({
             template: '<div />',
         });
@@ -102,7 +103,7 @@ describe('createFlyonUIVueApp', () => {
         expect(useHead).toHaveBeenCalledTimes(1);
     });
 
-    it('merges the already existing config from the local storage with the new config', async () => {
+    it('merges the already existing config from the local storage with the new config', async (): Promise<void> => {
         const existingConfig: FlyonUIVueAppDefaultConfig = {
             ...flyonUIVueAppDefaultConfig,
             components: { FoButton: { size: 'large' } },
@@ -147,12 +148,12 @@ describe('createFlyonUIVueApp', () => {
         ).toStrictEqual(expectedConfig);
     });
 
-    it('resets successfully the config to the default one after it has been changed', async () => {
+    it('resets successfully the config to the default one after it has been changed', async (): Promise<void> => {
         const TestApp = defineComponent({
             template: '<div />',
-            setup:    (_props, _ctx) => {
+            setup:    (_props: Record<never, never>, _ctx: SetupContext): FlyonUIVueAppInjectionContext & { setDir: (dir: TextDirection) => TextDirection } => {
                 const { config, resetConfig } = useFlyonUIVueAppConfig();
-                const setDir                  = (dir: TextDirection) => config.value.global.textDirection = dir;
+                const setDir                  = (dir: TextDirection): TextDirection => config.value.global.textDirection = dir;
                 return { config, resetConfig, setDir };
             },
         });

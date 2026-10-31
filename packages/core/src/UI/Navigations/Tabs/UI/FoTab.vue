@@ -39,5 +39,5 @@ defineSlots<WithRequiredDefaultSlot>();
 const activeTab = useSafeInjection(activeTabInjectionKey);
 const tabsProps = useSafeInjection(tabsPropsInjectionKey);
 
-const isActiveTab = useIsActiveTab(activeTab, () => props.id);
+const isActiveTab = useIsActiveTab(activeTab, (): string => props.id);
 </script>

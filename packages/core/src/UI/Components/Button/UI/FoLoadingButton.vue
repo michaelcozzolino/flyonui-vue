@@ -34,7 +34,7 @@ import { FoButton, FoLoading }     from '@/UI/Components';
 
 const props = withDefaults(defineProps<LoadingButtonProps>(), {
     isLoading: true,
-    icon:      () => {
+    icon:      (): LoadingProps => {
         return { animation: 'spinner' };
     },
 });

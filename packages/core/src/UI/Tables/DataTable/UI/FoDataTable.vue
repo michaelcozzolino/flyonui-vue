@@ -201,7 +201,7 @@ function applyColumnFilters(items: T[]): T[] {
     });
 }
 
-watch([safePage, itemsPerPage, query], () => {
+watch([safePage, itemsPerPage, query], (): void => {
     // todo
     // if (props.useAjax) {
     //     return;

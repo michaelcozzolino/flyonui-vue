@@ -58,7 +58,7 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
         },
     );
 
-    watch(() => config.value.global.textDirection, (newDirection: TextDirection) => {
+    watch((): TextDirection => config.value.global.textDirection, (newDirection: TextDirection): void => {
         useHead(getActiveHead() ?? createHead(), {
             htmlAttrs: { dir: newDirection },
         });
@@ -66,6 +66,6 @@ export const createFlyonUIVueApp: FunctionPlugin<FlyonUIVueAppConfig> = (app: Ap
 
     app.provide(
         useFlyonUIVueAppConfigInjectionKey,
-        { config, resetConfig: () => resetFlyonUIVueAppConfig(config, initialConfig) },
+        { config, resetConfig: (): void => resetFlyonUIVueAppConfig(config, initialConfig) },
     );
 };

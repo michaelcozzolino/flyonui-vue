@@ -9,6 +9,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Orientation }               from '@/Lib';
 import type { WithRequiredDefaultSlot }   from '@/Types';
 import type { CheckboxGroupProps }        from '@/UI/Forms/Checkbox';
 import { provide }                        from 'vue';
@@ -24,5 +25,5 @@ defineSlots<WithRequiredDefaultSlot>();
 
 provide(isCheckableInGroupInjectionKey, true);
 
-const orientationClass = useOrientation('FoCheckboxGroup', () => props.orientation);
+const orientationClass = useOrientation('FoCheckboxGroup', (): Orientation => props.orientation);
 </script>

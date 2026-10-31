@@ -63,16 +63,16 @@
 </template>
 
 <script setup lang="ts">
-import type { TabProps, TextDirection }                                   from 'flyonui-vue';
-import type { CodePreviewProps, ComponentPreviewProps }                   from '@/.vitepress/theme/Components/Preview/Types/Preview';
-import { FoButton, FoButtonGroup, FoTab, FoTabs, useFlyonUIVueAppConfig } from 'flyonui-vue';
-import { computed, isVNode, reactive, ref, useId, watch }                 from 'vue';
-import CodePreview                                                        from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
-import ComponentPreviewResizer                                            from '@/.vitepress/theme/Components/Preview/UI/ComponentPreviewResizer.vue';
-import CopyButton                                                         from '@/.vitepress/theme/Components/Preview/UI/CopyButton.vue';
+import type { TabProps, TextDirection }                                       from 'flyonui-vue';
+import type { CodePreviewProps, ComponentPreviewGrid, ComponentPreviewProps } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import { FoButton, FoButtonGroup, FoTab, FoTabs, useFlyonUIVueAppConfig }     from 'flyonui-vue';
+import { computed, isVNode, reactive, ref, useId, watch }                     from 'vue';
+import CodePreview                                                            from '@/.vitepress/theme/Components/Preview/UI/CodePreview.vue';
+import ComponentPreviewResizer                                                from '@/.vitepress/theme/Components/Preview/UI/ComponentPreviewResizer.vue';
+import CopyButton                                                             from '@/.vitepress/theme/Components/Preview/UI/CopyButton.vue';
 
 const props = withDefaults(defineProps<ComponentPreviewProps>(), {
-    grid: () => ({ columns: 0, rows: 0 }),
+    grid: (): ComponentPreviewGrid => ({ columns: 0, rows: 0 }),
 });
 
 const sizeClass = ref<string>('');
@@ -92,7 +92,7 @@ const tabs = ref<TabProps[]>([
 
 const textDirection = ref<TextDirection>('ltr');
 
-const isLtr = computed(() => textDirection.value === 'ltr');
+const isLtr = computed((): boolean => textDirection.value === 'ltr');
 
 interface FrameworkMetadata {
     title:    string;
@@ -132,7 +132,7 @@ const codePreviews = computed((): CodePreviewProps[] => {
     }));
 });
 
-const gridClass = computed(() => {
+const gridClass = computed((): string => {
     const columns = props.grid.columns;
     const rows    = props.grid.rows;
 
@@ -178,8 +178,10 @@ const gridClass = computed(() => {
 });
 
 watch(
-    () => config.value.global.textDirection,
-    (newDirection: TextDirection) => textDirection.value = newDirection,
+    (): TextDirection => config.value.global.textDirection,
+    (newDirection: TextDirection): void => {
+        textDirection.value = newDirection;
+    },
     { immediate: true },
 );
 </script>

@@ -9,16 +9,17 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }           from '@/Lib';
-import type { WithRequiredDefaultSlot } from '@/Types';
-import type { MenuProps }               from '@/UI/Components';
-import { computed, provide }            from 'vue';
-import { useFlyonUIVueAppConfig }       from '@/Lib';
-import { useClass }                     from '@/Lib/UseClass/Internal';
-import { useOrientation }               from '@/Lib/UseOrientation/Internal';
-import { useSize }                      from '@/Lib/UseSize/Internal';
-import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
-import { menuTextPropsInjectionKey }    from '@/UI/Components/Menu/Internal';
+import type { ComponentName, Orientation, Size } from '@/Lib';
+import type { WithRequiredDefaultSlot }          from '@/Types';
+import type { MenuProps }                        from '@/UI/Components';
+import type { MenuTextProps }                    from '@/UI/Components/Menu/Types';
+import { computed, provide }                     from 'vue';
+import { useFlyonUIVueAppConfig }                from '@/Lib';
+import { useClass }                              from '@/Lib/UseClass/Internal';
+import { useOrientation }                        from '@/Lib/UseOrientation/Internal';
+import { useSize }                               from '@/Lib/UseSize/Internal';
+import { useRequiredSlotMessage }                from '@/Lib/Utils/Internal';
+import { menuTextPropsInjectionKey }             from '@/UI/Components/Menu/Internal';
 
 const props = withDefaults(defineProps<MenuProps>(), {
     hideText:      false,
@@ -29,7 +30,7 @@ const props = withDefaults(defineProps<MenuProps>(), {
 
 defineSlots<WithRequiredDefaultSlot>();
 
-provide(menuTextPropsInjectionKey, computed(() => (
+provide(menuTextPropsInjectionKey, computed((): MenuTextProps => (
     { hideText: props.hideText, textAsTooltip: props.textAsTooltip }
 )));
 
@@ -42,8 +43,8 @@ const [
     sizeClass,
     flushClass,
 ] = [
-    useOrientation(componentName, () => props.orientation),
-    useSize(config, componentName, () => props.size),
-    useClass(() => props.isFlushed, 'rounded-none p-0 [&_li>*]:rounded-none'),
+    useOrientation(componentName, (): Orientation => props.orientation),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useClass((): boolean => props.isFlushed, 'rounded-none p-0 [&_li>*]:rounded-none'),
 ];
 </script>

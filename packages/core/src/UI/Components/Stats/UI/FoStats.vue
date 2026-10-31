@@ -9,12 +9,12 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }           from '@/Lib';
-import type { WithRequiredDefaultSlot } from '@/Types';
-import type { StatsProps }              from '@/UI/Components';
-import { useBorder }                    from '@/Lib/UseBorder/Internal';
-import { useOrientation }               from '@/Lib/UseOrientation/Internal';
-import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
+import type { ComponentName, Orientation } from '@/Lib';
+import type { WithRequiredDefaultSlot }    from '@/Types';
+import type { StatsProps }                 from '@/UI/Components';
+import { useBorder }                       from '@/Lib/UseBorder/Internal';
+import { useOrientation }                  from '@/Lib/UseOrientation/Internal';
+import { useRequiredSlotMessage }          from '@/Lib/Utils/Internal';
 
 const props = withDefaults(defineProps<StatsProps>(), {
     orientation: 'horizontal',
@@ -29,7 +29,7 @@ const [
     orientationClass,
     borderClass,
 ] = [
-    useOrientation(componentName, () => props.orientation),
-    useBorder(componentName, () => props.isBordered),
+    useOrientation(componentName, (): Orientation => props.orientation),
+    useBorder(componentName, (): boolean | undefined => props.isBordered),
 ];
 </script>

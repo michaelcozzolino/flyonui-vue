@@ -34,7 +34,7 @@ export function useSelectedOption<
 
     watch(
         selectedOption,
-        () => {
+        (): void => {
             // Non-nullable usage: id != null but option not found -> throw
             if (selectedOption.value === null && toValue(id) !== null) {
                 throw new Error(`Selected option ${toValue(id)} does not exist.`);
@@ -45,7 +45,7 @@ export function useSelectedOption<
         { immediate: true },
     );
 
-    watchEffect(() => {
+    watchEffect((): void => {
         if (isReadonly(id) === false && isRef(id)) {
             (id as Ref<NonNullable<T> | null>).value = option.value?.id ?? null;
         }
@@ -57,7 +57,7 @@ export function useSelectedOption<
 function getFlatOptions<T extends number | string, K extends SelectOption<T>>(
     options: MaybeRefOrGetter<MaybeRefOrGetter<SelectOptionType<T, K>>[]>,
 ): ComputedRef<K[]> {
-    return computed(() => {
+    return computed((): K[] => {
         const maybeGroupedOptions = toValue(options).map(toValue);
 
         let flatOptions: K[] = [];

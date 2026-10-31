@@ -66,9 +66,9 @@ const props = defineProps<Api<PropertyMeta>>();
 const internalPropNames = ['key', 'ref', 'ref_for', 'ref_key', 'class', 'style'];
 
 const propsApi = useArrayFilter(
-    () => props.api,
-    (prop: PropertyMeta) => internalPropNames.includes(prop.name) === false
-        && !prop.tags.some((tag: PropertyMeta['tags'][number]) => tag.name === 'internal'),
+    (): PropertyMeta[] => props.api,
+    (prop: PropertyMeta): boolean => internalPropNames.includes(prop.name) === false
+        && !prop.tags.some((tag: PropertyMeta['tags'][number]): boolean => tag.name === 'internal'),
 );
 
 function getValues(schema: PropertyMetaSchema): string {

@@ -44,9 +44,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }                                                 from '@/Lib';
+import type { ComponentName, State }                                          from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot }                               from '@/Types';
 import type { MenuItemProps }                                                 from '@/UI/Components';
+import type { MenuTextProps }                                                 from '@/UI/Components/Menu/Types';
 import { useMotion }                                                          from '@vueuse/motion';
 import { computed, inject, provide, ref, useTemplateRef, watch, watchEffect } from 'vue';
 import { useState }                                                           from '@/Lib/UseState/Internal';
@@ -66,13 +67,13 @@ const componentName: ComponentName = 'FoMenuItem';
 
 provide(isInMenuItemInjectionKey, true);
 
-const menuTextProps = inject(menuTextPropsInjectionKey, computed(() => ({
+const menuTextProps = inject(menuTextPropsInjectionKey, computed((): MenuTextProps => ({
     hideText:      false,
     textAsTooltip: false,
 })));
 
 const activeClass   = useState(componentName, 'active');
-const disabledClass = useState(componentName, () => props.item.disabled ? 'disabled' : 'default');
+const disabledClass = useState(componentName, (): State => props.item.disabled ? 'disabled' : 'default');
 
 const tooltipElement = useTemplateRef('tooltip');
 const showTooltip    = ref<boolean>(false);
@@ -104,7 +105,7 @@ watch(showTooltip, (visible: boolean): void => {
     applyTooltipAnimation('initial');
 });
 
-watchEffect(() => {
+watchEffect((): void => {
     if (props.item.to !== undefined && props.item.icon === undefined && menuTextProps.value.hideText) {
         throw new Error(`The text ${props.item.text} is hidden but the icon is not specified.`);
     }

@@ -24,14 +24,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Slot }              from 'vue';
-import type { ComponentName }     from '@/Lib';
-import type { RangeProps }        from '@/UI/Forms/Range';
-import { reactiveOmit }           from '@vueuse/core';
-import { useFlyonUIVueAppConfig } from '@/Lib';
-import { useColor }               from '@/Lib/UseColor/Internal';
-import { useSize }                from '@/Lib/UseSize/Internal';
-import { FoFragment }             from '@/UI/Components/Fragment/Internal';
+import type { Slot }                       from 'vue';
+import type { Color, ComponentName, Size } from '@/Lib';
+import type { RangeProps }                 from '@/UI/Forms/Range';
+import { reactiveOmit }                    from '@vueuse/core';
+import { useFlyonUIVueAppConfig }          from '@/Lib';
+import { useColor }                        from '@/Lib/UseColor/Internal';
+import { useSize }                         from '@/Lib/UseSize/Internal';
+import { FoFragment }                      from '@/UI/Components/Fragment/Internal';
 
 defineOptions({
     inheritAttrs: false,
@@ -59,7 +59,7 @@ const [
     colorClass,
     sizeClass,
 ] = [
-    useColor(config, componentName, () => props.color),
-    useSize(config, componentName, () => props.size),
+    useColor(config, componentName, (): Color | undefined => props.color),
+    useSize(config, componentName, (): Size | undefined => props.size),
 ];
 </script>

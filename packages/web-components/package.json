@@ -42,10 +42,6 @@
         "test-coverage": "vitest run --coverage",
         "type-check": "vue-tsc --noEmit -p tsconfig.json"
     },
-    "dependencies": {
-        "flyonui": "^2.4.1",
-        "flyonui-vue": "workspace:*"
-    },
     "peerDependencies": {
         "@types/react": "^19.0.0"
     },
@@ -53,6 +49,10 @@
         "@types/react": {
             "optional": true
         }
+    },
+    "dependencies": {
+        "flyonui": "^2.4.1",
+        "flyonui-vue": "workspace:*"
     },
     "devDependencies": {
         "@tailwindcss/cli": "^4.3.3",

@@ -1,12 +1,13 @@
-import type { Locator }                         from 'playwright';
-import type { Framework, FrameworkId }          from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Types/FrameworkSelector';
-import type {  ParentSidebarItem, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
-import { Buffer }                               from 'node:buffer';
-import { expect, test }                         from '@playwright/test';
-import { createPinia, setActivePinia }          from 'pinia';
-import { useFrameworkSelectionStore }           from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore';
-import { useSidebarItems }                      from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
-import { playwrightServerURL }                  from '@/playwright.config';
+import type { PlaywrightTestArgs }             from '@playwright/test';
+import type { ConsoleMessage, Locator }        from 'playwright';
+import type { Framework, FrameworkId }         from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Types/FrameworkSelector';
+import type { ParentSidebarItem, SidebarItem } from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Types/Sidebar';
+import { Buffer }                              from 'node:buffer';
+import { expect, test }                        from '@playwright/test';
+import { createPinia, setActivePinia }         from 'pinia';
+import { useFrameworkSelectionStore }          from '@/.vitepress/theme/Components/Layout/Features/FrameworkSelector/Lib/UseFrameworkSelectionStore';
+import { useSidebarItems }                     from '@/.vitepress/theme/Components/Layout/Features/Sidebar/Lib/UseSidebarItems';
+import { playwrightServerURL }                 from '@/playwright.config';
 
 setActivePinia(createPinia());
 
@@ -33,18 +34,18 @@ test.use({
 });
 
 for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
-    test(`pages do not emit console messages or page errors: ${section}`, async ({ page }) => {
+    test(`pages do not emit console messages or page errors: ${section}`, async ({ page }: PlaywrightTestArgs): Promise<void> => {
         const body = page.locator('body').first();
         await body.waitFor();
 
         const consoleMessages: string[] = [];
         const pageErrors: string[]      = [];
 
-        page.on('console', (message) => {
+        page.on('console', (message: ConsoleMessage): void => {
             consoleMessages.push(`[${message.type()}] ${message.text()}`);
         });
 
-        page.on('pageerror', (error) => {
+        page.on('pageerror', (error: Error): void => {
             pageErrors.push(error.message);
         });
 
@@ -52,7 +53,7 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
             await page.goto(docsPagePath);
 
             // todo: remove filter when the web-components package is production-ready
-            const unexpectedConsoleMessages = consoleMessages.filter(message => !message.includes(
+            const unexpectedConsoleMessages = consoleMessages.filter((message: string): boolean => !message.includes(
                 '[warning] FlyonUI web components is still an experimental package, its api and behaviour might change. DO NOT use on production.',
             ));
 
@@ -71,7 +72,7 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
         }
     });
 
-    test(`props and slots tables do not have empty columns: ${section}`, async ({ page }) => {
+    test(`props and slots tables do not have empty columns: ${section}`, async ({ page }: PlaywrightTestArgs): Promise<void> => {
         const body = page.locator('body').first();
         await body.waitFor();
 
@@ -109,7 +110,7 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
         }
     });
 
-    test(`components previews: ${section}`, async ({ page }) => {
+    test(`components previews: ${section}`, async ({ page }: PlaywrightTestArgs): Promise<void> => {
         test.slow();
 
         const body = page.locator('body').first();
@@ -163,7 +164,7 @@ for (const [section, docsPagePaths] of Object.entries(docsPagePathsBySection)) {
 
                     // Wait for the framework preview to render before capturing it.
                     await expect.poll(
-                        async () => await preview.locator('*').count(),
+                        async (): Promise<number> => await preview.locator('*').count(),
                     ).toBeGreaterThan(0);
 
                     await preview.scrollIntoViewIfNeeded();

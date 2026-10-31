@@ -109,7 +109,7 @@ const activeItemParentIndex = useArrayFindIndex(items, (parentItem: ParentSideba
 
 onClickOutside(
     sidebarElement,
-    () => {
+    (): void => {
         if (isPageSizeSmallerThanSm.value) {
             isCollapsed.value = true;
         }

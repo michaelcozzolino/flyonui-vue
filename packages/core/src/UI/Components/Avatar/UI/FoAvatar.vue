@@ -35,14 +35,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Slot }                       from 'vue';
-import type { Color, ComponentName, Size } from '@/Lib';
+import type { Slot }                              from 'vue';
+import type { Color, ComponentName, Shape, Size } from '@/Lib';
 import type {
     AvatarIndicatorPlacement,
     AvatarIndicatorStatus,
     AvatarPlaceholderPreset,
     AvatarProps,
-}                                                  from '@/UI/Components/Avatar';
+}                                     from '@/UI/Components/Avatar';
 import { computed }                   from 'vue';
 import { useFlyonUIVueAppConfig }     from '@/Lib';
 import {
@@ -66,8 +66,8 @@ const [
     sizeClass,
     shapeClass,
 ] = [
-    useSize(config, componentName, () => props.size),
-    useShape(config, componentName, () => props.shape),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useShape(config, componentName, (): Shape | undefined => props.shape),
 ];
 
 const presetAndColorClass = computed((): string => {

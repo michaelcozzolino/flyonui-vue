@@ -5,13 +5,13 @@ import { computed, ref }              from 'vue';
 import { flyonUIVueAppDefaultConfig } from '@/Lib';
 import { isTextAllowedForShape }      from '@/Lib/UseShape/Internal';
 
-describe('isTextAllowedForShape', () => {
+describe('isTextAllowedForShape', (): void => {
     it.each<[MaybeRefOrGetter<Shape>, boolean]>([
         ['rounded', true],
-        [() => 'circle', false],
+        [(): Shape => 'circle', false],
         [ref('pilled'), true],
-        [computed(() => 'square'), false],
-    ])('should allow text for shape', (shape: MaybeRefOrGetter<Shape>, expectedResult: boolean) => {
+        [computed((): Shape => 'square'), false],
+    ])('should allow text for shape', (shape: MaybeRefOrGetter<Shape>, expectedResult: boolean): void => {
         expect(isTextAllowedForShape(flyonUIVueAppDefaultConfig, 'FoButton', shape)).toBe(expectedResult);
     });
 });

@@ -12,7 +12,7 @@ export function useIdentifiable<
     id: MaybeRefOrGetter<Value | null>,
     key: MaybeRefOrGetter<Name>,
 ): ComputedRef<T | null> {
-    return computed(() => {
+    return computed((): T | null => {
         const _id = toValue(id);
 
         if (_id === null) {
@@ -21,7 +21,7 @@ export function useIdentifiable<
 
         const identifiable = useArrayFind<T>(
             identifiables,
-            (identifiable: Identifiable<Name, Value>) => identifiable[toValue(key)] === _id,
+            (identifiable: Identifiable<Name, Value>): boolean => identifiable[toValue(key)] === _id,
         ).value ?? null;
 
         return identifiable;

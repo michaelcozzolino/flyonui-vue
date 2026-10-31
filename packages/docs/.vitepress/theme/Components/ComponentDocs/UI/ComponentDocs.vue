@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts" generic="S extends string">
+import type { ComponentName } from 'flyonui-vue';
 import type {
     ComponentDocsProps,
 }                                       from '@/.vitepress/theme/Components/ComponentDocs/Types/ComponentDocs';
@@ -26,7 +27,7 @@ import SectionPreviews                  from '@/.vitepress/theme/Components/Prev
 import ComponentsApiDocs                from '@/Api/UI/ComponentsApiDocs.vue';
 
 const props = withDefaults(defineProps<ComponentDocsProps<S>>(), {
-    apiDocsComponentNames: () => [],
+    apiDocsComponentNames: (): ComponentName[] => [],
 });
 
 const sectionPreviews = computed((): FrameworkSectionPreview | null => {

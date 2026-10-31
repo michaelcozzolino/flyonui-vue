@@ -40,7 +40,9 @@
 
 <script setup lang="ts">
 import type { StyleValue }                         from 'vue';
-import type { ComponentName }                      from '@/Lib';
+import type { ComponentName, Size }                from '@/Lib';
+import type { ConfigurableHelperText }             from '@/UI/Components/HelperText';
+import type { ConfigurableLabel, LabelType }       from '@/UI/Components/Label';
 import type { InputFileProps }                     from '@/UI/Forms/InputFile';
 import { reactiveOmit }                            from '@vueuse/core';
 import { useFlyonUIVueAppConfig }                  from '@/Lib';
@@ -66,18 +68,18 @@ const emit = defineEmits<{
 const componentName: ComponentName = 'FoInputFile';
 const { config }                   = useFlyonUIVueAppConfig();
 
-const id = useElementId(() => props.id);
+const id = useElementId((): string | undefined => props.id);
 
 const defaultLabel = useLabel(
     config,
     componentName,
-    () => props.label,
+    (): ConfigurableLabel | undefined => props.label,
 );
 
 const inputFileHelperText = usePositionableHelperText(
     config,
     componentName,
-    () => props.helperText,
+    (): ConfigurableHelperText | undefined => props.helperText,
 );
 
 const [
@@ -85,9 +87,9 @@ const [
     sizeClass,
     validityClass,
 ] = [
-    useFloatingLabel(componentName, () => defaultLabel.value?.type),
-    useSize(config, componentName, () => props.size),
-    useValidity(() => props.isValid),
+    useFloatingLabel(componentName, (): LabelType | undefined => defaultLabel.value?.type),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useValidity((): boolean | undefined => props.isValid),
 ];
 
 function change(event: Event): void {

@@ -21,5 +21,5 @@ defineProps<ModalTitleProps>();
 
 defineSlots<WithRequiredDefaultSlot>();
 
-const isTransparent = inject(isModalTransparentInjectionKey, computed(() => false));
+const isTransparent = inject(isModalTransparentInjectionKey, computed((): boolean => false));
 </script>

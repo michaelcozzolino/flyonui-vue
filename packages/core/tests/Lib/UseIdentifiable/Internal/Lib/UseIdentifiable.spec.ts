@@ -3,7 +3,7 @@ import { describe, expect, it }  from 'vitest';
 import { ref }                   from 'vue';
 import { useIdentifiable }       from '@/Lib/UseIdentifiable/Internal';
 
-describe('useIdentifiable', () => {
+describe('useIdentifiable', (): void => {
     interface TestIdentifiable {
         name: string;
     }
@@ -26,13 +26,13 @@ describe('useIdentifiable', () => {
         [identifiables, 'non-existing-id', 'name', null],
         [identifiables, 'two', 'name', secondIdentifiable],
         [ref(identifiables), ref('one'), ref('name'), firstIdentifiable],
-        [() => identifiables, () => 'two', () => 'name', secondIdentifiable],
+        [(): TestIdentifiable[] => identifiables, (): string => 'two', (): 'name' => 'name', secondIdentifiable],
     ])('returns the right identifiable by name', (
         identifiables: MaybeRefOrGetter<MaybeRefOrGetter<TestIdentifiable>[]>,
         id: MaybeRefOrGetter<string | null>,
         key: MaybeRefOrGetter<'name'>,
         expectedIdentifiable: TestIdentifiable | null,
-    ) => {
+    ): void => {
         expect(useIdentifiable<'name', string, TestIdentifiable>(identifiables, id, key).value).toStrictEqual(expectedIdentifiable);
     });
 });

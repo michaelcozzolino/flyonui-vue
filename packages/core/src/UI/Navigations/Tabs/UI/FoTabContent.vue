@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Size }                                                    from '@/Lib';
 import type { WithRequiredDefaultSlot }                                 from '@/Types';
 import type { TabContentProps }                                         from '@/UI/Navigations/Tabs/Types/Tabs';
 import { computed }                                                     from 'vue';
@@ -29,7 +30,7 @@ const { config } = useFlyonUIVueAppConfig();
 const activeTab = useSafeInjection(activeTabInjectionKey);
 const tabsProps = useSafeInjection(tabsPropsInjectionKey);
 
-const isActiveTab = useIsActiveTab(activeTab, () => props.tabId);
+const isActiveTab = useIsActiveTab(activeTab, (): string => props.tabId);
 
 const textSizeClass = computed((): string => ({
     extraSmall: 'text-sm',
@@ -37,5 +38,5 @@ const textSizeClass = computed((): string => ({
     medium:     'text-lg',
     large:      'text-lg',
     extraLarge: 'text-lg',
-}[useFlyonUIVueAppConfigProperty(config, 'FoTabs', 'size', () => tabsProps.value.size).value]));
+}[useFlyonUIVueAppConfigProperty(config, 'FoTabs', 'size', (): Size | undefined => tabsProps.value.size).value]));
 </script>

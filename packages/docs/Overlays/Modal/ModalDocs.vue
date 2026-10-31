@@ -59,7 +59,7 @@ defineProps<Props>();
 
 const excludeFromTests = true;
 
-const previews = computed(() => {
+const previews = computed((): Map<Section, FrameworkSectionPreview> => {
     return new Map<Section, FrameworkSectionPreview>([
         [
             'default',

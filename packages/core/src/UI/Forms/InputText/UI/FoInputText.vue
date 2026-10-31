@@ -1,6 +1,6 @@
 <template>
     <div :class="[
-             inputGroupContainerClass,
+             isGroup && 'input',
              isGroup ? sizeClass : floatingClass,
          ]"
          :style="$attrs.style as StyleValue"
@@ -79,9 +79,12 @@
 
 <script setup lang="ts">
 import type { StyleValue }                             from 'vue';
-import type { ComponentName, IconSize, Size }          from '@/Lib';
+import type { ComponentName, IconSize, Shape, Size }   from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot }        from '@/Types';
 import type { LabelType }                              from '@/UI/Components';
+import type { ConfigurableHelperText }                 from '@/UI/Components/HelperText';
+import type { ConfigurableLabel }                      from '@/UI/Components/Label';
+import type { ConfigurableIcon }                       from '@/UI/Customization/Icon';
 import type { InputTextProps }                         from '@/UI/Forms/InputText';
 import { reactiveOmit }                                from '@vueuse/core';
 import { computed, inject, useId }                     from 'vue';
@@ -124,7 +127,7 @@ type InputTextValue = string | (string | null);
 /** The input text to be modified */
 const [input, modifiers] = defineModel<InputTextValue, 'trim' | 'null'>({
     required: true,
-    set:      (value: InputTextValue) => {
+    set:      (value: InputTextValue): InputTextValue | null => {
         if (modifiers.null) {
             return value === '' ? null : value;
         }
@@ -148,36 +151,32 @@ const iconSize = computed((): IconSize => {
 const inputIcon = usePositionableIcon(
     config,
     componentName,
-    () => props.icon,
+    (): ConfigurableIcon | undefined => props.icon,
 );
 
 const inputHelperText = usePositionableHelperText(
     config,
     componentName,
-    () => props.helperText,
+    (): ConfigurableHelperText | undefined => props.helperText,
 );
 
 const defaultLabel = useLabel(
     config,
     componentName,
-    () => props.label,
+    (): ConfigurableLabel | undefined => props.label,
 );
 
 const hasIcon = computed((): boolean => useHasPositionableIcon(inputIcon));
 
-const isGroup = computed(() => {
+const isGroup = computed((): boolean => {
     return hasIcon.value || slots.append !== undefined || slots.prepend !== undefined || defaultLabel.value?.type === 'inline';
 });
 
-const inputGroupContainerClass = computed(() => {
-    return isGroup.value && 'input';
-});
-
-const hasInputContainer = computed(() => {
+const hasInputContainer = computed((): boolean => {
     return isGroup.value && defaultLabel.value?.type === 'floating';
 });
 
-const paddingClass = computed(() => {
+const paddingClass = computed((): string => {
     if (isGroup.value && defaultLabel.value?.type !== 'inline') {
         const leftIcon    = inputIcon.value?.left;
         const rightIcon   = inputIcon.value?.right;
@@ -208,9 +207,9 @@ const [
     validityClass,
 ] = [
     useJoinItem(isInJoin),
-    useFloatingLabel(componentName, () => defaultLabel.value?.type),
-    useShape(config, componentName, () => props.shape),
-    useSize(config, componentName, () => props.size),
-    useValidity(() => props.isValid),
+    useFloatingLabel(componentName, (): LabelType | undefined => defaultLabel.value?.type),
+    useShape(config, componentName, (): Shape | undefined => props.shape),
+    useSize(config, componentName, (): Size | undefined => props.size),
+    useValidity((): boolean | undefined => props.isValid),
 ];
 </script>

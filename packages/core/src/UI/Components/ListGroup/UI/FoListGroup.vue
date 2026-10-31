@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }               from '@/Lib';
+import type { ComponentName, Orientation }  from '@/Lib';
 import type { WithRequiredDefaultSlot }     from '@/Types';
 import type { ListGroupProps }              from '@/UI/Components';
 import { reactiveOmit }                     from '@vueuse/core';
@@ -47,7 +47,7 @@ defineSlots<WithRequiredDefaultSlot>();
 
 const componentName: ComponentName = 'FoListGroup';
 
-provide(listGroupOrientationInjectionKey, computed(() => props.orientation));
+provide(listGroupOrientationInjectionKey, computed((): Orientation => props.orientation));
 
 const [
     orientationClass,
@@ -55,13 +55,13 @@ const [
     withoutGuttersClass,
     stripesClass,
 ] = [
-    useOrientation(componentName, () => props.orientation),
+    useOrientation(componentName, (): Orientation => props.orientation),
     useClass(
-        () => props.isFlushed,
-        () => props.withoutGutters ? '*:py-3' : '',
+        (): boolean => props.isFlushed,
+        (): string => props.withoutGutters ? '*:py-3' : '',
         'border-base-content/25 rounded-md border',
     ),
-    useClass(() => props.withoutGutters, '', '*:p-3'),
-    useStripes(componentName, () => props.isStriped),
+    useClass((): boolean => props.withoutGutters, '', '*:p-3'),
+    useStripes(componentName, (): boolean => props.isStriped),
 ];
 </script>

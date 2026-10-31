@@ -4,8 +4,8 @@ import { ref }                             from 'vue';
 import { flyonUIVueAppDefaultConfig }      from '@/Lib';
 import { usePreset }                       from '@/Lib/UsePreset/Internal';
 
-describe('usePreset', () => {
-    it('returns a preset class', () => {
+describe('usePreset', (): void => {
+    it('returns a preset class', (): void => {
         const config = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
 
         expect(usePreset(config, 'FoButton', 'outline').value).toBe('btn-outline');

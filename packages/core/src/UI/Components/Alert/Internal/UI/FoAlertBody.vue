@@ -23,15 +23,15 @@
 </template>
 
 <script setup lang="ts">
-import type { ComponentName }           from '@/Lib';
-import type { DismissibleEmits }        from '@/Lib/UseDismissibleTransition';
-import type { WithRequiredDefaultSlot } from '@/Types';
-import type { AlertProps }              from '@/UI/Components';
-import {  useFlyonUIVueAppConfig }      from '@/Lib';
-import { useColor }                     from '@/Lib/UseColor/Internal';
-import { usePreset }                    from '@/Lib/UsePreset/Internal';
-import { useRequiredSlotMessage }       from '@/Lib/Utils/Internal';
-import {  FoButton }                    from '@/UI/Components';
+import type { Color, ComponentName, Preset } from '@/Lib';
+import type { DismissibleEmits }             from '@/Lib/UseDismissibleTransition';
+import type { WithRequiredDefaultSlot }      from '@/Types';
+import type { AlertProps }                   from '@/UI/Components';
+import {  useFlyonUIVueAppConfig }           from '@/Lib';
+import { useColor }                          from '@/Lib/UseColor/Internal';
+import { usePreset }                         from '@/Lib/UsePreset/Internal';
+import { useRequiredSlotMessage }            from '@/Lib/Utils/Internal';
+import {  FoButton }                         from '@/UI/Components';
 
 const props = defineProps<AlertProps>();
 
@@ -46,7 +46,7 @@ const [
     colorClass,
     presetClass,
 ] = [
-    useColor(config, componentName, () => props.color),
-    usePreset(config, componentName, () => props.preset),
+    useColor(config, componentName, (): Color | undefined => props.color),
+    usePreset(config, componentName, (): Preset | undefined => props.preset),
 ];
 </script>

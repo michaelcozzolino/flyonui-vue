@@ -7,7 +7,7 @@ export function useComponentClass<T extends ComponentName, K extends string>(
     availableClasses: MaybeRefOrGetter<Record<T, Record<K, string>>>,
     classKey: MaybeRefOrGetter<K>,
 ): ComputedRef<string> {
-    return computed(() => {
+    return computed((): string => {
         return toValue(availableClasses)[toValue(componentName)][toValue(classKey)];
     });
 }

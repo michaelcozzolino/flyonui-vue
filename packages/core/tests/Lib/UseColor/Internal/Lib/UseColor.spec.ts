@@ -4,8 +4,8 @@ import { ref }                             from 'vue';
 import { flyonUIVueAppDefaultConfig }      from '@/Lib';
 import { useColor }                        from '@/Lib/UseColor/Internal';
 
-describe('useColor', () => {
-    it('returns a color class', () => {
+describe('useColor', (): void => {
+    it('returns a color class', (): void => {
         const config = ref<FlyonUIVueAppDefaultConfig>({ ...flyonUIVueAppDefaultConfig });
 
         expect(useColor(config, 'FoButton', 'primary').value).toBe('btn-primary');

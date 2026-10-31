@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import type { Slot }                   from 'vue';
-import type { ComponentName }          from '@/Lib';
+import type { ComponentName, Size }    from '@/Lib';
 import type { WithDefaultSlot }        from '@/Types';
 import type { TableProps, TableSlots } from '@/UI/Tables';
 import { computed }                    from 'vue';
@@ -69,8 +69,8 @@ const [
     stripesClass,
     sizeClass,
 ] = [
-    useBorder(componentName, () => props.isBordered),
-    useResponsitivity(componentName, () => props.isResponsive),
+    useBorder(componentName, (): boolean | undefined => props.isBordered),
+    useResponsitivity(componentName, (): boolean => props.isResponsive),
     computed((): string => {
         if (props.isStriped === undefined) {
             return '';
@@ -78,6 +78,6 @@ const [
 
         return useClass(props.isStriped === 'rows', 'table-striped', 'table-striped-columns').value;
     }),
-    useSize(config, componentName, () => props.size),
+    useSize(config, componentName, (): Size | undefined => props.size),
 ];
 </script>

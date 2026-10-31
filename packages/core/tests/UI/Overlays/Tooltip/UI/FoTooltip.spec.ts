@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest';
 import { FoBadge, FoButton }    from '@/UI/Components';
 import { FoTooltip }            from '@/UI/Overlays';
 
-describe('FoTooltip', () => {
-    it('is rendered successfully', async () => {
+describe('FoTooltip', (): void => {
+    it('is rendered successfully', async (): Promise<void> => {
         const wrapper = mount(FoTooltip, {
             slots: {
                 default: FoButton,

@@ -9,6 +9,7 @@
 </template>
 
 <script setup lang="ts">
+import type { Orientation }               from '@/Lib';
 import type { WithRequiredDefaultSlot }   from '@/Types';
 import type { SwitchGroupProps }          from '@/UI/Forms';
 import { provide }                        from 'vue';
@@ -24,5 +25,5 @@ defineSlots<WithRequiredDefaultSlot>();
 
 provide(isCheckableInGroupInjectionKey, true);
 
-const orientationClass = useOrientation('FoSwitchGroup', () => props.orientation);
+const orientationClass = useOrientation('FoSwitchGroup', (): Orientation => props.orientation);
 </script>

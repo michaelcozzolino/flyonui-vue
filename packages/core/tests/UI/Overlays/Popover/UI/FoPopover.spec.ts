@@ -3,8 +3,8 @@ import { describe, expect, it } from 'vitest';
 import { FoBadge, FoButton }    from '@/UI/Components';
 import { FoPopover }            from '@/UI/Overlays';
 
-describe('FoPopover', () => {
-    it('is rendered successfully', async () => {
+describe('FoPopover', (): void => {
+    it('is rendered successfully', async (): Promise<void> => {
         const wrapper = mount(FoPopover, {
             slots: {
                 default: FoButton,
@@ -17,7 +17,7 @@ describe('FoPopover', () => {
     });
 
     // todo: this test should be done in the screenshot ones
-    it.skip('shows the body content when the button is clicked', async () => {
+    it.skip('shows the body content when the button is clicked', async (): Promise<void> => {
         const wrapper = mount(FoPopover, {
             slots: {
                 default: FoButton,

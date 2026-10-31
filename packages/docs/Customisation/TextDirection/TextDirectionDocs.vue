@@ -28,7 +28,7 @@ interface Props {
 
 defineProps<Props>();
 
-const previews = computed(() => {
+const previews = computed((): Map<ComponentDocsPreviewSection, FrameworkSectionPreview> => {
     return new Map<ComponentDocsPreviewSection, FrameworkSectionPreview>([
         [
             'single-component',

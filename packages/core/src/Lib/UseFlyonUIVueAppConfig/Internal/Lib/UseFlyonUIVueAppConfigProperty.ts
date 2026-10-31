@@ -17,7 +17,7 @@ export function useFlyonUIVueAppConfigProperty<
     property: K,
     value: MaybeRefOrGetter<FlyonUIVueAppGlobalConfig[K] | FlyonUIVueAppComponentsConfig[T][K] | undefined>,
 ): ComputedRef<FlyonUIVueAppGlobalConfig[K] | FlyonUIVueAppComponentsConfig[T][K] & (object | null)> {
-    return computed(() => {
+    return computed((): FlyonUIVueAppGlobalConfig[K] | FlyonUIVueAppComponentsConfig[T][K] & (object | null) => {
         const { components, global } = toValue(config);
 
         return toValue(value) ?? components?.[toValue(componentName)]?.[property] ?? global[property];

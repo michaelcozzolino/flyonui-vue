@@ -24,11 +24,11 @@ export function defineAsyncDocsComponent<T extends Component>(component: AsyncCo
  * Tracks pending async docs component loads and mark the docs page as ready once the last one finishes.
  */
 function trackAsyncDocsComponent<T extends Component>(component: AsyncComponentLoader<T>): AsyncComponentLoader<T> {
-    return async () => {
+    return async (): ReturnType<AsyncComponentLoader<T>> => {
         clearReadyTimeout();
         pendingAsyncComponentCount.value += 1;
 
-        return await component().finally(() => {
+        return await component().finally((): void => {
             pendingAsyncComponentCount.value = Math.max(0, pendingAsyncComponentCount.value - 1);
 
             if (pendingAsyncComponentCount.value === 0) {
@@ -64,7 +64,7 @@ export function markDocsPageAsReady(): void {
         return;
     }
 
-    readyTimeoutId = window.setTimeout(() => {
+    readyTimeoutId = window.setTimeout((): void => {
         if (pendingAsyncComponentCount.value === 0) {
             isDocsPageReady.value = true;
         }

@@ -31,7 +31,7 @@ const [
     stripesClass,
 ] = [
     useOrientation(componentName, listGroupOrientation),
-    useStripes(componentName, () => props.isStriped),
+    useStripes(componentName, (): boolean => props.isStriped),
 ];
 </script>
 

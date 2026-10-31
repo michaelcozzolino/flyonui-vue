@@ -1408,9 +1408,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@michaelcozzolino/eslint-config@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "@michaelcozzolino/eslint-config@npm:2.0.1"
+"@michaelcozzolino/eslint-config@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@michaelcozzolino/eslint-config@npm:2.1.0"
   dependencies:
     "@antfu/eslint-config": "npm:^9.5.1"
     "@eslint/config-helpers": "npm:^0.7.0"
@@ -1419,7 +1419,7 @@ __metadata:
     find-up: "npm:^8.0.0"
   peerDependencies:
     eslint: ^9.10.0 || ^10.0.0
-  checksum: 10c0/8d650b26452a233dbb46e4a6f1faa3b533eae015bb65e552330f80d31188bb6b7d489e5b64d1da97e0d7f032810619496bdb9f11fa3932d5e554a9216eadb712
+  checksum: 10c0/3f19baacc0efe1aa37495f4f8ad7a18dd54eab7732182a9efdfc4a7441e2a0edf930454bc75776b55ce7ebd26e96e005d685340a481677426dac68c41b8cd93b
   languageName: node
   linkType: hard
 
@@ -8587,7 +8587,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@michaelcozzolino/eslint-config": "npm:^2.0.0"
+    "@michaelcozzolino/eslint-config": "npm:^2.1.0"
     "@vitest/browser": "npm:^4.1.12"
     "@vitest/coverage-v8": "npm:^4.1.12"
     "@vue/test-utils": "npm:^2.5.1"
