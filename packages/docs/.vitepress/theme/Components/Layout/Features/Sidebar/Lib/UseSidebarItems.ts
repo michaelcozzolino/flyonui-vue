@@ -321,6 +321,13 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
                     badge:    _unreleasedBadge,
                     children: [],
                 },
+                {
+                    text:     'Phone',
+                    to:       '/mockups/phone',
+                    icon:     'tabler:device-mobile',
+                    badge:    _unreleasedBadge,
+                    children: [],
+                },
             ],
         },
         {

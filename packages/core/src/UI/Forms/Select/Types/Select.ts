@@ -57,10 +57,7 @@ export type DataListProps<
 export interface MultipleSelectProps<
     T extends string | number,
 > extends MaybeStringId, Disableable, WithLabel {
-    /**
-     * The multiple select's options.
-     * An array where each option is an object that contains at least "id" and "text".
-     */
+    /** An array where each option is an object that contains at least "id" and "text".  */
     options: SelectOption<T>[];
 
     /** The number of options that are visible in the select without scrolling. */

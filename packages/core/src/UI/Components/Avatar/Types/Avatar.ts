@@ -32,6 +32,6 @@ export interface AvatarProps extends Shapeable<AvatarShape>, Sizable {
 }
 
 export interface AvatarGroupProps {
-    /** If true, the avatar will have a pull up animation in the group */
+    /** If true, the avatar will have a pull-up animation in the group */
     isAnimated?: boolean;
 }
