@@ -115,7 +115,7 @@ defineSlots<WithDefaultSlot & {
     /**
      * The content to be put at the middle of the component, such as content.
      * Note that this is an alias for the default slot.
-     * It means that you can use the default slot instead of this and viceversa
+     * It means that you can use the default slot instead of this and vice versa
      */
     body?: Slot;
 
