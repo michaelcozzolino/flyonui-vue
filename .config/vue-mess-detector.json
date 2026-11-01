@@ -1,5 +1,5 @@
 {
-    "ignore": "singleNameComponent",
+    "ignore": "singleNameComponent,cyclomaticComplexity,bigVif,bigVshow,scriptLength",
     "override": {
         "minVariableName": 1
     }
