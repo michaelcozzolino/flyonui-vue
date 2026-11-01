@@ -32,7 +32,7 @@ jobs:
                     MESS_REPORT_PATH: ${{ runner.temp }}/vue-mess-detector.json
                 run: |
                     yarn detect:mess --output=json --fileOutput "$MESS_REPORT_PATH"
-                    jq -e '.codeHealth | .points == 1001 and .errors == 0' "$MESS_REPORT_PATH"
+                    jq -e '.codeHealth | .points == 100 and .errors == 0' "$MESS_REPORT_PATH"
             -   run: yarn audit
             -   run: yarn build
             -   run: yarn test
