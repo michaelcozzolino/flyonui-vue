@@ -102,6 +102,10 @@ export default {
                 component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Mockups/Phone/PhoneDocs.vue')),
             },
             {
+                name:      'WindowDocs',
+                component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Mockups/Window/WindowDocs.vue')),
+            },
+            {
                 name:      'ButtonDocs',
                 component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Components/Button/ButtonDocs.vue')),
             },

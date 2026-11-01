@@ -39,7 +39,8 @@ type NonConfigurableComponentName = 'FoAvatarGroup'
     | 'FoTabContent'
     | 'FoTableHead'
     | 'FoTableHeader'
-    | 'FoTableRow';
+    | 'FoTableRow'
+    | 'FoWindow';
 
 export type ConfigurableComponentName = keyof ConfigurableComponentProps;
 export type ComponentName = ConfigurableComponentName | NonConfigurableComponentName;

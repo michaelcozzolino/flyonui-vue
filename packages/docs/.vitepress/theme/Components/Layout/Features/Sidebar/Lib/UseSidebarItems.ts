@@ -310,7 +310,7 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
                 {
                     text:     'Browser',
                     to:       '/mockups/browser',
-                    icon:     'tabler:device-desktop',
+                    icon:     'tabler:browser',
                     badge:    _unreleasedBadge,
                     children: [],
                 },
@@ -325,6 +325,13 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
                     text:     'Phone',
                     to:       '/mockups/phone',
                     icon:     'tabler:device-mobile',
+                    badge:    _unreleasedBadge,
+                    children: [],
+                },
+                {
+                    text:     'Window',
+                    to:       '/mockups/window',
+                    icon:     'tabler:app-window',
                     badge:    _unreleasedBadge,
                     children: [],
                 },

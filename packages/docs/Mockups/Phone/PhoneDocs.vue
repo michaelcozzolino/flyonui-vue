@@ -8,6 +8,7 @@
 <script setup lang="ts">
 import type { Default }                 from 'flyonui-vue';
 import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import { computed }                     from 'vue';
 import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DefaultPhone                     from '@/Mockups/Phone/DefaultPhone.vue';
 import DefaultPhoneRaw                  from '@/Mockups/Phone/DefaultPhone.vue?raw';
@@ -23,24 +24,26 @@ interface Props {
 
 defineProps<Props>();
 
-const previews = new Map<Section, FrameworkSectionPreview>([
-    [
-        'default',
-        {
-            vue: {
-                component:   DefaultPhone,
-                codePreview: DefaultPhoneRaw,
+const previews = computed((): Map<Section, FrameworkSectionPreview> => {
+    return new Map<Section, FrameworkSectionPreview>([
+        [
+            'default',
+            {
+                vue: {
+                    component:   DefaultPhone,
+                    codePreview: DefaultPhoneRaw,
+                },
             },
-        },
-    ],
-    [
-        'with-image',
-        {
-            vue: {
-                component:   PhoneWithImage,
-                codePreview: PhoneWithImageRaw,
+        ],
+        [
+            'with-image',
+            {
+                vue: {
+                    component:   PhoneWithImage,
+                    codePreview: PhoneWithImageRaw,
+                },
             },
-        },
-    ],
-]);
+        ],
+    ]);
+});
 </script>

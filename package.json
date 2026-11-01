@@ -36,6 +36,7 @@
         "tsx": "^4.23.15",
         "typescript": "^6.0.3",
         "vitest": "^4.1.12",
+        "vue-mess-detector": "^0.68.1",
         "vue-tsc": "^3.3.13"
     },
     "resolutions": {
