@@ -14,7 +14,9 @@ export function vMask(): FunctionDirective<HTMLElement, string, string, Horizont
 
             if (arg === 'left') {
                 sideClass = leftSideMaskClass;
-            } else if (arg === 'right') {
+            }
+
+            if (arg === 'right') {
                 sideClass = rightSideMaskClass;
             }
 
