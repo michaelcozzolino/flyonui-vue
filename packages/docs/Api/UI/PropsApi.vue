@@ -78,12 +78,12 @@ function getValues(schema: PropertyMetaSchema): string {
 
     if (typeof schema !== 'string' && schema.kind === 'enum' && Array.isArray(schema.schema)) {
         for (const value of schema.schema) {
-            if (typeof value === 'string') {
-                if (exclusions.includes(value) === false && value.includes('<') === false) {
-                    values.push(value);
-                }
-            } else {
+            if (typeof value !== 'string') {
                 return noValue;
+            }
+
+            if (exclusions.includes(value) === false && value.includes('<') === false) {
+                values.push(value);
             }
         }
     }

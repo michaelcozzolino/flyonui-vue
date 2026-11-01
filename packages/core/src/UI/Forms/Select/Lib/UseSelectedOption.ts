@@ -65,9 +65,11 @@ function getFlatOptions<T extends number | string, K extends SelectOption<T>>(
         for (const maybeGroupedOption of maybeGroupedOptions) {
             if (isSelectOptionGroup(maybeGroupedOption)) {
                 flatOptions = flatOptions.concat(maybeGroupedOption.options);
-            } else {
-                flatOptions.push(maybeGroupedOption);
+
+                continue;
             }
+
+            flatOptions.push(maybeGroupedOption);
         }
 
         return flatOptions;

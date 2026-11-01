@@ -101,9 +101,9 @@ const items = computed((): DocsSidebarItem[] => {
 
         if (stack.length === 0) {
             roots.push(item);
-        } else {
-            stack.at(-1)?.children.push(item);
         }
+
+        stack.at(-1)?.children.push(item);
 
         stack.push(item);
     }

@@ -193,7 +193,11 @@ watchEffect((): void => {
 
     if (props.scrollingType === 'modal-body' || props.scrollingType === 'viewport') {
         isDocumentBodyScrollLocked.value = true;
-    } else if (props.scrollingType === 'document-body') {
+
+        return;
+    }
+
+    if (props.scrollingType === 'document-body') {
         isModalBodyScrollLocked.value = true;
     }
 });
