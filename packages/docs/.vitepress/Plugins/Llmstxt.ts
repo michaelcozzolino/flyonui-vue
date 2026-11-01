@@ -82,7 +82,7 @@ function getDocumentationSections(): DocumentationSection[] {
     return readdirSync(docsDir, { withFileTypes: true })
         .filter((entry: Dirent): boolean => entry.isDirectory() && !entry.name.startsWith('.') && !ignoredDirectories.has(entry.name))
         .map((entry: Dirent): DocumentationSection => ({ text: entry.name, items: getSectionItems(join(docsDir, entry.name), [entry.name]) }))
-        .filter((section: DocumentationSection): boolean => section.items.length > 0);
+        .filter((section: DocumentationSection): number => section.items.length);
 }
 
 /**

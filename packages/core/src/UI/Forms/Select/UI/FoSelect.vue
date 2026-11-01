@@ -38,9 +38,10 @@
                 {{ defaultLabel.text }}
             </option>
 
-            <template v-for="optionOrGroup in options">
+            <template v-for="optionOrGroup in options"
+                      :key="isSelectOptionGroup(optionOrGroup) ? optionOrGroup.label : optionOrGroup.id"
+            >
                 <optgroup v-if="isSelectOptionGroup(optionOrGroup)"
-                          :key="optionOrGroup.label"
                           :label="optionOrGroup.label"
                 >
                     <FoSelectOption v-for="option in optionOrGroup.options"
@@ -52,7 +53,6 @@
                 </optgroup>
 
                 <FoSelectOption v-else
-                                :key="optionOrGroup.id"
                                 :option="optionOrGroup"
                 />
             </template>
