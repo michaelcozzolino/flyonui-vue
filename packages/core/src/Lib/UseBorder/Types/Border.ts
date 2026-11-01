@@ -1,6 +1,9 @@
 import type { ComponentName } from '@/Lib';
 
-export type BorderableComponentName = Extract<ComponentName, 'FoBrowser' | 'FoBrowserToolbarURL' | 'FoStats' | 'FoTable'>;
+export type BorderableComponentName = Extract<
+    ComponentName,
+    'FoBrowser' | 'FoBrowserToolbarURL' | 'FoStats' | 'FoTable' | 'FoWindow'
+>;
 
 export interface Borderable {
     /** If True, it displays the component's borders */

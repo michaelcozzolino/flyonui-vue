@@ -14,6 +14,7 @@ export function useBorder(
         FoBrowserToolbarURL: browserComponentsClass,
         FoStats:             useClass(isBordered, 'stats-border shadow-none'),
         FoTable:             useClass(isBordered, 'border border-base-content/25', 'table-borderless'),
+        FoWindow:            useClass(isBordered, 'border border-base-content/20'),
     };
 
     return classes[toValue(componentName)];
