@@ -1,4 +1,5 @@
 {
+    "ignore": "singleNameComponent",
     "override": {
         "minVariableName": 1
     }

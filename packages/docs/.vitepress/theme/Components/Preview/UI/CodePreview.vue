@@ -34,10 +34,10 @@ defineProps<CodePreviewProps>();
 const CodeSnippet = plugin.component;
 </script>
 
-<style lang="css">
+<style scoped lang="css">
 @reference "tailwindcss";
 
-.hljs {
+:deep(.hljs) {
     @apply rounded-b-lg text-[16px]! max-h-125;
 }
 </style>

@@ -86,11 +86,7 @@ export function useAnchorScrollSpy(
 
             offsetTop += nextElement.offsetTop;
 
-            if (nextElement.offsetParent instanceof HTMLElement) {
-                nextElement = nextElement.offsetParent;
-            } else {
-                nextElement = null;
-            }
+            nextElement = nextElement.offsetParent instanceof HTMLElement ? nextElement.offsetParent : null;
         }
 
         return offsetTop;

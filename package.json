@@ -20,7 +20,8 @@
         "audit": "yarn npm audit --all",
         "update:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t minor",
         "upgrade:dependencies": "yarn workspaces foreach -Apt exec npx npm-check-updates -u -t latest",
-        "core:version": "yarn workspace flyonui-vue-scripts get:core:version"
+        "core:version": "yarn workspace flyonui-vue-scripts get:core:version",
+        "detect:mess": "npx vue-mess-detector analyze"
     },
     "dependencies": {
         "change-case": "^5.4.4"
