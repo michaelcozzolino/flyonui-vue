@@ -20,7 +20,7 @@ export interface LinkProps extends FoRouterLinkProps, TextColorable {
 export type WithRequiredTo = Required<WithTo>;
 
 export interface WithTo {
-    /** Target navigation url, if a string is given, it is a standard url, else a Vue Router location */
+    /** Target navigation URL: a standard URL string/path or a Vue Router location */
     to?: To;
 }
 
