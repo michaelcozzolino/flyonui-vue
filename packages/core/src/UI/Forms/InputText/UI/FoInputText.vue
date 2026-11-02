@@ -31,7 +31,7 @@
 
             <input :id="id"
                    v-model="input"
-                   :type="type"
+                   :type="inputType"
                    :class="[
                        joinItemClass,
                        isGroup ? 'grow' : 'input',
@@ -64,8 +64,10 @@
         >
             <FoIcon v-if="inputIcon?.right"
                     class="text-base-content/80 my-auto ms-3 shrink-0"
+                    :class="isPassword !== undefined && 'cursor-pointer'"
                     :icon="inputIcon.right"
                     :size="iconSize"
+                    @click.prevent="isPassword?.toggle()"
             />
         </slot>
 
@@ -85,7 +87,8 @@ import type { LabelType }                              from '@/UI/Components';
 import type { ConfigurableHelperText }                 from '@/UI/Components/HelperText';
 import type { ConfigurableLabel }                      from '@/UI/Components/Label';
 import type { ConfigurableIcon }                       from '@/UI/Customization/Icon';
-import type { InputTextProps }                         from '@/UI/Forms/InputText';
+import type { InputTextProps, InputTextType }          from '@/UI/Forms/InputText';
+import type { InputPasswordInjectedOptions }           from '@/UI/Forms/InputText/Internal/Types/InjectionKeys';
 import { reactiveOmit }                                from '@vueuse/core';
 import { computed, inject, useId }                     from 'vue';
 import { useFlyonUIVueAppConfig }                      from '@/Lib';
@@ -99,6 +102,7 @@ import { FoHelperText, usePositionableHelperText }     from '@/UI/Components/Hel
 import { FoLabel, useLabel }                           from '@/UI/Components/Label/Internal';
 import { FoIcon }                                      from '@/UI/Customization/Icon';
 import { useHasPositionableIcon, usePositionableIcon } from '@/UI/Customization/Icon/Internal';
+import { isPasswordInjectionKey }                      from '@/UI/Forms/InputText/Internal';
 import { isInJoinInjectionKey, useJoinItem }           from '@/UI/Forms/Join/Internal';
 
 defineOptions({
@@ -120,6 +124,7 @@ const componentName: ComponentName = 'FoInputText';
 
 const { config }        = useFlyonUIVueAppConfig();
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
+const isPassword: InputPasswordInjectedOptions | undefined = inject(isPasswordInjectionKey);
 
 type InputTextValue = string | (string | null);
 
@@ -134,6 +139,14 @@ const [input, modifiers] = defineModel<InputTextValue, 'trim' | 'null'>({
 
         return value;
     },
+});
+
+const inputType = computed((): InputTextType | 'password' => {
+    if (isPassword === undefined) {
+        return props.type;
+    }
+
+    return isPassword.isHidden.value ? 'password' : 'text';
 });
 
 const iconSize = computed((): IconSize => {
