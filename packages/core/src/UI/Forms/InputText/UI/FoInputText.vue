@@ -1,81 +1,94 @@
 <template>
-    <div :class="[
+    <div :class="isTextLabelInGroup ? 'w-full' : [
              isGroup && 'input',
              isGroup ? sizeClass : floatingClass,
          ]"
          :style="$attrs.style as StyleValue"
     >
-        <slot v-if="$slots.prepend !== undefined || inputIcon?.left"
-              name="prepend"
+        <FoLabel v-if="isTextLabelInGroup && defaultLabel"
+                 :for="id"
+                 :component-name="componentName"
+                 type="text"
+                 :is-hidden="defaultLabel.isHidden"
         >
-            <FoIcon v-if="inputIcon?.left"
-                    class="text-base-content/80 my-auto shrink-0"
-                    :icon="inputIcon.left"
-                    :size="iconSize"
-            />
-        </slot>
+            {{ defaultLabel.text }}
+        </FoLabel>
 
-        <component :is="hasInputContainer ? 'div' : FoFragment"
-                   class="grow"
-                   :class="floatingClass"
+        <component :is="isTextLabelInGroup ? 'div' : FoFragment"
+                   :class="isTextLabelInGroup && ['input', sizeClass]"
         >
-            <FoLabel v-if="defaultLabel && (['text', 'inline'] as LabelType[]).includes(defaultLabel.type)"
-                     :for="id"
-                     :component-name="componentName"
-                     :type="defaultLabel.type"
-                     :is-hidden="defaultLabel.isHidden"
-                     :class="($slots.prepend || inputIcon?.left) ? 'px-3' : defaultLabel.type === 'inline' && 'me-3'"
+            <slot v-if="$slots.prepend !== undefined || inputIcon?.left"
+                  name="prepend"
             >
-                {{ defaultLabel.text }}
-            </FoLabel>
+                <FoIcon v-if="inputIcon?.left"
+                        class="text-base-content/80 my-auto shrink-0"
+                        :icon="inputIcon.left"
+                        :size="iconSize"
+                />
+            </slot>
 
-            <input :id="id"
-                   v-model="input"
-                   :type="inputType"
-                   :class="[
-                       joinItemClass,
-                       isGroup ? 'grow' : 'input',
-                       paddingClass,
-                       shapeClass,
-                       isGroup === false && sizeClass,
-                       validityClass,
-                       withoutFocus && 'no-focus border-0',
-                   ]"
-                   :placeholder="placeholder"
-                   :disabled="disabled"
-                   :readonly="readonly"
-                   :list="list"
-                   v-bind="reactiveOmit($attrs, 'style')"
+            <component :is="hasInputContainer ? 'div' : FoFragment"
+                       class="grow"
+                       :class="floatingClass"
             >
+                <FoLabel v-if="isTextLabelInGroup === false && defaultLabel && (['text', 'inline'] as LabelType[]).includes(defaultLabel.type)"
+                         :for="id"
+                         :component-name="componentName"
+                         :type="defaultLabel.type"
+                         :is-hidden="defaultLabel.isHidden"
+                         :class="($slots.prepend || inputIcon?.left) ? 'px-3' : defaultLabel.type === 'inline' && 'me-3'"
+                >
+                    {{ defaultLabel.text }}
+                </FoLabel>
 
-            <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
-                     :for="id"
-                     :component-name="componentName"
-                     :type="defaultLabel.type"
-                     :is-hidden="defaultLabel.isHidden"
-                     :class="defaultLabel.type === 'floating' && inputIcon?.left === undefined && slots.append === undefined && (inputIcon?.right || slots.prepend !== undefined) && 'ms-0'"
+                <input :id="id"
+                       v-model="input"
+                       :type="inputType"
+                       :class="[
+                           joinItemClass,
+                           isGroup ? 'grow' : 'input',
+                           paddingClass,
+                           shapeClass,
+                           isGroup === false && sizeClass,
+                           validityClass,
+                           withoutFocus && 'no-focus border-0',
+                       ]"
+                       :placeholder="placeholder"
+                       :disabled="disabled"
+                       :readonly="readonly"
+                       :list="list"
+                       v-bind="reactiveOmit($attrs, 'style')"
+                >
+
+                <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
+                         :for="id"
+                         :component-name="componentName"
+                         :type="defaultLabel.type"
+                         :is-hidden="defaultLabel.isHidden"
+                         :class="defaultLabel.type === 'floating' && inputIcon?.left === undefined && slots.append === undefined && (inputIcon?.right || slots.prepend !== undefined) && 'ms-0'"
+                >
+                    {{ defaultLabel.text }}
+                </FoLabel>
+            </component>
+
+            <slot v-if="$slots.append !== undefined || inputIcon?.right"
+                  name="append"
             >
-                {{ defaultLabel.text }}
-            </FoLabel>
+                <FoIcon v-if="inputIcon?.right"
+                        class="text-base-content/80 my-auto ms-3 shrink-0"
+                        :class="isPassword !== undefined && 'cursor-pointer'"
+                        :icon="inputIcon.right"
+                        :size="iconSize"
+                        @click.prevent="isPassword?.toggle()"
+                />
+            </slot>
+
+            <FoHelperText v-if="inputHelperText !== undefined"
+                          :position="inputHelperText.position"
+            >
+                {{ inputHelperText.text }}
+            </FoHelperText>
         </component>
-
-        <slot v-if="$slots.append !== undefined || inputIcon?.right"
-              name="append"
-        >
-            <FoIcon v-if="inputIcon?.right"
-                    class="text-base-content/80 my-auto ms-3 shrink-0"
-                    :class="isPassword !== undefined && 'cursor-pointer'"
-                    :icon="inputIcon.right"
-                    :size="iconSize"
-                    @click.prevent="isPassword?.toggle()"
-            />
-        </slot>
-
-        <FoHelperText v-if="inputHelperText !== undefined"
-                      :position="inputHelperText.position"
-        >
-            {{ inputHelperText.text }}
-        </FoHelperText>
     </div>
 </template>
 
@@ -183,6 +196,10 @@ const hasIcon = computed((): boolean => useHasPositionableIcon(inputIcon));
 
 const isGroup = computed((): boolean => {
     return hasIcon.value || slots.append !== undefined || slots.prepend !== undefined || defaultLabel.value?.type === 'inline';
+});
+
+const isTextLabelInGroup = computed((): boolean => {
+    return isGroup.value && defaultLabel.value?.type === 'text';
 });
 
 const hasInputContainer = computed((): boolean => {
