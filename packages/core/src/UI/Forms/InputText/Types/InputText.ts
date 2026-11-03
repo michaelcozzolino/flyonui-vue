@@ -5,6 +5,8 @@ import type { WithConfigurableIcon }                                            
 
 // todo: the input label can be documented through a specific label docs even if no one will ever use the component FoLabel as it is internal
 
+export type InputTextType = 'text' | 'email';
+
 export interface InputTextProps extends MaybeStringId,
     Disableable,
     WithPlaceholder,
@@ -16,7 +18,7 @@ export interface InputTextProps extends MaybeStringId,
     WithConfigurableIcon,
     WithConfigurableInputLabel {
     /** The input's type */
-    type?: 'text' | 'email';
+    type?: InputTextType;
 
     /** It does not show any animations when the input is focused */
     withoutFocus?: boolean;

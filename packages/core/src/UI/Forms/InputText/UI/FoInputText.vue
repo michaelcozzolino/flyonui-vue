@@ -1,5 +1,5 @@
 <template>
-    <div :class="isTextLabelInGroup ? 'w-full' : [
+    <div :class="isTextLabelInGroup === false && [
              isGroup && 'input',
              isGroup ? sizeClass : floatingClass,
          ]"
