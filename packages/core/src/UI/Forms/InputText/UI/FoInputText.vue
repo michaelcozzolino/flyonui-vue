@@ -1,7 +1,10 @@
 <template>
-    <div :class="isTextLabelInGroup === false && [
-             isGroup && 'input',
-             isGroup ? sizeClass : floatingClass,
+    <div :class="[
+             isPassword !== undefined && 'w-full',
+             isTextLabelInGroup === false && isPassword === undefined && [
+                 isGroup && 'input',
+                 isGroup ? sizeClass : floatingClass,
+             ],
          ]"
          :style="$attrs.style as StyleValue"
     >
@@ -14,8 +17,12 @@
             {{ defaultLabel.text }}
         </FoLabel>
 
-        <component :is="isTextLabelInGroup ? 'div' : FoFragment"
-                   :class="isTextLabelInGroup && ['input', sizeClass]"
+        <component :is="isTextLabelInGroup || isPassword !== undefined ? 'div' : FoFragment"
+                   :class="[
+                       isPassword !== undefined && 'max-w-sm',
+                       (isTextLabelInGroup || (isPassword !== undefined && isGroup)) && ['input', sizeClass],
+                       isPassword !== undefined && isGroup === false && floatingClass,
+                   ]"
         >
             <slot v-if="$slots.prepend !== undefined || inputIcon?.left"
                   name="prepend"
