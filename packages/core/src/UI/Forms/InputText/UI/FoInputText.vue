@@ -96,11 +96,13 @@
                 {{ inputHelperText.text }}
             </FoHelperText>
         </component>
+
+        <slot />
     </div>
 </template>
 
 <script setup lang="ts">
-import type { StyleValue }                             from 'vue';
+import type { Slot, StyleValue }                       from 'vue';
 import type { ComponentName, IconSize, Shape, Size }   from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot }        from '@/Types';
 import type { LabelType }                              from '@/UI/Components';
@@ -137,7 +139,14 @@ const props = withDefaults(defineProps<InputTextProps>(), {
     withoutFocus: false,
 });
 
-const slots = defineSlots<WithDefaultSlot & WithAddonSlots>();
+const slots = defineSlots<WithDefaultSlot & WithAddonSlots & {
+    /**
+     * @internal
+     * Default component's slot, to be used only for the ruleset of the input password
+     * todo: remove from api
+     */
+    default?: Slot;
+}>();
 
 const id                           = useId();
 const componentName: ComponentName = 'FoInputText';

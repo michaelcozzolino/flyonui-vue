@@ -134,6 +134,10 @@ export default {
                 component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Forms/InputText/InputTextDocs.vue')),
             },
             {
+                name:      'InputPasswordDocs',
+                component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/AdvancedForms/InputPassword/InputPasswordDocs.vue')),
+            },
+            {
                 name:      'IconsDocs',
                 component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Customisation/Icons/IconsDocs.vue')),
             },
@@ -359,6 +363,7 @@ function loadIconifyIcons(): void {
         'tabler:circle-dot',
         'tabler:circle-minus',
         'tabler:circle-plus',
+        'tabler:circle-x',
         'tabler:circle-x-filled',
         'tabler:clock',
         'tabler:cloud',

@@ -286,6 +286,19 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
             ],
         },
         {
+            text:        'Advanced Forms',
+            isCollapsed: false,
+            children:    [
+                {
+                    text:     'Input Password',
+                    to:       '/advanced-forms/input-password',
+                    icon:     'mdi:form-textbox-password',
+                    badge:    _unreleasedBadge,
+                    children: [],
+                },
+            ],
+        },
+        {
             text:        'Tables',
             isCollapsed: false,
             children:    [
