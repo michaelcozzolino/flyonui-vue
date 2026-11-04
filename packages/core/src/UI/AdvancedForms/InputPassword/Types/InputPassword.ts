@@ -3,7 +3,7 @@ import type { InputTextProps } from '@/UI/Forms';
 
 export interface StrongPasswordRule {
     /** The description of the rule, that can be shown in the ruleset if specified */
-    text?: string;
+    description?: string;
 
     /** A function to validate the rule for a specific password, returns true if valid, false otherwise */
     validate: (password: string) => boolean;

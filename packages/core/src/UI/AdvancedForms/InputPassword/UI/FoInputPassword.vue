@@ -48,7 +48,7 @@
                     {{ rule.isValid ? 'Satisfied:' : 'Not satisfied:' }}
                 </span>
 
-                {{ rule.text }}
+                {{ rule.description }}
             </li>
         </ul>
     </FoInputText>
@@ -94,15 +94,15 @@ interface InputPasswordStrength {
 }
 
 interface ValidatedStrongPasswordRule {
-    text:    string | null;
-    isValid: boolean;
+    description: string | null;
+    isValid:     boolean;
 }
 
 const validatedRules = useArrayMap(
     (): StrongPasswordRule[] => props.isStrong?.rules.rules ?? [],
     (rule: StrongPasswordRule): ValidatedStrongPasswordRule => ({
-        text:    rule.text ?? null,
-        isValid: password.value !== '' && rule.validate(password.value),
+        description: rule.description ?? null,
+        isValid:     password.value !== '' && rule.validate(password.value),
     }),
 );
 
@@ -112,7 +112,7 @@ const visibleRules = computed((): ValidatedStrongPasswordRule[] => {
     }
 
     return validatedRules.value.filter(
-        (rule: ValidatedStrongPasswordRule): boolean => rule.text !== null && rule.text.trim() !== '',
+        (rule: ValidatedStrongPasswordRule): boolean => rule.description !== null && rule.description.trim() !== '',
     );
 });
 
