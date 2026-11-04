@@ -12,6 +12,18 @@
 
 <InputPasswordDocs section="validation-state" />
 
-### Strong
+### With multiple rules
 
-<InputPasswordDocs section="strong" />
+<InputPasswordDocs section="with-multiple-rules" />
+
+### With all rules at once
+
+<InputPasswordDocs section="with-all-rules-at-once" />
+
+### Props
+
+<InputPasswordDocs section="props" />
+
+### Slots
+
+<InputPasswordDocs section="slots" />
