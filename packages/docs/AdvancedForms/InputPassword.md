@@ -23,7 +23,3 @@
 ### Props
 
 <InputPasswordDocs section="props" />
-
-### Slots
-
-<InputPasswordDocs section="slots" />
