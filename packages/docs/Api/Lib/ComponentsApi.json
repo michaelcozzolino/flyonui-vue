@@ -2137,7 +2137,7 @@
             {
                 "name": "to",
                 "global": false,
-                "description": "Target navigation url, if a string is given, it is a standard url, else a Vue Router location",
+                "description": "Target navigation URL: a standard URL string/path or a Vue Router location",
                 "tags": [],
                 "required": false,
                 "type": "To | undefined",
@@ -2808,7 +2808,7 @@
         "slots": [
             {
                 "name": "default",
-                "type": "any",
+                "type": "any[]",
                 "description": "",
                 "tags": [
                     {
@@ -2816,7 +2816,13 @@
                         "text": "Default component's slot, to be used only for the icon of a switch. This is only for internal usage and must never\nbe used externally. Check the switch docs instead.\ntodo: must be removed from api"
                     }
                 ],
-                "schema": "any",
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
                 "declarations": []
             }
         ],
@@ -5506,8 +5512,8 @@
                                                         "schema": "string",
                                                         "declarations": []
                                                     },
-                                                    "__@hasInstance@773": {
-                                                        "name": "__@hasInstance@773",
+                                                    "__@hasInstance@731": {
+                                                        "name": "__@hasInstance@731",
                                                         "global": false,
                                                         "description": "Determines whether the given value inherits from this function if this function was used\nas a constructor function.\n\nA constructor function can control which objects are recognized as its instances by\n'instanceof' by overriding this method.",
                                                         "tags": [],
@@ -8060,8 +8066,8 @@
                                 },
                                 "declarations": []
                             },
-                            "__@iterator@401": {
-                                "name": "__@iterator@401",
+                            "__@iterator@463": {
+                                "name": "__@iterator@463",
                                 "global": false,
                                 "description": "",
                                 "tags": [],
@@ -8082,6 +8088,567 @@
         "slots": [],
         "exposed": []
     },
+    "FoInputPassword": {
+        "type": 1,
+        "props": [
+            {
+                "name": "icon",
+                "global": false,
+                "description": "The icon to show when the password is hidden and shown",
+                "tags": [],
+                "required": false,
+                "type": "{ on: string; off: string; } | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "{ on: string; off: string; } | undefined",
+                    "schema": [
+                        "undefined",
+                        {
+                            "kind": "object",
+                            "type": "{ on: string; off: string; }",
+                            "schema": {
+                                "on": {
+                                    "name": "on",
+                                    "global": false,
+                                    "description": "",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "string",
+                                    "schema": "string",
+                                    "declarations": []
+                                },
+                                "off": {
+                                    "name": "off",
+                                    "global": false,
+                                    "description": "",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "string",
+                                    "schema": "string",
+                                    "declarations": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isStrong",
+                "global": false,
+                "description": "If specified, the component will show a set of dynamic segments to define the strength of the password",
+                "tags": [],
+                "required": false,
+                "type": "{ levels: number | string[]; rules: StrongPasswordRules | StrongPasswordEvaluator; } | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "{ levels: number | string[]; rules: StrongPasswordRules | StrongPasswordEvaluator; } | undefined",
+                    "schema": [
+                        "undefined",
+                        {
+                            "kind": "object",
+                            "type": "{ levels: number | string[]; rules: StrongPasswordRules | StrongPasswordEvaluator; }",
+                            "schema": {
+                                "levels": {
+                                    "name": "levels",
+                                    "global": false,
+                                    "description": "A positive segment count, or the labels ordered from the weakest to the strongest.",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "number | string[]",
+                                    "schema": {
+                                        "kind": "enum",
+                                        "type": "number | string[]",
+                                        "schema": [
+                                            "number",
+                                            {
+                                                "kind": "array",
+                                                "type": "string[]",
+                                                "schema": [
+                                                    "string"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "declarations": []
+                                },
+                                "rules": {
+                                    "name": "rules",
+                                    "global": false,
+                                    "description": "Individual rules that will fill the segments based on the valid ones,\nor a function that returns the total levels to fill without a legend showing the strength of the password.",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "StrongPasswordRules | StrongPasswordEvaluator",
+                                    "schema": {
+                                        "kind": "enum",
+                                        "type": "StrongPasswordRules | StrongPasswordEvaluator",
+                                        "schema": [
+                                            {
+                                                "kind": "object",
+                                                "type": "StrongPasswordRules",
+                                                "schema": {
+                                                    "rules": {
+                                                        "name": "rules",
+                                                        "global": false,
+                                                        "description": "The rules for the strong password",
+                                                        "tags": [],
+                                                        "required": true,
+                                                        "type": "StrongPasswordRule[]",
+                                                        "schema": {
+                                                            "kind": "array",
+                                                            "type": "StrongPasswordRule[]",
+                                                            "schema": [
+                                                                {
+                                                                    "kind": "object",
+                                                                    "type": "StrongPasswordRule",
+                                                                    "schema": {
+                                                                        "description": {
+                                                                            "name": "description",
+                                                                            "global": false,
+                                                                            "description": "The description of the rule, that can be shown in the ruleset if specified",
+                                                                            "tags": [],
+                                                                            "required": false,
+                                                                            "type": "string | undefined",
+                                                                            "schema": {
+                                                                                "kind": "enum",
+                                                                                "type": "string | undefined",
+                                                                                "schema": [
+                                                                                    "undefined",
+                                                                                    "string"
+                                                                                ]
+                                                                            },
+                                                                            "declarations": []
+                                                                        },
+                                                                        "validate": {
+                                                                            "name": "validate",
+                                                                            "global": false,
+                                                                            "description": "A function to validate the rule for a specific password, returns true if valid, false otherwise",
+                                                                            "tags": [],
+                                                                            "required": true,
+                                                                            "type": "(password: string) => boolean",
+                                                                            "schema": {
+                                                                                "kind": "event",
+                                                                                "type": "(password: string): boolean",
+                                                                                "schema": []
+                                                                            },
+                                                                            "declarations": []
+                                                                        }
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        "declarations": []
+                                                    },
+                                                    "show": {
+                                                        "name": "show",
+                                                        "global": false,
+                                                        "description": "Whether to show the rule checklist below the strength indicator.",
+                                                        "tags": [],
+                                                        "required": true,
+                                                        "type": "boolean",
+                                                        "schema": {
+                                                            "kind": "enum",
+                                                            "type": "boolean",
+                                                            "schema": [
+                                                                "false",
+                                                                "true"
+                                                            ]
+                                                        },
+                                                        "declarations": []
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "kind": "event",
+                                                "type": "(password: string): number",
+                                                "schema": []
+                                            }
+                                        ]
+                                    },
+                                    "declarations": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "size",
+                "global": false,
+                "description": "The component's size",
+                "tags": [],
+                "required": false,
+                "type": "Size | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Size | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"extraSmall\"",
+                        "\"small\"",
+                        "\"medium\"",
+                        "\"large\"",
+                        "\"extraLarge\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "id",
+                "global": false,
+                "description": "The component's id, if not given, a random one might be assigned",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "withoutFocus",
+                "global": false,
+                "description": "It does not show any animations when the input is focused",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "disabled",
+                "global": false,
+                "description": "If true, the component will be disabled without allowing more interactions",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "placeholder",
+                "global": false,
+                "description": "The component's placeholder",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "readonly",
+                "global": false,
+                "description": "If true the component cannot be updated",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "shape",
+                "global": false,
+                "description": "The component's shape",
+                "tags": [],
+                "required": false,
+                "type": "\"rounded\" | \"pilled\" | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "\"rounded\" | \"pilled\" | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"rounded\"",
+                        "\"pilled\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isValid",
+                "global": false,
+                "default": "undefined",
+                "description": "Indicates whether the value is valid or not",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "helperText",
+                "global": false,
+                "description": "The component's configurable helper text, that is either a string or an object containing \"text\" and \"position\".\nThe available positions for the text are \"left\" | \"right\"",
+                "tags": [],
+                "required": false,
+                "type": "ConfigurableHelperText | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "ConfigurableHelperText | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        {
+                            "kind": "object",
+                            "type": "PositionableHelperText",
+                            "schema": {
+                                "text": {
+                                    "name": "text",
+                                    "global": false,
+                                    "description": "",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "string",
+                                    "schema": "string",
+                                    "declarations": []
+                                },
+                                "position": {
+                                    "name": "position",
+                                    "global": false,
+                                    "description": "",
+                                    "tags": [],
+                                    "required": false,
+                                    "type": "HorizontalPosition | undefined",
+                                    "schema": {
+                                        "kind": "enum",
+                                        "type": "HorizontalPosition | undefined",
+                                        "schema": [
+                                            "undefined",
+                                            "\"left\"",
+                                            "\"right\""
+                                        ]
+                                    },
+                                    "declarations": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "label",
+                "global": false,
+                "description": "The input label's text or an object containing \"text\" and \"type\" where type can be \"text\" | \"floating\" | \"inline\"",
+                "tags": [],
+                "required": false,
+                "type": "ConfigurableLabel<LabelType> | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "ConfigurableLabel<LabelType> | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "InputLabel<LabelType>"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "modelValue",
+                "global": false,
+                "description": "The input password to be modified",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string",
+                "declarations": []
+            },
+            {
+                "name": "isHidden",
+                "global": false,
+                "default": "true",
+                "description": "If true, the password is hidden otherwise shown",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [
+            {
+                "name": "update:modelValue",
+                "description": "",
+                "tags": [],
+                "type": "[value: string]",
+                "signature": "(event: \"update:modelValue\", value: string): void",
+                "schema": [
+                    "string"
+                ],
+                "declarations": []
+            },
+            {
+                "name": "update:isHidden",
+                "description": "",
+                "tags": [],
+                "type": "[value: boolean]",
+                "signature": "(event: \"update:isHidden\", value: boolean): void",
+                "schema": [
+                    {
+                        "kind": "enum",
+                        "type": "boolean",
+                        "schema": [
+                            "false",
+                            "true"
+                        ]
+                    }
+                ],
+                "declarations": []
+            }
+        ],
+        "slots": [],
+        "exposed": []
+    },
     "FoInputText": {
         "type": 1,
         "props": [
@@ -8092,10 +8659,10 @@
                 "description": "The input's type",
                 "tags": [],
                 "required": false,
-                "type": "\"text\" | \"email\" | undefined",
+                "type": "InputTextType | undefined",
                 "schema": {
                     "kind": "enum",
-                    "type": "\"text\" | \"email\" | undefined",
+                    "type": "InputTextType | undefined",
                     "schema": [
                         "undefined",
                         "\"text\"",
@@ -8518,7 +9085,12 @@
                 "name": "default",
                 "type": "any[]",
                 "description": "The content to be shown on the component by default",
-                "tags": [],
+                "tags": [
+                    {
+                        "name": "internal",
+                        "text": "Default component's slot, to be used only for the ruleset of the input password\ntodo: remove from api"
+                    }
+                ],
                 "schema": {
                     "kind": "array",
                     "type": "any[]",
@@ -9241,7 +9813,7 @@
             {
                 "name": "to",
                 "global": false,
-                "description": "Target navigation url, if a string is given, it is a standard url, else a Vue Router location",
+                "description": "Target navigation URL: a standard URL string/path or a Vue Router location",
                 "tags": [],
                 "required": true,
                 "type": "To",
@@ -10334,7 +10906,7 @@
             {
                 "name": "to",
                 "global": false,
-                "description": "Target navigation url, if a string is given, it is a standard url, else a Vue Router location",
+                "description": "Target navigation URL: a standard URL string/path or a Vue Router location",
                 "tags": [],
                 "required": false,
                 "type": "To | undefined",
@@ -11132,7 +11704,7 @@
                         "to": {
                             "name": "to",
                             "global": false,
-                            "description": "Target navigation url, if a string is given, it is a standard url, else a Vue Router location",
+                            "description": "Target navigation URL: a standard URL string/path or a Vue Router location",
                             "tags": [],
                             "required": false,
                             "type": "To | undefined",
@@ -12823,7 +13395,7 @@
                                         "to": {
                                             "name": "to",
                                             "global": false,
-                                            "description": "Target navigation url, if a string is given, it is a standard url, else a Vue Router location",
+                                            "description": "Target navigation URL: a standard URL string/path or a Vue Router location",
                                             "tags": [],
                                             "required": true,
                                             "type": "To",
@@ -13515,7 +14087,7 @@
                                         "to": {
                                             "name": "to",
                                             "global": false,
-                                            "description": "Target navigation url, if a string is given, it is a standard url, else a Vue Router location",
+                                            "description": "Target navigation URL: a standard URL string/path or a Vue Router location",
                                             "tags": [],
                                             "required": true,
                                             "type": "To",
@@ -14239,7 +14811,7 @@
             {
                 "name": "to",
                 "global": false,
-                "description": "Target navigation url, if a string is given, it is a standard url, else a Vue Router location",
+                "description": "Target navigation URL: a standard URL string/path or a Vue Router location",
                 "tags": [],
                 "required": false,
                 "type": "To | undefined",
@@ -16139,7 +16711,7 @@
             {
                 "name": "to",
                 "global": false,
-                "description": "Target navigation url, if a string is given, it is a standard url, else a Vue Router location",
+                "description": "Target navigation URL: a standard URL string/path or a Vue Router location",
                 "tags": [],
                 "required": true,
                 "type": "To",
@@ -17143,8 +17715,8 @@
                                     "schema": "string",
                                     "declarations": []
                                 },
-                                "__@RefSymbol@740": {
-                                    "name": "__@RefSymbol@740",
+                                "__@RefSymbol@698": {
+                                    "name": "__@RefSymbol@698",
                                     "global": false,
                                     "description": "Type differentiator only.\nWe need this to be in public d.ts but don't want it to show up in IDE\nautocomplete, so we use a private Symbol instead.",
                                     "tags": [],
@@ -17153,8 +17725,8 @@
                                     "schema": "true",
                                     "declarations": []
                                 },
-                                "__@ShallowRefMarker@1692": {
-                                    "name": "__@ShallowRefMarker@1692",
+                                "__@ShallowRefMarker@1445": {
+                                    "name": "__@ShallowRefMarker@1445",
                                     "global": false,
                                     "description": "",
                                     "tags": [],
