@@ -2,6 +2,7 @@ import type { Ref }                                                             
 import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size } from '@/Lib';
 import type { PickIfExists, Prettify }                                           from '@/Lib/Utils/Internal';
 import type { HorizontalPosition, TextDirection }                                from '@/Types';
+import type { InputPasswordProps }                                               from '@/UI/AdvancedForms';
 import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }      from '@/UI/Components';
 import type { AlertProps }                                                       from '@/UI/Components/Alert';
 import type { AvatarProps }                                                      from '@/UI/Components/Avatar';
@@ -111,6 +112,10 @@ export interface ConfigurableComponentProps {
     FoInputText: ConfigurableProps<
         InputTextProps
         & HorizontalPositionComponentConfig<HorizontalPositionGlobalConfig>
+        & LabelTypeComponentConfig
+    >;
+    FoInputPassword:  ConfigurableProps<
+        Omit<InputPasswordProps, 'icon' | 'isStrong'>
         & LabelTypeComponentConfig
     >;
     FoKeyboard:       ConfigurableProps<KeyboardProps>;

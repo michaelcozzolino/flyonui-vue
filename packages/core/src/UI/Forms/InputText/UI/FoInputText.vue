@@ -1,91 +1,116 @@
 <template>
     <div :class="[
-             isGroup && 'input',
-             isGroup ? sizeClass : floatingClass,
+             isPassword !== undefined && 'w-full',
+             isTextLabelInGroup === false && isPassword === undefined && [
+                 isGroup && 'input',
+                 isGroup ? sizeClass : floatingClass,
+             ],
          ]"
          :style="$attrs.style as StyleValue"
     >
-        <slot v-if="$slots.prepend !== undefined || inputIcon?.left"
-              name="prepend"
+        <FoLabel v-if="isTextLabelInGroup && defaultLabel"
+                 :for="id"
+                 :component-name="componentName"
+                 type="text"
+                 :is-hidden="defaultLabel.isHidden"
         >
-            <FoIcon v-if="inputIcon?.left"
-                    class="text-base-content/80 my-auto shrink-0"
-                    :icon="inputIcon.left"
-                    :size="iconSize"
-            />
-        </slot>
+            {{ defaultLabel.text }}
+        </FoLabel>
 
-        <component :is="hasInputContainer ? 'div' : FoFragment"
-                   class="grow"
-                   :class="floatingClass"
-        >
-            <FoLabel v-if="defaultLabel && (['text', 'inline'] as LabelType[]).includes(defaultLabel.type)"
-                     :for="id"
-                     :component-name="componentName"
-                     :type="defaultLabel.type"
-                     :is-hidden="defaultLabel.isHidden"
-                     :class="($slots.prepend || inputIcon?.left) ? 'px-3' : defaultLabel.type === 'inline' && 'me-3'"
-            >
-                {{ defaultLabel.text }}
-            </FoLabel>
-
-            <input :id="id"
-                   v-model="input"
-                   :type="type"
+        <component :is="isTextLabelInGroup || isPassword !== undefined ? 'div' : FoFragment"
                    :class="[
-                       joinItemClass,
-                       isGroup ? 'grow' : 'input',
-                       paddingClass,
-                       shapeClass,
-                       isGroup === false && sizeClass,
-                       validityClass,
-                       withoutFocus && 'no-focus border-0',
+                       isPassword !== undefined && 'max-w-sm',
+                       (isTextLabelInGroup || (isPassword !== undefined && isGroup)) && ['input', sizeClass],
+                       isPassword !== undefined && isGroup === false && floatingClass,
                    ]"
-                   :placeholder="placeholder"
-                   :disabled="disabled"
-                   :readonly="readonly"
-                   :list="list"
-                   v-bind="reactiveOmit($attrs, 'style')"
+        >
+            <slot v-if="$slots.prepend !== undefined || inputIcon?.left"
+                  name="prepend"
             >
+                <FoIcon v-if="inputIcon?.left"
+                        class="text-base-content/80 my-auto shrink-0"
+                        :icon="inputIcon.left"
+                        :size="iconSize"
+                />
+            </slot>
 
-            <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
-                     :for="id"
-                     :component-name="componentName"
-                     :type="defaultLabel.type"
-                     :is-hidden="defaultLabel.isHidden"
-                     :class="defaultLabel.type === 'floating' && inputIcon?.left === undefined && slots.append === undefined && (inputIcon?.right || slots.prepend !== undefined) && 'ms-0'"
+            <component :is="hasInputContainer ? 'div' : FoFragment"
+                       class="grow"
+                       :class="floatingClass"
             >
-                {{ defaultLabel.text }}
-            </FoLabel>
+                <FoLabel v-if="isTextLabelInGroup === false && defaultLabel && (['text', 'inline'] as LabelType[]).includes(defaultLabel.type)"
+                         :for="id"
+                         :component-name="componentName"
+                         :type="defaultLabel.type"
+                         :is-hidden="defaultLabel.isHidden"
+                         :class="($slots.prepend || inputIcon?.left) ? 'px-3' : defaultLabel.type === 'inline' && 'me-3'"
+                >
+                    {{ defaultLabel.text }}
+                </FoLabel>
+
+                <input :id="id"
+                       v-model="input"
+                       :type="inputType"
+                       :class="[
+                           joinItemClass,
+                           isGroup ? 'grow' : 'input',
+                           paddingClass,
+                           shapeClass,
+                           isGroup === false && sizeClass,
+                           validityClass,
+                           withoutFocus && 'no-focus border-0',
+                       ]"
+                       :placeholder="placeholder"
+                       :disabled="disabled"
+                       :readonly="readonly"
+                       :list="list"
+                       v-bind="reactiveOmit($attrs, 'style')"
+                >
+
+                <FoLabel v-if="defaultLabel && (defaultLabel.type !== 'text' && defaultLabel.type !== 'inline')"
+                         :for="id"
+                         :component-name="componentName"
+                         :type="defaultLabel.type"
+                         :is-hidden="defaultLabel.isHidden"
+                         :class="defaultLabel.type === 'floating' && inputIcon?.left === undefined && slots.append === undefined && (inputIcon?.right || slots.prepend !== undefined) && 'ms-0'"
+                >
+                    {{ defaultLabel.text }}
+                </FoLabel>
+            </component>
+
+            <slot v-if="$slots.append !== undefined || inputIcon?.right"
+                  name="append"
+            >
+                <FoIcon v-if="inputIcon?.right"
+                        class="text-base-content/80 my-auto ms-3 shrink-0"
+                        :class="isPassword !== undefined && 'cursor-pointer'"
+                        :icon="inputIcon.right"
+                        :size="iconSize"
+                        @click.prevent="isPassword?.toggle()"
+                />
+            </slot>
+
+            <FoHelperText v-if="inputHelperText !== undefined"
+                          :position="inputHelperText.position"
+            >
+                {{ inputHelperText.text }}
+            </FoHelperText>
         </component>
 
-        <slot v-if="$slots.append !== undefined || inputIcon?.right"
-              name="append"
-        >
-            <FoIcon v-if="inputIcon?.right"
-                    class="text-base-content/80 my-auto ms-3 shrink-0"
-                    :icon="inputIcon.right"
-                    :size="iconSize"
-            />
-        </slot>
-
-        <FoHelperText v-if="inputHelperText !== undefined"
-                      :position="inputHelperText.position"
-        >
-            {{ inputHelperText.text }}
-        </FoHelperText>
+        <slot />
     </div>
 </template>
 
 <script setup lang="ts">
-import type { StyleValue }                             from 'vue';
+import type { Slot, StyleValue }                       from 'vue';
 import type { ComponentName, IconSize, Shape, Size }   from '@/Lib';
 import type { WithAddonSlots, WithDefaultSlot }        from '@/Types';
 import type { LabelType }                              from '@/UI/Components';
 import type { ConfigurableHelperText }                 from '@/UI/Components/HelperText';
 import type { ConfigurableLabel }                      from '@/UI/Components/Label';
 import type { ConfigurableIcon }                       from '@/UI/Customization/Icon';
-import type { InputTextProps }                         from '@/UI/Forms/InputText';
+import type { InputTextProps, InputTextType }          from '@/UI/Forms/InputText';
+import type { InputPasswordInjectedOptions }           from '@/UI/Forms/InputText/Internal/Types';
 import { reactiveOmit }                                from '@vueuse/core';
 import { computed, inject, useId }                     from 'vue';
 import { useFlyonUIVueAppConfig }                      from '@/Lib';
@@ -99,6 +124,7 @@ import { FoHelperText, usePositionableHelperText }     from '@/UI/Components/Hel
 import { FoLabel, useLabel }                           from '@/UI/Components/Label/Internal';
 import { FoIcon }                                      from '@/UI/Customization/Icon';
 import { useHasPositionableIcon, usePositionableIcon } from '@/UI/Customization/Icon/Internal';
+import { isPasswordInjectionKey }                      from '@/UI/Forms/InputText/Internal';
 import { isInJoinInjectionKey, useJoinItem }           from '@/UI/Forms/Join/Internal';
 
 defineOptions({
@@ -113,13 +139,21 @@ const props = withDefaults(defineProps<InputTextProps>(), {
     withoutFocus: false,
 });
 
-const slots = defineSlots<WithDefaultSlot & WithAddonSlots>();
+const slots = defineSlots<WithDefaultSlot & WithAddonSlots & {
+    /**
+     * @internal
+     * Default component's slot, to be used only for the ruleset of the input password
+     * todo: remove from api
+     */
+    default?: Slot;
+}>();
 
 const id                           = useId();
 const componentName: ComponentName = 'FoInputText';
 
 const { config }        = useFlyonUIVueAppConfig();
 const isInJoin: boolean = inject(isInJoinInjectionKey, false);
+const isPassword: InputPasswordInjectedOptions | undefined = inject(isPasswordInjectionKey);
 
 type InputTextValue = string | (string | null);
 
@@ -134,6 +168,14 @@ const [input, modifiers] = defineModel<InputTextValue, 'trim' | 'null'>({
 
         return value;
     },
+});
+
+const inputType = computed((): InputTextType | 'password' => {
+    if (isPassword === undefined) {
+        return props.type;
+    }
+
+    return isPassword.isHidden.value ? 'password' : 'text';
 });
 
 const iconSize = computed((): IconSize => {
@@ -170,6 +212,10 @@ const hasIcon = computed((): boolean => useHasPositionableIcon(inputIcon));
 
 const isGroup = computed((): boolean => {
     return hasIcon.value || slots.append !== undefined || slots.prepend !== undefined || defaultLabel.value?.type === 'inline';
+});
+
+const isTextLabelInGroup = computed((): boolean => {
+    return isGroup.value && defaultLabel.value?.type === 'text';
 });
 
 const hasInputContainer = computed((): boolean => {

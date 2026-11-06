@@ -55,7 +55,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { StyleValue, VNode }                                    from 'vue';
+import type { Slot, StyleValue }                                     from 'vue';
 import type { Color, ConfigurableComponentName, Size }               from '@/Lib';
 import type { CheckboxProps }                                        from '@/UI/Forms/Checkbox/Types/Checkbox';
 import { reactiveOmit }                                              from '@vueuse/core';
@@ -84,7 +84,7 @@ const slots = defineSlots<{
      * be used externally. Check the switch docs instead.
      * todo: must be removed from api
      */
-    default?: () => VNode[];
+    default?: Slot;
 }>();
 
 /** If true, the checkbox is checked, otherwise it is not */
