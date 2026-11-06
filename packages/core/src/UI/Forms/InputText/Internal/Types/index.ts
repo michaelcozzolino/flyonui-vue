@@ -1,1 +1,1 @@
-export * from '@/UI/Forms/Checkbox/Internal/Types/InjectionKeys';
+export * from '@/UI/Forms/InputText/Internal/Types/InjectionKeys';

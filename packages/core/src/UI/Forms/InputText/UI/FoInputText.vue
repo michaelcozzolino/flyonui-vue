@@ -110,7 +110,7 @@ import type { ConfigurableHelperText }                 from '@/UI/Components/Hel
 import type { ConfigurableLabel }                      from '@/UI/Components/Label';
 import type { ConfigurableIcon }                       from '@/UI/Customization/Icon';
 import type { InputTextProps, InputTextType }          from '@/UI/Forms/InputText';
-import type { InputPasswordInjectedOptions }           from '@/UI/Forms/InputText/Internal/Types/InjectionKeys';
+import type { InputPasswordInjectedOptions }           from '@/UI/Forms/InputText/Internal/Types';
 import { reactiveOmit }                                from '@vueuse/core';
 import { computed, inject, useId }                     from 'vue';
 import { useFlyonUIVueAppConfig }                      from '@/Lib';

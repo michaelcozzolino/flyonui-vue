@@ -162,5 +162,6 @@ whenever(
             throw new Error('Unable to create a strong password without any rules.');
         }
     },
+    { immediate: true },
 );
 </script>
