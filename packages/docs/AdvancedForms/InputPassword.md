@@ -8,7 +8,7 @@
 
 <InputPasswordDocs section="with-label" />
 
-### Validation states
+# Strong password
 
 <InputPasswordDocs section="validation-state" />
 

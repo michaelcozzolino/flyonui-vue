@@ -21,7 +21,6 @@ import InputPasswordWithMultipleRulesRaw  from '@/AdvancedForms/InputPassword/In
 
 type Section = Default
     | 'with-label'
-    | 'validation-state'
     | 'with-multiple-rules'
     | 'with-all-rules-at-once';
 
