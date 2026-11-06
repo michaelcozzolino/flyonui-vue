@@ -67,9 +67,11 @@ const props = withDefaults(defineProps<InputPasswordProps>(), {
     isValid: undefined,
 });
 
+/** The input password to be modified */
 const password = defineModel<string>({ required: true });
 
-// todo: must be documented as v-model
+// todo: must be documented in the ui docs as v-model
+/** If true, the password is hidden otherwise shown */
 const isHidden = defineModel<boolean>('isHidden', { required: false, default: true });
 
 provide(isPasswordInjectionKey, {
