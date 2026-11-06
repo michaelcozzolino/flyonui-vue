@@ -99,7 +99,7 @@ interface ValidatedStrongPasswordRule {
 }
 
 const validatedRules = useArrayMap(
-    (): StrongPasswordRule[] => props.isStrong?.rules.rules ?? [],
+    (): StrongPasswordRule[] => typeof props.isStrong?.rules === 'function' ? [] : props.isStrong?.rules.rules ?? [],
     (rule: StrongPasswordRule): ValidatedStrongPasswordRule => ({
         description: rule.description ?? null,
         isValid:     password.value !== '' && rule.validate(password.value),
@@ -107,7 +107,7 @@ const validatedRules = useArrayMap(
 );
 
 const visibleRules = computed((): ValidatedStrongPasswordRule[] => {
-    if (props.isStrong?.rules.show !== true) {
+    if (typeof props.isStrong?.rules === 'function' || props.isStrong?.rules.show !== true) {
         return [];
     }
 
@@ -129,6 +129,15 @@ const strength = computed((): InputPasswordStrength | null => {
         return null;
     }
 
+    if (typeof props.isStrong.rules === 'function') {
+        const level: number = props.isStrong.rules(password.value);
+
+        return {
+            level: Number.isFinite(level) ? Math.min(totalLevels.value, Math.max(0, Math.floor(level))) : 0,
+            text:  null,
+        };
+    }
+
     const passedRules: number = validatedRules.value.filter((rule: ValidatedStrongPasswordRule): boolean => rule.isValid).length;
 
     // Rounding down reserves the final segment for passwords that pass every rule.
@@ -147,7 +156,7 @@ whenever(
             throw new Error('Unable to create a strong password without any levels.');
         }
 
-        if ((props.isStrong?.rules.rules ?? []).length === 0) {
+        if (typeof props.isStrong?.rules !== 'function' && (props.isStrong?.rules.rules ?? []).length === 0) {
             throw new Error('Unable to create a strong password without any rules.');
         }
     },

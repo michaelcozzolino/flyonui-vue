@@ -2,10 +2,7 @@
     <FoInputPassword v-model="password"
                      label="password"
                      :icon="{ on: 'tabler:eye', off: 'tabler:eye-off' }"
-                     :is-strong="{
-                         levels: 4,
-                         rules: validatePassword,
-                     }"
+                     :is-strong="{ levels, rules: evaluatePassword }"
     />
 </template>
 
@@ -15,8 +12,10 @@ import { ref }             from 'vue';
 
 const password = ref<string>('');
 
-function validatePassword(password: string): number {
-    const validations: boolean[] = [
+const levels: number = 4;
+
+function evaluatePassword(password: string): number {
+    const evaluations: boolean[] = [
         password.length >= 6,
         /[a-z]/.test(password),
         /[A-Z]/.test(password),
@@ -24,8 +23,8 @@ function validatePassword(password: string): number {
         /[^a-z0-9\s]/i.test(password),
     ];
 
-    const passedValidations: number = validations.filter((isValid: boolean): boolean => isValid).length;
+    const passedEvaluations: number = evaluations.filter((isValid: boolean): boolean => isValid).length;
 
-    return Math.floor(passedValidations * 4 / validations.length);
+    return Math.floor(passedEvaluations * levels / evaluations.length);
 }
 </script>

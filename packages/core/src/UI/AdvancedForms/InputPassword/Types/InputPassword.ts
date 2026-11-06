@@ -17,6 +17,9 @@ export interface StrongPasswordRules {
     show: boolean;
 }
 
+/** Returns the achieved level, from zero to the configured number of levels, without a legend. */
+export type StrongPasswordEvaluator = (password: string) => number;
+
 export interface InputPasswordProps extends Omit<InputTextProps, 'type' | 'icon' | 'list'> {
     /** The icon to show when the password is hidden and shown */
     icon?: { on: Icon; off: Icon };
@@ -26,7 +29,10 @@ export interface InputPasswordProps extends Omit<InputTextProps, 'type' | 'icon'
         /** A positive segment count, or the labels ordered from the weakest to the strongest. */
         levels: number | string[];
 
-        /** The rules properties for the strong password */
-        rules: StrongPasswordRules;
+        /**
+         * Individual rules that will fill the segments based on the valid ones,
+         * or a function that returns the total levels to fill without a legend showing the strength of the password.
+         */
+        rules: StrongPasswordRules | StrongPasswordEvaluator;
     };
 }
