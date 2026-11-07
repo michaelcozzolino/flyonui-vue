@@ -128,12 +128,12 @@ This monorepo contains the following:
         <tr><td><a href="https://flyonui.com/docs/third-party-plugins/drag-and-drop/">Drag & Drop</a></td><td><strong><span style="color: #b91c1c">Not planned 🚫</span></strong></td><td>—</td></tr>
         <tr><td><a href="https://flyonui.com/docs/third-party-plugins/file-upload/">File Upload</a></td><td>No matching Vue feature found</td><td>—</td></tr>
         <tr><td><a href="https://flyonui.com/docs/third-party-plugins/form-validation/">Form Validation</a></td><td><strong><span style="color: #b91c1c">Not planned 🚫</span></strong></td><td>—</td></tr>
-        <tr><td><a href="https://flyonui.com/docs/third-party-plugins/notyf/">Notyf (Toasts)</a></td><td>No matching Vue feature found</td><td>—</td></tr>
+        <tr><td><a href="https://flyonui.com/docs/third-party-plugins/notyf/">Notyf (Toasts)</a></td><td><strong><span style="color: #b91c1c">Not planned 🚫</span></strong></td><td>—</td></tr>
         <tr><td><a href="https://flyonui.com/docs/third-party-plugins/rating/">Rating</a></td><td>No matching Vue feature found</td><td>—</td></tr>
-        <tr><td><a href="https://flyonui.com/docs/third-party-plugins/wave-effect/">Wave Effect</a></td><td>No matching Vue feature found</td><td>—</td></tr>
+        <tr><td><a href="https://flyonui.com/docs/third-party-plugins/wave-effect/">Wave Effect</a></td><td><strong><span style="color: #b91c1c">Not planned 🚫</span></strong></td><td>—</td></tr>
         <tr><td><a href="https://flyonui.com/docs/third-party-plugins/editor/">WYSIWYG Editor</a></td><td><strong><span style="color: #b91c1c">Not planned 🚫</span></strong></td><td>—</td></tr>
-        <tr><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>Coverage</strong></td><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>1/7 implemented (14.3%)</strong></td><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>1/7 documented (14.3%)</strong></td></tr>
-        <tr><th colspan="2" rowspan="2">Full Coverage</th><td><strong>43 / 69 implemented (62.3%)</strong></td><td><strong>42 / 69 documented (60.9%)</strong></td></tr>
+        <tr><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>Coverage</strong></td><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>1/5 implemented (20%)</strong></td><td style="background-color: color-mix(in srgb, var(--vp-c-brand-1) 20%, var(--vp-c-bg));"><strong>1/5 documented (20%)</strong></td></tr>
+        <tr><th colspan="2" rowspan="2">Full Coverage</th><td><strong>43 / 67 implemented (64.2%)</strong></td><td><strong>42 / 67 documented (62.7%)</strong></td></tr>
         <tr><td><strong>Production ready</strong></td><td><strong>40 / 43 implemented (93%)</strong></td></tr>
     </tbody>
 </table>
