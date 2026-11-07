@@ -17,6 +17,7 @@ import type { CheckboxProps, InputTextProps, SelectProps, SwitchProps, TextareaP
 import type { InputFileProps }                                                         from '@/UI/Forms/InputFile';
 import type { RadioProps }                                                             from '@/UI/Forms/Radio';
 import type { RangeProps }                                                             from '@/UI/Forms/Range';
+import type { RatingProps }                                                            from '@/UI/Miscellaneous';
 import type { TabProps, TabsProps }                                                    from '@/UI/Navigations';
 import type { ModalProps, TooltipProps }                                               from '@/UI/Overlays';
 import type { TableProps }                                                             from '@/UI/Tables';
@@ -129,6 +130,7 @@ export interface ConfigurableComponentProps {
     FoRadialProgress: ConfigurableProps<RadialProgressProps>;
     FoRadio:          ConfigurableProps<RadioProps>;
     FoRange:          ConfigurableProps<RangeProps>;
+    FoRating:         ConfigurableProps<RatingProps>;
     /** Select defaults */
     FoSelect:         ConfigurableProps<SelectProps> & LabelTypeComponentConfig & HorizontalPositionComponentConfig<HorizontalHelperTextPositionConfig>;
     FoStatus:         ConfigurableProps<StatusProps>;
