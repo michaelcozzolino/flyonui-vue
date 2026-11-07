@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api';
 import { computed }                     from 'vue';
 import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import CodeColor                        from '@/Mockups/Code/CodeColor.vue';
@@ -27,7 +28,8 @@ type Section = 'with-line-prefix'
     | 'highlighted-line'
     | 'scrollable'
     | 'without-line-prefix'
-    | 'color';
+    | 'color'
+    | ApiType;
 
 interface Props {
     section: Section;

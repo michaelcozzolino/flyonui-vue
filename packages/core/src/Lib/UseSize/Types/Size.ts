@@ -25,7 +25,7 @@ export type SizableComponentName = Extract<
 
 export type Size = 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge';
 
-export interface Sizable<T extends Size = Size> {
+export interface Sizable<T extends IconSize = Size> {
     /** The component's size */
     size?: T;
 }

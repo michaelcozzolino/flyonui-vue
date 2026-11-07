@@ -1,7 +1,7 @@
-import type { Disableable } from '@/Lib';
-import type { WithIcon }    from '@/UI/Customization';
+import type { Disableable, IconSize, Sizable } from '@/Lib';
+import type { WithIcon }                       from '@/UI/Customization';
 
-export interface RatingProps extends Disableable, WithIcon {
+export interface RatingProps extends Disableable, Sizable<IconSize>, WithIcon {
     /** The maximum number of rating icons */
     max?: number;
 

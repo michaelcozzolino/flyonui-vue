@@ -17,7 +17,7 @@
             <span class="relative inline-flex">
                 <FoIcon :icon="icon"
                         class="text-base-content/25"
-                        size="medium"
+                        :size="size"
                 />
 
                 <span class="absolute inset-y-0 left-0 overflow-hidden text-warning"
@@ -25,7 +25,7 @@
                 >
                     <FoIcon :icon="icon"
                             class="text-warning"
-                            size="medium"
+                            :size="size"
                     />
                 </span>
             </span>
