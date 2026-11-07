@@ -186,6 +186,10 @@ export default {
                 component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Forms/Radio/RadioDocs.vue')),
             },
             {
+                name:      'RatingDocs',
+                component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Miscellaneous/Rating/RatingDocs.vue')),
+            },
+            {
                 name:      'RangeDocs',
                 component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Forms/Range/RangeDocs.vue')),
             },
@@ -380,6 +384,7 @@ function loadIconifyIcons(): void {
         'tabler:dots-vertical',
         'tabler:folder',
         'tabler:git-compare',
+        'tabler:heart-filled',
         'tabler:headphones',
         'tabler:home',
         'tabler:info-circle',
@@ -403,6 +408,7 @@ function loadIconifyIcons(): void {
         'tabler:settings',
         'tabler:settings-bolt',
         'tabler:star',
+        'tabler:star-filled',
         'tabler:sun',
         'tabler:trash',
         'tabler:user',

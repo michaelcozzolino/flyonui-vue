@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                 from '@/Api/Types/Api';
 import { computed }                     from 'vue';
 import ComponentDocs                    from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import BorderedBrowser                  from '@/Mockups/Browser/BorderedBrowser.vue';
@@ -18,7 +19,8 @@ import BrowserWithImageRaw              from '@/Mockups/Browser/BrowserWithImage
 
 type Section = 'bordered'
     | 'background-color'
-    | 'with-image';
+    | 'with-image'
+    | ApiType;
 
 interface Props {
     section: Section;

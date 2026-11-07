@@ -8,6 +8,7 @@
 <script setup lang="ts">
 import type { Default }                   from 'flyonui-vue';
 import type { FrameworkSectionPreview }   from '@/.vitepress/theme/Components/Preview/Types/Preview';
+import type { ApiType }                   from '@/Api/Types/Api';
 import { computed }                       from 'vue';
 import ComponentDocs                      from '@/.vitepress/theme/Components/ComponentDocs/UI/ComponentDocs.vue';
 import DefaultInputPassword               from '@/AdvancedForms/InputPassword/DefaultInputPassword.vue';
@@ -22,7 +23,8 @@ import InputPasswordWithMultipleRulesRaw  from '@/AdvancedForms/InputPassword/In
 type Section = Default
     | 'with-label'
     | 'with-multiple-rules'
-    | 'with-all-rules-at-once';
+    | 'with-all-rules-at-once'
+    | ApiType;
 
 interface Props {
     section: Section;

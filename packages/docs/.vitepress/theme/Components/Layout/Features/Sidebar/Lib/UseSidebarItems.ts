@@ -351,6 +351,19 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
             ],
         },
         {
+            text:        'Miscellaneous',
+            isCollapsed: false,
+            children:    [
+                {
+                    text:     'Rating',
+                    to:       '/miscellaneous/rating',
+                    icon:     'tabler:star',
+                    badge:    _unreleasedBadge,
+                    children: [],
+                },
+            ],
+        },
+        {
             text:        'Extra',
             isCollapsed: false,
             children:    [
