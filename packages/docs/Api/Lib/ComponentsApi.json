@@ -5512,8 +5512,8 @@
                                                         "schema": "string",
                                                         "declarations": []
                                                     },
-                                                    "__@hasInstance@731": {
-                                                        "name": "__@hasInstance@731",
+                                                    "__@hasInstance@887": {
+                                                        "name": "__@hasInstance@887",
                                                         "global": false,
                                                         "description": "Determines whether the given value inherits from this function if this function was used\nas a constructor function.\n\nA constructor function can control which objects are recognized as its instances by\n'instanceof' by overriding this method.",
                                                         "tags": [],
@@ -8066,8 +8066,8 @@
                                 },
                                 "declarations": []
                             },
-                            "__@iterator@463": {
-                                "name": "__@iterator@463",
+                            "__@iterator@327": {
+                                "name": "__@iterator@327",
                                 "global": false,
                                 "description": "",
                                 "tags": [],
@@ -16543,6 +16543,230 @@
         ],
         "exposed": []
     },
+    "FoRating": {
+        "type": 1,
+        "props": [
+            {
+                "name": "max",
+                "global": false,
+                "default": "5",
+                "description": "The maximum number of rating icons",
+                "tags": [],
+                "required": false,
+                "type": "number | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "number | undefined",
+                    "schema": [
+                        "undefined",
+                        "number"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "allowHalf",
+                "global": false,
+                "default": "false",
+                "description": "True if the icon can be selected by its half",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "disabled",
+                "global": false,
+                "default": "false",
+                "description": "If true, the component will be disabled without allowing more interactions",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "size",
+                "global": false,
+                "description": "The component's size",
+                "tags": [],
+                "required": false,
+                "type": "IconSize | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "IconSize | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"extraSmall\"",
+                        "\"small\"",
+                        "\"medium\"",
+                        "\"large\"",
+                        "\"extraLarge\"",
+                        "\"doubleExtraSmall\"",
+                        "\"doubleExtraLarge\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "icon",
+                "global": false,
+                "default": "\"tabler:star-filled\"",
+                "description": "The Iconify icon's name",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "modelValue",
+                "global": false,
+                "description": "The total amount of selected rating icons",
+                "tags": [],
+                "required": true,
+                "type": "number",
+                "schema": "number",
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [
+            {
+                "name": "update:modelValue",
+                "description": "",
+                "tags": [],
+                "type": "[value: number]",
+                "signature": "(event: \"update:modelValue\", value: number): void",
+                "schema": [
+                    "number"
+                ],
+                "declarations": []
+            }
+        ],
+        "slots": [],
+        "exposed": []
+    },
     "FoRouterLink": {
         "type": 1,
         "props": [
@@ -17715,8 +17939,8 @@
                                     "schema": "string",
                                     "declarations": []
                                 },
-                                "__@RefSymbol@698": {
-                                    "name": "__@RefSymbol@698",
+                                "__@RefSymbol@320": {
+                                    "name": "__@RefSymbol@320",
                                     "global": false,
                                     "description": "Type differentiator only.\nWe need this to be in public d.ts but don't want it to show up in IDE\nautocomplete, so we use a private Symbol instead.",
                                     "tags": [],
@@ -17725,8 +17949,8 @@
                                     "schema": "true",
                                     "declarations": []
                                 },
-                                "__@ShallowRefMarker@1445": {
-                                    "name": "__@ShallowRefMarker@1445",
+                                "__@ShallowRefMarker@1626": {
+                                    "name": "__@ShallowRefMarker@1626",
                                     "global": false,
                                     "description": "",
                                     "tags": [],
@@ -17806,45 +18030,6 @@
                 "declarations": []
             },
             {
-                "name": "size",
-                "global": false,
-                "description": "The component's size",
-                "tags": [],
-                "required": false,
-                "type": "Size | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Size | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"extraSmall\"",
-                        "\"small\"",
-                        "\"medium\"",
-                        "\"large\"",
-                        "\"extraLarge\""
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "shape",
-                "global": false,
-                "description": "The component's shape",
-                "tags": [],
-                "required": false,
-                "type": "\"rounded\" | \"pilled\" | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "\"rounded\" | \"pilled\" | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"rounded\"",
-                        "\"pilled\""
-                    ]
-                },
-                "declarations": []
-            },
-            {
                 "name": "icon",
                 "global": false,
                 "description": "The Iconify icon's name",
@@ -17892,6 +18077,45 @@
                         "undefined",
                         "false",
                         "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "shape",
+                "global": false,
+                "description": "The component's shape",
+                "tags": [],
+                "required": false,
+                "type": "\"rounded\" | \"pilled\" | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "\"rounded\" | \"pilled\" | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"rounded\"",
+                        "\"pilled\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "size",
+                "global": false,
+                "description": "The component's size",
+                "tags": [],
+                "required": false,
+                "type": "Size | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Size | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"extraSmall\"",
+                        "\"small\"",
+                        "\"medium\"",
+                        "\"large\"",
+                        "\"extraLarge\""
                     ]
                 },
                 "declarations": []
