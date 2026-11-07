@@ -19,7 +19,7 @@
                         class="text-base-content/25"
                         :size="size"
                 />
-
+                <!-- todo: custom icon color -->
                 <span class="absolute inset-y-0 left-0 overflow-hidden text-warning"
                       :style="{ width: `${getStarFill(star)}%` }"
                 >
