@@ -29,7 +29,3 @@
 ### Props
 
 <RatingDocs section="props" />
-
-### Slots
-
-<RatingDocs section="slots" />

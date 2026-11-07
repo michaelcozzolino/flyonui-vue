@@ -45,6 +45,7 @@ const props = withDefaults(defineProps<RatingProps>(), {
     disabled:  false,
 });
 
+/** The total amount of selected rating icons */
 const rating = defineModel<number>({ required: true });
 
 const hoveredRating = ref<number | null>(null);
