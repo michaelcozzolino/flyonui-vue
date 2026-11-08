@@ -8,7 +8,7 @@ export type FrameworkSectionPreview = {
     excludeFromTests?:   boolean;
     dataTestScreenshot?: boolean;
     grid?:               ComponentPreviewGrid;
-} & Partial<Record<FrameworkId, ComponentPreviewProps>>;
+} & Partial<Record<FrameworkId, Omit<ComponentPreviewProps, 'grid'>>>;
 
 export interface ComponentPreviewProps {
     /**
