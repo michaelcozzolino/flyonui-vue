@@ -10871,10 +10871,10 @@
                     }
                 ],
                 "required": false,
-                "type": "\"step\" | \"page\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
+                "type": "\"page\" | \"step\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
                 "schema": {
                     "kind": "enum",
-                    "type": "\"step\" | \"page\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
+                    "type": "\"page\" | \"step\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
                     "schema": [
                         "undefined",
                         "\"page\"",
@@ -17993,10 +17993,10 @@
                     }
                 ],
                 "required": false,
-                "type": "\"step\" | \"page\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
+                "type": "\"page\" | \"step\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
                 "schema": {
                     "kind": "enum",
-                    "type": "\"step\" | \"page\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
+                    "type": "\"page\" | \"step\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
                     "schema": [
                         "undefined",
                         "\"page\"",
