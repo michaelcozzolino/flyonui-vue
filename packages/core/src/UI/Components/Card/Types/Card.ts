@@ -7,6 +7,7 @@ import type { AlertProps }                                 from '@/UI/Components
 export type CardProps = Alignable & Borderable & Orientable & Sizable & WithGlass;
 
 export interface CardBodySlots extends WithRequiredDefaultSlot {
+    /** The action buttons/urls */
     actions?: Slot;
 }
 
