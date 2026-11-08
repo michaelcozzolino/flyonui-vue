@@ -3102,7 +3102,7 @@
             {
                 "name": "actions",
                 "type": "any[]",
-                "description": "",
+                "description": "The action buttons/urls",
                 "tags": [],
                 "schema": {
                     "kind": "array",
@@ -6626,8 +6626,8 @@
                                                         "schema": "string",
                                                         "declarations": []
                                                     },
-                                                    "__@hasInstance@731": {
-                                                        "name": "__@hasInstance@731",
+                                                    "__@hasInstance@887": {
+                                                        "name": "__@hasInstance@887",
                                                         "global": false,
                                                         "description": "Determines whether the given value inherits from this function if this function was used\nas a constructor function.\n\nA constructor function can control which objects are recognized as its instances by\n'instanceof' by overriding this method.",
                                                         "tags": [],
@@ -9180,8 +9180,8 @@
                                 },
                                 "declarations": []
                             },
-                            "__@iterator@463": {
-                                "name": "__@iterator@463",
+                            "__@iterator@327": {
+                                "name": "__@iterator@327",
                                 "global": false,
                                 "description": "",
                                 "tags": [],
@@ -10871,10 +10871,10 @@
                     }
                 ],
                 "required": false,
-                "type": "\"page\" | \"step\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
+                "type": "\"step\" | \"page\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
                 "schema": {
                     "kind": "enum",
-                    "type": "\"page\" | \"step\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
+                    "type": "\"step\" | \"page\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
                     "schema": [
                         "undefined",
                         "\"page\"",
@@ -17993,10 +17993,10 @@
                     }
                 ],
                 "required": false,
-                "type": "\"page\" | \"step\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
+                "type": "\"step\" | \"page\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
                 "schema": {
                     "kind": "enum",
-                    "type": "\"page\" | \"step\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
+                    "type": "\"step\" | \"page\" | \"location\" | \"date\" | \"time\" | \"true\" | \"false\" | undefined",
                     "schema": [
                         "undefined",
                         "\"page\"",
@@ -19053,8 +19053,8 @@
                                     "schema": "string",
                                     "declarations": []
                                 },
-                                "__@RefSymbol@698": {
-                                    "name": "__@RefSymbol@698",
+                                "__@RefSymbol@320": {
+                                    "name": "__@RefSymbol@320",
                                     "global": false,
                                     "description": "Type differentiator only.\nWe need this to be in public d.ts but don't want it to show up in IDE\nautocomplete, so we use a private Symbol instead.",
                                     "tags": [],
@@ -19063,8 +19063,8 @@
                                     "schema": "true",
                                     "declarations": []
                                 },
-                                "__@ShallowRefMarker@1445": {
-                                    "name": "__@ShallowRefMarker@1445",
+                                "__@ShallowRefMarker@1603": {
+                                    "name": "__@ShallowRefMarker@1603",
                                     "global": false,
                                     "description": "",
                                     "tags": [],
