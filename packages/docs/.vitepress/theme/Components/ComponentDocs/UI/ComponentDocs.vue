@@ -4,8 +4,8 @@
              :data-test-screenshot="sectionPreviews.excludeFromTests ? undefined : section"
              data-test="code-snippet"
     >
-        <SectionPreviews :previews="sectionPreviews"
-                         :grid="sectionPreviews.grid"
+        <FrameworkSectionPreviewTabs :previews="sectionPreviews"
+                                     :grid="sectionPreviews.grid"
         />
     </section>
 
@@ -23,7 +23,7 @@ import type {
 import type { FrameworkSectionPreview } from '@/.vitepress/theme/Components/Preview/Types/Preview';
 import type { ApiType }                 from '@/Api/Types/Api';
 import { computed }                     from 'vue';
-import SectionPreviews                  from '@/.vitepress/theme/Components/Preview/UI/FrameworkSectionPreviewTabs.vue';
+import FrameworkSectionPreviewTabs      from '@/.vitepress/theme/Components/Preview/UI/FrameworkSectionPreviewTabs.vue';
 import ComponentsApiDocs                from '@/Api/UI/ComponentsApiDocs.vue';
 
 const props = withDefaults(defineProps<ComponentDocsProps<S>>(), {
