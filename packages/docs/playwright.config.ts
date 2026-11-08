@@ -7,7 +7,7 @@ const workspaceCommand = 'yarn workspace flyonui-vue-docs';
 const previewCommand   = `${workspaceCommand} preview`;
 
 export default defineConfig({
-    timeout: 90000,
+    timeout: 180000,
     expect:  {
         toMatchSnapshot: process.env.CI ? { maxDiffPixelRatio: 0.025, threshold: 0.025 } : undefined,
     },

@@ -79,7 +79,8 @@ const previews = computed((): Map<Section, FrameworkSectionPreview> => {
         [
             'size',
             {
-                vue: {
+                grid: { columns: 1, rows: 2 },
+                vue:  {
                     component:   RatingSize,
                     codePreview: RatingSizeRaw,
                 },

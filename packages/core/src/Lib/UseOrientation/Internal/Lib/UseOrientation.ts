@@ -9,6 +9,10 @@ export function useOrientation(
     return useComponentClass<OrientableComponentName, Orientation>(
         componentName,
         {
+            FoCard: {
+                horizontal: 'sm:card-side max-w-sm! sm:max-w-full!',
+                vertical:   '',
+            },
             FoCheckboxGroup: {
                 horizontal: 'gap-4 overflow-x-auto',
                 vertical:   'flex-col gap-2',

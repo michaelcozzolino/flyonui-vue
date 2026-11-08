@@ -20,6 +20,11 @@ export function useAlignment(
                 center: 'mx-auto text-center',
                 right:  'ms-auto text-end',
             },
+            FoCard: {
+                left:   '',
+                center: 'text-center',
+                right:  'text-end',
+            },
             FoDivider: {
                 left:   'divider-start',
                 center: '',

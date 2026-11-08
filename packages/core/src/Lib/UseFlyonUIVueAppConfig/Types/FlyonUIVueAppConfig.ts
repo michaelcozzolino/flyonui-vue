@@ -1,14 +1,12 @@
-import type { Ref }                                                              from 'vue';
-import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size } from '@/Lib';
-import type { PickIfExists, Prettify }                                           from '@/Lib/Utils/Internal';
-import type { HorizontalPosition, TextDirection }                                from '@/Types';
-import type { InputPasswordProps }                                               from '@/UI/AdvancedForms';
-import type { BadgeProps, ButtonProps, LabelType, LoadingProps, MenuProps }      from '@/UI/Components';
-import type { AlertProps }                                                       from '@/UI/Components/Alert';
-import type { AvatarProps }                                                      from '@/UI/Components/Avatar';
-import type {
-    RadialProgressProps,
-} from '@/UI/Components/RadialProgress';
+import type { Ref }                                                                    from 'vue';
+import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size }       from '@/Lib';
+import type { PickIfExists, Prettify }                                                 from '@/Lib/Utils/Internal';
+import type { HorizontalPosition, TextDirection }                                      from '@/Types';
+import type { InputPasswordProps }                                                     from '@/UI/AdvancedForms';
+import type { BadgeProps, ButtonProps, CardProps, LabelType, LoadingProps, MenuProps } from '@/UI/Components';
+import type { AlertProps }                                                             from '@/UI/Components/Alert';
+import type { AvatarProps }                                                            from '@/UI/Components/Avatar';
+import type { RadialProgressProps }                                                    from '@/UI/Components/RadialProgress';
 import type { StatusProps }                                                            from '@/UI/Components/Status';
 import type { HeadingProps, KeyboardProps, LinkProps }                                 from '@/UI/Content';
 import type { DividerProps }                                                           from '@/UI/Content/Divider';
@@ -100,6 +98,7 @@ export interface ConfigurableComponentProps {
     FoBadge:     ConfigurableProps<BadgeProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
     /** Button defaults */
     FoButton:    ConfigurableProps<ButtonProps & HorizontalPositionComponentConfig<HorizontalIconPositionConfig>>;
+    FoCard:      ConfigurableProps<CardProps>;
     /** Checkbox defaults */
     FoCheckbox:  ConfigurableProps<CheckboxProps>;
     FoDivider:   ConfigurableProps<DividerProps>;
