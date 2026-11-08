@@ -2496,6 +2496,1120 @@
         ],
         "exposed": []
     },
+    "FoCard": {
+        "type": 1,
+        "props": [
+            {
+                "name": "alignment",
+                "global": false,
+                "default": "\"left\"",
+                "description": "The component's alignment",
+                "tags": [],
+                "required": false,
+                "type": "Alignment | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Alignment | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"left\"",
+                        "\"right\"",
+                        "\"center\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isBordered",
+                "global": false,
+                "description": "If True, it displays the component's borders",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "orientation",
+                "global": false,
+                "default": "\"vertical\"",
+                "description": "The component's orientation",
+                "tags": [],
+                "required": false,
+                "type": "Orientation | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Orientation | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"vertical\"",
+                        "\"horizontal\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "size",
+                "global": false,
+                "description": "The component's size",
+                "tags": [],
+                "required": false,
+                "type": "Size | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Size | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"extraSmall\"",
+                        "\"small\"",
+                        "\"medium\"",
+                        "\"large\"",
+                        "\"extraLarge\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "withGlass",
+                "global": false,
+                "description": "Renders with glass style",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [
+            {
+                "name": "default",
+                "type": "any[]",
+                "description": "The content to be shown on the component by default",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            }
+        ],
+        "exposed": []
+    },
+    "FoCardActions": {
+        "type": 1,
+        "props": [
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [
+            {
+                "name": "default",
+                "type": "any[]",
+                "description": "The content to be shown on the component by default",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            }
+        ],
+        "exposed": []
+    },
+    "FoCardAlert": {
+        "type": 1,
+        "props": [
+            {
+                "name": "color",
+                "global": false,
+                "description": "The component's color",
+                "tags": [],
+                "required": false,
+                "type": "Color | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Color | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"neutral\"",
+                        "\"primary\"",
+                        "\"secondary\"",
+                        "\"accent\"",
+                        "\"info\"",
+                        "\"success\"",
+                        "\"warning\"",
+                        "\"error\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "preset",
+                "global": false,
+                "description": "The component's preset",
+                "tags": [],
+                "required": false,
+                "type": "AlertPreset | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "AlertPreset | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"solid\"",
+                        "\"soft\"",
+                        "\"outline\"",
+                        "\"dash\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [
+            {
+                "name": "default",
+                "type": "any[]",
+                "description": "The content to be shown on the component by default",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            }
+        ],
+        "exposed": []
+    },
+    "FoCardBody": {
+        "type": 1,
+        "props": [
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [
+            {
+                "name": "actions",
+                "type": "any[]",
+                "description": "",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "default",
+                "type": "any[]",
+                "description": "The content to be shown on the component by default",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            }
+        ],
+        "exposed": []
+    },
+    "FoCardFooter": {
+        "type": 1,
+        "props": [
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [
+            {
+                "name": "default",
+                "type": "any[]",
+                "description": "The content to be shown on the component by default",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            }
+        ],
+        "exposed": []
+    },
+    "FoCardGroup": {
+        "type": 1,
+        "props": [
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [
+            {
+                "name": "default",
+                "type": "any[]",
+                "description": "The content to be shown on the component by default",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            }
+        ],
+        "exposed": []
+    },
+    "FoCardHeader": {
+        "type": 1,
+        "props": [
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [
+            {
+                "name": "default",
+                "type": "any[]",
+                "description": "The content to be shown on the component by default",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            }
+        ],
+        "exposed": []
+    },
+    "FoCardTitle": {
+        "type": 1,
+        "props": [
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [
+            {
+                "name": "default",
+                "type": "any[]",
+                "description": "The content to be shown on the component by default",
+                "tags": [],
+                "schema": {
+                    "kind": "array",
+                    "type": "any[]",
+                    "schema": [
+                        "any"
+                    ]
+                },
+                "declarations": []
+            }
+        ],
+        "exposed": []
+    },
     "FoCheckbox": {
         "type": 1,
         "props": [
@@ -5512,8 +6626,8 @@
                                                         "schema": "string",
                                                         "declarations": []
                                                     },
-                                                    "__@hasInstance@887": {
-                                                        "name": "__@hasInstance@887",
+                                                    "__@hasInstance@731": {
+                                                        "name": "__@hasInstance@731",
                                                         "global": false,
                                                         "description": "Determines whether the given value inherits from this function if this function was used\nas a constructor function.\n\nA constructor function can control which objects are recognized as its instances by\n'instanceof' by overriding this method.",
                                                         "tags": [],
@@ -8066,8 +9180,8 @@
                                 },
                                 "declarations": []
                             },
-                            "__@iterator@327": {
-                                "name": "__@iterator@327",
+                            "__@iterator@463": {
+                                "name": "__@iterator@463",
                                 "global": false,
                                 "description": "",
                                 "tags": [],
@@ -17939,8 +19053,8 @@
                                     "schema": "string",
                                     "declarations": []
                                 },
-                                "__@RefSymbol@320": {
-                                    "name": "__@RefSymbol@320",
+                                "__@RefSymbol@698": {
+                                    "name": "__@RefSymbol@698",
                                     "global": false,
                                     "description": "Type differentiator only.\nWe need this to be in public d.ts but don't want it to show up in IDE\nautocomplete, so we use a private Symbol instead.",
                                     "tags": [],
@@ -17949,8 +19063,8 @@
                                     "schema": "true",
                                     "declarations": []
                                 },
-                                "__@ShallowRefMarker@1626": {
-                                    "name": "__@ShallowRefMarker@1626",
+                                "__@ShallowRefMarker@1445": {
+                                    "name": "__@ShallowRefMarker@1445",
                                     "global": false,
                                     "description": "",
                                     "tags": [],
