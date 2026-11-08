@@ -122,6 +122,13 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
                     children: [],
                 },
                 {
+                    text:     'Card',
+                    to:       '/components/card',
+                    icon:     'mdi:card-outline',
+                    badge:    _unreleasedBadge,
+                    children: [],
+                },
+                {
                     text:     'Diff',
                     to:       '/components/diff',
                     icon:     'tabler:git-compare',
