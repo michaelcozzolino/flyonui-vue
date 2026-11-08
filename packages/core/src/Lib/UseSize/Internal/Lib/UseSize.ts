@@ -33,6 +33,13 @@ export function useSize(
                 large:      'badge-lg',
                 extraLarge: 'badge-xl',
             },
+            FoCard: {
+                extraSmall: 'card-xs sm:max-w-sm',
+                small:      'card-sm sm:max-w-sm',
+                medium:     'sm:max-w-sm',
+                large:      'card-lg sm:max-w-sm',
+                extraLarge: 'card-xl sm:max-w-sm',
+            },
             FoCheckbox: {
                 extraSmall: 'checkbox-xs',
                 small:      'checkbox-sm',

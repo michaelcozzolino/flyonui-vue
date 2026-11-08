@@ -12,6 +12,7 @@ export function useBorder(
     const classes: Record<BorderableComponentName, ComputedRef<string>> = {
         FoBrowser:           browserComponentsClass,
         FoBrowserToolbarURL: browserComponentsClass,
+        FoCard:              useClass(isBordered, 'card-border shadow-none'),
         FoStats:             useClass(isBordered, 'stats-border shadow-none'),
         FoTable:             useClass(isBordered, 'border border-base-content/25', 'table-borderless'),
         FoWindow:            useClass(isBordered, 'border border-base-content/20'),

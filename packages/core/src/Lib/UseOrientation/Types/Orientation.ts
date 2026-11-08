@@ -2,7 +2,8 @@ import type { ComponentName } from '@/Lib';
 
 export type OrientableComponentName = Extract<
     ComponentName,
-    'FoCheckboxGroup'
+    'FoCard'
+    | 'FoCheckboxGroup'
     | 'FoDivider'
     | 'FoJoin'
     | 'FoListGroup'

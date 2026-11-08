@@ -5,6 +5,7 @@ export type SizableComponentName = Extract<
     'FoAvatar'
     | 'FoBadge'
     | 'FoButton'
+    | 'FoCard'
     | 'FoCheckbox'
     | 'FoInputFile'
     | 'FoInputText'

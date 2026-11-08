@@ -2,7 +2,7 @@ import type { ComponentName } from '@/Lib';
 
 export type BorderableComponentName = Extract<
     ComponentName,
-    'FoBrowser' | 'FoBrowserToolbarURL' | 'FoStats' | 'FoTable' | 'FoWindow'
+    'FoBrowser' | 'FoBrowserToolbarURL' | 'FoCard' | 'FoStats' | 'FoTable' | 'FoWindow'
 >;
 
 export interface Borderable {
