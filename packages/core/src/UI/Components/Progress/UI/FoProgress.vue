@@ -1,5 +1,12 @@
 <template>
-    <component :is="hasTitle ? 'div' : FoFragment">
+    <component :is="hasTitle || isFloating ? 'div' : FoFragment"
+               :class="isFloating && 'flex flex-col gap-1'"
+    >
+        <FoProgressPercentage v-if="isFloating"
+                              is-floating
+                              :value="percentageValue"
+        />
+
         <div v-if="hasTitle"
              class="flex items-end justify-between mb-1"
         >
@@ -53,4 +60,6 @@ const numericValue = computed((): number => {
 const percentageValue = computed((): string => `${numericValue.value}%`);
 
 const hasTitle = computed((): boolean => typeof props.value !== 'number' && props.value.label.title !== undefined);
+
+const isFloating = computed((): boolean => typeof props.value !== 'number' && props.value.label.position === 'floating');
 </script>
