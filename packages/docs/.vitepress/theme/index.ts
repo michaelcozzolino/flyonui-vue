@@ -198,6 +198,10 @@ export default {
                 component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Forms/Range/RangeDocs.vue')),
             },
             {
+                name:      'ProgressDocs',
+                component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Components/Progress/ProgressDocs.vue')),
+            },
+            {
                 name:      'RadialProgressDocs',
                 component: defineAsyncDocsComponent((): AsyncDocsComponentImport => import('@/Components/RadialProgress/RadialProgressDocs.vue')),
             },
@@ -301,6 +305,7 @@ function loadIconifyIcons(): void {
         'carbon:insert-page',
         'carbon:user-avatar',
         'ep:select',
+        'fa6-solid:bars-progress',
         'fluent:color-20-regular',
         'fluent:shapes-20-regular',
         'fluent:text-direction-horizontal-ltr-20-regular',
