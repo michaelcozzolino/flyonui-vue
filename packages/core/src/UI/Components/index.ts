@@ -10,6 +10,7 @@ export * from '@/UI/Components/ListGroup';
 export * from '@/UI/Components/Loading';
 export * from '@/UI/Components/Menu';
 export * from '@/UI/Components/Navbar';
+export * from '@/UI/Components/Progress';
 export * from '@/UI/Components/RadialProgress';
 export * from '@/UI/Components/Skeleton';
 export * from '@/UI/Components/Stats';

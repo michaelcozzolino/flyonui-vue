@@ -37,6 +37,10 @@ export function useOrientation(
                 horizontal: 'menu-horizontal',
                 vertical:   '',
             },
+            FoProgress: {
+                horizontal: '',
+                vertical:   'progress-vertical',
+            },
             FoStats: {
                 horizontal: 'stats-horizontal',
                 vertical:   'stats-vertical',
