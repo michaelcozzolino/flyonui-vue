@@ -4,8 +4,8 @@
          role="progressbar"
          aria-label="Progressbar"
          :aria-valuenow="numericValue"
-         :aria-valuemin="min"
-         :aria-valuemax="max"
+         aria-valuemin="0"
+         aria-valuemax="100"
     >
         <div class="progress-bar font-normal"
              :class="[colorClass, shapeClass, stripesClass, isAnimated && 'progress-animated']"
@@ -35,8 +35,6 @@ interface Props extends ProgressProps {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    min:         0,
-    max:         100,
     orientation: 'horizontal',
     isStriped:   false,
 });
