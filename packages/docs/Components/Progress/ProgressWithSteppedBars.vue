@@ -24,49 +24,65 @@
     <FoProgressStep class="max-w-40"
                     color="success"
                     :steps="4"
-                    :value="{ value: value3, label: { position: 'right' } }"
+                    :value="{ value: value4, label: { position: 'right' } }"
     />
 
     <FoProgressStep color="success"
                     :steps="4"
-                    :value="{ value: value3, label: { position: 'right' } }"
+                    :value="{ value: value4, label: { position: 'right' } }"
     />
 
     <FoProgressStep class="max-w-40"
                     color="info"
                     :steps="10"
-                    :value="{ value: value3, label: { position: 'right' } }"
+                    :value="{ value: value4, label: { position: 'right' } }"
     />
 
     <FoProgressStep color="info"
                     :steps="10"
-                    :value="{ value: value3, label: { position: 'right' } }"
+                    :value="{ value: value4, label: { position: 'right' } }"
     />
 
     <FoProgressStep class="max-w-40"
                     color="primary"
                     :steps="4"
-                    :value="{ value: 50, label: { position: 'within' } }"
+                    :value="{ value: value2, label: { position: 'within' } }"
     />
 
     <FoProgressStep class="max-w-40"
                     color="success"
                     :steps="4"
-                    :value="{ value: 50, label: { position: 'floating' } }"
+                    :value="{ value: value2, label: { position: 'floating' } }"
     />
 
     <FoProgressStep class="max-w-40"
                     color="info"
                     :steps="4"
-                    :value="{ value: 75, label: { title: 'Title', position: 'left' } }"
+                    :value="{ value: value3, label: { title: 'Title', position: 'left' } }"
     />
 
-    <FoProgressStep class="h-56"
-                    orientation="vertical"
-                    color="warning"
-                    :steps="4"
-                    :value="{ value: 50, label: { position: 'floating', side: 'right' } }"
-    />
+    <div class="flex gap-6">
+        <FoProgressStep class="h-56"
+                        orientation="vertical"
+                        color="warning"
+                        :steps="4"
+                        :value="{ value: value2, label: { position: 'floating', side: 'right' } }"
+        />
+
+        <FoProgressStep class="h-56"
+                        orientation="vertical"
+                        color="primary"
+                        :steps="4"
+                        :value="{ value: value1, label: { position: 'top' } }"
+        />
+
+        <FoProgressStep class="h-56"
+                        orientation="vertical"
+                        color="success"
+                        :steps="4"
+                        :value="{ value: value3, label: { position: 'bottom' } }"
+        />
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -75,5 +91,6 @@ import { ref }            from 'vue';
 
 const value1 = ref<number>(25);
 const value2 = ref<number>(50);
-const value3 = ref<number>(100);
+const value3 = ref<number>(75);
+const value4 = ref<number>(100);
 </script>
