@@ -35,6 +35,12 @@ export function useShape(
                 pilled:  'rounded-full',
                 square:  '',
             },
+            FoProgress: {
+                rounded: '',
+                circle:  '',
+                pilled:  '',
+                square:  'rounded-none',
+            },
             FoSelect: {
                 rounded: '',
                 circle:  '',

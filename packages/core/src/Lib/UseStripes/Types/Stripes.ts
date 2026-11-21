@@ -1,6 +1,6 @@
 import type { ComponentName } from '@/Lib';
 
-export type StripedComponentName = Extract<ComponentName, 'FoListGroup' | 'FoListGroupItem' | 'FoSkeleton'>;
+export type StripedComponentName = Extract<ComponentName, 'FoListGroup' | 'FoListGroupItem' | 'FoProgress' | 'FoSkeleton'>;
 
 export interface Striped {
     /** If true, the component will be shown with alternate stripes */

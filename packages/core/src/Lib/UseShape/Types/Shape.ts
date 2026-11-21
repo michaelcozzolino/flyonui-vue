@@ -6,6 +6,7 @@ export type ShapeableComponentName = Extract<
     | 'FoBadge'
     | 'FoButton'
     | 'FoInputText'
+    | 'FoProgress'
     | 'FoSelect'
 >;
 

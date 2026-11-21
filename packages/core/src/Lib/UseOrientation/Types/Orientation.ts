@@ -9,6 +9,8 @@ export type OrientableComponentName = Extract<
     | 'FoListGroup'
     | 'FoListGroupItem'
     | 'FoMenu'
+    | 'FoProgress'
+    | 'FoProgressStep'
     | 'FoStats'
     | 'FoSwitchGroup'
     | 'FoTabs'

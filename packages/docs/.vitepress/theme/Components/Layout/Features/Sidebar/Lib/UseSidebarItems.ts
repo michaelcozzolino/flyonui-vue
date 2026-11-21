@@ -147,6 +147,13 @@ export function useSidebarItems(): Ref<ParentSidebarItem[]> {
                     children: [],
                 },
                 {
+                    text:     'Progress',
+                    to:       '/components/progress',
+                    icon:     'fa6-solid:bars-progress',
+                    badge:    _unreleasedBadge,
+                    children: [],
+                },
+                {
                     text:     'Radial Progress',
                     to:       '/components/radial-progress',
                     icon:     'tabler:progress',
