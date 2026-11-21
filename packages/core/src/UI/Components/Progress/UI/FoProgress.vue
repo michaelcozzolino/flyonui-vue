@@ -120,6 +120,10 @@ const isFloating = computed((): boolean => typeof props.value !== 'number' && pr
 const isVerticalFloating = computed((): boolean => isFloating.value && props.orientation === 'vertical');
 
 const floatingSide = computed((): HorizontalPosition => {
-    return typeof props.value !== 'number' ? props.value.label.side ?? 'left' : 'left';
+    if (typeof props.value === 'number' || props.value.label.position !== 'floating') {
+        return 'left';
+    }
+
+    return props.value.label.side ?? 'left';
 });
 </script>

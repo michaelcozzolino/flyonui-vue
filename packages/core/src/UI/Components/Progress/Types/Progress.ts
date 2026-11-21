@@ -27,10 +27,10 @@ export interface ProgressProps extends Colorable, Orientable, Shapeable<Progress
     isAnimated?: boolean;
 }
 
-export interface ProgressStepProps extends Colorable {
+export interface ProgressStepProps extends Colorable, Orientable {
     /** The progress' steps. Each bar is a step.  */
     steps: number;
 
     /** The progress' value  */
-    value: number;
+    value: number | ProgressValue;
 }
