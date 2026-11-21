@@ -41,6 +41,10 @@ export function useOrientation(
                 horizontal: '',
                 vertical:   'progress-vertical',
             },
+            FoProgressStep: {
+                horizontal: 'items-center',
+                vertical:   'flex-col-reverse',
+            },
             FoStats: {
                 horizontal: 'stats-horizontal',
                 vertical:   'stats-vertical',

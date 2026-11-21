@@ -99,31 +99,25 @@
 </template>
 
 <script setup lang="ts">
-import type { HorizontalPosition }                               from '@/Types';
-import type { ProgressProps }                                    from '@/UI/Components/Progress/Types';
-import { computed }                                              from 'vue';
+import type { Orientation }                                      from '@/Lib';
+import type { ProgressProps, ProgressValue }                     from '@/UI/Components/Progress/Types';
 import { FoFragment }                                            from '@/UI/Components/Fragment/Internal';
 import { FoProgressBody, FoProgressPercentage, FoProgressTitle } from '@/UI/Components/Progress/Internal';
+import { useProgressLabel }                                      from '@/UI/Components/Progress/Internal/Lib';
 
-const props = defineProps<ProgressProps>();
-
-const numericValue = computed((): number => {
-    return typeof props.value === 'number' ? props.value : props.value.value;
+const props = withDefaults(defineProps<ProgressProps>(), {
+    orientation: 'horizontal',
 });
 
-const percentageValue = computed((): string => `${numericValue.value}%`);
-
-const hasTitle = computed((): boolean => typeof props.value !== 'number' && props.value.label.title !== undefined);
-
-const isFloating = computed((): boolean => typeof props.value !== 'number' && props.value.label.position === 'floating');
-
-const isVerticalFloating = computed((): boolean => isFloating.value && props.orientation === 'vertical');
-
-const floatingSide = computed((): HorizontalPosition => {
-    if (typeof props.value === 'number' || props.value.label.position !== 'floating') {
-        return 'left';
-    }
-
-    return props.value.label.side ?? 'left';
-});
+const {
+    numericValue,
+    percentageValue,
+    hasTitle,
+    isFloating,
+    isVerticalFloating,
+    floatingSide,
+} = useProgressLabel(
+    (): number | ProgressValue => props.value,
+    (): Orientation => props.orientation,
+);
 </script>

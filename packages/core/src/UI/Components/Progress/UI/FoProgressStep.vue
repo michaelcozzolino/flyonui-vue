@@ -22,7 +22,9 @@
                 />
             </div>
 
-            <div class="flex w-2 shrink-0 flex-col-reverse gap-y-1">
+            <div class="flex w-2 shrink-0 gap-y-1"
+                 :class="orientationClass"
+            >
                 <FoProgressStepBar v-for="step in steps"
                                    :key="step"
                                    class="min-h-0 flex-1"
@@ -47,7 +49,9 @@
                                   :value="percentageValue"
             />
 
-            <div class="flex items-center gap-x-1">
+            <div class="flex gap-x-1"
+                 :class="orientationClass"
+            >
                 <FoProgressStepBar v-for="step in steps"
                                    :key="step"
                                    class="min-w-0 flex-1"
@@ -70,7 +74,9 @@
                              :title="labelTitle"
             />
 
-            <div class="flex min-h-0 w-full min-w-2 flex-1 flex-col-reverse gap-y-1">
+            <div class="flex min-h-0 w-full min-w-2 flex-1 gap-y-1"
+                 :class="orientationClass"
+            >
                 <FoProgressStepBar v-for="step in steps"
                                    :key="step"
                                    class="min-h-0 flex-1"
@@ -105,7 +111,9 @@
                 </template>
             </div>
 
-            <div class="flex items-center gap-x-1">
+            <div class="flex gap-x-1"
+                 :class="orientationClass"
+            >
                 <FoProgressStepBar v-for="step in steps"
                                    :key="step"
                                    class="min-w-0 flex-1"
@@ -130,9 +138,10 @@
 
             <div class="relative flex gap-1"
                  :class="[
+                     orientationClass,
                      orientation === 'vertical'
-                         ? 'min-h-0 w-full flex-1 flex-col-reverse'
-                         : 'w-full min-w-0 flex-1 items-center',
+                         ? 'min-h-0 w-full flex-1'
+                         : 'w-full min-w-0 flex-1',
                      orientation === 'vertical' && (labelPosition === 'within' ? 'min-w-6' : 'min-w-2'),
                  ]"
             >
@@ -168,10 +177,11 @@
 
 <script setup lang="ts">
 import type { Orientation }                                         from '@/Lib';
-import type { HorizontalPosition }                                  from '@/Types';
-import type { ProgressLabelPosition, ProgressStepProps }            from '@/UI/Components/Progress/Types';
+import type { ProgressStepProps, ProgressValue }                    from '@/UI/Components/Progress/Types';
 import { computed }                                                 from 'vue';
+import { useOrientation }                                           from '@/Lib/UseOrientation/Internal';
 import { FoProgressPercentage, FoProgressStepBar, FoProgressTitle } from '@/UI/Components/Progress/Internal';
+import { useProgressLabel }                                         from '@/UI/Components/Progress/Internal/Lib';
 
 interface Props extends ProgressStepProps {
     orientation?: Orientation;
@@ -181,27 +191,21 @@ const props = withDefaults(defineProps<Props>(), {
     orientation: 'horizontal',
 });
 
-const numericValue = computed((): number => {
-    return typeof props.value === 'number' ? props.value : props.value.value;
-});
+const orientationClass = useOrientation('FoProgressStep', (): Orientation => props.orientation);
 
-const percentageValue = computed((): string => `${numericValue.value}%`);
-
-const labelPosition = computed((): ProgressLabelPosition | 'floating' | undefined => {
-    return typeof props.value === 'number' ? undefined : props.value.label.position;
-});
-
-const labelTitle = computed((): string => {
-    return typeof props.value === 'number' ? '' : props.value.label.title ?? '';
-});
-
-const hasTitle = computed((): boolean => {
-    return typeof props.value !== 'number' && props.value.label.title !== undefined;
-});
-
-const isFloating = computed((): boolean => labelPosition.value === 'floating');
-
-const isVerticalFloating = computed((): boolean => isFloating.value && props.orientation === 'vertical');
+const {
+    numericValue,
+    percentageValue,
+    labelPosition,
+    labelTitle,
+    hasTitle,
+    isFloating,
+    isVerticalFloating,
+    floatingSide,
+} = useProgressLabel(
+    (): number | ProgressValue => props.value,
+    (): Orientation => props.orientation,
+);
 
 const rootClass = computed((): string => {
     if (isVerticalFloating.value || (hasTitle.value && props.orientation === 'vertical')) {
@@ -221,16 +225,8 @@ const rootClass = computed((): string => {
     }
 
     return labelPosition.value === undefined
-        ? 'flex items-center gap-x-1'
+        ? `flex gap-x-1 ${orientationClass.value}`
         : 'block';
-});
-
-const floatingSide = computed((): HorizontalPosition => {
-    if (typeof props.value === 'number' || props.value.label.position !== 'floating') {
-        return 'left';
-    }
-
-    return props.value.label.side ?? 'left';
 });
 
 function isComplete(step: number): boolean {
