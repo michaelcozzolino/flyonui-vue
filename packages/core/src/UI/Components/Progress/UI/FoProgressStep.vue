@@ -10,10 +10,10 @@
             />
         </template>
 
-        <div v-else-if="isVerticalFloating"
+        <div v-else-if="label.isVerticalFloating"
              class="flex min-h-0 flex-1 gap-1"
         >
-            <div v-if="floatingSide === 'left'"
+            <div v-if="label.floatingSide === 'left'"
                  class="relative w-10"
             >
                 <FoProgressPercentage is-floating
@@ -34,7 +34,7 @@
                 />
             </div>
 
-            <div v-if="floatingSide === 'right'"
+            <div v-if="label.floatingSide === 'right'"
                  class="relative w-10"
             >
                 <FoProgressPercentage is-floating
@@ -44,7 +44,7 @@
             </div>
         </div>
 
-        <template v-else-if="isFloating">
+        <template v-else-if="label.isFloating">
             <FoProgressPercentage is-floating
                                   :value="percentageValue"
             />
@@ -62,16 +62,16 @@
             </div>
         </template>
 
-        <div v-else-if="hasTitle && orientation === 'vertical'"
+        <div v-else-if="label.hasTitle && orientation === 'vertical'"
              class="flex min-h-0 flex-1 flex-col items-center gap-1"
         >
-            <FoProgressPercentage v-if="labelPosition === 'top'"
+            <FoProgressPercentage v-if="label.position === 'top'"
                                   orientation="vertical"
                                   :value="percentageValue"
             />
 
-            <FoProgressTitle v-if="labelPosition === 'bottom'"
-                             :title="labelTitle"
+            <FoProgressTitle v-if="label.position === 'bottom'"
+                             :title="label.title"
             />
 
             <div class="flex min-h-0 w-full min-w-2 flex-1 gap-y-1"
@@ -86,20 +86,20 @@
                 />
             </div>
 
-            <FoProgressTitle v-if="labelPosition === 'top'"
-                             :title="labelTitle"
+            <FoProgressTitle v-if="label.position === 'top'"
+                             :title="label.title"
             />
 
-            <FoProgressPercentage v-if="labelPosition === 'bottom'"
+            <FoProgressPercentage v-if="label.position === 'bottom'"
                                   orientation="vertical"
                                   :value="percentageValue"
             />
         </div>
 
-        <template v-else-if="hasTitle">
+        <template v-else-if="label.hasTitle">
             <div class="mb-1 flex items-end justify-between">
-                <template v-if="labelPosition === 'left' || labelPosition === 'top'">
-                    <FoProgressTitle :title="labelTitle" />
+                <template v-if="label.position === 'left' || label.position === 'top'">
+                    <FoProgressTitle :title="label.title" />
 
                     <FoProgressPercentage :value="percentageValue" />
                 </template>
@@ -107,7 +107,7 @@
                 <template v-else>
                     <FoProgressPercentage :value="percentageValue" />
 
-                    <FoProgressTitle :title="labelTitle" />
+                    <FoProgressTitle :title="label.title" />
                 </template>
             </div>
 
@@ -128,10 +128,10 @@
              class="flex w-full items-center gap-2"
              :class="[
                  orientation === 'vertical' && 'min-h-0 flex-1 flex-col',
-                 orientation === 'horizontal' && (labelPosition === 'top' || labelPosition === 'bottom') && 'flex-col',
+                 orientation === 'horizontal' && (label.position === 'top' || label.position === 'bottom') && 'flex-col',
              ]"
         >
-            <FoProgressPercentage v-if="labelPosition === 'left' || labelPosition === 'top'"
+            <FoProgressPercentage v-if="label.position === 'left' || label.position === 'top'"
                                   :orientation="orientation"
                                   :value="percentageValue"
             />
@@ -142,21 +142,21 @@
                      orientation === 'vertical'
                          ? 'min-h-0 w-full flex-1'
                          : 'w-full min-w-0 flex-1',
-                     orientation === 'vertical' && (labelPosition === 'within' ? 'min-w-6' : 'min-w-2'),
+                     orientation === 'vertical' && (label.position === 'within' ? 'min-w-6' : 'min-w-2'),
                  ]"
             >
                 <FoProgressStepBar v-for="step in steps"
                                    :key="step"
                                    :class="[
                                        orientation === 'vertical' ? 'min-h-0 flex-1' : 'min-w-0 flex-1',
-                                       labelPosition === 'within' && orientation === 'horizontal' && 'min-h-6',
+                                       label.position === 'within' && orientation === 'horizontal' && 'min-h-6',
                                    ]"
                                    :color="color"
                                    :is-complete="isComplete(step)"
                                    :value="numericValue"
                 />
 
-                <span v-if="labelPosition === 'within'"
+                <span v-if="label.position === 'within'"
                       class="pointer-events-none absolute inset-0 flex items-center justify-center"
                 >
                     <span class="bg-base-100 text-base-content rounded-sm px-1 text-xs"
@@ -167,7 +167,7 @@
                 </span>
             </div>
 
-            <FoProgressPercentage v-if="labelPosition === 'right' || labelPosition === 'bottom'"
+            <FoProgressPercentage v-if="label.position === 'right' || label.position === 'bottom'"
                                   :orientation="orientation"
                                   :value="percentageValue"
             />
@@ -193,26 +193,17 @@ const props = withDefaults(defineProps<Props>(), {
 
 const orientationClass = useOrientation('FoProgressStep', (): Orientation => props.orientation);
 
-const {
-    numericValue,
-    percentageValue,
-    labelPosition,
-    labelTitle,
-    hasTitle,
-    isFloating,
-    isVerticalFloating,
-    floatingSide,
-} = useProgressLabel(
+const { numericValue, percentageValue, label } = useProgressLabel(
     (): number | ProgressValue => props.value,
     (): Orientation => props.orientation,
 );
 
 const rootClass = computed((): string => {
-    if (isVerticalFloating.value || (hasTitle.value && props.orientation === 'vertical')) {
+    if (label.value.isVerticalFloating || (label.value.hasTitle && props.orientation === 'vertical')) {
         return 'flex flex-col';
     }
 
-    if (hasTitle.value || isFloating.value) {
+    if (label.value.hasTitle || label.value.isFloating) {
         return 'flex flex-col gap-1';
     }
 
@@ -220,11 +211,11 @@ const rootClass = computed((): string => {
         return 'flex flex-col items-center justify-between gap-1';
     }
 
-    if (labelPosition.value === 'top' || labelPosition.value === 'bottom') {
+    if (label.value.position === 'top' || label.value.position === 'bottom') {
         return 'flex flex-col gap-1';
     }
 
-    return labelPosition.value === undefined
+    return label.value.position === undefined
         ? `flex gap-x-1 ${orientationClass.value}`
         : 'block';
 });
