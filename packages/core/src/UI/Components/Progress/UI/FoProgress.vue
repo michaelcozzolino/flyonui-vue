@@ -89,7 +89,9 @@
                                   :value="percentageValue"
             />
 
-            <FoProgressBody v-bind="{ ...$props, ...$attrs, numericValue, percentageValue }" />
+            <FoProgressBody :class="label.position === 'within' && 'min-h-4'"
+                            v-bind="{ ...$props, ...$attrs, numericValue, percentageValue }"
+            />
 
             <FoProgressPercentage v-if="(label.position === 'right' || label.position === 'bottom') && label.hasTitle === false"
                                   :value="percentageValue"

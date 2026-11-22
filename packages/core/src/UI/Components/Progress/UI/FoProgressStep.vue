@@ -62,20 +62,21 @@
             </div>
         </template>
 
-        <div v-else-if="label.hasTitle && orientation === 'vertical'"
+        <div v-else-if="orientation === 'vertical' && (label.hasTitle || label.position === 'top' || label.position === 'bottom')"
              class="flex min-h-0 flex-1 flex-col items-center gap-1"
         >
             <FoProgressPercentage v-if="label.position === 'top'"
+                                  class="shrink-0"
                                   orientation="vertical"
                                   :value="percentageValue"
             />
 
-            <FoProgressTitle v-if="label.position === 'bottom'"
+            <FoProgressTitle v-if="label.position === 'bottom' && label.hasTitle"
                              :title="label.title"
             />
 
-            <div class="flex min-h-0 w-full min-w-2 flex-1 gap-y-1"
-                 :class="orientationClass"
+            <div class="flex min-h-0 flex-1 gap-y-1"
+                 :class="[orientationClass, label.hasTitle ? 'w-full min-w-2' : 'w-2']"
             >
                 <FoProgressStepBar v-for="step in steps"
                                    :key="step"
@@ -86,11 +87,12 @@
                 />
             </div>
 
-            <FoProgressTitle v-if="label.position === 'top'"
+            <FoProgressTitle v-if="label.position === 'top' && label.hasTitle"
                              :title="label.title"
             />
 
             <FoProgressPercentage v-if="label.position === 'bottom'"
+                                  class="shrink-0"
                                   orientation="vertical"
                                   :value="percentageValue"
             />
