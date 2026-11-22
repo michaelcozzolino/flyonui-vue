@@ -13,12 +13,10 @@
             <FoStatTitle>
                 7,500 of 10,000 orders
             </FoStatTitle>
-
-            <div class="progress bg-success/10 h-2" role="progressbar" aria-label="Order Progressbar" aria-valuenow="75"
-                 aria-valuemin="0" aria-valuemax="100"
-            >
-                <div class="progress-bar progress-success w-3/4" />
-            </div>
+            <FoProgress class="h-2"
+                        color="success"
+                        :value="75"
+            />
         </FoStat>
     </FoStats>
 
@@ -37,11 +35,10 @@
                 $45,000 of $100,000
             </FoStatTitle>
 
-            <div class="progress bg-warning/10 h-2" role="progressbar" aria-label="Revenue Progressbar"
-                 aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
-            >
-                <div class="progress-bar progress-warning w-2/5" />
-            </div>
+            <FoProgress class="h-2"
+                        color="warning"
+                        :value="45"
+            />
         </FoStat>
     </FoStats>
 
@@ -60,12 +57,10 @@
                 $18,200 of $25,000
             </FoStatTitle>
 
-            <!--            todo: progress bar component -->
-            <div class="progress bg-error/10 h-2" role="progressbar" aria-label="Invoice Progressbar" aria-valuenow="73"
-                 aria-valuemin="0" aria-valuemax="100"
-            >
-                <div class="progress-bar progress-error w-[73%]" />
-            </div>
+            <FoProgress class="h-2"
+                        color="error"
+                        :value="73"
+            />
         </FoStat>
     </FoStats>
 </template>
@@ -74,6 +69,7 @@
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core';
 import {
     FoAvatar,
+    FoProgress,
     FoStat,
     FoStats,
     FoStatTitle,
