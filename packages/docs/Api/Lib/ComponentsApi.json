@@ -8365,6 +8365,24 @@
                 "declarations": []
             },
             {
+                "name": "isHidden",
+                "global": false,
+                "description": "Hides the component visually",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
                 "name": "componentName",
                 "global": false,
                 "description": "",
@@ -8380,24 +8398,6 @@
                         "\"FoInputText\"",
                         "\"FoSelect\"",
                         "\"FoTextarea\""
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "isHidden",
-                "global": false,
-                "description": "Hides the component visually",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
                     ]
                 },
                 "declarations": []
@@ -9388,27 +9388,6 @@
                 "declarations": []
             },
             {
-                "name": "size",
-                "global": false,
-                "description": "The component's size",
-                "tags": [],
-                "required": false,
-                "type": "Size | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Size | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"extraSmall\"",
-                        "\"small\"",
-                        "\"medium\"",
-                        "\"large\"",
-                        "\"extraLarge\""
-                    ]
-                },
-                "declarations": []
-            },
-            {
                 "name": "id",
                 "global": false,
                 "description": "The component's id, if not given, a random one might be assigned",
@@ -9510,6 +9489,27 @@
                         "undefined",
                         "\"rounded\"",
                         "\"pilled\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "size",
+                "global": false,
+                "description": "The component's size",
+                "tags": [],
+                "required": false,
+                "type": "Size | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Size | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"extraSmall\"",
+                        "\"small\"",
+                        "\"medium\"",
+                        "\"large\"",
+                        "\"extraLarge\""
                     ]
                 },
                 "declarations": []
@@ -11951,6 +11951,82 @@
                 "declarations": []
             },
             {
+                "name": "id",
+                "global": false,
+                "description": "The component's id, if not given, a random one might be assigned",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "disabled",
+                "global": false,
+                "description": "If true, the component will be disabled without allowing more interactions",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "shape",
+                "global": false,
+                "description": "The component's shape",
+                "tags": [],
+                "required": false,
+                "type": "Shape | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Shape | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"rounded\"",
+                        "\"pilled\"",
+                        "\"square\"",
+                        "\"circle\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "size",
+                "global": false,
+                "description": "The component's size",
+                "tags": [],
+                "required": false,
+                "type": "Size | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Size | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"extraSmall\"",
+                        "\"small\"",
+                        "\"medium\"",
+                        "\"large\"",
+                        "\"extraLarge\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
                 "name": "color",
                 "global": false,
                 "description": "The component's color",
@@ -11988,7 +12064,7 @@
                         "undefined",
                         "\"solid\"",
                         "\"gradient\"",
-                        "\"text\"",
+                            "\"text\"",
                         "\"soft\"",
                         "\"outline\"",
                         "\"dash\""
@@ -11997,22 +12073,120 @@
                 "declarations": []
             },
             {
-                "name": "size",
+                "name": "layout",
                 "global": false,
-                "description": "The component's size",
+                "description": "The button's layout",
                 "tags": [],
                 "required": false,
-                "type": "Size | undefined",
+                "type": "Layout | undefined",
                 "schema": {
                     "kind": "enum",
-                    "type": "Size | undefined",
+                    "type": "Layout | undefined",
                     "schema": [
                         "undefined",
-                        "\"extraSmall\"",
-                        "\"small\"",
-                        "\"medium\"",
-                        "\"large\"",
-                        "\"extraLarge\""
+                        "\"default\"",
+                        "\"wide\"",
+                        "\"block\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isActive",
+                "global": false,
+                "description": "The button's active state, when undefined it is neither active nor inactive",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "navigation",
+                "global": false,
+                "description": "A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router\nis not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead",
+                "tags": [],
+                "required": false,
+                "type": "Navigation | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Navigation | undefined",
+                    "schema": [
+                        "undefined",
+                        {
+                            "kind": "object",
+                            "type": "Navigation",
+                            "schema": {
+                                "navigate": {
+                                    "name": "navigate",
+                                    "global": false,
+                                    "description": "Navigate to a path",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "(to: string) => Promise<void>",
+                                    "schema": {
+                                        "kind": "event",
+                                        "type": "(to: string): Promise<void>",
+                                        "schema": []
+                                    },
+                                    "declarations": []
+                                },
+                                "activePath": {
+                                    "name": "activePath",
+                                    "global": false,
+                                    "description": "Currently active path",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "string",
+                                    "schema": "string",
+                                    "declarations": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isResponsive",
+                "global": false,
+                "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "withGlass",
+                "global": false,
+                "description": "Renders with glass style",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
                     ]
                 },
                 "declarations": []
@@ -12230,180 +12404,6 @@
                                 }
                             }
                         }
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "navigation",
-                "global": false,
-                "description": "A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router\nis not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead",
-                "tags": [],
-                "required": false,
-                "type": "Navigation | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Navigation | undefined",
-                    "schema": [
-                        "undefined",
-                        {
-                            "kind": "object",
-                            "type": "Navigation",
-                            "schema": {
-                                "navigate": {
-                                    "name": "navigate",
-                                    "global": false,
-                                    "description": "Navigate to a path",
-                                    "tags": [],
-                                    "required": true,
-                                    "type": "(to: string) => Promise<void>",
-                                    "schema": {
-                                        "kind": "event",
-                                        "type": "(to: string): Promise<void>",
-                                        "schema": []
-                                    },
-                                    "declarations": []
-                                },
-                                "activePath": {
-                                    "name": "activePath",
-                                    "global": false,
-                                    "description": "Currently active path",
-                                    "tags": [],
-                                    "required": true,
-                                    "type": "string",
-                                    "schema": "string",
-                                    "declarations": []
-                                }
-                            }
-                        }
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "shape",
-                "global": false,
-                "description": "The component's shape",
-                "tags": [],
-                "required": false,
-                "type": "Shape | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Shape | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"rounded\"",
-                        "\"pilled\"",
-                        "\"square\"",
-                        "\"circle\""
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "id",
-                "global": false,
-                "description": "The component's id, if not given, a random one might be assigned",
-                "tags": [],
-                "required": false,
-                "type": "string | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "string | undefined",
-                    "schema": [
-                        "undefined",
-                        "string"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "layout",
-                "global": false,
-                "description": "The button's layout",
-                "tags": [],
-                "required": false,
-                "type": "Layout | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Layout | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"default\"",
-                        "\"wide\"",
-                        "\"block\""
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "isActive",
-                "global": false,
-                "description": "The button's active state, when undefined it is neither active nor inactive",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "disabled",
-                "global": false,
-                "description": "If true, the component will be disabled without allowing more interactions",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "isResponsive",
-                "global": false,
-                "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "withGlass",
-                "global": false,
-                "description": "Renders with glass style",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
                     ]
                 },
                 "declarations": []
@@ -15856,6 +15856,80 @@
                 "declarations": []
             },
             {
+                "name": "icon",
+                "global": false,
+                "description": "The icon's name or a left/right position followed by the icon's name, both positions can be used at the same time",
+                "tags": [],
+                "required": false,
+                "type": "ConfigurableIcon | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "ConfigurableIcon | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Partial<Record<HorizontalPosition, string>>"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "id",
+                "global": false,
+                "description": "The component's id, if not given, a random one might be assigned",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "disabled",
+                "global": false,
+                "description": "If true, the component will be disabled without allowing more interactions",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "size",
+                "global": false,
+                "description": "The component's size",
+                "tags": [],
+                "required": false,
+                "type": "Size | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Size | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"extraSmall\"",
+                        "\"small\"",
+                        "\"medium\"",
+                        "\"large\"",
+                        "\"extraLarge\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
                 "name": "color",
                 "global": false,
                 "description": "The component's color",
@@ -15893,7 +15967,7 @@
                         "undefined",
                         "\"solid\"",
                         "\"gradient\"",
-                        "\"text\"",
+                            "\"text\"",
                         "\"soft\"",
                         "\"outline\"",
                         "\"dash\""
@@ -15902,22 +15976,120 @@
                 "declarations": []
             },
             {
-                "name": "size",
+                "name": "layout",
                 "global": false,
-                "description": "The component's size",
+                "description": "The button's layout",
                 "tags": [],
                 "required": false,
-                "type": "Size | undefined",
+                "type": "Layout | undefined",
                 "schema": {
                     "kind": "enum",
-                    "type": "Size | undefined",
+                    "type": "Layout | undefined",
                     "schema": [
                         "undefined",
-                        "\"extraSmall\"",
-                        "\"small\"",
-                        "\"medium\"",
-                        "\"large\"",
-                        "\"extraLarge\""
+                        "\"default\"",
+                        "\"wide\"",
+                        "\"block\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isActive",
+                "global": false,
+                "description": "The button's active state, when undefined it is neither active nor inactive",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "navigation",
+                "global": false,
+                "description": "A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router\nis not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead",
+                "tags": [],
+                "required": false,
+                "type": "Navigation | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Navigation | undefined",
+                    "schema": [
+                        "undefined",
+                        {
+                            "kind": "object",
+                            "type": "Navigation",
+                            "schema": {
+                                "navigate": {
+                                    "name": "navigate",
+                                    "global": false,
+                                    "description": "Navigate to a path",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "(to: string) => Promise<void>",
+                                    "schema": {
+                                        "kind": "event",
+                                        "type": "(to: string): Promise<void>",
+                                        "schema": []
+                                    },
+                                    "declarations": []
+                                },
+                                "activePath": {
+                                    "name": "activePath",
+                                    "global": false,
+                                    "description": "Currently active path",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "string",
+                                    "schema": "string",
+                                    "declarations": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isResponsive",
+                "global": false,
+                "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "withGlass",
+                "global": false,
+                "description": "Renders with glass style",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
                     ]
                 },
                 "declarations": []
@@ -16135,178 +16307,6 @@
                                 }
                             }
                         }
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "navigation",
-                "global": false,
-                "description": "A callback function to navigate to an SPA url and the active path of the SPA, in case the Vue Router\nis not available (E.G: vitepress). If it is a pure Vue app use the Vue Router instead",
-                "tags": [],
-                "required": false,
-                "type": "Navigation | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Navigation | undefined",
-                    "schema": [
-                        "undefined",
-                        {
-                            "kind": "object",
-                            "type": "Navigation",
-                            "schema": {
-                                "navigate": {
-                                    "name": "navigate",
-                                    "global": false,
-                                    "description": "Navigate to a path",
-                                    "tags": [],
-                                    "required": true,
-                                    "type": "(to: string) => Promise<void>",
-                                    "schema": {
-                                        "kind": "event",
-                                        "type": "(to: string): Promise<void>",
-                                        "schema": []
-                                    },
-                                    "declarations": []
-                                },
-                                "activePath": {
-                                    "name": "activePath",
-                                    "global": false,
-                                    "description": "Currently active path",
-                                    "tags": [],
-                                    "required": true,
-                                    "type": "string",
-                                    "schema": "string",
-                                    "declarations": []
-                                }
-                            }
-                        }
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "icon",
-                "global": false,
-                "description": "The icon's name or a left/right position followed by the icon's name, both positions can be used at the same time",
-                "tags": [],
-                "required": false,
-                "type": "ConfigurableIcon | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "ConfigurableIcon | undefined",
-                    "schema": [
-                        "undefined",
-                        "string",
-                        "Partial<Record<HorizontalPosition, string>>"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "id",
-                "global": false,
-                "description": "The component's id, if not given, a random one might be assigned",
-                "tags": [],
-                "required": false,
-                "type": "string | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "string | undefined",
-                    "schema": [
-                        "undefined",
-                        "string"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "layout",
-                "global": false,
-                "description": "The button's layout",
-                "tags": [],
-                "required": false,
-                "type": "Layout | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Layout | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"default\"",
-                        "\"wide\"",
-                        "\"block\""
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "isActive",
-                "global": false,
-                "description": "The button's active state, when undefined it is neither active nor inactive",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "disabled",
-                "global": false,
-                "description": "If true, the component will be disabled without allowing more interactions",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "isResponsive",
-                "global": false,
-                "description": "If true, it enables the component's responsive layout showing scrollbars on smaller screens",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
-                    ]
-                },
-                "declarations": []
-            },
-            {
-                "name": "withGlass",
-                "global": false,
-                "description": "Renders with glass style",
-                "tags": [],
-                "required": false,
-                "type": "boolean | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "boolean | undefined",
-                    "schema": [
-                        "undefined",
-                        "false",
-                        "true"
                     ]
                 },
                 "declarations": []
@@ -16889,6 +16889,1209 @@
                 "declarations": []
             }
         ],
+        "exposed": []
+    },
+    "FoProgress": {
+        "type": 1,
+        "props": [
+            {
+                "name": "value",
+                "global": false,
+                "description": "The progress' value. When it is not a number, you can configure its label's position and title",
+                "tags": [],
+                "required": true,
+                "type": "number | { value: number; label: { title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }; }",
+                "schema": {
+                    "kind": "enum",
+                    "type": "number | { value: number; label: { title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }; }",
+                    "schema": [
+                        "number",
+                        {
+                            "kind": "object",
+                            "type": "{ value: number; label: { title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }; }",
+                            "schema": {
+                                "value": {
+                                    "name": "value",
+                                    "global": false,
+                                    "description": "",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "number",
+                                    "schema": "number",
+                                    "declarations": []
+                                },
+                                "label": {
+                                    "name": "label",
+                                    "global": false,
+                                    "description": "",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "{ title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }",
+                                    "schema": {
+                                        "kind": "object",
+                                        "type": "{ title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }",
+                                        "schema": {
+                                            "title": {
+                                                "name": "title",
+                                                "global": false,
+                                                "description": "",
+                                                "tags": [],
+                                                "required": false,
+                                                "type": "string | undefined",
+                                                "schema": {
+                                                    "kind": "enum",
+                                                    "type": "string | undefined",
+                                                    "schema": [
+                                                        "undefined",
+                                                        "string"
+                                                    ]
+                                                },
+                                                "declarations": []
+                                            },
+                                            "position": {
+                                                "name": "position",
+                                                "global": false,
+                                                "description": "",
+                                                "tags": [],
+                                                "required": true,
+                                                "type": "\"floating\" | HorizontalPosition | \"within\" | VerticalPosition",
+                                                "schema": {
+                                                    "kind": "enum",
+                                                    "type": "\"floating\" | HorizontalPosition | \"within\" | VerticalPosition",
+                                                    "schema": [
+                                                        "\"floating\"",
+                                                        "\"bottom\"",
+                                                        "\"top\"",
+                                                        "\"left\"",
+                                                        "\"right\"",
+                                                        "\"within\""
+                                                    ]
+                                                },
+                                                "declarations": []
+                                            },
+                                            "side": {
+                                                "name": "side",
+                                                "global": false,
+                                                "description": "",
+                                                "tags": [],
+                                                "required": false,
+                                                "type": "HorizontalPosition | undefined",
+                                                "schema": {
+                                                    "kind": "enum",
+                                                    "type": "HorizontalPosition | undefined",
+                                                    "schema": [
+                                                        "undefined",
+                                                        "\"left\"",
+                                                        "\"right\""
+                                                    ]
+                                                },
+                                                "declarations": []
+                                            }
+                                        }
+                                    },
+                                    "declarations": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isAnimated",
+                "global": false,
+                "description": "If true, the bars will be animated",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "color",
+                "global": false,
+                "description": "The component's color",
+                "tags": [],
+                "required": false,
+                "type": "Color | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Color | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"neutral\"",
+                        "\"primary\"",
+                        "\"secondary\"",
+                        "\"accent\"",
+                        "\"info\"",
+                        "\"success\"",
+                        "\"warning\"",
+                        "\"error\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "orientation",
+                "global": false,
+                "description": "The component's orientation",
+                "tags": [],
+                "required": false,
+                "type": "Orientation | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Orientation | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"vertical\"",
+                        "\"horizontal\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "shape",
+                "global": false,
+                "description": "The component's shape",
+                "tags": [],
+                "required": false,
+                "type": "ProgressShape | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "ProgressShape | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"rounded\"",
+                        "\"square\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isStriped",
+                "global": false,
+                "description": "If true, the component will be shown with alternate stripes",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [],
+        "exposed": []
+    },
+    "FoProgressBody": {
+        "type": 1,
+        "props": [
+            {
+                "name": "numericValue",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "number",
+                "schema": "number",
+                "declarations": []
+            },
+            {
+                "name": "percentageValue",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string",
+                "declarations": []
+            },
+            {
+                "name": "value",
+                "global": false,
+                "description": "The progress' value. When it is not a number, you can configure its label's position and title",
+                "tags": [],
+                "required": true,
+                "type": "number | { value: number; label: { title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }; }",
+                "schema": {
+                    "kind": "enum",
+                    "type": "number | { value: number; label: { title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }; }",
+                    "schema": [
+                        "number",
+                        {
+                            "kind": "object",
+                            "type": "{ value: number; label: { title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }; }",
+                            "schema": {
+                                "value": {
+                                    "name": "value",
+                                    "global": false,
+                                    "description": "",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "number",
+                                    "schema": "number",
+                                    "declarations": []
+                                },
+                                "label": {
+                                    "name": "label",
+                                    "global": false,
+                                    "description": "",
+                                    "tags": [],
+                                    "required": true,
+                                    "type": "{ title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }",
+                                    "schema": {
+                                        "kind": "object",
+                                        "type": "{ title?: string | undefined; position: \"floating\" | HorizontalPosition | \"within\" | VerticalPosition; side?: HorizontalPosition | undefined; }",
+                                        "schema": {
+                                            "title": {
+                                                "name": "title",
+                                                "global": false,
+                                                "description": "",
+                                                "tags": [],
+                                                "required": false,
+                                                "type": "string | undefined",
+                                                "schema": {
+                                                    "kind": "enum",
+                                                    "type": "string | undefined",
+                                                    "schema": [
+                                                        "undefined",
+                                                        "string"
+                                                    ]
+                                                },
+                                                "declarations": []
+                                            },
+                                            "position": {
+                                                "name": "position",
+                                                "global": false,
+                                                "description": "",
+                                                "tags": [],
+                                                "required": true,
+                                                "type": "\"floating\" | HorizontalPosition | \"within\" | VerticalPosition",
+                                                "schema": {
+                                                    "kind": "enum",
+                                                    "type": "\"floating\" | HorizontalPosition | \"within\" | VerticalPosition",
+                                                    "schema": [
+                                                        "\"floating\"",
+                                                        "\"bottom\"",
+                                                        "\"top\"",
+                                                        "\"left\"",
+                                                        "\"right\"",
+                                                        "\"within\""
+                                                    ]
+                                                },
+                                                "declarations": []
+                                            },
+                                            "side": {
+                                                "name": "side",
+                                                "global": false,
+                                                "description": "",
+                                                "tags": [],
+                                                "required": false,
+                                                "type": "HorizontalPosition | undefined",
+                                                "schema": {
+                                                    "kind": "enum",
+                                                    "type": "HorizontalPosition | undefined",
+                                                    "schema": [
+                                                        "undefined",
+                                                        "\"left\"",
+                                                        "\"right\""
+                                                    ]
+                                                },
+                                                "declarations": []
+                                            }
+                                        }
+                                    },
+                                    "declarations": []
+                                }
+                            }
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isAnimated",
+                "global": false,
+                "description": "If true, the bars will be animated",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "color",
+                "global": false,
+                "description": "The component's color",
+                "tags": [],
+                "required": false,
+                "type": "Color | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Color | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"neutral\"",
+                        "\"primary\"",
+                        "\"secondary\"",
+                        "\"accent\"",
+                        "\"info\"",
+                        "\"success\"",
+                        "\"warning\"",
+                        "\"error\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "orientation",
+                "global": false,
+                "default": "\"horizontal\"",
+                "description": "The component's orientation",
+                "tags": [],
+                "required": false,
+                "type": "Orientation | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Orientation | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"vertical\"",
+                        "\"horizontal\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "shape",
+                "global": false,
+                "description": "The component's shape",
+                "tags": [],
+                "required": false,
+                "type": "ProgressShape | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "ProgressShape | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"rounded\"",
+                        "\"square\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "isStriped",
+                "global": false,
+                "default": "false",
+                "description": "If true, the component will be shown with alternate stripes",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [],
+        "exposed": []
+    },
+    "FoProgressPercentage": {
+        "type": 1,
+        "props": [
+            {
+                "name": "value",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string",
+                "declarations": []
+            },
+            {
+                "name": "isFloating",
+                "global": false,
+                "default": "false",
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "orientation",
+                "global": false,
+                "default": "\"horizontal\"",
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "Orientation | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Orientation | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"vertical\"",
+                        "\"horizontal\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [],
+        "exposed": []
+    },
+    "FoProgressStep": {
+        "type": 1,
+        "props": [
+            {
+                "name": "steps",
+                "global": false,
+                "description": "The progress' steps. Each bar is a step.",
+                "tags": [],
+                "required": true,
+                "type": "number",
+                "schema": "number",
+                "declarations": []
+            },
+            {
+                "name": "value",
+                "global": false,
+                "description": "The progress' value",
+                "tags": [],
+                "required": true,
+                "type": "number",
+                "schema": "number",
+                "declarations": []
+            },
+            {
+                "name": "color",
+                "global": false,
+                "description": "The component's color",
+                "tags": [],
+                "required": false,
+                "type": "Color | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Color | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"neutral\"",
+                        "\"primary\"",
+                        "\"secondary\"",
+                        "\"accent\"",
+                        "\"info\"",
+                        "\"success\"",
+                        "\"warning\"",
+                        "\"error\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [],
+        "exposed": []
+    },
+    "FoProgressStepBar": {
+        "type": 1,
+        "props": [
+            {
+                "name": "value",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "number",
+                "schema": "number",
+                "declarations": []
+            },
+            {
+                "name": "isComplete",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "boolean",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean",
+                    "schema": [
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "color",
+                "global": false,
+                "description": "The component's color",
+                "tags": [],
+                "required": false,
+                "type": "Color | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Color | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"neutral\"",
+                        "\"primary\"",
+                        "\"secondary\"",
+                        "\"accent\"",
+                        "\"info\"",
+                        "\"success\"",
+                        "\"warning\"",
+                        "\"error\""
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [],
+        "exposed": []
+    },
+    "FoProgressTitle": {
+        "type": 1,
+        "props": [
+            {
+                "name": "title",
+                "global": false,
+                "description": "",
+                "tags": [],
+                "required": true,
+                "type": "string",
+                "schema": "string",
+                "declarations": []
+            },
+            {
+                "name": "key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "PropertyKey | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "PropertyKey | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "number",
+                        "symbol"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "VNodeRef | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "VNodeRef | undefined",
+                    "schema": [
+                        "undefined",
+                        "string",
+                        "Ref<any, any>",
+                        {
+                            "kind": "event",
+                            "type": "(ref: Element | ComponentPublicInstance<{}, {}, {}, {}, {}, {}, {}, {}, false, ComponentOptionsBase<any, any, any, any, any, any, any, any, any, {}, {}, string, {}, {}, {}, string, ComponentProvideOptions>, ... 4 more ..., any> | null, refs: Record<...>): void",
+                            "schema": []
+                        }
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_for",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "boolean | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "boolean | undefined",
+                    "schema": [
+                        "undefined",
+                        "false",
+                        "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "ref_key",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "string | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "string | undefined",
+                    "schema": [
+                        "undefined",
+                        "string"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "class",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            },
+            {
+                "name": "style",
+                "global": true,
+                "description": "",
+                "tags": [],
+                "required": false,
+                "type": "unknown",
+                "schema": "unknown",
+                "declarations": []
+            }
+        ],
+        "events": [],
+        "slots": [],
         "exposed": []
     },
     "FoRadialProgress": {
@@ -21479,27 +22682,6 @@
                 "declarations": []
             },
             {
-                "name": "size",
-                "global": false,
-                "description": "The component's size",
-                "tags": [],
-                "required": false,
-                "type": "Size | undefined",
-                "schema": {
-                    "kind": "enum",
-                    "type": "Size | undefined",
-                    "schema": [
-                        "undefined",
-                        "\"extraSmall\"",
-                        "\"small\"",
-                        "\"medium\"",
-                        "\"large\"",
-                        "\"extraLarge\""
-                    ]
-                },
-                "declarations": []
-            },
-            {
                 "name": "icon",
                 "global": false,
                 "description": "The icon's name or a left/right position followed by the icon's name, both positions can be used at the same time",
@@ -21531,6 +22713,27 @@
                         "undefined",
                         "false",
                         "true"
+                    ]
+                },
+                "declarations": []
+            },
+            {
+                "name": "size",
+                "global": false,
+                "description": "The component's size",
+                "tags": [],
+                "required": false,
+                "type": "Size | undefined",
+                "schema": {
+                    "kind": "enum",
+                    "type": "Size | undefined",
+                    "schema": [
+                        "undefined",
+                        "\"extraSmall\"",
+                        "\"small\"",
+                        "\"medium\"",
+                        "\"large\"",
+                        "\"extraLarge\""
                     ]
                 },
                 "declarations": []
