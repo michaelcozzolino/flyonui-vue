@@ -1,9 +1,18 @@
-import type { Ref }                                                                    from 'vue';
-import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size }       from '@/Lib';
-import type { PickIfExists, Prettify }                                                 from '@/Lib/Utils/Internal';
-import type { HorizontalPosition, TextDirection }                                      from '@/Types';
-import type { InputPasswordProps }                                                     from '@/UI/AdvancedForms';
-import type { BadgeProps, ButtonProps, CardProps, LabelType, LoadingProps, MenuProps } from '@/UI/Components';
+import type { Ref }                                                              from 'vue';
+import type { Color, Colorable, ConfigurableComponentName, Preset, Shape, Size } from '@/Lib';
+import type { PickIfExists, Prettify }                                           from '@/Lib/Utils/Internal';
+import type { HorizontalPosition, TextDirection }                                from '@/Types';
+import type { InputPasswordProps }                                               from '@/UI/AdvancedForms';
+import type {
+    BadgeProps,
+    ButtonProps,
+    CardProps,
+    LabelType,
+    LoadingProps,
+    MenuProps,
+    ProgressProps,
+    ProgressStepProps,
+} from '@/UI/Components';
 import type { AlertProps }                                                             from '@/UI/Components/Alert';
 import type { AvatarProps }                                                            from '@/UI/Components/Avatar';
 import type { RadialProgressProps }                                                    from '@/UI/Components/RadialProgress';
@@ -126,6 +135,8 @@ export interface ConfigurableComponentProps {
     /** Menu defaults */
     FoMenu:           ConfigurableProps<MenuProps>;
     FoModal:          ConfigurableProps<Omit<ModalProps, 'backdrop'> & Colorable>;
+    FoProgress:       ConfigurableProps<ProgressProps>;
+    FoProgressStep:   ConfigurableProps<ProgressStepProps>;
     FoRadialProgress: ConfigurableProps<RadialProgressProps>;
     FoRadio:          ConfigurableProps<RadioProps>;
     FoRange:          ConfigurableProps<RangeProps>;

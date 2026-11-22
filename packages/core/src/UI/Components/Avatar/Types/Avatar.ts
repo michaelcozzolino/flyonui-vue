@@ -1,12 +1,12 @@
 import type { Colorable, Preset, Presettable, Shape, Shapeable, Sizable } from '@/Lib';
-import type { Image }                                                     from '@/Types';
+import type { Image, VerticalPosition }                                   from '@/Types';
 import type { WithRequiredIcon }                                          from '@/UI/Customization';
 
 export type AvatarShape = Extract<Shape, 'rounded' | 'circle'>;
 
 export type AvatarIndicatorStatus = 'away' | 'busy' | 'online' | 'offline';
 
-export type AvatarIndicatorPlacement = 'bottom' | 'top';
+export type AvatarIndicatorPlacement = VerticalPosition;
 
 export type AvatarPlaceholderPreset = Extract<Preset, 'solid' | 'soft' | 'outline'>;
 
